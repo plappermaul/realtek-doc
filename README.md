@@ -6,6 +6,8 @@ What datasheets we have
 - Switch controller RTL9301 datasheet
 - Switch controller RTL9303 datasheet
 - Switch controller RTL930x developer guide 
+- Switch controller RTL9311 datasheet 
+- Switch controller RTL9313 datasheet 
 - POE controller RTL8238B datasheet
 - POE controller RTL8238B host command guide
 - Transceiver RTL8218B, RTL8218D, RTL8218E
