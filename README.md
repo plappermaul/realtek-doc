@@ -1,5 +1,7 @@
 What datasheets we have
 
+- Switch controller RTL8330 datasheet
+- Switch controller RTL8332 datasheet
 - Switch controller RTL8380 datasheet
 - Switch controller RTL8382 datasheet
 - Switch controller RTL8393 datasheet
