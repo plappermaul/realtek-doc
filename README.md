@@ -1,4 +1,4 @@
-What datasheets we have
+What PDF datasheets we have
 
 - Sveral application notes GPON/EON SoC RTL9607C 
 - Switch controller RTL8330 datasheet
@@ -16,7 +16,7 @@ What datasheets we have
 - Transceiver RTL8218B, RTL8218D, RTL8218E
 - Transceiver RTL8221B (formerly known as RTL8226)
 
-What datasheets are we missing
+What PDF datasheets are we missing
 
 - Switch controller RTL8353M datasheet
 - Switch controller RTL8372 datasheet
