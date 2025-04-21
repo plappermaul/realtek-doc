@@ -3,6 +3,8 @@ What PDF datasheets we have
 - Sveral application notes GPON/EON SoC RTL9607C 
 - Switch controller RTL8330 datasheet
 - Switch controller RTL8332 datasheet
+- Switch controller RTL8370MB datasheet
+- Switch controller RTL83776 datasheet
 - Switch controller RTL8380 datasheet
 - Switch controller RTL8382 datasheet
 - Switch controller RTL8393 datasheet
