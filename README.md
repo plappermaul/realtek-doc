@@ -18,11 +18,13 @@ What datasheets we have
 
 What datasheets are we missing
 
+- Switch controller RTL8353M datasheet
 - Switch controller RTL8372 datasheet
 - Switch controller RTL8373 datasheet
 - Switch controller RTL838x register file
 - Switch controller RTL839x register file
 - Switch controller RTL930x register file
+- Switch controller RTL9302B, RTL9302C, RTL930D datasheet
 - POE controller RTL8239 datasheet
 - POE controller RTL8239 host command guide
 - Transceiver RTL8224 
