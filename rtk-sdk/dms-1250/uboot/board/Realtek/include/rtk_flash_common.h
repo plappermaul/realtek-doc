@@ -1,0 +1,1 @@
+/home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/../../../sdk/sdk_rtk_switch/rtk-sdk/system/linux/linux-3.18.24.x/include/linux/mtd/rtk_flash_common.h

@@ -1,0 +1,229 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for counter
+//
+// Feature : The file includes the following module and sub-modules
+//           1) counter commands.
+//
+
+#ifdef CMD_MIB_SET_STATE_DISABLE_ENABLE
+//mib configuration
+//set configuration
+//state configuration
+//disable function
+//enable function
+mib set state ( disable | enable )
+#endif
+
+#ifdef CMD_MIB_GET_STATE
+//mib configuration
+//get configuration
+//state configuration
+mib get state
+#endif
+
+#ifdef CMD_MIB_DUMP_COUNTER_PORT_PORTS_ALL
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+mib dump counter port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MIB_DUMP_COUNTER_PORT_PORTS_ALL_IFINOCTETS_IFINUCASTPKTS_IFOUTOCTETS_IFOUTUCASTPKTS_IFOUTMULTICASTPKTS_IFOUTBROCASTPKTS_IFHCINOCTETS_IFHCINUCASTPKTS_IFHCINMULTICASTPKTS_IFHCINBROADCASTPKTS_IFHCOUTOCTETS_IFHCOUTUCASTPKTS_IFHCOUTMULTICASTPKTS_IFHCOUTBROADCASTPKTS
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//ifInOctets
+//ifInUcastPkts
+//ifOutOctets
+//ifOutUcastPkts
+//ifOutMulticastPkts
+//ifOutBrocastPkts
+//ifHCInOctets
+//ifHCInUcastPkts
+//ifHCInMulticastPkts
+//ifHCInBroadcastPkts
+//ifHCOutOctets
+//ifHCOutUcastPkts
+//ifHCOutMulticastPkts
+//ifHCOutBroadcastPkts
+mib dump counter port ( <PORT_LIST:ports> | all ) ( ifInOctets | ifInUcastPkts | ifOutOctets | ifOutUcastPkts | ifOutMulticastPkts | ifOutBrocastPkts | ifHCInOctets | ifHCInUcastPkts | ifHCInMulticastPkts | ifHCInBroadcastPkts | ifHCOutOctets | ifHCOutUcastPkts | ifHCOutMulticastPkts | ifHCOutBroadcastPkts )
+#endif
+
+#ifdef CMD_MIB_DUMP_COUNTER_PORT_PORTS_ALL_DOT1DTPHCPORTINDISCARDS_DOT3OUTPAUSEFRAMES_DOT3STATSEXCESSIVECOLLISIONS_DOT3STATSLATECOLLISIONS_DOT3STATSDEFERREDTRANSMISSIONS_DOT3STATSMULTIPLECOLLISIONFRAMES_DOT3STATSSINGLECOLLISIONFRAMES_DOT3CTRLINUNKNOWNOPCODES_DOT3STATSSYMBOLERRORS_DOT3STATSFCSERRORS
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//dot1dTPHCPortInDiscards
+//dot3OutPauseFrames
+//dot3StatsExcessiveCollisions
+//dot3StatsLateCollisions
+//dot3StatsDeferredTransmissions
+//dot3StatsMultipleCollisionFrames
+//dot3StatsSingleCollisionFrames
+//dot3CtrlInUnknownOpcodes
+//dot3StatsSymbolErrors
+//dot3StatsFCSErrors
+mib dump counter port ( <PORT_LIST:ports> | all ) ( dot1dTPHCPortInDiscards | dot3OutPauseFrames | dot3StatsExcessiveCollisions | dot3StatsLateCollisions | dot3StatsDeferredTransmissions | dot3StatsMultipleCollisionFrames | dot3StatsSingleCollisionFrames | dot3CtrlInUnknownOpcodes | dot3StatsSymbolErrors | dot3StatsFCSErrors )
+#endif
+
+#ifdef CMD_MIB_DUMP_COUNTER_PORT_PORTS_ALL_ETHERSTATSOCTETS_ETHERSTATSJABBERS_ETHERSTATSCOLLISIONS_ETHERSTATSMCASTPKTS_ETHERSTATSBCASTPKTS_ETHERSTATSFRAGMENTS_ETHERSTATSPKTS64OCTETS_ETHERSTATSPKTS65TO127OCTETS_ETHERSTATSPKTS128TO255OCTETS_ETHERSTATSPKTS256TO511OCTETS_ETHERSTATSPKTS512TO1023OCTETS_ETHERSTATSPKTS1024TO1518OCTETS_ETHERSTATSUNDERSIZEPKTS_ETHERSTATSOVERSIZEPKTS
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//etherStatsOctets
+//etherStatsJabbers
+//etherStatsCollisions
+//etherStatsMcastPkts
+//etherStatsBcastPkts
+//etherStatsFragments
+//etherStatsPkts64Octets
+//etherStatsPkts65to127Octets
+//etherStatsPkts128to255Octets
+//etherStatsPkts256to511Octets
+//etherStatsPkts512to1023Octets
+//etherStatsPkts1024to1518Octets
+//etherStatsUndersizePkts
+//etherStatsOversizePkts
+mib dump counter port ( <PORT_LIST:ports> | all ) ( etherStatsOctets | etherStatsJabbers | etherStatsCollisions | etherStatsMcastPkts | etherStatsBcastPkts | etherStatsFragments | etherStatsPkts64Octets | etherStatsPkts65to127Octets | etherStatsPkts128to255Octets | etherStatsPkts256to511Octets | etherStatsPkts512to1023Octets | etherStatsPkts1024to1518Octets | etherStatsUndersizePkts | etherStatsOversizePkts )
+#endif
+
+#ifdef CMD_MIB_DUMP_COUNTER_SMON_PRIORITY
+//mib configuration
+//dump configuration
+//counter configuration
+//smon configuration
+//priority configuration
+mib dump counter smon <UINT:priority>
+#endif
+
+#ifdef CMD_MIB_DUMP_COUNTER
+//mib configuration
+//dump configuration
+//counter configuration
+mib dump counter
+#endif
+
+#ifdef CMD_MIB_GET_COUNTER_PORT_PORTS_ALL_COUNTER_NAME
+//mib configuration
+//get configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//port counter name (ifInOctets, ifInErrors...)
+mib get counter port ( <PORT_LIST:ports> | all ) <STRING:counter_name>
+#endif
+
+#ifdef CMD_MIB_GET_COUNTER_COUNTER_NAME
+//mib configuration
+//get configuration
+//counter configuration
+//global counter name (dot1dTpLearnedEntryDiscards...)
+mib get counter <STRING:counter_name>
+#endif
+
+#ifdef CMD_MIB_GET_TAG_LENGTH_RX_COUNTER_TX_COUNTER
+//mib configuration
+//get configuration
+//tag counting configuration
+//Rx counter
+//Tx counter
+mib get tag-length ( rx-counter | tx-counter )
+#endif
+
+#ifdef CMD_MIB_GET_STACK_HEADER_LENGTH_RX_COUNTER_TX_COUNTER
+//mib configuration
+//get configuration
+//stacking header length counting configuration
+//Rx counter
+//Tx counter
+mib get stack-header-length ( rx-counter | tx-counter )
+#endif
+
+#ifdef CMD_MIB_RESET_COUNTER_PORT_PORTS_ALL
+//mib configuration
+//reset configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+mib reset counter port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MIB_RESET_COUNTER
+//mib configuration
+//reset configuration
+//counter configuration
+mib reset counter
+#endif
+
+#ifdef CMD_MIB_SET_TAG_LENGTH_RX_COUNTER_TX_COUNTER_EXCLUDE_INCLUDE
+//mib configuration
+//set configuration
+//tag counting configuration
+//Rx counter
+//Tx counter
+//exclude tag length
+//include tag length
+mib set tag-length ( rx-counter | tx-counter ) ( exclude | include )
+#endif
+
+#ifdef CMD_MIB_SET_STACK_HEADER_LENGTH_RX_COUNTER_TX_COUNTER_EXCLUDE_INCLUDE
+//mib configuration
+//set configuration
+//stacking header length counting configuration
+//Rx counter
+//Tx counter
+//exclude tag length
+//include tag length
+mib set stack-header-length ( rx-counter | tx-counter ) ( exclude | include )
+#endif
+
+#ifdef CMD_MIB_GET_FLEXIBLE_COUNTER_INDEX_INDEX_PACKET_LENGTH
+//mib configuration
+//get configuration
+//flexible-counter configuration
+//flexible-counter index
+//index
+//packet length configuration
+mib get flexible-counter index <UINT:index> packet-length
+#endif
+
+#ifdef CMD_MIB_SET_FLEXIBLE_COUNTER_INDEX_INDEX_PACKET_LENGTH_MAX_MIN_LENGTH
+//mib configuration
+//set configuration
+//flexible-counter configuration
+//flexible-counter index
+//index
+//packet length configuration
+//maximum packet boundary
+//minimum packet boundary
+//packet length
+mib set flexible-counter index <UINT:index> packet-length ( max | min ) <UINT:length>
+#endif
+

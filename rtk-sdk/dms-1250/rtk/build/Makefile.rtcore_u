@@ -1,0 +1,145 @@
+#
+# Copyright (C) 2016 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Rtcore Module (user mode kernel module)
+#
+
+EXTRA_CFLAGS += -DRTK_USERMODE_LKM
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE) -URTK_UNIVERSAL_BSP -Werror -Wno-array-bounds
+
+
+USER_MODE_EXTRA := \
+    $(SDK_SYS_DIR)/osal/linux/isr.o \
+    $(SDK_SYS_DIR)/osal/linux/memory.o \
+    $(SDK_SYS_DIR)/osal/linux/cache.o \
+    $(SDK_SYS_DIR)/common/rtcore/rtcore_init.o \
+    $(SDK_SYS_DIR)/common/debug/rt_log.o \
+    $(SDK_SYS_DIR)/common/util/rt_util_system.o    \
+    $(SDK_SYS_DIR)/ioal/mem32.o \
+    $(SDK_SYS_DIR)/ioal/ioal_init.o \
+    $(SDK_SYS_DIR)/ioal/ioal_param.o \
+    $(SDK_SYS_DIR)/ioal/ioal_log.o \
+    $(SDK_SYS_DIR)/hwp/hwp_init.o \
+    $(SDK_SYS_DIR)/hwp/hwp_probe.o \
+    $(SDK_SYS_DIR)/hwp/hwp.o \
+    $(SDK_SYS_DIR)/hwp/profile_list.o \
+    $(SDK_SYS_DIR)/osal/linux/sem.o \
+    $(SDK_SYS_DIR)/osal/linux/thread.o \
+    $(SDK_SYS_DIR)/osal/linux/time.o \
+    $(SDK_SYS_DIR)/osal/linux/atomic.o
+
+ifeq ($(CONFIG_SDK_DRIVER_SPI),y)
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi.o
+    ifneq ($(CONFIG_SDK_SPI_DEV_1),y)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi_dev1.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_2),y)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi_dev2.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_3),y)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi_dev3.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_4),y)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi_dev4.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_5),y)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi_dev5.o
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/spi/spi_dev3.o
+    endif
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_I2C),y)
+    USER_MODE_EXTRA += \
+    	$(SDK_SYS_DIR)/drv/i2c/i2c.o \
+    	$(SDK_SYS_DIR)/drv/i2c/i2c_probe.o \
+    	$(SDK_SYS_DIR)/drv/i2c/i2c_software_drv.o
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R9300),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/i2c/i2c_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R9310),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/i2c/i2c_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R8390),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/i2c/i2c_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R8380),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/i2c/i2c_rtl8380.o
+    endif
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+    USER_MODE_EXTRA += \
+    	$(SDK_SYS_DIR)/drv/gpio/gpio.o \
+    	$(SDK_SYS_DIR)/drv/gpio/gpio_probe.o \
+    	$(SDK_SYS_DIR)/drv/gpio/generalCtrl_gpio.o
+    ifneq ($(CONFIG_SDK_RTL9310),)
+        USER_MODE_EXTRA += \
+                $(SDK_SYS_DIR)/drv/gpio/gpio_common.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL9300),)
+        USER_MODE_EXTRA += \
+                $(SDK_SYS_DIR)/drv/gpio/gpio_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8390),)
+        USER_MODE_EXTRA += \
+                $(SDK_SYS_DIR)/drv/gpio/gpio_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8380),)
+        USER_MODE_EXTRA += \
+                $(SDK_SYS_DIR)/drv/gpio/gpio_rtl8380.o
+    endif
+endif
+
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/intr/intr.o
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/intr/intr_probe.o
+    ifneq ($(CONFIG_SDK_RTL9310),)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/intr/intr_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL9300),)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/intr/intr_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8390),)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/intr/intr_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8380),)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/intr/intr_rtl8380.o
+    endif
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/common/util/rt_util_intrk.o
+
+
+ifeq ($(CONFIG_SDK_RTL8231),y)
+    USER_MODE_EXTRA += \
+    	$(SDK_SYS_DIR)/drv/gpio/ext_gpio.o \
+    	$(SDK_SYS_DIR)/drv/rtl8231/rtl8231.o \
+    	$(SDK_SYS_DIR)/drv/rtl8231/rtl8231_probe.o
+    ifneq ($(CONFIG_SDK_RTL9310),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/rtl8231/rtl8231_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL9300),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/rtl8231/rtl8231_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8390),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/rtl8231/rtl8231_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8380),)
+        USER_MODE_EXTRA += \
+        	$(SDK_SYS_DIR)/drv/rtl8231/rtl8231_rtl8380.o
+    endif
+endif
+
+ifeq ($(CONFIG_SDK_TC_DRV),y)
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/tc/tc_probe.o
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/tc/tc.o
+    USER_MODE_EXTRA += $(SDK_SYS_DIR)/drv/tc/tc_common.o
+    ifeq ($(CONFIG_SDK_TC_TC1_TIME),y)
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/common/util/rt_util_time.o
+        USER_MODE_EXTRA += $(SDK_SYS_DIR)/common/util/rt_util_timeIsr.o
+    endif
+endif

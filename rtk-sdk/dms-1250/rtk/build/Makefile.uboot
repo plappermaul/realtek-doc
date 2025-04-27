@@ -1,0 +1,60 @@
+#
+# Copyright (C) 2015 Realtek Semiconductor Corp.
+#
+# Makefile for SDK U-Boot Module
+#
+
+include $(TOPDIR)/config.mk
+
+LIB	= $(obj)lib$(BOARD).o
+
+# CPPFLAGS += -I$(TOPDIR)/board/Realtek/switch -I$(TOPDIR)/board/Realtek/include
+AFLAGS += -I$(TOPDIR)/board/Realtek/switch -I$(TOPDIR)/board/Realtek/include
+
+ifeq ($(CONFIG_SDK_PHY_CUST2),y)
+    #AFLAGS +=
+endif
+
+ifeq ($(CONFIG_SDK_PHY_CUST3),y)
+    #AFLAGS +=
+endif
+
+ifeq ($(CONFIG_SDK_PHY_CUST4),y)
+    #AFLAGS +=
+endif
+
+ifeq ($(CONFIG_SDK_PHY_CUST5),y)
+    #AFLAGS +=
+endif
+
+COBJS	:= $(BOARD).o board_cmd.o
+
+ifdef CONFIG_CMD_DRAM_TEST
+COBJS	+= memctl_dram.o
+endif
+
+ifdef CONFIG_CMD_FLASH_TEST
+COBJS	+= memctl_flash.o
+endif
+
+include $(TOPDIR)/board/Realtek/switch/sdk/build/Makefile.uboot.sdk
+
+SOBJS :=
+
+SRCS	:= $(SOBJS:.o=.S) $(COBJS:.o=.c)
+OBJS	:= $(addprefix $(obj),$(COBJS))
+SOBJS	:= $(addprefix $(obj),$(SOBJS))
+
+all:	$(subdir) $(LIB)
+
+$(LIB):	$(OBJS) $(SOBJS)
+	$(call cmd_link_o_target, $(OBJS) $(SOBJS))
+
+#########################################################################
+
+# defines $(obj).depend target
+include $(SRCTREE)/rules.mk
+
+sinclude $(obj).depend
+
+#########################################################################

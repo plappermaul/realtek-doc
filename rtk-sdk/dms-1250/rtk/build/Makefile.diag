@@ -1,0 +1,140 @@
+#
+# Copyright (C) 2017 Realtek Semiconductor Corp.
+#
+# Source for SDK Diag Shell
+#
+
+DIAGDIR  = 
+DIAG_SRC        := sdk/src/app/diag_v2/src
+DIAG_SRC_EXT    := sdk/src/app/diag_v2/src/ext
+COMMON_DIR      := sdk/src/common/user
+OSAL_DIR        := sdk/system/osal/linux
+
+
+
+DIAG_OBJ =
+DIAG_OBJ							+= $(DIAG_SRC)/diag_main.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_cmd.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_om.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_eee.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_reg.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_serdes.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_trap.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_port.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_stp.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_time.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_l2.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_l3.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_qos.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_trunk.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_rate.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_switch.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_sys.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_counter.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_sec.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_mirror.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_vlan.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_flowctrl.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_led.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_diag.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_debug.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_acl.o
+DIAG_OBJ							+= $(DIAG_SRC)/diag_pie.o
+DIAG_OBJ				  			+= $(DIAG_SRC)/diag_util.o
+ifeq ($(CONFIG_SDK_SW_SER), y)
+DIAG_OBJ							+= $(DIAG_SRC)/diag_ser.o
+endif
+DIAG_OBJ				  			+= $(COMMON_DIR)/rt_error.o
+DIAG_OBJ							+= $(OSAL_DIR)/user/thread.o
+DIAG_OBJ							+= $(OSAL_DIR)/user/sem.o
+ifneq ($(CONFIG_SDK_RTSDN),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_dpa.o
+endif
+
+ifneq ($(CONFIG_SDK_APP_OVS),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_ovs.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL8390) $(CONFIG_SDK_RTL9310)),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_mpls.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL8390) $(CONFIG_SDK_RTL9300) $(CONFIG_SDK_RTL9310)),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_oam.o
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_SPI),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_spi.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL9310),y)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_tunnel.o
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_vxlan.o
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_openflow.o
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_bpe.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL9300) $(CONFIG_SDK_RTL9310)),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_stack.o
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_ipmcast.o
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_mcast.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_DRIVER_NIC) $(CONFIG_SDK_DRIVER_EXTC_NIC)),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_nic.o
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_L2NTFY),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_l2_ntfy.o
+endif
+
+ifneq ($(CONFIG_SDK_RTL8231),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_rtl8231.o
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_I2C),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_i2c.o
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_GPIO),)
+  DIAG_OBJ							+= $(DIAG_SRC)/diag_gpio.o
+endif
+
+ifneq ($(CONFIG_SDK_UART1),)
+  DIAG_OBJ				  			+= $(DIAG_SRC)/diag_uart.o
+endif
+
+ifneq ($(CONFIG_SDK_APP_DIAG_EXT),)
+    DIAG_OBJ				  		+= $(DIAG_SRC_EXT)/diag_ext_common.o
+    ifeq ($(CONFIG_SDK_RTL9310),y)
+        DIAG_OBJ				  	+= $(DIAG_SRC_EXT)/diag_ext_9310.o
+    else ifeq ($(CONFIG_SDK_RTL9300),y)
+        DIAG_OBJ				  	+= $(DIAG_SRC_EXT)/diag_ext_9300.o
+    else ifeq ($(CONFIG_SDK_RTL8390),y)
+        DIAG_OBJ				  	+= $(DIAG_SRC_EXT)/diag_ext_8390.o
+    else ifeq ($(CONFIG_SDK_RTL8380),y)
+        DIAG_OBJ				  	+= $(DIAG_SRC_EXT)/diag_ext_8380.o
+    endif
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+  DIAG_OBJ				  			+= $(DIAG_SRC)/diag_sdk.o
+  INCLUDE += -I$(UT_INCLUDE)
+endif
+
+DIAG_ENGINE_OBJ   += $(DIAG_SRC)/parser/cparser.o \
+                    $(DIAG_SRC)/parser/cparser_fsm.o \
+                    $(DIAG_SRC)/parser/cparser_io_unix.o \
+                    $(DIAG_SRC)/parser/cparser_line.o \
+                    $(DIAG_SRC)/parser/cparser_token.o \
+                    $(DIAG_SRC)/parser/cparser_token_tbl.o \
+                    $(DIAG_SRC)/parser/cparser_tree.o
+
+
+CFLAGS += -D CONFIG_SDK_GENERAL_TABLE_REG_ACCESS
+
+
+
+
+DIAG_OBJ += $(DIAG_ENGINE_OBJ)
+

@@ -1,0 +1,360 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 60963 $
+// $Date: 2015-08-12 17:10:15 +0800 (Wed, 12 Aug 2015) $
+//
+// Purpose : Define diag shell commands for mcast.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) mcast commands.
+//
+
+#ifdef CMD_MCAST_CREATE_GROUP_GROUP_TYPE_MAC
+//mcast configuration
+//create configuration
+//group configuration
+//group type
+//mac
+mcast create group group-type mac
+#endif
+
+#ifdef CMD_MCAST_CREATE_GROUP_GROUP_TYPE_IP
+//mcast configuration
+//create configuration
+//group configuration
+//group type
+//ip
+mcast create group group-type ip
+#endif
+
+#ifdef CMD_MCAST_CREATE_GROUP_GROUP_TYPE_MAC_GROUP_ID_GROUP_ID
+//mcast configuration
+//create configuration
+//group configuration
+//group type
+//type of mac
+//group index configuration
+//group index
+mcast create group group-type mac group-id <UINT:group_id>
+#endif
+
+#ifdef CMD_MCAST_CREATE_GROUP_GROUP_TYPE_IP_GROUP_ID_GROUP_ID
+//mcast configuration
+//create configuration
+//group configuration
+//group type
+//type of ip
+//group index configuration
+//group index
+mcast create group group-type ip group-id <UINT:group_id>
+#endif
+
+#ifdef CMD_MCAST_DESTROY_GROUP_GROUP
+//mcast configuration
+//destroy configuration
+//group configuration
+//group ID (include group type and group index)
+mcast destroy group <UINT:group>
+#endif
+
+#ifdef CMD_MCAST_DUMP_GROUP
+//mcast configuration
+//dump configuration
+//group configuration
+mcast dump group
+#endif
+
+#ifdef CMD_MCAST_DUMP_GROUP_GROUP
+//mcast configuration
+//dump configuration
+//group configuration
+//group ID (include group type and group index)
+mcast dump group <UINT:group>
+#endif
+
+#ifdef CMD_MCAST_GET_EGRESS_INTERFACE_GROUP_GROUP
+//mcast configuration
+//get configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+mcast get egress-interface group <UINT:group>
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_L2_PORT_PORTS_ALL
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l2
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+mcast add egress-interface group <UINT:group> l2 port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_BPE_ECID_ECID_PORT_PORTS_ALL
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type bpe
+//ecid
+//ecid value
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+mcast add egress-interface group <UINT:group> bpe ecid <UINT:ecid> port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_STACK_PORT_PORTS_ALL
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type stack
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports (all stack ports)
+mcast add egress-interface group <UINT:group> stack port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_L3_INTF_INTF_ID_PORT_PORTS_ALL_REPLACE_BRIDGE
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l3
+//interface
+//interface ID
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+//replace portmask
+//configure as bridge
+mcast add egress-interface group <UINT:group> l3 intf <UINT:intf_id> port ( <PORT_LIST:ports> | all )  { replace } { bridge }
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_L3_INTF_INTF_ID_ECID_ECID_PORT_PORTS_ALL_REPLACE_BRIDGE
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l3
+//interface
+//interface ID
+//ecid configuration
+//ecid value
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+//replace portmask
+//configure as bridge
+mcast add egress-interface group <UINT:group> l3 intf <UINT:intf_id> ecid <UINT:ecid> port ( <PORT_LIST:ports> | all )  { replace } { bridge }
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_TUNNEL_INTF_INTF_ID
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type tunnel
+//interface
+//interface ID
+mcast add egress-interface group <UINT:group> tunnel intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_VXLAN_ENTRY_INDEX
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type vxlan
+//entry
+//entry index
+mcast add egress-interface group <UINT:group> vxlan entry <UINT:index>
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_L2_PORT_PORTS_ALL
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l2
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+mcast del egress-interface group <UINT:group> l2 port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_BPE_ECID_ECID_PORT_PORTS_ALL
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type bpe
+//ecid configuration
+//ecid value
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+mcast del egress-interface group <UINT:group> bpe ecid <UINT:ecid> port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_STACK_PORT_PORTS_ALL
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type stack
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports (all stack ports)
+mcast del egress-interface group <UINT:group> stack port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_L3_INTF_INTF_ID_PORT_PORTS_ALL_BRIDGE
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l3
+//interface
+//interface ID
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+//configure as bridge
+mcast del egress-interface group <UINT:group> l3 intf <UINT:intf_id> port ( <PORT_LIST:ports> | all ) { bridge }
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_L3_INTF_INTF_ID_ECID_ECID_PORT_PORTS_ALL_BRIDGE
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l3
+//interface
+//interface ID
+//ecid configuration
+//ecid value
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all ports
+//configure as bridge
+mcast del egress-interface group <UINT:group> l3 intf <UINT:intf_id> ecid <UINT:ecid> port ( <PORT_LIST:ports> | all ) { bridge }
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_TUNNEL_INTF_INTF_ID
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type tunnel
+//interface
+//interface ID
+mcast del egress-interface group <UINT:group> tunnel intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP_VXLAN_ENTRY_INDEX
+//mcast configuration
+//del configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type vxlan
+//entry
+//entry index
+mcast del egress-interface group <UINT:group> vxlan entry <UINT:index>
+#endif
+
+#ifdef CMD_MCAST_DEL_EGRESS_INTERFACE_GROUP_GROUP
+//mcast configuration
+//delete configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+mcast del egress-interface group <UINT:group>
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_L2_FWD_TBL_IDX_INDEX
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l2
+//index to forwarding table
+//index value
+mcast add egress-interface group <UINT:group> l2 fwd-tbl-idx <UINT:index>
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_BPE_ECID_ECID_FWD_TBL_IDX_INDEX
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type bpe
+//ecid
+//ecid value
+//index to forwarding table
+//index value
+mcast add egress-interface group <UINT:group> bpe ecid <UINT:ecid> fwd-tbl-idx <UINT:index>
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_L3_INTF_INTF_ID_FWD_TBL_IDX_INDEX_REPLACE_BRIDGE
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l3
+//interface
+//interface ID
+//index to forwarding table
+//index value
+//replace portmask
+//configure as bridge
+mcast add egress-interface group <UINT:group> l3 intf <UINT:intf_id> fwd-tbl-idx <UINT:index>  { replace } { bridge }
+#endif
+
+#ifdef CMD_MCAST_ADD_EGRESS_INTERFACE_GROUP_GROUP_L3_INTF_INTF_ID_ECID_ECID_FWD_TBL_IDX_INDEX_REPLACE_BRIDGE
+//mcast configuration
+//add configuration
+//next hop entry
+//group configuration
+//group ID (include group type and group index)
+//member type l3
+//interface
+//interface ID
+//ecid configuration
+//ecid value
+//index to forwarding table
+//index value
+//replace portmask
+//configure as bridge
+mcast add egress-interface group <UINT:group> l3 intf <UINT:intf_id> ecid <UINT:ecid> fwd-tbl-idx <UINT:index> { replace } { bridge }
+#endif

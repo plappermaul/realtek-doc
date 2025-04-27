@@ -1,0 +1,4 @@
+# this file is generated automatcally, don't edit it.
+include src/platform/9300/info.in
+include src/template/9300_nor/info.in
+include project/9300_nor_demo/info.in

@@ -1,0 +1,97 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 40450 $
+// $Date: 2013-06-24 17:45:49 +0800 (Mon, 24 Jun 2013) $
+//
+// Purpose : Define diag shell commands for internal GPIO.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) I2C commands.
+//
+
+#ifdef CMD_I2C_INIT_UNIT_UNIT_DEV_DEV_INTF_INTF_SCK_GPIODEV_SCK_GPIODEV_SCK_PIN_SCK_PIN_SDA_GPIODEV_SDA_GPIODEV_SDA_PIN_SDA_PIN_ADDR_WIDTH_ADDR_WIDTH_DATA_WIDTH_DATA_WIDTH_READ_TYPE_SCL_FREQ_SCL_FREQ_I2C_DELAY_I2C_DELAY_CHIP_ADDR_CHIP_ADDR
+//I2C configuration
+//init configuration
+//unit
+//unit ID
+//I2C device
+//I2C device ID
+//I2C Interface (HW INTREACE ID or I2C_INTF_SOFTWARE_DRV_ID for Software driver)
+//I2C Interface ID
+//SCK GPIO device configuration
+//SCK GPIO device (0 mean device 0, 1 mean device 1, ...)
+//SCK GPIO pin configuration
+//SCK GPIO pin id <0-37>
+//SDA GPIO device configuration
+//SDA GPIO device (0 mean device 0, 1 mean device 1, ...)
+//SDA GPIO pin configuration
+//SDA GPIO pin id <0-37>
+//I2C address width configuration
+//I2C address width (Address width :0 ~ 3 Byte)
+//I2C data width configuration
+//I2C data width (Address width :1 ~ 16 Byte)
+//I2C Read Type configuration
+//I2C Read Type (0 = Random Read / 1 = Sequential Read)
+//I2C SCL Freq configuration
+//I2C SCL Freq (0 = 100KHz / 1 = 400KHz / 2 = 50KHz / 3 = 2.5MHz)
+//I2C Delay configuration
+//I2C Delay (Software I2C usage)
+//I2C chip address
+//I2C chip address <0x0-0xFF>
+i2c init unit <UINT:unit> dev <UINT:dev> intf <UINT:intf> sck-gpiodev <UINT:sck_gpiodev> sck-pin <UINT:sck_pin> sda-gpiodev <UINT:sda_gpiodev> sda-pin <UINT:sda_pin> addr-width <UINT:addr_width> data-width <UINT:data_width> read-type <UINT:read_type> scl-freq <UINT:scl_freq> i2c-delay <UINT:i2c_delay> chip_addr <UINT:chip_addr>
+#endif
+
+#ifdef CMD_I2C_SET_UNIT_UNIT_DEV_DEV_REG_REG_DATA_DATA
+//I2C configuration
+//set configuration
+//unit
+//unit ID
+//I2C device
+//I2C device ID
+//I2C register
+//I2C register ID
+//Write data operation
+//Data
+//Data1
+//Data2
+//Data3
+i2c set unit <UINT:unit> dev <UINT:dev> reg <UINT:reg> data <UINT:data> { <UINT:data1> } { <UINT:data2> } { <UINT:data3> }
+#endif
+
+#ifdef CMD_I2C_GET_UNIT_UNIT_DEV_DEV_REG_REG
+//I2C configuration
+//get configuration
+//unit
+//unit ID
+//I2C device
+//I2C device ID
+//I2C register
+//I2C register ID
+i2c get unit <UINT:unit> dev <UINT:dev> reg <UINT:reg>
+#endif
+
+#ifdef CMD_I2C_SET_UNIT_UNIT_DEV_DEV_REG_REG_DATA_STR_LEN
+//I2C configuration
+//set configuration
+//unit
+//unit ID
+//I2C device
+//I2C device ID
+//I2C register
+//I2C register ID
+//Write data operation
+//Data_STR
+//LEN
+//LEN
+i2c set unit <UINT:unit> dev <UINT:dev> reg <UINT:reg> data_str ( <STRING:data> ) len <UINT:len>
+#endif
+

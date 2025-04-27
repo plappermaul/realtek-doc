@@ -1,0 +1,207 @@
+#
+# Copyright (C) 2016 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtk Kernel Module
+#
+
+
+#
+# include configuration file
+#
+sinclude $(SDK_CONFIG)
+
+
+#
+# path definition
+#
+PHY_HAL_MAC_DIR ?=              hal/mac
+PHY_HAL_PHY_DIR ?=              hal/phy
+HAL_COMMON_DIR ?=               hal/common
+PHY_DAL_DIR ?=                  dal
+PHY_RTK_DIR ?=                  rtk
+
+#
+# main
+#
+PHY_OBJ := \
+	$(PHY_RTK_DIR)/phy.o \
+    $(PHY_DAL_DIR)/dal_phy.o \
+	$(PHY_HAL_PHY_DIR)/phy_probe.o \
+	$(PHY_HAL_PHY_DIR)/identify.o \
+	$(PHY_HAL_PHY_DIR)/phy_common.o
+
+#MACSec PHY driver
+ifneq ($(filter y,$(CONFIG_SDK_RTL826XB)),)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/macsec/phy_macsec.o \
+		$(PHY_HAL_PHY_DIR)/macsec/aes/aes.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL8295) $(CONFIG_SDK_RTL8295R) $(CONFIG_SDK_RTL8214QF) $(CONFIG_SDK_RTL8224QF)),)
+    PHY_OBJ += \
+        $(PHY_HAL_MAC_DIR)/rtl8295.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8208D),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8208.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8208_patch.o
+else ifeq ($(CONFIG_SDK_RTL8208G),y)
+    PHY_OBJ += \
+            $(PHY_HAL_PHY_DIR)/phy_rtl8208.o
+    PHY_OBJ += \
+            $(PHY_HAL_PHY_DIR)/phy_rtl8208_patch.o
+else ifeq ($(CONFIG_SDK_RTL8208L),y)
+    PHY_OBJ += \
+            $(PHY_HAL_PHY_DIR)/phy_rtl8208.o
+    PHY_OBJ += \
+            $(PHY_HAL_PHY_DIR)/phy_rtl8208_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8212F),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8212f.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8212B),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214fb.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214fb_patch.o
+else ifeq ($(CONFIG_SDK_RTL8214B),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214fb.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214fb_patch.o
+else ifeq ($(CONFIG_SDK_RTL8214FB),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214fb.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214fb_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8218B),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8218b.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8218b_patch.o
+else ifeq ($(CONFIG_SDK_RTL8218FB),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8218b.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8218b_patch.o
+else ifeq ($(CONFIG_SDK_RTL8214FC),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8218b.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8218b_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8218D),y)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8218d.o
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8218d_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8214C),y)
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214c.o
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_rtl8214c_patch.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL8295R) $(CONFIG_SDK_RTL8214QF) $(CONFIG_SDK_RTL8224QF)),)
+    PHY_OBJ += \
+           $(PHY_HAL_PHY_DIR)/phy_rtl8295.o \
+           $(PHY_HAL_PHY_DIR)/phy_rtl8295_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8226),y)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8226.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL8226) $(CONFIG_SDK_RTL8284)),)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/nic_rtl8226/nic_rtl8226.o \
+        $(PHY_HAL_PHY_DIR)/nic_rtl8226/nic_rtl8226b.o \
+        $(PHY_HAL_PHY_DIR)/nic_rtl8226/nic_rtl8226_init.o \
+        $(PHY_HAL_PHY_DIR)/nic_rtl8226/nic_rtl8226b_init.o \
+        $(PHY_HAL_PHY_DIR)/nic_rtl8226/nic_rtl8226_port.o
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL826X) $(CONFIG_SDK_RTL826XI) $(CONFIG_SDK_RTL825X) $(CONFIG_SDK_RTL825XI) $(CONFIG_SDK_RTL825XL)),)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl826x.o \
+        $(PHY_HAL_PHY_DIR)/phy_rtl826x_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL826XB),y)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl826xb.o \
+        $(PHY_HAL_PHY_DIR)/phy_rtl826xb_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8218E),y)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8218e.o
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8218e_patch.o
+endif
+
+ifeq ($(CONFIG_SDK_EXPERIMENTAL_RTL8211FS),y)
+    PHY_OBJ += $(PHY_HAL_PHY_DIR)/phy_experimental_rtl8211fs.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8224),y)
+    PHY_OBJ += \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8224.o \
+        $(PHY_HAL_PHY_DIR)/phy_rtl8224_patch.o
+endif
+
+#
+# For customer PHY
+#
+CUST_PHY :=
+CUST_PHY_CFLAGS :=
+
+ifeq ($(CONFIG_SDK_PHY_CUST1),y)
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.custPhy1
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_cust1.o
+    EXTRA_CFLAGS += $(CUST_PHY_CFLAGS)
+endif
+ifeq ($(CONFIG_SDK_PHY_CUST2),y)
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.custPhy2
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_cust2.o
+    EXTRA_CFLAGS += $(CUST_PHY_CFLAGS)
+endif
+ifeq ($(CONFIG_SDK_PHY_CUST3),y)
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.custPhy3
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_cust3.o
+    EXTRA_CFLAGS += $(CUST_PHY_CFLAGS)
+endif
+ifeq ($(CONFIG_SDK_PHY_CUST4),y)
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.custPhy4
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_cust4.o
+    EXTRA_CFLAGS += $(CUST_PHY_CFLAGS)
+endif
+ifeq ($(CONFIG_SDK_PHY_CUST5),y)
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.custPhy5
+    PHY_OBJ += \
+    	$(PHY_HAL_PHY_DIR)/phy_cust5.o
+    EXTRA_CFLAGS += $(CUST_PHY_CFLAGS)
+endif
+PHY_OBJ += \
+	$(PHY_HAL_PHY_DIR)/phy_construct.o
+PHY_OBJ += \
+	$(HAL_COMMON_DIR)/miim.o
+PHY_OBJ += \
+    $(HAL_COMMON_DIR)/miim_debug.o
+
+

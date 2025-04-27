@@ -1,0 +1,7 @@
+mainmenu_option next_comment
+comment 'NOR SPI-F Gen.2 Supported Vendors'
+
+bool 'Micron'  CONFIG_NORSFG2_MICRON
+bool 'MXIC'    CONFIG_NORSFG2_MXIC
+
+endmenu

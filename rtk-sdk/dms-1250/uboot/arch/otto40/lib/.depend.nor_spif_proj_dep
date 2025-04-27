@@ -1,0 +1,3 @@
+nor_spif_proj_dep.o: nor_spif_proj_dep.c \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/asm/arch/nor_spi/nor_spif_register.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/asm/arch/reg_map_util.h

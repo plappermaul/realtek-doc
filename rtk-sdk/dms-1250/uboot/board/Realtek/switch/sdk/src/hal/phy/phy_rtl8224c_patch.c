@@ -1,0 +1,1 @@
+/home/jianan/project/MME/tiger2/boot/uboot_rtk_switch/u-boot-2011.12/../../../sdk/sdk_rtk_switch/rtk-sdk/src/hal/phy/phy_rtl8224c_patch.c

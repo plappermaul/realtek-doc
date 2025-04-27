@@ -1,0 +1,71 @@
+#
+# Format of this file: description<nl>variable<nl>  helptext<nl>...<nl><nl>.
+# If the question being documented is of type "choice", we list
+# only the first occurring config variable. The help texts
+# must not contain empty lines. No variable should occur twice; if it
+# does, only the first occurrence will be used by Configure. The lines
+# in a help text should be indented two positions. Lines starting with
+# `#' are ignored. To be nice to menuconfig, limit your lines to 70
+# characters. Use emacs' kfill.el to edit this file or you lose.
+#
+
+CONFIG_RTL8389
+	RTL8389 Environment
+
+CONFIG_MIPS16
+	Building the U-Boot with MIPS16 instruction set.
+
+CONFIG_FLASH_SRAM_ONLY
+	If this option is Y, U-boot does not use the DRAM chip.
+	The data/bss/partial program text (for example, the flash driver)
+	is placed in SRAM, and the static data/program text is placed in FLASH.
+
+CONFIG_AUTO_DRAM_DETECT
+	If this option is Y, the DRAM size, bus width,
+	DRAM chip number is auto-detected.
+	The U-Boot must be executed from the Flash or EEPROM.
+
+CONFIG_RTK_BOOT
+	Enable the Realtek's integrated menu.
+
+CFG_LXBUS_MHZ
+	Lexra bus frequency, it is the reference clock of the ns16550 driver.
+
+CFG_MHZ
+	CPU clock frequency
+
+CONFIG_FLASH_BOOTING_BASE
+	Flash Bootup Address
+	0x9bc00000/0x9d000000: Flash data/instruction will be cached
+	0xbfc00000/0xbd000000: Flash data/instruction will not be cached
+
+CONFIG_FLASH_SIZE_GT4MB
+	If the flash size is greater than 4 megabytes,
+    this option must be selected.
+
+CFG_MAX_FLASH_SECT_64
+	Maximal Flash Sector Number.
+
+CONFIG_CMD_DUMPREGS
+	Add dumpreg command.
+	Display CP0 registers command support.
+
+CONFIG_SYS_TEXT_BASE
+	User may need to change the U-Boot bootup location based on the DRAM size.
+	Suggestions:
+	dram_size=  8MB, U-Boot Text Base=80700000
+	dram_size= 16MB, U-Boot Text Base=80F00000
+	dram_size= 32MB, U-Boot Text Base=81F00000
+	dram_size= 64MB, U-Boot Text Base=83F00000
+        dram_size=128MB, U-Boot Text Base=87F00000
+
+CONFIG_CONSTRUCT_LOADER
+    Construct basic parameters for PHY and MAC chips. This procedure
+    was designed in both RTK's bootloader and SDK. Should turn on one of them.
+
+CONFIG_CONSTRUCT_DISABLED
+    While choosing Chip Construct (e.g. new patch), it's allowed to
+    disable itself during booting. That is, no any patch procedure
+    will be applied.
+    (A command "rtk construct" can do the Chip Construct any time
+    in uboot.)

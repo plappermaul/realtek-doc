@@ -1,0 +1,9 @@
+template_name := 9310_nor
+FILTER_OUT_OBJS := 
+mirror := $(template_name)
+#PROJECT_ON_FPGA :=
+TARGET_OUT         :=
+TARGET_LIB         := libmipsIA.o
+STANDALONE_UBOOT   := 1
+
+PREFERRED_TK_PREFIX:=/share/rlx/msdk-4.8.5-1004k-EB-3.18-u0.9.33-m32t-150818/bin/msdk-linux-

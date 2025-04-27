@@ -1,0 +1,22615 @@
+#ifndef __RTK_MAPLE_REG_STRUCT_H__
+#define __RTK_MAPLE_REG_STRUCT_H__
+
+/*
+ * Include Files
+ */
+#include <common/rt_autoconf.h>
+#include <hal/chipdef/allreg.h>
+#ifdef __BOOTLOADER__
+#include <hal/chipdef/maple/rtk_maple_uboot_feature_def.h>
+#else   /* __BOOTLOADER__ */
+#include <hal/chipdef/maple/rtk_maple_feature_def.h>
+#endif  /* __BOOTLOADER__ */
+
+/* Superset Register Enum */
+typedef enum rtk_maple_reg_list_e
+{
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERFACE)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_INTF_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII1_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_GPHY_0_4_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_GPHY_5_7_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_PHY_0_3_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_PHY_4_7_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_PHY_16_19_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_PHY_20_23_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_MODE_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_MODEL_NO_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_MODEL_NO_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_CFG_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTENDED_FEATURE_CTRL0r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERFACE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RESET)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_GLB_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_GLB_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_GLB_STS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_GLB_STS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_MAC_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG1r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RESET */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PLL___BIAS)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_CPU_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_CPU_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_CPU_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_LX_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_LX_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_LX_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_MEM_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_MEM_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_MEM_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_SW_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_SW_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_SW_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_BANDGAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_CML_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG7r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PLL___BIAS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_MEDIA_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_SALRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_TIMESTAMP_LATCHr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES01_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES23_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES4_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES5_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_FID_SALRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_ACL_HIT_31_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_INT_GPHY_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GPIO_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GPIO_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GPIO_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GPIO_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_TMr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_ALL_PORT_DOWNr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SRCr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_MEDIA_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_SALRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_TIMESTAMP_LATCHr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES01_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES23_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES4_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES5_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_FID_SALRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_ACL_HIT_31_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_INT_GPHY_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GPIO_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GPIO_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GPIO_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GPIO_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_INT_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_TMr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_ALL_PORT_DOWNr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_ACL_HIT_63_32r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_ACL_HIT_63_32r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BIST___BISR)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_GLB_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_GLB_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_GLB_RESULT2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_GLB_RESULT3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_GLB_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_GLB_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_GLB_RESULT2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_GLB_RESULT3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_START_PAUSE_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_START_PAUSE_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_DVS_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_DVS_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_DVS_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_DVS_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_RESULT2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_RESULT3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_RESULT4r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BIST___BISR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LED)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_MODE_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_P_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_SW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED0_SW_P_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED1_SW_P_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED2_SW_P_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_SW_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DIR_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DIR_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DATA_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DATA_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_INDRT_ACCESSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_LOAD_LV1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_LOAD_LV2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_LOAD_LV3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_STS_CTRL_11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_RTCT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DIR_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DIR_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DATA_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DATA_1r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LED */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HW_MISC)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BOND_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STRAP_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_RW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IO_DRIVING_ABILITY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII1_DRIVING_ABILITY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_TRIG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_CMD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR3_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR0_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR1_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR2_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SENSOR3_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TDM_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_THERMAL_METER_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_THERMAL_METER_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_THERMAL_METER_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_THERMAL_METER_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VOLTAGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYNCE_CHIP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_VERSIONr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HW_MISC */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CHP_INFORMATION)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_NAME_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHIP_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_INFOr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CHP_INFORMATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_I2C_SLV_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_IF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_MAX_LEN_CTRL_DUPLICATEDr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HALF_CHG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HALF_CHG_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_ADDR_CTRL_ALEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_ADDR_CTRL_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_DOWN_LOAD_CNTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_DOWN_LOAD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_TYPE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_DOWN_LOAD_MAC_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_DOWN_LOAD_PHY_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_DOWN_LOAD_TABLE_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEPROM_DOWN_LOAD_GROUP_MAC_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_UP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_FORCE_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_CONFIG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_POLL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_LINK_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SERDES_NWAY_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_LINK_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_LINK_MEDIA_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_LINK_SPD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_GLITE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_LINK_DUP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_TX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_RX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_EEE_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_FEFI_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_MSTR_SLV_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_MSTR_SLV_FAULT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_ACCESS_PHY_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_ACCESS_PHY_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_ACCESS_PHY_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_ACCESS_PHY_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PORT0_5_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PORT6_11_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PORT12_17_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PORT18_23_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PORT24_27_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_CPU_TAG_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_CPU_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_PCS_ABILITYr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_RESERVED_REG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_RESERVED_REG_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_RESERVED_REG_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_INT_GPHY_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_INT_GPHY_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_INT_GPHY_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_INT_GPHY_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_INT_GPHY_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_INT_GPHY_CTRL_6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_PORT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_TX_DISABLEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG40r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG45r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS01_NWAY_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS23_NWAY_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_NWAY_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_NWAY_STSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PHY___SERDES)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY33r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY34r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY50r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY51r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY67r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY68r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY84r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY85r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG0_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG1_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG2_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG3_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG4_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG5_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG6_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG7_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG8_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG9_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG10_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG11_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG12_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG13_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG14_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG15_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG16_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG17_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG18_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG19_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG20_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG21_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG22_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG23_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG24_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG25_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG26_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG27_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG28_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG29_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG30_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG31_NONEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY101r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY102r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY113r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY114r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY125r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY126r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY137r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY138r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY149r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY150r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY161r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY162r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY173r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PHY___SERDES */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RTCT)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_GLB_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_GLB_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_RESULT2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_RESULT3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_LED_RESULTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RTCT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_POWER_SAVING)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_SEL_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_SEL_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_TIMER_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_TIMER_GELITE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_CLK_STOP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_PORT_TX_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_PORT_RX_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_EEEP_PORT_TX_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_EEEP_PORT_RX_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_PORT_TX_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_PORT_RX_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TIMER_UNIT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TX_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TX_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TX_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TX_WAKE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_SLEEP_STEP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_TIMER_500M_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_TIMER_500M_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_TIMER_GIGA_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_TIMER_GIGA_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_GBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_POWER_SAVING_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_POWER_SAVING_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_POWER_SAVING_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_POWER_SAVING_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_POWER_SAVING_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG6_REGACC_PROTECTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG41r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_POWER_SAVING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PTP__PRECISION_TIME_PROTOCOL_)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_GLB_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P8_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P9_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P10_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P11_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P12_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P13_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P14_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P15_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P24_CTRL15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_P26_CTRL15r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PTP__PRECISION_TIME_PROTOCOL_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ADDRESS_TABLE_LOOKUP)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_STATIC_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_IPV6_MC_IP_CARE_BYTEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_SALRNr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_NEW_SA_FWDr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_LRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_LRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_VLAN_LRN_CONSTRTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_VLAN_LRN_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_VLAN_LRN_CONSTRT_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_IGR_P_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_AGING_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MV_INVALIDATEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_LRN_CONSTRT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG28r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ADDRESS_TABLE_LOOKUP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ADDRESS_LEARNING___FLUSH)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_TBL_FLUSH_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ADDRESS_LEARNING___FLUSH */
+#if defined(CONFIG_SDK_CHIP_FEATURE__IEEE802_1Q__VLAN)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_TAG_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_TAG_TPID_CTRL_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_ETAG_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_ITAG_TPID_CMP_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_OTAG_TPID_CMP_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_ETAG_TPID_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_ACCEPT_FRAME_TYPEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_PB_VLANr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_FWDr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_IGR_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_EGR_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PROFILEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_FID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_TAG_STS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_EGR_ITPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_EGR_OTPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_VID_EGR_XLATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_L2TBL_CNVT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_EGR_CNVT_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_PORT_CNVT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_STP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG42r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG46r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG47r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE__IEEE802_1Q__VLAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRK_MBR_CTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRK_HASH_IDX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRK_HASH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRK_SEP_TRAFFIC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG31r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION_FORWARDING_FORCE_MODE)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_ISO_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_ISO_VB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_ISO_VB_ISO_PM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG32r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION_FORWARDING_FORCE_MODE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RMA)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_SMAC_LRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_MGN_LRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET0_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET0_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET1_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET1_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_USR_DEF_CTRL_SET5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_PORT_BPDU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_PORT_PTP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_PORT_LLDP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_BPDU_FLD_PMSKr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_NIC___DMA)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_RX_BASE_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_RX_CUR_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_TX_BASE_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_TX_CUR_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_INTR_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_RX_RING_SIZEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_RX_RING_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_PKT_TX_FLTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_PKT_RX_FLTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMA_IF_PHYSICAL_ADDR_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG48r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_NIC___DMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_LB_TICK_TKN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_PORT_BC_EXCEED_FLGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_PORT_MC_EXCEED_FLGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_PORT_UC_EXCEED_FLGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_PORT_UCr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_PORT_MCr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_PORT_BCr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_BURSTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_CTRL_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG33r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BANDWIDTH_CONTROL__INGRESS_EGRESS_)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_LB_THr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_PORT_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_QUEUE_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_WT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_EXCEED_FLGr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG36r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BANDWIDTH_CONTROL__INGRESS_EGRESS_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_METER_MARKER)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_BYTE_LB_THR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_PKT_LB_THR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METER_ENTRY_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG22r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_METER_MARKER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_PORT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_IPV6_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_ICMP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_TCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_SMURF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_ARP_INVLD_PORT_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_PRVNT_ARP_GRAT_PORT_ACTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIRRORING)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_SPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_DPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_RSPAN_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_RSPAN_VLAN_CTRL_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_RSPAN_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_RSPAN_RX_TAG_RM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_RSPAN_RX_TAG_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_IGR_BWCTRL_BYPASS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_SAMPLE_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG34r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG43r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG49r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIRRORING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STATISTIC_COUNTERS)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER22r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER23r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER24r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER25r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER26r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER28r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER30r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER31r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER32r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER33r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER34r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER35r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER36r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER37r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PRVTE_DROP_COUNTER38r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PORT_STANDARD_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_PORT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STAT_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STATISTIC_COUNTERS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE_THRESHOLD)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_GLB_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_GLB_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_GLB_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_GLB_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_IGR_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_EGR_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_GRANTEE_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_EGR_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_ACT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_GLB_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_GLB_PAGE_PEAKCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_PAGE_CURCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_PAGE_PEAKCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_EGR_PAGE_CNT0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_EGR_PAGE_CNT1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_EGR_PAGE_CNT2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_EGR_PAGE_CNT3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_PQ_EGR_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_EGR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_IGRDROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_P_IGRQ_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_Q_IGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_PORT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_KNUC_FC_MODE_DROP_PKT_TYPEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE_THRESHOLD */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SC_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SC_P_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_ALGO_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AUTO_SWQRST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SRED_P_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SRED_Q_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SRED_PQ_THR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG19r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_QUEUE_MANAGEMENT)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QM_INTPRI2QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QM_PKT2CPU_INTPRI_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QM_PKT2CPU_INTPRI_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QM_PKT2CPU_INTPRI_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QM_PKT2CPU_INTPRI_MAPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_IGR_Q_MAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG24r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_QUEUE_MANAGEMENT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_IPRI_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_OPRI_DEI0_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_OPRI_DEI1_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_DSCP_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_RSPAN_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_PORT_PRIr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_PORT_PRI_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_PORT_OTAG_PRIr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_PORT_OTAG_PRI_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_PORT_TBL_IDX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_SEL_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_DSCP_INVLD_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_DSCP_INVLD_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG50r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMARKING)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMK_PORT_RMK_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMK_PORT_OPRI_SRC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMK_IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMK_OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMK_DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CRC_PORT_RC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CRC_CPU_RC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG51r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG52r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMARKING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SCHEDULING)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_LB_TICK_TKN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_LB_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_P_EGR_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_Q_EGR_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_Q_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_P_TYPE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG10r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SCHEDULING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ETHERNET_AV)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_PORT_CLASS_A_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_PORT_CLASS_B_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_PORT_CLASS_A_EN_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_PORT_CLASS_B_EN_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_CTRL_ALEr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AVB_CTRL_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG38r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG53r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG54r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ETHERNET_AV */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_AND_EGRESS_ACL)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_BLK_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_BLK_PWR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_BLK_TMPLTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TMPLTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_BLK_GROUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_MV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_MV_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_CLR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_PORT_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_GLB_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG25r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_AND_EGRESS_ACL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_SPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_IP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_IP_RNGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RRCP)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RRCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RRCP_AUTH_KEY_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RRCP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RLPP_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CODE_PROTECTION)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CODE_PROTECT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CODE_PROTECT_STATEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CODE_PROTECTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER_HSB)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA17r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA18r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA19r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA20r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_DATA22r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER_HSB */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HSM)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_DATA16r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HSM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DATA8r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PORT_TX_GRP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PORT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_PKT_CTRL_7r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLDP_RLPP_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLDP_RLPP_TAG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLDP_SEED_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLDP_SEED_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLDP_ID_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLDP_ID_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLPP_RS_PRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_RLPP_P0_PRI_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TEST_MODE)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEST_MODE_ALE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEST_MODE_MII_PORT_TXr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEST_MODE_MII_PORT_RXr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEST_MODE_MII_RX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEST_MODE_MII_TX_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TEST_MODE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L3_ROUTING)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ROUTING_EXCPT_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L3_ROUTING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_L2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_L2_METHOD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_L2_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_DATA_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_DATA_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_MULTEX_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACCESS_MULTEX_CTRL_1r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SPECIAL_TRAP)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_TRAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_TRAP_IGMP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_TRAP_EAPOL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_TRAP_ARP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_SWITCH_IPV4_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_TRAP_IPV6_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPCL_TRAP_SWITCH_MAC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG26r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SPECIAL_TRAP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PARSER_FIELD_SELTOR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PARSER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PARSER_DROP_REASONr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG44r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MISC)
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_4r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_5r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_DBG_6r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_PORT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG39r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INGR_DBG_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INGR_DBG_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INGR_DBG_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INGR_DBG_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STATUS0r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STATUS1r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STATUS2r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG35r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG37r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REF_TIME_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REF_CLK_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMY_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODE_DEFINE_CTLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MISC */
+
+    MAPLE_REG_LIST_END,
+} rtk_maple_reg_list_t;
+
+
+/* Internal Register Enum */
+typedef enum rtk_int_maple_reg_list_e
+{
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERFACE)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_GMII_INTF_SEL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_GMII_INTF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RGMII1_INTF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INT_GPHY_0_4_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INT_GPHY_5_7_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_PHY_0_3_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_PHY_4_7_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_PHY_16_19_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_PHY_20_23_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_INTF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_INTF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_MODE_SEL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_MODEL_NO_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_MODEL_NO_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_CFG_REG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXTENDED_FEATURE_CTRL0_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERFACE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RESET)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RST_GLB_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RST_GLB_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RST_GLB_STS_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RST_GLB_STS_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_MAC_RST_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG1_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RESET */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PLL___BIAS)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_CPU_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_CPU_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_CPU_MISC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_LX_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_LX_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_LX_MISC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_MEM_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_MEM_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_MEM_MISC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_SW_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_SW_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_SW_MISC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_BANDGAP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PLL_CML_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG7_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PLL___BIAS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_GLB_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_PORT_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_PORT_MEDIA_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_PORT_SALRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_PORT_TIMESTAMP_LATCH_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_SERDES01_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_SERDES23_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_SERDES4_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_SERDES5_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_FID_SALRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_ACL_HIT_31_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_INT_GPHY_INTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_GPIO_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_GPIO_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_GPIO_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_GPIO_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_TM_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_ALL_PORT_DOWN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_GLB_SRC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_PORT_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_PORT_MEDIA_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_PORT_SALRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_PORT_TIMESTAMP_LATCH_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_SERDES01_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_SERDES23_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_SERDES4_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_SERDES5_LINK_STS_CHG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_FID_SALRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_ACL_HIT_31_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_INT_GPHY_INTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_GPIO_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_GPIO_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_GPIO_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_GPIO_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_GPIO_INT_MODE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_TM_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_ALL_PORT_DOWN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IMR_ACL_HIT_63_32_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ISR_ACL_HIT_63_32_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BIST___BISR)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_GLB_RESULT0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_GLB_RESULT1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_GLB_RESULT2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_GLB_RESULT3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_BIST_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_BIST_GLB_RESULT0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_BIST_GLB_RESULT1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_BIST_GLB_RESULT2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_BIST_GLB_RESULT3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_START_PAUSE_RESULT0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_START_PAUSE_RESULT1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_TEST_RESUME0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DRF_TEST_RESUME1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_DVS_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_DVS_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_DVS_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BIST_DVS_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BISR_RESULT0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BISR_RESULT1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BISR_RESULT2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BISR_RESULT3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BISR_RESULT4_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BIST___BISR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LED)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_MODE_SEL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_MODE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_P_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_SW_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED0_SW_P_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED1_SW_P_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED2_SW_P_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_SW_P_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_GPIO_DIR_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_GPIO_DIR_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_GPIO_DATA_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_GPIO_DATA_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_GPIO_INDRT_ACCESS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_LOAD_LV1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_LOAD_LV2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_LOAD_LV3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_STS_CTRL_11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_LED_RTCT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXTRA_GPIO_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXTRA_GPIO_DIR_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXTRA_GPIO_DIR_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXTRA_GPIO_DATA_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXTRA_GPIO_DATA_1_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LED */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HW_MISC)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_BOND_DBG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STRAP_DBG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INT_RW_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INT_MODE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IO_DRIVING_ABILITY_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RGMII1_DRIVING_ABILITY_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_TRIG_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_CMD_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DATA_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR0_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR1_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR2_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR3_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR0_RESULT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR1_RESULT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR2_RESULT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPD_SENSOR3_RESULT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TDM_CFG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_THERMAL_METER_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_THERMAL_METER_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_THERMAL_METER_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_THERMAL_METER_RESULT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VOLTAGE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SYNCE_CHIP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_MODE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_SUB_MODE0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_SUB_MODE1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_SUB_MODE2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_SUB_MODE3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_SUB_MODE4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_SUB_MODE5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EXT_VERSION_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HW_MISC */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CHP_INFORMATION)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MODEL_NAME_INFO_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_CHIP_INFO_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MODEL_INFO_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CHP_INFORMATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_I2C_SLV_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_IF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_MAX_LEN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_MAX_LEN_CTRL_DUPLICATED_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_PORT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HALF_CHG_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HALF_CHG_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_ADDR_CTRL_ALE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_ADDR_CTRL_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_DOWN_LOAD_CNTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_DOWN_LOAD_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_TYPE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_DOWN_LOAD_MAC_POS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_DOWN_LOAD_PHY_POS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_DOWN_LOAD_TABLE_POS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEPROM_DOWN_LOAD_GROUP_MAC_POS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PHY_UP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_FORCE_MODE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_CONFIG_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_POLL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_LINK_FAIL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SERDES_NWAY_FAIL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_LINK_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_LINK_MEDIA_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_LINK_SPD_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_GLITE_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_LINK_DUP_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_TX_PAUSE_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_RX_PAUSE_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_EEE_ABLTY_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_FEFI_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_MSTR_SLV_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_MSTR_SLV_FAULT_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_ACCESS_PHY_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_ACCESS_PHY_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_ACCESS_PHY_CTRL_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_ACCESS_PHY_CTRL_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_PORT0_5_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_PORT6_11_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_PORT12_17_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_PORT18_23_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SMI_PORT24_27_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_CPU_TAG_ID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_CPU_PORT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_P8_PCS_ABILITY_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_P8_RESERVED_REG_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_P8_RESERVED_REG_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_P8_RESERVED_REG_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_INT_GPHY_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_INT_GPHY_CTRL_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_INT_GPHY_CTRL_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_INT_GPHY_CTRL_4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_INT_GPHY_CTRL_5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_INT_GPHY_CTRL_6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_PORT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MAC_TX_DISABLE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG40_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG45_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS01_NWAY_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS23_NWAY_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_NWAY_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_NWAY_STS_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PHY___SERDES)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY33_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY34_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY50_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY51_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY67_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY68_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY84_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY85_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG0_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG1_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG2_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG3_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG4_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG5_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG6_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG7_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG8_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG9_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG10_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG11_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG12_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG13_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG14_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG15_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG16_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG17_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG18_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG19_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG20_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG21_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG22_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG23_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG24_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG25_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG26_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG27_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG28_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG29_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG30_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG31_NONE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY101_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY102_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS0_FIB_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY113_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY114_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS1_FIB_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY125_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY126_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS2_FIB_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY137_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY138_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS3_FIB_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY149_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY150_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS4_FIB_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY161_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_EXT_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY162_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS5_FIB_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SDS_DUMMY173_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PHY___SERDES */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RTCT)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_GLB_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_GLB_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_TIMEOUT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_MASK_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_RESULT1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_RESULT2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_RESULT3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RTCT_LED_RESULT_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RTCT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_POWER_SAVING)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_TX_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_TX_SEL_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_TX_SEL_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_TX_TIMER_100M_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_TX_TIMER_GIGA_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_TX_TIMER_GELITE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_CLK_STOP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_PORT_TX_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_PORT_RX_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_EEEP_PORT_TX_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEE_EEEP_PORT_RX_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_PORT_TX_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_PORT_RX_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_TIMER_UNIT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_TX_100M_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_TX_500M_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_TX_GIGA_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_TX_WAKE_TIMER_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_RATE_100M_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_RATE_500M_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_RATE_GIGA_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_SLEEP_STEP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_TIMER_100M_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_TIMER_500M_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_TIMER_500M_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_TIMER_GIGA_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_TIMER_GIGA_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_RX_IDLE_TIMER_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_TX_IDLE_TIMER_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_GBL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EEEP_PORT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_POWER_SAVING_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_POWER_SAVING_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_POWER_SAVING_CTRL_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_POWER_SAVING_CTRL_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_POWER_SAVING_CTRL_4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG6_REGACC_PROTECT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG41_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_POWER_SAVING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PTP__PRECISION_TIME_PROTOCOL_)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_GLB_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P8_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P9_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P10_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P11_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P12_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P13_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P14_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P15_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P24_CTRL15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PTP_P26_CTRL15_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PTP__PRECISION_TIME_PROTOCOL_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ADDRESS_TABLE_LOOKUP)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_LM_ACT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_STATIC_MV_ACT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_IPV6_MC_IP_CARE_BYTE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_FLD_PMSK_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_SALRN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_NEW_SA_FWD_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_LRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_LRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_VLAN_LRN_CONSTRT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_VLAN_LRN_CONSTRT_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_VLAN_LRN_CONSTRT_ACT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_IGR_P_FLTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_AGING_OUT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_MV_ACT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_PORT_MV_INVALIDATE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_LRN_CONSTRT_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG28_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ADDRESS_TABLE_LOOKUP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ADDRESS_LEARNING___FLUSH)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_L2_TBL_FLUSH_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ADDRESS_LEARNING___FLUSH */
+#if defined(CONFIG_SDK_CHIP_FEATURE__IEEE802_1Q__VLAN)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_TAG_TPID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_TAG_TPID_CTRL_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_ETAG_TPID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_ITAG_TPID_CMP_MSK_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_OTAG_TPID_CMP_MSK_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_ETAG_TPID_CMP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_ACCEPT_FRAME_TYPE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_PB_VLAN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_FWD_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_IGR_FLTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_EGR_FLTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PROFILE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_FID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_TAG_STS_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_EGR_ITPID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_EGR_OTPID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RNG_CHK_VID_EGR_XLATE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_L2TBL_CNVT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_EGR_CNVT_TBL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_PORT_CNVT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_VLAN_STP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG42_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG46_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG47_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE__IEEE802_1Q__VLAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TRK_MBR_CTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TRK_HASH_IDX_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TRK_HASH_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TRK_SEP_TRAFFIC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG31_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION_FORWARDING_FORCE_MODE)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PORT_ISO_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PORT_ISO_VB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PORT_ISO_VB_ISO_PM_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG32_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION_FORWARDING_FORCE_MODE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RMA)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_SMAC_LRN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_MGN_LRN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET0_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET0_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET1_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET1_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_USR_DEF_CTRL_SET5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_PORT_BPDU_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_PORT_PTP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_PORT_LLDP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMA_BPDU_FLD_PMSK_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_NIC___DMA)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_RX_BASE_DESC_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_RX_CUR_DESC_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_TX_BASE_DESC_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_TX_CUR_DESC_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_INTR_MSK_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_INTR_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_PKT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_RX_RING_SIZE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_RX_RING_CNTR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_PKT_TX_FLTR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_PKT_RX_FLTR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMA_IF_PHYSICAL_ADDR_MSK_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG48_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_NIC___DMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_LB_TICK_TKN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_PORT_BC_EXCEED_FLG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_PORT_MC_EXCEED_FLG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_PORT_UC_EXCEED_FLG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_PORT_UC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_PORT_MC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_PORT_BC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_BURST_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STORM_CTRL_LB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG33_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BANDWIDTH_CONTROL__INGRESS_EGRESS_)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_LB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_LB_TH_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_PORT_RATE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_QUEUE_RATE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_WT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_IGR_BWCTRL_EXCEED_FLG_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG36_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BANDWIDTH_CONTROL__INGRESS_EGRESS_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_METER_MARKER)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_BYTE_LB_THR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_PKT_LB_THR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_METER_ENTRY_CTRL7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG22_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_METER_MARKER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_PORT_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_ACT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_IPV6_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_ICMP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_TCP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_SMURF_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_ARP_INVLD_PORT_ACT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ATK_PRVNT_ARP_GRAT_PORT_ACT_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIRRORING)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_MODE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_QID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_SPM_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_DPM_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_RSPAN_VLAN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_RSPAN_VLAN_CTRL_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_RSPAN_TX_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_RSPAN_RX_TAG_RM_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_RSPAN_RX_TAG_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_IGR_BWCTRL_BYPASS_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MIR_SAMPLE_RATE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG34_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG43_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG49_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIRRORING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STATISTIC_COUNTERS)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER22_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER23_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER24_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER25_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER26_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER28_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER30_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER31_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER32_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER33_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER34_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER35_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER36_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER37_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PRVTE_DROP_COUNTER38_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PORT_STANDARD_MIB_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_RST_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_PORT_RST_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_STAT_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STATISTIC_COUNTERS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE_THRESHOLD)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_DROP_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_GLB_HI_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_GLB_LO_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_GLB_FCOFF_HI_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_GLB_FCOFF_LO_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_IGR_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_EGR_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_HI_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_LO_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_FCOFF_HI_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_FCOFF_LO_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_GRANTEE_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_EGR_DROP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_EGR_DROP_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_Q_EGR_DROP_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_ACT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_GLB_PAGE_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_PAGE_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_GLB_PAGE_PEAKCNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_PAGE_CURCNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_PAGE_PEAKCNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_PAGE_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_PKT_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_EGR_PAGE_CNT0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_EGR_PAGE_CNT1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_EGR_PAGE_CNT2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_EGR_PAGE_CNT3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_PQ_EGR_PKT_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_EGR_PAGE_CNT_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_P_IGRDROP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_P_IGRQ_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_FC_Q_IGR_DROP_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_PORT_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_KNUC_FC_MODE_DROP_PKT_TYPE_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE_THRESHOLD */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SC_P_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SC_P_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DROP_ALGO_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AUTO_SWQRST_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SRED_P_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SRED_Q_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SRED_PQ_THR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG19_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_QUEUE_MANAGEMENT)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_QM_INTPRI2QID_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_QM_PKT2CPU_INTPRI_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_QM_PKT2CPU_INTPRI_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_QM_PKT2CPU_INTPRI_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_QM_PKT2CPU_INTPRI_MAP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_P_IGR_Q_MAP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG24_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_QUEUE_MANAGEMENT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_IPRI_REMAP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_OPRI_DEI0_REMAP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_OPRI_DEI1_REMAP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_DSCP_REMAP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_RSPAN_REMAP_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_PORT_PRI_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_PORT_PRI_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_PORT_OTAG_PRI_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_PORT_OTAG_PRI_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_PORT_TBL_IDX_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_SEL_TBL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_DSCP_INVLD_CTRL0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PRI_DSCP_INVLD_CTRL1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG50_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMARKING)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMK_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMK_PORT_RMK_EN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMK_PORT_OPRI_SRC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMK_IPRI_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMK_OPRI_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RMK_DSCP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_CRC_PORT_RC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_CRC_CPU_RC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG51_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG52_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMARKING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SCHEDULING)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_LB_TICK_TKN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_LB_THR_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_LB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_P_EGR_RATE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_Q_EGR_RATE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_Q_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SCHED_P_TYPE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG10_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SCHEDULING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ETHERNET_AV)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_PORT_CLASS_A_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_PORT_CLASS_B_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_PORT_CLASS_A_EN_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_PORT_CLASS_B_EN_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_CTRL_ALE_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_AVB_CTRL_MAC_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG38_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG53_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG54_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ETHERNET_AV */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_AND_EGRESS_ACL)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_BLK_LOOKUP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_BLK_PWR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_BLK_TMPLTE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_TMPLTE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_BLK_GROUP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_MV_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_MV_LEN_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_CLR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_PORT_LOOKUP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ACL_GLB_LOOKUP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG25_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_AND_EGRESS_ACL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RNG_CHK_SPM_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RNG_CHK_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RNG_CHK_IP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RNG_CHK_IP_RNG_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RRCP)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RRCP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RRCP_AUTH_KEY_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RRCP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_RLDP_RLPP_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CODE_PROTECTION)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_CODE_PROTECT_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_CODE_PROTECT_STATE_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CODE_PROTECTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER_HSB)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA17_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA18_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA19_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA20_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSB_DATA22_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER_HSB */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HSM)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM0_DATA16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM1_DATA16_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA8_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA9_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA10_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA11_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA12_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA13_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA14_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA15_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSM2_DATA16_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HSM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_HSA_DATA8_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PORT_TX_GRP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PORT_STS_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_PKT_CTRL_7_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLDP_RLPP_GLB_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLDP_RLPP_TAG_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLDP_SEED_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLDP_SEED_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLDP_ID_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLDP_ID_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLPP_RS_PRI_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPG_RLPP_P0_PRI_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TEST_MODE)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TEST_MODE_ALE_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TEST_MODE_MII_PORT_TX_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TEST_MODE_MII_PORT_RX_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TEST_MODE_MII_RX_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TEST_MODE_MII_TX_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TEST_MODE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L3_ROUTING)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_ROUTING_EXCPT_CTRL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L3_ROUTING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_L2_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_L2_METHOD_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_L2_DATA_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_DATA_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_CTRL_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_DATA_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_MULTEX_CTRL_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_TBL_ACCESS_MULTEX_CTRL_1_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SPECIAL_TRAP)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_TRAP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_TRAP_IGMP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_TRAP_EAPOL_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_TRAP_ARP_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_SWITCH_IPV4_ADDR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_TRAP_IPV6_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_SPCL_TRAP_SWITCH_MAC_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG26_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SPECIAL_TRAP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PARSER_FIELD_SELTOR_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PARSER_CTRL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_PARSER_DROP_REASON_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG44_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MISC)
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_4_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_5_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_EFUSE_DBG_6_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_PORT_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG39_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INGR_DBG_REG0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INGR_DBG_REG1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INGR_DBG_REG2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_INGR_DBG_REG3_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG27_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_STATUS0_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_STATUS1_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DEBUG_STATUS2_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG21_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG35_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG37_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_REF_TIME_EN_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_REF_CLK_SEL_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_DMY_REG29_RTL8380,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    INT_MAPLE_MODE_DEFINE_CTL_RTL8380,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MISC */
+
+    INT_MAPLE_REG_LIST_END,
+} rtk_int_maple_reg_list_t;
+
+
+typedef enum rtk_maple_regField_list_e
+{
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RESERVEDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UART1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_JTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_IF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_G2G_GSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_G2G_GCFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGTXC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGCFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_SEL_RGCRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGMSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGIBSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGTXC_DLY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGCFG_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_SEL_RGCRS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGMSTS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RG2G_RGIBSTS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY4_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY4_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY4_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY4_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY4_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY4_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY3_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY3_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY3_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY3_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY3_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY3_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY2_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY2_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY2_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY2_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY2_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY2_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY1_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY1_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY1_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY1_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY1_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY1_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY0_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY0_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY0_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY0_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY0_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY0_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY7_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY7_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY7_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY7_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY7_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY7_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY6_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY6_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY6_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY6_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY6_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY6_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY5_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY5_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY5_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY5_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY5_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPHY5_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FRC_REG4_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_SILENT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_AUTODET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_AUTONEG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_PDOWN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C3_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C3_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C3_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C3_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C3_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C3_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C2_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C2_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C2_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C2_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C2_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C2_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C1_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C1_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C1_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C1_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C1_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C1_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C0_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C0_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C0_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C0_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C0_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S4_C0_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FRC_REG4_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_SILENT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_AUTODET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_AUTONEG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_PDOWN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C1_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C1_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C1_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C1_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C1_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C1_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C0_SEL_COL_FROM_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C0_SEL_NEGRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C0_SEL_NEGTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C0_SEL_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C0_SEL_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_S5_C0_SEL_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_NUMBERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTK_OUIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REVISION_NUMBERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_I2C_GPIO_IF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PROTECT_CIRCUIT_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_EGVLAN_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_UNTAG_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_MSTI_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ROUTING_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_LOG_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_ACL_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_VLAN_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_MC_PMSK_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_L2_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_MEM_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_PHY_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_SERDES_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_NIC_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_Q_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CFG_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HW_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_AFERSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_RST_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_DBGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CLK_M_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CHIP_CLK_INIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_PLL_SC_MUXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_IF_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_SW_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_MEM_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_LXB_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_CPU_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_MEM_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_LXB_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_CPU_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_DIVN2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_DIVN3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_DIVN2_SELBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_DIVN2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_DIVN3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_DIVN2_SELBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LX_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_DIVN2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_DIVN3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_DIVN2_SELBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEM_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_DIVN2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_REG1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IBIAS_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_BGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPIF_4B_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEL_SPIF_4B_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PLL_REG0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CKREFBUF_S0S1_PWDBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CKREFBUF_S0S1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SWITCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_LINK_STS_CHG_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_MEDIA_CHG_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_SALRN_CONSTRT_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_PORT_TIMESTAMP_LATCH_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES01_LINK_STS_C7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES23_LINK_STS_C7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES4_LINK_STS_C3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SERDES5_LINK_STS_C1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_FID_SALRN_CONSTRT_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_ACL_HIT_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_INT_GPHY_INTR_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GPIO_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_GPIO_54_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_EXTRA_GPIO_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_EXTRA_GPIO_36_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_TM_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_TM_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SYSCLK_GATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_SYSCLK_EXITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SYSCLK_GATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_TMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_EXTRA_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_INT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_ACL_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_FID_SALRN_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_TIMESTAMP_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SERDES5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SERDES4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SERDES23f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SERDES01f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_SALRN_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_MEDIA_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GLB_LINK_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_LINK_STS_CHG_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_MEDIA_CHG_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_SALRN_CONSTRT_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_PORT_TIMESTAMP_LATCH_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES01_LINK_STS_C7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES23_LINK_STS_C7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES4_LINK_STS_C3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SERDES5_LINK_STS_C1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_FID_SALRN_CONSTRT_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_ACL_HIT_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_INT_GPHY_INTR_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GPIO_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_GPIO_54_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_EXTRA_GPIO_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_EXTRA_GPIO_36_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_INT_PULSE_INTERVALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_TM_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_TM_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SYSCLK_GATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_SYSCLK_EXITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IMR_ACL_HIT_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISR_ACL_HIT_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_DMY_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_DRF_BIST_MODE_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_DRF_BIST_MODE_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_DRF_BIST_MODE_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_BIST_MODE_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_BIST_MODE_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_BIST_MODE_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_BISR_HVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_BISR_LVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BCAM_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_TCAM_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_BIST_MODE_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SOC_SPRAM_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_SC2C_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_L2_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_VLAN_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPAN_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MLT_TBL_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOGCNT_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACT_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALL_TXQ_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_HSA_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HEADTABLE_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_FIFO_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_FIFO_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORTGROUP_TXFIFO_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORTGROUP_RXFIFO_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIBCNT_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_RESULT0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_RESULT1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_RESULT2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIST_RESULT3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_DMY_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RSTN_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RSTN_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RSTN_PBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RSTN_TXQHSAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_TCAM_DRF_TCAMSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_DRF_TCAMSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BCAM_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_TCAM_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TCAM_DRF_BIST_MODE0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TXQHSA_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LUT_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SOC_SPRAM_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_SC2C_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_L2_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_VLAN_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPAN_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MLT_TBL_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOGCNT_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACT_TBL_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALL_TXQ_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_HSA_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HEADTABLE_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_FIFO_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_FIFO_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORTGROUP_TXFIFO_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORTGROUP_RXFIFO_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIBCNT_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RESULT0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RESULT1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RESULT2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_BIST_RESULT3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_START_PAUSE0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_START_PAUSE1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TXQHSA_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_SC2C_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_L2_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_VLAN_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPAN_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MLT_TBL_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOGCNT_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACT_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TXQ_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_HSA_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HEADTABLE_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_FIFO_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_FIFO_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PG_TXFIFO_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PG_RXFIFO_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIB_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME_BCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME_VLAN_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRF_TEST_RESUME_ACL_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SOC_SPRAM_CTRL_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIB0_2_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIB0_2_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIB3_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIB3_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PG0_2_TRXFIFO_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PG0_2_TRXFIFO_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PG3_TRXFIFO_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PG3_TRXFIFO_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_FIFO_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_FIFO_DVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_FIFO_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_FIFO_DVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HEADTABLE_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HEADTABLE_DVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_HSA_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQ_HSA_DVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRXQ_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRXQ_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACT_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACT_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOGCNT_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOGCNT_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MLT_TBL_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MLT_TBL_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPAN_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPAN_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_VLAN_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_VLAN_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_L2_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_L2_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_SC2C_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENCAP_SC2C_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SOC_SPRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SOC_SPRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DVS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_DVS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LUT_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LUT_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_OUT_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_OUT_HSAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_OUT_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_FAIL_HSAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_FAIL_PBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_FAIL_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_FAIL_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_REPAIRED_HSAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_REPAIRED_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BISR_REPAIRED_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_FAIL_ETY_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_FAIL_ADDR2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_FAIL_ADDR1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_HV_LV_CMP_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_FAIL_ADDR3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BLINK_TIME_SEL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ASIC_CFG_8231f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BUZZER_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BUZZER_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BUZZER_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BLINK_TIME_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_8231_GPIO_EN_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_LOAD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYS_LED_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYS_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STEP2_PWR_ON_LED_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STEP1_PWR_ON_LED_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COMBO_PORT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_MDC_DUTY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P27_24_LED_MASK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_MASK_SEL_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PWR_ON_BLINK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P27_24_LED2_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P27_24_LED1_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P27_24_LED0_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_0_LED2_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_0_LED1_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_0_LED0_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_P_EN_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CTRL_GLB_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_GLB_LED_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CTRL_LED0_EN_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CTRL_LED1_EN_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_CTRL_LED2_EN_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_P_LED2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_P_LED1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_P_LED0_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DIR_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DIR_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DATA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_GPIO_DATA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_PHY_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LV1_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LV2_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LV3_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT9_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT8_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT7_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT6_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT5_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT4_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT3_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT2_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT1_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT0_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT19_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT18_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT17_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT16_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT15_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT14_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT13_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT12_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT11_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT10_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT23_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT22_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT21_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT20_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT9_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT8_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT7_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT6_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT5_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT4_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT3_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT2_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT1_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT0_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT19_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT18_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT17_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT16_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT15_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT14_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT13_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT12_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT11_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT10_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT23_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT22_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT21_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT20_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT9_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT8_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT7_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT6_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT5_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT4_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT3_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT2_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT1_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT0_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT19_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT18_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT17_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT16_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT15_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT14_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT13_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT12_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT11_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT10_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT23_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT22_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT21_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT20_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT31_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT30_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT29_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT28_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT27_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT26_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT25_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT24_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT31_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT30_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT29_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT28_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT27_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT26_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT25_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT24_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT31_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT30_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT29_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT28_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT27_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT26_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT25_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT24_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SLOT0_TIME_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SLOT1_TIME_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SLOT2_TIME_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEST_STATE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PARALLEL_TEST_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PARALLEL_TEST_BLINKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCAN_TEST_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_RESULT_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RTCT_LED2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RTCT_LED1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RTCT_LED0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MDC_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYNC_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DIR_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DIR_36_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DATA_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTRA_GPIO_DATA_36_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BO_24_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STRP_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_WRITE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_READ_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_INTF_MODE_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_INTF_MODE_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SLV_SPI_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SLV_SPI_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MDX_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MDX_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MDX_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MDX_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_DA_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LED_DA_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII_DP_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII_DN_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RGMII_RXC_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GMII_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPI_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPI_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPI_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPI_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ACCESS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ADDR_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_TIMEOUT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_TIMEOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_TMRFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_SA_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DSS_RST_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WIRE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DATA_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WSORT_GOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COUNT_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TDM_MODE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TDM_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TM_LOWCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TM_LOW_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TM_HIGHCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TM_HIGH_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REVERSE_CMP_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TM_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PWRON_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COMPARE_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SAMPLE_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DATA_SAMPLEDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DATA_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TEMP_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VOLCTRL_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FIBER_SYNCE125_L_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_SUB_MODE5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_CHAR_1STf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_CHAR_2NDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_CHAR_3RDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHIP_INFO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHIP_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_I2C_DEVICE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_I2C_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAX_LEN_TAG_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAX_LEN_100M_10M_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAX_LEN_1G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PADDING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_IOL_LEN_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_IOL_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENFWDPAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IOL_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LIMIT_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PADDING_UND_SIZE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LATE_COLI_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IOL_MAX_RETRY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BKOFF_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BKOFF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HALF_48PASS1_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BKPRES_MTHD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEFER_IPG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPG_CMPSTN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COL_PKT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_FIFO_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ENTRY_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_FIFO_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ENTRY_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RXER_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_TX_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PASS_ALL_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRECOLLAT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LATE_COLI_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_CHK_CRC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BKPRES_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TXRX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHG_DUP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RXDVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REF_RX_CNGSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FULL_DET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_CHG_DUPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COL_CUR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_MAC_ADDR_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SW_MAC_ADDR_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCK_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEPOM_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEPROM_VALID_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEPROM_COMPLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NOEEPROMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEPROM_ADDR_SIZE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TABLE_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TABLE_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GROUP_MAC_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GROUP_MAC_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIS_PHYAUTO_UPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINKUP_DELAY_1000M_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINKUP_DELAY_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_PATCH_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC26_HISGMII_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC24_HISGMII_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEDIA_CONV_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_INTF_SEL_15_8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INBD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_ACCESS_27_24f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_ACCESS_23_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EX_PHY_MAN_24_27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EX_PHY_REG_ACCS_24_27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EX_PHY_MAN_23_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EX_PHY_REG_ACCS_23_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_STS_CHG_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_DISEEE_ALLPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_PHY_POWER_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_RETRY_SPDN_GLITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_EN_MY_SOFTNPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_RETRY_SPDN_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_SPDN_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_EN_RETRY_SPD_DNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_EN_2PAIR_SPD_DNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_BYPASS_GLITE_UP1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_MASTER_SLV_MANUAL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_MASTER_SLV_MANUAL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_PORT_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_EEEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_GLITE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEDIA_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_MASTER_SLV_MANUAL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_MASTER_SLV_MANUAL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_PORT_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_1000M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_100M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_FORCE_FC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NWAY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FORCE_LINK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_FORCE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_CONFIG_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_CONFIG_MASK_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_POLL_MASK_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMI_LINK_FAIL_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SERDES_NWAY_FAIL_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINK_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MEDIA_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPD_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLITE_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUP_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PAUSE_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PAUSE_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_ABLTY_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FEFI_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MSTR_SLV_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MSTR_SLV_FAULT_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_ADDR_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PARK_PAGE_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAIN_PAGE_11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INDATA_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DATA_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MMD_DEVAD_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MMD_REG_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT5_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT4_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT3_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT2_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT1_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT0_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT11_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT10_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT9_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT8_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT7_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT6_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT17_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT16_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT15_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT14_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT13_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT12_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT23_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT22_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT21_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT20_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT19_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT18_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT27_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT26_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT25_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT24_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_TAG_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_PCS_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_RESERVED_REG_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_RESERVED_REG_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_RESERVED_REG_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PCS_OCP_TIMEOUT_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PCS_BYPS_PDNPHY_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PCS_COL2RXDV_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PCS_PHY_BRD_MODE_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PCS_BRD_PHYADDR_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PERI_CMD_RDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PERI_CMD_WRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PERI_ADDR0_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PERI_INV_EN0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PERI_WRBUS0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_POLL_PERIOD_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PCSXF_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_RXFIFO_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MSK_MDI_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY15_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY14_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY13_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY12_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY11_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY10_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY9_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PHY8_RDY4PATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_HOTCMD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_HOTCMD_PRD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EN_RTT1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EN_RTT2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GPIO_INTF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIS_PORT_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS01_C0_NWAY_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS23_C0_NWAY_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_C0_NWAY_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_C0_NWAY_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIS_RENWAYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_8B10Bf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CDETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIS_TMR_CMAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIS_APXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INV_HSIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INV_HSOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_SDET_DEGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CODEC_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AFE_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REMOTE_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_TX_DOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_EN_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_EN_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_PTR_ERR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_AUTO_10BITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FULL_ACK2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_NXP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_FRC_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_HSG_RTIGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_XSGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RG1X54f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_FRC_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_PREAMBLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_CGGOODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_FRC_ANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INS_IPG_MDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RDS_CMA_DETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SEL_TMR_LIMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_RESTART_ANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WR_SOFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_USE_25M_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MARK_CARR_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEL_DEGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CALIB_OK_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_PWR_CTLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SOFT_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLR_SOFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CMA_RQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FRC_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FRC_SDS_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_UPD_RXDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_UPD_TXDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_UPD_RXD_DYNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EN_LINK_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EN_LINK_SGMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SGM_CK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LPI_TRANSMIT_STYLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PWRSV_INB_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PWRSV_WAKEUP_C2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PWRSV_WAKEUP_C1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_MARK_CARR_EXT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_PCSREQ_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INBTOUT_LEVELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SUDINBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_PCSRDABT_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_AN_UZf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INBAND_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_NO_GIGA_SCMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RE_SYNC_STYLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SYNC_GATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_BYPSCR_XSGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_BYPSCRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SLP_RQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_BYPSCRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_8B10B_NO_CREXTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_NEG_CLKWR_A2Df,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_MIIXF_TS1Kf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DLY_PRE8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_GRXD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LPI_CMD_MIIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_MARK_RXSCR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_MARK_TXSCR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_ENDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EEE_PWRSAV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_EEE_SDS_ANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_C3_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_C2_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_C1_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_C0_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_MAC_C1_CHG_RESTC3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_PHY_GO_C1_COND_SPCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EEE_PROGRAM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RG10X1512f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGMII_NO_DILE2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGMII_EEE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGMII_LPI_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGMII_LPI_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGMII_INB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGMII_RXER_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FAST_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_LINK_FASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EEE_DBG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INB_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RDM_ALGORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SD_DET_ALGORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AUTO_DET_ALGORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEND_NP_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_LK_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_F100_LKON_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_APXT_TMP32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_REDET_F100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_APXT_TMP0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SPDUP_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RXSLEEP_TMROUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEL_CALIBOKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEL_SDETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEL_ANOKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SEL_ODD_BITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FRC_LD_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SGMI_CK1MS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LINK_TMR_SGMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LINK_TMR_NORM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INBAND_MASTER_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INBAND_MASTER_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MACRDVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MACRDABTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_INBAND_MASTER_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RSGP_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RSGP_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SGM_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SGM_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB2G_TXCFG_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB2G_TXCFG_P1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB2G_TXCFG_NP_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB2G_TXCFG_NP_P1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_VERSIONf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DBG_OUT_ECO1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_PHY_GO_C2_COND_SPCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_ERRMSK_NOSIGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RM_LPK_EVEN_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_QSGMII_PARITY_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DBG_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SDS_DBG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SDS_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SDS_DBG_OUT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SDS_DBG_OUT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_EXT_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS0_FIB_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_SPD_RD_00f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_ANENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_RESTARTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_FULLDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_SPD_RD_01f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_FIB_FRCTXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AN_COMPLETEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_R_FAULTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NWAY_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_JABBER_DETECTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXTENDED_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REALTEK_OUI_2106f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REALTEK_OUI_0500f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEL_NO_0500f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REVISION_NO_0300f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FIB_NP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXPAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MR_NP_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MR_NP_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INDR_FUNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG13_1305f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INDR_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MMDRDBUSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY9f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG16_15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_RSG_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_STD_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C1_PWRSAV_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C2_PWRSAV_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_QUIET_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_RSG_QSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_STD_QSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C1_PWRSAV_EN_QSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C2_PWRSAV_EN_QSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_QUIET_QSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_RSG_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_STD_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C1_PWRSAV_EN_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C2_PWRSAV_EN_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_QUIET_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG17_1505f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_RSG_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_STD_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C1_PWRSAV_EN_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_C2_PWRSAV_EN_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_QUIET_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG18_1509f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_TR_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_TQ_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_TS_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TX_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DET_IDLE32_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DET_CG_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LINK_OK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_TS_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_WF_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_TW_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_TQ_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SFD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_IDLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_IDLE32_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_IDLE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG21_1513f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG21_1204f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG21_0300f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EPON_INTENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LINK_INTENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG22_1302f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DET_EPON_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_LINK_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG23_1508f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SILENT_PROB_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LINK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EEEP_ENBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EEEP_LINK_ENBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG23_00f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DBG_NXPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY11f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY12f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY13f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY14f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY16f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY17f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_EXT_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS1_FIB_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY18f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY19f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY20f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY21f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY22f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY23f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY24f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY25f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY26f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY28f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY29f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY30f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY31f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY33f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY34f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_EXT_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS2_FIB_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY35f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY36f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY37f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY38f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY39f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY40f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY41f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY42f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY43f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY44f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY45f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY46f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY47f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY48f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY49f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY50f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY51f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_EXT_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS3_FIB_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY52f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY53f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY54f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY55f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY56f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY57f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY58f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY59f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY60f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY61f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY62f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY63f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY64f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY65f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY66f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY67f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY68f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_EXT_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS4_FIB_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY69f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY70f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY71f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY72f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY73f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY74f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY75f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY76f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY77f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY78f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY79f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY80f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY81f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY82f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY83f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY84f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY85f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_EXT_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG0_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG1_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG2_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG3_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG4_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG5_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG6_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG7_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG8_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG9_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG10_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG11_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG12_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG13_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG14_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG15_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG16_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG17_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG18_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG19_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG20_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG21_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG22_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG23_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG24_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG25_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG26_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG27_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG28_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG29_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG30_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS5_FIB_REG31_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY86f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY87f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY88f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY89f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY90f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY91f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY92f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY93f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY94f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY95f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY96f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY97f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY98f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY99f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY100f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY101f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_RSTB_BITERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_RSTB_BITERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_V2ANALOGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_V2ANALOGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_RXENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_RXENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_CMUENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_CMUENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_BER_NOTIFYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_BER_NOTIFYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG1Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CLKOUT_Df,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CLKOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LCVCO_EN_21_BUFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IB_CENTER_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IB_LANE_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IBRX_BOOSTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IBTX_BOOSTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IBRXSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_IBTXSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_Z0_NADJRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_Z0_NAUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_Z0_PADJRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_Z0_PAUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_Z0_TUNEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_Z0_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LCVCO_SEL_IBXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_GLB_DM2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CML_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_GLB_DM0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_CALIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_CALSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_CKSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_FORCECALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_FREQSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_NSQDLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_RXIDLE_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_SENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_OOBS_VCMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_BYPASS_SDM_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_EN_LPF_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_INT_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_KDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_KIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_KP1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_KP2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_PWR_DWN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_PWR_DWN_CYCLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_DATA_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_SEL_TESTOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_ACC2_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_ACC2_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_SQU_TRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_EN_M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_ST_M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_PI_M_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_RESET_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_RESET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CDR_DMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_EN_CLKREQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_EN_SATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RXDSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_DCVS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EN_KOFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EN_SELFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EN_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EQ2SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EQ_EN_SLICERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EQ_GAINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EQ_HOLDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EQ_SELREGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_FORCERUNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_EQ_INf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_IDLE_SPDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_IQDSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_OFFSET_ADJRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_OFFSET_AUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_OFFSET_RANGEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_OFFSET_DIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_PIENSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_PSAVE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_PS_AFEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_SEL_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_D2S_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_TIMER_BERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_TIMER_EQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG12_1503f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_IPG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_NEG_GTXCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LP_CNT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EPON_SYNC_SMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DRV_DAC_DATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DRV_DAC_POST1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DRV_DAC_POST0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_SWINGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY_REG15_15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LP_CNT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_EPONf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DY_8Bf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DX_8Bf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_ICP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_VCP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_ISTANK_SEL_HSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_ISTANK_SEL_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LCBIAS_LPF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LCVCO_HSMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SEL_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SEL_Rf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LCVCO_TRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_LOOP_DIVNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_LOOP_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_VSEL_LREGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TESTENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SELPREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_INJ_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LCOKDET_REF_DIV_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SEL_CSMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_VI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_AUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_AUTO_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CALIB_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CALIB_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CP_EN_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CP_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LPF_EN_LOWRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_INIT_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SD_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RG24X14f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_HYSDETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_D2A_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_HAM_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_ENTXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CMALI_SIGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TMR_ALIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_SYMBOLERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALL_SYMBOLERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MUX_SYMBOLERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DBG_STATUS_ECO_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DBG_STATUS_ECO_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DBG_STATUS_ECO_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIGNOK_LATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINKOK_LATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYNCOK_LATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DBG_STATUS_ECO_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIGNOKSTATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINKOKSTATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYNCOKSTATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY102f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY103f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY104f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY105f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY106f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY107f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY108f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY109f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY110f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY111f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIG_RG2Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIG_RG3Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIG_RG4Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIG_RG5Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIG_RG6Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIG_RG7Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGM_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_QSGM_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_TIMER_LPFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_RX_DMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DRV_VLDONf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DRV_VLDOPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_NLDO_TIE1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_PLDO_TIE0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_EN_EMPHAS_UNUSEDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_EN_EMPHASf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY112f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_BEAENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_FORCE_RCVDETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_EN_VCM_RESf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_SEL_CKRD_DUTYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_SEL_VCMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_EN_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_SWING25f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TX_DM_UNUSEDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LDO_VREFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LDO_LPFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CONS1_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CONS0_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CNT_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_AUTO_DET_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TOUT_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_STATE_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TEST_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_RG30X1513f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FIB100_DETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_STATMR_LEVELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CNTENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CONSENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_STATMR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_LNK_ON_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY113f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG3Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_DIVIDE_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LOCK_UP_LIMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_FLD_DSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_VCO_COARSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_LOCK_DN_LIMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG19Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG20Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY114f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY115f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY116f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY117f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY118f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY119f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY120f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY121f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY122f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY123f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY124f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY125f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_DMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY126f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY127f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY128f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY129f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY130f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY131f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY132f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY133f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY134f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY135f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY136f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY137f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY138f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY139f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY140f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY141f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY142f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY143f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY144f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY145f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY146f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY147f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY148f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY149f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG1X_15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_S4S5_CMU_EN_LCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_S4S5_CMU_EN_LCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_S4S5_CMU_EN_RINGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_S4S5_CMU_EN_RINGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_REG_CKLC_SEL0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_REG_CKLC_SEL0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG1X_6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_CP_ENNEWf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SEL_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_CMU_VSEL_LDO_Af,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUMMY1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY150f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY151f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY152f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY153f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY154f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY155f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY156f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY157f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY158f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY159f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY160f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY161f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VAL_REG_CKLC_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRC_REG_CKLC_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG17Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ANA_RG18Xf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY162f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY163f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY164f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY165f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY166f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY167f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY168f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY169f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY170f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY171f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY172f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SDS_DUMMY173f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPTION_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_TIMEOUT3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_TIMEOUT2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_TIMEOUT1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_TIMEOUT0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPECIAL_FAIL_EN1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPECIAL_FAIL_EN0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TYPE_EXTPHY24_27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TYPE_EXTPHY16_23f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TYPE_INTPHY_APPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TYPE_EXTPHY0_7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_SKIP_LKUPPORT_MASK3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_SKIP_LKUPPORT_MASK2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_SKIP_LKUPPORT_MASK1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_SKIP_LKUPPORT_MASK0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_ALL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_RTCTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCTBASEADDR_8218Bf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCTBASEADDR_INTENALPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P27_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P26_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P25_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P24_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P15_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P14_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P13_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P12_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P11_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P10_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P9_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P27_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P26_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P25_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P24_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P23_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P22_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P21_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P20_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P19_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P18_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P17_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P16_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P15_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P14_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P13_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P12_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P11_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P10_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P9_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P8_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P7_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P6_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P5_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P4_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P3_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P2_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P1_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P0_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_NORMALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_MISMATCH_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_MISMATCH_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_LNDRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_NORMALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_MISMATCH_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_MISMATCH_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_LNDRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_NORMALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_MISMATCH_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_MISMATCH_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_LNDRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_NORMALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_MISMATCH_SHORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_MISMATCH_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_LNDRVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHB_MAXINDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHA_MAXINDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHD_MAXINDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CHC_MAXINDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTCT_LED_RESULT_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REALTX_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOW_Q_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HIGH_Qf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_LPI_MINIPG_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WAIT_RX_IDLE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WAIT_RX_IDLE_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_DEFER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MULTIWAKE_INTLVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MULTIWAKE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINK_UP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_WAKE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_LPI_MINIPG_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_LPI_MINIPG_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WAIT_RX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WAIT_RX_IDLE_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DELAY_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PAUSE_WAKE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DELAY_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_WAKE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PAUSE_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DELAY_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P26_EEE_GTXC_GATE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P26_EEE_GTXC_GATE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_EEEP_TX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEE_EEEP_RX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TIMER_UNIT_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TIMER_UNIT_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TIMER_UNIT_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_EN_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_EN_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_RATE_EN_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_WAKE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_SLEEP_STEP_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_MIN_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PAUSE_ON_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_WAKE_TIMER_500M_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_MIN_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PAUSE_ON_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_WAKE_TIMER_500M_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_WAKE_TIMER_GIGA_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_MIN_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PAUSE_ON_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_WAKE_TIMER_GIGA_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_SLAVE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_1000M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_500M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EEEP_100M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALLPORT_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYSCLK_GATE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYSCLK_GATE_MXDLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINKID_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINKID_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SRAM_PWRCUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIS_DN_SYSCLKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_SLEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REG_ACCESS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORTGROUP_REGACC_PROTECTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_DUMMYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_TIME_NSEC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXECf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_DUMMY0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_DUMMY1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_TIME_NSEC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_TIME_SEC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_TIME_SEC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TIMER_EN_FORCEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_TIMER_1588_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFG_CLK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_ADDR_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_ADDR_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_ADDR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RD_PTP_TIME_NSEC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RD_PTP_TIME_NSEC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RD_PTP_TIME_SEC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RD_PTP_TIME_SEC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_OFFLOADf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SAVE_OFF_TSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PDELAY_RESPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PDELAY_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PDELAY_RESPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PDELAY_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_26_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_24_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_15_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_14_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_13_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_12_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_11_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_10_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_9_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_8_PTP_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_SYNC_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DELAY_REQ_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PDELAY_REQ_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PDELAY_RESP_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_SYNC_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_DELAY_REQ_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PDELAY_REQ_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_PDELAY_RESP_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NSEC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NSEC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_DELAY_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DELAY_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_BC_SA_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ZERO_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LUTCAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SECURE_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_BC_SA_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_MC_DIP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINK_DOWN_P_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SA_ALL_ZERO_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_MC_FVID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_MC_HASH_KEY_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV4_MC_HASH_KEY_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_HASH_ALGOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FAST_AGE_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AGE_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP6_MC_LM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_MC_LM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_MC_LM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_UC_LM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIP_CARE_BYTEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIP_CARE_BYTEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_BC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_UNKN_UC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SALRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NEW_SA_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LRN_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CONSTRT_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EGR_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_AGING_OUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_MV_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_CONSTRT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_CONSTRT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYS_CONSTRT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FVID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENTRY_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REPLACING_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITPID_CMP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTPID_CMP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETPID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_UNTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_UNTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LKY_STP_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LKYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OCFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ICFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPVID_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPVID_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FWD_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_FLTR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP6_UNKN_MC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP4_UNKN_MC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_UNKN_MC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_LRN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FID_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EGR_P_OTAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EGR_P_ITAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_P_OTAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_P_ITAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VID_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VID_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REVERSEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI_TAG_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VID_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LRN_CNVT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DBL_TAG_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PWR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TGTVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORGVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LKMISS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MSTI_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRK_MBR_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DPORT_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPORT_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIP_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIP_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DMAC_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMAC_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPA_SHIFT_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HASH_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SEP_TRAFFICf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_ISO_MBR_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VB_ISO_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_2X_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_1X_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_0X_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_22_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_21_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_20_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_10_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_0E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_03_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_02_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OAM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_BYPASS_LM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_0X_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_GVRP_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_GMRP_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_0E_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_03_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_SLOWPRO_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_OAM_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_BPDU_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_LLDP_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_PTP_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_0X_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_03_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LLDP_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SLOW_PROTO_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BPDU_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PTP_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LLDP_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ADDR_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ADDR_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ADDR_LSBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ALL_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_TRUNCATE_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_PAD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_TRUNCATE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_FETCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRAP_PKT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FWD_PKT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRAP_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FWD_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INC_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ARPREQ_ADMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_ADMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BPDU_ADMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTKPKT_ADMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGMP_ADMITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TICK_PERIOD_PPSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TKN_PPSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TICK_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BC_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UC_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UC_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BC_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UC_BURST_PPSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_BURST_PPSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BC_BURST_PPSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UC_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MC_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BC_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_BURST_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_BURST_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_EXCEED_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYTE_LB_THR1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYTE_LB_THR0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKT_LB_THR1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKT_LB_THR0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INCL_PREIFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COUNTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXCEED_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_THRGRPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_FRAG_OFF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYN_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYN_FINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_XMASf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NULL_SCANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYN_SPORT_LESS_1024f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_HDR_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SMURFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ICMPV6_PING_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ICMPV4_PING_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ICMP_FRAG_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_FRAG_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_BLATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UDP_BLATf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LANDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DA_EQUAL_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRAG_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKT_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HDR_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NETMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ARP_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_HDR_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FLOW_BASED_PMSK_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_QID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SELF_FLTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DUPLICATE_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CROSS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FLOW_BASED_ONLYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_DST_Pf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DST_P_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DPM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_TAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_TAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_TAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_TAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_TX_TAG_ADDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_RX_TAG_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_RX_TAG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_BWCTRL_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SAMPLE_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_9f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_11f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_12f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_13f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_14f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_16f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_17f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_18f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_19f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_20f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_21f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_22f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_23f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_24f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_25f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_26f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_28f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_29f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_30f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_31f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_33f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_34f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_35f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_36f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_37f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_38f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT1DTPLEARNEDENTRYDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFINOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFINOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFOUTOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFOUTOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT1DTPPORTINDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFINUCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFINMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFINBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFOUTUCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFOUTMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFOUTBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IFOUTDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3STATSSINGLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3STATSMULTIPLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3STATSDEFERREDTRANSMISSIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3STATSLATECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3STATSEXCESSIVECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3STATSSYMBOLERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3CONTROLINUNKNOWNOPCODESf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3INPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DOT3OUTPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETHERSTATSDROPEVENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETHERSTATSCRCALIGNERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSUNDERSIZEDROPPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETHERSTATSFRAGMENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETHERSTATSJABBERSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETHERSTATSCOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_ETHERSTATSPKTS1519TOMAXOCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_ETHERSTATSPKTS1519TOMAXOCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXMACDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_MIB_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_GLOBAL_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_PORT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RST_PORT_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_CNT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_CNT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DBG_CNTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALL_CNTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_ALL_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_HI_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_HI_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_LO_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_LO_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_FCOFF_HI_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_FCOFF_HI_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_FCOFF_LO_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_FCOFF_LO_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_IGR_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_EGR_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_HI_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_HI_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_LO_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_LO_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_FCOFF_HI_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_FCOFF_HI_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_FCOFF_LO_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_FCOFF_LO_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_GRANTEE_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_KNUC_FC_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALWAYS_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXCNGST_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BIND_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q7_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q6_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q5_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q4_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q3_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_EGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q7_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q7_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q6_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q6_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q5_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q5_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q4_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q4_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q3_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q3_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_EGR_DROP_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_EGR_DROP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FC_ALLOW_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_PAGE_CURCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GLB_PAGE_CURCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_PKT_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_PKT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_IGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_IGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_IGRDROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_IGR_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_FCOFF_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_FCOFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_FCOFF_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_FCOFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_ON_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_OFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_FCOFF_GAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_FCOFF_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UNKNUC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_MC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_MC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DRAIN_OUT_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CNGST_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CNGST_SUST_TMR_LMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_TYPE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SWQRST_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SWQRST_SYS_THR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SWQRST_P_THR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SWQRST_SYS_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SWQRST_P_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROP_FACTOR_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_THRMAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_THRMINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_THRMAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_THRMINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q7_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q6_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q5_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q4_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q3_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_THR_SET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI7_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI6_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI5_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI4_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI3_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI2_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI1_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI0_QNUMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_VLAN_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RLPPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_MAC_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_MAC_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SYS_MAC_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UNKNOWN_DAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPECIAL_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPECIAL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ROUT_EXCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PRI0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAP_TBL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INTPRI_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INTPRI_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INTPRI_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INTPRI_RSPANf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INTPRI_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_WTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_WTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DSCP_WTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_OTAG_WTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PORT_WTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_OPRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PB_IPRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DSCP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INVLD_DSCP_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPRI_DFLT_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPRI_DFLT_INTPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPRI_DFLT_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPRI_DFLT_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPRI_DFLT_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DSCP_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPRI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DSCP_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPRI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPRI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPRI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPRI_DFLT_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CRC_RC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CRC_CPU_RC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P28_LB_SIZE_PPSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P28_LB_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TICK_PERIOD_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYTE_PER_TKN_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYTE_PER_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_APR_LB_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_WFQ_LB_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_EGR_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q7_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q6_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q5_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q4_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q3_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q2_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q1_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q0_EGR_LB_APR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_P_EGR_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_EGR_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_BORW_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_STRICT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_Q_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SCHED_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_NON_B_REDIRECT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_NON_A_REDIRECT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_B_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_A_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_B_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_A_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_NON_B_RMK_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLASS_NON_A_RMK_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOOKUP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BLK_TMPLTE3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BLK_TMPLTE2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BLK_TMPLTE1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TMPLTE_FIELDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MV_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MV_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MV_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLR_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLR_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEFACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CRCERRPIELKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CFIPIELKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DROPPIELKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TMPLTE4_TAGSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TMPLTE2_TAGSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TMPLTE1_TAGSELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RRCP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RRCPAUTHKEYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RLPP_LKYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RLPP_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPSEC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_KEY_SRC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_EJTAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_KEY_BLOCK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_FRG_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_PROTOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_TOSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_MORE_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTK_PPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_TAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RTAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIP_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIP_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIP_95_64f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SIP_127_96f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIP_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIP_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIP_95_64f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DIP_127_96f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV4_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ARP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PPPOE_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UDP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGMP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ICMP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_SN_EQ_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TCP_HDR_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV4_DFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV4_HDR_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L4_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_TAG_CONTENT_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FS_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TYPELENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CRC_EQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_TAG_CONTENT_42_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FS1_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FS0_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FS3_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FS2_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SA_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_HBH_EXT_HDR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_MOB_EXT_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKT_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SA_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DA_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DA_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_EXT_HDR_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RX_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OAM_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SRC_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSB_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_FLOW_LABELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6_UNKNOWN_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_ROUTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_REDIRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_COPY_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_DPMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_MIR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_CPU_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_CPUPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_NORMALPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_EGRTAGSTS_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_RMK_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_RMK_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_RMK_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_LOG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_FWD_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_OVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_FLT_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_FLT_DPMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COPY_TO_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_IPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_METER_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_ITPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_OTPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_MIR_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_CPUTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_FORCEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX_9_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_SPMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RNG_CHK_COMMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_FLOODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_LKMISSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_SA_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_SA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INT_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DPMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_FWD_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COPY_BYP_VLAN_IFILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_STORMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SRC_LOGIC_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EGR_VLAN_LKYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EAV_CLASS_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EAV_CLASS_Af,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DIS_SA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGR_VLAN_LKYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INPUT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_IVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_OVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_COPY_BYP_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_EGR_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_BYP_IGR_BWCTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_KNMC_BYP_VLAN_EFILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_FLTR_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TRUNK_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ISOLATION_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SELF_FLTR_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STORM_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STP_EFILTER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_EFILTER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_INVLD_MCASTDPM_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_INVLD_DPM_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_LKMISS_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_BLK_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_VLAN_MAC_CONSTRT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MAC_CONSTRT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_SYS_MAC_CONSTRT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_NEW_SA_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MV_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_SA_BLK_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SELFMAC_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_INVLD_SA_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STP_IFILTER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_IFILTER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_CFI_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_AFT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_METER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_REDIR_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INPUT_Q_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ROUT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_LKMISS_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RSPAN_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_LKMISS_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MV_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_NEW_SA_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_VLAN_MAC_CONSTRT_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MAC_CONSTRT_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_SYS_MAC_CONSTRT_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAX_LEN_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FLOWCTRL_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LINK_DOWN_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_FLTR_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASON_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_DA_LKMISS_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_VLAN_MAC_CONSTRT_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MAC_CONSTRT_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_SYS_MAC_CONSTRT_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_NEW_SA_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_PORT_MV_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SELFMAC_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_IFILTER_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VLAN_CFI_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ROUT_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RMA_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX11f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX9f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM0_RSVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_IDX_10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM1_RSVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSM2_RSVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HSA_ORG_OCFIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_OVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_ITAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_OTAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_ITAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_OTAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ASTAGSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_TAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_INT_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FWD_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_ICFIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ORG_IVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_IVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_OVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IPV4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PPPOEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RFC1042f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ETAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MAC_CSTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ATK_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_NEW_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STC_L2_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CPU_AS_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_AS_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DA_LK_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IS_EAV_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IS_EAV_Af,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DPCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L3_ROUTINGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L3_ROUTING_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ACL_RMKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR_NOR_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR4_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR3_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR2_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MIR1_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_INBW_PKTLENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKTLENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CTAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RXQIDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TXQID_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TXQID_NRMf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DP_BF_RXQf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LST_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FST_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GRP_TX_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SPG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GRP_TX_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_DONE_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PAYLOAD_TYPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PAYLOADf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FORCE_BAD_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DA_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DA_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OTAG_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ITAG_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LEN_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LEN_RNG_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_LEN_RNG_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TX_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TAG_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RLPP_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RNDM_SEED_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_SEED_GEN_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_RNDM_SEED_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_ID_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLDP_ID_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLPP_RS_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RLPP_PORT0_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ALE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_RX_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_RX_Pf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_RX_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_TX_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_TX_Pf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_TX_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MII_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ROUTING_AGEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_GW_MAC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP6_HOPBYHOPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP6_HL_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP6_HDR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP4_OPTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP4_TTL_EXECEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP4_HDR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TBLf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_METHODf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HIT_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MULTEX0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MULTEX1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_L2_CRC_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IP_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_VID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_MLD_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_IGMP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_REQ_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_SWITCH_IPf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_UNKNOWNEXTHDR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_HBHEXTHDRERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_ND_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PPPOE_PARSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RFC1042_OUI_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY9f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY11f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_ENTRY10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EFUSE_RELOAD_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_STATE_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_TKN_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_PKTLEN_MISMATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_FIFO_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_RT_SKIP_IGR_P_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_31f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_30f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_29f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_28f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_26f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_25f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_24f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_23f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_22f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_21f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_20f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_19f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_18f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_17f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_16f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_14f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_13f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_12f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_11f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_9f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LH_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_31f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_30f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_29f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_28f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_27f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_26f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_25f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_24f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_23f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_22f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_21f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_20f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_19f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_18f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_17f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_16f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_15f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_14f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_13f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_12f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_11f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_10f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_9f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEBUG_STS_LL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_OUTPUT_1588_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EXT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_EN_MODE_DEFINEf,
+#endif
+#if defined(CONFIG_SDK_RTL8380)
+    MAPLE_DEFINE_MODE_23_0f,
+#endif
+
+    MAPLE_REGFIELD_LIST_END,
+} rtk_maple_regField_list_t;
+
+extern rtk_reg_t rtk_maple_reg_list[];
+
+
+#endif    /* __RTK_MAPLE_REG_STRUCT_H__ */

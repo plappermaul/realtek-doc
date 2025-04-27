@@ -1,0 +1,661 @@
+//
+// Copyright (C) 2014 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for tunnel.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) tunnel commands.
+//
+
+
+#ifdef CMD_TUNNEL_GET_INFO
+//tunnel configuration
+//get configuration
+//global information
+tunnel get info
+#endif
+
+#ifdef CMD_TUNNEL_CREATE_INTF_TYPE_IP_IN_IP_IP6_IN_IP_IPANY_IN_IP_IP_IN_IP6_IP6_IN_IP6_IPANY_IN_IP6_ISATAP_6TO4_6RD_GRE_IP_IN_IP_GRE_IP6_IN_IP_GRE_IPANY_IN_IP_GRE_IP_IN_IP6_GRE_IP6_IN_IP6_GRE_IPANY_IN_IP6_VXLAN_IN_IP_VXLAN_IN_IP6_VXLAN_GPE_IN_IP_VXLAN_GPE_IN_IP6
+//tunnel configuration
+//create tunnel
+//interface
+//type of tunnel
+//IPv4-in-IPv4
+//IPv6-in-IPv4
+//IPv4/IPv6-in-IPv4
+//IPv4-in-IPv6
+//IPv6-in-IPv6
+//IPv4/IPv6-in-IPv6
+//ISATAP
+//6to4
+//6rd
+//GRE (IPv4-in-IPv4)
+//GRE (IPv6-in-IPv4)
+//GRE (IPv4/IPv6-in-IPv4)
+//GRE (IPv4-in-IPv6)
+//GRE (IPv6-in-IPv6)
+//GRE (IPv4/IPv6-in-IPv4)
+//VXLAN-in-IPv4
+//VXLAN-in-IPv6
+//VXLAN-GPE-in-IPv4
+//VXLAN-GPE-in-IPv6
+tunnel create intf type ( ip-in-ip | ip6-in-ip | ipany-in-ip | ip-in-ip6 | ip6-in-ip6 | ipany-in-ip6 | isatap | 6to4 | 6rd | gre-ip-in-ip | gre-ip6-in-ip | gre-ipany-in-ip | gre-ip-in-ip6 | gre-ip6-in-ip6 | gre-ipany-in-ip6 | vxlan-in-ip | vxlan-in-ip6 | vxlan-gpe-in-ip | vxlan-gpe-in-ip6 )
+#endif
+
+#ifdef CMD_TUNNEL_CREATE_INTF_INTF_ID_TYPE_IP_IN_IP_IP6_IN_IP_IPANY_IN_IP_IP_IN_IP6_IP6_IN_IP6_IPANY_IN_IP6_ISATAP_6TO4_6RD_GRE_IP_IN_IP_GRE_IP6_IN_IP_GRE_IPANY_IN_IP_GRE_IP_IN_IP6_GRE_IP6_IN_IP6_GRE_IPANY_IN_IP6
+//tunnel configuration
+//create tunnel
+//interface
+//interface ID (for L3 tunnel interface only)
+//type of tunnel
+//IPv4-in-IPv4
+//IPv6-in-IPv4
+//IPv4/IPv6-in-IPv4
+//IPv4-in-IPv6
+//IPv6-in-IPv6
+//IPv4/IPv6-in-IPv6
+//ISATAP
+//6to4
+//6rd
+//GRE (IPv4-in-IPv4)
+//GRE (IPv6-in-IPv4)
+//GRE (IPv4/IPv6-in-IPv4)
+//GRE (IPv4-in-IPv6)
+//GRE (IPv6-in-IPv6)
+//GRE (IPv4/IPv6-in-IPv4)
+tunnel create intf <UINT:intf_id> type ( ip-in-ip | ip6-in-ip | ipany-in-ip | ip-in-ip6 | ip6-in-ip6 | ipany-in-ip6 | isatap | 6to4 | 6rd | gre-ip-in-ip | gre-ip6-in-ip | gre-ipany-in-ip | gre-ip-in-ip6 | gre-ip6-in-ip6 | gre-ipany-in-ip6 )
+#endif
+
+
+#ifdef CMD_TUNNEL_DESTROY_INTF_INTF_ID_ALL
+//tunnel configuration
+//destroy tunnel
+//interface
+//interface ID
+//all
+tunnel destroy intf ( <UINT:intf_id> | all )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_TYPE_IP_IN_IP_IP6_IN_IP_IPANY_IN_IP_IP_IN_IP6_IP6_IN_IP6_IPANY_IN_IP6_ISATAP_6TO4_6RD_GRE_IP_IN_IP_GRE_IP6_IN_IP_GRE_IPANY_IN_IP_GRE_IP_IN_IP6_GRE_IP6_IN_IP6_GRE_IPANY_IN_IP6_VXLAN_IN_IP_VXLAN_IN_IP6_VXLAN_GPE_IN_IP_VXLAN_GPE_IN_IP6
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//type of tunnel
+//IPv4-in-IPv4
+//IPv6-in-IPv4
+//IPv4/IPv6-in-IPv4
+//IPv4-in-IPv6
+//IPv6-in-IPv6
+//IPv4/IPv6-in-IPv6
+//ISATAP
+//6to4
+//6rd
+//GRE (IPv4-in-IPv4)
+//GRE (IPv6-in-IPv4)
+//GRE (IPv4/IPv6-in-IPv4)
+//GRE (IPv4-in-IPv6)
+//GRE (IPv6-in-IPv6)
+//GRE (IPv4/IPv6-in-IPv6)
+//VXLAN-in-IPv4
+//VXLAN-in-IPv6
+//VXLAN-GPE-in-IPv4
+//VXLAN-GPE-in-IPv6
+tunnel set intf <UINT:intf_id> type ( ip-in-ip | ip6-in-ip | ipany-in-ip | ip-in-ip6 | ip6-in-ip6 | ipany-in-ip6 | isatap | 6to4 | 6rd | gre-ip-in-ip | gre-ip6-in-ip | gre-ipany-in-ip | gre-ip-in-ip6 | gre-ip6-in-ip6 | gre-ipany-in-ip6 | vxlan-in-ip | vxlan-in-ip6 | vxlan-gpe-in-ip | vxlan-gpe-in-ip6 )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_L3_VRF_ID_VRF
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//layer-3 VRF ID
+//VRF ID
+tunnel set intf <UINT:intf_id> l3-vrf-id <UINT:vrf>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_DECAP_CONFIG_PRIORITY_SELECT_GROUP_INDEX_INDEX
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//decapsulation configuration
+//priority-select-group-index
+//index
+tunnel set intf <UINT:intf_id> decap-config priority-select-group-index <UINT:index>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_DECAP_CONFIG_INTERNAL_PRIORITY_PRIORITY
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//decapsulation configuration
+//internal priority
+//priority
+tunnel set intf <UINT:intf_id> decap-config internal-priority <UINT:priority>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_DECAP_CONFIG_SA_LEARNING_STATE_ENABLE_DISABLE
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//decapsulation configuration
+//source MAC address learning
+//state configuration
+//enable
+//disable
+tunnel set intf <UINT:intf_id> decap-config sa-learning state ( enable | disable )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_MTU_MTU
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//MTU
+//MTU value
+tunnel set intf <UINT:intf_id> encap-config mtu <UINT:mtu>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_TTL_TTL
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//TTL
+//TTL value
+tunnel set intf <UINT:intf_id> encap-config ttl <UINT:ttl>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_QOS_PROFILE_INDEX_INDEX
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//QoS profile index
+//index
+tunnel set intf <UINT:intf_id> encap-config qos-profile-index <UINT:index>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_IP4_DONT_FRAG_BIT_CLEAR_SET
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//IPv4
+//do-not-fragment flag configuration
+//clear
+//set
+tunnel set intf <UINT:intf_id> encap-config ip4 dont-frag-bit ( clear | set )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_IP6_FLOW_LABEL_FLOW_LABEL
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//IPv6
+//flow label configuration
+//label ID (0~1048575)
+tunnel set intf <UINT:intf_id> encap-config ip6 flow-label <UINT:flow_label>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_FORWARD_VLAN_SELECT_INNER_OUTER
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//forwarding VLAN base selection
+//inner VLAN tag
+//outer VLAN tag
+tunnel set intf <UINT:intf_id> encap-config forward-vlan-select ( inner | outer )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_DOUBLE_TAG_VID_VID
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//double tag VLAN ID
+//VLAN ID (0~4095)
+tunnel set intf <UINT:intf_id> encap-config double-tag-vid <UINT:vid>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_VLAN_TAG_INNER_OUTER_TPID_IDX_TPID_IDX
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//VLAN tag configuration
+//inner VLAN tag
+//outer VLAN tag
+//TPID index configuration
+//TPID index
+tunnel set intf <UINT:intf_id> encap-config vlan-tag ( inner | outer ) tpid-idx <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_ENCAP_CONFIG_PE_TAG_ECID_ECID_EXT_ECID_BASE
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//encapsulation configuration
+//PE tag configuration
+//e-channel ID (ECID)
+//extension (0~255)
+//base (0~4095)
+tunnel set intf <UINT:intf_id> encap-config pe-tag ecid <UINT:ecid_ext> <UINT:ecid_base>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_FLAG_DECAP_DISABLE_DECAP_USE_CARRIER_TTL_DECAP_USE_CARRIER_DSCP_DECAP_KEEP_PASSENGER_DSCP_STATE_ENABLE_DISABLE
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//control flag configuration
+//disable decapsulation
+//use carrier's TTL at decapsulation
+//use carrier's DSCP at decapsulation
+//keep passenger's DSCP while egress remarking
+//state configuration
+//enable function
+//disable function
+tunnel set intf <UINT:intf_id> flag ( decap-disable | decap-use-carrier-ttl | decap-use-carrier-dscp | decap-keep-passenger-dscp ) state ( enable | disable )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_FLAG_ENCAP_DISABLE_ENCAP_TTL_DEC_IGNORE_ENCAP_TTL_ASSGIN_ENCAP_DONT_FRAG_INHERIT_STATE_ENABLE_DISABLE
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//control flag configuration
+//disable encapsulation
+//ignore ttl decrese of encapulation
+//assign ttl value of encapulation
+//inherit dont fragment flag from passenger
+//state configuration
+//enable function
+//disable function
+tunnel set intf <UINT:intf_id> flag ( encap-disable | encap-ttl-dec-ignore | encap-ttl-assgin | encap-dont-frag-inherit ) state ( enable | disable )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_LOCAL_IP_IP
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//local IP address
+//IP address (e.g. 192.168.0.1)
+tunnel set intf <UINT:intf_id> local-ip <IPV4ADDR:ip>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_REMOTE_IP_IP
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//remote IP address
+//IP address (e.g. 192.168.0.1)
+tunnel set intf <UINT:intf_id> remote-ip <IPV4ADDR:ip>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_6RD_IP_PREFIX_LENGTH_IP_LENGTH_IP6_PREFIX_IP6_PREFIX_IP6_PREFIX_LENGTH_IP6_LENGTH
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//6rd (IPv6 rapid deployment)
+//local IPv4 prefix length
+//length, <1~32>
+//local IPv6 prefix
+//IPv6 address
+//local IPv6 prefix length
+//length, <0~63>
+tunnel set intf <UINT:intf_id> 6rd ip-prefix-length <UINT:ip_length> ip6-prefix <IPV6ADDR:ip6_prefix> ip6-prefix-length <UINT:ip6_length>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_LOCAL_IP6_IP6
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//local IPv6 address
+//IPv6 address
+tunnel set intf <UINT:intf_id> local-ip6 <IPV6ADDR:ip6>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_REMOTE_IP6_IP6
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//remote IPv6 address
+//IPv6 address
+tunnel set intf <UINT:intf_id> remote-ip6 <IPV6ADDR:ip6>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_LOCAL_PORT_PORT
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//local port
+//port number (0~65535)
+tunnel set intf <UINT:intf_id> local-port <UINT:port>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_REMOTE_PORT_PORT
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//remote port
+//port number (0~65535)
+tunnel set intf <UINT:intf_id> remote-port <UINT:port>
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_PATH_ID_PATH_ID
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//path ID (underlay nexthop)
+//path ID
+tunnel set intf <UINT:intf_id> path-id <UINT:path_id>
+#endif
+
+#ifdef CMD_TUNNEL_GET_INTF_INTF_ID_PATH_ID
+//tunnel configuration
+//get configuration
+//interface
+//interface ID
+//path ID (underlay nexthop)
+tunnel get intf <UINT:intf_id> path-id
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_PATH_NH_DMAC_IDX_L3_EGR_INTF_IDX
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//path (underlay nexthop)
+//nexthop (L2) DMAC index (DMAC_IDX)
+//L3 egress interface idx (L3_INTF_ID)
+tunnel set intf <UINT:intf_id> path <UINT:nh_dmac_idx> <UINT:l3_egr_intf_idx>
+#endif
+
+#ifdef CMD_TUNNEL_GET_INTF_INTF_ID_PATH
+//tunnel configuration
+//get configuration
+//interface
+//interface ID
+//path information (underlay nexthop)
+tunnel get intf <UINT:intf_id> path
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_GRE_KEY_KEY_STATE_ENABLE_DISABLE
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//GRE tunnel
+//key configuration
+//key number (0~4294967295)
+//state configuration
+//enable function
+//disable function
+tunnel set intf <UINT:intf_id> gre key <UINT:key> state ( enable | disable )
+#endif
+
+#ifdef CMD_TUNNEL_SET_INTF_INTF_ID_VXLAN_VNI_VNI
+//tunnel configuration
+//set configuration
+//interface
+//interface ID
+//VxLAN tunnel
+//VNI (VxLAN Network Identifier)
+//identifier (0~16777215)
+tunnel set intf <UINT:intf_id> vxlan vni <UINT:vni>
+#endif
+
+#ifdef CMD_TUNNEL_GET_INTF_INTF_ID
+//tunnel configuration
+//get configuration
+//interface
+//interface ID
+tunnel get intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_TUNNEL_GET_INTF_INTF_ID_STATS
+//tunnel configuration
+//get configuration
+//interface
+//interface ID
+//statistic
+tunnel get intf <UINT:intf_id> stats
+#endif
+
+#ifdef CMD_TUNNEL_GET_INTF_INTF_ID_STATS_RX_BYTES_RX_PKTS_RX_DROPS_TX_BYTES_TX_PKTS_TX_DROPS
+//tunnel configuration
+//get configuration
+//interface
+//interface ID
+//statistic
+//Rx byte-count
+//Rx packet-count
+//Rx discarded-packet-count
+//Tx byte-count
+//Tx packet-count
+//Tx discarded-packet-count
+tunnel get intf <UINT:intf_id> stats ( rx-bytes | rx-pkts | rx-drops | tx-bytes | tx-pkts | tx-drops )
+#endif
+
+#ifdef CMD_TUNNEL_RESET_INTF_INTF_ID_STATS
+//tunnel configuration
+//reset configuration
+//interface
+//interface ID
+//statistic
+tunnel reset intf <UINT:intf_id> stats
+#endif
+
+#ifdef CMD_TUNNEL_SET_QOS_PROFILE_INDEX_INNER_PRIORITY_SOURCE_FORCE_FROM_PASSENGER_FROM_INTERNAL_PRIORITY
+//tunnel configuration
+//set configuration
+//QoS profile
+//profile index
+//inner priority source
+//directly assign priority
+//from passenger (inner packet)
+//from internal priority
+tunnel set qos-profile <UINT:index> inner-priority-source ( force | from-passenger | from-internal-priority )
+#endif
+
+#ifdef CMD_TUNNEL_SET_QOS_PROFILE_INDEX_INNER_PRIORITY_PRIORITY
+//tunnel configuration
+//set configuration
+//QoS profile
+//profile index
+//inner priority
+//specified priority value
+tunnel set qos-profile <UINT:index> inner-priority <UINT:priority>
+#endif
+
+#ifdef CMD_TUNNEL_SET_QOS_PROFILE_INDEX_OUTER_PRIORITY_SOURCE_FORCE_FROM_PASSENGER_FROM_INTERNAL_PRIORITY
+//tunnel configuration
+//set configuration
+//QoS profile
+//profile index
+//outer priority source
+//directly assign priority
+//from passenger (inner packet)
+//from internal priority
+tunnel set qos-profile <UINT:index> outer-priority-source ( force | from-passenger | from-internal-priority )
+#endif
+
+#ifdef CMD_TUNNEL_SET_QOS_PROFILE_INDEX_OUTER_PRIORITY_PRIORITY
+//tunnel configuration
+//set configuration
+//QoS profile
+//profile index
+//outer priority
+//specified priority value
+tunnel set qos-profile <UINT:index> outer-priority <UINT:priority>
+#endif
+
+#ifdef CMD_TUNNEL_SET_QOS_PROFILE_INDEX_DSCP_SOURCE_FORCE_FROM_PASSENGER_FROM_INTERNAL_PRIORITY
+//tunnel configuration
+//set configuration
+//QoS profile
+//profile index
+//IP DSCP source
+//directly assign DSCP value
+//from passenger (inner packet)
+//from internal priority
+tunnel set qos-profile <UINT:index> dscp-source ( force | from-passenger | from-internal-priority )
+#endif
+
+#ifdef CMD_TUNNEL_SET_QOS_PROFILE_INDEX_DSCP_DSCP
+//tunnel configuration
+//set configuration
+//QoS profile
+//profile index
+//IP DSCP
+//specified DSCP value
+tunnel set qos-profile <UINT:index> dscp <UINT:dscp>
+#endif
+
+#ifdef CMD_TUNNEL_GET_QOS_PROFILE_INDEX
+//tunnel configuration
+//get configuration
+//QoS profile
+//profile index
+tunnel get qos-profile <UINT:index>
+#endif
+
+#ifdef CMD_TUNNEL_SET_DECAP_IP_SIP_FAIL_IP6_SIP_FAIL_ISATAP_SIP_FAIL_6TO4_SIP_FAIL_6TO4_DIP_FAIL_6RD_DIP_FAIL_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//tunnel configuration
+//set configuration
+//decapsulating configuration
+//IPv4 source address check failure
+//IPv6 source address check failure
+//ISATAP source address check failure
+//6to4 source address check failure
+//6to4 destination address check failure
+//6rd destination address check failure
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to master CPU
+tunnel set decap ( ip-sip-fail | ip6-sip-fail | isatap-sip-fail | 6to4-sip-fail | 6to4-dip-fail | 6rd-dip-fail ) action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_TUNNEL_GET_DECAP_IP_SIP_FAIL_IP6_SIP_FAIL_ISATAP_SIP_FAIL_6TO4_SIP_FAIL_6TO4_DIP_FAIL_6RD_DIP_FAIL_ACTION
+//tunnel configuration
+//get configuration
+//decapsulating configuration
+//IPv4 source address check failure
+//IPv6 source address check failure
+//ISATAP source address check failure
+//6to4 source address check failure
+//6to4 destination address check failure
+//6rd destination address check failure
+//forwarding action
+tunnel get decap ( ip-sip-fail | ip6-sip-fail | isatap-sip-fail | 6to4-sip-fail | 6to4-dip-fail | 6rd-dip-fail ) action
+#endif
+
+#ifdef CMD_TUNNEL_SET_ENCAP_MTU_FAIL_TTL_FAIL_ROUTE_TO_TUNNEL_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//tunnel configuration
+//set configuration
+//encapsulating configuration
+//MTU check failure
+//TTL check failure
+//route to tunnel interface
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to master CPU
+tunnel set encap ( mtu-fail | ttl-fail | route-to-tunnel ) action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_TUNNEL_GET_ENCAP_MTU_FAIL_TTL_FAIL_ROUTE_TO_TUNNEL_ACTION
+//tunnel configuration
+//get configuration
+//encapsulating configuration
+//MTU check failure
+//TTL check failure
+//route to tunnel interface
+//forwarding action
+tunnel get encap ( mtu-fail | ttl-fail | route-to-tunnel ) action
+#endif
+
+#ifdef CMD_TUNNEL_SET_DECAP_IP6_SIP_IP4COMPATIBLE_CHECK_IP6_SIP_IP4MAPPED_CHECK_ISATAP_SIP_TYPE_CHECK_ISATAP_SIP_MAPPING_CHECK_6TO4_SIP_CHECK_6TO4_DIP_CHECK_6RD_DIP_CHECK_STATE_ENABLE_DISABLE
+//tunnel configuration
+//set configuration
+//decapsulating configuration
+//IPv6 SIP IPv4-compatible address check
+//IPv6 SIP IPv4-mapped address check
+//ISATAP SIP type check
+//ISATAP SIP mapping check
+//6to4 SIP check
+//6to4 DIP check
+//6rd DIP check
+//state configuration
+//enable function
+//disable function
+tunnel set decap ( ip6-sip-ip4compatible-check | ip6-sip-ip4mapped-check | isatap-sip-type-check | isatap-sip-mapping-check | 6to4-sip-check | 6to4-dip-check | 6rd-dip-check ) state ( enable | disable )
+#endif
+
+#ifdef CMD_TUNNEL_GET_DECAP_IP6_SIP_IP4COMPATIBLE_CHECK_IP6_SIP_IP4MAPPED_CHECK_ISATAP_SIP_TYPE_CHECK_ISATAP_SIP_MAPPING_CHECK_6TO4_SIP_CHECK_6TO4_DIP_CHECK_6RD_DIP_CHECK_STATE
+//tunnel configuration
+//get configuration
+//decapsulating configuration
+//IPv6 SIP IPv4-compatible address check
+//IPv6 SIP IPv4-mapped address check
+//ISATAP SIP type check
+//ISATAP SIP mapping check
+//6to4 SIP check
+//6to4 DIP check
+//6rd DIP check
+//state configuration
+tunnel get decap ( ip6-sip-ip4compatible-check | ip6-sip-ip4mapped-check | isatap-sip-type-check | isatap-sip-mapping-check | 6to4-sip-check | 6to4-dip-check | 6rd-dip-check ) state
+#endif
+
+#ifdef CMD_TUNNEL_SET_ENCAP_IP_HDR_IDENTIFICATION_ID
+//tunnel configuration
+//set configuration
+//encapsulating configuration
+//IP header identification
+//identifier (0~65535)
+tunnel set encap ip-hdr-identification <UINT:id>
+#endif
+
+#ifdef CMD_TUNNEL_GET_ENCAP_IP_HDR_IDENTIFICATION
+//tunnel configuration
+//get configuration
+//encapsulating configuration
+//IP header identification
+tunnel get encap ip-hdr-identification
+#endif
+

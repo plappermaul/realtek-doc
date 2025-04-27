@@ -1,0 +1,596 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for PIE.
+//
+// Feature : The file have include the following module and sub-modules
+//            1) Template/block
+//            2) Field Selector
+//            3) Range Check
+//            4) Meter
+//
+
+#ifdef CMD_PIE_GET_BLOCK_INDEX_LOOKUP_STATE
+//PIE configuration
+//get configuration
+//block configuration
+//block index
+//lookup configuration
+//state configuration
+pie get block <UINT:index> lookup state
+#endif
+
+#ifdef CMD_PIE_GET_METER_BURST_SIZE
+//PIE configuration
+//get configuration
+//meter configuration
+//meter burst-size configuration
+pie get meter burst-size
+#endif
+
+#ifdef CMD_PIE_GET_METER_ENTRY_INDEX
+//PIE configuration
+//get configuration
+//meter configuration
+//meter entry configuration
+//meter index
+pie get meter entry <UINT:index>
+#endif
+
+#ifdef CMD_PIE_GET_METER_EXCEED_FLAG
+//PIE configuration
+//get configuration
+//meter configuration
+//exceed flag status of all entries
+pie get meter exceed-flag
+#endif
+
+#ifdef CMD_PIE_GET_METER_EXCEED_FLAG_AGGREGATION
+//PIE configuration
+//get configuration
+//meter configuration
+//exceed flag status of all entries
+//exceed flag aggregated result
+pie get meter exceed-flag aggregation
+#endif
+
+#ifdef CMD_PIE_GET_METER_IFG
+//PIE configuration
+//get configuration
+//meter configuration
+//interframe gap
+pie get meter ifg
+#endif
+
+#ifdef CMD_PIE_GET_PARTITION
+//PIE configuration
+//get configuration
+//partition value
+pie get partition
+#endif
+
+#ifdef CMD_PIE_GET_TEMPLATE_INDEX
+//PIE configuration
+//get configuration
+//template configuration
+//template index
+pie get template <UINT:index>
+#endif
+
+#ifdef CMD_PIE_GET_TEMPLATE_PHASE_PHASE_FIELD_LIST
+//PIE configuration
+//get configuration
+//template configuration
+//phase configuration
+//lookup phase, PIE Phase
+//display valid field list
+pie get template phase <UINT:phase> field-list
+#endif
+
+#ifdef CMD_PIE_SET_BLOCK_INDEX_LOOKUP_STATE_DISABLE_ENABLE
+//PIE configuration
+//set configuration
+//block configuration
+//block index
+//lookup configuration
+//state configuration
+//disable action
+//enable action
+pie set block <UINT:index> lookup state ( disable | enable )
+#endif
+
+#ifdef CMD_PIE_SET_METER_IFG_EXCLUDE_INCLUDE
+//PIE configuration
+//set configuration
+//meter configuration
+//interframe gap
+//exclude
+//include
+pie set meter ifg ( exclude | include )
+#endif
+
+#ifdef CMD_PIE_SET_PARTITION_VALUE
+//PIE configuration
+//set configuration
+//PIE partition
+//partition value
+pie set partition <UINT:value>
+#endif
+
+#ifdef CMD_PIE_SET_TEMPLATE_TEMPLATE_INDEX_FIELD_INDEX_INDEX_FIELD_TYPE_FIELD_NAME
+//PIE configuration
+//set configuration
+//template configuration
+//template index
+//template field index configuration
+//template field index
+//template field type configuration
+//template field type name
+pie set template <UINT:template_index> field_index <UINT:index> field_type <STRING:field_name>
+#endif
+
+#ifdef CMD_FIELD_SELECTOR_GET_INDEX_INDEX
+//field selector configuration
+//get configuration
+//index configuration
+//index
+field-selector get index <UINT:index>
+#endif
+
+#ifdef CMD_FIELD_SELECTOR_SET_INDEX_INDEX_FORMAT_RAW_LLC_L3_ARP_IP_HEADER_IP_PAYLOAD_L4_PAYLOAD_OFFSET_OFFSET
+//field selector configuration
+//set configuration
+//index configuration
+//index
+//field selector format
+//Raw packet(Start after SFD begin with DA)
+//LLC packet(begin with length 0000-05FF)
+//L3 packet(Start after Ethertype field VLAN tag is bypassed)
+//ARP/RARP packet (Start from ARP/RARP header)
+//IP header (Start from IPv4/IPv6 header)
+//IP payload(Start from IP payload also means start of layer 4 packet)
+//L4 payload (Start after TCP/UDP header ICMP/IGMP is not supported)
+//offset from starting position
+//offset
+field-selector set index <UINT:index> format ( raw | llc | l3 | arp | ip-header | ip-payload | l4-payload ) offset <UINT:offset>
+#endif
+
+#ifdef CMD_FIELD_SELECTOR_SET_INDEX_INDEX_PAYLOAD_SELECT_INNER_OUTER
+//field selector configuration
+//set configuration
+//index configuration
+//index
+//payload select
+//inner
+//outer
+field-selector set index <UINT:index> payload-select ( inner | outer )
+#endif
+
+#ifdef CMD_FIELD_SELECTOR_SET_INDEX_INDEX_FORMAT_RAW_L2_L3_L4_OFFSET_OFFSET
+//field selector configuration
+//set configuration
+//index configuration
+//index
+//field selector format
+//Raw packet(Start after SFD begin with DA)
+//L2 packet(Start from Ethertype field VLAN tag is bypassed)
+//L3 packet(Start from IPv4/IPv6 header or ARP/RARP header)
+//L4 packet (Start from TCP/UDP/ICMP/IGMP header)
+//offset from starting position
+//offset
+field-selector set index <UINT:index> format ( raw | l2 | l3 | l4 ) offset <UINT:offset>
+#endif
+
+#ifdef CMD_RANGE_CHECK_GET_IP_ENTRY_INDEX
+//range check configuration
+//get configuration
+//IP address range check
+//entry configuration
+//entry index
+range-check get ip entry <UINT:index>
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_IP_ENTRY_INDEX_LOW_BOUND_IP
+//range check configuration
+//set configuration
+//IP address range check
+//entry configuration
+//entry index
+//lower bound configuration
+//lower bound IP address
+range-check set ip entry <UINT:index> low-bound <IPV4ADDR:ip>
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_IP_ENTRY_INDEX_UP_BOUND_IP
+//range check configuration
+//set configuration
+//IP address range check
+//entry configuration
+//entry index
+//upper bound configuration
+//upper bound IP address
+range-check set ip entry <UINT:index> up-bound <IPV4ADDR:ip>
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_IP_ENTRY_INDEX_LOW_BOUND_LIP_UP_BOUND_UIP
+//range check configuration
+//set configuration
+//IP address range check
+//entry configuration
+//entry index
+//lower bound configuration
+//lower bound IP address
+//upper bound configuration
+//upper bound IP address
+range-check set ip entry <UINT:index> low-bound <IPV4ADDR:lip> up-bound <IPV4ADDR:uip>
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_IP_ENTRY_INDEX_TYPE_SIP_DIP_SIP6_DIP6
+//range check configuration
+//set configuration
+//IP address range check
+//entry configuration
+//entry index
+//IP address range check type
+//IPv4 source IP address
+//IPv4 dest. IP address
+//IPv6 source IP address
+//IPv6 dest. IP address
+range-check set ip entry <UINT:index> type ( sip | dip | sip6 | dip6 )
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_IP_ENTRY_INDEX_TYPE_SIP6_SUFFIX_DIP6_SUFFIX
+//range check configuration
+//set configuration
+//IP address range check
+//entry configuration
+//entry index
+//IP address range check type
+//IPv6 source IP suffix address
+//IPv6 dest. IP suffix address
+range-check set ip entry <UINT:index> type ( sip6-suffix | dip6-suffix )
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_IP_ENTRY_INDEX_REVERSE_DISABLE_ENABLE
+//range check configuration
+//set configuration
+//IP address range check
+//entry configuration
+//entry index
+//reverse operation
+//disable action
+//enable action
+range-check set ip entry <UINT:index> reverse ( disable | enable )
+#endif
+
+#ifdef CMD_PIE_GET_PHASE_VACL_IACL_EACL_TEMPLATE_INDEX_VLAN_SEL
+//pie configuration
+//get configuration
+//phase configuration
+//vacl
+//iacl
+//eacl
+//template configuration
+//pre-template index(0-4)
+//vlan template field
+pie get phase ( vacl | iacl | eacl ) template <UINT:index> vlan-sel
+#endif
+
+#ifdef CMD_PIE_SET_PHASE_VACL_IACL_EACL_TEMPLATE_INDEX_VLAN_SEL_INNER_OUTER_FORWARD_SOURCE_FORWARD
+//pie configuration
+//set configuration
+//phase configuration
+//vacl
+//iacl
+//eacl
+//template configuration
+//pre-template index(0-4)
+//vlan template field
+//inner vlan
+//outer vlan
+//forwarding vlan
+//forwarding vlan before routing
+pie set phase ( vacl | iacl | eacl ) template <UINT:index> vlan-sel ( inner | outer | forward | source_forward )
+#endif
+
+#ifdef CMD_PIE_GET_BLOCK_INDEX_PHASE
+//pie configuration
+//get configuration
+//block configuration
+//block index
+//phase configuration
+pie get block <UINT:index> phase
+#endif
+
+#ifdef CMD_PIE_SET_BLOCK_INDEX_PHASE_VACL_IACL
+//pie configuration
+//set configuration
+//block configuration
+//block index
+//phase configuration
+//vacl
+//iacl
+pie set block <UINT:index> phase ( vacl | iacl )
+#endif
+
+#ifdef CMD_PIE_SET_BLOCK_INDEX_PHASE_EACL
+//pie configuration
+//set configuration
+//block configuration
+//block index
+//phase configuration
+//eacl
+pie set block <UINT:index> phase eacl
+#endif
+
+#ifdef CMD_PIE_SET_BLOCK_INDEX_PHASE_NONE
+//pie configuration
+//set configuration
+//block configuration
+//block index
+//phase configuration
+//none
+pie set block <UINT:index> phase none
+#endif
+
+#ifdef CMD_PIE_SET_BLOCK_INDEX_PHASE_INGRESS_FLOWTBL_0_INGRESS_FLOWTBL_3_EGRESS_FLOWTBL_0
+//pie configuration
+//set configuration
+//block configuration
+//block index
+//phase configuration
+//ingress flow table 0
+//ingress flow table 3
+//egress flow table 0
+pie set block <UINT:index> phase ( ingress-flowtbl-0 | ingress-flowtbl-3 | egress-flowtbl-0 )
+#endif
+
+#ifdef CMD_PIE_GET_METER_DP_SEL
+//pie configuration
+//get configuration
+//meter configuration
+//dp select configuration
+pie get meter dp-sel
+#endif
+
+#ifdef CMD_PIE_SET_METER_DP_SEL_DEEPEST_COLOR_LOWEST_INDEX
+//pie configuration
+//set configuration
+//meter configuration
+//dp select configuration
+//the deepest color
+//the lowest index
+pie set meter dp-sel ( deepest-color | lowest-index )
+#endif
+
+#ifdef CMD_PIE_GET_ARP_MAC_SEL
+//pie configuration
+//get configuration
+//ARP MAC selection
+pie get arp-mac-sel
+#endif
+
+#ifdef CMD_PIE_SET_ARP_MAC_SEL_L2_ARP
+//pie configuration
+//set configuration
+//ARP MAC selection
+//l2 MAC configuration
+//arp sender/target hardware address
+pie set arp-mac-sel ( l2 | arp )
+#endif
+
+#ifdef CMD_RANGE_CHECK_GET_ENTRY_INDEX
+//range check configuration
+//get configuration
+//entry configuration
+//entry index
+range-check get entry <UINT:index>
+#endif
+
+#ifdef CMD_RANGE_CHECK_SET_ENTRY_INDEX_IVID_OVID_L4_SPORT_L4_DPORT_L4_PORT_PKT_LEN_L3_LEN_UP_BOUND_UPPER_LOW_BOUND_LOWER
+//range check configuration
+//set configuration
+//entry configuration
+//entry index
+//inner vid
+//outer vid
+//L4 source port
+//L4 destination port
+//L4 source or destination port
+//packet length
+//L3 packet length
+//upper bound configuration
+//upper bound
+//lower bound configuration
+//lower bound
+range-check set entry <UINT:index> ( ivid | ovid | l4-sport | l4-dport | l4-port | pkt-len | l3-len ) up-bound <UINT:upper> low-bound <UINT:lower>
+#endif
+
+#ifdef CMD_PIE_SET_METER_ENTRY_INDEX_DLB_LB0_RATE_LB0_RATE_LB0_BURST_LB0_BURST_LB1_RATE_LB1_RATE_LB1_BURST_LB1_BURST
+//PIE configuration
+//set configuration
+//meter configuration
+//meter entry configuration
+//meter index
+//dual leaky bucket
+//Leaky bucket 0 rate configuration
+//rate  (unit:16 Kbps or 1 packet per sec)
+//Leaky bucket 0 burst configuration
+//burst size (unit:128 bytes or 1 packet)
+//Leaky bucket 1 rate configuration
+//rate  (unit:16 Kbps or 1 packet per sec)
+//Leaky bucket 1 burst configuration
+//burst size (unit:128 bytes or 1 packet)
+pie set meter entry <UINT:index> dlb lb0-rate <UINT:lb0_rate> lb0-burst <UINT:lb0_burst> lb1-rate <UINT:lb1_rate> lb1-burst <UINT:lb1_burst>
+#endif
+
+#ifdef CMD_PIE_SET_METER_ENTRY_INDEX_SRTCM_COLOR_AWARE_COLOR_BLIND_CIR_CIR_CBS_CBS_EBS_EBS
+//PIE configuration
+//set configuration
+//meter configuration
+//meter entry configuration
+//meter index
+//single rate three color marker
+//color aware
+//color blind
+//committed information rate
+//rate  (unit:16 Kbps or 1 packet per sec)
+//committed burst size
+//burst size (unit:128 bytes or 1 packet)
+//exceed burst
+//burst size (unit:128 bytes or 1 packet)
+pie set meter entry <UINT:index> srtcm ( color-aware | color-blind ) cir <UINT:cir> cbs <UINT:cbs> ebs <UINT:ebs>
+#endif
+
+#ifdef CMD_PIE_SET_METER_ENTRY_INDEX_TRTCM_COLOR_AWARE_COLOR_BLIND_CIR_CIR_CBS_CBS_PIR_PIR_PBS_PBS
+//PIE configuration
+//set configuration
+//meter configuration
+//meter entry configuration
+//meter index
+//two rate three color marker
+//color aware
+//color blind
+//committed information rate
+//rate  (unit:16 Kbps or 1 packet per sec)
+//committed burst size
+//burst size (unit:128 bytes or 1 packet)
+//peak information rate
+//rate  (unit:16 Kbps or 1 packet per sec)
+//peak burst size
+//burst size (unit:128 bytes or 1 packet)
+pie set meter entry <UINT:index> trtcm ( color-aware | color-blind ) cir <UINT:cir> cbs <UINT:cbs> pir <UINT:pir> pbs <UINT:pbs>
+#endif
+
+#ifdef CMD_PIE_GET_BLOCK_INDEX_GROUP
+//PIE configuration
+//read configuration
+//block configuration
+//block index
+//group configuration
+pie get block <UINT:index> group
+#endif
+
+#ifdef CMD_PIE_SET_BLOCK_INDEX_GROUP_GROUP_ID_GROUP_ID_LOGIC_ID_LOGIC_ID
+//PIE configuration
+//set configuration
+//block configuration
+//block index
+//group configuration
+//group id
+//group id value
+//logic id
+//logic id value
+pie set block <UINT:index> group group_id <UINT:group_id> logic_id <UINT:logic_id>
+#endif
+
+#ifdef CMD_PIE_GET_METER_ENTRY_INDEX_MODE
+//PIE configuration
+//get configuration
+//meter configuration
+//meter entry configuration
+//meter index
+//meter mode
+pie get meter entry <UINT:index> mode
+#endif
+
+#ifdef CMD_PIE_SET_METER_ENTRY_INDEX_MODE_BYTE_PACKET
+//PIE configuration
+//set configuration
+//meter configuration
+//meter entry configuration
+//meter index
+//meter mode
+//meter byte mode
+//meter packet mode
+pie set meter entry <UINT:index> mode ( byte | packet )
+#endif
+
+#ifdef CMD_PIE_GET_FILTER_INTERFACE_SELECT
+//pie configuration
+//get configuration
+//filter configuration
+//interface selection
+pie get filter interface-select
+#endif
+
+#ifdef CMD_PIE_SET_FILTER_INTERFACE_L3_TUNNEL
+//pie configuration
+//set configuration
+//filter configuration
+//interface selection
+//L3 interface
+//tunnel interface
+pie set filter interface ( l3 | tunnel )
+#endif
+
+#ifdef CMD_PIE_GET_PHASE_VACL_TEMPLATE_INDEX_VLAN_FMT_SEL
+//pie configuration
+//get configuration
+//phase configuration
+//vacl
+//template configuration
+//template index
+//vlan format select
+pie get phase vacl template <UINT:index> vlan-fmt-sel
+#endif
+
+#ifdef CMD_PIE_SET_PHASE_VACL_TEMPLATE_INDEX_VLAN_FMT_SEL_ORIGINAL_MODIFIED
+//pie configuration
+//set configuration
+//phase configuration
+//vacl
+//template configuration
+//template index
+//vlan format select
+//orignal VLAN
+//modified VLAN
+pie set phase vacl template <UINT:index> vlan-fmt-sel ( original | modified )
+#endif
+
+#ifdef CMD_PIE_GET_METER_TRTCM_TYPE
+//pie configuration
+//get configuration
+//meter configuration
+//trtcm type
+pie get meter trtcm-type
+#endif
+
+#ifdef CMD_PIE_SET_METER_TRTCM_TYPE_ORIGINAL_MODIFIED
+//pie configuration
+//set configuration
+//meter configuration
+//trtcm type
+//orignal VLAN
+//modified VLAN
+pie set meter trtcm-type ( original | modified )
+#endif
+
+#ifdef CMD_PIE_GET_FILTER_8021BR
+//pie configuration
+//get configuration
+//filter configuration
+//802.1BR status
+pie get filter 8021br
+#endif
+
+#ifdef CMD_PIE_SET_FILTER_8021BR_DISABLE_ENABLE
+//pie configuration
+//set configuration
+//filter configuration
+//802.1BR status
+//disable configuration
+//enable configuration
+pie set filter 8021br ( disable | enable )
+#endif

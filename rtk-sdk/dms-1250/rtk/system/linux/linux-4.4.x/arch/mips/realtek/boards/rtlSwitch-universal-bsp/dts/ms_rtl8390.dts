@@ -1,0 +1,69 @@
+/*
+ * Realtek Semiconductor Corp.
+ *
+ * Device Tree Structure
+ *
+ * RTK Management Switch
+ */
+
+/dts-v1/;
+
+#include <dt-bindings/interrupt-controller/mips-gic.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+#include "../chipDrv/rtl839x/rtk_bsp_rtl8390_intr.h"
+
+/ {
+    compatible = "rtk,switch3";
+    #address-cells = <1>;
+    #size-cells = <1>;
+
+    rtl8390 {
+        compatible = "rtl8390", "simple-bus";
+        #address-cells = <1>;
+        #size-cells = <1>;
+        ranges;
+
+        cpus {
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            cpu@0 {
+                compatible = "mti,mips34Kc";
+                device_type = "cpu";
+                reg = <0>;
+            };
+        };
+
+        timer {
+            compatible = "rtk,cevt-ext";
+        };
+
+        intr_8390: intr_8390@18003000 {
+            compatible = "rtk,8390-intr";
+            reg = <0x18003000 0x30>;
+            interrupt-controller;
+            #interrupt-cells = <1>;
+            interrupt-parent = <&cpuintc>;
+            interrupts = <2>;
+        };    
+       
+        uart0: serial@18002000 {
+            compatible = "ns16550a";
+            reg = <0x18002000 0x100>;
+            clock-frequency = <200000000>;
+	    current-speed = <115200>;	
+            interrupt-parent = <&intr_8390>;
+            interrupts = <31>;
+            reg-shift = <2>;
+        };        
+
+    };
+    
+    cpuintc: cpuintc@0 {
+        #address-cells = <0>;
+        #interrupt-cells = <1>;
+        interrupt-controller;
+        compatible = "mti,cpu-interrupt-controller";
+    };
+
+};

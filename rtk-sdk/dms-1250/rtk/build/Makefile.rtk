@@ -1,0 +1,338 @@
+#
+# Copyright (C) 2016 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtk Kernel Module
+#
+
+
+#
+# include configuration file
+#
+sinclude $(SDK_CONFIG)
+
+
+#
+# include customer files
+#
+ifeq ($(CONFIG_SDK_DRIVER_RTK_CUSTOMER),y)
+    CUSTOMER_RTK_API_DIR := $(SDK_TOP_DIR)/rtk-sdk/src/rtk/customer
+    include $(CUSTOMER_RTK_API_DIR)/customer_api.mk
+endif
+
+
+#
+# path definition
+#
+COMMON_DIR :=               common
+COMMON_UTIL_DIR :=          common/util
+HAL_DIR :=                  hal
+HAL_CHIPDEF_DIR :=          $(HAL_DIR)/chipdef
+HAL_CHIPDEF_CYPRESS_DIR :=  $(HAL_CHIPDEF_DIR)/cypress
+HAL_CHIPDEF_MAPLE_DIR :=    $(HAL_CHIPDEF_DIR)/maple
+HAL_CHIPDEF_MANGO_DIR :=    $(HAL_CHIPDEF_DIR)/mango
+HAL_CHIPDEF_LONGAN_DIR :=   $(HAL_CHIPDEF_DIR)/longan
+
+HAL_COMMON_DIR :=           $(HAL_DIR)/common
+HAL_MAC_DIR :=              $(HAL_DIR)/mac
+HAL_PHY_DIR :=              $(HAL_DIR)/phy
+DAL_DIR :=                  dal
+DAL_CYPRESS_DIR :=          $(DAL_DIR)/cypress
+DAL_MAPLE_DIR :=            $(DAL_DIR)/maple
+DAL_MANGO_DIR :=            $(DAL_DIR)/mango
+DAL_LONGAN_DIR :=           $(DAL_DIR)/longan
+DAL_RTRPC_DIR :=            $(DAL_DIR)/rtrpc
+
+RTK_DIR :=                  rtk
+
+
+#
+# compiler/linker option
+#
+EXTRA_CFLAGS += -Wall -Werror -Wuninitialized -Wstrict-prototypes -Wno-array-bounds
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)
+
+
+#
+# main
+#
+COMMON_OBJ := \
+	$(COMMON_DIR)/rt_error.o \
+	$(COMMON_UTIL_DIR)/rt_bitop.o \
+	$(COMMON_UTIL_DIR)/rt_util.o \
+	$(COMMON_UTIL_DIR)/rt_util_test.o \
+	$(COMMON_UTIL_DIR)/rt_util_serdes.o \
+	$(COMMON_UTIL_DIR)/rt_util_led.o
+
+HAL_OBJ := \
+	$(HAL_CHIPDEF_DIR)/chipdef.o \
+	$(HAL_CHIPDEF_DIR)/driver.o \
+	$(HAL_COMMON_DIR)/halctrl.o \
+	$(HAL_MAC_DIR)/mac_probe.o \
+	$(HAL_MAC_DIR)/drv/drv.o \
+	$(HAL_MAC_DIR)/mem.o \
+	$(HAL_MAC_DIR)/reg.o \
+	$(HAL_MAC_DIR)/miim_common_drv.o \
+	$(HAL_MAC_DIR)/serdes.o \
+	$(HAL_MAC_DIR)/mac_debug.o
+
+ifeq ($(CONFIG_SDK_RTL8390),y)
+    HAL_OBJ += \
+    	$(HAL_PHY_DIR)/phy_rtl8390.o \
+    	$(HAL_MAC_DIR)/led/led_rtl8390.o\
+    	$(HAL_MAC_DIR)/drv/drv_rtl8390.o \
+    	$(HAL_CHIPDEF_CYPRESS_DIR)/rtk_cypress_reg_list.o \
+    	$(HAL_CHIPDEF_CYPRESS_DIR)/rtk_cypress_regField_list.o \
+    	$(HAL_CHIPDEF_CYPRESS_DIR)/rtk_cypress_table_list.o \
+    	$(HAL_CHIPDEF_CYPRESS_DIR)/rtk_cypress_tableField_list.o \
+    	$(HAL_CHIPDEF_CYPRESS_DIR)/chip_rtl8390.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8380),y)
+    HAL_OBJ += \
+    	$(HAL_PHY_DIR)/phy_rtl8380.o \
+    	$(HAL_MAC_DIR)/led/led_rtl8380.o\
+    	$(HAL_MAC_DIR)/drv/drv_rtl8380.o \
+    	$(HAL_CHIPDEF_MAPLE_DIR)/rtk_maple_reg_list.o \
+    	$(HAL_CHIPDEF_MAPLE_DIR)/rtk_maple_regField_list.o \
+    	$(HAL_CHIPDEF_MAPLE_DIR)/rtk_maple_table_list.o \
+    	$(HAL_CHIPDEF_MAPLE_DIR)/rtk_maple_tableField_list.o \
+    	$(HAL_CHIPDEF_MAPLE_DIR)/chip_rtl8380.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL9310),y)
+    HAL_OBJ += \
+      $(HAL_PHY_DIR)/phy_rtl9310.o \
+    	$(HAL_MAC_DIR)/drv/drv_rtl9310.o \
+	    $(HAL_MAC_DIR)/led/led_rtl9310.o\
+    	$(HAL_CHIPDEF_MANGO_DIR)/rtk_mango_reg_list.o \
+    	$(HAL_CHIPDEF_MANGO_DIR)/rtk_mango_regField_list.o \
+    	$(HAL_CHIPDEF_MANGO_DIR)/rtk_mango_table_list.o \
+    	$(HAL_CHIPDEF_MANGO_DIR)/rtk_mango_tableField_list.o \
+    	$(HAL_CHIPDEF_MANGO_DIR)/chip_rtl9310.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL9300),y)
+    HAL_OBJ += \
+    	$(HAL_PHY_DIR)/phy_rtl9300.o \
+    	$(HAL_MAC_DIR)/led/led_rtl9300.o\
+    	$(HAL_MAC_DIR)/drv/drv_rtl9300.o \
+    	$(HAL_CHIPDEF_LONGAN_DIR)/rtk_longan_reg_list.o \
+    	$(HAL_CHIPDEF_LONGAN_DIR)/rtk_longan_regField_list.o \
+    	$(HAL_CHIPDEF_LONGAN_DIR)/rtk_longan_table_list.o \
+    	$(HAL_CHIPDEF_LONGAN_DIR)/rtk_longan_tableField_list.o \
+    	$(HAL_CHIPDEF_LONGAN_DIR)/chip_rtl9300.o
+endif
+
+DAL_OBJ := \
+	$(DAL_DIR)/dal_common.o \
+	$(DAL_DIR)/dal_mgmt.o \
+	$(DAL_DIR)/dal_linkMon.o
+
+ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+    DAL_OBJ += \
+    	$(DAL_DIR)/dal_linkFaultMon.o
+endif
+
+  DAL_OBJ += \
+    $(DAL_DIR)/dal_waMon.o
+
+ifeq ($(CONFIG_SDK_RTL8390),y)
+    DAL_OBJ += \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_mapper.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_eee.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_flowctrl.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_l2.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_l3.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_mirror.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_port.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_qos.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_stp.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_switch.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_time.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_trap.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_trunk.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_sec.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_vlan.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_stat.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_rate.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_acl.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_oam.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_mpls.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_diag.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_common.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_waFunc.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_sds.o \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_led.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL8380),y)
+    DAL_OBJ += \
+    	$(DAL_MAPLE_DIR)/dal_maple_mapper.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_eee.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_flowctrl.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_l2.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_l3.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_led.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_mirror.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_port.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_qos.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_stp.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_switch.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_trap.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_trunk.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_sec.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_vlan.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_stat.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_rate.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_acl.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_time.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_waFunc.o \
+    	$(DAL_MAPLE_DIR)/dal_maple_diag.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL9310),y)
+    DAL_OBJ += \
+    	$(DAL_MANGO_DIR)/dal_mango_mapper.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_common.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_port.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_l2.o		\
+    	$(DAL_MANGO_DIR)/dal_mango_l3.o		\
+	$(DAL_MANGO_DIR)/dal_mango_led.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_tunnel.o	\
+	$(DAL_MANGO_DIR)/dal_mango_vxlan.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_mcast.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_ipmcast.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_stp.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_mirror.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_qos.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_mpls.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_sec.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_eee.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_trap.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_trunk.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_vlan.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_bpe.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_stat.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_rate.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_flowctrl.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_oam.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_stack.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_pie.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_acl.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_openflow.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_sds.o	\
+    	$(DAL_MANGO_DIR)/dal_mango_diag.o \
+    	$(DAL_MANGO_DIR)/dal_mango_switch.o \
+    	$(DAL_MANGO_DIR)/dal_mango_waFunc.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL9300),y)
+    DAL_OBJ += \
+    	$(DAL_LONGAN_DIR)/dal_longan_mapper.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_eee.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_common.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_port.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_stp.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_pie.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_l2.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_rate.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_flowctrl.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_trunk.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_acl.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_qos.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_vlan.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_trap.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_mirror.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_stat.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_sec.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_switch.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_diag.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_led.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_oam.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_l3.o \
+    	$(DAL_LONGAN_DIR)/dal_longan_ipmcast.o	\
+    	$(DAL_LONGAN_DIR)/dal_longan_waFunc.o	\
+    	$(DAL_LONGAN_DIR)/dal_longan_sds.o	\
+    	$(DAL_LONGAN_DIR)/dal_longan_mcast.o
+    DAL_OBJ += $(DAL_LONGAN_DIR)/dal_longan_stack.o
+endif
+
+DAL_OBJ += \
+	$(DAL_DIR)/dal_construct.o
+ifeq ($(CONFIG_SDK_RTL8390),y)
+    DAL_OBJ += \
+    	$(DAL_CYPRESS_DIR)/dal_cypress_construct.o
+endif
+ifeq ($(CONFIG_SDK_RTL8380),y)
+    DAL_OBJ += \
+    	$(DAL_MAPLE_DIR)/dal_maple_construct.o
+endif
+ifeq ($(CONFIG_SDK_RTL9300),y)
+    DAL_OBJ += \
+    	$(DAL_LONGAN_DIR)/dal_longan_construct.o
+endif
+ifeq ($(CONFIG_SDK_RTL9310),y)
+    DAL_OBJ += \
+    	$(DAL_MANGO_DIR)/dal_mango_construct.o
+endif
+
+ifeq ($(CONFIG_RISE),y)
+  EXTRA_CFLAGS += -I$(ROOT_PATH)/module/stk/src
+  include $(SDK_TOP_DIR)/sdk/build/Makefile.rtrpc
+  RTRPC_OBJ = $(shell for i in $(RTRPC_SRC); do n=`basename $$i`; echo -n $(DAL_RTRPC_DIR)/$${n%%.*}.o ""; done)
+else
+  RTRPC_OBJ =
+endif
+
+RTK_OBJ := \
+	$(RTK_DIR)/init.o \
+	$(RTK_DIR)/eee.o \
+	$(RTK_DIR)/flowctrl.o \
+	$(RTK_DIR)/l2.o \
+	$(RTK_DIR)/l3.o \
+	$(RTK_DIR)/mirror.o \
+	$(RTK_DIR)/port.o \
+	$(RTK_DIR)/qos.o \
+	$(RTK_DIR)/rate.o \
+	$(RTK_DIR)/sec.o \
+	$(RTK_DIR)/stat.o \
+	$(RTK_DIR)/stp.o \
+	$(RTK_DIR)/switch.o \
+	$(RTK_DIR)/time.o \
+	$(RTK_DIR)/trap.o \
+	$(RTK_DIR)/vlan.o \
+	$(RTK_DIR)/bpe.o \
+	$(RTK_DIR)/trunk.o \
+	$(RTK_DIR)/issinit.o \
+	$(RTK_DIR)/led.o \
+	$(RTK_DIR)/acl.o \
+	$(RTK_DIR)/diag.o \
+	$(RTK_DIR)/stack.o \
+	$(RTK_DIR)/pie.o \
+	$(RTK_DIR)/mpls.o \
+	$(RTK_DIR)/oam.o \
+	$(RTK_DIR)/ipmcast.o \
+	$(RTK_DIR)/mcast.o \
+	$(RTK_DIR)/tunnel.o \
+	$(RTK_DIR)/vxlan.o \
+	$(RTK_DIR)/openflow.o \
+	$(RTK_DIR)/sds.o
+ifeq ($(CONFIG_SDK_DRIVER_RTK_CUSTOMER),y)
+    RTK_OBJ += \
+    		$(CUSTOMER_RTK_API_SRC)
+endif
+
+#
+# for model code
+#
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+    ifeq ($(CONFIG_SDK_RTL9310),y)
+        EXTRA_CFLAGS += -I$(MODELDIR) -I$(MODELDIR)/common -I$(MODELDIR)/behavior_src/9310 -I$(MODELDIR)/testcase/9310
+    endif
+    ifeq ($(CONFIG_SDK_RTL9300),y)
+            EXTRA_CFLAGS += -I$(MODELDIR) -I$(MODELDIR)/common -I$(MODELDIR)/behavior_src/9300
+    endif
+endif
+
+
+RTK_ALL_OBJ := $(COMMON_OBJ) $(HAL_OBJ) $(DAL_OBJ) $(RTRPC_OBJ) $(RTK_OBJ) $(PHY_OBJ) $(CUST_PHY)

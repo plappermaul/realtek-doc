@@ -1,0 +1,50 @@
+# Automatically generated, do not edit
+
+config FORMOSA
+	bool
+	default y
+
+config FORMOSA_utils_busybox
+	bool
+	default y
+
+config SOC_CPU_MIPS
+	bool
+	default y
+
+config SOC_CPU_MIPSIA
+	bool
+	default y
+
+config SOC_CPU_EB
+	bool
+	default y
+
+config SOC_ENABLE_CPS
+	bool
+	default n
+
+config SOC_ENABLE_AR7
+	bool
+	default y
+
+config SOC_ENABLE_L2C
+	bool
+	default y
+
+config SOC_ENABLE_OF
+	bool
+	default y
+
+config SOC_ENABLE_BUILTIN_DTB
+	bool
+	default y
+
+config SOC_ENABLE_USB
+        bool
+        default y
+
+config SOC_MEM_SIZE
+  int
+  default 256
+

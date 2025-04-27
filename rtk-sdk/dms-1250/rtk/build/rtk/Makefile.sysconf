@@ -1,0 +1,37 @@
+# Copyright (C) 2015 Realtek Semiconductor Corp.
+#
+# Makefile for including all system configurations
+#
+
+ROOT_CONFIG_FILE =  $(ROOT_PATH)/$(KERNEL_DIR)/$(OS_TYPE)/.config
+ifeq ($(ROOT_CONFIG_FILE), $(wildcard $(ROOT_CONFIG_FILE)))
+    include $(ROOT_CONFIG_FILE)
+endif
+
+ARCH_CONFIG_FILE =  $(ROOT_PATH)/$(KERNEL_DIR)/$(OS_TYPE)/config.arch
+ifeq ($(ARCH_CONFIG_FILE), $(wildcard $(ARCH_CONFIG_FILE)))
+    include $(ARCH_CONFIG_FILE)
+endif
+
+
+SDK_INCLUDE   = $(ROOT_PATH)/$(SDK_DIR)/include
+DRV_INCLUDE   = $(ROOT_PATH)/$(SDK_DIR)/system/linux
+SYS_INCLUDE   = $(ROOT_PATH)/$(SDK_DIR)/system/include
+
+EXTRA_CFLAGS += -nostdinc -isystem /opt/toolchain/msdk-4.4.7-mips-EB-2.6.19-u0.9.33-m32t-150429-cn2sd6-150528/bin/../lib/gcc/mips-linux-uclibc/4.4.7/include
+
+EXTRA_CFLAGS += -Iinclude/asm-mips/mach-realtek/rtl83xx-universal-bsp
+EXTRA_CFLAGS += -D__linux__
+EXTRA_CFLAGS += -Os
+EXTRA_CFLAGS += -U_MIPS_ISA -D_MIPS_ISA=_MIPS_ISA_MIPS32 -Wa,-mips32 -Wa,--trap
+EXTRA_CFLAGS += -Wall -Werror -Wstrict-prototypes -Wundef
+EXTRA_CFLAGS += -Wno-trigraphs -fno-strict-aliasing -fno-common
+EXTRA_CFLAGS += -mabi=32 -G 0 -fno-pic -pipe -msoft-float -ffreestanding -mips32
+EXTRA_CFLAGS += -fno-builtin
+EXTRA_CFLAGS += -Iinclude/asm-mips/mach-generic -fomit-frame-pointer  -fno-stack-protector -Wdeclaration-after-statement -Wno-pointer-sign
+EXTRA_CFLAGS += -mlong-calls
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE)
+#EXTRA_CFLAGS += -include include/linux/autoconf.h
+#EXTRA_CFLAGS += -Iinclude
+

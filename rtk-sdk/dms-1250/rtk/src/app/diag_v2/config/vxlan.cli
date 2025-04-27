@@ -1,0 +1,259 @@
+//
+// Copyright (C) 2017 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for VXLAN.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) VXLAN commands.
+//
+
+
+
+
+
+#ifdef CMD_VXLAN_GET_TRAP_TARGET
+//VXLAN configuration
+//get configuration
+//trap target configuration
+vxlan get trap-target
+#endif
+
+#ifdef CMD_VXLAN_SET_TRAP_TARGET_LOCAL_MASTER
+//VXLAN configuration
+//set configuration
+//trap target configuration
+//trap to local CPU
+//trap to master CPU
+vxlan set trap-target ( local | master )
+#endif
+
+#ifdef CMD_VXLAN_GET_INVALID_HEADER_ACTION
+//VXLAN configuration
+//get configuration
+//invalid header configuration
+//action configuration
+vxlan get invalid-header action
+#endif
+
+#ifdef CMD_VXLAN_SET_INVALID_HEADER_ACTION_DROP_TRAP_TO_CPU
+//VXLAN configuration
+//set configuration
+//invalid header configuration
+//action configuration
+//drop
+//trap to CPU
+vxlan set invalid-header action ( drop | trap-to-cpu )
+#endif
+
+#ifdef CMD_VXLAN_GET_CONTROL_FRAME_ACTION
+//VXLAN configuration
+//get configuration
+//control frame configuration
+//action configuration
+vxlan get control-frame action
+#endif
+
+#ifdef CMD_VXLAN_SET_CONTROL_FRAME_ACTION_FORWARD_TRAP_TO_CPU
+//VXLAN configuration
+//set configuration
+//control frame configuration
+//action configuration
+//forward
+//trap to CPU
+vxlan set control-frame action ( forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_VXLAN_GET_VXLAN_VXLAN_GPE_EXCEPTION_FLAGS
+//VXLAN configuration
+//get configuration
+//VXLAN dummy
+//VXLAN-GPE
+//exception flags
+vxlan get ( vxlan | vxlan-gpe ) exception-flags
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_VXLAN_GPE_EXCEPTION_FLAGS_FLAGS
+//VXLAN configuration
+//set configuration
+//VXLAN dummy
+//VXLAN-GPE
+//exception flags
+//flags value
+vxlan set ( vxlan | vxlan-gpe ) exception-flags <UINT:flags>
+#endif
+
+#ifdef CMD_VXLAN_GET_EXCEPTION_FRAME_ACTION
+//VXLAN configuration
+//get configuration
+//exception frame configuration
+//action configuration
+vxlan get exception-frame action
+#endif
+
+#ifdef CMD_VXLAN_SET_EXCEPTION_FRAME_ACTION_FORWARD_DROP_COPY_TO_CPU_TRAP_TO_CPU
+//VXLAN configuration
+//set configuration
+//exception frame configuration
+//action configuration
+//forward
+//drop
+//copy to CPU
+//trap to CPU
+vxlan set exception-frame action ( forward | drop | copy-to-cpu | trap-to-cpu )
+#endif
+
+#ifdef CMD_VXLAN_GET_VXLAN_ENTRY_LOOKUP_MISS_ACTION
+//VXLAN configuration
+//get configuration
+//VXLAN entry
+//lookup miss configuration
+//action configuration
+vxlan get vxlan-entry lookup-miss action
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_ENTRY_LOOKUP_MISS_ACTION_DROP_TRAP_TO_CPU
+//VXLAN configuration
+//set configuration
+//VXLAN entry
+//lookup miss configuration
+//action configuration
+//drop
+//trap to CPU
+vxlan set vxlan-entry lookup-miss action ( drop | trap-to-cpu )
+#endif
+
+#ifdef CMD_VXLAN_DUMP_VXLAN_ENTRY_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//VXLAN configuration
+//dump configuration
+//VXLAN entry
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+vxlan dump vxlan-entry from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_VXLAN_ADD_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI
+//VXLAN configuration
+//add configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+vxlan add vxlan-entry intf <UINT:intf_id> vni <UINT:vni>
+#endif
+
+#ifdef CMD_VXLAN_DEL_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI
+//VXLAN configuration
+//del configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+vxlan del vxlan-entry intf <UINT:intf_id> vni <UINT:vni>
+#endif
+
+#ifdef CMD_VXLAN_DEL_VXLAN_ENTRY_ALL
+//VXLAN configuration
+//del configuration
+//VXLAN entry
+//all entries
+vxlan del vxlan-entry all
+#endif
+
+#ifdef CMD_VXLAN_GET_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI
+//VXLAN configuration
+//get configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+vxlan get vxlan-entry intf <UINT:intf_id> vni <UINT:vni>
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI_INNER_TAG_OUTER_TAG_UNTAG_UNTAG_PRI_ALL_VID
+//VXLAN configuration
+//set configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+//inner VLAN assignment configuration
+//outer VLAN assignment configuration
+//assign VID to untagged and outer priority tagged packet
+//assign VID to untagged packet
+//assign VID to all packet type
+//VLAN ID
+vxlan set vxlan-entry intf <UINT:intf_id> vni <UINT:vni> ( inner-tag | outer-tag ) ( untag | untag-pri | all ) <UINT:vid>
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI_FORWARD_VLAN_INNER_OUTER
+//VXLAN configuration
+//set configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+//forwarding VLAN configuration
+//inner VLAN
+//outer VLAN
+vxlan set vxlan-entry intf <UINT:intf_id> vni <UINT:vni> forward-vlan ( inner | outer )
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI_PRIORITY_GROUP_GROUP
+//VXLAN configuration
+//set configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+//priority selection group configuration
+//group ID
+vxlan set vxlan-entry intf <UINT:intf_id> vni <UINT:vni> priority-group <UINT:group>
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI_INTERNAL_PRIORITY_PRIORITY
+//VXLAN configuration
+//set configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+//internal priority configuration
+//internal priority
+vxlan set vxlan-entry intf <UINT:intf_id> vni <UINT:vni> internal-priority <UINT:priority>
+#endif
+
+#ifdef CMD_VXLAN_SET_VXLAN_ENTRY_INTF_INTF_ID_VNI_VNI_QOS_PROFILE_INDEX
+//VXLAN configuration
+//set configuration
+//VXLAN entry
+//interface configuration
+//interface id
+//VNI
+//VNI value
+//QoS profile configuration
+//profile ID
+vxlan set vxlan-entry intf <UINT:intf_id> vni <UINT:vni> qos-profile <UINT:index>
+#endif
+

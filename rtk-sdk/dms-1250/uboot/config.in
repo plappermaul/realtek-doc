@@ -1,0 +1,235 @@
+mainmenu_name "U-Boot Configuration"
+
+define_bool CONFIG_IN_UBOOT y
+
+#############################################################################
+
+mainmenu_option next_comment
+comment 'SDK Options'
+   source ../../../sdk/sdk_rtk_switch/rtk-sdk/config/config.in
+endmenu
+
+#############################################################################
+
+define_bool CONFIG_MISC_INIT_R y
+
+mainmenu_option next_comment
+comment 'Board'
+
+choice 'Console ' \
+	"UART0 CONFIG_UART0 \
+	 UART1 CONFIG_UART1"  UART0
+
+
+bool 'Interrupt Support' CONFIG_INTERRUPT_SUPPORT n
+choice 'Boot Type' \
+	"SPI-NOR  CONFIG_BOOT_SPI_NOR \
+	SPI-NAND  CONFIG_BOOT_SPI_NAND" SPI-NOR
+endmenu
+
+#############################################################################
+
+mainmenu_option next_comment
+
+comment 'Supported Commands'
+bool 'Command Line Editing' CONFIG_CMDLINE_EDITING y
+bool 'Flash Utilits'  CONFIG_CMD_FLASH y
+bool 'Memory Utilits' CONFIG_CMD_MEMORY y
+bool 'Show Header Information for Application Image' CONFIG_CMD_IMI n
+if [ "$CONFIG_FLASH_SRAM_ONLY" = "y" -o "$CFG_ENV_IS_IN_FLASH" != "y" ]; then
+	define_bool CONFIG_CMD_ENV n
+else
+	bool 'Save Environment Variables to Flash' CONFIG_CMD_ENV y
+fi
+bool 'Display CP0 Registers' CONFIG_CMD_DUMPREGS n
+
+define_bool CONFIG_CMD_LOADB y      #Load from RS-232: BIN Format
+define_bool CONFIG_CMD_LOADS y      #Load from RS-232: SREC Format
+define_bool CONFIG_CMD_SAVEENV y
+
+comment 'Menu Boot Options'
+bool 'Enable Menu Boot' CONFIG_RTK_BOOT y
+if [ "$CONFIG_RTK_BOOT" = "y" ]; then
+	bool '  Tftp download' CONFIG_TFTP_DOWNLOAD y
+	bool '  Serial download' CONFIG_SERIAL_DOWNLOAD n
+	bool '  ICE download' CONFIG_ICE_DOWNLOAD n
+	bool '  Standalone Application' CONFIG_STANDALONE_APP n
+	if [ "$CONFIG_TFTP_DOWNLOAD" = "y" ];then
+		define_bool CONFIG_CMD_NET y
+	fi
+	if [ "$CONFIG_CMD_NET" = "y" ];then
+		define_bool CONFIG_NET_MULTI y
+	fi
+	define_string CONFIG_AUTOBOOT_PROMPT ""
+	define_bool CONFIG_CMD_RTK y
+	define_bool CONFIG_CMD_RUN y
+fi
+
+endmenu
+
+#############################################################################
+
+mainmenu_option next_comment
+comment 'Networking'
+pstring 'MAC Address' CONFIG_ETHADDR "00:E0:4C:86:70:01"
+bool 'Network Command Support' CONFIG_CMD_NET
+if [ "$CONFIG_CMD_NET" = "y" ]; then
+	bool '  Ping' CONFIG_CMD_PING y
+	define_bool CONFIG_NET_MULTI y
+mainmenu_option next_comment
+fi
+pstring 'IP Address' CONFIG_IPADDR 192.168.1.1
+pstring 'TFTP Server IP Address' CONFIG_SERVERIP 192.168.1.111
+
+
+endmenu
+#############################################################################
+
+#############################################################################
+
+mainmenu_option next_comment
+comment 'Miscellaneous'
+if [ "$CONFIG_SDK_RTL9300" = "y" ]; then
+    define_string CFG_PROMPT "RTL9300 # "
+fi
+if [ "$CONFIG_SDK_RTL8390" = "y" ]; then
+	define_string CFG_PROMPT "RTL8390 # "
+fi
+if [ "$CONFIG_RTL838X" = "y" ]; then
+	define_string CFG_PROMPT "RTL8380 # "
+fi
+
+hex 'U-Boot Text Base' CONFIG_SYS_TEXT_BASE  	0x83F00000
+
+pint 'Boot Delay, -1 to Disable' CONFIG_BOOTDELAY -1
+
+#string 'Booting Arguments' CONFIG_BOOTARGS ""
+
+string 'Boot Command' CONFIG_BOOTCOMMAND ""
+
+string 'Board Version' CONFIG_BOARDVERSION ""
+
+string 'Board Model of Platform' CONFIG_BOARDMODEL ""
+
+string 'Booting Arguments' CONFIG_BOOTARGS ""
+
+string 'Post Password' CONFIG_POSTWORD ""
+
+pint 'Baudrate' CONFIG_BAUDRATE 115200
+
+bool 'enable LZMA' CONFIG_LZMA n
+
+if [ "$CONFIG_SDK_RTL9300" = "y" -o "$CONFIG_SDK_RTL9310" = "y" ]; then
+	bool 'enable SPI NAND flash driver' CONFIG_ENABLE_SPI_NAND_DRIVER n
+fi
+
+if [ "$CONFIG_SDK_RTL9300" = "y" -o "$CONFIG_SDK_RTL9310" = "y" ]; then
+	bool 'enable USB EHCI Host controller driver' CONFIG_RTK_USB_EHCI_HCD n
+fi
+endmenu
+
+#############################################################################
+
+mainmenu_option next_comment
+comment 'System'
+
+comment 'System Configuration'
+bool 'Use RTOS ToolChain (Non Linux)' CONFIG_RTOS_TOOLCHAIN_USED n
+bool 'System Image Loader Check' CONFIG_ENABLE_IH_MAGIC_NUMBER_CHK n
+hex 'Image Magic Number' CONFIG_IH_MAGIC_NUMBER 0x12345000
+bool 'ENV CRC ERROR, save default ENV' CONFIG_ENV_CRC_ERROR_SAVE_DEFAULT_ENV n
+
+
+endmenu
+
+#############################################################################
+
+if [ "$CONFIG_ENABLE_SPI_NAND_DRIVER" = "y" ]; then
+  define_bool CONFIG_SPI_NAND y
+  define_bool CONFIG_SPI_NAND_FLASH_INIT_FIRST y
+  define_bool CONFIG_SPI_NAND_FLASH y
+  define_bool CONFIG_ECC_ENGINE_INIT y
+  define_bool CONFIG_ECC_ENGINE y
+  define_bool CONFIG_CMD_SPI_NAND y
+fi
+if [ "$CONFIG_SDK_RTL8380" = "y" ]; then
+	define_int  CONFIG_CONS_INDEX 1
+	define_bool CONFIG_SERIAL_SOFTWARE_FIFO n
+	define_int  CONFIG_SYS_SDRAM_BASE 0x80000000
+	define_string CONFIG_MTD_PARTITIONS "n"
+        define_bool CONFIG_RTL8380 y
+        define_bool CONFIG_ENV_OVERWRITE y
+        define_int  CONFIG_EXCEPTION_BASE 0xbf000000
+fi
+if [ "$CONFIG_SDK_RTL8390" = "y" ]; then
+        define_int  CONFIG_CONS_INDEX 1
+        define_bool CONFIG_SERIAL_SOFTWARE_FIFO n
+	define_int  CONFIG_SYS_SDRAM_BASE 0x80000000
+	define_string CONFIG_MTD_PARTITIONS "n"
+        define_bool CONFIG_RTL8390 y
+        define_bool CONFIG_ENV_OVERWRITE y
+        define_int  CONFIG_EXCEPTION_BASE 0xbf000000
+fi
+if [ "$CONFIG_RTL838X" = "y" ] || [ "$CONFIG_SDK_RTL8380" = "y" ]; then
+	source ./board/Realtek/rtl838x/menuconfig.in
+elif [ "$CONFIG_RTL839X" = "y" ] || [ "$CONFIG_SDK_RTL8390" = "y" ]; then
+	source ./board/Realtek/rtl839x/menuconfig.in
+fi
+if [ "$CONFIG_SDK_RTL9300" = "y" ] && [ "$CONFIG_BOOT_SPI_NOR" = "y" ]; then
+  define_bool CONFIG_CMD_SF y
+  define_bool CONFIG_NOR_SPIF_G3 y
+  define_bool CONFIG_SPI_NOR_FLASH y
+  define_bool CONFIG_SPI_NAND_FLASH_G3 y
+  define_bool CONFIG_ECC_ENGINE_G2 y
+  define_string CONFIG_OTTO40_PRJNAME "9300_nor_demo"
+  define_bool CONFIG_ENV_OVERWRITE y
+if [ "$CONFIG_ENABLE_SPI_NAND_DRIVER" != 'y' ]; then
+  define_string CONFIG_MTD_PARTITIONS "n"
+fi
+fi
+if [ "$CONFIG_SDK_RTL9310" = "y" ] && [ "$CONFIG_BOOT_SPI_NOR" = "y" ]; then
+  define_bool CONFIG_CMD_SF y
+  define_bool CONFIG_NOR_SPIF_G3 y
+  define_bool CONFIG_SPI_NOR_FLASH y
+  define_bool CONFIG_SPI_NAND_FLASH_G3 y
+  define_bool CONFIG_ECC_ENGINE_G2 y
+  define_string CONFIG_OTTO40_PRJNAME "9310_nor_demo"
+  define_bool CONFIG_ENV_OVERWRITE y
+if [ "$CONFIG_ENABLE_SPI_NAND_DRIVER" != 'y' ]; then
+  define_string CONFIG_MTD_PARTITIONS "n"
+fi
+fi
+if [ "$CONFIG_ENABLE_SPI_NAND_DRIVER" = 'y' ]; then
+  define_bool CONFIG_CMD_UBI y
+  define_bool CONFIG_RBTREE y
+  define_bool CONFIG_CMD_SPI_NAND y
+  define_bool CONFIG_SPI_NAND_FLASH y
+  define_bool CONFIG_ECC_ENGINE y
+  define_bool CONFIG_LZMA y
+  define_bool CONFIG_CMD_MTDPARTS y
+  define_bool CONFIG_MTD_DEVICE y
+  define_bool CONFIG_MTD_PARTITIONS y
+  define_hex  CONFIG_SYS_MAX_NAND_DEVICE 1
+fi
+if [ "$CONFIG_SDK_RTL9300" = "y" ] && [ "$CONFIG_BOOT_SPI_NAND" = "y" ]; then
+  define_string CONFIG_OTTO40_PRJNAME "9300_nand_demo"
+fi
+if [ "$CONFIG_SDK_RTL9310" = "y" ] && [ "$CONFIG_BOOT_SPI_NAND" = "y" ]; then
+  define_string CONFIG_OTTO40_PRJNAME "9310_nand_demo"
+fi
+if [ "$CONFIG_BOOT_SPI_NAND" = "y" ]; then
+  define_bool CONFIG_CMD_MTDPARTS y
+  define_bool CONFIG_CMD_UBI y
+  define_bool CONFIG_RBTREE y
+  define_bool CONFIG_CMD_SPI_NAND y
+  define_bool CONFIG_SPI_NAND_FLASH y
+  define_bool CONFIG_ECC_ENGINE y
+  define_bool CONFIG_LZMA y
+  define_bool CONFIG_MTD_DEVICE y
+  define_bool CONFIG_MTD_PARTITIONS y
+  define_hex  CONFIG_SYS_MAX_NAND_DEVICE 1
+  define_bool CONFIG_SPI_NAND_FLASH_G2 y
+  define_bool CONFIG_ECC_ENGINE_G1 y
+fi
+#############################################################################
+

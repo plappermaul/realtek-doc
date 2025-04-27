@@ -1,0 +1,294 @@
+OUTPUT_FORMAT("elf32-tradbigmips", "elf32-tradbigmips", "elf32-tradbigmips")
+OUTPUT_ARCH(mips)
+ENTRY(plr_S_entry)
+SECTIONS
+{
+    _SRAM_START = SRAM_START&0x00000000FFFFFFFF;
+    _LMA_BASE = LMA_BASE&0x00000000FFFFFFFF;
+    
+    VMA_BASE = _SRAM_START;
+
+    .exc_reset
+        _LMA_BASE :
+        AT(_LMA_BASE) {
+        KEEP(__LDS_LIBPLR_O__(.exc_reset));
+    }
+
+    .exc_data0
+        (_LMA_BASE + HEADER_OFFSET):
+        {
+        KEEP(__LDS_LIBPLR_O__(.sdata.soc_stru));
+
+        start_of_dram_probe_func = .;
+        KEEP(__LDS_LIBPLR_O__(.dram_probe_func));
+        end_of_dram_probe_func = .;
+    }
+
+    .exc_utlb
+        _LMA_BASE + 0x100:
+        {
+        KEEP(__LDS_LIBPLR_O__(.exc_utlb));
+    }
+
+    .exc_data1
+        :
+        {
+        KEEP(__LDS_LIBPLR_O__(.exc_data1));
+    }
+
+    .exc_rest
+        (_LMA_BASE + ISR_ENTRY_OFFSET):
+        {
+        KEEP(__LDS_LIBPLR_O__(.exc_rest))
+    }
+
+    . = VMA_BASE + (ALIGN(32) & 0x000fffff);
+    .sram_text
+        :
+        AT(_LMA_BASE + (ADDR(.sram_text) & 0x000fffff))
+        {
+        KEEP(__LDS_LIBPLR_O__(.sram_text));
+        KEEP(__LDS_LIBPLR_O__(.unswapable_text));
+
+        KEEP(__LDS_LIBPLR_O__(.recycle_area));
+    }
+
+    .data
+        :
+        AT(_LMA_BASE + (ADDR(.data) & 0x000fffff))
+        {
+        KEEP(__LDS_LIBPLR_O__(.data));
+        KEEP(__LDS_LIBPLR_O__(.sdata));
+        KEEP(__LDS_LIBPLR_O__(.recycle_data));
+    }
+    end_of_sram = .;
+
+    . = ALIGN(4);
+    start_of_bss = .;
+    .sram_bss
+        :
+        {
+        KEEP(__LDS_LIBPLR_O__(.bss));
+        KEEP(__LDS_LIBPLR_O__(.sbss));
+        . = ALIGN(4);
+    }
+    end_of_bss = .;
+    sp_bottom = .;
+
+    physical_sram_size = . - VMA_BASE;
+
+    . = ALIGN((LOADADDR(.data) + SIZEOF(.data)), 32);
+    .parameters
+        :
+        AT(ADDR(.parameters)) {
+        KEEP(__LDS_LIBPLR_O__(.sdata.parameters))
+    }
+
+    flash_text_begin = .;
+    .flash_text
+        :
+        AT(ADDR(.flash_text))
+        {
+        KEEP(__LDS_LIBPLR_O__(.text));
+        KEEP(__LDS_LIBPLR_O__(.text.*));
+        KEEP(__LDS_LIBPLR_O__(.flash_text));
+    }
+    flash_text_end = .;
+    . = ALIGN(4);
+    .isr_entry_text : {
+        KEEP(__LDS_LIBPLR_O__(.isr_entry_text));
+    }
+    . = ALIGN(4);
+    .recycle_text : {
+        KEEP(__LDS_LIBPLR_O__(.recycle_text));
+    }    
+    
+    .nor_only_area
+        :
+        AT(ADDR(.nor_only_area))
+        {
+        KEEP(__LDS_LIBPLR_O__(.ro));
+        KEEP(__LDS_LIBPLR_O__(.rodata));
+        KEEP(__LDS_LIBPLR_O__(.rodata.str1.4));
+
+        . = ALIGN(4);
+        start_of_init_func_table = .;
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.0));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.1));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.2));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.3));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.4));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.5));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.6));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.7));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.8));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.9));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.10));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.11));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.12));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.13));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.14));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.15));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.16));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.17));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.18));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.19));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.20));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.21));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.22));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.23));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.24));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.25));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.26));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.27));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.28));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.29));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.30));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.31));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.32));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.33));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.34));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.35));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.36));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.37));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.38));
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.99));
+        end_of_init_func_table = .;
+        KEEP(__LDS_LIBPLR_O__(.init_func_level.ending_symb));
+
+        flash_data_begin = .;
+        KEEP(__LDS_LIBPLR_O__(.flash_data));
+        flash_data_end = .;
+        . = ALIGN(16);
+    }
+
+    . = ALIGN(16);
+    .cli_tables : {
+        start_of_cli_node = .;
+        KEEP(__LDS_LIBPLR_O__(.cli_node));
+        end_of_cli_node = .;
+
+        start_of_cli_mp_node = .;
+        KEEP(__LDS_LIBPLR_O__(.cli_mp_node));
+        end_of_cli_mp_node = .;
+
+        start_of_cli_tail = .;
+        KEEP(__LDS_LIBPLR_O__(.cli_tail));
+        end_of_cli_tail = .;
+
+        start_of_cli_help = .;
+        KEEP(__LDS_LIBPLR_O__(.cli_help));
+        end_of_cli_help = .;
+    }
+
+    . = ALIGN(16);
+    .symbol_table : {
+        start_of_symble_table = .;
+        KEEP(__LDS_LIBPLR_O__(.symbol_table));
+        end_of_symble_table = .;
+        KEEP(__LDS_LIBPLR_O__(.symbol_table.ending_symb));
+    }
+
+    . = ALIGN(16);
+    .mc_var : {
+        mc_var_begin = .;
+        KEEP(__LDS_LIBPLR_O__(.mc_var));
+        mc_var_end = .;
+    }
+
+    .reginfo : {
+        KEEP(__LDS_LIBPLR_O__(.reginfo));
+    }
+
+    . = ALIGN(16);
+    start_of_next_env = .;
+    .next_env : {
+        KEEP(__LDS_LIBPLR_O__(.next_env));
+    }
+    /* . = ALIGN(16); */
+    end_of_next_env = .;
+    
+    .dram (OTTO_UBOOT_BASE) :
+    AT(ALIGN((LOADADDR(.next_env) + SIZEOF(.next_env)), 4)) {
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .text*)
+
+        . = ALIGN(4);
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .data*)
+
+        . = ALIGN(4);
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .sdata*)
+
+        . = ALIGN(4);
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .rodata*)
+        
+        . = ALIGN(4);
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .reginfo)
+        
+        /* soft_patch */
+        . = ALIGN(4);
+        LS_sw_patch_start = .;
+        KEEP(*(.soft_patch.0));
+        KEEP(*(.soft_patch.1));
+        KEEP(*(.soft_patch.2));
+        KEEP(*(.soft_patch.3));
+        KEEP(*(.soft_patch.4));
+        KEEP(*(.soft_patch.5));
+        KEEP(*(.soft_patch.6));
+        KEEP(*(.soft_patch.7));
+        KEEP(*(.soft_patch.8));
+        KEEP(*(.soft_patch.9));
+        KEEP(*(.soft_patch.10));
+        KEEP(*(.soft_patch.11));
+        KEEP(*(.soft_patch.12));
+        KEEP(*(.soft_patch.13));
+        KEEP(*(.soft_patch.14));
+        KEEP(*(.soft_patch.15));
+        KEEP(*(.soft_patch.16));
+        KEEP(*(.soft_patch.17));
+        KEEP(*(.soft_patch.18));
+        KEEP(*(.soft_patch.19));
+        KEEP(*(.soft_patch.20));
+        KEEP(*(.soft_patch.21));
+        KEEP(*(.soft_patch.22));
+        KEEP(*(.soft_patch.23));
+        LS_bootm_stack = .;
+        KEEP(*(.soft_patch.99));
+        LS_sw_patch_end = .;
+
+        . = ALIGN(4);
+        __u_boot_cmd_start = .;
+        *(.u_boot_cmd)
+        __u_boot_cmd_end = .;
+
+        . = ALIGN(4);
+       LS_start_of_nor_spif_probe_func = .;
+       KEEP(*(.nor_spif_probe_func));
+       LS_end_of_nor_spif_probe_func = .;
+
+       . = ALIGN(4);
+        LS_start_of_spi_nand_probe_func = .;
+        KEEP(*(.spi_nand_probe_func));
+        LS_end_of_spi_nand_probe_func = .;
+
+        . = ALIGN(4);
+        *(.rel.dyn)
+    }
+
+    uboot_vmabase = ADDR(.dram);
+    uboot_start = LOADADDR(.dram);
+    uboot_size  = SIZEOF(.dram);
+
+    . = ALIGN(4);
+    uboot_end_data = .;
+    .sbss :
+    AT(0x100000) {
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .sbss*)
+    }
+
+	. = ALIGN(4);
+    .bss :
+    AT(0x200000) {
+        *(EXCLUDE_FILE (__LDS_LIBPLR_O__) .bss*)
+    }
+    uboot_end = .;
+}

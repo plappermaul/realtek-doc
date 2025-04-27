@@ -1,0 +1,19 @@
+#\n# This file is generated automatically; please don't edit it. (Wed 11 Oct 2023 09:20:17 AM +08)\n#
+release/objs/ab_prj_dep.d : project/9300_nor_demo/ab_prj_dep.c
+release/objs/parameters.d : project/9300_nor_demo/parameters.c
+release/objs/ab_cg.d : src/template/9300_nor/ab_cg.c
+release/objs/ab_timer.d : src/template/9300_nor/ab_timer.c
+release/objs/ab_proto_printf.d : src/template/9300_nor/ab_proto_printf.c
+release/objs/ab_lplr_c_entry.d : src/template/9300_nor/ab_lplr_c_entry.c
+release/objs/ab_uboot.d : src/template/9300_nor/ab_uboot.c
+release/objs/ab_ver_info.d : src/template/9300_nor/ab_ver_info.c
+release/objs/ab_nor_spif_div_ctrl.d : src/template/9300_nor/ab_nor_spif_div_ctrl.c
+release/objs/ab_memcntlr_setup.d : src/template/9300_nor/ab_memcntlr_setup.c
+release/objs/ab_cg_mem.d : src/template/9300_nor/ab_cg_mem.c
+release/objs/ab_util.d : src/template/9300_nor/ab_util.c
+release/objs/ab_osc_init.d : src/template/9300_nor/ab_osc_init.c
+release/objs/ab_uart.d : src/template/9300_nor/ab_uart.c
+release/objs/startup.d : src/template/9300_nor/startup.S
+release/objs/ab_cg_cache_lock.d : src/template/9300_nor/ab_cg_cache_lock.S
+release/objs/ab_next_env_container.d : src/template/9300_nor/ab_next_env_container.S
+release/objs/ab_cache_op.d : src/template/9300_nor/ab_cache_op.S

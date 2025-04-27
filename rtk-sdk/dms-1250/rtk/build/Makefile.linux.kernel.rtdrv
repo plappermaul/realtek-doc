@@ -1,0 +1,48 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtdrv Kernel Module
+#
+
+EXTRA_CFLAGS += -Wall -Werror -Wuninitialized -Wstrict-prototypes
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)
+EXTRA_CFLAGS += -DRTUSR
+
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+EXTRA_CFLAGS += -I$(MODELDIR) -I$(MODELDIR)/common
+ifeq ($(CONFIG_SDK_RTL9300),y)
+EXTRA_CFLAGS += -I$(MODELDIR)/testcase/9300 -I$(MODELDIR)/behavior_src/9300
+endif
+ifeq ($(CONFIG_SDK_RTL9310),y)
+EXTRA_CFLAGS += -I$(MODELDIR)/testcase/9310 -I$(MODELDIR)/behavior_src/9310
+endif
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+EXTRA_CFLAGS += -I$(UT_INCLUDE)
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_RTDRV),m)
+EXTRA_CFLAGS += -mlong-calls -fno-pic 
+EXTRA_CFLAGS += -D__RTDRV_MODULE__
+endif
+
+TARGET = rtdrv
+
+EXTRA_CFLAGS += -DRTK_LKM
+obj-$(CONFIG_SDK_DRIVER_RTDRV) += $(TARGET).o
+$(TARGET)-objs := rtdrv_netfilter.o
+
+ifeq ($(CONFIG_SDK_APP_DIAG_EXT),y)
+	ifeq ($(CONFIG_SDK_RTL9310),y)
+		$(TARGET)-objs += ext/rtdrv_netfilter_ext_9310.o
+	else ifeq ($(CONFIG_SDK_RTL9300),y)
+		$(TARGET)-objs += ext/rtdrv_netfilter_ext_9300.o
+	else ifeq ($(CONFIG_SDK_RTL8390),y)
+		$(TARGET)-objs += ext/rtdrv_netfilter_ext_8390.o
+	else ifeq ($(CONFIG_SDK_RTL8380),y)
+		$(TARGET)-objs += ext/rtdrv_netfilter_ext_8380.o
+	endif
+endif
+
+

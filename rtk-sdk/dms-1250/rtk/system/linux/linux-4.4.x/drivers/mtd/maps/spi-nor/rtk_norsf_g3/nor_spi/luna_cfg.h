@@ -1,0 +1,8 @@
+#ifndef _LUNA_CFG_H_
+#define NORSF_CHIP_NUM     (1)
+#define NORSF_MMIO_4B_EN   (1)
+#define NORSF_XREAD_EN     (0)
+#define NORSF_WBUF_LIM_B   (128)
+#define NORSF_CFLASH_BASE  (0x94000000)
+#define NORSF_UCFLASH_BASE (NORSF_CFLASH_BASE | 0x20000000)
+#endif

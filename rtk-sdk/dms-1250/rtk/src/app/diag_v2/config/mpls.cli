@@ -1,0 +1,537 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for MPLS.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) MPLS commands.
+//
+
+#ifdef CMD_MPLS_GET_STATE
+//MPLS configuration
+//get configuration
+//MPLS function state
+mpls get state
+#endif
+
+#ifdef CMD_MPLS_GET_ENCAP_LIB_INDEX
+//MPLS configuration
+//get configuration
+//Encapsulate function
+//Label information base function
+//Index of label information base
+mpls get encap lib <UINT:index>
+#endif
+
+#ifdef CMD_MPLS_GET_ENCAP_TTL_INHERIT
+//MPLS configuration
+//get configuration
+//Encapsulate function
+//TTL of MPLS header function
+//TTL inherit function
+mpls get encap ttl inherit
+#endif
+
+#ifdef CMD_MPLS_SET_STATE_ENABLE_DISABLE
+//MPLS configuration
+//set configuration
+//MPLS function state
+//enable function
+//disable function
+mpls set state ( enable | disable )
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_LIB_INDEX_LABEL_LABEL_EXP_EXP_TTL_TTL
+//MPLS configuration
+//set configuration
+//Encapsulate function
+//Label information base function
+//Index of label information base
+//LIB Label
+//Label value
+//LIB EXP
+//Exp value, <0~7>
+//LIB TTL
+//TTL value, <0~255>
+mpls set encap lib <UINT:index> label <UINT:label> exp <UINT:exp> ttl <UINT:ttl>
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_TTL_INHERIT_UNIFORM_PIPE
+//MPLS configuration
+//set configuration
+//Encapsulate function
+//TTL of MPLS header function
+//TTL inherit function
+//Uniform function
+//Pipe function
+mpls set encap ttl inherit ( uniform | pipe )
+#endif
+
+#ifdef CMD_MPLS_GET_TRAP_TARGET
+//MPLS configuration
+//get configuration
+//trap target configuration
+mpls get trap-target
+#endif
+
+#ifdef CMD_MPLS_SET_TRAP_TARGET_LOCAL_MASTER
+//MPLS configuration
+//set configuration
+//trap target configuration
+//local CPU configuration
+//master CPU configuration
+mpls set trap-target ( local | master )
+#endif
+
+#ifdef CMD_MPLS_GET_EXCEPTION_LABEL_EXCEED_LABEL_UNKNOWN_TTL_FAIL_LABEL_0_15
+//MPLS configuration
+//get configuration
+//exception configuration
+//label number exceed
+//unknown label
+//forward TTL is 0
+//reserved label 0 ~ 15
+mpls get exception ( label-exceed | label-unknown | ttl-fail | label-0-15 )
+#endif
+
+#ifdef CMD_MPLS_SET_EXCEPTION_LABEL_EXCEED_LABEL_UNKNOWN_TTL_FAIL_DROP_TRAP
+//MPLS configuration
+//set configuration
+//exception configuration
+//label number exceed
+//unknown label
+//forward TTL is 0
+//drop
+//trap to CPU
+mpls set exception ( label-exceed | label-unknown | ttl-fail ) ( drop | trap )
+#endif
+
+#ifdef CMD_MPLS_SET_EXCEPTION_LABEL_0_15_FORWARD_TRAP
+//MPLS configuration
+//set configuration
+//exception configuration
+//reserved label 0 ~ 15
+//forward
+//trap to CPU
+mpls set exception label-0-15 ( forward | trap )
+#endif
+
+#ifdef CMD_MPLS_CREATE_NEXTHOP_INTERFACE_INTFID_MAC_MAC_ADDR_ENCAP_ENCAPID
+//MPLS configuration
+//create configuration
+//next hop configuration
+//egress interface configuration
+//egress interface ID
+//MAC address configuration
+//MAC address
+//encapsulation configuration
+//encapsulation ID
+mpls create nexthop interface <UINT:intfId> mac <MACADDR:mac_addr> encap <UINT:encapId>
+#endif
+
+#ifdef CMD_MPLS_CREATE_NEXTHOP_INTERFACE_INTFID_MAC_MAC_ADDR_ENCAP_ENCAPID_ACTION_FORWARD_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//MPLS configuration
+//create configuration
+//next hop configuration
+//egress interface configuration
+//egress interface ID
+//MAC address configuration
+//MAC address
+//encapsulation configuration
+//encapsulation ID
+//action configuration
+//forward
+//drop
+//trap to local CPU
+//trap to master CPU
+mpls create nexthop interface <UINT:intfId> mac <MACADDR:mac_addr> encap <UINT:encapId> action ( forward | drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_MPLS_SET_NEXTHOP_PATHID_INTERFACE_INTFID
+//MPLS configuration
+//set configuration
+//next hop configuration
+//path ID pointer to next hop
+//egress interface configuration
+//egress interface ID
+mpls set nexthop <UINT:pathId> interface <UINT:intfId>
+#endif
+
+#ifdef CMD_MPLS_SET_NEXTHOP_PATHID_MAC_MAC_ADDR
+//MPLS configuration
+//set configuration
+//next hop configuration
+//path ID pointer to next hop
+//MAC address configuration
+//MAC address
+mpls set nexthop <UINT:pathId> mac <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_MPLS_SET_NEXTHOP_PATHID_ENCAP_ENCAPID
+//MPLS configuration
+//set configuration
+//next hop configuration
+//path ID pointer to next hop
+//encapsulation configuration
+//encapsulation ID
+mpls set nexthop <UINT:pathId> encap <UINT:encapId>
+#endif
+
+#ifdef CMD_MPLS_SET_NEXTHOP_PATHID_ACTION_FORWARD_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//MPLS configuration
+//set configuration
+//next hop configuration
+//path ID pointer to next hop
+//action configuration
+//forward
+//drop
+//trap to local CPU
+//trap to master CPU
+mpls set nexthop <UINT:pathId> action ( forward | drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_MPLS_DESTROY_NEXTHOP_PATHID
+//MPLS configuration
+//destroy configuration
+//next hop configuration
+//path ID pointer to next hop
+mpls destroy nexthop <UINT:pathId>
+#endif
+
+#ifdef CMD_MPLS_GET_NEXTHOP_PATHID
+//MPLS configuration
+//get configuration
+//next hop configuration
+//path ID pointer to next hop
+mpls get nexthop <UINT:pathId>
+#endif
+
+#ifdef CMD_MPLS_CREATE_ENCAP_LABEL_LABELVAL
+//MPLS configuration
+//create configuration
+//encapsulate configuration
+//label configuration
+//label value
+mpls create encap label <UINT:labelVal>
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_ENCAPID_OPERATION_PUSH_SWAP
+//MPLS configuration
+//set configuration
+//encapsulate configuration
+//encapsulation entry ID
+//label operate configuration
+//push configuration
+//swap configuration
+mpls set encap <UINT:encapId> operation ( push | swap )
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_ENCAPID_NEXT_ENCAP_NEXTENCAPID_NONE
+//MPLS configuration
+//set configuration
+//encapsulate configuration
+//encapsulation entry ID
+//next encapsulation entry configuration
+//next encapsulation entry index
+//no next encapsulation entry configuration
+mpls set encap <UINT:encapId> next-encap ( <UINT:nextEncapId> | none )
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_ENCAPID_TTL_OP_FORCE_INHERIT
+//MPLS configuration
+//set configuration
+//encapsulate configuration
+//encapsulation entry ID
+//ttl operation configuration
+//force assign configuration
+//inherit configuration
+mpls set encap <UINT:encapId> ttl-op ( force | inherit )
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_ENCAPID_TTL_TTLVAL
+//MPLS configuration
+//set configuration
+//encapsulate configuration
+//encapsulation entry ID
+//ttl configuration
+//ttl value
+mpls set encap <UINT:encapId> ttl <UINT:ttlVal>
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_ENCAPID_TC_OP_INHERIT_FORCE_INTERNAL_PRIORITY_REMARK
+//MPLS configuration
+//set configuration
+//encapsulate configuration
+//encapsulation entry ID
+//traffic class operation configuration
+//inherit TC configuration
+//force assign configuration
+//depends on internal priority remark configuration
+mpls set encap <UINT:encapId> tc-op ( inherit | force | internal-priority-remark )
+#endif
+
+#ifdef CMD_MPLS_SET_ENCAP_ENCAPID_TC_TCVAL
+//MPLS configuration
+//set configuration
+//encapsulate configuration
+//encapsulation entry ID
+//traffic class configuration
+//traffic class value
+mpls set encap <UINT:encapId> tc <UINT:tcVal>
+#endif
+
+#ifdef CMD_MPLS_DESTROY_ENCAP_ENCAPID
+//MPLS configuration
+//destroy configuration
+//encapsulate configuration
+//encapsulation entry ID
+mpls destroy encap <UINT:encapId>
+#endif
+
+#ifdef CMD_MPLS_GET_ENCAP_ENCAPID
+//MPLS configuration
+//get configuration
+//encapsulate configuration
+//encapsulation ID
+mpls get encap <UINT:encapId>
+#endif
+
+#ifdef CMD_MPLS_GET_ENCAP_ID_LABEL_LABELVAL
+//MPLS configuration
+//get configuration
+//encapsulate ID configuration
+//label configuration
+//label value
+mpls get encap-id label <UINT:labelVal>
+#endif
+
+#ifdef CMD_MPLS_GET_DECAP_HASH_ALGORITHM
+//MPLS configuration
+//get configuration
+//decapsulate configuration
+//hash algorithm configuration
+mpls get decap hash-algorithm
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_HASH_ALGORITHM_ALGO0_ALGO1
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//hash algorithm configuration
+//hash algorithm 0
+//hash algorithm 1
+mpls set decap hash-algorithm ( algo0 | algo1 )
+#endif
+
+#ifdef CMD_MPLS_CREATE_DECAP_LABEL_LABELVAL
+//MPLS configuration
+//create configuration
+//decapsulate configuration
+//label configuration
+//label value
+mpls create decap label <UINT:labelVal>
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_OPERATION_POP_SWAP_PHP
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//operation configuration
+//pop configuration
+//swap configuration
+//PHP configuration
+mpls set decap <UINT:decapId> operation ( pop | swap | php )
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_TTL_INHERIT_STATE_DISABLE_ENABLE
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//ttl inherit configuration
+//state configuration
+//disable function
+//enable function
+mpls set decap <UINT:decapId> ttl-inherit state ( disable | enable )
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_DSCP_OP_UNIFORM_PIPE
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//dscp operation configuration
+//uniform function
+//pipe function
+mpls set decap <UINT:decapId> dscp-op ( uniform | pipe )
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_INTERNAL_PRIORITY_STATE_DISABLE_ENABLE
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//internal priority configuration
+//state configuration
+//disable function (E-LSP)
+//enable function (L-LSP)
+mpls set decap <UINT:decapId> internal-priority state ( disable | enable )
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_INTERNAL_PRIORITY_INTPRI
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//internal priority configuration
+//internal priority
+mpls set decap <UINT:decapId> internal-priority <UINT:intPri>
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_PRIORITY_SELECTION_PRISELID
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//priority selection table configuration
+//priority selection table ID
+mpls set decap <UINT:decapId> priority-selection <UINT:priSelId>
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_INTERFACE_INTFID
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//interface configuration
+//interface ID
+mpls set decap <UINT:decapId> interface <UINT:intfId>
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_NEXT_HOP_NHID
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//next-hop configuration
+//next-hop index
+mpls set decap <UINT:decapId> next-hop <UINT:nhId>
+#endif
+
+#ifdef CMD_MPLS_SET_DECAP_DECAPID_ECMP_ECMPID
+//MPLS configuration
+//set configuration
+//decapsulate configuration
+//decapsulation ID
+//ecmp configuration
+//ecmp index
+mpls set decap <UINT:decapId> ecmp <UINT:ecmpId>
+#endif
+
+#ifdef CMD_MPLS_DESTROY_DECAP_DECAPID
+//MPLS configuration
+//destroy configuration
+//decapsulate configuration
+//decapsulation ID
+mpls destroy decap <UINT:decapId>
+#endif
+
+#ifdef CMD_MPLS_GET_DECAP_DECAPID
+//MPLS configuration
+//get configuration
+//decapsulate configuration
+//decapsulation ID
+mpls get decap <UINT:decapId>
+#endif
+
+#ifdef CMD_MPLS_GET_DECAP_ID_LABEL_LABELVAL
+//MPLS configuration
+//get configuration
+//decapsulate ID configuration
+//label configuration
+//label value
+mpls get decap-id label <UINT:labelVal>
+#endif
+
+#ifdef CMD_MPLS_GET_EGRESS_TC_MAP_SOURCE_DP_DP_INTERNAL_PRIORITY_PRIORITY
+//MPLS configuration
+//get configuration
+//egress TC map
+//source configuration
+//dp configuration
+//dp value
+//internal priority configuration
+//internal priority
+mpls get egress-tc-map source dp <UINT:dp> internal-priority <UINT:priority>
+#endif
+
+#ifdef CMD_MPLS_SET_EGRESS_TC_MAP_SOURCE_DP_DP_INTERNAL_PRIORITY_PRIORITY_MAP_TC_TC
+//MPLS configuration
+//set configuration
+//egress TC map
+//source configuration
+//dp configuration
+//dp value
+//internal priority configuration
+//internal priority
+//mapping to
+//tc configuration
+//tc value
+mpls set egress-tc-map source dp <UINT:dp> internal-priority <UINT:priority> map tc <UINT:tc>
+#endif
+
+#ifdef CMD_MPLS_CREATE_NEXTHOP_NHID_INTERFACE_INTFID_MAC_MAC_ADDR_ENCAP_ENCAPID
+//MPLS configuration
+//create configuration
+//next hop configuration
+//next hop Id
+//egress interface configuration
+//egress interface ID
+//MAC address configuration
+//MAC address
+//encapsulation configuration
+//encapsulation ID
+mpls create nexthop <UINT:nhId> interface <UINT:intfId> mac <MACADDR:mac_addr> encap <UINT:encapId>
+#endif
+
+#ifdef CMD_MPLS_CREATE_NEXTHOP_NHID_INTERFACE_INTFID_MAC_MAC_ADDR_ENCAP_ENCAPID_ACTION_FORWARD_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//MPLS configuration
+//create configuration
+//next hop configuration
+//next hop Id
+//egress interface configuration
+//egress interface ID
+//MAC address configuration
+//MAC address
+//encapsulation configuration
+//encapsulation ID
+//action configuration
+//forward
+//drop
+//trap to local CPU
+//trap to master CPU
+mpls create nexthop <UINT:nhId> interface <UINT:intfId> mac <MACADDR:mac_addr> encap <UINT:encapId> action ( forward | drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_MPLS_CREATE_ENCAP_ENCAPID_LABEL_LABELVAL
+//MPLS configuration
+//create configuration
+//encapsulate configuration
+//encapsulate ID
+//label configuration
+//label value
+mpls create encap <UINT:encapId> label <UINT:labelVal>
+#endif
+

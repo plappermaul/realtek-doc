@@ -1,0 +1,1044 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 58394 $
+// $Date: 2015-05-07 11:15:43 +0800 (Thu, 07 May 2015) $
+//
+// Purpose : Define diag shell commands for rate.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) ip multicast commands.
+//
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_VLAN_VID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> vlan <UINT:vid> group <UINT:group_id> l3-enable ( disable | enable ) { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_VLAN_VID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_L2_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_L3_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_RPF_FAIL_ACTION_TRAP_TO_CPU_DROP_COPY_TO_CPU_ASSERT_CHECK_TTL_MIN_TTL_MIN_MTU_MAX_MTU_MAX_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//VLAN ID configuration
+//VLAN ID
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//L2 bridging action
+//forward (bridge)
+//trap to CPU
+//copy to CPU
+//drop
+//L3 routing action
+//forward (route)
+//trap to CPU
+//copy to CPU
+//drop
+//RPF failed action
+//trap to CPU
+//drop
+//copy to CPU
+//assert check
+//TTL minimum
+//TTL minimum value
+//MTU maximum
+//MTU maximum value
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> vlan <UINT:vid> group <UINT:group_id> l3-enable ( disable | enable ) l2-action ( forward | trap-to-cpu | copy-to-cpu | drop ) l3-action ( forward | trap-to-cpu | copy-to-cpu | drop ) rpf-fail-action ( trap-to-cpu | drop | copy-to-cpu | assert-check ) ttl-min <UINT:ttl_min> mtu-max <UINT:mtu_max> { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_DEL_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_VLAN_VID
+//ipmcast configuration
+//delete configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast del addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_VLAN_VID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> vlan <UINT:vid> group <UINT:group_id> l3-enable ( disable | enable ) { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_VLAN_VID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_L2_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_L3_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_RPF_FAIL_ACTION_TRAP_TO_CPU_DROP_COPY_TO_CPU_ASSERT_CHECK_TTL_MIN_TTL_MIN_MTU_MAX_MTU_MAX_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//VLAN ID configuration
+//VLAN ID
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//L2 bridging action
+//forward (bridge)
+//trap to CPU
+//copy to CPU
+//drop
+//L3 routing action
+//forward (route)
+//trap to CPU
+//copy to CPU
+//drop
+//RPF failed action
+//trap to CPU
+//drop
+//copy to CPU
+//assert check
+//TTL minimum
+//TTL minimum value
+//MTU maximum
+//MTU maximum value
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> vlan <UINT:vid> group <UINT:group_id> l3-enable ( disable | enable ) l2-action ( forward | trap-to-cpu | copy-to-cpu | drop ) l3-action ( forward | trap-to-cpu | copy-to-cpu | drop ) rpf-fail-action ( trap-to-cpu | drop | copy-to-cpu | assert-check ) ttl-min <UINT:ttl_min> mtu-max <UINT:mtu_max> { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_DEL_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_VLAN_VID
+//ipmcast configuration
+//delete configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//VLAN
+//vlan id
+ipmcast del addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_INTF_INTF_ID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//interface ID configuration
+//interface ID
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> intf <UINT:intf_id> group <UINT:group_id> l3-enable ( disable | enable ) { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_INTF_INTF_ID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_L2_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_L3_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_RPF_FAIL_ACTION_TRAP_TO_CPU_DROP_COPY_TO_CPU_ASSERT_CHECK_TTL_MIN_TTL_MIN_MTU_MAX_MTU_MAX_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//interface ID configuration
+//interface ID
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//L2 bridging action
+//forward (bridge)
+//trap to CPU
+//copy to CPU
+//drop
+//L3 routing action
+//forward (route)
+//trap to CPU
+//copy to CPU
+//drop
+//RPF failed action
+//trap to CPU
+//drop
+//copy to CPU
+//assert check
+//TTL minimum
+//TTL minimum value
+//MTU maximum
+//MTU maximum value
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> intf <UINT:intf_id> group <UINT:group_id> l3-enable ( disable | enable ) l2-action ( forward | trap-to-cpu | copy-to-cpu | drop ) l3-action ( forward | trap-to-cpu | copy-to-cpu | drop ) rpf-fail-action ( trap-to-cpu | drop | copy-to-cpu | assert-check ) ttl-min <UINT:ttl_min> mtu-max <UINT:mtu_max> { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_DEL_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_INTF_INTF_ID
+//ipmcast configuration
+//delete configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//interface ID configuration
+//interface ID
+ipmcast del addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_INTF_INTF_ID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//interface ID configuration
+//interface ID
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> intf <UINT:intf_id> group <UINT:group_id> l3-enable ( disable | enable ) { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_ADD_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_INTF_INTF_ID_GROUP_GROUP_ID_L3_ENABLE_DISABLE_ENABLE_L2_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_L3_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_DROP_RPF_FAIL_ACTION_TRAP_TO_CPU_DROP_COPY_TO_CPU_ASSERT_CHECK_TTL_MIN_TTL_MIN_MTU_MAX_MTU_MAX_PRIORITY
+//ipmcast configuration
+//add configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//interface ID configuration
+//interface ID
+//group configuration
+//group ID (include group type and group index)
+//l3 enable configuration
+//enable function
+//disable function
+//L2 bridging action
+//forward (bridge)
+//trap to CPU
+//copy to CPU
+//drop
+//L3 routing action
+//forward (route)
+//trap to CPU
+//copy to CPU
+//drop
+//RPF failed action
+//trap to CPU
+//drop
+//copy to CPU
+//assert check
+//TTL minimum
+//TTL minimum value
+//MTU maximum
+//MTU maximum value
+//priority (internal priority)
+ipmcast add addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> intf <UINT:intf_id> group <UINT:group_id> l3-enable ( disable | enable ) l2-action ( forward | trap-to-cpu | copy-to-cpu | drop ) l3-action ( forward | trap-to-cpu | copy-to-cpu | drop ) rpf-fail-action ( trap-to-cpu | drop | copy-to-cpu | assert-check ) ttl-min <UINT:ttl_min> mtu-max <UINT:mtu_max> { <UINT:priority> }
+#endif
+
+#ifdef CMD_IPMCAST_DEL_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_INTF_INTF_ID
+//ipmcast configuration
+//delete configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//interface ID configuration
+//interface ID
+ipmcast del addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_DEL_ADDR_ALL_IP_IP6
+//ipmcast configuration
+//delete configuration
+//ipmcast entry
+//all entries
+//IPv4 type
+//IPv6 type
+ipmcast del addr all ( ip | ip6 )
+#endif
+
+#ifdef CMD_IPMCAST_SET_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_INTF_ID_RPF_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//interface ID configuration
+//interface ID
+//RPF check configuration
+//state configuration
+//enable function
+//disable function
+ipmcast set addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> intf <UINT:id> rpf state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_SET_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_VLAN_ID_RPF_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//VLAN ID configuration
+//VLAN ID
+//RPF check configuration
+//state configuration
+//enable function
+//disable function
+ipmcast set addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> vlan <UINT:id> rpf state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_VLAN_VID_HIT_CLEAR
+//ipmcast configuration
+//get configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//clear hit-bit concurrently
+ipmcast get addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> vlan <UINT:vid> { hit-clear }
+#endif
+
+#ifdef CMD_IPMCAST_SET_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_INTF_ID_RPF_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//interface ID configuration
+//interface ID
+//RPF check configuration
+//state configuration
+//enable function
+//disable function
+ipmcast set addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> intf <UINT:id> rpf state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_SET_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_VLAN_ID_RPF_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//VLAN ID configuration
+//VLAN ID
+//RPF check configuration
+//state configuration
+//enable function
+//disable function
+ipmcast set addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> vlan <UINT:id> rpf state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_VLAN_VID_HIT_CLEAR
+//ipmcast configuration
+//get configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//clear hit-bit concurrently
+ipmcast get addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> vlan <UINT:vid> { hit-clear }
+#endif
+
+#ifdef CMD_IPMCAST_GET_ADDR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_INTF_INTF_ID_HIT_CLEAR
+//ipmcast configuration
+//get configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//interface ID configuration
+//interface ID
+//clear hit-bit concurrently
+ipmcast get addr vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> intf <UINT:intf_id> { hit-clear }
+#endif
+
+#ifdef CMD_IPMCAST_GET_ADDR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_INTF_INTF_ID_HIT_CLEAR
+//ipmcast configuration
+//get configuration
+//ipmcast entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//interface ID configuration
+//interface ID
+//clear hit-bit concurrently
+ipmcast get addr vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> intf <UINT:intf_id> { hit-clear }
+#endif
+
+#ifdef CMD_IPMCAST_DUMP_ADDR_IP_IP6_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//ipmcast configuration
+//dump configuration
+//ipmcast entry
+//IPv4 type
+//IPv6 type
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+ipmcast dump addr ( ip | ip6 ) from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_IPMCAST_SET_L3_LU_HASH_WT_INTF_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//L3 lookup hash with VID/interface
+//state configuration
+//enable function
+//disable function
+ipmcast set l3-lu-hash-wt-intf state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_GET_L3_LU_HASH_WT_INTF_STATE
+//ipmcast configuration
+//get configuration
+//L3 lookup hash with VID/interface
+//state configuration
+ipmcast get l3-lu-hash-wt-intf state
+#endif
+
+#ifdef CMD_IPMCAST_SET_IPMC_IP6MC_PKT_TO_CPU_TARGET_LOCAL_MASTER
+//ipmcast configuration
+//set configuration
+//IPv4 multicast
+//IPv6 multicast
+//target to trap/copy packet to CPU
+//local CPU
+//master CPU
+ipmcast set ( ipmc | ip6mc ) pkt-to-cpu-target ( local | master )
+#endif
+
+#ifdef CMD_IPMCAST_GET_IPMC_IP6MC_PKT_TO_CPU_TARGET
+//ipmcast configuration
+//get configuration
+//IPv4 multicast
+//IPv6 multicast
+//target to trap/copy packet to CPU
+ipmcast get ( ipmc | ip6mc ) pkt-to-cpu-target
+#endif
+
+#ifdef CMD_IPMCAST_SET_IPMC_IP6MC_ROUTING_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//IPv4 multicast
+//IPv6 multicast
+//routing configuration
+//state configuration
+//enable function
+//disable function
+ipmcast set ( ipmc | ip6mc ) routing state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_GET_IPMC_IP6MC_ROUTING_STATE
+//ipmcast configuration
+//get configuration
+//IPv4 multicast
+//IPv6 multicast
+//routing configuration
+//state configuration
+ipmcast get ( ipmc | ip6mc ) routing state
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_IP6MC_ROUTING_LOOKUP_MISS_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//routing function
+//forwarding action of lookup miss
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+ipmcast set routing-exception ( ipmc | ip6mc ) routing lookup-miss-action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IPMC_IP6MC_ROUTING_LOOKUP_MISS_ACTION
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//routing function
+//forwarding action of lookup miss
+ipmcast get routing-exception ( ipmc | ip6mc ) routing lookup-miss-action
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_IP6MC_SRC_VLAN_FILTER_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//source vlan filter function
+//state configuration
+//enable function
+//disable function
+ipmcast set routing-exception ( ipmc | ip6mc ) src-vlan-filter state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IPMC_IP6MC_SRC_VLAN_FILTER_STATE
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//source vlan filter function
+//state configuration
+ipmcast get routing-exception ( ipmc | ip6mc ) src-vlan-filter state
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_IP6MC_SRC_INTF_FILTER_STATE_ENABLE_DISABLE
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//source interface filter function
+//state configuration
+//enable function
+//disable function
+ipmcast set routing-exception ( ipmc | ip6mc ) src-intf-filter state ( enable | disable )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IPMC_IP6MC_SRC_INTF_FILTER_STATE
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//source interface filter function
+//state configuration
+ipmcast get routing-exception ( ipmc | ip6mc ) src-intf-filter state
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_ZERO_SIP_DMAC_MISMATCH_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER_HARD_DROP
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//zero SIP address
+//DMAC mismatch
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+//hard drop
+ipmcast set routing-exception ipmc ( zero-sip | dmac-mismatch ) action ( drop | trap-to-cpu | trap-to-master | hard-drop )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IPMC_HEADER_OPTION_ACTION
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv4 multicast
+//header option
+//forwarding action
+ipmcast get routing-exception ipmc header-option action
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IP6MC_ZERO_SIP_DMAC_MISMATCH_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER_HARD_DROP
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv6 multicast
+//zero SIP address
+//DMAC mismatch
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+//hard-drop (bridge forward)
+ipmcast set routing-exception ip6mc ( zero-sip | dmac-mismatch ) action ( drop | trap-to-cpu | trap-to-master | hard-drop )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IP6MC_HEADER_ROUTER_HBH_ERROR_HBH_ACTION
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv6 multicast
+//header router
+//hop-by-hop error
+//hop-by-hop
+//forwarding action
+ipmcast get routing-exception ip6mc ( header-router | hbh-error | hbh ) action
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_TTL_FAIL_MTU_FAIL_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//TTL fail
+//MTU fail
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+ipmcast set routing-exception ipmc ( ttl-fail | mtu-fail ) action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IPMC_TTL_FAIL_MTU_FAIL_ACTION
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv4 multicast
+//TTL fail
+//MTU fail
+//forwarding action
+ipmcast get routing-exception ipmc ( ttl-fail | mtu-fail ) action
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IP6MC_HL_FAIL_MTU_FAIL_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv6 multicast
+//hop-limit fail
+//MTU fail
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+ipmcast set routing-exception ip6mc ( hl-fail | mtu-fail ) action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IP6MC_HL_FAIL_MTU_FAIL_ACTION
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv6 multicast
+//hop-limit fail
+//MTU fail
+//forwarding action
+ipmcast get routing-exception ip6mc ( hl-fail | mtu-fail ) action
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_IP6MC_BAD_SIP_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER_HARD_DROP
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//bad SIP address
+//forwarding action
+//drop (could be bridged)
+//trap to CPU (to local CPU and bridge)
+//trap to the master CPU (to master CPU and bridge)
+//hard drop
+ipmcast set routing-exception ( ipmc | ip6mc ) bad-sip action ( drop | trap-to-cpu | trap-to-master | hard-drop )
+#endif
+
+#ifdef CMD_IPMCAST_GET_ROUTING_EXCEPTION_IPMC_IP6MC_ZERO_SIP_BAD_SIP_DMAC_MISMATCH_ACTION
+//ipmcast configuration
+//get configuration
+//routing exception
+//IPv4 multicast
+//IPv6 multicast
+//zero SIP address
+//bad SIP address
+//DMAC mismatch
+//forwarding action
+ipmcast get routing-exception ( ipmc | ip6mc ) ( zero-sip | bad-sip | dmac-mismatch ) action
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IPMC_HEADER_OPTION_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER_HARD_DROP
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv4 multicast
+//header option
+//forwarding action
+//drop (could be bridged)
+//forward (keep routing and bridge)
+//trap to CPU (to local CPU and bridging)
+//copy to CPU (to local CPU and routing and bridging)
+//trap to the master CPU (to master CPU and bridging)
+//copy to the master CPU (to master CPU and routing and bridging)
+//hard drop
+ipmcast set routing-exception ipmc header-option action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master | hard-drop )
+#endif
+
+#ifdef CMD_IPMCAST_SET_ROUTING_EXCEPTION_IP6MC_HEADER_ROUTER_HBH_ERROR_HBH_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER_HARD_DROP
+//ipmcast configuration
+//set configuration
+//routing exception
+//IPv6 multicast
+//header router
+//hop-by-hop error
+//hop-by-hop
+//forwarding action
+//drop (could be bridged)
+//forward (keep routing and bridging)
+//trap to CPU (to local CPU and bridge)
+//copy to CPU (to local CPU and routing and bridging)
+//trap to the master CPU (to master CPU and bridging)
+//copy to the master CPU (to master CPU and routing and bridging)
+//hard drop
+ipmcast set routing-exception ip6mc ( header-router | hbh-error | hbh ) action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master | hard-drop )
+#endif
+
+#ifdef CMD_IPMCAST_ADD_STAT_MONITOR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_VLAN_VID_MONITOR_TYPE_BYTE_PACKET_BYTE_AND_PACKET
+//ipmcast configuration
+//add configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+//stat monitor type configuration
+//type of byte
+//type of packet
+//type of byte and packet
+ipmcast add stat-monitor vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-vlan <UINT:vid> monitor-type ( byte | packet | byte-and-packet )
+#endif
+
+#ifdef CMD_IPMCAST_ADD_STAT_MONITOR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_VLAN_VID_MONITOR_TYPE_BYTE_PACKET_BYTE_AND_PACKET
+//ipmcast configuration
+//add configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+//stat monitor type configuration
+//type of byte
+//type of packet
+//type of byte and packet
+ipmcast add stat-monitor vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-vlan <UINT:vid> monitor-type ( byte | packet | byte-and-packet )
+#endif
+
+#ifdef CMD_IPMCAST_DEL_STAT_MONITOR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_VLAN_VID
+//ipmcast configuration
+//delete configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast del stat-monitor vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_DEL_STAT_MONITOR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_VLAN_VID
+//ipmcast configuration
+//delete configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast del stat-monitor vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_ADD_STAT_MONITOR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_INTF_INTF_ID_MONITOR_TYPE_BYTE_PACKET_BYTE_AND_PACKET
+//ipmcast configuration
+//add configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source interface ID configuration
+//interface ID
+//stat monitor type configuration
+//type of byte
+//type of packet
+//type of byte and packet
+ipmcast add stat-monitor vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-intf <UINT:intf_id> monitor-type ( byte | packet | byte-and-packet )
+#endif
+
+#ifdef CMD_IPMCAST_ADD_STAT_MONITOR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_INTF_INTF_ID_MONITOR_TYPE_BYTE_PACKET_BYTE_AND_PACKET
+//ipmcast configuration
+//add configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source interface ID configuration
+//interface ID
+//stat monitor type configuration
+//type of byte
+//type of packet
+//type of byte and packet
+ipmcast add stat-monitor vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-intf <UINT:intf_id> monitor-type ( byte | packet | byte-and-packet )
+#endif
+
+#ifdef CMD_IPMCAST_DEL_STAT_MONITOR_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_INTF_INTF_ID
+//ipmcast configuration
+//delete configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source interface ID configuration
+//interface ID
+ipmcast del stat-monitor vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_DEL_STAT_MONITOR_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_INTF_INTF_ID
+//ipmcast configuration
+//delete configuration
+//stat monitor entry
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source interface ID configuration
+//interface ID
+ipmcast del stat-monitor vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_RESET_STAT_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_VLAN_VID
+//ipmcast configuration
+//reset configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast reset stat vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_RESET_STAT_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_VLAN_VID
+//ipmcast configuration
+//reset configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast reset stat vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_GET_STAT_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_VLAN_VID
+//ipmcast configuration
+//get configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast get stat vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_GET_STAT_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_VLAN_VID
+//ipmcast configuration
+//get configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source VLAN ID configuration
+//VLAN ID, <0-4095>
+ipmcast get stat vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-vlan <UINT:vid>
+#endif
+
+#ifdef CMD_IPMCAST_RESET_STAT_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_INTF_INTF_ID
+//ipmcast configuration
+//reset configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source interface ID configuration
+//interface ID
+ipmcast reset stat vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_RESET_STAT_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_INTF_INTF_ID
+//ipmcast configuration
+//reset configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source interface ID configuration
+//interface ID
+ipmcast reset stat vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_GET_STAT_VRF_ID_VRF_ID_SIP_SIP_DIP_DIP_SRC_INTF_INTF_ID
+//ipmcast configuration
+//get configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv4 address configuration
+//source IPv4 address (0.0.0.0 indicate non sip)
+//destination IPv4 address configuration
+//destination IPv4 address
+//source interface ID configuration
+//interface ID
+ipmcast get stat vrf-id <UINT:vrf_id> sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> src-intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_IPMCAST_GET_STAT_VRF_ID_VRF_ID_SIP6_SIP_DIP6_DIP_SRC_INTF_INTF_ID
+//ipmcast configuration
+//get configuration
+//statistics
+//virtual routing/forwarding ID
+//VRF ID
+//source IPv6 address configuration
+//source IPv6 address (0::0 indicate non sip)
+//destination IPv6 address configuration
+//destination IPv6 address
+//source interface ID configuration
+//interface ID
+ipmcast get stat vrf-id <UINT:vrf_id> sip6 <IPV6ADDR:sip> dip6 <IPV6ADDR:dip> src-intf <UINT:intf_id>
+#endif
+

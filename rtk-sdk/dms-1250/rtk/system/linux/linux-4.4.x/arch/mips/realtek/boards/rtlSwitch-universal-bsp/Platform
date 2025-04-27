@@ -1,0 +1,6 @@
+#
+# RLX Linux Platform BSP
+#
+platform-y	+= bsp/
+cflags-y	+= -I$(srctree)/arch/mips/bsp
+load-y		= 0xffffffff80000000

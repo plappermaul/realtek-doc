@@ -1,0 +1,275 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for dot1x.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) dot1x commands.
+//
+
+#ifdef CMD_DOT1X_ADD_DEL_AUTH_MAC_PORT_VID_MAC
+//dot1x configuration
+//add dot1x auth MAC
+//delete dot1x auth MAC
+//authenticated MAC configuration
+//port list
+//VLAN id <1-4094>
+//MAC address
+dot1x ( add | del ) auth-mac <PORT_LIST:port> <UINT:vid> <MACADDR:mac>
+#endif
+
+#ifdef CMD_DOT1X_GET_AUTH_MAC_MAC
+//dot1x configuration
+//get configuration
+//authenticated MAC configuration
+//MAC address
+dot1x get auth-mac { <MACADDR:mac> }
+#endif
+
+#ifdef CMD_DOT1X_GET_EAP_TO_CPU
+//dot1x configuration
+//get configuration
+//eap packet to CPU information
+dot1x get eap-to-cpu
+#endif
+
+#ifdef CMD_DOT1X_GET_GUEST_VLAN_PORT_ALL
+//dot1x configuration
+//get configuration
+//guest VLAN configuration
+//port list
+//all ports
+dot1x get guest-vlan ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_DOT1X_GET_GUEST_VLAN
+//dot1x configuration
+//get configuration
+//guest VLAN configuration
+dot1x get guest-vlan
+#endif
+
+#ifdef CMD_DOT1X_GET_TRAP
+//dot1x configuration
+//get configuration
+//trap information
+dot1x get trap
+#endif
+
+#ifdef CMD_DOT1X_GET_UNAUTH_PACKET_PORT_ALL_TAG
+//dot1x configuration
+//get configuration
+//action of unauthorized packet
+//port list
+//all ports
+//tag packet
+dot1x get unauth-packet ( <PORT_LIST:port> | all ) tag
+#endif
+
+#ifdef CMD_DOT1X_GET_UNAUTH_PACKET_PORT_ALL_UNTAG
+//dot1x configuration
+//get configuration
+//action of unauthorized packet
+//port list
+//all ports
+//untag packet
+dot1x get unauth-packet ( <PORT_LIST:port> | all ) untag
+#endif
+
+#ifdef CMD_DOT1X_GET_UNAUTH_PACKET_PORT_ALL
+//dot1x configuration
+//get configuration
+//action of unauthorized packet
+//port list
+//all ports
+dot1x get unauth-packet ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_DOT1X_GET_UNAUTH_PACKET
+//dot1x configuration
+//get configuration
+//action of unauthorized packet
+dot1x get unauth-packet
+#endif
+
+#ifdef CMD_DOT1X_SET_EAP_TO_CPU_STATE_DISABLE_ENABLE
+//dot1x configuration
+//set configuration
+//eap packet to CPU configuration
+//state configuration
+//disable function
+//enable function
+dot1x set eap-to-cpu state ( disable | enable )
+#endif
+
+#ifdef CMD_DOT1X_SET_GUEST_VLAN_ROUTE_DROP_FORWARD_TRAP_TO_CPU
+//dot1x configuration
+//set configuration
+//guest VLAN configuration
+//route
+//drop packet
+//forward packet
+//trap packet to CPU
+dot1x set guest-vlan route ( drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_DOT1X_SET_GUEST_VLAN_TO_AUTH_DA_ALLOW_DISALLOW
+//dot1x configuration
+//set configuration
+//guest VLAN configuration
+//to authorized DA
+//allow
+//not allow
+dot1x set guest-vlan to-auth-da ( allow | disallow )
+#endif
+
+#ifdef CMD_DOT1X_SET_GUEST_VLAN_PORT_ALL_VID
+//dot1x configuration
+//set configuration
+//guest VLAN configuration
+//port list
+//all ports
+//VLAN id <1-4094>
+dot1x set guest-vlan ( <PORT_LIST:port> | all ) <UINT:vid>
+#endif
+
+#ifdef CMD_DOT1X_SET_MAC_BASED_DIRECTION_BOTH_IN
+//dot1x configuration
+//set configuration
+//mac-based configuration
+//direction configuration
+//both direction
+//ingress direction
+dot1x set mac-based direction ( both | in )
+#endif
+
+#ifdef CMD_DOT1X_SET_PORT_BASED_PORT_ALL_AUTH_UNAUTH
+//dot1x configuration
+//set configuration
+//port-based configuration
+//port list
+//all ports
+//authentication
+//un-authentication
+dot1x set port-based ( <PORT_LIST:port> | all ) ( auth | unauth )
+#endif
+
+#ifdef CMD_DOT1X_SET_PORT_BASED_PORT_ALL_DIRECTION_BOTH_IN
+//dot1x configuration
+//set configuration
+//port-based configuration
+//port list
+//all ports
+//direction configuration
+//both direction
+//ingress direction
+dot1x set port-based ( <PORT_LIST:port> | all ) direction ( both | in )
+#endif
+
+#ifdef CMD_DOT1X_GET_MAC_BASED
+//dot1x configuration
+//get configuration
+//mac-based configuration
+dot1x get mac-based
+#endif
+
+#ifdef CMD_DOT1X_GET_MAC_BASED_PORT_BASED_PORT_ALL
+//dot1x configuration
+//get configuration
+//mac-based configuration
+//port-based configuration
+//port list
+//all ports
+dot1x get ( mac-based | port-based ) ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_DOT1X_SET_MAC_BASED_PORT_BASED_PORT_ALL_STATE_DISABLE_ENABLE
+//dot1x configuration
+//set configuration
+//mac-based configuration
+//port-based configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+dot1x set ( mac-based | port-based ) ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_DOT1X_SET_TRAP_ADD_CPU_TAG_STATE_DISABLE_ENABLE
+//dot1x configuration
+//set configuration
+//trap packet to CPU
+//add CPU tag
+//state configuration
+//disable function
+//enable function
+dot1x set trap add-cpu-tag state ( disable | enable )
+#endif
+
+#ifdef CMD_DOT1X_SET_TRAP_PRIORITY_STATE_DISABLE_ENABLE
+//dot1x configuration
+//set configuration
+//trap packet to CPU
+//priority configuration
+//state configuration
+//disable function
+//enable function
+dot1x set trap priority state ( disable | enable )
+#endif
+
+#ifdef CMD_DOT1X_SET_TRAP_PRIORITY_PRIORITY
+//dot1x configuration
+//set configuration
+//trap packet to CPU
+//priority configuration
+//priority value
+dot1x set trap priority <UINT:priority>
+#endif
+
+#ifdef CMD_DOT1X_SET_UNAUTH_PACKET_DROP_TRAP_TO_CPU
+//dot1x configuration
+//set configuration
+//action of unauthorized packet
+//drop packet
+//trap packet to CPU
+dot1x set unauth-packet ( drop | trap-to-cpu )
+#endif
+
+#ifdef CMD_DOT1X_SET_UNAUTH_PACKET_PORT_ALL_TAG_UNTAG_DROP_GUEST_VLAN_TRAP_TO_CPU
+//dot1x configuration
+//set configuration
+//action of unauthorized packet
+//port list
+//all ports
+//tag packet
+//untag packet
+//drop packet
+//forward to guest VLAN
+//trap packet to CPU
+dot1x set unauth-packet ( <PORT_LIST:port> | all ) ( tag | untag ) ( drop | guest-vlan | trap-to-cpu )
+#endif
+
+#ifdef CMD_DOT1X_SET_UNAUTH_PACKET_PORT_ALL_DROP_GUEST_VLAN_TRAP_TO_CPU
+//dot1x configuration
+//set configuration
+//action of unauthorized packet
+//port list
+//all ports
+//drop packet
+//forward to guest VLAN
+//trap packet to CPU
+dot1x set unauth-packet ( <PORT_LIST:port> | all ) ( drop | guest-vlan | trap-to-cpu )
+#endif
+

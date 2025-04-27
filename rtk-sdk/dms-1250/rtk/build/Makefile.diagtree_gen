@@ -1,0 +1,98 @@
+# Copyright (C) 2015 Realtek Semiconductor Corp.
+#
+# Makefile for including all system configurations
+#
+
+#
+# This makefile is used for generate diag cparser_tree.c/h independently form source code build flow.
+# cparser_tree.c/h are the command tree source code of diag shell commands.
+# They are generated at source code build time before building diag executable.
+#
+# In this makefile provides a method for the generation of cparser_tree.c/h without build the source code.
+# Here it prepares environment variables that Makefile.app.diag need and
+# use diag-tree target in Makefile.app.diag for cparser_tree.c/h
+# Note that Python is required for the tree generation script.
+#
+# Input:    RTK_SDKDIR - the full path of sdk direcoty.
+#
+# Usage:
+#   Assume RTK switch sdk is located under "project/driver/rtk" folder:
+#          project/driver/rtk
+#           +-- sdk
+#           |   +- build
+#           |   +- config
+#           |   +- src
+#           |   +- ...
+#           +...
+#
+#   Example-1:
+#       Execute make command at switch folder:
+#           cd project/driver/rtk
+#           make -f sdk/build/Makefile.diagtree_gen "RTK_SDKDIR=${PWD}/sdk"  diag-tree
+#
+#   Example-2:
+#       Clean the diag tree files then build again:
+#           cd project/driver/rtk
+#           make -f sdk/build/Makefile.diagtree_gen "RTK_SDKDIR=${PWD}/sdk"  diag-tree-clean  diag-tree
+#
+
+#
+# SDK directory path
+#
+RTK_SDKDIR         ?= $(shell pwd)/sdk
+
+DT_SDK_CONFIG      := $(RTK_SDKDIR)/config/.config
+DT_SDK_BUILD       := $(RTK_SDKDIR)/build
+DT_DIAG_DIR        := $(RTK_SDKDIR)/src/app/diag_v2
+
+
+#
+#Prepare variable for Makefile.app.diag
+#
+export SDKDIR       := $(RTK_SDKDIR)
+export SDK_CONFIG   := $(DT_SDK_CONFIG)
+export SDK_BUILD    := $(DT_SDK_BUILD)
+
+
+#
+# Include SDK .config file
+#
+ifeq ($(SDK_CONFIG),$(wildcard $(SDK_CONFIG)))
+    include $(SDK_CONFIG)
+    export
+endif
+
+PHONY += diag-tree-help
+diag-tree-help:
+	@echo 'To generate diag tree files:'
+	@echo '   make -f $${PWD}sdk/build//Makefile.diagtree_gen  "RTK_SDKDIR=$${PWD}/sdk" diag-tree'
+	@echo 'To remove diag tree files:'
+	@echo '   make -f $${PWD}sdk/build//Makefile.diagtree_gen  "RTK_SDKDIR=$${PWD}/sdk" diag-tree-clean'
+	@echo ''
+
+
+PHONY += diag-tree
+diag-tree: diag-make-check
+	make -C $(DT_DIAG_DIR)/src diag-tree
+
+PHONY += diag-tree-clean
+diag-tree-clean: diag-make-check
+	make -C $(DT_DIAG_DIR)/src diag-tree-clean
+
+
+PHONY += diag-make-check
+ifeq ($(RTK_SDKDIR),)
+diag-make-check:
+	@echo "Error! \"RTK_SDKDIR\" undefined!"
+	@echo "   Please specify full sdk path to \"RTK_SDKDIR\" variable."
+	@echo '   E.g. make -f $${PWD}/Makefile.diagtree  "RTK_SDKDIR=$${PWD}/sdk" diag-tree'
+	@exit 1
+else
+diag-make-check:
+
+endif
+
+
+
+.PHONY: $(PHONY)
+

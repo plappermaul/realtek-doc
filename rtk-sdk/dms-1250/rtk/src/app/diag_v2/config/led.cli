@@ -1,0 +1,147 @@
+//
+// Copyright (C) 2010 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for led
+//
+// Feature : The file includes the following module and sub-modules
+//           1) led commands.
+//
+
+#ifdef CMD_LED_GET_SOFTWARE_CONTROL_PORT_ALL_MODE
+//LED configuration
+//get configuration
+//software control configuration
+//port list
+//all ports
+//mode configuration
+led get software-control ( <PORT_LIST:port> | all ) mode
+#endif
+
+#ifdef CMD_LED_GET_SOFTWARE_CONTROL_PORT_ALL_STATE
+//LED configuration
+//get configuration
+//software control configuration
+//port list
+//all ports
+//state configuration
+led get software-control ( <PORT_LIST:port> | all ) state
+#endif
+
+#ifdef CMD_LED_GET_SYSTEM_SYS_MODE
+//LED configuration
+//get configuration
+//system configuration
+//sys type
+//mode configuration
+led get system sys mode
+#endif
+
+#ifdef CMD_LED_GET_SYSTEM_SYS_STATE
+//LED configuration
+//get configuration
+//system configuration
+//sys type
+//state configuration
+led get system sys state
+#endif
+
+#ifdef CMD_LED_GET_BLINK_TIME
+//LED configuration
+//get configuration
+//blinking time
+led get blink-time
+#endif
+
+#ifdef CMD_LED_SET_SOFTWARE_CONTROL_PORT_ALL_ENTITY_ENTITY_MEDIA_COPPER_FIBER_MODE_OFF_BLINK_32_BLINK_64_BLINK_128_BLINK_256_BLINK_512_BLINK_1024_CONTINUE
+//LED configuration
+//set configuration
+//software control configuration
+//port list
+//all ports
+//LED entity configuration
+//LED entity value
+//media configuration
+//copper media
+//fiber media
+//mode configuration
+//turn off LED light
+//blinking per 32 ms
+//blinking per 64 ms
+//blinking per 128 ms
+//blinking per 256 ms
+//blinking per 512 ms
+//blinking per 1024 ms
+//continue light
+led set software-control ( <PORT_LIST:port> | all ) entity <UINT:entity> media ( copper | fiber ) mode ( off | blink-32 | blink-64 | blink-128 | blink-256 | blink-512 | blink-1024 | continue )
+#endif
+
+#ifdef CMD_LED_SET_SOFTWARE_CONTROL_PORT_ALL_ENTITY_ENTITY_STATE_DISABLE_ENABLE
+//LED configuration
+//set configuration
+//software control configuration
+//port list
+//all ports
+//LED entity configuration
+//LED entity value
+//state configuration
+//disable
+//enable
+led set software-control ( <PORT_LIST:port> | all ) entity <UINT:entity> state ( disable | enable )
+#endif
+
+#ifdef CMD_LED_SET_SOFTWARE_CONTROL_START
+//LED configuration
+//set configuration
+//software control configuration
+//start to apply software configuration
+led set software-control start
+#endif
+
+#ifdef CMD_LED_SET_SYSTEM_SYS_MODE_OFF_BLINK_64_BLINK_1024_CONTINUE
+//LED configuration
+//set configuration
+//system configuration
+//sys type
+//mode configuration
+//turn off LED light
+//blinking per 64 ms
+//blinking per 1024 ms
+//continue light
+led set system sys mode ( off | blink-64 | blink-1024 | continue )
+#endif
+
+#ifdef CMD_LED_SET_SYSTEM_SYS_STATE_DISABLE_ENABLE
+//LED configuration
+//set configuration
+//system configuration
+//sys type
+//state configuration
+//disable function
+//enable function
+led set system sys state ( disable | enable )
+#endif
+
+#ifdef CMD_LED_SET_BLINK_TIME_PER_32MS_PER_64MS_PER_128MS_PER_256MS_PER_512MS_PER_1024MS
+//LED configuration
+//set configuration
+//blinking time
+//blinking per 32 ms
+//blinking per 64 ms
+//blinking per 128 ms
+//blinking per 256 ms
+//blinking per 512 ms
+//blinking per 1024 ms
+led set blink-time ( per-32ms | per-64ms | per-128ms | per-256ms | per-512ms | per-1024ms )
+#endif
+

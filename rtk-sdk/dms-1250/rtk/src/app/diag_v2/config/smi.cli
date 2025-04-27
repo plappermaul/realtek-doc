@@ -1,0 +1,67 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for internal GPIO.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) SMI commands.
+//
+
+#ifdef CMD_SMI_GET_SMI_GROUP
+//SMI configuration
+//get configuration
+//SMI group
+smi get <UINT:smi_group>
+#endif
+
+#ifdef CMD_SMI_SET_SMI_GROUP_SCK_GPIODEV_SCK_GPIODEV_SCK_PIN_SCK_PIN_SDA_GPIODEV_SDA_GPIODEV_SDA_PIN_SDA_PIN_TYPE_SMI_TYPE_CHIPID_SMI_CHIPID_DELAY_SMI_DELAY
+//SMI configuration
+//set configuration
+//SMI group
+//SCK GPIO device configuration
+//SCK GPIO device (0 mean device 0, 1 mean device 1, ...)
+//SCK GPIO pin configuration
+//SCK GPIO pin id <0-37>
+//SDA GPIO device configuration
+//SDA GPIO device (0 mean device 0, 1 mean device 1, ...)
+//SDA GPIO pin configuration
+//SDA GPIO pin id <0-37>
+//SMI Wave form Type
+//SMI type (0 8-bits device, 1 16-bits device)
+//SMI chip ID, PD type only
+//SMI chipID value 0x0 if no need.
+//SMI delay configuration
+//SMI delay for each clock interval
+smi set <UINT:smi_group> sck-gpiodev <UINT:sck_gpiodev> sck-pin <UINT:sck_pin> sda-gpiodev <UINT:sda_gpiodev> sda-pin <UINT:sda_pin> type <UINT:smi_type> chipid <UINT:smi_chipid> delay <UINT:smi_delay>
+#endif
+
+#ifdef CMD_SMI_SET_REG_SMI_GROUP_REG_ADD_REG_DATA
+//SMI configuration
+//set configuration
+//SMI group
+//Register operation
+//Register Address
+//Register Data
+smi set reg <UINT:smi_group> <UINT:reg_add> <UINT:reg_data>
+#endif
+
+#ifdef CMD_SMI_GET_REG_SMI_GROUP_REG_ADD
+//SMI configuration
+//set configuration
+//SMI group
+//Register operation
+//Register Address
+smi get reg <UINT:smi_group> <UINT:reg_add>
+#endif
+

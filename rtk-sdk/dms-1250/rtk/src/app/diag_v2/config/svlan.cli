@@ -1,0 +1,149 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for SVLAN.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) SVLAN commands.
+//
+
+#ifdef CMD_SVLAN_CREATE_DESTROY_SVID
+//SVLAN configuration
+//create SVLAN
+//destroy SVLAN
+//SVID <1-4094>
+svlan ( create | destroy ) <UINT:svid>
+#endif
+
+#ifdef CMD_SVLAN_GET_SVID_SVID_MEMBER
+//SVLAN configuration
+//get configuration
+//SVLAN configuration
+//SVID <1-4094>
+//member port
+svlan get svid <UINT:svid> member
+#endif
+
+#ifdef CMD_SVLAN_GET_PORT_PORT_ALL_SVID
+//SVLAN configuration
+//get configuration
+//port configuration
+//port id
+//all ports
+//SVLAN configuration
+svlan get port ( <PORT_LIST:port> | all ) svid
+#endif
+
+#ifdef CMD_SVLAN_GET_ENTRY_INDEX
+//SVLAN configuration
+//get configuration
+//entry index
+//index <0-63>
+svlan get entry <UINT:index>
+#endif
+
+#ifdef CMD_SVLAN_GET_TPID
+//SVLAN configuration
+//get configuration
+//tag protocol identifier of STAG
+svlan get tpid
+#endif
+
+#ifdef CMD_SVLAN_GET_PORT_PORT_ALL_SVID
+//SVLAN configuration
+//get configuration
+//port configuration
+//port id
+//all ports
+//SVLAN configuration
+svlan get port ( <PORT_LIST:port> | all ) svid
+#endif
+
+#ifdef CMD_SVLAN_GET_SERVICE_PORT
+//SVLAN configuration
+//set configuration
+//service port
+svlan get service-port
+#endif
+
+#ifdef CMD_SVLAN_SET_SVID_SVID_MEMBER_PORTLIST
+//SVLAN configuration
+//set configuration
+//SVLAN configuration
+//SVID <1-4094>
+//member port
+//port list
+svlan set svid <UINT:svid> member <PORT_LIST:portlist>
+#endif
+
+#ifdef CMD_SVLAN_SET_ENTRY_INDEX_SVID_SVID_MEMBER_PORTLIST
+//SVLAN configuration
+//set configuration
+//entry index
+//index <0-63>
+//SVLAN configuration
+//SVID <1-4094>
+//member port
+//port list
+svlan set entry <UINT:index> svid <UINT:svid> member <PORT_LIST:portlist>
+#endif
+
+#ifdef CMD_SVLAN_SET_TPID_TPID_VALUE
+//SVLAN configuration
+//set configuration
+//tag protocol identifier of STAG
+//TPID value
+svlan set tpid <UINT:tpid_value>
+#endif
+
+#ifdef CMD_SVLAN_SET_PORT_PORT_ID_SVID_SVID
+//SVLAN configuration
+//set configuration
+//port configuration
+//port id
+//SVLAN configuration
+//SVID <1-4094>
+svlan set port <UINT:port_id> svid <UINT:svid>
+#endif
+
+#ifdef CMD_SVLAN_SET_SERVICE_PORT_PORTLIST
+//SVLAN configuration
+//set configuration
+//service port
+//port list
+svlan set service-port <PORT_LIST:portlist>
+#endif
+
+#ifdef CMD_SVLAN_DUMP_ENTRY_INDEX
+//SVLAN configuration
+//dump configuration
+//entry index
+//index <0-63>
+svlan dump entry <UINT:index>
+#endif
+
+#ifdef CMD_SVLAN_DUMP_SVID_SVID
+//SVLAN configuration
+//dump configuration
+//SVLAN configuration
+//SVID <1-4094>
+svlan dump svid <UINT:svid>
+#endif
+
+#ifdef CMD_SVLAN_DUMP
+//SVLAN configuration
+//dump configuration
+svlan dump
+#endif
+

@@ -1,0 +1,21 @@
+include src/platform/9300/info.in
+include release/info2.in
+src/platform/9300/info.in release/info2.in release/Makefile.info: ;
+release/info.h:
+	@echo "#define project_name $(project_name)" >> release/info.h
+	@echo "#define platform_name $(platform_name)" >> release/info.h
+	@echo "#define OTTO_LMA_BASE $(OTTO_LMA_BASE)" >> release/info.h
+	@echo "#define OTTO_ENTRY $(OTTO_ENTRY)" >> release/info.h
+	@echo "#define OTTO_ENTRY_SYMB $(OTTO_ENTRY_SYMB)" >> release/info.h
+	@echo "#define OTTO_PLR_STACK_DEF $(OTTO_PLR_STACK_DEF)" >> release/info.h
+	@echo "#define TARGET_OUT $(TARGET_OUT)" >> release/info.h
+	@echo "#define EXPORT_SYMB_PROTO_PRINTF $(EXPORT_SYMB_PROTO_PRINTF)" >> release/info.h
+	@echo "#define EXPORT_SYMB_CACHE_OP $(EXPORT_SYMB_CACHE_OP)" >> release/info.h
+	@echo "#define UART_BASE_ADDR $(UART_BASE_ADDR)" >> release/info.h
+	@echo "#define OTTO_DRAM_GEN $(OTTO_DRAM_GEN)" >> release/info.h
+	@echo "#define template_name $(template_name)" >> release/info.h
+	@echo "#define FILTER_OUT_OBJS $(FILTER_OUT_OBJS)" >> release/info.h
+	@echo "#define mirror $(mirror)" >> release/info.h
+	@echo "#define TARGET_OUT $(TARGET_OUT)" >> release/info.h
+	@echo "#define TARGET_LIB $(TARGET_LIB)" >> release/info.h
+	@echo "#define STANDALONE_UBOOT $(STANDALONE_UBOOT)" >> release/info.h

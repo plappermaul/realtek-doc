@@ -1,0 +1,3076 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for VLAN.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) VLAN commands.
+//
+
+#ifdef CMD_VLAN_CREATE_VLAN_TABLE_VID_VID
+//VLAN configuration
+//create VLAN
+//VLAN table
+//VLAN id
+//VLAN id value
+vlan create vlan-table vid <UINT:vid>
+#endif
+
+#ifdef CMD_VLAN_DESTROY_VLAN_TABLE_VID_VID
+//VLAN configuration
+//destroy VLAN
+//VLAN table
+//VLAN id
+//VLAN id value
+vlan destroy vlan-table vid <UINT:vid>
+#endif
+
+#ifdef CMD_VLAN_DESTROY_ALL_RESTORE_DEFAULT_VLAN
+//VLAN configuration
+//destroy VLAN
+//all VLAN
+//restore default VLAN after deleting
+vlan destroy all { restore-default-vlan }
+#endif
+
+#ifdef CMD_VLAN_SET_SVL_MODE_MAC_TYPE_VLAN
+//VLAN configuration
+//Set configuration
+//SVL mode configuration
+//MAC type (unicast/multicast) mode
+//VLAN mode
+vlan set svl-mode ( mac-type | vlan )
+#endif
+
+#ifdef CMD_VLAN_GET_SVL_MODE
+//VLAN configuration
+//Get configuration
+//SVL mode configuration
+vlan get svl-mode
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_SVL_FID_FID
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//SVL FID
+//FID, <0-4095>
+vlan set vlan-table vid <UINT:vid> svl-fid <UINT:fid>
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_TABLE_VID_VID_SVL_FID
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//SVL FID
+vlan get vlan-table vid <UINT:vid> svl-fid
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_MSTI_MSTI
+//VLAN configuration
+//Set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//msti
+//msti value
+vlan set vlan-table vid <UINT:vid> msti <UINT:msti>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_FID_MSTI_FID_MSTI
+//VLAN configuration
+//Set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//fid/msti
+//fid/msti value
+vlan set vlan-table vid <UINT:vid> fid-msti <UINT:fid_msti>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_MEMBER_PORTS_ALL_NONE
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//member port
+//member ports (e.g. 3 or 6-8)
+//all ports
+//no member port
+vlan set vlan-table vid <UINT:vid> member ( <PORT_LIST:ports> | all | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_GROUP_GROUP_ID_NONE
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//member group
+//group id
+//no group member
+vlan set vlan-table vid <UINT:vid> group ( <UINT:group_id> | none )
+#endif
+
+#ifdef CMD_VLAN_ADD_VLAN_TABLE_VID_VID_MEMBER_PORT_PORT_UNTAG_TAG
+//VLAN configuration
+//add configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//member port
+//port
+//port id
+//untagged member
+//tagged member
+vlan add vlan-table vid <UINT:vid> member port <UINT:port> ( untag | tag )
+#endif
+
+#ifdef CMD_VLAN_DEL_VLAN_TABLE_VID_VID_MEMBER_PORT_PORT
+//VLAN configuration
+//del configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//member port
+//port
+//port id
+vlan del vlan-table vid <UINT:vid> member port <UINT:port>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_UNTAG_PORT_PORTS_ALL_NONE
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//untag port
+//untag ports (e.g. 3 or 6-8)
+//all untag ports
+//no untag port
+vlan set vlan-table vid <UINT:vid> untag-port ( <PORT_LIST:ports> | all | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_GROUPMASK_GROUP_MSK
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//GROUP MASK
+//group mask (e.g. 0x3,0x6)
+vlan set vlan-table vid <UINT:vid> groupmask <HEX:group_msk>
+#endif
+
+#ifdef CMD_VLAN_ADD_VLAN_TABLE_VID_VID_ECID_ECID_PORT_PORTS_ALL
+//VLAN configuration
+//add configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//ECID configuration
+//ECID value
+//port list
+//port list (e.g. 3 or 6-8)
+//all port
+vlan add vlan-table vid <UINT:vid> ecid <UINT:ecid> port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_DEL_VLAN_TABLE_VID_VID_ECID_ECID
+//VLAN configuration
+//delete configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//ECID configuration
+//ECID value
+vlan del vlan-table vid <UINT:vid> ecid <UINT:ecid>
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_TABLE_VID_VID_ECID_ECID
+//VLAN configuration
+//get configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//ECID configuration
+//ECID value
+vlan get vlan-table vid <UINT:vid> ecid <UINT:ecid>
+#endif
+
+#ifdef CMD_VLAN_DUMP_VLAN_TABLE_VID_VID_ECID
+//VLAN configuration
+//dump configuration
+//VLAN table
+//VLAN id
+//VLAN id value
+//ECID configuration
+vlan dump vlan-table vid <UINT:vid> ecid
+#endif
+
+#ifdef CMD_VLAN_SET_ACCEPT_FRAME_TYPE_INNER_PORT_PORTS_ALL_ALL_TAG_ONLY_UNTAG_ONLY
+//VLAN configuration
+//set configuration
+//accept frame type
+//inner VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all port
+//accept all type frame
+//accept tag only frame
+//accept untag only frame(include priority tag)
+vlan set accept-frame-type inner port ( <PORT_LIST:ports> | all ) ( all | tag-only | untag-only )
+#endif
+
+#ifdef CMD_VLAN_SET_ACCEPT_FRAME_TYPE_OUTER_PORT_PORTS_ALL_ALL_TAG_ONLY_UNTAG_ONLY
+//VLAN configuration
+//set configuration
+//accept frame type
+//outer VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all port
+//accept all type frame
+//accept tag only frame
+//accept untag only frame(include priority tag)
+vlan set accept-frame-type outer port ( <PORT_LIST:ports> | all ) ( all | tag-only | untag-only )
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_FILTER_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//egress filter
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//state configuration
+//enable function
+//disable function
+vlan set egress-filter port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_LEAKY_MULTICAST_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN leaky
+//multicast leaky
+//state configuration
+//enable function
+//disable function
+vlan set leaky multicast state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_PVID_INNER_PORT_PORTS_ALL_PVID
+//VLAN configuration
+//set configuration
+//config port based vid
+//inner VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//pvid
+vlan set pvid inner port ( <PORT_LIST:ports> | all ) <UINT:pvid>
+#endif
+
+#ifdef CMD_VLAN_SET_PVID_OUTER_PORT_PORTS_ALL_PVID
+//VLAN configuration
+//set configuration
+//config port based vid
+//outer VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//pvid
+vlan set pvid outer port ( <PORT_LIST:ports> | all ) <UINT:pvid>
+#endif
+
+#ifdef CMD_VLAN_SET_PROTOCOL_VLAN_GROUP_INDEX_FRAME_TYPE_UNKNOWN_ETHERNET_SNAP_LLC_OTHER_FRAME_VALUE_VALUE
+//VLAN configuration
+//set configuration
+//protocol VLAN configuration
+//protocol group
+//group index
+//frame type
+//unknown
+//ethernet
+//snap
+//llc-OTHER
+//frame value configuration
+//frame value
+vlan set protocol-vlan group <UINT:index> frame-type ( unknown | ethernet | snap | llc-other ) frame-value <UINT:value>
+#endif
+
+#ifdef CMD_VLAN_SET_PROTOCOL_VLAN_INNER_PORT_PORTS_ALL_GROUP_INDEX_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//set configuration
+//protocol VLAN configuration
+//inner VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//config action of group
+//group index
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan set protocol-vlan inner port ( <PORT_LIST:ports> | all ) group <UINT:index> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_SET_PROTOCOL_VLAN_PORT_PORTS_ALL_GROUP_INDEX_VLAN_TYPE_INNER_OUTER_VID_VID_STATE_DISABLE_ENABLE_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//protocol VLAN configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//config action of group
+//group index
+//vlan type configuration
+//inner vlan
+//outer vlan
+//vid configuration
+//vid
+// state of vid assignment
+// enable vid assignment
+// disable vid assignment
+// priority configuration
+// priority
+// state of priority assigment
+// enable priority assignment
+// disable priority assignment
+vlan set protocol-vlan  port ( <PORT_LIST:ports> | all ) group <UINT:index> vlan-type ( inner | outer ) vid <UINT:vid> state ( disable | enable ) priority <UINT:priority> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_PROTOCOL_VLAN_PORT_PORTS_ALL_GROUP_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//protocol VLAN configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//config action of group
+//group index
+//state of protocol-vlan
+//enable function
+//disable function
+vlan set protocol-vlan port ( <PORT_LIST:ports> | all ) group <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_PORT_PORTS_ALL_EXTRA_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//extra tag
+//state configuration
+//enable tag
+//disable tag
+vlan set ingress port ( <PORT_LIST:ports> | all ) extra state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_PORT_PORTS_ALL_INNER_OUTER_TPID_TPID_IDX_MASK
+//VLAN configuration
+//set configuration
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//TPID configuration
+//TPID index mask
+vlan set ingress port ( <PORT_LIST:ports> | all ) ( inner | outer ) tpid <HEX:tpid_idx_mask>
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_PORT_PORTS_ALL_INNER_OUTER_TPID_TPID_IDX
+//VLAN configuration
+//set configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//TPID configuration
+//index of TPID entry
+vlan set egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) tpid <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_PORT_PORTS_ALL_INNER_OUTER_KEEP_TAG_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//keep original tag
+//keep tag state
+//enable function
+//disable function
+vlan set ingress port ( <PORT_LIST:ports> | all ) ( inner | outer ) keep-tag state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_PORT_PORTS_ALL_INNER_OUTER_KEEP_TAG_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//keep original tag
+//keep tag state
+//enable function
+//disable function
+vlan set egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) keep-tag state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_PORT_PORTS_ALL_INNER_OUTER_KEEP_TPID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//keep original TPID value
+//keep TPID state
+//enable function
+//disable function
+vlan set egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) keep-tpid state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_VID_VID_PROFILE_INDEX_INDEX
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN id configuration
+//VLAN id
+//set profile index
+//profile index
+vlan set vlan-table vid <UINT:vid> profile-index <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_SA_LEARNING_STATE_ASIC_LEARN_SOFTWARE_LEARN_NOT_LEARN
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//sa learning configuration
+//state configuration
+//ASIC auto-learn
+//Software-learn
+//Not learn
+vlan set profile entry <UINT:index> sa-learning state ( asic-learn | software-learn | not-learn )
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_SRC_MAC_LEARN_MODE_ASIC_LEARN_SOFTWARE_LEARN_NOT_LEARN_ACTION_COPY_TO_CPU_DROP_FORWARD_TRAP_TO_CPU
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//new source MAC learning mode configuration
+//asic auto learn
+//software learn, learn as suspend entry
+//not do any learning action
+//learning action
+//copy to CPU
+//drop
+//forward
+//trap to CPU
+vlan set profile entry <UINT:index> src-mac-learn-mode ( asic-learn | software-learn | not-learn ) action ( copy-to-cpu | drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_SRC_MAC_LEARN_MODE_ASIC_LEARN_SOFTWARE_LEARN_NOT_LEARN_ACTION_COPY_TO_MASTER_TRAP_TO_MASTER
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//new source MAC learning mode configuration
+//asic auto learn
+//software learn, learn as suspend entry
+//not do any learning action
+//learning action
+//copy to master CPU
+//trap to master CPU
+vlan set profile entry <UINT:index> src-mac-learn-mode ( asic-learn | software-learn | not-learn ) action ( copy-to-master | trap-to-master )
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_SRC_MAC_ACTION_FORWARD_DROP_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//new source MAC learning configuration
+//forwarding action
+//forward (normal process)
+//drop
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+vlan set profile entry <UINT:index> src-mac action ( forward | drop | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_IPMC_IP6MC_ROUTING_STATE_ENABLE_DISABLE
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//IPv4 multicast
+//IPv6 multicast
+//routing configuration
+//state configuration
+//enable function
+//disable function
+vlan set profile entry <UINT:index> ( ipuc | ip6uc | ipmc | ip6mc ) routing state ( enable | disable )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_IPMC_IP6MC_ROUTING_STATE
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//IPv4 multicast
+//IPv6 multicast
+//routing configuration
+//state configuration
+vlan get profile entry <UINT:index> ( ipuc | ip6uc | ipmc | ip6mc ) routing state
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_STATE_ENABLE_DISABLE
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//state configuration
+//enable function
+//disable function
+vlan set profile entry <UINT:index> ( ipuc | ip6uc ) urpf state ( enable | disable )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_STATE
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//state configuration
+vlan get profile entry <UINT:index> ( ipuc | ip6uc ) urpf state
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_DEFAULT_ROUTE_STATE_ENABLE_DISABLE
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//default route
+//state configuration
+//enable function
+//disable function
+vlan set profile entry <UINT:index> ( ipuc | ip6uc ) urpf default-route state ( enable | disable )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_DEFAULT_ROUTE_STATE
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//default route
+//state configuration
+vlan get profile entry <UINT:index> ( ipuc | ip6uc ) urpf default-route state
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_MODE_LOOSE_STRICT
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//mode selection
+//loose mode
+//strict mode
+vlan set profile entry <UINT:index> ( ipuc | ip6uc ) urpf mode ( loose | strict )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_MODE
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//mode selection
+vlan get profile entry <UINT:index> ( ipuc | ip6uc ) urpf mode
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_FAIL_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//forwarding action of uRPF failure
+//drop
+//forward (keep routing)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+vlan set profile entry <UINT:index> ( ipuc | ip6uc ) urpf fail-action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPUC_IP6UC_URPF_FAIL_ACTION
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//forwarding action of uRPF failure
+vlan get profile entry <UINT:index> ( ipuc | ip6uc ) urpf fail-action
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPMC_IP6MC_MC_BRIDGE_MODE_MAC_BASE_IP_BASE
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 multicast
+//IPv6 multicast
+//multicast bridge
+//mode selection
+//mac base mode
+//ip base mode
+vlan set profile entry <UINT:index> ( ipmc | ip6mc ) mc-bridge mode ( mac-base | ip-base )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPMC_IP6MC_MC_BRIDGE_MODE
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 multicast
+//IPv6 multicast
+//multicast bridge
+//mode selection
+vlan get profile entry <UINT:index> ( ipmc | ip6mc ) mc-bridge mode
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IPMC_DIP_224_0_0_X_224_0_1_X_239_X_X_X_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 multicast
+//destination IPv4 address
+//224.0.0.X
+//224.0.1.X
+//239.X.X.X
+//forwarding action
+//forward (normal process)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+vlan set profile entry <UINT:index> ipmc dip ( 224-0-0-x | 224-0-1-x | 239-x-x-x ) action ( forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IPMC_DIP_224_0_0_X_224_0_1_X_239_X_X_X_ACTION
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv4 multicast
+//destination IPv4 address
+//224.0.0.X
+//224.0.1.X
+//239.X.X.X
+//forwarding action
+vlan get profile entry <UINT:index> ipmc dip ( 224-0-0-x | 224-0-1-x | 239-x-x-x ) action
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_IP6MC_DIP_XXXX_0000_00XX_FF0X_XXXX_XXXX_FF0X_DB8_0_0_ACTION_FORWARD_FLOOD_IN_VLAN_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv6 multicast
+//destination IPv6 address
+//XXXX::0000:00XX
+//FF0X::XXXX:XXXX
+//FF0X:DB8::0
+//forwarding action
+//forward (normal process)
+//flood in the ingress VLAN
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+vlan set profile entry <UINT:index> ip6mc dip ( xxxx-0000-00xx | ff0x-xxxx-xxxx | ff0x-db8-0-0 ) action ( forward | flood-in-vlan | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_IP6MC_DIP_XXXX_0000_00XX_FF0X_XXXX_XXXX_FF0X_DB8_0_0_ACTION
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//IPv6 multicast
+//destination IPv6 address
+//XXXX::0000:00XX
+//FF0X::XXXX:XXXX
+//FF0X:DB8::0
+//forwarding action
+vlan get profile entry <UINT:index> ip6mc dip ( xxxx-0000-00xx | ff0x-xxxx-xxxx | ff0x-db8-0-0 ) action
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_LOOKUP_MISS_TYPE_L2_MCAST_IP4_MCAST_IP6_MCAST_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//bridge type of lookup miss
+//l2 multicast bridge
+//ip4 multicast bridge
+//ip6 multicast bridge
+//forwarding action of lookup miss
+//drop
+//forward (flooding to specail portmask)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+vlan set profile entry <UINT:index> lookup-miss-type ( l2-mcast | ip4-mcast | ip6-mcast ) action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_LOOKUP_MISS_TYPE_L2_MCAST_IP4_MCAST_IP6_MCAST_ACTION
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//bridge type of lookup miss
+//l2 multicast bridge
+//ip4 multicast bridge
+//ip6 multicast bridge
+//forwarding action of lookup miss
+vlan get profile entry <UINT:index> lookup-miss-type ( l2-mcast | ip4-mcast | ip6-mcast ) action
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_LOOKUP_MISS_TYPE_L2_MCAST_IP4_MCAST_IP6_MCAST_PORT_PORTS_ALL
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//bridge type of lookup miss
+//l2 multicast bridge
+//ip4 multicast bridge
+//ip6 multicast bridge
+//forwarding portmask for bridge lookup miss
+//forwarding ports (e.g. 3 or 6-8)
+//all ports
+vlan set profile entry <UINT:index> lookup-miss-type ( l2-mcast | ip4-mcast | ip6-mcast ) port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX_LOOKUP_MISS_TYPE_L2_MCAST_IP4_MCAST_IP6_MCAST_PORT
+//VLAN configuration
+//get configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//bridge type of lookup miss
+//l2 multicast bridge
+//ip4 multicast bridge
+//ip6 multicast bridge
+//forwarding portmask for bridge lookup miss
+vlan get profile entry <UINT:index> lookup-miss-type ( l2-mcast | ip4-mcast | ip6-mcast ) port
+#endif
+
+#ifdef CMD_VLAN_SET_PROFILE_ENTRY_INDEX_LOOKUP_MISS_TYPE_L2_MCAST_IP4_MCAST_IP6_MCAST_MCAST_TABLE_TABLE_INDEX
+//VLAN configuration
+//set configuration
+//profile configuration
+//profile entry configuration
+//profile entry index
+//multicast lookup miss type
+//set flooding portmask for unknown L2 mutlicast traffic
+//set flooding portmask for unknown IP4 mutlicast traffic
+//set flooding portmask for unknown IP6 mutlicast traffic
+//multicast table configuration
+//table index
+vlan set profile entry <UINT:index> lookup-miss-type ( l2-mcast | ip4-mcast | ip6-mcast ) mcast-table <UINT:table_index>
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_FILTER_PORT_PORTS_ALL_ACTION_FORWARD_DROP_TRAP
+//VLAN configuration
+//set configuration
+//ingress filter
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//action to take when violate ingress filter
+//forward packet
+//drop packet
+//trap packet to CPU
+vlan set ingress-filter port ( <PORT_LIST:ports> | all ) action ( forward | drop | trap )
+#endif
+
+#ifdef CMD_VLAN_SET_PVID_MODE_INNER_OUTER_PORT_PORTS_ALL_ALL_UNTAG_ONLY_UNTAG_AND_PRIORITY_TAG
+//VLAN configuration
+//set configuration
+//apply port based VLAN on specific packet format
+//inner tag
+//outer tag
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//all packet
+//untag packet only
+//untag and priority tag packet
+vlan set pvid-mode ( inner | outer ) port ( <PORT_LIST:ports> | all ) ( all | untag-only | untag-and-priority-tag )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_MAC_ADDRESS_MAC_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//source MAC address configuration
+//source MAC address
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan set mac-based-vlan entry <UINT:index> mac-address <MACADDR:mac> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_MAC_ADDRESS_MAC_MAC_MASK_MSK_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//source MAC address configuration
+//source MAC address
+//source MAC mask configuration
+//source MAC mask
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan set mac-based-vlan entry <UINT:index> mac-address <MACADDR:mac> mac-mask <MACADDR:msk> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_MAC_ADDRESS_MAC_MAC_MASK_MSK_PORT_PORT_PORT_MASK_PORT_MSK_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//source MAC address configuration
+//source MAC address
+//source MAC mask configuration
+//source MAC mask
+//port ID configuration
+//port ID
+//port ID mask configuration
+//port ID mask (6-bit mask)
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan set mac-based-vlan entry <UINT:index> mac-address <MACADDR:mac> mac-mask <MACADDR:msk> port <UINT:port> port-mask <UINT:port_msk> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//state configuration
+//disable
+//enable
+vlan set mac-based-vlan entry <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//port list
+//port list(eg,3,5)
+//all port
+//state configuration
+//disable
+//enable
+vlan set mac-based-vlan port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_KEY_PORT_PORT_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//comparing key
+//key port
+//port ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set mac-based-vlan entry <UINT:index> key port <UINT:port> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_KEY_TRUNK_TRUNK_ID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//comparing key
+//key trunk
+//trunk ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set mac-based-vlan entry <UINT:index> key trunk <UINT:trunk_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_KEY_INNER_OUTER_FRAME_TYPE_ALL_TAGGED_UNTAGGED
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//search key
+//inner vlan
+//outer vlan
+//frame type
+//all packet
+//tagged packet
+//untagged packet (or priority-tag)
+vlan set mac-based-vlan entry <UINT:index> key ( inner | outer ) frame-type ( all | tagged | untagged )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_KEY_MAC_ADDRESS_MAC_MAC_MASK_MSK
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//search key
+//source MAC address configuration
+//source MAC address
+//source MAC mask configuration
+//source MAC mask
+vlan set mac-based-vlan entry <UINT:index> key mac-address <MACADDR:mac> mac-mask <MACADDR:msk>
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_DATA_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_BYPASS_INGRESS_VLAN_FILTER
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//forward action
+//drop
+//forward
+//trap to cpu
+//copy to cpu
+//bypass ingress vlan filter
+vlan set mac-based-vlan entry <UINT:index> data fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { bypass-ingress-vlan-filter }
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_DATA_FWD_ACTION_TRAP_TO_MASTER_COPY_TO_MASTER_BYPASS_INGRESS_VLAN_FILTER
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//forward action
+//trap to master
+//copy to master
+//bypass ingress vlan filter
+vlan set mac-based-vlan entry <UINT:index> data fwd-action ( trap-to-master | copy-to-master ) { bypass-ingress-vlan-filter }
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_DATA_VLAN_TYPE_INNER_OUTER_VID_VID_STATE_DISABLE_ENABLE_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE_TPID_TPID_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//inner vlan
+//outer vlan
+//vid configuration
+//vid
+//VLAN ID
+//vid state configuration
+//disable
+//enable
+//priority configuration
+//priority
+//priority state configuration
+//disable
+//enable
+//tpid configuration
+//tpid index
+//tpid state configuration
+//disable
+//enable
+vlan set mac-based-vlan entry <UINT:index> data vlan-type ( inner | outer ) vid <UINT:vid> state ( disable | enable ) priority <UINT:priority> state ( disable | enable ) tpid <UINT:tpid_index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_MAC_BASED_VLAN_ENTRY_INDEX_DATA_VLAN_TAG_STATUS_UNTAG_TAG_NONE
+//VLAN configuration
+//set configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//vlan tag status configuration
+//untagged
+//tagged
+//none
+vlan set mac-based-vlan entry <UINT:index> data vlan-tag-status ( untag | tag | none )
+#endif
+
+#ifdef CMD_VLAN_ADD_MAC_BASED_VLAN_ENTRY_MAC_ADDRESS_MAC_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//add configuration
+//mac-based VLAN configuration
+//entry configuration
+//source MAC address configuration
+//source MAC address
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan add mac-based-vlan entry mac-address <MACADDR:mac> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_DEL_MAC_BASED_VLAN_ENTRY_MAC_ADDRESS_MAC
+//VLAN configuration
+//del configuration
+//mac-based VLAN configuration
+//entry configuration
+//source MAC address configuration
+//source MAC address
+vlan del mac-based-vlan entry mac-address <MACADDR:mac>
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_SRC_IP_SIP_SRC_IP_MASK_SIPMASK_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//source IP address configuration
+//source IP address
+//source IP address mask configuration
+//source IP address mask
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan set ip-subnet-based-vlan entry <UINT:index> src-ip <IPV4ADDR:sip> src-ip-mask <IPV4ADDR:sipmask> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_SRC_IP_SIP_SRC_IP_MASK_SIPMASK_PORT_PORT_PORT_MASK_PORT_MSK_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//source IP address configuration
+//source IP address
+//source IP address mask configuration
+//source IP address mask
+//port ID configuration
+//port ID
+//port ID mask configuration
+//port ID mask (6-bit mask)
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan set ip-subnet-based-vlan entry <UINT:index> src-ip <IPV4ADDR:sip> src-ip-mask <IPV4ADDR:sipmask> port <UINT:port> port-mask <UINT:port_msk> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//state configuration
+//enable
+//disable
+vlan set ip-subnet-based-vlan entry <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//port list
+//port list(eg,3,5)
+//all port
+//state configuration
+//disable
+//enable
+vlan set ip-subnet-based-vlan port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_KEY_PORT_PORT_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//comparing key
+//key port
+//port ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set ip-subnet-based-vlan entry <UINT:index> key port <UINT:port> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_KEY_TRUNK_TRUNK_ID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//comparing key
+//key trunk
+//trunk ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set ip-subnet-based-vlan entry <UINT:index> key trunk <UINT:trunk_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_KEY_INNER_OUTER_FRAME_TYPE_ALL_TAGGED_UNTAGGED
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//search key
+//inner vlan
+//outer vlan
+//frame type
+//all packet
+//tagged packet
+//untagged packet
+vlan set ip-subnet-based-vlan entry <UINT:index> key ( inner | outer ) frame-type ( all | tagged | untagged )
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_KEY_SRC_IP_SIP_SRC_IP_MASK_SIPMSK
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//search key
+//source IP address configuration
+//source IP address
+//source IP mask configuration
+//source IP mask
+vlan set ip-subnet-based-vlan entry <UINT:index> key src-ip <IPV4ADDR:sip> src-ip-mask <IPV4ADDR:sipmsk>
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_DATA_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_BYPASS_INGRESS_VLAN_FILTER
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//forward action
+//drop
+//forward
+//trap to cpu
+//copy to cpu
+//bypass ingress vlan filter
+vlan set ip-subnet-based-vlan entry <UINT:index> data fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { bypass-ingress-vlan-filter }
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_DATA_FWD_ACTION_TRAP_TO_MASTER_COPY_TO_MASTER_BYPASS_INGRESS_VLAN_FILTER
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//forward action
+//trap to master
+//copy to master
+//bypass ingress vlan filter
+vlan set ip-subnet-based-vlan entry <UINT:index> data fwd-action ( trap-to-master | copy-to-master ) { bypass-ingress-vlan-filter }
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_DATA_VLAN_TYPE_INNER_OUTER_VID_VID_STATE_DISABLE_ENABLE_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE_TPID_TPID_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//inner vlan
+//outer vlan
+//vid configuration
+//vid
+//VLAN ID
+//vid state configuration
+//disable
+//enable
+//priority configuration
+//priority
+//priority state configuration
+//disable
+//enable
+//tpid configuration
+//tpid index
+//tpid state configuration
+//disable
+//enable
+vlan set ip-subnet-based-vlan entry <UINT:index> data vlan-type ( inner | outer ) vid <UINT:vid> state ( disable | enable ) priority <UINT:priority> state ( disable | enable ) tpid <UINT:tpid_index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX_DATA_VLAN_TAG_STATUS_UNTAG_TAG_NONE
+//VLAN configuration
+//set configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+//entry data
+//vlan tag status configuration
+//untagged
+//tagged
+//none
+vlan set ip-subnet-based-vlan entry <UINT:index> data vlan-tag-status ( untag | tag | none )
+#endif
+
+#ifdef CMD_VLAN_ADD_IP_SUBNET_BASED_VLAN_ENTRY_SRC_IP_SIP_SRC_IP_MASK_SIPMASK_VID_VID_PRIORITY_PRIORITY
+//VLAN configuration
+//add configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//source IP address configuration
+//source IP address
+//source IP address mask configuration
+//source IP address mask
+//vid configuration
+//vid
+//priority configuration
+//priority
+vlan add ip-subnet-based-vlan entry src-ip <IPV4ADDR:sip> src-ip-mask <IPV4ADDR:sipmask> vid <UINT:vid> priority <UINT:priority>
+#endif
+
+#ifdef CMD_VLAN_DEL_IP_SUBNET_BASED_VLAN_ENTRY_SRC_IP_SIP_SRC_IP_MASK_SIPMASK
+//VLAN configuration
+//del configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//source IP address configuration
+//source IP address
+//source IP address mask configuration
+//source IP address mask
+vlan del ip-subnet-based-vlan entry src-ip <IPV4ADDR:sip> src-ip-mask <IPV4ADDR:sipmask>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_BLOCK_MODE_INDEX_CONVERSION_MAC_BASED_IP_SUBNET_BASED
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//block mode
+//block index
+//set block mode to ingress vlan conversion
+//set block mode to mac-based-vlan
+//set block mode to ip-subnet-based-vlan
+vlan set vlan-conversion ingress block-mode <UINT:index> ( conversion | mac-based | ip-subnet-based )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//state configuration
+//enable
+//disable
+vlan set vlan-conversion ingress entry <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_VID_VID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//key vid
+//vid to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion ingress entry <UINT:index> key vid  <UINT:vid> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_INNER_OUTER_VID_VID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//inner vlan
+//outer vlan
+//vid to compare
+//VLAN ID
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion ingress entry <UINT:index> key ( inner | outer ) vid <UINT:vid> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_RANGE_CHECK_RANGE_CHECK_BITMASK_MASK_RANGE_CHECK_MASK
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//key range check
+//bitmask result of range check configurations
+//key range check mask
+//range check mask bits
+vlan set vlan-conversion ingress entry <UINT:index> key range-check <HEX:range_check_bitmask> mask <HEX:range_check_mask>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//key priority
+//priority to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion ingress entry <UINT:index> key priority  <UINT:priority> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_INNER_OUTER_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//inner vlan
+//outer vlan
+//key priority
+//priority to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion ingress entry <UINT:index> key ( inner | outer )  priority <UINT:priority> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_INNER_OUTER_TAG_STATUS_ALL_TAGGED_UNTAGGED
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//inner vlan
+//outer vlan
+//key tag status
+//accept all packet
+//only accept tagged packet
+//only accept untagged packet
+vlan set vlan-conversion ingress entry <UINT:index> key  ( inner | outer ) tag-status ( all | tagged | untagged )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_PORT_PORT_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//key port
+//port ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion ingress entry <UINT:index> key port <UINT:port> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_KEY_TRUNK_TRUNK_ID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//comparing key
+//key trunk
+//trunk ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion ingress entry <UINT:index> key trunk <UINT:trunk_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_VID_SELECT_INNER_OUTER
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify target vid to conver to
+//inner vlan
+//outer vlan
+vlan set vlan-conversion ingress entry <UINT:index> data  vid-select  ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_VID_VID_FORCE_SHIFT_POSITIVE_SHIFT_NEGATIVE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify vid
+//vid to assign or shift
+//directly assign
+//shift positive operation
+//shift negative operation
+vlan set vlan-conversion ingress entry <UINT:index> data vid <UINT:vid> ( force | shift-positive | shift-negative )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_INNER_VID_VID_FORCE_SHIFT_COPY_FROM_OUTER_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//inner vid
+//inner vid to assign or shift
+//directly assign
+//shift operation
+//copy from outer vlan id
+//none operation
+vlan set vlan-conversion ingress entry <UINT:index> data inner-vid  <UINT:vid> ( force | shift | copy-from-outer | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_OUTER_VID_VID_FORCE_SHIFT_COPY_FROM_INNER_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//outer vid
+//outer vid to assign or shift
+//directly assign
+//shift operation
+//copy from inner vlan id
+//none operation
+vlan set vlan-conversion ingress entry <UINT:index> data outer-vid  <UINT:vid> ( force | shift | copy-from-inner | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_PRIORITY_PRIORITY_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify 1p priority
+//priority to assign
+//force priority
+//don't force priority
+vlan set vlan-conversion ingress entry <UINT:index> data priority <UINT:priority> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_INNER_PRIORITY_PRIORITY_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify inner priority
+//priority to assign
+//force priority
+//don't force priority
+vlan set vlan-conversion ingress entry <UINT:index> data inner-priority <UINT:priority> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_OUTER_PRIORITY_PRIORITY_FORCE_COPY_FROM_INNER_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify outer priority
+//priority to assign or copy
+//force priority
+//copy from inner priority
+//don't force priority
+vlan set vlan-conversion ingress entry <UINT:index> data outer-priority <UINT:priority> ( force | copy-from-inner | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_STATUS_INNER_OUTER_UNTAG_TAG_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify tag status
+//inner tag
+//outer tag
+//force outgoing packet to be untag
+//force outgoing packet to be tag
+//don't force tag status
+vlan set vlan-conversion ingress entry <UINT:index> data status ( inner | outer ) ( untag | tag | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_TPID_TPID_INDEX_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify tpid index
+//tpid index
+//force TPID value of egress tagged packet
+//don't force TPID value
+vlan set vlan-conversion ingress entry <UINT:index> data tpid <UINT:tpid_index> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_INNER_OUTER_TPID_TPID_INDEX_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify inner vlan tpid
+//specify outer vlan tpid
+//specify tpid index
+//tpid index
+//force TPID value of egress tagged packet
+//don't force TPID value
+vlan set vlan-conversion ingress entry <UINT:index> data ( inner | outer ) tpid <UINT:tpid_index> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_DATA_INTF_INTF_ID_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify ingress interface
+//interface ID
+//force priority
+//don't force priority
+vlan set vlan-conversion ingress entry <UINT:index> data intf <UINT:intf_id> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//port list
+//port list(eg,3,5)
+//all port
+//state configuration
+//disable
+//enable
+vlan set vlan-conversion ingress port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_PORT_PORTS_ALL
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get vlan-conversion ingress port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_SET_TPID_INNER_OUTER_EXTRA_ENTRY_TPID_IDX_TPID_TPID
+//VLAN configuration
+//set configuration
+//TPID configuration
+//inner tag TPID
+//outer tag TPID
+//extra tag TPID
+//TPID entry
+//TPID entry index
+//TPID configuration
+//TPID
+vlan set tpid ( inner | outer | extra ) entry <UINT:tpid_idx> tpid <UINT:tpid>
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_PORT_PORTS_ALL_INNER_OUTER_STATUS_UNTAG_PRIORITY_TAG_TAG
+//VLAN configuration
+//set configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//tag status configuration
+//outgoing packet is untag
+//outgoing packet is priority-tag
+//outgoing packet is tag
+vlan set egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) status ( untag | priority-tag | tag )
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_PORT_PORTS_ALL_INNER_OUTER_STATUS_INTERNAL
+//VLAN configuration
+//set configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//tag status configuration
+//follow the internal decision
+vlan set egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) status internal
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_DOUBLE_TAG_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//enable vlan conversion for double tagged packet
+//state configuration
+//enable
+//disable
+vlan set vlan-conversion egress double-tag state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_VID_SELECT_INNER_OUTER
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//select VID source for conversion
+//inner VLAN
+//outer VLAN
+vlan set vlan-conversion egress vid-select ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//state configuration
+//enable
+//disable
+vlan set vlan-conversion egress entry <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_VID_VID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key vid
+//vid to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion egress entry <UINT:index> key vid  <UINT:vid> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_INNER_OUTER_VID_VID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key vid
+//inner vlan id
+//outer vlan id
+//vid to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion egress entry <UINT:index> key ( inner | outer )  vid <UINT:vid> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_RANGE_CHECK_RANGE_CHECK_BITMASK_MASK_RANGE_CHECK_MASK
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key range check
+//bitmask result of range check configurations
+//key range check mask
+//range check mask bits
+vlan set vlan-conversion egress entry <UINT:index> key range-check <HEX:range_check_bitmask> mask <HEX:range_check_mask>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key priority
+//priority to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion egress entry <UINT:index> key priority  <UINT:priority> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_INNER_OUTER_PRIORITY_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key priority
+//inner vlan priority
+//outer vlan priority
+//priority to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion egress entry <UINT:index> key ( inner | outer )  priority <UINT:priority> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_INNER_OUTER_TAG_STATUS_ALL_TAGGED_UNTAGGED
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//inner vlan
+//outer vlan
+//key tag status
+//accept all packet
+//only accept tagged packet
+//only accept untagged packet
+vlan set vlan-conversion egress entry <UINT:index> key  ( inner | outer ) tag-status ( all | tagged | untagged )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_PORT_PORT_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key port
+//port ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion egress entry <UINT:index> key port <UINT:port> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_KEY_TRUNK_TRUNK_ID_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//comparing key
+//key trunk
+//trunk ID to compare
+//comparing state
+//enable comparing
+//disable comparing
+vlan set vlan-conversion egress entry <UINT:index> key trunk <UINT:trunk_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_VID_VID_FORCE_SHIFT_POSITIVE_SHIFT_NEGATIVE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//specify vid
+//vid to assign or shift
+//directly assign
+//shift positive operation
+//shift negative operation
+vlan set vlan-conversion egress entry <UINT:index> data vid <UINT:vid> ( force | shift-positive | shift-negative )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_INNER_VID_VID_FORCE_SHIFT_COPY_FROM_OUTER_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//inner vid
+//inner vid to assign or shift
+//directly assign
+//shift operation
+//copy from outer vlan id
+//none operation
+vlan set vlan-conversion egress entry <UINT:index> data inner-vid  <UINT:vid> ( force | shift | copy-from-outer | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_OUTER_VID_VID_FORCE_SHIFT_COPY_FROM_INNER_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//outer vid
+//outer vid to assign or shift
+//directly assign
+//shift operation
+//copy from inner vlan id
+//none operation
+vlan set vlan-conversion egress entry <UINT:index> data outer-vid  <UINT:vid> ( force | shift | copy-from-inner | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_PRIORITY_PRIORITY_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//specify 1p priority
+//priority to assign
+//force priority
+//don't force priority
+vlan set vlan-conversion egress entry <UINT:index> data priority <UINT:priority> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_INNER_PRIORITY_PRIORITY_FORCE_COPY_FROM_OUTER_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//specify inner priority
+//priority assign or copy
+//force priority
+//copy from outer priority
+//don't force priority
+vlan set vlan-conversion egress entry <UINT:index> data inner-priority <UINT:priority> ( force | copy-from-outer | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_OUTER_PRIORITY_PRIORITY_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//entry data
+//specify outer priority
+//priority assign
+//force priority
+//don't force priority
+vlan set vlan-conversion egress entry <UINT:index> data outer-priority  <UINT:priority> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_STATUS_INNER_OUTER_UNTAG_TAG_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//specify tag status
+//inner tag
+//outer tag
+//force outgoing packet to be untag
+//force outgoing packet to be tag
+//don't force tag status
+vlan set vlan-conversion egress entry <UINT:index> data status ( inner | outer ) ( untag | tag | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_TPID_TPID_INDEX_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//specify tpid index
+//tpid index
+//force TPID value of egress tagged packet
+//don't force TPID value
+vlan set vlan-conversion egress entry <UINT:index> data tpid <UINT:tpid_index> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_DATA_INNER_OUTER_TPID_TPID_INDEX_FORCE_NONE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//entry data
+//inner vlan tpid
+//outer vlan tpid
+//specify tpid index
+//tpid index
+//force TPID value of egress tagged packet
+//don't force TPID value
+vlan set vlan-conversion egress entry <UINT:index> data ( inner | outer )  tpid  <UINT:tpid_index> ( force | none )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//port list
+//port list(eg,3,5)
+//all port
+//state configuration
+//disable
+//enable
+vlan set vlan-conversion egress port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get vlan-conversion egress port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_HIT_INDICATION_HIT_CLEAR
+//VLAN configuration
+//get configuration
+//VLAN conversion configuration
+//ingress configuration
+//entry configuration
+//entry index
+//hit indication
+//clear hit-bit
+vlan get vlan-conversion ingress entry <UINT:index> hit-indication { hit-clear }
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_HIT_INDICATION_HIT_CLEAR
+//VLAN configuration
+//get configuration
+//VLAN conversion configuration
+//egress configuration
+//entry configuration
+//entry index
+//hit indication
+//clear hit-bit
+vlan get vlan-conversion egress entry <UINT:index> hit-indication { hit-clear }
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_EGRESS_PORT_PORTS_ALL_RANGE_CHECK
+//VLAN configuration
+//get configuration
+//VLAN conversion configuration
+//ingress configuration
+//egress configuration
+//port
+//port list
+//all ports
+//range check configuration
+vlan get vlan-conversion ( ingress | egress ) port ( <PORT_LIST:ports> | all ) range-check
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_STATE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//state configuration
+vlan get vlan-aggregation state
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//state configuration
+//enable
+//disable
+vlan set vlan-aggregation state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//state configuration
+//enable
+//disable
+vlan set vlan-aggregation port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//state configuration
+//enable
+//disable
+vlan set vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_PORT_PORTS_ALL_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//priority
+//state configuration
+//enable
+//disable
+vlan set vlan-aggregation port ( <PORT_LIST:ports> | all ) priority state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_PRIORITY_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//port
+//trunk list
+//all trunks
+//priority
+//state configuration
+//enable
+//disable
+vlan set vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) priority state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_PORT_PORTS_ALL_PRIORITY_STATE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//priority
+//state configuration
+vlan get vlan-aggregation port ( <PORT_LIST:ports> | all ) priority state
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_PRIORITY_STATE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//priority
+//state configuration
+vlan get vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) priority state
+#endif
+
+#ifdef CMD_VLAN_GET_LEAKY_STP_FILTER_STATE
+//VLAN configuration
+//get configuration
+//STP leaky control
+//STP egress filter
+//state configuration
+vlan get leaky stp-filter state
+#endif
+
+#ifdef CMD_VLAN_SET_LEAKY_STP_FILTER_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//STP leaky control
+//STP egress filter
+//state configuration
+//disable function
+//enable function
+vlan set leaky stp-filter state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_GET_EXCEPTION_ACTION
+//VLAN configuration
+//get configuration
+//exception configuration
+//action configuration
+vlan get exception action
+#endif
+
+#ifdef CMD_VLAN_SET_EXCEPTION_ACTION_DROP_FORWARD_TRAP
+//VLAN configuration
+//set configuration
+//exception configuration
+//action configuration
+//discard function
+//forward function
+//trap function
+vlan set exception action ( drop | forward | trap )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_DEFAULT_ACTION_PORTS_ALL
+//VLAN configuration
+//get configuration
+//VLAN conversion configuration
+//ingress configuration
+//default action
+//ports
+//all ports
+vlan get vlan-conversion ingress default-action ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_DEFAULT_ACTION_PORTS_ALL_FORWARD_DROP
+//VLAN configuration
+//set configuration
+//VLAN conversion configuration
+//ingress configuration
+//default action
+//ports
+//all ports
+//forward function
+//discard function
+vlan set vlan-conversion ingress default-action ( <PORT_LIST:ports> | all ) ( forward | drop )
+#endif
+
+#ifdef CMD_VLAN_CLEAR_VLAN_CONVERSION_EGRESS_ENTRY_INDEX_ALL
+//VLAN configuration
+//clear configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+//all entries
+vlan clear vlan-conversion egress entry ( <UINT:index> | all )
+#endif
+
+#ifdef CMD_VLAN_CLEAR_VLAN_CONVERSION_INGRESS_ENTRY_INDEX_ALL
+//VLAN configuration
+//clear configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+//all entries
+vlan clear vlan-conversion ingress entry ( <UINT:index> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_TABLE_VID_VID
+//VLAN configuration
+//get configuration
+//VLAN table configuration
+//VLAN id
+//VLAN id value
+vlan get vlan-table vid <UINT:vid>
+#endif
+
+#ifdef CMD_VLAN_GET_ACCEPT_FRAME_TYPE_INNER_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//accept frame type
+//inner VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get accept-frame-type inner port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_ACCEPT_FRAME_TYPE_OUTER_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//accept frame type
+//outer VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get accept-frame-type outer port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_EGRESS_FILTER_PORT_PORTS_ALL_STATE
+//VLAN configuration
+//get configuration
+//egress filter
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//state configuration
+vlan get egress-filter port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_VLAN_GET_LEAKY_MULTICAST_STATE
+//VLAN configuration
+//get configuration
+//VLAN leaky
+//multicast leaky
+//state configuration
+vlan get leaky multicast state
+#endif
+
+#ifdef CMD_VLAN_GET_PVID_INNER_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//port based vid
+//inner VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get pvid inner port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_PVID_OUTER_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//port based vid
+//outer tag
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get pvid outer port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_PROTOCOL_VLAN_GROUP_INDEX
+//VLAN configuration
+//get configuration
+//protocol VLAN
+//protocol group
+//group index
+vlan get protocol-vlan group <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_GET_PROTOCOL_VLAN_INNER_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//protocol VLAN
+//inner VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get protocol-vlan inner port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_PROTOCOL_VLAN_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//protocol VLAN
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get protocol-vlan port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_DUMP_INGRESS_EGRESS_PORT_PORTS_ALL
+//VLAN configuration
+//dump configuration
+//ingress port configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all
+vlan dump ( ingress | egress ) port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_DUMP_MAC_BASED_VLAN
+//VLAN configuration
+//dump configuration
+//mac-based VLAN configuration
+vlan dump mac-based-vlan
+#endif
+
+#ifdef CMD_VLAN_DUMP_IP_SUBNET_BASED_VLAN
+//VLAN configuration
+//dump configuration
+//ip-subnet-based VLAN configuration
+vlan dump ip-subnet-based-vlan
+#endif
+
+#ifdef CMD_VLAN_GET_PROFILE_ENTRY_INDEX
+//VLAN configuration
+//get configuration
+//profile configuration
+//entry configuration
+//entry index
+vlan get profile entry <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_GET_INGRESS_FILTER_PORT_PORTS_ALL_ACTION
+//VLAN configuration
+//get configuration
+//ingress filter
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//action to take when violate ingress filter
+vlan get ingress-filter port ( <PORT_LIST:ports> | all ) action
+#endif
+
+#ifdef CMD_VLAN_GET_PVID_MODE_INNER_OUTER_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//port based VLAN mode
+//inner tag
+//outer tag
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get pvid-mode ( inner | outer ) port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_MAC_BASED_VLAN_ENTRY_INDEX
+//VLAN configuration
+//get configuration
+//mac-based VLAN configuration
+//entry configuration
+//entry index
+vlan get mac-based-vlan entry <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_GET_MAC_BASED_VLAN_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//mac-based VLAN configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get mac-based-vlan  port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_IP_SUBNET_BASED_VLAN_ENTRY_INDEX
+//VLAN configuration
+//get configuration
+//ip-subnet-based VLAN configuration
+//entry configuration
+//entry index
+vlan get ip-subnet-based-vlan entry <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_GET_IP_SUBNET_BASED_VLAN_PORT_PORTS_ALL
+//VLAN configuration
+//get configuration
+//ip-subnet-based VLAN configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+vlan get ip-subnet-based-vlan  port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_BLOCK_MODE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//block mode configuration
+vlan get vlan-conversion ingress block-mode
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_ENTRY_INDEX
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//entry configuration
+//entry index
+vlan get vlan-conversion ingress entry <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_GET_TPID_INNER_OUTER_EXTRA
+//VLAN configuration
+//get configuration
+//TPID entry configuration
+//inner tag TPID
+//outer tag TPID
+//extra tag TPID
+vlan get tpid ( inner | outer | extra )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_DOUBLE_TAG_STATE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//enable vlan conversion for double tagged packet
+//state configuration
+vlan get vlan-conversion egress double-tag state
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_VID_SELECT
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//enable vlan conversion for double tagged packet
+vlan get vlan-conversion egress vid-select
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_ENTRY_INDEX
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//entry configuration
+//entry index
+vlan get vlan-conversion egress entry <UINT:index>
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_PORT_PORTS_ALL_STATE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//state configuration
+vlan get vlan-aggregation port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_STATE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//state configuration
+vlan get vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) state
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_PORT_PORTS_ALL_RANGE_CHECK_SET_ID
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//range check configuration
+//set id
+vlan set vlan-conversion ingress port ( <PORT_LIST:ports> | all ) range-check <UINT:set_id>
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_RANGE_CHECK_SET_ID_ENTRY_INDEX_VID
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//ingress configuration
+//range check configuration
+//set id
+//entry index
+//VID range check
+vlan get vlan-conversion ingress range-check <UINT:set_id> <UINT:entry_index> vid
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_RANGE_CHECK_SET_ID_ENTRY_INDEX_VID_INNER_OUTER_LOWER_UPPER
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress configuration
+//range check configuration
+//set id
+//entry index
+//vid range check
+//inner VID configuration
+//outer VID configuration
+//lower bound
+//upper bound
+vlan set vlan-conversion ingress range-check <UINT:set_id> <UINT:entry_index> vid ( inner | outer ) <UINT:lower> <UINT:upper>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_RANGE_CHECK_SET_ID
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//range check configuration
+//set id
+vlan set vlan-conversion egress port ( <PORT_LIST:ports> | all ) range-check <UINT:set_id>
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_RANGE_CHECK_SET_ID_ENTRY_INDEX_VID
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//egress configuration
+//range check configuration
+//set id
+//entry index
+//VID range check
+vlan get vlan-conversion egress range-check <UINT:set_id> <UINT:entry_index> vid
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_RANGE_CHECK_ENTRY_ENTRY_INDEX_VID_REVERSE_STATE
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//egress configuration
+//range check configuration
+//entry configuration
+//entry index
+//VID range check
+//reverse operation
+//state configuration
+vlan get vlan-conversion egress range-check entry <UINT:entry_index> vid reverse state
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_RANGE_CHECK_ENTRY_ENTRY_INDEX_VID_REVERSE_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//range check configuration
+//entry configuration
+//entry index
+//VID range check
+//reverse operation
+//state configuration
+//disable action
+//enable action
+vlan set vlan-conversion egress range-check entry <UINT:entry_index> vid reverse state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_RANGE_CHECK_SET_ID_ENTRY_INDEX_VID_INNER_OUTER_LOWER_UPPER
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress configuration
+//range check configuration
+//set id
+//entry index
+//VID range check
+//inner VID configuration
+//outer VID configuration
+//lower bound
+//upper bound
+vlan set vlan-conversion egress range-check <UINT:set_id> <UINT:entry_index> vid ( inner | outer ) <UINT:lower> <UINT:upper>
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_TABLE_HASH_MODE_UNICAST_MULTICAST_VID_VID
+//VLAN configuration
+//get configuration
+//VLAN table
+//VLAN learning method
+//unicast traffic
+//multicast traffic
+//VLAN id configuration
+//VLAN id
+vlan get vlan-table hash-mode ( unicast | multicast ) vid <UINT:vid>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_HASH_MODE_IVL_UNICAST_MULTICAST_VID_VID
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN learning method
+//IVL configuration
+//unicast traffic
+//multicast traffic
+//VLAN id configuration
+//VLAN id
+vlan set vlan-table hash-mode ivl ( unicast | multicast ) vid <UINT:vid>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_HASH_MODE_SVL_UNICAST_MULTICAST_FID_FID
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN learning method
+//SVL configuration
+//unicast traffic
+//multicast traffic
+//fid configuration
+//fid
+vlan set vlan-table hash-mode svl ( unicast | multicast ) fid <UINT:fid>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_HASH_MODE_SVL_UNICAST_MULTICAST_VID_VID
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN learning method
+//SVL configuration
+//unicast traffic
+//multicast traffic
+//VLAN id configuration
+//VLAN id
+vlan set vlan-table hash-mode svl ( unicast | multicast ) vid <UINT:vid>
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_TABLE_HASH_MODE_SVL_UNICAST_MULTICAST_VID_VID_FID_MSTI_FID_MSTI
+//VLAN configuration
+//set configuration
+//VLAN table
+//VLAN learning method
+//SVL configuration
+//unicast traffic
+//multicast traffic
+//VLAN id configuration
+//VLAN id
+//FID and MSTI configuration
+//FID and MSTI
+vlan set vlan-table hash-mode svl ( unicast | multicast ) vid <UINT:vid> fid_msti <UINT:fid_msti>
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_PORT_PORTS_ALL_INNER_OUTER_KEEP_TAG_KEEPTYPE_NOKEEP_FORMAT_CONTENT
+//VLAN configuration
+//set configuration
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//keep original tag
+//keep tag keeptype
+//no keep
+//keep format
+//keep content
+vlan set ingress port ( <PORT_LIST:ports> | all ) ( inner | outer ) keep-tag keeptype ( nokeep | format | content )
+#endif
+
+#ifdef CMD_VLAN_SET_EGRESS_PORT_PORTS_ALL_INNER_OUTER_KEEP_TAG_KEEPTYPE_NOKEEP_FORMAT_CONTENT
+//VLAN configuration
+//set configuration
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//keep original tag
+//keep tag keeptype
+//no keep
+//keep format
+//keep content
+vlan set egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) keep-tag keeptype ( nokeep | format | content )
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_PORT_PORTS_ALL_FWD_VLAN_TAG_MODE_UNTAG_INNER_TAG_OUTER_TAG_DOUBLE_TAG_ALL_BY_INNER_OUTER
+//VLAN configuration
+//set configuration
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//forwarding VLAN configuration
+//tag mode of incoming packet
+//untagged packet
+//inner-tagged packet
+//outer-tagged packet
+//double-tagged packet
+//all types of packet (any mode)
+//VLAN selection
+//inner VLAN
+//outer VLAN
+vlan set ingress port ( <PORT_LIST:ports> | all ) fwd-vlan tag-mode ( untag | inner-tag | outer-tag | double-tag | all ) by ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_SET_INGRESS_PORT_PORTS_ALL_PRIVATE_VLAN_STATE_DISABLE_ENABLE
+//VLAN configuration
+//set configuration
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//private VLAN
+//state configuration
+//enable tag
+//disable tag
+vlan set ingress port ( <PORT_LIST:ports> | all ) private-vlan state ( disable | enable )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_PORT_PORTS_ALL_VID_SOURCE_INNER_OUTER
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all trunks
+//tag source selection
+//select inner tag
+//select outer tag
+vlan set vlan-aggregation port ( <PORT_LIST:ports> | all ) vid-source ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_VID_SOURCE_INNER_OUTER
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//tag source selection
+//select inner tag
+//select outer tag
+vlan set vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) vid-source ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_PORT_PORTS_ALL_VID_SOURCE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//tag source selection
+vlan get vlan-aggregation port ( <PORT_LIST:ports> | all ) vid-source
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_VID_SOURCE
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//tag source selection
+vlan get vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) vid-source
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_PORT_PORTS_ALL_PRI_TAG_VID_SOURCE_PRIORITY_VID_PORT_BASED_VID
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//priority tag
+//tag source selection
+//select priority vid
+//select port based vid
+vlan set vlan-aggregation port ( <PORT_LIST:ports> | all ) pri-tag vid-source ( priority-vid | port-based-vid )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_PRI_TAG_VID_SOURCE_PRIORITY_VID_PORT_BASED_VID
+//VLAN configuration
+//set configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//priority tag
+//tag source selection
+//select priority vid
+//select port based vid
+vlan set vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) pri-tag vid-source ( priority-vid | port-based-vid )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_PORT_PORTS_ALL_PRI_TAG_VID_SOURCE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//port
+//port list
+//all ports
+//priority tag
+//tag source selection
+vlan get vlan-aggregation port ( <PORT_LIST:ports> | all ) pri-tag vid-source
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_AGGREGATION_TRUNK_TRUNKS_ALL_PRI_TAG_VID_SOURCE
+//VLAN configuration
+//get configuration
+//N:1 VLAN aggregation
+//trunk
+//trunk list
+//all trunks
+//priority tag
+//tag source selection
+vlan get vlan-aggregation trunk ( <MASK_LIST:trunks> | all ) pri-tag vid-source
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_VID_SOURCE_INNER_OUTER
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//tag source selection
+//select inner tag
+//select outer tag
+vlan set vlan-conversion egress port ( <PORT_LIST:ports> | all ) vid-source ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_VID_SOURCE
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//tag source selection
+vlan get vlan-conversion egress port ( <PORT_LIST:ports> | all ) vid-source
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_VID_TARGET_INNER_OUTER
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//tag target selection
+//select inner tag
+//select outer tag
+vlan set vlan-conversion egress port ( <PORT_LIST:ports> | all ) vid-target ( inner | outer )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_VID_TARGET
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//tag target selection
+vlan get vlan-conversion egress port ( <PORT_LIST:ports> | all ) vid-target
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_INGRESS_PORT_PORTS_ALL_INNER_OUTER_LOOKUP_MISS_ACTION_FORWARD_DROP
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tagged packet
+//outer tagged packet
+//lookup miss action
+//forward function
+//discard function
+vlan set vlan-conversion ingress port ( <PORT_LIST:ports> | all ) ( inner | outer ) lookup-miss-action ( forward | drop )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_INGRESS_PORT_PORTS_ALL_LOOKUP_MISS_ACTION
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//ingress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//lookup miss action
+vlan get vlan-conversion ingress port ( <PORT_LIST:ports> | all ) lookup-miss-action
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_INNER_OUTER_LOOKUP_MISS_ACTION_FORWARD_DROP
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tagged packet
+//outer tagged packet
+//lookup miss action
+//forward function
+//discard function
+vlan set vlan-conversion egress port ( <PORT_LIST:ports> | all ) ( inner | outer ) lookup-miss-action ( forward | drop )
+#endif
+
+#ifdef CMD_VLAN_SET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_LOOKUP_MISS_ACTION_FORWARD_DROP
+//VLAN configuration
+//set configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//lookup miss action
+//forward function
+//discard function
+vlan set vlan-conversion egress port ( <PORT_LIST:ports> | all ) lookup-miss-action ( forward | drop )
+#endif
+
+#ifdef CMD_VLAN_GET_VLAN_CONVERSION_EGRESS_PORT_PORTS_ALL_LOOKUP_MISS_ACTION
+//VLAN configuration
+//get configuration
+//VLAN conversion
+//egress port configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//lookup miss action
+vlan get vlan-conversion egress port ( <PORT_LIST:ports> | all ) lookup-miss-action
+#endif
+
+#ifdef CMD_VLAN_GET_VID_VID_INTF
+//VLAN configuration
+//get configuration
+//vid configuration
+//VLAN ID
+//interface
+vlan get vid <UINT:vid> intf
+#endif
+
+#ifdef CMD_VLAN_SET_VID_VID_INTF_INTF_ID
+//VLAN configuration
+//set configuration
+//vid configuration
+//VLAN ID
+//interface
+//interface ID
+vlan set vid <UINT:vid> intf <UINT:intf_id>
+#endif

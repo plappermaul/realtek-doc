@@ -1,0 +1,18930 @@
+#ifndef __RTK_LONGAN_REG_STRUCT_H__
+#define __RTK_LONGAN_REG_STRUCT_H__
+
+/*
+ * Include Files
+ */
+#include <common/rt_autoconf.h>
+#include <hal/chipdef/allreg.h>
+#ifdef __BOOTLOADER__
+#include <hal/chipdef/longan/rtk_longan_uboot_feature_def.h>
+#else   /* __BOOTLOADER__ */
+#include <hal/chipdef/longan/rtk_longan_feature_def.h>
+#endif  /* __BOOTLOADER__ */
+
+/* Superset Register Enum */
+typedef enum rtk_longan_reg_list_e
+{
+#if defined(CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MODEL_NAME_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_INFOr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RESET)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_GLB_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_GLB_STS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_GLB_STS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_GLB_STS_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_GLB_STS_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_RST_DURr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RESET */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PLL___BIAS)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_GLB_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_GLB_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_CPU_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_CPU_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_CPU_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_SW_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_SW_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_SW_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_SW_DIV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_125M_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_125M_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_125M_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_BANDGAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_XTAL_CML_CTRL_r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_CML_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_PLLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PLL___BIAS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BIST___BISR)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_BIST_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DRF_BIST_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_BIST_RSTNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DRF_TEST_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF0_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GTXF0_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGRXF_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGTXF_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF1_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GTXF1_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DMY_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LBRXF_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DRF_PAUSEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF0_GTXF0_SRAM_LS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF0_GTXF0_TIMING_CFG_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF0_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF0_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GTXF0_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GTXF0_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGRXF_TGTXF_SRAM_LS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGRXF_TGTXF_TIMING_CFG_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGRXF_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGRXF_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGTXF_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TGTXF_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF1_GTXF1_SRAM_LS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF1_GTXF1_TIMING_CFG_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF1_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GRXF1_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GTXF1_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GTXF1_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DMY_SRAM_LS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DMY_TIMING_CFG_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DMY_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_DMY_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LBRXF_SRAM_LS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LBRXF_TIMING_CFG_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LBRXF_RMAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LBRXF_RMBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_MODE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_MODE1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_MODE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_MODE1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_RESUME0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_RESUME1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_TIMING_CFG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_TIMING_CFG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_TIMING_CFG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_TIMING_CFG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_RM_15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_MDS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_MDS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_MDS_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_MDS_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_MDS_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_MDS_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_CAM_TIMING_RDS_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_DONE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_DONE1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_PAUSE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_PAUSE1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_FAIL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_FAIL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_FAIL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_FAIL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_FAIL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_FAIL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_DONE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_DONE1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_FAIL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_FAIL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_FAIL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_FAIL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_FAIL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_DRF_BIST_FAIL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_BIST_LS_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_BIST_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_DRF_BIST_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_BIST_RSTNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_DRF_TEST_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_BIST_DONEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_DRF_BIST_DONEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_BIST_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_DRF_BIST_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_DRF_START_PAUSEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_ALL_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_SRAM_LSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_RSLT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_RSLT1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_RSLT2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_RSLT3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BIST_RSLT4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_SRAM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BISR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BISR_RSLT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INGR_BISR_RSLT1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_RSLT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_RSLT1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_RSLT2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_RSLT3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_BIST_RSLT4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_SRAM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_RSTL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_RSTL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_RSTL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_RSTL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_MISC0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BIST_MISC1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_MAC_BISTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_BISTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_BISTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BIST___BISR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERFACE)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_IF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SLV_I2C_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SLV_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST1_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST1_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST1_DATA_WORD0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST1_DATA_WORD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST1_DATA_WORD2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST1_DATA_WORD3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST2_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST2_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST2_DATA_WORD0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST2_DATA_WORD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST2_DATA_WORD2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_MST2_DATA_WORD3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P0_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_REG_IFr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERFACE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LED)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_NUM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET3_1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET3_0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET2_1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET2_0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET1_1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET1_0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET0_1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SET0_0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_COPR_SET_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_FIB_SET_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_COPR_MASK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_FIB_MASK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_COMBO_MASK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_LED_LOADr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_SW_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_PORT_SW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_INDRT_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_2P5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_2P5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_2P5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV1_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV2_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_LV3_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_P_LOAD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_TRIGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_DIR_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_DIR_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_DIR_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_DATA_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_DATA_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_DATA_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_INDRT_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_LEDr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LED */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_PORT_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_OAM_DYGASPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_EXT_GPIO0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_EXT_GPIO1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_TM_RLFDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_AUTO_RECr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SDS_UPD_PHYSTS0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_ROUT_LPBUFr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SW_INT_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_PORT_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES_LINK_FAULT_Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES_RX_SYM_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_OAM_DYGASPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO_MODE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO_MODE1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO_MODE2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_TM_RLFDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_AUTO_RECr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SDS_UPD_PHYSTSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_ROUT_LPBUFr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HW_MISC_)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_ACCESS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_WDATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_RDATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CALIB_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CALIB_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CALIB_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CALIB_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR3_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR0_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR1_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR2_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SENSOR3_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_DEBUGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THERMAL_METER_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THERMAL_METER_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THERMAL_METER_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THERMAL_METER_RESULT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THERMAL_METER_RESULT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IO_DRIVING_ABILITY_CTRL8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FT_SCAN_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_DEBUGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BOND_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STRP_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SEL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SEL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SEL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SEL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_MISC_Rr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HW_MISC_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_NIC___DMA)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_RX_BASE_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_RX_CUR_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_TX_BASE_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_TX_CUR_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_INTR_RX_RUNOUT_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_INTR_RX_DONE_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_INTR_TX_DONE_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_INTR_RX_RUNOUT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_INTR_RX_DONE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_INTR_TX_DONE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_RX_RING_SIZEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_RX_RING_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_IF_PHYSICAL_ADDR_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NIC_DBG_SEL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NIC_DBG_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NIC_BIST_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NIC_BIST_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_NICr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_NIC___DMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPCL_SWITCH_IPV4_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPCL_SWITCH_IPV6_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPCL_TRAP_CAPWAP_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPCL_TRAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPCL_TRAP_PORT_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_L2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_L2_METHOD_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_L2_METHOD_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_L2_METHOD_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_L2_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_DATA_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_DATA_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_DATA_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_HSB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_HSB_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_HSA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBL_ACCESS_HSA_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_TABr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_RT_TABr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PKT_ENCAPr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HALF_CHG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEPROM_DOWN_LOAD_CNTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEPROM_DOWN_LOAD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEPROM_DOWN_LOAD_MAC_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEPROM_DOWN_LOAD_SERDES_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEPROM_DOWN_LOAD_PHY_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEPROM_DOWN_LOAD_GROUP_MAC_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_MAC_TYPE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT0_15_POLLING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT16_27_POLLING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PRVTE_POLLING_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MDIO_FREE_CNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_10GPHY_POLLING_SEL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_FORCE_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_POLL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK1_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK1_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK1_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK1_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK1_DATA_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK1_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK2_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK2_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK2_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK2_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK2_DATA_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK2_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK3_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK3_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK3_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK3_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK3_DATA_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK3_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK4_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK4_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK4_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK4_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK4_DATA_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK4_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK5_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK5_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK5_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK5_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK5_DATA_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_REG_CHK5_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_DELAY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LINK_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LINK_MEDIA_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LINK_SPD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LINK_DUP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_RX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EEE_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_MSTR_SLV_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_MSTR_SLV_FAULT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_LINK_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_LINK_MEDIA_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_LINK_SPD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_LINK_DUP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_TX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_RX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_EEE_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_MSTR_SLV_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_MSTR_SLV_FAULT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_ACCESS_PHY_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_ACCESS_PHY_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_ACCESS_PHY_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_ACCESS_PHY_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT0_5_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT6_11_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT12_17_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT18_23_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT24_27_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MODE_ADJ_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_EFUSE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BONDING_REDEFINE_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_GLOBAL_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_GLOBAL_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_PADDING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_CPU_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_CPU_TAG_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_PORT_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_L2_CPU_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SSC_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SSC_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SSC_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SSC_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SSC_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_SMI_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PER_PORT_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_SMI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_AFEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_10G_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNI_DIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_10GPHY_POLLING_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_10GPHY_POLLING_REG0_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_10GPHY_POLLING_REG9_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_10GPHY_POLLING_REG10_CFGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PHY___SERDES)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB0_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB4_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB10_INTF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_CFG_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_CFG_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_CFG_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MODE_SEL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MODE_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MODE_SEL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MODE_SEL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_INDACS_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_INDACS_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_OUIr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_VERSIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_INTF_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_INTF_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_INTF_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WRAP_SDS_INTF_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WRAP_SDS_INTF_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WRAP_SDS_INTF_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WRAP_SDS_INTF_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WRAP_SDS_INTF_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WRAP_SDS_INTF_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RG2X_RG1X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RG0X_CEN_RTTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_SUBMODE_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_SUBMODE_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_CHIP_AFEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PHY___SERDES */
+#if defined(CONFIG_SDK_CHIP_FEATURE_POWER_SAVING)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_Q_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_MINIFG_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_MINIFG_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_MINIFG_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_TIMER_GELITE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_TIMER_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_TIMER_2P5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_TIMER_5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_TIMER_10G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_RX_GELITE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_RX_GE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_RX_2P5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_RX_5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_RX_10G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_GBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TIMER_UNIT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TX_WAKE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_SLEEP_STEP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_TIMER_500M_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_TIMER_500M_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_TIMER_GIGA_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_TIMER_GIGA_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PS_GATCLK_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PS_GATCLK_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PS_GATCLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PS_SOC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_CHIP_MISC_Tr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_POWER_SAVING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_TAG_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_ETAG_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_ITAG_TPID_CMP_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_OTAG_TPID_CMP_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_ETAG_TPID_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_AFTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_PB_VLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_FWD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_APP_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_IGR_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_EGR_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_TAG_STS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_EGR_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_VLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_VLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_PKT_ENCAPr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PROFILE_SETr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_VLAN_PROFILEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE */
+#if defined(CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PPB_VLAN_SETr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_PPB_VLAN_SETr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_VLANr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_IGR_VID_RNG_CHK_SET_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_IGR_VID_RNG_CHK_SET_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_EGR_VID_RNG_CHK_SET_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_EGR_VID_RNG_CHK_SET_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_VLAN_IVCr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_IVC_BLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PORT_L2TBL_CNVT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_TRUNK_L2TBL_CNVT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_IVC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_EVC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_IVC_ENTRY_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_EVC_ENTRY_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_L2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_PKT_ENCAPr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RMA)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_MIRROR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_SMAC_LRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_MGN_LRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_PORT_BPDU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_PORT_PTP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_PORT_LLDP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_PORT_EAPOL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_BPDU_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_EAPOL_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_USR_DEF_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_LLDP_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_USR_DEF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_RMAr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_MBR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_HASH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_SHFT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_LOCAL_TBL_REFRESHr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_LOCAL_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_STK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOCAL_PORT_TRK_MAPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_TRUNKr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_VLANr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_ISO_RESTRICT_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_ISO_VB_ISO_PMSK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_ISO_VB_EGR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PORT_ISOr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_VLAN_ISOr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_AGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_AGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_TRK_AGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_SALRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_NEW_SA_FWDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_DYN_PORT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_DYN_PORT_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_STT_PORT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_STT_PORT_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_STT_TRK_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_STT_TRK_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_GLB_STT_PORT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_GLB_STT_PORT_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_MV_FORBIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_TRK_MV_FORBIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_MV_FORBID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_SABLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_DABLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_UNKN_UC_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_BC_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_UC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_L2_MC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_IP4_MC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PORT_IP6_MC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_PORT_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_PORT_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_TRK_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_TRK_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_VLAN_CONSTRT_ENTRYr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_VLAN_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_VLAN_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_CONSTRT_PORT_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_CONSTRT_TRK_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_CONSTRT_SYS_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_CONSTRT_VLAN_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_TBL_FLUSH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_SRC_P_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_SA_ACT_REFr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_FULL_CNTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_ITAG_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_ITAG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_MAGIC_NUMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_LOCAL_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_PKT_REMOTEL_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFY_REMOTEL_CONGESTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NOTIFY_RING_BASE_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NOTIFY_RING_CUR_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NOTIFY_IF_INTR_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NOTIFY_IF_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_L2MSG_TMROUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_L2MSG_CNT_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMA_RDMA_CNT_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_NICr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_SPC_PORTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_NIC_SYSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_MISC_)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_TX_DISABLEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_MISC_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_LB_PPS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_LB_PROTO_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_UC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_UC_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_UC_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_MC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_MC_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_MC_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_BC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_BC_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_BC_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_DHCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_DHCP_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_DHCP_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_BPDU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_BPDU_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_BPDU_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_IGMP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_IGMP_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_IGMP_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_ARP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_ARP_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_PORT_PROTO_ARP_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_STORMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_STORMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PRESTORMr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_PORT_BURST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_PORT_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_PORT_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGBW_PORT_FC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_INBWr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_ENCAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_CPU_PPS_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_MAX_LB_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_MAX_LB_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_MAX_LB_RST_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_MAX_LB_RST_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_CPU_Q_MAX_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_CPU_Q_MAX_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_ASSURED_FIX_BURST_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_ASSURED_FIX_BURST_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_ASSURED_LB_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_ASSURED_LB_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_FIX_LB_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_FIX_LB_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_ASSURED_FIX_LB_RST_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_PORT_Q_ASSURED_FIX_LB_RST_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_10M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_1G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_10G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_2500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_1250M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGBW_RATE_SXG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_EGRESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_P28_TXQ_REGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_METER_MARKER)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_LB_EXCEED_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_LB_GLB_EXCEED_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_CNTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_GREEN_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_YELLOW_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_RED_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_TOTAL_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METER_LB_PPS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_METERr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_METER_MARKER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_ACT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_SYS_UTIL_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_JUMBO_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_JUMBO_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_JUMBO_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_JUMBO_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_JUMBO_THR_ADJUSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_GUAR_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_THR_SET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_EGR_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_HOL_PRVNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_DROP_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_DROP_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_CPU_Q_EGR_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_CPU_Q_EGR_FORCE_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_CPU_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_EGR_DROP_THR_SET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_LB_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_LB_PORT_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_GLB_PAGE_PEAKCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_CUR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_PEAK_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_EGR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_PAGE_CNT_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_PAGE_CNT_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_CPU_Q_EGR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_PKT_CNT_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_Q_EGR_PKT_CNT_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_CPU_Q_EGR_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_LB_PORT_EGR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_LB_PORT_EGR_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_HSM_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_HSA_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_PORT_REPCT_FC_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_PORT_SEL_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_PORT_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_INT_PRI_MAPPINGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_HSM_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FC_REPCT_Q_HSA_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_CASCADE_PORT_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_ON_REMOTE_PORT_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_OFF_REMOTE_PORT_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_PORT_GUAR_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_PORT_THR_SET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_TX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_CONGEST_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_SPECIAL_PAUSE_DMACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_SPECIAL_PAUSE_SMACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_PORT_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_PORT_PAGE_CNT_ERRORr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_PORT_PAGE_CNT_ERRORr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_L2NTFY_PORT_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_L2NTFY_PORT_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_L2NTFY_PORT_PAGE_CNT_ERRORr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_REMOTE_L2NTFY_PORT_PAGE_CNT_ERRORr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETE_FC_PAUSE_FRAME_PORT_CONGEST_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PER_PORT_TXQ_REG_28Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PER_PORT_TXQ_REG_29Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_EGRESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_P28_TXQ_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_RT_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_EGRESS_DROPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_INGRESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_INGRESS_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWRED_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWRED_QUEUE_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWRED_DROP_CNTR_PIDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWRED_DROP_CNTR_CIDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWRED_DROP_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWRED_DROP_CNTR_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SC_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SC_P_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_DBG_CNTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_REMAP_PORTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_REMAP_IPRI_CFI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_REMAP_IPRI_CFI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_REMAP_OPRI_DEI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_REMAP_OPRI_DEI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_REMAP_DSCPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_PORT_TBL_IDX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SEL_REMAP_ITAG_CFI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SEL_REMAP_ITAG_CFI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SEL_REMAP_OTAG_DEI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SEL_REMAP_OTAG_DEI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SEL_REMAP_DSCPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SEL_PORT_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_INGPRIr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_INTPRI2QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_CPUQID2QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_CPUQID2XGQID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_RSN2CPUQID_CTRL_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_FLAG2CPUQID_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QM_FLAG2CPUQID_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCHED_PORT_Q_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCHED_PORT_Q_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCHED_CPU_Q_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCHED_PORT_ALGO_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_EGRESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_QUEUEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PER_PORT_TXQ_REG_24Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PORT_TXQ_REG_4Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_PORT_TXQ_REG_4Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_PORT_TXQ_REG_4Pr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_PORT_TXQ_REG_4Pr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMARKING)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_INTPRI2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_IPRI2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_OPRI2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_DSCP2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_INTPRI2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_IPRI2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_OPRI2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_DSCP2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_INTPRI2DEI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_DP2DEI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_INTPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_IPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_OPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_DSCP2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMK_DPINTPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_PKT_ENCAPr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMARKING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1QAV)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AVB_PORT_CLASS_A_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AVB_PORT_CLASS_B_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AVB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_EAVSPEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1QAV */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IP_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_HOST_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPUC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IP6UC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPMC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IP6MC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IP_MTU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IP6_MTU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_PORT_IP_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_PORT_IP6_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ENTRY_COUNTER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ENTRY_COUNTER_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ENTRY_MV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ENTRY_MV_PARAMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_HW_LU_KEY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_HW_LU_KEY_IP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_HW_LU_KEY_DIP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_HW_LU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_RT_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_RT_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_RT_REGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_CNT_SET1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_CNT_SET0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_MIB_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_MIB_CNTRr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PRIVATE_COUNTER)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_PRVTE_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_PRVTE_E_Q_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_E_DROP_CNTR0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_E_DROP_CNTR1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PORT_E_DROP_CNTR2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_EGR_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_ALE_EGR_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_ALE_EGR_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_ALE_EGR_CNTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PRIVATE_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER17r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER18r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER19r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER20r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER21r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER22r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER23r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER24r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER25r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER26r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER27r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER28r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER29r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER30r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER31r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER32r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER33r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER34r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER35r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER36r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER37r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER38r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER39r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER40r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER41r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER42r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER43r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER44r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER45r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER46r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER47r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER48r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER49r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER50r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER51r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER52r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER53r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER54r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER55r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER56r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER57r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER58r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER59r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER60r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER61r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER62r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER63r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER64r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER65r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER66r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER67r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER68r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER69r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER70r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER71r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER72r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER73r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER74r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER75r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER76r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER77r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER78r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER79r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER80r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER81r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER82r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER83r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STAT_PRVTE_DROP_COUNTER84r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIRRORING)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_SPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_DPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_SAMPLE_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_MIRRORr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIRRORING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RSPAN)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_RSPAN_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_RSPAN_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_RSPAN_RX_TAG_RM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG4_PKT_ENCAPr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG5_PKT_ENCAPr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RSPAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SFLOW)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SFLOW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SFLOW_PORT_RATE_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SFLOW */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PIE_TEMPLATE)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_BLK_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_BLK_PHASE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_TMPLTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_BLK_GROUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_BLK_TMPLTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_MV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_MV_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_CLR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_RULE_HIT_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_GLB_HIT_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PIE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ALE_ACL_GLBr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PIE_TEMPLATE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ACL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_PORT_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_ALE_ACL_GLBr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ACL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RNG_CHK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RNG_CHK_IP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RNG_CHK_IP_RNGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ACL_RANGEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_PORT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_IPV6_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_ICMP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_TCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_SMURF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_PRVNT_ARP_INVLD_PORT_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_ATTACKr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_OAM)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_PORT_ACT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_GLB_DYING_GASP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_PORT_DYING_GASP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DYING_GASP_POLARITY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_OAMr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_OAM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLDP_RLPP_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEVICE_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_DEV_PORT_MAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_NON_UNICAST_BLOCK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_CASCADE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_ONE_HOP_REDIR_PM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_DBG_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEVICE_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PARSER_FIELD_SELTOR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PARSER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PARSER_DROP_REASONr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_PKT_PARSERr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER_HSB)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA17r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA18r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA19r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA20r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA21r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA22r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA23r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA24r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA25r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA26r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA27r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA28r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DATA29r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_HSBr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER_HSB */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HSM)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM0_DATA17r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM1_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA17r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA18r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA19r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA20r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA21r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA22r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA23r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA24r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA25r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA26r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM2_DATA27r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA17r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA18r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA19r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA20r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA21r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA22r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA23r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA24r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA25r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA26r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM3_DATA27r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_HSMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1_HSMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG2_HSMr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_HSMr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HSM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA5r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA6r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA7r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA8r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA9r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA10r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA11r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA12r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA13r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA14r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA15r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA16r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA17r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA18r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA19r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA20r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_DATA21r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_HSAr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEST_MODE_ALE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEST_MODE_ALE_HSB_MULTI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEST_MODE_ALE_HSA_MULTI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG4_RT_REGr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEST_MODE_ALE_LOOPBACK_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_ACC_DEBUG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_TX_GRP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_GLOBAL_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_IPG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_PKT_CNT_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_PKT_CNT_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_PKT_CNT_DBG_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_PKT_CNT_DBG_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM0_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM0_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM0_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM0_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM0_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM1_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM1_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM1_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM1_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_STREAM1_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PB_ACCESS_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PB_ACCESS_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PB_ACCESS_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_PORT_INDEX_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_GLOBAL_INDEX_CTRL0r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXPORT_DSC_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXPORT_DSC_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RST_SYS_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RST_P_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG1TO28_INGRESS_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LD_TX_DSC_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LD_TX_DSC_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_DSC_CHK_TMRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_OVERFLOW_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_OVERFLOW_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_RDEMPTY_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_RDEMPTY_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_OVERFLOW_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_OVERFLOW_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_RDEMPTY_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_RDEMPTY_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PINGPONG_PLUS_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PINGPONG_PLUS_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TOKEN_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TOKEN_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RST_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRIG_AUTO_RECOVER_CTRL_INGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRIG_AUTO_RECOVER_CTRL_EGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRIG_AUTO_RECOVER_CTRL_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AUTO_RECOVER_EVENT_FLAG_STS_INGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AUTO_RECOVER_EVENT_FLAG_STS_EGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AUTO_RECOVER_EVENT_FLAG_STS_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AUTO_RECOVER_EVENT_FLAG_ERR_INGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AUTO_RECOVER_EVENT_FLAG_ERR_EGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AUTO_RECOVER_EVENT_FLAG_ERR_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXERR_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG3_EGRESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG0_INGRESS_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_REG4_EGRESS_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MISC)
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CODE_PROTECT_STATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_SRAM_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_SRAM_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_SRAM_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_SRAM_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_SRAM_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT29_DBG_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT29_DBG_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT30_DBG_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT30_DBG_REG1r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MISC */
+    LONGAN_REG_LIST_END,
+} rtk_longan_reg_list_t;
+
+
+/* Internal Register Enum */
+typedef enum rtk_int_longan_reg_list_e
+{
+#if defined(CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MODEL_NAME_INFO_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_INFO_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RESET)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RST_GLB_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RST_GLB_STS_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RST_GLB_STS_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RST_GLB_STS_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RST_GLB_STS_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_RST_DUR_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RESET */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PLL___BIAS)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_GLB_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_GLB_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_CPU_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_CPU_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_CPU_MISC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_SW_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_SW_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_SW_MISC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_SW_DIV_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_125M_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_125M_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_125M_MISC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_BANDGAP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_XTAL_CML_CTRL__RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PLL_CML_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_PLL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PLL___BIAS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BIST___BISR)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_BIST_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DRF_BIST_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_BIST_RSTN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DRF_TEST_RESUME_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF0_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GTXF0_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGRXF_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGTXF_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF1_RESULT0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GTXF1_RESULT0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DMY_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LBRXF_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DRF_PAUSE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF0_GTXF0_SRAM_LS_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF0_GTXF0_TIMING_CFG_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF0_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF0_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GTXF0_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GTXF0_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGRXF_TGTXF_SRAM_LS_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGRXF_TGTXF_TIMING_CFG_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGRXF_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGRXF_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGTXF_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TGTXF_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF1_GTXF1_SRAM_LS_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF1_GTXF1_TIMING_CFG_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF1_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GRXF1_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GTXF1_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GTXF1_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DMY_SRAM_LS_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DMY_TIMING_CFG_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DMY_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_DMY_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LBRXF_SRAM_LS_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LBRXF_TIMING_CFG_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LBRXF_RMA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LBRXF_RMB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_MODE0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_MODE1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_MODE0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_MODE1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_RESUME0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_RESUME1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_TIMING_CFG0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_TIMING_CFG1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_TIMING_CFG2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_TIMING_CFG3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_RM_15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_MDS_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_MDS_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_MDS_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_MDS_4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_MDS_5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_MDS_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_CAM_TIMING_RDS_5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_DONE0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_DONE1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_PAUSE0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_PAUSE1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_FAIL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_FAIL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_FAIL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_FAIL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_FAIL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_FAIL5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_DONE0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_DONE1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_FAIL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_FAIL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_FAIL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_FAIL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_FAIL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_DRF_BIST_FAIL5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ALE_BIST_LS_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_BIST_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_DRF_BIST_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_BIST_RSTN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_DRF_TEST_RESUME_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_BIST_DONE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_DRF_BIST_DONE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_BIST_FAIL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_DRF_BIST_FAIL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_DRF_START_PAUSE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_ALL_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CHIP_SRAM_LS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_RSLT0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_RSLT1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_RSLT2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_RSLT3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BIST_RSLT4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_SRAM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BISR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BISR_RSLT0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_INGR_BISR_RSLT1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_RSLT0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_RSLT1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_RSLT2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_RSLT3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_BIST_RSLT4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGR_SRAM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_CTRL6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_RSTL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_RSTL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_RSTL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_RSTL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_MISC0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_BIST_MISC1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_MAC_BIST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_BIST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_BIST_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BIST___BISR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERFACE)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_IF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SLV_I2C_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SLV_TIMEOUT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST1_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST1_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST1_DATA_WORD0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST1_DATA_WORD1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST1_DATA_WORD2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST1_DATA_WORD3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST2_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST2_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST2_DATA_WORD0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST2_DATA_WORD1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST2_DATA_WORD2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_I2C_MST2_DATA_WORD3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPI_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPI_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPI_ADDR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPI_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_P0_INTF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_GPIO_SEL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_JTAG_SEL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_REG_IF_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERFACE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LED)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_NUM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET3_1_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET3_0_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET2_1_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET2_0_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET1_1_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET1_0_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET0_1_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_SET0_0_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_COPR_SET_SEL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_FIB_SET_SEL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_COPR_MASK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_FIB_MASK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_COMBO_MASK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SW_LED_LOAD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_SW_EN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_PORT_SW_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_INDRT_ACCESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_5G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_5G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_5G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_2P5G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_2P5G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_2P5G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_1G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_1G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_1G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_500M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_500M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_500M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_100M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_100M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_100M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV1_10M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV2_10M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_LOAD_LV3_10M_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LED_P_LOAD_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_TRIG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_DIR_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_DIR_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_DIR_CTRL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_DATA_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_DATA_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_DATA_CTRL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_GPIO_INDRT_ACCESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_LED_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LED */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_GLB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_PORT_LINK_STS_CHG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_RSVD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_SERDES_LINK_FAULT_P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_SERDES_RX_SYM_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_OAM_DYGASP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_EXT_GPIO0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_EXT_GPIO1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_TM_RLFD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_AUTO_REC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_SDS_UPD_PHYSTS0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IMR_ROUT_LPBUF_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_GLB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_SW_INT_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_PORT_LINK_STS_CHG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_RSVD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_SERDES_LINK_FAULT_P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_SERDES_RX_SYM_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_OAM_DYGASP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_EXT_GPIO0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_EXT_GPIO1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_EXT_GPIO_MODE0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_EXT_GPIO_MODE1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_EXT_GPIO_MODE2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_TM_RLFD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_AUTO_REC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_SDS_UPD_PHYSTS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ISR_ROUT_LPBUF_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HW_MISC_)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EFUSE_ACCESS_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EFUSE_ACCESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EFUSE_WDATA_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EFUSE_RDATA_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CALIB_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CALIB_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CALIB_CTRL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CALIB_CTRL_4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR0_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR1_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR2_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR3_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR0_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR1_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR2_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_SENSOR3_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPD_DEBUG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_THERMAL_METER_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_THERMAL_METER_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_THERMAL_METER_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_THERMAL_METER_RESULT_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_THERMAL_METER_RESULT_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IO_DRIVING_ABILITY_CTRL8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FT_SCAN_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SOC_DEBUG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_BOND_DBG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STRP_DBG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_MODE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SEL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SEL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SEL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SEL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SIG_SEL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SIG_SEL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SIG_SEL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_SIG_SEL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DBG_VAL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_MISC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_MISC_R_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HW_MISC_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_NIC___DMA)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_RX_BASE_DESC_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_RX_CUR_DESC_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_TX_BASE_DESC_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_TX_CUR_DESC_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_INTR_RX_RUNOUT_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_INTR_RX_DONE_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_INTR_TX_DONE_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_INTR_RX_RUNOUT_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_INTR_RX_DONE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_INTR_TX_DONE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_PKT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_RX_RING_SIZE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_RX_RING_CNTR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_IF_PHYSICAL_ADDR_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_NIC_DBG_SEL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_NIC_DBG_SEL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_NIC_BIST_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_NIC_BIST_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_NIC_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_NIC___DMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPCL_SWITCH_IPV4_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPCL_SWITCH_IPV6_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPCL_TRAP_CAPWAP_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPCL_TRAP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPCL_TRAP_PORT_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_L2_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_L2_METHOD_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_L2_METHOD_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_L2_METHOD_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_L2_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_DATA_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_DATA_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_DATA_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_HSB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_HSB_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_HSA_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TBL_ACCESS_HSA_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_TAB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_RT_TAB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PKT_ENCAP_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HALF_CHG_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEPROM_DOWN_LOAD_CNTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEPROM_DOWN_LOAD_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEPROM_DOWN_LOAD_MAC_POS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEPROM_DOWN_LOAD_SERDES_POS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEPROM_DOWN_LOAD_PHY_POS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEPROM_DOWN_LOAD_GROUP_MAC_POS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_MAC_TYPE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT0_15_POLLING_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT16_27_POLLING_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PRVTE_POLLING_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MDIO_FREE_CNT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_10GPHY_POLLING_SEL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_FORCE_MODE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_POLL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK1_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK1_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK1_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK1_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK1_DATA_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK1_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK2_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK2_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK2_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK2_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK2_DATA_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK2_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK3_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK3_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK3_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK3_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK3_DATA_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK3_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK4_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK4_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK4_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK4_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK4_DATA_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK4_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK5_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK5_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK5_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK5_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK5_DATA_10G_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_REG_CHK5_RESULT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LINK_DELAY_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LINK_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LINK_MEDIA_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LINK_SPD_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_LINK_DUP_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TX_PAUSE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_RX_PAUSE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EEE_ABLTY_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_MSTR_SLV_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_MSTR_SLV_FAULT_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_LINK_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_LINK_MEDIA_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_LINK_SPD_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_LINK_DUP_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_TX_PAUSE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_RX_PAUSE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_EEE_ABLTY_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_MSTR_SLV_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PHY_MSTR_SLV_FAULT_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_ACCESS_PHY_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_ACCESS_PHY_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_ACCESS_PHY_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_ACCESS_PHY_CTRL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT0_5_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT6_11_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT12_17_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT18_23_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_PORT24_27_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_MODE_ADJ_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_EFUSE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_BONDING_REDEFINE_REG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_GLOBAL_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_GLOBAL_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_PADDING_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_CPU_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_CPU_TAG_ID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_ADDR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_PORT_MAX_LEN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_L2_CPU_MAX_LEN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SSC_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SSC_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SSC_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SSC_CTRL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_SSC_CTRL_4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EXT_SMI_ACCESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PER_PORT_MAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_GLB_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_SMI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_AFE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RLFD_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RLFD_10G_ADDR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_UNI_DIR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_10GPHY_POLLING_SEL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_10GPHY_POLLING_REG0_CFG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_10GPHY_POLLING_REG9_CFG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SMI_10GPHY_POLLING_REG10_CFG_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PHY___SERDES)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FIB0_INTF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FIB4_INTF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FIB10_INTF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_CFG_REG0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_CFG_REG1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_CFG_REG2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_MODE_SEL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_MODE_SEL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_MODE_SEL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_MODE_SEL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_INDACS_CMD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_INDACS_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_OUI_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_VERSION_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_INTF_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_INTF_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_INTF_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_WRAP_SDS_INTF_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_WRAP_SDS_INTF_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_WRAP_SDS_INTF_CTRL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_WRAP_SDS_INTF_CTRL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_WRAP_SDS_INTF_CTRL5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_WRAP_SDS_INTF_CTRL6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RG2X_RG1X_CEN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RG0X_CEN_RTT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_SUBMODE_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SDS_SUBMODE_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_CHIP_AFE_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PHY___SERDES */
+#if defined(CONFIG_SDK_CHIP_FEATURE_POWER_SAVING)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_Q_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_MINIFG_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_MINIFG_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_MINIFG_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_TIMER_100M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_TIMER_GELITE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_TIMER_GIGA_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_TIMER_2P5G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_TIMER_5G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_TX_TIMER_10G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_RX_GELITE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_RX_GE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_RX_2P5G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_RX_5G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEE_RX_10G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_GBL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_TIMER_UNIT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_TX_RATE_100M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_TX_RATE_500M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_TX_RATE_GIGA_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_TX_WAKE_TIMER_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_RATE_100M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_RATE_500M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_RATE_GIGA_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_SLEEP_STEP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_TIMER_100M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_TIMER_500M_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_TIMER_500M_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_TIMER_GIGA_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_TIMER_GIGA_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_RX_IDLE_TIMER_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EEEP_TX_IDLE_TIMER_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PS_GATCLK_MASK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PS_GATCLK_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PS_GATCLK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PS_SOC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_CHIP_MISC_T_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_POWER_SAVING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_TAG_TPID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_ETAG_TPID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_ITAG_TPID_CMP_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_OTAG_TPID_CMP_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_ETAG_TPID_CMP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_AFT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_PB_VLAN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_FWD_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_APP_PKT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_IGR_FLTR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_EGR_FLTR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_TAG_STS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_EGR_TPID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_VLAN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_VLAN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_PKT_ENCAP_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PROFILE_SET_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_VLAN_PROFILE_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE */
+#if defined(CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PPB_VLAN_SET_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_PPB_VLAN_SET_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_VLAN_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_IGR_VID_RNG_CHK_SET_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_IGR_VID_RNG_CHK_SET_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_EGR_VID_RNG_CHK_SET_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_EGR_VID_RNG_CHK_SET_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_VLAN_IVC_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_IVC_BLK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_PORT_L2TBL_CNVT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_TRUNK_L2TBL_CNVT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_IVC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_EVC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_IVC_ENTRY_INDICATION_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_VLAN_EVC_ENTRY_INDICATION_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_L2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_PKT_ENCAP_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RMA)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_MIRROR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_SMAC_LRN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_MGN_LRN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_PORT_BPDU_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_PORT_PTP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_PORT_LLDP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_PORT_EAPOL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_BPDU_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_EAPOL_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_USR_DEF_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_LLDP_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMA_USR_DEF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_RMA_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_ID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_MBR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_HASH_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_SHFT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_LOCAL_TBL_REFRESH_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_LOCAL_TBL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRK_STK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LOCAL_PORT_TRK_MAP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_TRUNK_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ST_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_VLAN_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT_ISO_RESTRICT_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT_ISO_VB_ISO_PMSK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT_ISO_VB_EGR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PORT_ISO_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_VLAN_ISO_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_AGE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_AGE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_TRK_AGE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_SALRN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_NEW_SA_FWD_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_DYN_PORT_MV_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_DYN_PORT_MV_LRN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_STT_PORT_MV_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_STT_PORT_MV_LRN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_STT_TRK_MV_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_STT_TRK_MV_LRN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_GLB_STT_PORT_MV_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_GLB_STT_PORT_MV_LRN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_MV_FORBID_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_TRK_MV_FORBID_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_MV_FORBID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_SABLK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_DABLK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_UNKN_UC_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_BC_FLD_PMSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_UC_LM_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_L2_MC_LM_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_IP4_MC_LM_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_PORT_IP6_MC_LM_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_CONSTRT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_CONSTRT_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_PORT_CONSTRT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_PORT_CONSTRT_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_TRK_CONSTRT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_TRK_CONSTRT_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_VLAN_CONSTRT_ENTRY_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_LRN_VLAN_CONSTRT_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_VLAN_CONSTRT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_CONSTRT_PORT_CNT_DBG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_CONSTRT_TRK_CNT_DBG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_CONSTRT_SYS_CNT_DBG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_CONSTRT_VLAN_CNT_DBG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_TBL_FLUSH_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_SRC_P_FLTR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_SA_ACT_REF_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_HASH_FULL_CNT_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_TIMEOUT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_MAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_ITAG_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_ITAG_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_MAGIC_NUM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_LOCAL_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_PKT_REMOTEL_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NTFY_REMOTEL_CONGEST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NOTIFY_RING_BASE_ADDR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NOTIFY_RING_CUR_ADDR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NOTIFY_IF_INTR_MSK_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L2_NOTIFY_IF_INTR_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_L2MSG_TMROUT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_L2MSG_CNT_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMA_RDMA_CNT_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_NIC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_SPC_PORT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_NIC_SYS_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_MISC_)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MAC_TX_DISABLE_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_MISC_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_LB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_LB_PPS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_LB_PROTO_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_UC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_UC_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_UC_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_MC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_MC_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_MC_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_BC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_BC_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_BC_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_DHCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_DHCP_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_DHCP_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_BPDU_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_BPDU_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_BPDU_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_IGMP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_IGMP_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_IGMP_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_ARP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_ARP_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STORM_PORT_PROTO_ARP_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_STORM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_STORM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PRESTORM_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL__B_M_UM_DLF_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_LB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_PORT_BURST_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_PORT_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_PORT_EXCEED_FLAG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_IGBW_PORT_FC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_INBW_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_ENCAP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_CPU_PPS_LB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_LB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_MAX_LB_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_MAX_LB_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_MAX_LB_RST_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_MAX_LB_RST_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_CPU_Q_MAX_LB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_CPU_Q_MAX_LB_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_ASSURED_FIX_BURST_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_ASSURED_FIX_BURST_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_ASSURED_LB_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_ASSURED_LB_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_FIX_LB_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_FIX_LB_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_ASSURED_FIX_LB_RST_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_PORT_Q_ASSURED_FIX_LB_RST_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_10M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_100M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_1G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_500M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_10G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_2500M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_1250M_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_5G_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_EGBW_RATE_SXG_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_EGRESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_P28_TXQ_REG_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_METER_MARKER)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_LB_EXCEED_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_LB_GLB_EXCEED_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_CNTR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_GREEN_CNTR_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_YELLOW_CNTR_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_RED_CNTR_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_TOTAL_CNTR_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_LB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_METER_LB_PPS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_METER_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_METER_MARKER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_ACT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_SYS_UTIL_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_DROP_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_HI_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_LO_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_FCOFF_HI_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_FCOFF_LO_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_JUMBO_HI_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_JUMBO_LO_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_JUMBO_FCOFF_HI_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_JUMBO_FCOFF_LO_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_JUMBO_THR_ADJUST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_HI_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_LO_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_FCOFF_HI_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_FCOFF_LO_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_GUAR_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_THR_SET_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_EGR_DROP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_HOL_PRVNT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_DROP_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_DROP_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_CPU_Q_EGR_DROP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_CPU_Q_EGR_FORCE_DROP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_Q_EGR_DROP_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_CPU_Q_EGR_DROP_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_EGR_DROP_THR_SET_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_LB_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_LB_PORT_Q_EGR_DROP_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_GLB_PAGE_PEAKCNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_CUR_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_PEAK_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_EGR_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_PAGE_CNT_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_PAGE_CNT_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_CPU_Q_EGR_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_PKT_CNT_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_Q_EGR_PKT_CNT_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_CPU_Q_EGR_PKT_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_LB_PORT_EGR_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_LB_PORT_EGR_PKT_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_HSM_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_HSA_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_PORT_REPCT_FC_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_PORT_SEL_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_PORT_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_INT_PRI_MAPPING_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_HSM_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_FC_REPCT_Q_HSA_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_CASCADE_PORT_DROP_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_ON_REMOTE_PORT_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_OFF_REMOTE_PORT_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_PORT_GUAR_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_PORT_THR_SET_SEL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_TX_PAUSE_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_CONGEST_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_SPECIAL_PAUSE_DMAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_SPECIAL_PAUSE_SMAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_PORT_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_PORT_PAGE_CNT_ERROR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_PORT_PAGE_CNT_ERROR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_L2NTFY_PORT_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_L2NTFY_PORT_PAGE_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_L2NTFY_PORT_PAGE_CNT_ERROR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_REMOTE_L2NTFY_PORT_PAGE_CNT_ERROR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ETE_FC_PAUSE_FRAME_PORT_CONGEST_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PER_PORT_TXQ_REG_28P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PER_PORT_TXQ_REG_29P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_EGRESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_P28_TXQ_REG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_RT_REG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_EGRESS_DROP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_INGRESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_INGRESS_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SWRED_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SWRED_QUEUE_DROP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SWRED_DROP_CNTR_PIDX_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SWRED_DROP_CNTR_CIDX_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SWRED_DROP_CNTR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SWRED_DROP_CNTR_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SC_P_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SC_P_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_DBG_CNT_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_REMAP_PORT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_REMAP_IPRI_CFI0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_REMAP_IPRI_CFI1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_REMAP_OPRI_DEI0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_REMAP_OPRI_DEI1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_REMAP_DSCP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_PORT_TBL_IDX_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PRI_SEL_TBL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DP_SEL_REMAP_ITAG_CFI0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DP_SEL_REMAP_ITAG_CFI1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DP_SEL_REMAP_OTAG_DEI0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DP_SEL_REMAP_OTAG_DEI1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DP_SEL_REMAP_DSCP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DP_SEL_PORT_TBL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_INGPRI_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_INTPRI2QID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_CPUQID2QID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_CPUQID2XGQID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_RSN2CPUQID_CTRL_8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_FLAG2CPUQID_CTRL_0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_QM_FLAG2CPUQID_CTRL_1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SCHED_PORT_Q_CTRL_SET0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SCHED_PORT_Q_CTRL_SET1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SCHED_CPU_Q_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SCHED_PORT_ALGO_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_EGRESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_QUEUE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PER_PORT_TXQ_REG_24P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PORT_TXQ_REG_4P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_PORT_TXQ_REG_4P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_PORT_TXQ_REG_4P_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_PORT_TXQ_REG_4P_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMARKING)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_PORT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_INTPRI2IPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_IPRI2IPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_OPRI2IPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_DSCP2IPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_INTPRI2OPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_IPRI2OPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_OPRI2OPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_DSCP2OPRI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_INTPRI2DEI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_DP2DEI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_INTPRI2DSCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_IPRI2DSCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_OPRI2DSCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_DSCP2DSCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RMK_DPINTPRI2DSCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_PKT_ENCAP_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMARKING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1QAV)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AVB_PORT_CLASS_A_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AVB_PORT_CLASS_B_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AVB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_EAVSPE_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1QAV */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IP_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_HOST_TBL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IPUC_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IP6UC_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IPMC_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IP6MC_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IP_MTU_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_IP6_MTU_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_PORT_IP_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_PORT_IP6_ROUTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_ENTRY_COUNTER_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_ENTRY_COUNTER_DATA_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_ENTRY_MV_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_ENTRY_MV_PARAM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_HW_LU_KEY_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_HW_LU_KEY_IP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_HW_LU_KEY_DIP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_L3_HW_LU_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_RT_REG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_RT_REG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_RT_REG_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_CNT_SET1_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_CNT_SET0_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_MIB_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_MIB_CNTR_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PRIVATE_COUNTER)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_PRVTE_CNTR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_PRVTE_E_Q_RST_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_E_DROP_CNTR0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_E_DROP_CNTR1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PORT_E_DROP_CNTR2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_EGR_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_ALE_EGR_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_ALE_EGR_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_ALE_EGR_CNT_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PRIVATE_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER17_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER18_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER19_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER20_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER21_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER22_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER23_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER24_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER25_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER26_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER27_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER28_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER29_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER30_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER31_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER32_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER33_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER34_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER35_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER36_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER37_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER38_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER39_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER40_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER41_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER42_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER43_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER44_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER45_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER46_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER47_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER48_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER49_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER50_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER51_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER52_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER53_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER54_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER55_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER56_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER57_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER58_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER59_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER60_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER61_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER62_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER63_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER64_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER65_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER66_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER67_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER68_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER69_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER70_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER71_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER72_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER73_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER74_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER75_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER76_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER77_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER78_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER79_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER80_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER81_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER82_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER83_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STAT_PRVTE_DROP_COUNTER84_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIRRORING)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_SPM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_DPM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_SAMPLE_RATE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_QID_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_MIRROR_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIRRORING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RSPAN)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_RSPAN_VLAN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_RSPAN_TX_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_MIR_RSPAN_RX_TAG_RM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG4_PKT_ENCAP_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG5_PKT_ENCAP_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RSPAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SFLOW)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SFLOW_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SFLOW_PORT_RATE_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SFLOW */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PIE_TEMPLATE)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_BLK_LOOKUP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_BLK_PHASE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_TMPLTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_BLK_GROUP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_BLK_TMPLTE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_MV_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_MV_LEN_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_CLR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_RULE_HIT_INDICATION_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_GLB_HIT_INDICATION_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_MISC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PIE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ALE_ACL_GLB_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PIE_TEMPLATE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ACL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ACL_PORT_LOOKUP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ACL_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_ALE_ACL_GLB_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ACL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RNG_CHK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RNG_CHK_IP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RNG_CHK_IP_RNG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ACL_RANGE_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PORT_VLAN_IP_L4PORT_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_PORT_EN_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_IPV6_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_ICMP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_TCP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_SMURF_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ATK_PRVNT_ARP_INVLD_PORT_ACT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_ATTACK_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_OAM)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_OAM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_OAM_PORT_ACT_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_OAM_GLB_DYING_GASP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_OAM_PORT_DYING_GASP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DYING_GASP_POLARITY_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_OAM_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_OAM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RLDP_RLPP_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RLDP___RLPP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEVICE_CONTROL)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STK_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STK_DEV_PORT_MAP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STK_NON_UNICAST_BLOCK_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STK_CASCADE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STK_ONE_HOP_REDIR_PM_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_STK_DBG_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEVICE_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PARSER_FIELD_SELTOR_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PARSER_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PARSER_DROP_REASON_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_PKT_PARSER_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER_HSB)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA17_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA18_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA19_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA20_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA21_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA22_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA23_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA24_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA25_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA26_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA27_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA28_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSB_DATA29_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_HSB_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER_HSB */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HSM)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM0_DATA17_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM1_DATA16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA17_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA18_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA19_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA20_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA21_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA22_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA23_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA24_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA25_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA26_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM2_DATA27_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA17_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA18_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA19_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA20_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA21_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA22_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA23_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA24_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA25_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA26_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSM3_DATA27_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_HSM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1_HSM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG2_HSM_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_HSM_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HSM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA5_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA6_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA7_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA8_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA9_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA10_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA11_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA12_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA13_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA14_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA15_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA16_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA17_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA18_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA19_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA20_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_HSA_DATA21_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_HSA_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TEST_MODE_ALE_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TEST_MODE_ALE_HSB_MULTI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TEST_MODE_ALE_HSA_MULTI_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG4_RT_REG_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TEST_MODE_ALE_LOOPBACK_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_GLB_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PKB_ACC_DEBUG_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_TX_GRP_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_GLOBAL_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_IPG_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_PKT_CNT_H_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_PKT_CNT_L_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_PKT_CNT_DBG_H_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_PKT_CNT_DBG_L_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM0_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM0_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM0_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM0_CTRL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM0_CTRL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM1_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM1_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM1_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM1_CTRL3_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_STREAM1_CTRL4_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PB_ACCESS_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PB_ACCESS_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PB_ACCESS_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_PORT_INDEX_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SPG_GLOBAL_INDEX_CTRL0_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SMART_PACKET_GENERATOR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RXPORT_DSC_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RXPORT_DSC_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SW_Q_RST_SYS_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SW_Q_RST_P_THR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG1TO28_INGRESS_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LD_TX_DSC_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_LD_TX_DSC_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TX_DSC_CHK_TMR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RXFIFO_OVERFLOW_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RXFIFO_OVERFLOW_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RXFIFO_RDEMPTY_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_RXFIFO_RDEMPTY_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TXFIFO_OVERFLOW_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TXFIFO_OVERFLOW_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TXFIFO_RDEMPTY_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TXFIFO_RDEMPTY_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PINGPONG_PLUS_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PINGPONG_PLUS_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TOKEN_STS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TOKEN_ERR_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_SW_Q_RST_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRIG_AUTO_RECOVER_CTRL_INGRESS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRIG_AUTO_RECOVER_CTRL_EGRESS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TRIG_AUTO_RECOVER_CTRL_MAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AUTO_RECOVER_EVENT_FLAG_STS_INGRESS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AUTO_RECOVER_EVENT_FLAG_STS_EGRESS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AUTO_RECOVER_EVENT_FLAG_STS_MAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AUTO_RECOVER_EVENT_FLAG_ERR_INGRESS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AUTO_RECOVER_EVENT_FLAG_ERR_EGRESS_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_AUTO_RECOVER_EVENT_FLAG_ERR_MAC_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_TXERR_CNT_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG3_EGRESS_CTRL_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG0_INGRESS_CTRL_2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_DMY_REG4_EGRESS_CTRL_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MISC)
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_CODE_PROTECT_STATE_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ENCAP_SRAM_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_ENCAP_SRAM_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PAR_SRAM_CTRL0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PAR_SRAM_CTRL1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PAR_SRAM_CTRL2_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT29_DBG_REG0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT29_DBG_REG1_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT30_DBG_REG0_RTL9300,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    INT_LONGAN_PORT30_DBG_REG1_RTL9300,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MISC */
+    INT_LONGAN_REG_LIST_END,
+} rtk_int_longan_reg_list_t;
+
+
+typedef enum rtk_longan_regField_list_e
+{
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MODEL_CHAR_1STf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MODEL_CHAR_2NDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MODEL_CHAR_3RDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTL_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RL_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESERVEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_INFO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_OUT_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FRC_RSTOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FRC_RSTOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_RST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WD_RST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_REG_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_MEM_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_SERDES_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_NIC_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CHIP_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_RST_STAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WDOG_RST_STAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_RST_DEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_AFERSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P28_TXRST_OPTIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_STAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DV_SPEEDUP_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_RST_DURf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PLL_DBG_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NOR_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LXB_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_PLL_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_ALE_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_NOR_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_LXB_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_CPU_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_125M_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_SRAM_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_DDR_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_NOR_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_NAND_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_USB_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_LXB_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_CPU_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_125M_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_SRAM_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DLL_PRE_DIVNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_EN_PLL_MONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DLY_EN_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DLY_EN_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DLY_EN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_FLD_DSEL_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_FLD_DSEL_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_FLD_DSEL_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMU_TEST_EN_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMU_DIVN3_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_DLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_EN_DLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMU_TEST_EN_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_SPI_NORf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_LXB_NAND_USBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_SWCOREf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_GPHYDBGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_GPHY_DBG_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMU_TEST_EN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_BYPASS_PIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_SEL_DIV4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIVN2_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIV5_EN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CMU_DIV4_EN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_SEL_CCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_LDO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_125M_CMU_EN_CKOOBSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_RSVD_XTALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_XTAL_DBG_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMU_TEST_EN_XTALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_SEL_IBLPF_XTALPLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_BG_POWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_BGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SEL_125M_CLK_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SEL_OSC_CLK_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREFBUF_CML_I_S0S1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREFBUF_CML_I_S0S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREFBUF_CML_I_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREFBUF_CML_I_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREF_BUF_EN_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREF_BUF_EN_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREF_BUF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREFBUF_CML_If,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_CKREFBUF_CML_Rf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DUMMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_LBRXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_DMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_GTXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_GRXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_TGTXF_X4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_TGRXF_X4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_GTXF0_X2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_GRXF0_X2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_LBRXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_DMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_GTXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_GRXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_TGTXF_X4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_TGRXF_X4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_GTXF0_X2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_GRXF0_X2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_RSTNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_LBRXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_DMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_GTXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_GRXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_TGTXF_X4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_TGRXF_X4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_GTXF0_X2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_GRXF0_X2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_GRXF0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF0_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF0_FAIL_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF0_DRF_FAIL_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_GTXF0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF0_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF0_FAIL_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF0_DRF_FAIL_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_TGRXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGRXF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGRXF_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGRXF_FAIL_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGRXF_DRF_FAIL_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_TGTXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGTXF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGTXF_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGTXF_FAIL_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGTXF_DRF_FAIL_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_GRXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF1_FAIL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF1_DRF_FAIL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_GTXF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF1_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF1_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_DMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_STK_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BIST_DIS_LBRXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LBRXF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LBRXF_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LBRXF_FAIL_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LBRXF_DRF_FAIL_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LBRXF_DRF_PAUSE_PG08f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMY_DRF_PAUSE_PG08f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF1_DRF_PAUSE_PG08f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF1_DRF_PAUSE_PG08f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGTXF_DRF_PAUSE_PG07_04f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGTXF_DRF_PAUSE_PG02f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGRXF_DRF_PAUSE_PG07_04f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TGRXF_DRF_PAUSE_PG02f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GTXF0_DRF_PAUSE_PG02_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRXF_DRF_PAUSE0_PG02_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMEB_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMEA_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMEB_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMEA_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF0_RMB_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF0_RMB_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMEB_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMEA_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMEB_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMEA_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMA_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMA_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMA_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMA_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMB_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMB_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMB_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMB_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMB_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGRXF_RMB_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMA_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMA_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMA_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMA_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMB_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMB_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMB_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMB_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMB_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TGTXF_RMB_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF1_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF1_RMEBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF1_RMEAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_RMEBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_RMEAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_RMA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_RMA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_RMB_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GRXF1_RMB_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF1_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_GTXF1_RMBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DMY_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DMY_RMEBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DMY_RMEAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DMY_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DMY_RMBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMEB_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMEA_5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMA_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMA_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMA_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMA_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMA_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMA_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMB_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMB_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMB_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMB_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMB_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LBRXF_RMB_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_PISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_TKIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_L3MEM_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_ACL_DROPACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_ACL_TCAM_X7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_REPQLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_REPQf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_OILMEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_OTGMEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_NXHMEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_MACTCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_CAMACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_L3TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_L3MEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_BCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_MSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_MCTABf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_IVC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_IVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_ACL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_ACL_METf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_ACL_LOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_ACL_TCAM_X3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_TRUNKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_PISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_TKIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_L3MEM_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_ACL_DROPACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_ACL_TCAM_X7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_REPQLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_REPQf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_OILMEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_OTGMEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_NXHMEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_MACTCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_CAMACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_L3TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_L3MEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_BCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_MSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_MCTABf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_IVC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_IVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_ACL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_ACL_METf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_ACL_LOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_ACL_TCAM_X3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_TRUNKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PISO_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKID_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_HIT_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_DROPACT_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM_DRF_BIST_RESUME_X7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQLL_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQ_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OIL_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTG_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NXH_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MACTCAM_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAMACT_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3TCAM_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCAM_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MST_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCTAB_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACT_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TCAM_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_MET_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LOG_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM_DRF_BIST_RESUME_X3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRUNK_DRF_BIST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_HSB_RME_X3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_IVC_ACT_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROPACT_RME_X15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RME_X10_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RME_X15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RME_X15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TRUNK_RMEBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TRUNK_RMEAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_PISO_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TKID_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_HIT_RME_X1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RME_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RME_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MCB_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MCA_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MST_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_VLAN_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQLL_RMEBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQLL_RMEAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RME_X5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_OIL_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_OTG_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_NXH_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_CAMACT_RME_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RME_X11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_ACT_RM_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_HSB_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_HSB_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_HSB_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_HSB_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_IVC_ACT_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_DROP_RM_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_MET_RM_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_ACL_LOG_RM_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTA_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_LUTB_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_PISO_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TKID_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_HIT_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_HIT_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MCTABA_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MCTABB_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MST_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_VLAN_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_OIL_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_OTG_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_NXH_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3MEM_RM_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3CAMACT_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQLL_RMBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQLL_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RM_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RM_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RM_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RM_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RM_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_REPQ_RM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TRUNK_RMBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TRUNK_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST1_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST1_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST1_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST0_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST0_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST0_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST0_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST0_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST0_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST3_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST2_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST2_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST2_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST2_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST2_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST1_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST1_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST4_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST4_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST4_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST4_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST4_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST3_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST3_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST3_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST3_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST6_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST6_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST6_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST6_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST5_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST5_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST5_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST5_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST5_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST7_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST7_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST7_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST7_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST6_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_MDS_BIST6_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3TCAM_MDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MACTCAM_MDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BCAM_MDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_IVC_TCAM_MDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST1_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST0_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST0_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST0_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST0_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST0_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST0_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST2_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST2_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST2_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST1_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST1_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST1_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST1_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST3_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST3_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST3_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST3_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST3_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST2_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST2_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST5_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST4_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST4_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST4_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST4_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST4_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST6_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST6_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST6_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST6_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST5_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST5_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST5_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST5_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST7_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST7_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST7_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST7_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST6_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TCAM_RDS_BIST6_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MACTCAM_RDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BCAM_RDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_IVC_TCAM_RDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L3TCAM_RDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PISO_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKID_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_HIT_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_DROPACT_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM_BIST_DONE_X7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQLL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQ_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OIL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTG_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NXH_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MACTCAM_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAMACT_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3TCAM_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCAM_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MST_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCTAB_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACT_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TCAM_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_MET_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LOG_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRUNK_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PISO_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKID_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_HIT_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_DROPACT_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM_DRF_BIST_PAUSE_X7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQLL_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQ_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OIL_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTG_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NXH_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MACTCAM_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAMACT_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3TCAM_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCAM_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MST_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCTAB_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACT_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TCAM_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_MET_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LOG_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRUNK_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TCAM_BIST_FAIL_X_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACT_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_DROPACT_BIST_FAIL_X_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_BIST_FAIL_X_10_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LOG_BIST_FAIL_X_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_MET_BIST_FAIL_X_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCAM_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCTAB_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_BIST_FAIL_X_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MST_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OIL_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTG_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NXH_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MACTCAM_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAMACT_BIST_FAIL_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3TCAM_BIST_FAIL_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_BIST_FAIL_X11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRUNK_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PISO_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKID_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_HIT_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQLL_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQ_BIST_FAIL_X5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PISO_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKID_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_HIT_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_DROPACT_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM_DRF_BIST_DONE_X7_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQLL_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQ_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OIL_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTG_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NXH_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MACTCAM_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAMACT_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3TCAM_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCAM_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MST_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCTAB_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACT_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TCAM_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_MET_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LOG_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRUNK_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TCAM_DRF_BIST_FAIL_X_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACT_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_DROPACT_DRF_BIST_FAIL_X_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_DRF_BIST_FAIL_X_10_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LOG_DRF_BIST_FAIL_X_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_MET_DRF_BIST_FAIL_X_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_DRF_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_DRF_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_DRF_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_DRF_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM3_DRF_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM2_DRF_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM1_DRF_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TCAM0_DRF_BIST_FAIL_X_11_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCAM_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCTAB_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_DRF_BIST_FAIL_X_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSB_DRF_BIST_FAIL_X_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MST_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OIL_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTG_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NXH_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MACTCAM_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAMACT_DRF_BIST_FAIL_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3TCAM_DRF_BIST_FAIL_X7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_DRF_BIST_FAIL_X11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRUNK_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PISO_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKID_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3MEM_HIT_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQLL_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPQ_DRF_BIST_FAIL_X5_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_ALE_LS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BISR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONE_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONE_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAIL_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAIL_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_RMKPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_L2SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_L2MSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_EVCACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_L2MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_HSBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_START_PAUSE_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALL_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ANY_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ANY_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALL_CHIP_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALL_CHIP_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ANY_CHIP_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ANY_CHIP_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALL_SOC_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALL_SOC_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ANY_SOC_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ANY_SOC_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_BISR_SERIALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_BIST_RSTB_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_BIST_MODE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_BIST_MODE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_TEST_RESUME_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_BIST_FAIL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_BIST_FAIL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_BIST_FAIL_9_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_BISR_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_BISR_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_BIST_FAIL_23_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_BIST_DONE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_DRF_BIST_FAIL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_DRF_BIST_FAIL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_DRF_BIST_FAIL_9_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_BISR_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_BISR_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_BIST_FAIL_23_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_BIST_DONE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_DRF_START_PAUSE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LL_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_FIFO_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSC_FIFO_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CBUF_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_SECOND_RUN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKB_HOLD_REMAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_PG_VLD_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_PG_AD1_11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_PG_AD0_11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_PG_AD3_11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_PG_AD2_11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_BIST_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_DRF_BIST_MODE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_BIST_MODE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_DRF_TEST_RESUME_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_BIST_DONE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_BIST_FAIL_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_DRF_BIST_DONE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_DRF_BIST_FAIL_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_DRF_START_PAUSE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BHSA_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EHSA_LL_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CP_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPC_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_SRAM_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQ_SRAM_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_RM_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_LSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_18f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_17f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVS_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAMCTRL_RAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAMCTRL_RAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAMCTRL_ROM_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_MODE_OCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_MODE_OCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_TEST_RESUME_OCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_DRF_START_PAUSE_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_BIST_DONE_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_DRF_BIST_DONE_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_ROM_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLSH_BIST_RSTNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_BIST_RSTNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST1_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_BIST0_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST1_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU1_DRF_BIST0_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_BIST_FAIL_0_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_BIST_FAIL_0_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_DRF_BIST_FAIL_0_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_DRF_BIST_FAIL_0_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_ROM_BIST_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_ROM_BIST_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLSH_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLSH_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLSH_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLSH_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLSH_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_USBHOST_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROM_MISR_DATAOUT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROM_MBISR_DATAOUT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_SO_REFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_IF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_SDA_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_DATA_ENDIAN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_TIMEOUT_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_TIMEOUT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_TIMEOUT_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_TIMEOUT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MEM_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDA_OUT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO8_SCL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_RESETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRIVE_ACK_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK_ACK_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_RD_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEV_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MEM_ADDR_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCL_FREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_SCL_I_DLY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_SCL_I_DLY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_WAIT_SCL_MODE_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_WAIT_SCL_MODE_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DATA_HOLD_TIME_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_DATA_HOLD_TIME_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_OPEN_DRN_SCL_MST2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_OPEN_DRN_SCL_MST1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_OPEN_DRN_SDA_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO16_SDA7_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO15_SDA6_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO14_SDA5_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO13_SDA4_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO12_SDA3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO11_SDA2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO10_SDA1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO9_SDA0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO17_SCL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADDR_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CLK_DIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_SPI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CSB_OUT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO6_CSB1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO7_CSB0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CMD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_RX_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CLK_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_TX_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CPHAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_CPOLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_TSLCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_TCHSHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P0_INTFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO19_LEDSYNC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO18_USBLED_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_CS_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_SDO_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDO_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDI_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TMS_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TCK_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TRST_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_MDX_DEALYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_STACK_FTG_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_STACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LEDIC_PAGE_ACCESSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LEDIC_RESTARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_ACTIVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_SIGNAL_INVERTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BLINK_TIME_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_LOAD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYS_LED_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYS_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STP2_PWR_ON_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STP1_PWR_ON_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PWR_ON_BLINK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_MODf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_NUM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET3_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET3_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET3_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET3_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET2_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET2_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET2_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET2_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET1_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET1_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET1_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET1_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET0_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET0_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET0_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SET0_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_COPR_SET_PSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_FIB_SET_PSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_COPR_PMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_FIB_PMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_COMBO_PMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_LED_LOADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_CTRL_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_FIB_LED3_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_FIB_LED2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_FIB_LED1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_FIB_LED0_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_COPR_LED3_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_COPR_LED2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_COPR_LED1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_COPR_LED0_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHYADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV1_THR_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV2_THR_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LV3_THR_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DV_SPEEDUP_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P_LOAD_CNTR_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P_LOAD_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DV_SPEEDUP_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX2_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX3_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDIO_PREMBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDC_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX2_ACCESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX3_ACCESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX2_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX3_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX2_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_MDX3_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_31_0_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_63_32_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_73_64_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_31_0_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_63_32_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO_73_64_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_RCMD_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_PHYADRRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPIO_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_EXT_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_PORT_LINK_STS_CHG_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P27f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P26f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P25f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P24f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P23f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P22f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P21f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P20f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P19f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P18f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P17f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_LINK_FAULT_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SERDES_RX_SYM_ERR0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_OAM_DYGASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_EXT_GPIO_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_EXT_GPIO_36_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_RLFD_PORT_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_TM_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_TM_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_AUTO_RECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SMI_CHECK_REG_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_SDS_UPD_PHYSTS27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_ROUT_L2_NTFY_BUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IMR_ROUT_PBUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_SDS_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_ROUT_L2_NTFY_BUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_ROUT_PBUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_RLFD_GLBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_SDS_UPD_PHYSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_AUTO_RECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_SMI_CHECKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_TERMAL_DETECTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_EXT_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_OAM_DYGASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_SERDES_LINK_FAULT_Pf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_GLB_LINK_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_INT_PULSE_INTERVALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_PORT_LINK_STS_CHG_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P27f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P26f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P25f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P24f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P23f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P22f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P21f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P20f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P19f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P18f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P17f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P14f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P13f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P12f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P9f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P8f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES89_LINK_FAULT_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES11_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES10_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES9_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES8_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES7_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES6_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES5_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES4_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES3_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES2_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES1_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SERDES0_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_OAM_DYGASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_EXT_GPIO36_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO15_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO14_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO13_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO12_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO11_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO10_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO9_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO8_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO7_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO6_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO5_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO4_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO3_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO2_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO1_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO0_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO31_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO30_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO29_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO28_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO27_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO26_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO25_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO24_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO23_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO22_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO21_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO20_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO19_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO18_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO17_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO16_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO36_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO35_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO34_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO33_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXT_GPIO32_INT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_RLFD_PORT_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_TM_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_TM_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_AUTO_RECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SMI_CHECK_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_SDS_UPD_PHYSTS27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_ROUT_L2_NTFY_BUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISR_ROUT_PBUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_ACCESS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_CTRL_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_ACCESS_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CALIB_STEP_FINISHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AMP_CALIB_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_R_CALIB_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AMP_EFUSE_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_R_EFUSE_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RC_EFUSE_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADC_EFUSE_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AMP_CALIB_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_R_CALIB_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RC_CALIB_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CALIB_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CENTER_PORT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GROUP1_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GROUP0_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GROUP1_CALIB_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GROUP0_CALIB_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AMP_FAIL_SRAM_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_R_FAIL_SRAM_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_TAPBIN_OFSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_AMPK_ALL_CH_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHE_CALIB_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AMP_SRAM_BITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_R_SRAM_BITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPEED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSS_RST_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WIRE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WSORT_GOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_COUNT_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TM_LOWCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TM_LOW_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TM_HIGHCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TM_HIGH_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PWRON_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SAMPLE_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_COMPARE_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REVERSE_CMP_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TM_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SBG_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOS_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SINL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_CHOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW2_SW3_REVERSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHOP_SWCNT_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THERMAL_DUMMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA_SAMPLEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEMP_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEMP_BASE_CODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEMP_OUT_OPENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEMP_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TEMP_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPION_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPION_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M2_MDX_CK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M2_MDX_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M2_MDX_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M2_MDX_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M2_MDX_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M2_MDX_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M1_MDX_CK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M1_MDX_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M1_MDX_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M1_MDX_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M1_MDX_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M1_MDX_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M0_MDX_CK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M0_MDX_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M0_MDX_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M0_MDX_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M0_MDX_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M0_MDX_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M3_MDX_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M3_MDX_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M3_MDX_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M3_MDX_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_RST_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_RST_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CS1_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CS1_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CS0_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CS0_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO3_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO3_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO2_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO2_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO1_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO1_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO0_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO0_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_CK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_CK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_DA_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_DA_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_CSN_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_CSN_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_SDO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_SDO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_SDA_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_SDA_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_SCK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_SCK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_RTS_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_RTS_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_CTS_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_CTS_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_TXD_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_TXD_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_RXD_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_RXD_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TRSTN_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TRSTN_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TCK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TCK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TMS_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TMS_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDI_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDI_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSTOUT_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSTOUT_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESET_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESET_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GPION_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M3_MDX_CK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_M3_MDX_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_RST_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CS1_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CS0_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO3_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO2_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO1_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_IO0_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MST_CK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_CK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LED_DA_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_CSN_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SLV_SPI_SDO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_SDA_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I2C_SCK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_RTS_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_CTS_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_RXD_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UART0_TXD_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TRSTN_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TCK_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TMS_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDI_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JTAG_TDO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSTOUT_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESET_IO_SMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FT_SCAN_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FT_SCAN_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_TESTMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SEL_EJTAG_LBISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_EXTCLK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OCL_PON200URST_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BYP_MEM_INIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_BYP_200USf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BO_24_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STRP_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BLK_SEL0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BIT_SEL0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BLK_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BIT_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BLK_SEL2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BIT_SEL2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BLK_SEL3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_BIT_SEL3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_SIG_SEL3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_VOL_PRB_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ALL_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_TRUNCATE_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_TRUNCATE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_HIGH_FETCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LOW_FETCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_HIGH_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LOW_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRAP_PKT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_PKT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRAP_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_VLAN_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NIC_DEBUG_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NIC_DEBUG_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRF_BIST_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_RME_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_RM_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_RME_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BIST_RM_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWITCH_IPV4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWITCH_IPV6_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWITCH_IPV6_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWITCH_IPV6_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SWITCH_IPV6_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UDP_DPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAPWAP_TRAP_TARGETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAPWAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_CHKSUM_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_CRC_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GARP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRAM_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_METHODf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_START_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HIT_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_48PASS1_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORIGINAL_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORIGINAL_COLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEFER_PKT_CONT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAX_RETX_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LATE_COLI_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IOL_MAX_RETRY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BKOFF_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BKOFF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HALF_48PASS1_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BKPRES_MTHD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEFER_IPG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRECOLLAT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LATE_COLI_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BKPRES_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HALF_TO_FULL_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REF_RX_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHG_DUP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FULL_DET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_CHG_DUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_COL_CUR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCK_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEPOM_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEPROM_VALID_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEPROM_COMPLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NOEEPROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SERDES_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SERDES_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GROUP_MAC_SEG_END_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GROUP_MAC_SEG_START_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_GLB_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_POLL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_POLL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_POLL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_POLL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_INTF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_INTF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_INTF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_INTF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_BROADCAST_SET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_BROADCAST_SET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_BROADCAST_SET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_BROADCAST_SET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P27_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P26_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P25_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P24_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P23_P20_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P19_P16_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P15_P12_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P11_P8_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P7_P4_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_P3_P0_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT15_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT14_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT13_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT12_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT11_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT10_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT9_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT8_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT7_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT6_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT5_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT4_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT3_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT2_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT1_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT0_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT27_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT26_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT25_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT24_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT23_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT22_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT21_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT20_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT19_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT18_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT17_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PORT16_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_PRVTE_POLLING27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MDIO_FREE_CNT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MDIO_FREE_CNT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTDEV0_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTREG0_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORCE_BYP_LINKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MEDIA_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EN_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EN_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EN_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EN_1000Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EN_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EN_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_FORCE_FC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DUP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORCE_LINK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_FORCE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI_POLL_MASK_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK1_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK1_MMD_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK1_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK2_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK2_MMD_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK2_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK3_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK3_MMD_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK3_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK4_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK4_MMD_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK4_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK5_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHECK5_MMD_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHK5_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_DN_TMR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_DN_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_ABLTY_LOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_IDLE_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINKUP_DELAY_10G_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINKUP_DELAY_2P5G_1000M_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINKUP_DELAY_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_STS_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MEDIA_STS_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_STS_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DUP_STS_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_STS_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PAUSE_STS_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_ABLTY_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MSTR_SLV_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MSTR_SLV_FAULT_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MEDIA_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DUP_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PAUSE_STS_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_ABLTY_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_BRDCASTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHY_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG_ADDR_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PARK_PAGE_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAIN_PAGE_11_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INDATA_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DATA_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MMD_DEVAD_4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MMD_REG_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT5_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT4_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT3_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT2_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT1_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT0_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT11_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT10_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT9_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT8_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT7_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT6_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT17_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT16_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT15_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT14_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT13_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT12_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT23_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT22_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT21_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT20_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT19_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT18_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT27_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT26_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT25_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT24_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_ADJ_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P27_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P26_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P25_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P24_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P20_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P16_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P8_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P0_SDS_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P27_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P26_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P25_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P24_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P20_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P16_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P8_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P0_SDS_MODE_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MDX_DLY_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI3_DLY_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI2_DLY_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI1_DLY_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMI0_DLY_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BONDING_DEFINE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DUMMY_BONDING_12_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_DRAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CHIP_MODE_3_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PREAMBLE_SFD_10G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_10G_4N_BYTE_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_INVLD_MAC_CTRL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_UNKN_OPCODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LIMIT_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CRC_CPU_RC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_1G_100M_10M_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_1G_100M_10M_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_2P5G_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_2P5G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_10G_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_10G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IOL_LEN_ERR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IOL_MAX_LEN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LIMIT_IPG_CFG_1G_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LIMIT_IPG_CFG_10M_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TG_LINKFAULT_TX_EN_7_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_RX_RXDV_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PADDING_UND_SIZE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_CHK_CRC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PASS_ALL_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYP_TX_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PADDING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTF_P28_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_TAG_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_MAC_ADDR_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_MAC_ADDR_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAX_LEN_TAG_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAX_LEN_100M_10M_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAX_LEN_1G_2P5G_5G_10G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_PORT_TX_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PH_RSTB_125M_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHSFT_CNT_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHSFT_B_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHSFT_A_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DLL_MODE_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PN_POLY_DEG_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHASE_LIM_SEL_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_MODE_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_EN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHASE_LIM_EN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_TYPE_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PH_GCODE_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PN_POLY_SEL_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RDM_SEED_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_UPLDN0_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_TESTMODE_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_OFFSET_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_STEP_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_PERIOD_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PH_OFS_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PH_OFS_TOG_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHSFT_PRD_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHSFT_UPDN_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SSC_PH_CFG_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OFS_GRY0_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OFS_BUSY_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OFS_TOTAL_R_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_OUT_125Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MDC_FREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MDX_GPIO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RCMD_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_DEV_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_REG_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLFD_BIT_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNIDIR_WIN_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB_UNIDIR_ONLY_CPUTX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB_UNIDIR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTDEV1_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTREG1_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG0_BIT_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG0_DEV_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG0_REG_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG9_BIT_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG9_DEV_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG9_REG_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG10_BIT_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG10_DEV_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REG10_REG_2P5G_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S0_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S4_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S10_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS3_0_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS3_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS2_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS1_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS0_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS9_4_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS9_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS8_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS7_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS6_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS5_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS4_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS11_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS10_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS3_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS3_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS2_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS2_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS1_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS1_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS0_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS0_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS7_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS7_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS6_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS6_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS5_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS5_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS4_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS4_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS9_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS9_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS8_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS8_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS11_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS11_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS10_FEC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS10_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_REGADf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_RTK_OUIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_MODEL_NOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_REVISION_NOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_OK_TGXR_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_SDET_OUT_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB100_DET_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB100_SDET_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB_ISO_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SYM_ERR_ALL_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SYM_ERR_TGXR_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_TGX_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_TGR_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISO_ON_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOAD_SYS_PAR_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNIDIR_TX_ABLE_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_TX_DISABLE_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_RX_DISABLE_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCST_ON_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_SRC_TGX_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_SRC_TGR_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_SWAP_TGX_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SWAP_TGX_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_OK_TGXR_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_SDET_OUT_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB100_DET_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB100_SDET_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB_ISO_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SYM_ERR_ALL_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SYM_ERR_TGXR_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_TGX_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_TGR_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISO_ON_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOAD_SYS_PAR_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNIDIR_TX_ABLE_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_TX_DISABLE_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_RX_DISABLE_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCST_ON_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_SRC_TGX_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTP_SRC_TGR_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_SWAP_TGX_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SWAP_TGX_S4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_SDET_OUT_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB100_DET_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB100_SDET_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIB_ISO_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SYM_ERR_ALL_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ISO_ON_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOAD_SYS_PAR_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNIDIR_TX_ABLE_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_TX_DISABLE_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_RX_DISABLE_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCST_ON_S10f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCST_IDX_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LPI_GMII_SEL_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMD_STOP_GLI_CLK_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STS_UPD_TX_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BCST_IDX_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LPI_GMII_SEL_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMD_STOP_GLI_CLK_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STS_UPD_TX_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LPI_GMII_SEL_WS5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CMD_STOP_GLI_CLK_WS5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STS_UPD_TX_WS5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_LINK_OK_SUM_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_LINK_OK_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STS_UPD_RX_WS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_LINK_OK_SUM_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_LINK_OK_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STS_UPD_RX_WS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_LINK_OK_SUM_WS5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SDS_LINK_OK_WS5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STS_UPD_RX_WS5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RG2X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RG1X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTT_DIG_CEN_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_RTT2_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_RTT1_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RG0X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S3_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S2_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S9_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S8_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S7_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S6_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S5_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_S4_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HIGH_Qf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LPI_MINIPG_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LPI_MINIPG_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LPI_MINIPG_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LPI_MINIPG_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LPI_MINIPG_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_LPI_MINIPG_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MULTIWAKE_PORTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MULTIWAKE_INTLVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MULTIWAKE_TIME_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MULTIWAKE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_UP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_FC_EFCTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REF_RXLPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_TX_DELAY_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_TX_DELAY_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_TX_DELAY_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_WAKE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_TX_DELAY_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_WAKE_TIMER_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_TX_DELAY_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_WAKE_TIMER_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOW_Q_TX_DELAY_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_PAUSE_WAKE_TIMER_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_TIMER_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_TIMER_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WAIT_RX_INACTIVE_TIMER_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EEEP_RX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEE_EEEP_TX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_1000M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_500M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_100M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EEEP_SLAVE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TIMER_UNIT_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TIMER_UNIT_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TIMER_UNIT_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_EN_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_EN_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_RATE_EN_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SLEEP_STEP_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_MIN_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PAUSE_ON_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_WAKE_TIMER_500M_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_MIN_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PAUSE_ON_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_WAKE_TIMER_500M_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_WAKE_TIMER_GIGA_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_MIN_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PAUSE_ON_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_WAKE_TIMER_GIGA_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALLPORT_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_ENCAP_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_PRS_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_CTRL_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_CTRL_GATCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LNKDN_CLK_GATE_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYSCLK_GATE_MXDLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SOC_SLEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITPID_CMP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTPID_CMP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETPID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTAG_UNTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAG_UNTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MC_SVL_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UC_SVL_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STP_LEAK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LEAK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OCFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ICFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OPVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OPVID_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPVID_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBL_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_REP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_REQ_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DHCP6_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DHCP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MLD_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGMP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_FLTR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_OTAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_ITAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_OTAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_ITAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_OTAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_ITAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTPID_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITPID_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTER_SMAC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_LRN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NEW_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_UC_RT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_UC_RT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_MC_BDG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_MC_BDG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_MC_RT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_MC_RT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_URPF_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_URPF_DFLT_ROUTE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_URPF_CHK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_URPF_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_URPF_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_URPF_DFLT_ROUTE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_URPF_CHK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_URPF_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_MC_ACT_224_0_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_MC_ACT_224_0_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_MC_ACT_239_0_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_MC_ACT_0_Xf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_ACT_0_X_Xf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_ACT_DB8_X_Xf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_ND_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_MC_BDG_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_MC_L2BDG_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_MC_L2BDG_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_UNKN_MC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_UNKN_MC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_UNKN_MC_FLD_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FRAME_TYPE_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_TAG_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VID_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNVT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VID_RANGE_SET_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_VLAN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_VLAN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTAG_LU_MIS_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAG_LU_MIS_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EVC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_0F_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_0E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_0D_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_0C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_0B_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_0A_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_09_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_08_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_07_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_06_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_05_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_04_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_03_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_02_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_01_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_1F_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_1E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_1D_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_1C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_1B_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_1A_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_19_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_18_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_17_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_16_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_15_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_14_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_13_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_12_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_11_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_10_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_2F_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_2E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_2D_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_2C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_2B_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_2A_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_29_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_28_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_27_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_26_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_25_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_24_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_23_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_22_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_21_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_20_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIRROR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PTP_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LLDP_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EAPOL_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UDP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETH2_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADDR_MAX_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADDR_MAX_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADDR_MIN_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADDR_MIN_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETHER_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PPM_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_HASH_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_DOWN_AVOIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CONGST_AVOIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOCAL_FIRSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_HASH_CALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_STAND_ALONE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SEP_PORT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_FLOW_LABELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_PROTOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_L4DPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_L4SPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_DIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_SIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_DMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SHIFT_BITS_SPPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_LOCAL_TBL_REFRESHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NUM_TX_CANDIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SEP_DLF_BCAST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SEP_KWN_MC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_PORT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_TRK_PPMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IS_TRK_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MSTI_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESTRICT_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VB_ISO_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VID_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VID_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VB_ISO_EGR_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_STT_MV_REFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUTCAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_AUTO_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HASH_FULL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LINK_DOWN_P_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MC_BC_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ZERO_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ZERO_SA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_ALGO_BLK1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_ALGO_BLK0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_KEEP_AGE_OUT_ENTRY_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SUS_AGE_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FAST_AGE_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AGE_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AGE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SALRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NEW_SA_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORBID_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORTMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CONSTRT_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LRN_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BELOW_ZERO_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FVID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AGG_VID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENTRY_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AGG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPLACING_PORT_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRC_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NTFY_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HASHFULL_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LD_FLUSH_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TAGSTS_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SUS_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DASABLK_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STTC_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DYN_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FIFO_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIN_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAX_EVENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMAC_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMAC_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAGIFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REMOTE_BACK_PRESSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BASE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CUR_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NTFY_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NTFY_BUF_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOCAL_NTFY_BUF_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L2MSG_TMROUT_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L2MSG_TMROUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L2MSG_TMROUT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_L2MSG_CNT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_FRC_RX_READY_Ff,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_FRC_TX_READY_Ff,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CFG_RDMA_CNT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DIS_PORT_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INC_BYPASS_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INC_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_VLAN_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DHCP_VLAN_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_RIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_DHCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_ARPREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_BPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_RTKPKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ADMIT_IGMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TICKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BURSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HIGH_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HIGH_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ASSURED_DIS_ENCAP_FEED_BACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_CPU_TAG_FEED_BACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RATE_MODE_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P25_IN_SXG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P24_IN_SXG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STRIC_WFQ_JUMBOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPD_UP_REFILLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_AMP_FACTORf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRTCM_SMART_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNT_METER_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNTR_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GREEN_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_YELLOW_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RED_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TOTAL_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_JUMBO_FRAME_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRECISE_DROP_ALL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GUAR_PAGE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALLOW_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_ALLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYS_USED_PAGE_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REF_RXCNGSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HOL_PRVNT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_MC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_MC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNKN_UC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORCE_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_PAGE_CURCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_Q_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_Q_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_Q_PKT_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_Q_PKT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_PAGE_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_PKT_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_PKT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_Q_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSM_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_PEAKCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HSA_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_SYNC_REMOTE_P_FCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NRM_PORT_ETE_FC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CASCADE_PORTMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_TYPE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_IDX_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_COLOR_IDX_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_CNTR_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRAIN_OUT_THR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DRAIN_OUT_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNGST_TMR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNGST_SUST_TMR_LMT_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNGST_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNGST_SUST_TMR_LMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_PRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PROTO_VLAN_PRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_IP_VLAN_PRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSCP_INVLD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSCP_INVLD_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_PRI_REMAP_TBL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTPRI_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTPRI_CFI0_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTPRI_CFI1_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTPRI_DEI0_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTPRI_DEI1_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INTPRI_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PRI_SEL_TB_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_ROUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_PROTO_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_MAC_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_VACLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_WT_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_CFI0_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_CFI1_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_DEI0_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_DEI1_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU2CPU_TALKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAMPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPUC_RPFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INN_OUTER_CFI_EQL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_VLAN_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_UC_MC_BRIDGE_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_IP6_BRIDGE_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PTPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_USR_DEFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_BPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_LACPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_LLDPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_EAPOLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_XXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTER_MAC_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPUC_NON_IP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_IP6_HDR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTING_IP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ROUTING_DIP_DMAC_MISMATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_UC_MC_HOP_BY_HOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_UC_MC_ROUTING_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_IP_OPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_IP6_MC_ROUTING_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPUC_NULL_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPUC_PBR_NULL_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_UC_HOST_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_UC_NET_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_MC_BRIDGE_ENTRYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_MC_ROUTE_ENTRYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_IPMC_RPFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTING_EXCPT_NH_AGE_OUT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_IP6_ICMP_REDRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPUC_MTUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPMC_MTUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPUC_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPMC_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGMP_MLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DHCP_DHCP6f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_REQ_REPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NEIGHBOR_DISCOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP4_IP6_RESERVE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLDP_RLPPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_NTFYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NORMAL_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_CSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NEW_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PMV_FORBIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_STTC_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_DYN_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HASH_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INVALID_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STRICT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SCHED_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORCE_ALL_PORT_SECOND_EGR_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SFLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPRI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OPRI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSCP_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPRI_DFLT_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OPRI_DFLT_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEI_RMK_TAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSCP_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OPRI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPRI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_NON_B_REDIRECT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_NON_A_REDIRECT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_NON_B_RMK_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_NON_A_RMK_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_B_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_A_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_B_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLASS_A_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NONIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_URPF_BASE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NH_AGE_OUT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_HDR_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP6_HDR_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MC_HASH_ALG_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MC_HASH_ALG_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UC_HASH_ALG_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UC_HASH_ALG_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LU_FORCE_MODE_HASH_KEY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LU_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_TO_CPU_TARGETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TTL_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MTU_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HDR_OPT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_MC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_BC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ZERO_SIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BAD_DIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BAD_SIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HL_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HDR_ROUTE_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HBH_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HBH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_MISMATCH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRC_VLAN_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MTU_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_URPF_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_URPF_CHK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_URPF_DFLT_ROUTE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_URPF_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNTR_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ENTRY_CNTR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_ENTRY_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VAL_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VAL_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUNDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPMC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EXEC_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RESULT_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENTRY_IDX_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_MIB_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_GLB_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_PORT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_PORT_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_STACK_CNT_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_STACK_CNT_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_CNT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_CNT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNT_SET1_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNT_SET1_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNT_SET0_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNT_SET0_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT1DTPLEARNEDENTRYDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINUCASTPKTS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINUCASTPKTS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINMULTICASTPKTS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINMULTICASTPKTS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINBROADCASTPKTS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFINBROADCASTPKTS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTUCASTPKTS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTUCASTPKTS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTMULTICASTPKTS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTMULTICASTPKTS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTBROADCASTPKTS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTBROADCASTPKTS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IFOUTDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT1DTPPORTINDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3STATSSINGLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3STATSMULTIPLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3STATSDEFERREDTRANSMISSIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3STATSLATECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3STATSEXCESSIVECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3STATSSYMBOLERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3CONTROLINUNKNOWNOPCODESf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3INPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DOT3OUTPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETHERSTATSDROPEVENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSCRCALIGNERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSCRCALIGNERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSFRAGMENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSFRAGMENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSJABBERSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSJABBERSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSCOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSUNDERSIZEDROPPKTSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTS1519TOMAXOCTETSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTS1519TOMAXOCTETSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTSOVERMAXOCTETSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTSOVERMAXOCTETSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTSFLEXIBLEOCTETSSET1RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTSFLEXIBLEOCTETSSET1RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTSFLEXIBLEOCTETSCRCSET1RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTSFLEXIBLEOCTETSCRCSET1RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTSFLEXIBLEOCTETSSET0RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTSFLEXIBLEOCTETSSET0RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_ETHERSTATSPKTSFLEXIBLEOCTETSCRSET0CRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_ETHERSTATSPKTSFLEXIBLEOCTETSCRSET0CRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LENGTHFIELDERRORRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FALSECARRIERTIMESRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNDERSIZEOCTETSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FRAMINGERRORSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PARSERERRORSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXMACDISCARDSRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXMACIPGSHORTDROPRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RST_PORT_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGRQUEUEDROPPKTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MTP_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MTP_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRAFFIC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MTP_TX_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_RX_TX_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MTP_SELF_FLTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPM_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPM_28_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SAMPLE_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_QID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSPAN_TAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSPAN_TAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSPAN_TAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSPAN_TAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSPAN_TX_TAG_ADDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RSPAN_RX_TAG_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMPL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOOKUP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PHASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TMPLTE_FIELDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRP_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LOGIC_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BLK_TMPLTE2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BLK_TMPLTE1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MV_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MV_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MV_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLR_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLR_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RULE_INDICATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_INDICATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_MAC_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE0_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE1_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE2_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE3_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE4_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE5_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE6_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE7_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE8_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE9_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE0_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE1_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE2_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_V_TMPLTE4_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I_TMPLTE0_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I_TMPLTE1_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I_TMPLTE2_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_I_TMPLTE4_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_LIMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INVALID_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TCP_FRAG_OFF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYN_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYN_FINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_XMASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NULL_SCANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SYN_SPORT_LESS_1024f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TCP_HDR_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMURFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ICMPV6_PING_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ICMPV4_PING_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ICMP_FRAG_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_FRAG_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PODf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TCP_BLATf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UDP_BLATf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LANDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DA_EQUAL_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FRAG_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HDR_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NETMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV4_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TCP_HDR_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_SWAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MUX_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DYING_GASP_PKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DYING_GASP_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TBP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_OAM_DYING_GASP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DYGASP_POLARITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLDP_RLPP_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_MY_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_PORT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MY_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MASTER_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DEV_PORT_MAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NON_UNICAST_BLOCK_PMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CASCADE_SLAVE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CASCADE_MASTER_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ONE_HOP_REDIR_PMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_PORT_DEBUGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PPPOE_PARSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RFC1042_OUI_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LST_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FST_DSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LBHDR_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STHDR_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STHDR_0_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STHDR_4_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STHDR_8_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STHDR_12_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STHDR_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS11_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS10_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS9_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS8_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS7_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS6_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS5_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS4_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS3_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS2_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS1_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS0_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FS_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FLOW_LABELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UDP_PTPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_PTPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DSAP_SSAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_OPCODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TARGET_MAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TARGET_MAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SENDER_MAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SENDER_MAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TCP_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_TOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_PROTOCOLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TYPELENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SMAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV4_HDRLENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TCP_SN_EQ_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_HOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_ROUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_FRAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_DESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_AUTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV4_CHKSUM_OKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_EXT_LONGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV4_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTAG_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OTAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ITAG_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_PDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LLC_OTHERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PPPOE_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RFC_1042f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L4_HDR_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DMAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STH_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PROTO_STORM_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BYP_IGR_BWCTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ST_CTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ST_SA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DP_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SP_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_BYP_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_PRI_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CAPWAP_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EAV_CLASS_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EAV_CLASS_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ATK_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRAP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_BYP_NEW_SA_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_19_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_51_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_OVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FWD_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MSTIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_GROUP_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_METER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_CFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_AFT_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_IVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_EAPOL_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_BYP_VLAN_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_METADATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_BYP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_DIS_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_STP_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RX_PORT_IN_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UCAST_HKEYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCAST_HKEYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_PROFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCMIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_RSV_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RIP_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DHCP_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_RSNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_USR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_LLDP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_VLAN_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTE_ACT_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTE_ACT_61_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ND_PKT_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ST_RT_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_HASH_ADDR1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LUT_HASH_ADDR0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPCL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_20_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_ACT_51_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_SA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_SA_ENTRYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_DA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_DA_ENTRYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LIMIT_VLAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MAC_LIMIT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_DA_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HASH_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DA_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NEW_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STTC_PM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IS_MCAST_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IGR_VLAN_FLTR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NEXTHOP_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NEXTHOP_AGEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTAG_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_SPAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORBID_PM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DYN_PM_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SRC_PORT_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_FULL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UC_TO_STKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT_MVf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTE_ACT_41_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_HIT_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_UCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HOL_PRVNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV6_MLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPV4_IGMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RFC1042f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ARP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RTK_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RLDP_RLPP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RMA_BPDU_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DA_BCASTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DA_MCASTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SA_ZEROf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_SA_BLOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_VLAN_SP_FLTR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_HASH_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNKN_TRK_HASH_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_UNKN_TRK_HASH_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HASH_UCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_HASH_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_CPU_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_REDIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_IACL_ITAG_STATUS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_IACL_OTAG_STATUS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_IACL_IPRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_IACL_OPRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_ITPID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_OTPID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_ITAG_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_OTAG_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_ICFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_OCFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EGR_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_HASH_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_OVID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_N_1_OVID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_ITAG_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_OTAG_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_IPRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_OPRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_ITPID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_OTPID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_MIR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_PRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_RMK_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_RMK_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_IVID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_N_1_IVID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_TRAP_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_MIR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCRT_RPF_ASSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MCRT_OIL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORIG_FWD_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_DA_BLOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_METER_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STORM_LKMISf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_MC_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_REDIR_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_DROP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_REDIR_ZEROf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_TRAP_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_DROP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_REDIR_ZEROf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_TRAP_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_TRAP_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_COPYf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IVC_BYP_IGR_VLAN_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TRK_HASHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ST_DA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_META_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACL_LB_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LB_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SP_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_FORCE_PMOVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_RSVD_INVERTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DPM_27_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DPM_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DPM_55_28f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_ACL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_CNGST_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_BP_FLTR_EGRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_BP_STP_EGRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_BP_VLAN_EGRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_TAG_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_L3_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_ORI_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_AS_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_FWD_VID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_SP_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CRX_DATA_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CRX_DATA_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ST_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_UC_KNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CRX_DATA_79_64f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IP_ROUTE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_TTL_DECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_DA_REPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_SA_REPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_SA_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RT_EVENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPMC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPMC_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPLICATE_TTL_DECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPLICATE_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPMC_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPLICATE_NONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPLICATE_FST_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_REPLICATE_LST_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PPPOE_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_SPA_TRK_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_SPA_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_SPAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_SUNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_ITAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ETAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ORG_OTAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TTL_DECf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_HASH_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ROUTED_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_FMT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_SA_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L3_DA_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_OAM_SWAP_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RVID_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_ITAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_ITAG_STATUS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EACL_OTAG_STATUS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_ITAG_STATUS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_OTAG_STATUS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_ITAG_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_OTAG_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_OTPID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_ITPID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ALE_OTAG_CONTENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IS_EAV_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IS_EAV_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_DSCP_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_INT_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_OPRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IACL_IPRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CPU_TAGSTS_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_ORG_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_ORG_TRK_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_FWD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_L2_MAC_CSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DPM_0_27f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_DPM_28_55f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_SPN_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CTX_SP_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_NOR_CPU_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQID_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_MIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR2_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR1_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR0_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR_NORMAL_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DY_GASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPCf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_CPU_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIRING_PORT_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIRING_PORT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIRING_PORT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIRING_PORT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIR3_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SFLOW_SMPL_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SFLOW_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SFLOW_NOR_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STK_NOR_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DPM_LBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQID_NORMAL_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQID_NORMAL_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQID_STK_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXQID_NORMAL_71_64f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DROP_RSNf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CNT_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_CONf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRP_TX_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_DBG_ACC_PKB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GRP_TX_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_DONE_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_IPG_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_CNT_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_CNT_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_CNT_DBG_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_CNT_DBG_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BAD_CRC_EN_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_DA_MOD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_SA_MOD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_LEN_TYPE_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_CONTENT_OFFSET_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_CONTENT_MOD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_PKT_CNT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_LEN_RNG_START_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_LEN_RNG_END_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_DA_REPEAT_CNT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_SA_REPEAT_CNT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_REPEAT_CONTENT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_BAD_CRC_EN_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_DA_MOD_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_SA_MOD_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_LEN_TYPE_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_CONTENT_OFFSET_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_CONTENT_MOD_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_PKT_CNT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_LEN_RNG_START_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_LEN_RNG_END_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_DA_REPEAT_CNT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_SA_REPEAT_CNT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_STREAM_REPEAT_CONTENT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PB_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ACCESS_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PB_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PB_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PB_CELL_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PB_BYTE_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT0_S1_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PORT0_S0_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_INDEX_2N_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PKT_INDEX_2Nf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXPORT_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXPORT_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RST_SYS_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RST_P_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LD_TX_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_LD_TX_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TX_DSC_CHK_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_OVERFLOW_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_OVERFLOW_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_RDEMPTY_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_RXFIFO_RDEMPTY_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_OVERFLOW_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_OVERFLOW_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_RDEMPTY_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXFIFO_RDEMPTY_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PINGPONG_PLUS_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PINGPONG_PLUS_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TOKEN_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TOKEN_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SW_Q_RST_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_TOKEN_ERR_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_RXPORT_DSC_ERR_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_SYS_DSC_ERR_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_PINGPONG_ERR_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_LD_TX_DSC_ERR_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EN_FIFO_ERR_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_TOKEN_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_RXPORT_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_SYS_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_PINGPONG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_LD_TX_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_FIFO_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_TOKEN_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_RX_P_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_SYS_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_PINGPONG_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_LD_TX_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_GLB_FIFO_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_TXERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_EJTAG_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_KEY_SRC_SEL_EFUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_EFUSE_KEY_BLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MB_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_SPI_MB_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIB_MB_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_MIB_MB_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_TCAM_MDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_TCAM_RDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_UT_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_UT_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_MAC_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_MAC_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_ACT_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_ACT_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_RMKOPRI_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_RMKOPRI_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_RMKIPRI_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_RMKIPRI_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_SMAC_RMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_ENCAP_SMAC_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_PTR_RMEBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_PTR_RMBf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_PTR_RMEAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_PTR_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEA5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMA5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEA4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMA4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEA3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMA3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEB5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMB5f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEB4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMB4f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEB3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMB3f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEB2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMB2f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEB1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMB1f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMEB0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_PAR_RMB0f,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P29_PAR_DP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P29_ING_DP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P30_PAR_DP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9300)
+    LONGAN_P30_ING_DP_CNTf,
+#endif
+    LONGAN_REGFIELD_LIST_END,
+} rtk_longan_regField_list_t;
+
+extern rtk_reg_t rtk_longan_reg_list[];
+
+
+#endif    /* __RTK_LONGAN_REG_STRUCT_H__ */

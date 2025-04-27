@@ -1,0 +1,1 @@
+../otto/config.mk

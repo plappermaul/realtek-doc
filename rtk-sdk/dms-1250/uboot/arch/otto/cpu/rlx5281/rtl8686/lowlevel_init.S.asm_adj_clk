@@ -1,0 +1,394 @@
+#include <config.h>
+#include <asm/asm.h>
+#include <asm/regdef.h>
+#include <asm/mipsregs.h>
+#include <asm/arch/bspchip.h>
+#include "macro.s"
+	.set push
+	.set noreorder
+	.set nomips16
+	
+
+	
+LEAF(lowlevel_init)
+        move    k1, ra
+
+#ifdef CONFIG_SOFTWARE_FREQUENCY_SETTING
+	la 	t9, sys_adj_mem_clk
+	nop
+	jalr	t9
+	nop
+
+	/* Disable SRAM mapping */
+	li	t0, 0xb8004000
+	li	t1, 0xb8001300
+	sw	zero, 0(t0)
+	sw	zero, 0x10(t0)
+	sw	zero, 0x20(t0)
+	sw	zero, 0x30(t0)
+	sw	zero, 0(t1)
+	sw	zero, 0x10(t1)
+	sw	zero, 0x20(t1)
+	sw	zero, 0x30(t1)
+#endif
+        move    ra, k1
+
+        /* Enable flash mapping 0xbd000000 */
+        li      t0, 0xB8001000
+        lw      t1, 0(t0)
+        li      t2, (~(1<<18))
+        and     t1, t1, t2
+        sw      t1, 0(t0)
+        nop
+
+        /* Speed Up SPI clock */
+        #li      t0, 0xB8001200
+	#li	t1, 0x5fc00000
+        #sw      t1, 0(t0)
+        #nop
+
+
+        /* Configure Zone 0 base address */
+        li      t0, 0xB8001700
+        #li     t1, 0x2000000
+        #li     t2, 0x3ffffff
+        #sw     t1, 0(t0)
+        #sw     t2, 4(t0)
+        sw      zero, 0(t0)
+        nop
+
+	/* Configure sarm mapping to tempary stack */
+        /* Enable CP3 */
+        mfc0 t1, $12
+        nop
+        la t2, 0x80000000
+        or t1, t2
+        mtc0 t1, $12
+        nop
+        nop
+
+        /* Disable DMEM 0 */
+        mtc0 zero, $20
+        la t1, 0x00000800 # bit 11 of COP0 reg 20, sel = 0
+        mtc0 t1, $20
+        nop
+        nop
+
+        li  a0, 0x10003fff
+        li  a1, 0x10000000
+
+        /* Load DMEM0 range */
+        move t1, a0
+        move t2, a1
+        mtc3 t1, $5 # IW top
+        mtc3 t2, $4 # IW base
+        nop
+        nop
+
+        /* Enable DMEM0 */
+        mtc0 zero, $20
+        la t1, 0x00000400 # bit 10 of COP0 reg 20
+        mtc0 t1, $20
+        nop
+        nop
+
+	jr		ra
+	nop	
+END(lowlevel_init)
+	
+	
+	.set pop
+
+
+
+        .text
+        .set noreorder
+        .globl  _sys_adj_mem_clk
+	.ent _sys_adj_mem_clk
+_sys_adj_mem_clk:
+	# Set SDPLL DIV to 400MHz
+	# 25MHz OC:(10 + x + 2) x 25
+	# 40MHz OC:(13 + x + 2) x 40
+
+	#CLKSEL == 40MHz
+#ifdef  CONFIG_DSPCLK_500MHZ
+	li	t7, 0x0000
+#endif
+#ifdef  CONFIG_DSPCLK_550MHZ
+	li      t7, 0x0200 #540MHz actually
+#endif
+
+#ifdef  CONFIG_CPUCLK_500MHZ
+	li	t9, 0x000000
+#endif
+#ifdef  CONFIG_CPUCLK_600MHZ
+	li      t9, 0x050000
+#endif
+#ifdef  CONFIG_CPUCLK_650MHZ
+	li      t9, 0x080000
+#endif
+#ifdef  CONFIG_CPUCLK_675MHZ
+	li      t9, 0x090000
+#endif
+#ifdef  CONFIG_CPUCLK_700MHZ
+	li      t9, 0x0a0000
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_100MHZ
+	li	t3, 0x5  # (10 + 5 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_200MHZ
+	li	t3, 0x5  # (10 + 5 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_225MHZ
+	li	t3, 0x8  # (10 + 8 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_250MHZ
+	li	t3, 0xa  # (10 + 10 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_300MHZ
+	li	t3, 0x0  # (10 + 0 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_320MHZ
+	li	t3, 0x1  # (10 + 1 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_350MHZ
+	li	t3, 0x3  # (10 + 3 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_375MHZ
+	li	t3, 0x4  # (10 + 4 + 2) x 20
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_400MHZ
+	li	t3, 0x5  # (10 + 5 + 2) x 20
+#endif
+	li	t0, SYSREG_PIN_STATUS_REG
+	lw	t2, 0(t0)
+	li	t1, SYSREG_PIN_STATUS_CKSEL_MASK
+	and	t2, t2, t1
+	srl	t2, t2, SYSREG_PIN_STATUS_CKSEL_FD_S
+	li	t4, SYSREG_PIN_STATUS_CKSEL_40MHZ
+	beq	t2, t4, 1f
+	nop
+
+	#CLKSEL == 25MHz
+#ifdef  CONFIG_DSPCLK_500MHZ
+	li	t7, 0x0000 
+#endif
+#ifdef  CONFIG_DSPCLK_550MHZ
+	li      t7, 0x0200
+#endif
+#ifdef  CONFIG_CPUCLK_500MHZ
+	li	t9, 0x000000 
+#endif
+#ifdef  CONFIG_CPUCLK_600MHZ
+	li      t9, 0x040000
+#endif
+#ifdef  CONFIG_CPUCLK_650MHZ
+	li      t9, 0x060000
+#endif
+#ifdef  CONFIG_CPUCLK_675MHZ
+	li      t9, 0x070000
+#endif
+#ifdef  CONFIG_CPUCLK_700MHZ
+	li      t9, 0x080000
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_100MHZ
+	li	t3, 0x4  # (10 + 4 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_200MHZ
+	li	t3, 0x4  # (10 + 4 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_225MHZ
+	li	t3, 0x6  # (10 + 6 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_250MHZ
+	li	t3, 0x8  # (10 + 8 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_300MHZ
+	li	t3, 0x0  # (10 + 0 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_320MHZ
+	li	t3, 0x1  # (10 + 1 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_350MHZ
+	li	t3, 0x2  # (10 + 2 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_375MHZ
+	li	t3, 0x3  # (10 + 3 + 2) x 25
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_400MHZ
+	li	t3, 0x4  # (10 + 4 + 2) x 25
+#endif
+
+1:
+	li	t0, SYSREG_SYSCLK_CONTROL_REG
+	li	t1, ~SYSREG_SYSCLK_CONTROL_SDPLL_MASK
+	lw	t2, 0(t0)
+	and	t2, t1, t2
+	li	t1, ~SYSREG_SYSCLK_CONTROL_OCP0PLL_MASK
+	and	t2, t2, t1
+	li	t1, ~SYSREG_SYSCLK_CONTROL_OCP1PLL_MASK
+	and	t2, t2, t1
+
+	or	t2, t2, t3 #MEM clk
+	or	t2, t2, t9 #CPU clk
+	or	t2, t2, t7 #DSP clk
+
+
+	# We skip the PLL adjustment
+        # when it's areadly the target freq.
+	lw	t5, 0(t0)
+	nop
+	bne	t2, t5, 1f
+	nop
+	jr	ra
+	nop
+
+1:
+	#OK , we decide to adjust PLL setting
+	# (1) CPU CLOCK select LX PLL clock
+	li 	t6, SYSREG_SYSTEM_STATUS_REG
+	lw	t7, 0(t6)
+	li	t8, ~SYSREG_SYSTEM_STATUS_CF_CKSE_OCP0_MASK
+	and	t7, t7, t8
+	sw	t7, 0(t6)
+
+	# (2) Delay a little bit after switching OCP0 clock to LX clock.
+	li	t3, 4000
+1:
+	add	t3, t3, -1
+	bne	zero, t3, 1b
+	nop
+
+	
+	# (3) Invoke the PLL change.
+	sw	t2, 0(t0)
+
+
+
+	# (4) Set MEMCLK Phase 90 to 90
+	# 0:45, 1:62.5, 2:90, 3:112.5, 4~7:135
+	li	t0, SYSREG_MCKG_PHS_SEL_REG
+#if defined(CONFIG_STATIC_PARA_MEMCLK_200MHZ)||defined(CONFIG_STATIC_PARA_MEMCLK_225MHZ)||defined(CONFIG_STATIC_PARA_MEMCLK_250MHZ) 
+	li	t1, 0
+#else
+	li	t1, 0x2
+#endif
+	sw	t1, 0(t0)
+	
+
+	# (5) Set MEMCLK Clock divison
+	# 0: 1, 1: div 2, 2: div 4, 3:div 8
+	li	t0, SYSREG_MCKG_FREQ_DIV_REG
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_100MHZ
+	li	t1, 2
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_200MHZ
+	li	t1, 1
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_225MHZ
+	li	t1, 1
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_250MHZ
+	li	t1, 1
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_300MHZ
+	li	t1, 0
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_320MHZ
+	li	t1, 0
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_350MHZ
+	li	t1, 0
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_375MHZ
+	li	t1, 0
+#endif
+#ifdef  CONFIG_STATIC_PARA_MEMCLK_400MHZ
+	li	t1, 0
+#endif
+	sw	t1, 0(t0)
+	
+
+	# (6) Delay 4ms for stable clock.
+	li	t0, 4000
+1:
+	add	t0, t0, -1
+	bne	zero, t0, 1b
+	nop
+	
+
+	# (7) CPU CLOCK select OCP0 PLL clock
+	li 	t0, SYSREG_SYSTEM_STATUS_REG
+	lw	t1, 0(t0)
+	li	t2, SYSREG_SYSTEM_STATUS_CF_CKSE_OCP0_MASK
+	or	t1, t1, t2
+	sw	t1, 0(t0)
+
+	# Delay 4ms 
+	li	t0, 4000
+1:
+	add	t0, t0, -1
+	bne	zero, t0, 1b
+	nop
+
+	#reinit CPU again
+	li	t9, 0xbfc00000
+	jr	t9
+	nop
+
+	jr	ra
+	nop
+_sys_adj_mem_clk_end:
+	.end _sys_adj_mem_clk
+
+        .text
+        .set noreorder
+        .globl  sys_adj_mem_clk
+	.ent sys_adj_mem_clk
+sys_adj_mem_clk:
+        /* Runtime deterministic PLL intialization.
+         * Enter PLL initialization if it isn't in DRAM.
+         * Determine whether we run in DRAM.
+         */
+         /* If we run in DRAM, skip DRAM initialization.*/
+        la      t0, _sys_adj_mem_clk
+        li      t1, 0xF0000000
+        li      t2, 0x80000000
+        li      t3, 0xA0000000
+        and     t1, t1, t0
+        beq     t1, t2, skip_pll_init
+        nop
+        beq     t1, t3, skip_pll_init
+        nop
+
+	/* Configure SRAM mapping */
+	li	t0, 0xB8004000
+	li	t1, 0xB8001300
+	li	t2, 0x1
+	li	t3, 0x8
+	sw	t2, 0(t0)	
+	sw	t2, 0(t1)	
+	sw	t3, 4(t0)	
+	sw	t3, 4(t1)	
+
+	/* copy adj codes */
+	li	t0, 0xa0000000
+	la	t1, _sys_adj_mem_clk
+	la	t2, _sys_adj_mem_clk_end
+1:
+	lw	t3, 0(t1)
+	add	t1, t1, 4
+	sw	t3, 0(t0)
+	add	t0, t0, 4
+	bne	t1, t2, 1b
+	nop
+
+	li	t9, 0xa0000000
+	jr	t9
+	nop
+skip_pll_init:
+	jr	ra
+	nop
+
+	.end sys_adj_mem_clk
+

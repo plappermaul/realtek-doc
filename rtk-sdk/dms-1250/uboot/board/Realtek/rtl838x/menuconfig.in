@@ -1,0 +1,7 @@
+mainmenu_option next_comment
+comment '838x Diagnosis Tools'
+
+bool 'DRAM Test' CONFIG_CMD_DRAM_TEST
+bool 'SPI Flash Test' CONFIG_CMD_FLASH_TEST
+bool 'EEE function' CONFIG_EEE
+endmenu

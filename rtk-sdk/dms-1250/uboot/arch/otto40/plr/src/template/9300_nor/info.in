@@ -1,0 +1,20 @@
+platform_name      := 9300
+
+#OTTO_SRAM_START    := 0x9f000000
+OTTO_LMA_BASE      := 0x9fc00000
+OTTO_ENTRY         := $(OTTO_LMA_BASE)
+
+#OTTO_SRAM_SIZE     := 0x8000
+#OTTO_SRAM_MASK     := 0x7fff
+#CACHELINE_SIZE     := 0x20
+#CACHE_SIZE         := 0x8000
+
+OTTO_ENTRY_SYMB    := plr_S_entry
+OTTO_PLR_STACK_DEF := OTTO_SRAM_START + OTTO_SRAM_SIZE - 8
+TARGET_OUT         := release/plr.out
+
+EXPORT_SYMB_PROTO_PRINTF := 1
+EXPORT_SYMB_CACHE_OP     := 1
+
+UART_BASE_ADDR := 0xb8002000
+OTTO_DRAM_GEN  := 2

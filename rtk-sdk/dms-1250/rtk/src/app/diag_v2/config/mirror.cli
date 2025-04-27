@@ -1,0 +1,310 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for mirror.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) port mirror commands.
+//           2) RSPAN
+//           3) sFlow
+//
+
+#ifdef CMD_MIRROR_SET_MIRROR_ID_INDEX_MIRRORING_PORT_INGRESS_MIRRORED_INGRESS_PORTS_NONE_EGRESS_MIRRORED_EGRESS_PORTS_NONE_OPTION_90_80_IGR_AND_EGR_MIRRORED_ONLY_ORIGINAL_PKT
+//mirror configuration
+//set configuration
+//mirror ID configuration
+//mirror entry index
+//mirroring
+//mirroring port
+//ingress mirrored
+//ingress mirrored port list
+//none ingress mirrored port
+//egress mirrored
+//egress mirrored port list
+//none egress mirrored port
+//8390 and 8380 options
+//mirror ingress and egress match packet
+//mirroring port would TX mirrored packets only
+//mirror original packet type
+mirror set mirror-id <UINT:index> mirroring <UINT:port> ingress-mirrored ( <PORT_LIST:ingress_ports> | none ) egress-mirrored ( <PORT_LIST:egress_ports> | none ) option-90-80 { igr-and-egr } { mirrored-only } { original-pkt }
+#endif
+
+#ifdef CMD_MIRROR_SET_MIRROR_ID_INDEX_TYPE_PORT_BASED_RSPAN_BASED_FLOW_BASED_MIRRORING_DEV_PORT_INGRESS_MIRRORED_INGRESS_PORTS_NONE_EGRESS_MIRRORED_EGRESS_PORTS_NONE_OPTION_IGR_AND_EGR_MIRRORED_ONLY_ORIGINAL_PKT_DUPLICATE_FILTER_SELF_FILTER_MTP_VLAN
+//mirror configuration
+//set configuration
+//mirror ID configuration
+//mirror entry index
+//mirror session type
+//port based mirror
+//rspan based mirror
+//flow based mirror
+//mirroring
+//mirroring devID
+//mirroring port
+//ingress mirrored
+//ingress mirrored port list
+//none ingress mirrored port
+//egress mirrored
+//egress mirrored port list
+//none egress mirrored port
+//options
+//mirror ingress and egress match packet
+//mirroring port would TX mirrored packets only
+//mirror original packet type
+//if a packet is normal forwarded and mirrored to MTP, only normal forwarded packet is sent
+//a packet received from MTP would not be ingress or egress mirrored
+//mirrored packet would follow MTP configuration
+mirror set mirror-id <UINT:index> type ( port-based | rspan-based | flow-based ) mirroring <UINT:devID> <UINT:port> ingress-mirrored ( <PORT_LIST:ingress_ports> | none ) egress-mirrored ( <PORT_LIST:egress_ports> | none ) option { igr-and-egr } { mirrored-only } { original-pkt } { duplicate-filter } { self-filter } { mtp-vlan }
+#endif
+
+#ifdef CMD_MIRROR_SET_MIRROR_ID_INDEX_TYPE_PORT_BASED_RSPAN_BASED_FLOW_BASED_MIRRORING_TRUNK_GROUP_TRUNK_ID_INGRESS_MIRRORED_INGRESS_PORTS_NONE_EGRESS_MIRRORED_EGRESS_PORTS_NONE_OPTION_IGR_AND_EGR_MIRRORED_ONLY_ORIGINAL_PKT_DUPLICATE_FILTER_SELF_FILTER_MTP_VLAN
+//mirror configuration
+//set configuration
+//mirror ID configuration
+//mirror entry index
+//mirror session type
+//port based mirror
+//rspan based mirror
+//flow based mirror
+//mirroring
+//mirroring trunk group
+//mirroring trunk group id
+//ingress mirrored
+//ingress mirrored port list
+//none ingress mirrored port
+//egress mirrored
+//egress mirrored port list
+//none egress mirrored port
+//options
+//mirror ingress and egress match packet
+//mirroring port would TX mirrored packets only
+//mirror original packet type
+//if a packet is normal forwarded and mirrored to MTP, only normal forwarded packet is sent
+//a packet received from MTP would not be ingress or egress mirrored
+//mirrored packet would follow MTP configuration
+mirror set mirror-id <UINT:index> type ( port-based | rspan-based | flow-based ) mirroring trunk-group <UINT:trunk_id> ingress-mirrored ( <PORT_LIST:ingress_ports> | none ) egress-mirrored ( <PORT_LIST:egress_ports> | none ) option { igr-and-egr } { mirrored-only } { original-pkt } { duplicate-filter } { self-filter } { mtp-vlan }
+#endif
+
+#ifdef CMD_MIRROR_SET_MIRROR_ID_INDEX_STATE_DISABLE_ENABLE
+//mirror configuration
+//set configuration
+//mirror ID configuration
+//index
+//state configuration
+//disable function
+//enable function
+mirror set mirror-id <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_MIRROR_GET_MIRROR_ID_INDEX_STATE
+//mirror configuration
+//get configuration
+//mirror ID configuration
+//index
+//state configuration
+mirror get mirror-id <UINT:index> state
+#endif
+
+#ifdef CMD_MIRROR_GET_MIRROR_ID_INDEX
+//mirror configuration
+//get configuration
+//mirror ID configuration
+//index
+mirror get mirror-id <UINT:index>
+#endif
+
+#ifdef CMD_MIRROR_SET_MIRROR_ID_INDEX_MIRROR_MODE_MIRROR_QID_MIRROR_QID_EN_CROSS_VLAN_FLOW_BASED_ONLY_DUPLICATE_FILTER_SELF_FILTER_FLOW_BASED_PMSK_IGNORE
+//mirror configuration
+//set configuration
+//mirror ID configurtion
+//mirror entry index
+//mirror mode value <0,1>
+//mirror qid value <0-7>
+//mirror qid enable
+//mirror cross VLAN packet
+//mirror flow-based packet only
+//duplicate filter enable
+//self filter enable
+//flow based mirror portmask ignore setting
+mirror set mirror-id <UINT:index> <UINT:mirror_mode> <UINT:mirror_qid> { mirror-qid-en } { cross-vlan } { flow-based-only } { duplicate-filter } { self-filter } { flow-based-pmsk-ignore }
+#endif
+
+#ifdef CMD_MIRROR_SET_QUEUE_ID_QID_STATE_DISABLE_ENABLE
+//mirror configuration
+//set configuration
+//queue ID configuration
+//queue id <0-7>
+//state configuration
+//disable function
+//enable function
+mirror set queue-id <UINT:qid> state ( disable | enable )
+#endif
+
+#ifdef CMD_MIRROR_GET_QUEUE_ID
+//mirror configuration
+//get configuration
+//queue ID configuration
+mirror get queue-id
+#endif
+
+#ifdef CMD_RSPAN_GET_EGRESS_MODE_MIRROR_ID_INDEX
+//RSPAN configuration
+//get configuration
+//egress mode
+//mirror ID configuration
+//index
+rspan get egress-mode mirror-id <UINT:index>
+#endif
+
+#ifdef CMD_RSPAN_SET_EGRESS_MODE_MIRROR_ID_INDEX_ADD_TAG_NO_MODIFY_REMOVE_TAG
+//RSPAN configuration
+//set configuration
+//egress mode
+//mirror ID configuration
+//index
+//add tag
+//no modify tag
+//remove tag
+rspan set egress-mode mirror-id <UINT:index> ( add-tag | no-modify | remove-tag )
+#endif
+
+#ifdef CMD_RSPAN_GET_INGRESS_MODE_MIRROR_ID_INDEX
+//RSPAN configuration
+//get configuration
+//ingress mode
+//mirror entry index
+//index
+rspan get ingress-mode mirror-id <UINT:index>
+#endif
+
+#ifdef CMD_RSPAN_SET_INGRESS_MODE_MIRROR_ID_INDEX_HANDLE_TAG_IGNORE_TAG
+//RSPAN configuration
+//set configuration
+//ingress mode
+//mirror entry index
+//index
+//handle tag
+//ignore tag
+rspan set ingress-mode mirror-id <UINT:index> ( handle-tag | ignore-tag )
+#endif
+
+#ifdef CMD_RSPAN_GET_TAG_MIRROR_ID_INDEX
+//RSPAN configuration
+//get configuration
+//RSPAN tag
+//mirror entry index
+//index
+rspan get tag mirror-id <UINT:index>
+#endif
+
+#ifdef CMD_RSPAN_SET_TAG_MIRROR_ID_INDEX_TPID_IDX_VID_PRI_CFI
+//RSPAN configuration
+//set configuration
+//RSPAN tag
+//mirror entry index
+//index
+//TPID index to point to OTPID array
+//vid value
+//pri value
+//cfi value
+rspan set tag mirror-id <UINT:index>  <UINT:tpid_idx> <UINT:vid> <UINT:pri> <UINT:cfi>
+#endif
+
+#ifdef CMD_RSPAN_SET_TAG_MIRROR_ID_INDEX_TPID_VID_PRI_CFI
+//RSPAN configuration
+//set configuration
+//RSPAN tag
+//mirror entry index
+//index
+//TPID value
+//vid value
+//pri value
+//cfi value
+rspan set tag mirror-id <UINT:index> <UINT:tpid> <UINT:vid> <UINT:pri> <UINT:cfi>
+#endif
+
+#ifdef CMD_SFLOW_GET_MIRROR_GROUP_INDEX
+//sFlow configuration
+//get configuration
+//mirror-group configuration
+//mirror-group index
+sflow get mirror-group <UINT:index>
+#endif
+
+#ifdef CMD_SFLOW_SET_MIRROR_GROUP_INDEX_SAMPLE_RATE
+//sFlow configuration
+//set configuration
+//mirror-group configuration
+//mirror-group index
+//sample
+//rate value
+sflow set mirror-group <UINT:index> sample <UINT:rate>
+#endif
+
+#ifdef CMD_SFLOW_GET_SAMPLE_CONTROL
+//sFlow configuration
+//get configuration
+//sampling configuration
+//sampling control
+sflow get sample control
+#endif
+
+#ifdef CMD_SFLOW_SET_SAMPLE_CONTROL_INGRESS_EGRESS
+//sFlow configuration
+//get configuration
+//sampling configuration
+//sampling control
+//sampling control ingress
+//sampling control egress
+sflow set sample control ( ingress | egress )
+#endif
+
+#ifdef CMD_SFLOW_GET_EGRESS_INGRESS_PORT_ALL
+//sFlow configuration
+//get configuration
+//egress configuration
+//ingress configuration
+//port list
+//all ports
+sflow get ( egress | ingress ) ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_SFLOW_SET_EGRESS_INGRESS_PORT_ALL_SAMPLE_RATE
+//sFlow configuration
+//set configuration
+//egress configuration
+//ingress configuration
+//port list
+//all ports
+//sample
+//rate value, <0~65535>
+sflow set ( egress | ingress ) ( <PORT_LIST:port> | all ) sample <UINT:rate>
+#endif
+
+#ifdef CMD_SFLOW_GET_SAMPLE_TARGET
+//sflow configuration
+//get configuration
+//sample target configuration
+sflow get sample-target
+#endif
+
+#ifdef CMD_SFLOW_SET_SAMPLE_TARGET_LOCAL_MASTER
+//sflow configuration
+//set configuration
+//sample target configuration
+//local CPU configuration
+//master CPU configuration
+sflow set sample-target ( local | master )
+#endif
+

@@ -1,0 +1,28 @@
+#
+# Copyright (C) 2019 Realtek Semiconductor Corp.
+#
+# Makefile for SDK - arch-B lib
+#
+
+
+SDK_TOP_DIR := ../../..
+
+#
+# include makefile
+#
+
+include $(SDK_TOP_DIR)/sdk/build/Makefile.rtcore
+include $(SDK_TOP_DIR)/sdk/build/Makefile.rtk
+include $(SDK_TOP_DIR)/sdk/build/Makefile.phy
+include $(SDK_TOP_DIR)/sdk/build/Makefile.diag
+include $(SDK_TOP_DIR)/sdk/build/Makefile.rtnic
+
+
+#
+# object
+#
+RTK_ALL_OBJ     := $(addprefix sdk/src/,$(RTK_ALL_OBJ))
+PHY_OBJ         := $(addprefix sdk/src/,$(PHY_OBJ))
+
+arch_B_lib  := $(RTCORE_OBJ) $(RTK_ALL_OBJ) $(PHY_OBJ) $(NIC_ALL_OBJ) $(DIAG_OBJ)
+

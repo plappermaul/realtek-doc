@@ -1,0 +1,924 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for rate.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) egress bandwidth commands.
+//           2) ingress bandwidth commands.
+//           3) storm control commands.
+//
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_CPU_COUNTING_MODE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//counting-mode of CPU port
+bandwidth get egress cpu-counting-mode
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID
+//bandwidth configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+bandwidth get egress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id>
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_PORT_PORTS_ALL
+//bandwidth configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+bandwidth get egress port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_IFG
+//bandwidth configuration
+//get configuration
+//egress configuration
+//interframe gap information
+bandwidth get egress ifg
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_IFG_EXCLUDE_INCLUDE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//interframe gap
+//exclude
+//include
+bandwidth set egress ifg ( exclude | include )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_BURST_SIZE
+//bandwidth configuration
+//get configuration
+//egress configuration
+//burst size of all port configuration
+bandwidth get egress burst-size
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//burst size of all port configuration
+//burst size
+bandwidth set egress burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_CPU_COUNTING_MODE_BYTE_PACKET
+//bandwidth configuration
+//set configuration
+//egress configuration
+//counting-mode of CPU port
+//byte mode
+//packet mode
+bandwidth set egress cpu-counting-mode ( byte | packet )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+bandwidth set egress port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_PORT_PORTS_ALL_RATE_RATE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//rate
+//rate vlaue
+bandwidth set egress port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_PORT_PORTS_ALL_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//burst size configuration
+//burst size
+bandwidth set egress port ( <PORT_LIST:ports> | all ) burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state configuration
+//disable function
+//enable function
+bandwidth set egress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID_RATE_RATE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//rate
+//rate vlaue
+bandwidth set egress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> rate <UINT:rate>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//burst size configuration
+//burst size
+bandwidth set egress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_FIXED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID_STATE
+//bandwidth configuration
+//get configuration
+//egress configuration
+//fixed bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state configuration
+bandwidth get egress fixed-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> state
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_FIXED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//fixed bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state configuration
+//disable function
+//enable function
+bandwidth set egress fixed-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_ASSURED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID
+//bandwidth configuration
+//get configuration
+//egress configuration
+//assured bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+bandwidth get egress assured-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_ASSURED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//assured bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state configuration
+//disable function
+//enable function
+bandwidth set egress assured-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_ASSURED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID_RATE_RATE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//assured bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//rate
+//rate vlaue
+bandwidth set egress assured-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> rate <UINT:rate>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_ASSURED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//egress configuration
+//assured bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//burst size configuration
+//burst size
+bandwidth set egress assured-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_ASSURED_BANDWIDTH_PORT_PORTS_ALL_QUEUE_QUEUE_ID_MODE_SHARE_BANDWIDTH_FIX_BANDWIDTH
+//bandwidth configuration
+//set configuration
+//egress configuration
+//assured bandwidth configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//remained bandwidth mode configuration
+//shared bandwidth to other queues
+//fixed bandwidth
+bandwidth set egress assured-bandwidth port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> mode ( shared-bandwidth | fixed-bandwidth )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_FLOW_CONTROL_PORT_PORTS_ALL_STATE
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//flow-control
+//port configuration
+//port list
+//all ports
+//state configuration
+bandwidth get ingress flow-control port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_FLOW_CONTROL_LOW_THRESHOLD
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//flow-control
+//low threshold
+bandwidth get ingress flow-control low-threshold
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_FLOW_CONTROL_HIGH_THRESHOLD_PORT_PORTS_ALL
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//flow-control
+//high threshold
+//port configuration
+//port list
+//all ports
+bandwidth get ingress flow-control high-threshold port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_FLOW_CONTROL_QUEUE_QUEUE_ID_DROP_THRESHOLD_HIGH_LOW
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//flow-control
+//queue configuration
+//queue id
+//drop threshold
+//high threshold
+//low threshold
+bandwidth get ingress flow-control queue <UINT:queue_id> drop-threshold ( high | low )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_PORT_PORTS_ALL
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+bandwidth get ingress port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_IFG
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//interframe gap information
+bandwidth get ingress ifg
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_BYPASS_PACKET_ARP_REQUEST_RMA_BPDU_RTK_CTRL_PKT_IGMP_STATE
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//bypass ingress bandwidth control packet configuration
+//ARP request packet
+//reserved Multicast address packet
+//BPDU packet
+//Realtek control packet
+//IGMP packet
+//state configuration
+bandwidth get ingress bypass-packet ( arp-request | rma | bpdu | rtk-ctrl-pkt | igmp ) state
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_BYPASS_PACKET_RIP_DHCP_STATE
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//bypass ingress bandwidth control packet configuration
+//Routing information packet(RIP)
+//DHCP or DHCPv6 packet
+//state configuration
+bandwidth get ingress bypass-packet ( rip | dhcp ) state
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_BURST_SIZE
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//burst-size configuration
+bandwidth get ingress burst-size
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_FLOW_CONTROL_LOW_THRESHOLD_THRESH
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//flow-control
+//low threshold
+//threshold value
+bandwidth set ingress flow-control low-threshold <UINT:thresh>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_FLOW_CONTROL_HIGH_THRESHOLD_PORT_PORTS_ALL_THRESH
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//flow-control
+//high threshold
+//port configuration
+//port list
+//all ports
+//threshold value
+bandwidth set ingress flow-control high-threshold port ( <PORT_LIST:ports> | all ) <UINT:thresh>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_FLOW_CONTROL_QUEUE_QUEUE_ID_DROP_THRESHOLD_HIGH_LOW_THRESHOLD
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//flow-control
+//queue configuration
+//queue id
+//drop threshold
+//high threshold
+//low threshold
+//threshold value
+bandwidth set ingress flow-control queue <UINT:queue_id> drop-threshold ( high | low ) <UINT:threshold>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_FLOW_CONTROL_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//flow-control
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+bandwidth set ingress flow-control port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_IFG_EXCLUDE_INCLUDE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//interframe gap
+//exclude
+//include
+bandwidth set ingress ifg ( exclude | include )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_RATE_RATE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//rate
+//rate value
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//burst size
+//burst size value
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_LOW_BURST_SIZE_LOW_HIGH_BURST_SIZE_HIGH
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//burst size low
+//burst size value
+//burst size high
+//burst size value
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) low-burst-size <UINT:low> high-burst-size <UINT:high>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_BYPASS_PACKET_ARP_REQUEST_RMA_BPDU_RTK_CTRL_PKT_IGMP_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//bypass ingress bandwidth control packet configuration
+//ARP request packet
+//reserved Multicast address packet
+//BPDU packet
+//Realtek control packet
+//IGMP packet
+//state configuration
+//disable function
+//enable function
+bandwidth set ingress bypass-packet ( arp-request | rma | bpdu | rtk-ctrl-pkt | igmp ) state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_BYPASS_PACKET_RIP_DHCP_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//bypass ingress bandwidth control packet configuration
+//Routing information packet(RIP)
+//DHCP or DHCPv6 packet
+//state configuration
+//disable function
+//enable function
+bandwidth set ingress bypass-packet ( rip | dhcp ) state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//burst size
+//burst size value
+bandwidth set ingress burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_RESET_INGRESS_METER_EXCEED_PORT_PORTS_ALL
+//bandwidth configuration
+//reset configuration
+//ingress configuration
+//meter exceed log information
+//port configuration
+//port list
+//all ports
+bandwidth reset ingress meter-exceed port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+bandwidth get ingress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID_STATE_DISABLE_ENABLE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state configuration
+//disable function
+//enable function
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID_RATE_RATE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//rate
+//rate vlaue
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> rate <UINT:rate>
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_PORT_PORTS_ALL_QUEUE_QUEUE_ID_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//burst size
+//burst size vlaue
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id> burst-size <UINT:size>
+#endif
+
+#ifdef CMD_BANDWIDTH_RESET_INGRESS_METER_EXCEED_PORT_PORTS_ALL_QUEUE_QUEUE_ID
+//bandwidth configuration
+//reset configuration
+//ingress configuration
+//meter exceed log information
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+bandwidth reset ingress meter-exceed port ( <PORT_LIST:ports> | all ) queue <UINT:queue_id>
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_IFG
+//storm-control configuration
+//get configuration
+//interframe gap
+storm-control get ifg
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_IFG_EXCLUDE_INCLUDE
+//storm-control configuration
+//set configuration
+//interframe gap
+//exclude
+//include
+storm-control set ifg ( exclude | include )
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_PORT_PORT_ALL_COUNTING_MODE
+//storm-control configuration
+//get configuration
+//port
+//port list
+//all ports
+//counting-mode
+storm-control get port ( <PORT_LIST:port> | all ) counting-mode
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_PORT_PORT_ALL_COUNTING_MODE_BYTE_PACKET
+//storm-control configuration
+//set configuration
+//port
+//port list
+//all ports
+//counting-mode
+//byte mode
+//packet mode
+storm-control set port ( <PORT_LIST:port> | all ) counting-mode ( byte | packet )
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_BROADCAST_MULTICAST_UNICAST_PORT_PORT_ALL
+//storm-control configuration
+//get configuration
+//broadcast
+//multicast
+//unicast
+//port
+//port list
+//all ports
+storm-control get ( broadcast | multicast | unicast ) port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_BROADCAST_MULTICAST_UNICAST_PORT_PORT_ALL_STATE_DISABLE_ENABLE
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unicast
+//port
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+storm-control set ( broadcast | multicast | unicast ) port ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_BROADCAST_MULTICAST_UNICAST_PORT_PORT_ALL_RATE_RATE
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unicast
+//port
+//port list
+//all ports
+//rate
+//rate value
+storm-control set ( broadcast | multicast | unicast ) port ( <PORT_LIST:port> | all ) rate <UINT:rate>
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_BROADCAST_MULTICAST_UNICAST_PORT_PORT_ALL_BURST_SIZE_SIZE
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unicast
+//port
+//port list
+//all ports
+//burst size
+//burst size value
+storm-control set ( broadcast | multicast | unicast ) port ( <PORT_LIST:port> | all ) burst-size <UINT:size>
+#endif
+
+#ifdef CMD_STORM_CONTROL_RESET_METER_EXCEED_BROADCAST_MULTICAST_UNICAST_PORT_PORT_ALL
+//storm-control configuration
+//reset configuration
+//meter exceed log information
+//broadcast storm
+//multicast storm
+//unicast storm
+//port
+//port list
+//all ports
+storm-control reset meter-exceed ( broadcast | multicast | unicast ) port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_UNICAST_MULTICAST_PORT_PORT_ALL_TYPE_UNKNOWN_ONLY_BOTH
+//storm-control configuration
+//set configuration
+//unicast
+//multicast
+//port configuration
+//port list
+//all ports
+//packet type selection
+//unknown packet only
+//both unknown and known packets
+storm-control set ( unicast | multicast ) port ( <PORT_LIST:port> | all ) type ( unknown-only | both )
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_BYPASS_PACKET_ARP_REQUEST_BPDU_IGMP_RMA_RTK_CTRL_PKT_DHCP_RIP_OSPF_STATE
+//storm-control configuration
+//get configuration
+//bypass storm control packet configuration
+//ARP request packet
+//BPDU packet
+//IGMP packet
+//Reserved Multicast address packet
+//Realtek control packet
+//DHCP packet
+//RIP-OSPF packet
+//state configuration
+storm-control get bypass-packet ( arp-request | bpdu | igmp | rma | rtk-ctrl-pkt | dhcp | rip-ospf ) state
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_BYPASS_PACKET_ARP_REQUEST_BPDU_IGMP_RMA_RTK_CTRL_PKT_DHCP_RIP_OSPF_STATE_DISABLE_ENABLE
+//storm-control configuration
+//set configuration
+//bypass storm control packet configuration
+//ARP request packet
+//BPDU packet
+//IGMP packet
+//Reserved Multicast address packet
+//Realtek control packet
+//DHCP packet
+//RIP-OSPF packet
+//state configuration
+//disable function
+//enable function
+storm-control set bypass-packet ( arp-request | bpdu | igmp | rma | rtk-ctrl-pkt | dhcp | rip-ospf ) state ( disable | enable )
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_PROTO_STORM_ARP_REQUEST_BPDU_IGMP_DHCP_PORT_PORT_ALL
+//storm-control configuration
+//get configuration
+//protocol storm
+//ARP request packet
+//BPDU packet
+//IGMP packet
+//DHCP packet
+//port
+//port list
+//all ports
+storm-control get proto-storm ( arp-request | bpdu | igmp | dhcp ) port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_PROTO_STORM_ARP_REQUEST_BPDU_IGMP_DHCP_PORT_PORT_ALL_STATE_DISABLE_ENABLE
+//storm-control configuration
+//set configuration
+//protocol storm
+//ARP request packet
+//BPDU packet
+//IGMP packet
+//DHCP packet
+//port
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+storm-control set proto-storm ( arp-request | bpdu | igmp | dhcp ) port ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_PROTO_STORM_ARP_REQUEST_DHCP_VLAN_CONSTRT_STATE
+//storm-control configuration
+//get configuration
+//protocol storm
+//ARP request packet
+//DHCP packet
+//VLAN constraint configuration
+//state configuration
+storm-control get proto-storm ( arp-request | dhcp ) vlan-constrt state
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_PROTO_STORM_ARP_REQUEST_DHCP_VLAN_CONSTRT_STATE_DISABLE_ENABLE
+//storm-control configuration
+//set configuration
+//protocol storm
+//ARP request packet
+//DHCP packet
+//VLAN constraint configuration
+//state configuration
+//disable function
+//enable function
+storm-control set proto-storm ( arp-request | dhcp ) vlan-constrt state ( disable | enable )
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_PROTO_STORM_ARP_REQUEST_BPDU_IGMP_DHCP_PORT_PORT_ALL_RATE_RATE
+//storm-control configuration
+//set configuration
+//protocol storm
+//ARP request packet
+//BPDU packet
+//IGMP packets
+//DHCP packet
+//port
+//port list
+//all ports
+//rate
+//rate value
+storm-control set proto-storm ( arp-request | bpdu | igmp | dhcp ) port ( <PORT_LIST:port> | all ) rate <UINT:rate>
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_PROTO_STORM_ARP_REQUEST_BPDU_IGMP_DHCP_PORT_PORT_ALL_BURST_SIZE_SIZE
+//storm-control configuration
+//set configuration
+//protocol storm
+//ARP request packet
+//BPDU packet
+//IGMP packet
+//DHCP packet
+//port
+//port list
+//all ports
+//burst size
+//burst size value
+storm-control set proto-storm ( arp-request | bpdu | igmp | dhcp ) port ( <PORT_LIST:port> | all ) burst-size <UINT:size>
+#endif
+
+#ifdef CMD_STORM_CONTROL_RESET_PROTO_STORM_METER_EXCEED_ARP_REQUEST_BPDU_IGMP_DHCP_PORT_PORT_ALL
+//storm-control configuration
+//reset configuration
+//protocol storm
+//meter exceed log information
+//ARP request packet
+//BPDU packet
+//IGMP packet
+//DHCP packet
+//port
+//port list
+//all ports
+storm-control reset proto-storm meter-exceed ( arp-request | bpdu | igmp | dhcp ) port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_STORM_CONTROL_GET_COUNTING_MODE
+//storm-control configuration
+//get configuration
+//counting-mode
+storm-control get counting-mode
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_COUNTING_MODE_BYTE_PACKET
+//storm-control configuration
+//set configuration
+//counting-mode
+//byte mode
+//packet mode
+storm-control set counting-mode ( byte | packet )
+#endif
+
+#ifdef CMD_STORM_CONTROL_SET_BROADCAST_MULTICAST_UNICAST_BURST_SIZE_SIZE
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unicast
+//burst size
+//burst size value
+storm-control set ( broadcast | multicast | unicast ) burst-size <UINT:size>
+#endif
+
+
+#ifdef CMD_BANDWIDTH_GET_EGRESS_QUEUE_BURST_SIZE
+//bandwidth configuration
+//get configuration
+//egress queue configuration
+//burst size of all port configuration
+bandwidth get egress-queue burst-size
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_EGRESS_QUEUE_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//egress queue configuration
+//burst size of all port configuration
+//burst size
+bandwidth set egress-queue burst-size <UINT:size>
+#endif
+
+
+#ifdef CMD_BANDWIDTH_GET_INGRESS_QUEUE_BURST_SIZE
+//bandwidth configuration
+//get configuration
+//ingress queue configuration
+//burst size of all port configuration
+bandwidth get ingress-queue burst-size
+#endif
+
+#ifdef CMD_BANDWIDTH_SET_INGRESS_QUEUE_BURST_SIZE_SIZE
+//bandwidth configuration
+//set configuration
+//ingress queue configuration
+//burst size of all port configuration
+//burst size
+bandwidth set ingress-queue burst-size <UINT:size>
+#endif

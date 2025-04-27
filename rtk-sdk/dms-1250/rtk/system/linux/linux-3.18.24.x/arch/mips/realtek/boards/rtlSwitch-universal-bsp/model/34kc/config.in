@@ -1,0 +1,76 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# System Config
+#
+config ARCH_PLATFORM
+	string
+	default "Sheipa2 for MIPS"
+
+menu "BSP configuration"
+
+choice
+	prompt "Timer Source"
+
+config ARCH_CEVT_R4K
+	bool "MIPS internal counter"
+
+config ARCH_CEVT_EXT
+	bool "DWAPB external timer"
+
+endchoice
+config SOC_MIPS_CMP_BOOT
+        bool "Enable Kernel to boot multicores for MIPS CMP"
+        depends on SOC_ENABLE_SMP
+        default n
+
+comment "CPU features"
+config BSP_ENABLE_FPU
+	bool "Enable FPU coprocessor"
+	default n
+	depends on ARCH_CPU_HAS_FPU
+
+config BSP_ENABLE_TLS
+	bool "Enable TLS support"
+	default n
+
+config BSP_ENABLE_WATCH
+	bool "Enable Watchpoint support"
+	default n
+
+comment "BUS features"
+config BSP_ENABLE_PCI
+	bool "Enable PCI controller"
+	default n
+
+config BSP_ENABLE_USB
+	bool "Enable USB controller"
+	default n
+
+comment "RTK Universal BSP selection"
+config RTL9310_SERIES
+	bool "Realtek RTL9310 Board"
+	help
+	  This enables supports for Realtek RTL9310 Switch boards
+
+config RTL9300_SERIES
+	bool "Realtek RTL9300 Board"
+	help
+	  This enables supports for Realtek RTL9300 Switch boards
+
+config RTL8390_SERIES
+	bool "Realtek RTL8390/50 Board"
+	help
+	  This enables supports for Realtek RTL8390/50 Switch boards
+
+config RTL8380_SERIES
+	bool "Realtek RTL8380/30 Board"
+	help
+	  This enables supports for Realtek RTL8380/30 Switch boards
+
+endmenu

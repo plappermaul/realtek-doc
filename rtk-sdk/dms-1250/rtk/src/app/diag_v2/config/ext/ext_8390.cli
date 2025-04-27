@@ -1,0 +1,1150 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) extension commands.
+//
+
+//mib configuration
+//get configuration
+//reset MIB value configuration
+mib get reset-value
+
+//switch configuration
+//get configuration
+//48 pass 1 configuration
+//state configuration
+switch get 48-pass-1 state
+
+//switch configuration
+//get configuration
+//limit pause configuration
+//state configuration
+switch get limit-pause state
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+//state configuration
+switch get ipg-compensation ( ge | 10g ) state
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+switch get ipg-compensation ( ge | 10g )
+
+//switch configuration
+//get configuration
+//IPG minimal receive length
+//port configuration
+//port list
+//all ports
+//length configuration
+switch get ipg-min-length port ( <PORT_LIST:ports> | all ) length
+
+//switch configuration
+//get configuration
+//pass all mode configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get pass-all-mode port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//get configuration
+//RX check CRC configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get rx-check-crc port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//get configuration
+//bypass TX CRC configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get bypass-tx-crc port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//get configuration
+//backpressure configuration
+switch get back-pressure
+
+//switch configuration
+//get configuration
+//padding the packet length to 64-Byte for under size packets configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get padding-under-size port ( <PORT_LIST:ports> | all ) state
+
+//QoS configuration
+//get configuration
+//queue configuration
+//number of queue
+//port configuration
+//port list
+//all ports
+qos get queue number port ( <PORT_LIST:ports> | all )
+
+//QoS configuration
+//get configuration
+//egress port rate of chip
+//port configuration
+//port list
+//all ports
+qos get egress-port-rate port ( <PORT_LIST:ports> | all )
+
+//QoS configuration
+//set configuration
+//egress port rate of chip
+//port configuration
+//port list
+//all ports
+//rate configuration
+//rate. unit:16Kbps
+qos set egress-port-rate port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+
+//port configuration
+//get configuration
+//special-congest
+//drain-out-thresh
+port get special-congest drain-out-thresh
+
+//port configuration
+//get configuration
+//special-congest
+//port configuration
+//port list
+//all port
+port get special-congest port ( <PORT_LIST:ports> | all )
+
+//mib configuration
+//set configuration
+//reset MIB value configuration
+//all MIB to be 0
+//all MIB to be 0xFFFF-FFFF
+mib set reset-value ( 0 | 1 )
+
+//SQA configuration
+//reset to default configuration
+sqa reset
+
+//switch configuration
+//set configuration
+//48 pass 1 configuration
+//state configuration
+//disable function
+//enable function
+switch set 48-pass-1 state ( disable | enable )
+
+//switch configuration
+//set configuration
+//limit pause configuration
+//state configuration
+//disable function
+//enable function
+switch set limit-pause state ( disable | enable )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+//state configuration
+//disable function
+//enable function
+switch set ipg-compensation ( ge | 10g ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+//65ppm
+//90ppm
+switch set ipg-compensation ( ge | 10g ) ( 65ppm | 90ppm )
+
+//switch configuration
+//set configuration
+//IPG minimal receive length
+//port configuration
+//port list
+//all ports
+//length configuration
+//length in byte, <4-8>
+switch set ipg-min-length port ( <PORT_LIST:ports> | all ) length <UINT:len>
+
+//switch configuration
+//set configuration
+//pass all mode configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set pass-all-mode port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//RX check CRC configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set rx-check-crc port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//bypass TX CRC configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set bypass-tx-crc port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//backpressure configuration
+//CRS-based backpressure
+//Collision-based backpressure
+switch set back-pressure ( jam | defer )
+
+//switch configuration
+//set configuration
+//padding the packet length to 64-Byte for under size packets configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set padding-under-size port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//interrupt configuration
+//link status change
+//state configuration
+//disable function
+//enable function
+switch set interrupt link-change state ( disable | enable )
+
+//QoS configuration
+//set configuration
+//queue configuration
+//number of queue
+//port configuration
+//port list
+//all ports
+//queue number <1-8>
+qos set queue number port ( <PORT_LIST:ports> | all ) <UINT:queue_num>
+
+//EEE configuration
+//set configuration
+//tx configuration
+//wake mode configuration
+//wake when there is packet to tx
+//wake based on qos (high queue/ low queue)
+eee set tx wake-mode ( packet-tx | qos-based )
+
+//EEE configuration
+//get configuration
+//tx configuration
+//wake mode configuration
+eee get tx wake-mode
+
+//EEE configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//port eee/eeep LPI status
+eee get port ( <PORT_LIST:ports> | all ) status
+
+//EEE configuration
+//set configuration
+//link up delay time
+//1 ms
+//256 ms
+//512 ms
+//1024 ms
+eee set link-up-delay ( 1ms | 256ms | 512ms | 1024ms )
+
+//EEE configuration
+//get configuration
+//link up delay time
+eee get link-up-delay
+
+//EEE configuration
+//set configuration
+//multi-wake
+//state configuration
+//disable function
+//enable function
+eee set multi-wake state ( disable | enable )
+
+//EEE configuration
+//get configuration
+//multi-wake
+//state configuration
+eee get multi-wake state
+
+//EEE configuration
+//set configuration
+//multi-wake
+//interval
+//1 us
+//2 us
+//3 us
+//4 us
+eee set multi-wake interval ( 1us | 2us | 3us | 4us )
+
+//EEE configuration
+//get configuration
+//multi-wake
+//interval
+eee get multi-wake interval
+
+//EEE configuration
+//set configuration
+//multi-wake
+//port number of a group
+//2 ports
+//4 ports
+//6 ports
+//8 ports
+//10 ports
+//12 ports
+//16 ports
+//20 ports
+eee set multi-wake port-num ( 2port | 4port | 6port | 8port | 10port | 12port | 16port | 20port )
+
+//EEE configuration
+//get configuration
+//multi-wake
+//port number of a group
+eee get multi-wake port-num
+
+//EEEP configuration
+//set configuration
+//rx configuration
+//tx configuration
+//sleep rate
+//rate (unit:0.5Mbps)
+eeep set ( rx | tx ) sleep-rate <UINT:rate>
+
+//EEEP configuration
+//get configuration
+//rx configuration
+//tx configuration
+//sleep rate
+eeep get ( rx | tx ) sleep-rate
+
+//port configuration
+//set configuration
+//special-congest
+//drain-out-thresh
+//threshold, unit: page
+//duplex configuration
+//full duplex
+//half duplex
+port set special-congest drain-out-thresh <UINT:threshold> duplex ( full | half )
+
+//port configuration
+//set configuration
+//special-congest
+//port configuration
+//port list
+//all port
+//sustain-timer
+//second
+//duplex configuration
+//full duplex
+//half duplex
+port set special-congest port ( <PORT_LIST:ports> | all ) sustain-timer <UINT:second> duplex ( full | half )
+
+//iol configuration
+//dump configuration
+iol dump
+
+//iol configuration
+//get configuration
+//conllision max attempt action
+iol get collision-max-attempt
+
+//iol configuration
+//get configuration
+//error length action
+iol get error-length
+
+//iol configuration
+//get configuration
+//invalid pause action
+iol get invalid-pause
+
+//iol configuration
+//get configuration
+//late collision action
+iol get late-collision
+
+//iol configuration
+//get configuration
+//max length action
+iol get max-length
+
+//iol configuration
+//get configuration
+//conllision max attempt action
+//retry
+//drop
+iol set collision-max-attempt ( retry | drop )
+
+//iol configuration
+//set configuration
+//error length action
+//forward
+//drop
+iol set error-length ( forward | drop )
+
+//iol configuration
+//set configuration
+//invalid pause action
+//forward
+//drop
+iol set invalid-pause ( forward | drop )
+
+//iol configuration
+//set configuration
+//late collision action
+//re-transmit
+//drop
+iol set late-collision ( re-transmit | drop )
+
+//iol configuration
+//set configuration
+//max length action
+//disable function
+//enable function
+iol set max-length ( disable | enable )
+
+//packet generation configuration
+//get configuration
+//tx command mode
+pktgen get tx-cmd
+
+//packet generation configuration
+//set configuration
+//tx command mode
+//start TX commad
+//start stop commad and reset counter
+//start stop commad and hold counter
+pktgen set tx-cmd ( start | stop-and-reset-counter | stop-and-hold-counter )
+
+//packet generation configuration
+//get configuration
+//system packet generation state
+pktgen get state
+
+//packet generation configuration
+//set configuration
+//system packet generation state
+//enable function
+//disable function
+pktgen set state ( enable | disable )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//port packet generation state
+pktgen get port ( <PORT_LIST:ports> | all ) state
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//port packet generation state
+//enable function
+//disable function
+pktgen set port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//Tx port transmit finish
+//Tx port transmit finish state
+pktgen get port ( <PORT_LIST:ports> | all ) tx-done state
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//fragment packet
+//fragment packet action
+pktgen get port ( <PORT_LIST:ports> | all ) frag-pkt action
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//fragment packet
+//fragment packet action
+//discard function
+//trap function
+pktgen set port ( <PORT_LIST:ports> | all ) frag-pkt action ( drop | trap )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//over size packet
+//over size packet action
+pktgen get port ( <PORT_LIST:ports> | all ) oversize-pkt action
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//over size packet
+//over size packet action
+//discard function
+//trap function
+pktgen set port ( <PORT_LIST:ports> | all ) oversize-pkt action ( drop | trap )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//under size packet
+//under size packet action
+pktgen get port ( <PORT_LIST:ports> | all ) undersize-pkt action
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//under size packet
+//under size packet action
+//discard function
+//trap function
+pktgen set port ( <PORT_LIST:ports> | all ) undersize-pkt action ( drop | trap )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//bad CRC packet
+//bad CRC packet action
+pktgen get port ( <PORT_LIST:ports> | all ) bad-crc-pkt action
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//bad CRC packet
+//bad CRC packet action
+//discard function
+//trap function
+pktgen set port ( <PORT_LIST:ports> | all ) bad-crc-pkt action ( drop | trap )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet counter
+pktgen get port ( <PORT_LIST:ports> | all ) tx-pkt-cnt
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet counter
+//TX packet counter configuration
+pktgen set port ( <PORT_LIST:ports> | all ) tx-pkt-cnt <UINT:pktcnt>
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//bad CRC configuration
+//bad CRC configuration state
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> bad-crc state
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//bad CRC configuration
+//bad CRC configuration state
+//enable function
+//disable function
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> bad-crc state ( enable | disable )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet length type configuration
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> len-type
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet length type configuration
+//fixed packet length
+//randon packet length
+//increamental packet length
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> len-type ( fixed | random | increamental )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//random packet content
+//random packet content state
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> random-content state
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//random packet content
+//random packet content state
+//enable function
+//disable function
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> random-content state ( enable | disable )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//random packet content offset
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> random-offset
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//random packet content offset
+//random packet content offset configuration <0-31>
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> random-offset <UINT:offset>
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//source MAC address increamental
+//source MAC address increamental state
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> sa-inc state
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//source MAC address increamental
+//source MAC address increamental state
+//enable function
+//disable function
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> sa-inc state ( enable | disable )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//destination MAC address increamental
+//destination MAC address increamental state
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> da-inc state
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//destination MAC address increamental
+//destination MAC address increamental state
+//enable function
+//disable function
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> da-inc state ( enable | disable )
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//TX packet counter
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> tx-pkt-cnt
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//TX packet counter
+//TX packet counter configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> tx-pkt-cnt <UINT:pktcnt>
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//TX packet length
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> pkt-len
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//TX packet length
+//TX packet length start
+//TX packet length start configuration
+//TX packet length end
+//TX packet length end configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> pkt-len start <UINT:start_val> end <UINT:end_val>
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//source MAC address repeat counter
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> sa-repeat-cnt
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//source MAC address repeat counter
+//source MAC address repeat counter configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> sa-repeat-cnt <UINT:repeat_cnt>
+
+//packet generation configuration
+//get configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//destination MAC address repeat counter
+pktgen get port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> da-repeat-cnt
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//destination MAC address repeat counter
+//destination MAC address repeat counter configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> da-repeat-cnt <UINT:repeat_cnt>
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//source MAC address field
+//source MAC address field configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field sa <MACADDR:mac>
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//destination MAC address field
+//destination MAC address field configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field da <MACADDR:mac>
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//ehter type field
+//ehter type field configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field ether-type <UINT:ether_type>
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//vlan header field
+//vlan header field configuration
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field vlan-header <UINT:vlan_header>
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//vlan header field
+//vlan header field state
+//enable function
+//disable function
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field vlan-header state ( enable | disable )
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//payload type
+//fix pattern
+//increment
+//repeat pattern
+//all zero
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field payload-type ( fix-pattern | incr | repeat-pattern | zero )
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//TX packet stream
+//TX packet stream configuration
+//packet field
+//payload pattern
+//pattern content
+pktgen set port ( <PORT_LIST:ports> | all ) stream <UINT:stream_idx> field payload-pattern <UINT:pattern>
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//transmit configured packet to buffer
+pktgen set port ( <PORT_LIST:ports> | all ) tx
+
+//packet generation configuration
+//set configuration
+//port configuration
+//ports
+//all ports
+//transmit configured packet to buffer
+//dying-gasp packet
+//length
+pktgen set port ( <PORT_LIST:ports> | all ) tx dying-gasp { <UINT:len> }
+
+//packet generation configuration
+//dump configuration
+//port configuration
+//ports
+//all ports
+pktgen dump port ( <PORT_LIST:ports> | all )
+
+//l2 table configuration
+//get configuration
+//l2 table aging time configuration (unit 0.6s)
+l2-table get aging-unit
+
+//l2 table configuration
+//set configuration
+//l2 table aging time configuration (unit 0.6s)
+//time value(0.1 second), 0 means disable aging
+l2-table set aging-unit <UINT:time>
+
+//l2 table configuration
+//clear table
+//l2 table
+l2-table clear table
+
+//l2 table configuration
+//get configuration
+//cam table
+//state configuration
+l2-table get cam state
+
+//l2 table configuration
+//set configuration
+//cam table
+//state configuration
+//enable function
+//disable function
+l2-table set cam state ( enable | disable )
+
+//switch
+//get configuration
+//information
+switch get info
+
+
+//ACL configuration
+//get configuration
+//meter configuration
+//meter counter configuration
+acl get meter counter
+
+//ACL configuration
+//set configuration
+//meter configuration
+//meter counter configuration
+//unit: 1 byte
+//unit: 16 byte
+//unit: packet
+//meter index
+acl set meter counter ( 1byte | 16byte | packet ) <UINT:index>
+
+//ACL configuration
+//reset configuration
+//meter configuration
+//meter counter configuration
+acl reset meter counter
+
+//time configuration
+//get configuration
+//precision time protocol
+//ports
+//all ports
+//timestamp
+//Rx Sync
+//Rx Delay-Req
+//Rx PDelay-Req
+//Rx PDelay-Resp
+//Tx Sync
+//Tx Delay-Req
+//Tx PDelay-Req
+//Tx PDelay-Resp
+time get ptp ( <PORT_LIST:ports> | all ) timestamp ( rx-sync | rx-dreq | rx-pdrq | rx-pdrp | tx-sync | tx-dreq | tx-pdrq | tx-pdrp )
+
+//time configuration
+//get configuration
+//reference time
+//port configuration
+//port list
+//all ports
+time get reference-time port ( <PORT_LIST:ports> | all )
+
+//time configuration
+//get configuration
+//reference time
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//frequency configuration
+time get reference-time port ( <PORT_LIST:ports> | all ) frequency
+
+//time configuration
+//set configuration
+//reference time
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//frequency configuration
+//tick frequency value, <0-0xFFFFFFF, default value is 0x8000000>
+time set reference-time port ( <PORT_LIST:ports> | all ) frequency <UINT:frequencyVal>
+
+//time configuration
+//get configuration
+//TPID configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//TPID index
+time get tpid port ( <PORT_LIST:ports> | all ) ( inner | outer ) <UINT:tpid_idx>
+
+//time configuration
+//set configuration
+//TPID configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//inner tag
+//outer tag
+//TPID index
+//TPID
+time set tpid port ( <PORT_LIST:ports> | all ) ( inner | outer ) <UINT:tpid_idx> <UINT:tpid>
+
+//time configuration
+//get configuration
+//MAC address configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+time get mac-address port ( <PORT_LIST:ports> | all )
+
+//time configuration
+//set configuration
+//MAC address configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//MAC address
+//MAC address range
+time set mac-address port ( <PORT_LIST:ports> | all ) <MACADDR:mac> <UINT:range>
+
+//time configuration
+//get configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//interrupt configuration
+time get ptp port ( <PORT_LIST:ports> | all ) interrupt
+
+//time configuration
+//set configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//interrupt configuration
+//enable function
+//disable function
+time set ptp port ( <PORT_LIST:ports> | all ) interrupt ( enable | disable )
+
+//nic configuration
+//set configuration
+//packet send configuration
+//source MAC configuration
+//source MAC
+//destination MAC configuration
+//destination MAC
+//port configuration
+//port list
+//all ports
+//with cpu-tag
+//do trunk hash when TX to trunk member port
+nic set pkt-send src-mac <MACADDR:src_mac> dst-mac <MACADDR:dst_mac> port ( <PORT_LIST:ports> | all ) { cpu-tag } { trunk-hash }
+
+//l2 table configuration
+//dump configuration
+//unicast MAC entry
+//cam entry
+l2-table dump mac-unicast cam
+
+//port configuration
+//get configuration
+//polling phy
+//port setting
+//port list
+//all ports
+//state configuration
+port get polling-phy port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//get configuration
+//polling phy
+//port setting
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+port set polling-phy port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+

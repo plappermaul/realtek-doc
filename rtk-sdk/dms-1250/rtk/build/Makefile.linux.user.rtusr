@@ -1,0 +1,48 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtusr User Library
+#
+
+CFLAGS_y += -Wall -Werror -Wuninitialized -Wstrict-prototypes -DRTUSR
+
+include ../../../../../../sdk/build/Makefile.rtrpc
+vpath %.c ../../../../../../sdk/src/dal/rtrpc/
+
+
+INCLUDE += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE) -I../include -I$(UT_INCLUDE)
+
+TARGET := obj
+
+SRCS = $(RTRPC_SRC)
+OBJS = $(shell for i in $(SRCS); do n=`basename $$i`; echo -n $(TARGET)/$${n%%.*}.o ""; done)
+DEPS := $(OBJS:.o=.d)
+LIBNAME = $(SDK_LIBDIR)/librtusr.a
+
+all: $(LIBNAME)
+
+$(LIBNAME): $(OBJS)
+	$(AR) rv $(LIBNAME) $(OBJS)
+	$(STRIP) --strip-debug -R .note -R .comment $@
+
+$(TARGET)/%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS) $(CFLAGS_y) -c -o $@ $<
+
+$(TARGET)/%.d: %.c
+	@set -e; rm -f $@; \
+	$(CC) -MM $(INCLUDE) $(CFLAGS) $(CFLAGS_y) $< > $@.$$$$; \
+	sed 's,\($(*F)\)\.o[ :]*,$(@D)/$(*F).o $@ : ,g' < $@.$$$$ > $@
+	@rm -f $@.*
+
+#Don't create dependencies when we're cleaning, installing, ...
+NODEP := clean install romfs
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEP))))
+    -include $(DEPS)
+endif
+
+romfs:
+
+clean:
+	rm -f $(OBJS) $(LIBNAME) $(DEPS)
+
+

@@ -1,0 +1,2240 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for l3.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) l3 commands.
+//
+
+
+#ifdef CMD_L3_DUMP_ROUTE_SWITCH_MAC
+//l3 configuration
+//dump configuration
+//routing configuration
+//Switch MAC address
+l3 dump route switch-mac
+#endif
+
+#ifdef CMD_L3_GET_ROUTE_SWITCH_MAC_INDEX
+//l3 configuration
+//get configuration
+//routing configuration
+//Switch MAC address
+//index configuration
+l3 get route switch-mac <UINT:index>
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_SWITCH_MAC_INDEX_MAC
+//l3 configuration
+//set configuration
+//routing configuration
+//Switch MAC address
+//index configuration
+//MAC address
+l3 set route switch-mac <UINT:index> <MACADDR:mac>
+#endif
+
+#ifdef CMD_L3_DUMP_ROUTE_ROUTE_TABLE
+//l3 configuration
+//get configuration
+//routing configuration
+//routing table
+l3 dump route route-table
+#endif
+
+#ifdef CMD_L3_GET_ROUTE_ROUTE_TABLE_INDEX
+//l3 configuration
+//get configuration
+//routing configuration
+//routing table
+//index configuration
+l3 get route route-table <UINT:index>
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_ROUTE_TABLE_INDEX_HOST_MAC_MAC
+//l3 configuration
+//set configuration
+//routing configuration
+//routing table
+//index configuration
+//NextHop host MAC address
+//MAC address
+l3 set route route-table <UINT:index> host-mac <MACADDR:mac>
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_ROUTE_TABLE_INDEX_SWITCH_MAC_INDEX_SWITCH_MAC_INDEX
+//l3 configuration
+//set configuration
+//routing configuration
+//routing table
+//index configuration
+//switch MAC index configuration
+//switch MAC index
+l3 set route route-table <UINT:index> switch-mac-index <UINT:switch_mac_index>
+#endif
+
+#ifdef CMD_L3_GET_INFO
+//l3 configuration
+//get configuration
+//global information
+l3 get info
+#endif
+
+#ifdef CMD_L3_GET_ROUTER_MAC_ENTRY_INDEX
+//l3 configuration
+//get configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+l3 get router-mac entry <UINT:index>
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_STATE_DISABLE_ENABLE
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//state configuration
+//disable
+//enable
+l3 set router-mac entry <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_KEY_PORT_PORT_STATE_DISABLE_ENABLE
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//key configuration
+//port configuration
+//port ID
+//state configuration
+//disable
+//enable
+l3 set router-mac entry <UINT:index> key port <UINT:port> state ( disable | enable )
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_KEY_TRUNK_TRUNK_ID_STATE_DISABLE_ENABLE
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//key configuration
+//trunk configuration
+//trunk ID
+//state configuration
+//disable
+//enable
+l3 set router-mac entry <UINT:index> key trunk <UINT:trunk_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_KEY_VID_VID_VID_MASK_VID_MASK
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//key configuration
+//VLAN configuration
+//VLAN ID
+//VLAN ID mask
+//care bitmask
+l3 set router-mac entry <UINT:index> key vid <UINT:vid> vid_mask <UINT:vid_mask>
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_KEY_INTF_INTF_ID_INTF_MASK_INTF_ID_MASK
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//key configuration
+//interface configuration
+//interface ID
+//interface ID mask
+//care bitmask
+l3 set router-mac entry <UINT:index> key intf <UINT:intf_id> intf_mask <UINT:intf_id_mask>
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_KEY_MAC_ADDR_MAC_MAC_ADDR_MASK_MAC_MASK
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//key configuration
+//MAC address configuration
+//MAC address
+//MAC address mask
+//care bitmask
+l3 set router-mac entry <UINT:index> key mac-addr <MACADDR:mac> mac-addr-mask <MACADDR:mac_mask>
+#endif
+
+#ifdef CMD_L3_SET_ROUTER_MAC_ENTRY_INDEX_ACTION_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//router MAC configuration
+//router MAC entry
+//index configuration
+//action configuration
+//forward (routing)
+//trap to local CPU
+//copy to local CPU
+//trap to master CPU
+//copy to master CPU
+l3 set router-mac entry <UINT:index> action ( forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_CREATE_INTF_VID_VID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//create entry
+//interface
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//MAC address configuration
+//MAC address
+l3 create intf vid <UINT:vid> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_CREATE_INTF_VID_VID_MAC_ADDR_MAC_ADDR_FLAG_FLAG
+//l3 configuration
+//create entry
+//interface
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//MAC address configuration
+//MAC address
+//Flag configuration
+//Flag value (bitmask)
+l3 create intf vid <UINT:vid> mac-addr <MACADDR:mac_addr> flag <UINT:flag>
+#endif
+
+#ifdef CMD_L3_CREATE_INTF_INTF_ID_VID_VID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//create entry
+//interface
+//interface ID
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//MAC address configuration
+//MAC address
+l3 create intf <UINT:intf_id> vid <UINT:vid> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_CREATE_INTF_INTF_ID_VID_VID_MAC_ADDR_MAC_ADDR_FLAG_FLAG
+//l3 configuration
+//create entry
+//interface
+//interface ID
+//VLAN ID configuration
+//VLAN ID, <0-4095>
+//MAC address configuration
+//MAC address
+//Flag configuration
+//Flag value (bitmask)
+l3 create intf <UINT:intf_id> vid <UINT:vid> mac-addr <MACADDR:mac_addr> flag <UINT:flag>
+#endif
+
+#ifdef CMD_L3_DESTROY_INTF_INTF_ID_ALL
+//l3 configuration
+//destroy entry
+//interface
+//interface ID
+//all interfaces
+l3 destroy intf ( <UINT:intf_id> | all )
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_VID_VID
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//VLAN ID
+//VID
+l3 set intf <UINT:intf_id> vid <UINT:vid>
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_VRF_ID_VRF_ID
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//virtual routing/forwarding ID
+//VRF ID
+l3 set intf <UINT:intf_id> vrf-id <UINT:vrf_id>
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_MTU_MTU
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//MTU (maximum transmission unit)
+//MTU size in bytes
+l3 set intf <UINT:intf_id> mtu <UINT:mtu>
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPV6_MTU_MTU
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv6 MTU (maximum transmission unit)
+//MTU size in bytes
+l3 set intf <UINT:intf_id> ipv6-mtu <UINT:mtu>
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_TTL_TTL
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//time to live
+//TTL value, <0-255>
+l3 set intf <UINT:intf_id> ttl <UINT:ttl>
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPMCAST_KEY_VID_INTF
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IP multicast lookup key
+//VLAN ID
+//interface ID
+l3 set intf <UINT:intf_id> ipmcast-key ( vid | intf )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPMCAST_KEY
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IP multicast lookup key
+l3 get intf <UINT:intf_id> ipmcast-key
+#endif
+
+#ifdef CMD_L3_SET_INTF_VID_VID_VRF_ID_VRF_ID
+//l3 configuration
+//set configuration
+//interface
+//VLAN ID
+//VLAN ID, <0-4095>
+//virtual routing/forwarding ID
+//VRF ID
+l3 set intf vid <UINT:vid> vrf-id <UINT:vrf_id>
+#endif
+
+#ifdef CMD_L3_SET_INTF_VID_VID_MTU_MTU
+//l3 configuration
+//set configuration
+//interface
+//VLAN ID
+//VLAN ID, <0-4095>
+//maximum transmission unit
+//MTU size in bytes
+l3 set intf vid <UINT:vid> mtu <UINT:mtu>
+#endif
+
+#ifdef CMD_L3_SET_INTF_VID_VID_TTL_TTL
+//l3 configuration
+//set configuration
+//interface
+//VLAN ID
+//VLAN ID, <0-4095>
+//time to live
+//TTL value, <0-255>
+l3 set intf vid <UINT:vid> ttl <UINT:ttl>
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+l3 get intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_L3_GET_INTF_VID_VID
+//l3 configuration
+//get configuration
+//interface
+//VLAN ID
+//VLAN ID, <0-4095>
+l3 get intf vid <UINT:vid>
+#endif
+
+#ifdef CMD_L3_GET_INTF_VID_VID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//get configuration
+//interface
+//VLAN ID
+//VLAN ID, <0-4095>
+//MAC address configuration
+//MAC address
+l3 get intf vid <UINT:vid> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_DUMP_INTF_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//l3 configuration
+//dump configuration
+//interface info
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+l3 dump intf from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_STATS
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//statistic
+l3 get intf <UINT:intf_id> stats
+#endif
+
+#ifdef CMD_L3_RESET_INTF_INTF_ID_STATS
+//l3 configuration
+//reset configuration
+//interface
+//interface ID
+//statistic
+l3 reset intf <UINT:intf_id> stats
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_STATS_IN_OCTETS_IN_UCAST_PKTS_IN_MULTICAST_PKTS_IN_BROADCAST_PKTS_IN_DISCARDS_OUT_OCTETS_OUT_UCAST_PKTS_OUT_MULTICAST_PKTS_OUT_BROADCAST_PKTS_OUT_DISCARDS
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//statistic
+//byte count of packets at incoming
+//packet count of unicast packets at incoming
+//packet count of multicast packets at incoming
+//packet count of broadcast packets at incoming
+//packet count of discarded packets at incoming
+//byte count of packets at outgoing
+//packet count of unicast packets at outgoing
+//packet count of multicast packets at outgoing
+//packet count of broadcast packets at outgoing
+//packet count of discarded packets at outgoing
+l3 get intf <UINT:intf_id> stats ( in-octets | in-ucast-pkts | in-multicast-pkts | in-broadcast-pkts | in-discards | out-octets | out-ucast-pkts | out-multicast-pkts | out-broadcast-pkts | out-discards )
+#endif
+
+#ifdef CMD_L3_ADD_VRRP_FLAGS_IPV4_IPV6_VID_VID_VRID_VRID
+//l3 configuration
+//add configuration
+//VRRP configuration
+//Flags configuration
+//IPv4
+//IPv6
+//VLAN ID
+//VLAN ID value
+//Virtual Router ID (VRID)
+//VRID value
+l3 add vrrp flags ( ipv4 | ipv6 ) vid <UINT:vid> vrid <UINT:vrid>
+#endif
+
+#ifdef CMD_L3_DEL_VRRP_FLAGS_IPV4_IPV6_VID_VID_VRID_VRID
+//l3 configuration
+//del configuration
+//VRRP configuration
+//Flags configuration
+//IPv4
+//IPv6
+//VLAN ID
+//VLAN ID value
+//Virtual Router ID (VRID)
+//VRID value
+l3 del vrrp flags ( ipv4 | ipv6 ) vid <UINT:vid> vrid <UINT:vrid>
+#endif
+
+#ifdef CMD_L3_DEL_VRRP_FLAGS_IPV4_IPV6_VID_VID_VRID_ALL
+//l3 configuration
+//del configuration
+//VRRP configuration
+//Flags configuration
+//IPv4
+//IPv6
+//VLAN ID
+//VLAN ID value
+//Virtual Router ID (VRID)
+//All VRIDs
+l3 del vrrp flags ( ipv4 | ipv6 ) vid <UINT:vid> vrid all
+#endif
+
+#ifdef CMD_L3_GET_VRRP_FLAGS_IPV4_IPV6_VID_VID_VRID
+//l3 configuration
+//get configuration
+//VRRP configuration
+//Flags configuration
+//IPv4
+//IPv6
+//VLAN ID
+//VLAN ID value
+//Virtual Router ID (VRID)
+l3 get vrrp flags ( ipv4 | ipv6 ) vid <UINT:vid> vrid
+#endif
+
+#ifdef CMD_L3_CREATE_NEXT_HOP_INTF_INTF_ID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//create entry
+//next-hop entry
+//interface
+//interface ID
+//MAC address configuration
+//MAC address
+l3 create next-hop intf <UINT:intf_id> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_CREATE_NEXT_HOP_INTF_INTF_ID_MAC_ADDR_MAC_ADDR_ACTION_FORWARD_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//create entry
+//next-hop entry
+//interface
+//interface ID
+//MAC address configuration
+//MAC address
+//action configuration
+//forward
+//drop
+//trap to local CPU
+//trap to master CPU
+l3 create next-hop intf <UINT:intf_id> mac-addr <MACADDR:mac_addr> action ( forward | drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_CREATE_NEXT_HOP_NH_ID_NH_ID_INTF_INTF_ID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//create entry
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+//interface
+//interface ID
+//MAC address configuration
+//MAC address
+l3 create next-hop nh-id <UINT:nh_id> intf <UINT:intf_id> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_CREATE_NEXT_HOP_NH_ID_NH_ID_INTF_INTF_ID_MAC_ADDR_MAC_ADDR_ACTION_FORWARD_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//create entry
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+//interface
+//interface ID
+//MAC address configuration
+//MAC address
+//action configuration
+//forward
+//drop
+//trap to local CPU
+//trap to master CPU
+l3 create next-hop nh-id <UINT:nh_id> intf <UINT:intf_id> mac-addr <MACADDR:mac_addr> action ( forward | drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_DESTROY_NEXT_HOP_NH_ID_NH_ID
+//l3 configuration
+//destroy entry
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+l3 destroy next-hop nh-id <UINT:nh_id>
+#endif
+
+#ifdef CMD_L3_SET_NEXT_HOP_NH_ID_NH_ID_INTF_INTF_ID
+//l3 configuration
+//set configuration
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+//interface
+//interface ID
+l3 set next-hop nh-id <UINT:nh_id> intf <UINT:intf_id>
+#endif
+
+#ifdef CMD_L3_SET_NEXT_HOP_NH_ID_NH_ID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//set configuration
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+//MAC address configuration
+//MAC address
+l3 set next-hop nh-id <UINT:nh_id> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_SET_NEXT_HOP_NH_ID_NH_ID_ACTION_FORWARD_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+//action configuration
+//forward
+//drop
+//trap to local CPU
+//trap to master CPU
+l3 set next-hop nh-id <UINT:nh_id> action ( forward | drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_GET_NEXT_HOP_NH_ID_NH_ID
+//l3 configuration
+//get configuration
+//next-hop entry
+//next-hop ID
+//next-hop (path) ID
+l3 get next-hop nh-id <UINT:nh_id>
+#endif
+
+#ifdef CMD_L3_GET_NEXT_HOP_INTF_INTF_ID_MAC_ADDR_MAC_ADDR
+//l3 configuration
+//get configuration
+//next-hop entry
+//interface
+//interface ID
+//MAC address configuration
+//MAC address
+l3 get next-hop intf <UINT:intf_id> mac-addr <MACADDR:mac_addr>
+#endif
+
+#ifdef CMD_L3_DUMP_NEXT_HOP_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//l3 configuration
+//dump configuration
+//next-hop entry (with path ID)
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+l3 dump next-hop from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_L3_CREATE_ECMP_NH_ID_1_NH_ID_2_NH_ID_3_NH_ID_4_NH_ID_5_NH_ID_6_NH_ID_7_NH_ID_8
+//l3 routing confiruation
+//create entry
+//ECMP (equal-cost multi-path) entry
+//next-hop ID-1
+//next-hop ID-2
+//next-hop ID-3
+//next-hop ID-4
+//next-hop ID-5
+//next-hop ID-6
+//next-hop ID-7
+//next-hop ID-8
+l3 create ecmp { <UINT:nh_id_1> } { <UINT:nh_id_2> } { <UINT:nh_id_3> } { <UINT:nh_id_4> } { <UINT:nh_id_5> } { <UINT:nh_id_6> } { <UINT:nh_id_7> } { <UINT:nh_id_8> }
+#endif
+
+#ifdef CMD_L3_CREATE_ECMP_ECMP_ID_ECMP_ID_NH_ID_1_NH_ID_2_NH_ID_3_NH_ID_4_NH_ID_5_NH_ID_6_NH_ID_7_NH_ID_8
+//l3 routing confiruation
+//create entry
+//ECMP (equal-cost multi-path) entry
+//ECMP ID
+//ECMP (path) ID
+//next-hop ID-1
+//next-hop ID-2
+//next-hop ID-3
+//next-hop ID-4
+//next-hop ID-5
+//next-hop ID-6
+//next-hop ID-7
+//next-hop ID-8
+l3 create ecmp ecmp-id <UINT:ecmp_id> { <UINT:nh_id_1> } { <UINT:nh_id_2> } { <UINT:nh_id_3> } { <UINT:nh_id_4> } { <UINT:nh_id_5> } { <UINT:nh_id_6> } { <UINT:nh_id_7> } { <UINT:nh_id_8> }
+#endif
+
+#ifdef CMD_L3_DESTROY_ECMP_ECMP_ID_ECMP_ID
+//l3 routing confiruation
+//create entry
+//ECMP (equal-cost multi-path) entry
+//ECMP ID
+//ECMP (path) ID
+l3 destroy ecmp ecmp-id <UINT:ecmp_id>
+#endif
+
+#ifdef CMD_L3_SET_ECMP_ECMP_ID_ECMP_ID_NH_ID_1_NH_ID_2_NH_ID_3_NH_ID_4_NH_ID_5_NH_ID_6_NH_ID_7_NH_ID_8
+//l3 routing confiruation
+//set configuration
+//ECMP (equal-cost multi-path) entry
+//ECMP ID
+//ECMP (path) ID
+//next-hop ID-1
+//next-hop ID-2
+//next-hop ID-3
+//next-hop ID-4
+//next-hop ID-5
+//next-hop ID-6
+//next-hop ID-7
+//next-hop ID-8
+l3 set ecmp ecmp-id <UINT:ecmp_id> { <UINT:nh_id_1> } { <UINT:nh_id_2> } { <UINT:nh_id_3> } { <UINT:nh_id_4> } { <UINT:nh_id_5> } { <UINT:nh_id_6> } { <UINT:nh_id_7> } { <UINT:nh_id_8> }
+#endif
+
+#ifdef CMD_L3_GET_ECMP_NH_ID_1_NH_ID_2_NH_ID_3_NH_ID_4_NH_ID_5_NH_ID_6_NH_ID_7_NH_ID_8
+//l3 routing confiruation
+//get configuration
+//ECMP (equal-cost multi-path) entry
+//next-hop ID-1
+//next-hop ID-2
+//next-hop ID-3
+//next-hop ID-4
+//next-hop ID-5
+//next-hop ID-6
+//next-hop ID-7
+//next-hop ID-8
+l3 get ecmp { <UINT:nh_id_1> } { <UINT:nh_id_2> } { <UINT:nh_id_3> } { <UINT:nh_id_4> } { <UINT:nh_id_5> } { <UINT:nh_id_6> } { <UINT:nh_id_7> } { <UINT:nh_id_8> }
+#endif
+
+#ifdef CMD_L3_GET_ECMP_ECMP_ID_ECMP_ID_COUNT
+//l3 routing confiruation
+//get configuration
+//ECMP (equal-cost multi-path) entry
+//ECMP ID
+//ECMP (path) ID
+//count of the maximum return paths
+l3 get ecmp ecmp-id <UINT:ecmp_id> { <UINT:count> }
+#endif
+
+#ifdef CMD_L3_ADD_ECMP_ECMP_ID_ECMP_ID_NH_ID_NH_ID
+//l3 configuration
+//add configuration
+//ECMP (equal-cost multi-path) entry
+//ECMP ID
+//ECMP (path) ID
+//next-hop ID
+//next-hop (path) ID
+l3 add ecmp ecmp-id <UINT:ecmp_id> nh-id <UINT:nh_id>
+#endif
+
+#ifdef CMD_L3_DEL_ECMP_ECMP_ID_ECMP_ID_NH_ID_NH_ID
+//l3 configuration
+//delete configuration
+//ECMP (equal-cost multi-path) entry
+//ECMP ID
+//ECMP (path) ID
+//next-hop ID
+//next-hop (path) ID
+l3 del ecmp ecmp-id <UINT:ecmp_id> nh-id <UINT:nh_id>
+#endif
+
+#ifdef CMD_L3_SET_ECMP_HASH_KEY_PORT_ID_TRUNK_ID_SIP_DIP_IP_DSCP_IP_PROTO_IP6_FLOW_LABEL_SPORT_DPORT_STATE_ENABLE_DISABLE
+//l3 routing confiruation
+//set configuration
+//ECMP (equal-cost multi-path) entry
+//hash configuration
+//key configuration
+//port id
+//trunk id
+//source IP address
+//destination IP address
+//IP DSCP value
+//IP protocol id
+//IPv6 flow label
+//source port number
+//destination port number
+//state configuration
+//enable
+//disable
+l3 set ecmp hash key ( port-id | trunk-id | sip | dip | ip-dscp | ip-proto | ip6-flow-label | sport | dport ) state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_SET_ECMP_HASH_KEY_UNIVERSAL_ID_SIP_SHIFT_DIP_SHIFT_SPORT_SHIFT_DPORT_SHIFT_VALUE
+//l3 routing confiruation
+//set configuration
+//ECMP (equal-cost multi-path) entry
+//hash configuration
+//key configuration
+//universal ID
+//source IP address bit-shift
+//destination IP address bit-shift
+//source port number bit-shift
+//destination port number bit-shift
+//value
+l3 set ecmp hash key ( universal-id | sip-shift | dip-shift | sport-shift | dport-shift ) <UINT:value>
+#endif
+
+#ifdef CMD_L3_GET_ECMP_HASH_KEY
+//l3 routing confiruation
+//get configuration
+//ECMP (equal-cost multi-path) entry
+//hash configuration
+//key configuration
+l3 get ecmp hash key
+#endif
+
+#ifdef CMD_L3_ADD_HOST_VRF_ID_VRF_ID_IP_IP_ADDR_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//path ID (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add host vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_ADD_HOST_VRF_ID_VRF_ID_IP_IP_ADDR_NEXTHOP_INTF_ID_MAC_ADDR_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//nexthop configuration
+//interface ID
+//MAC address
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add host vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> nexthop <UINT:intf_id> <MACADDR:mac_addr> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_SET_HOST_VRF_ID_VRF_ID_IP_IP_ADDR_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//set configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//path ID configuration (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 set host vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_DEL_HOST_VRF_ID_VRF_ID_IP_IP_ADDR
+//l3 configuration
+//delete configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+l3 del host vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr>
+#endif
+
+#ifdef CMD_L3_DEL_HOST_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH
+//l3 configuration
+//delete configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+l3 del host vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length>
+#endif
+
+#ifdef CMD_L3_ADD_HOST_VRF_ID_VRF_ID_IP6_IP6_ADDR_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//path ID (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add host vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_ADD_HOST_VRF_ID_VRF_ID_IP6_IP6_ADDR_NEXTHOP_INTF_ID_MAC_ADDR_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//nexthop configure
+//interface ID
+//MAC address
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add host vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> nexthop <UINT:intf_id> <MACADDR:mac_addr> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_SET_HOST_VRF_ID_VRF_ID_IP6_IP6_ADDR_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//set configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//path ID configuration
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 set host vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_DEL_HOST_VRF_ID_VRF_ID_IP6_IP6_ADDR
+//l3 configuration
+//delete configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+l3 del host vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr>
+#endif
+
+#ifdef CMD_L3_DEL_HOST_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH
+//l3 configuration
+//delete configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+l3 del host vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length>
+#endif
+
+#ifdef CMD_L3_DEL_HOST_INTF_ID_INTF_ID_NEGATE_IP_IP6
+//l3 configuration
+//delete configuration
+//host entry
+//interface
+//interface ID
+//negate (turn the object to all other interfaces except the specified one)
+//IPv4 type
+//IPv6 type
+l3 del host intf-id <UINT:intf_id> { negate } ( ip | ip6 )
+#endif
+
+#ifdef CMD_L3_DEL_HOST_ALL_IP_IP6
+//l3 configuration
+//delete configuration
+//host entry
+//all entries
+//IPv4 type
+//IPv6 type
+l3 del host all ( ip | ip6 )
+#endif
+
+#ifdef CMD_L3_GET_HOST_VRF_ID_VRF_ID_IP_IP_ADDR_HIT_CLEAR
+//l3 configuration
+//get configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//clear hit-bit concurrently
+l3 get host vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> { hit-clear }
+#endif
+
+#ifdef CMD_L3_GET_HOST_VRF_ID_VRF_ID_IP6_IP6_ADDR_HIT_CLEAR
+//l3 configuration
+//get configuration
+//host entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//clear hit-bit concurrently
+l3 get host vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> { hit-clear }
+#endif
+
+#ifdef CMD_L3_GET_HOST_CONFLICT_LIST_VRF_ID_VRF_ID_IP_IP_ADDR_MAX_HOST_MAX_HOST
+//l3 configuration
+//get configuration
+//host entry
+//conflict list
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//maximum number of return hosts
+//maximum hosts
+l3 get host conflict-list vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> max-host <UINT:max_host>
+#endif
+
+#ifdef CMD_L3_GET_HOST_CONFLICT_LIST_VRF_ID_VRF_ID_IP6_IP6_ADDR_MAX_HOST_MAX_HOST
+//l3 configuration
+//get configuration
+//host entry
+//conflict list
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//maximum number of return hosts
+//maximum hosts
+l3 get host conflict-list vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> max-host <UINT:max_host>
+#endif
+
+#ifdef CMD_L3_SET_HOST_AGE_IP_IP6_CLEAR_HIT_BIT_REMOVE_UNUSED_ENTRY
+//l3 configuration
+//set configuration
+//host entry
+//aging-out configuration
+//IPv4 type
+//IPv6 type
+//clear hit-bits concurrently
+//remove unused entries concurrently
+l3 set host age ( ip | ip6 ) ( clear-hit-bit | remove-unused-entry )
+#endif
+
+#ifdef CMD_L3_DUMP_HOST_IP_IP6_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//l3 configuration
+//dump configuration
+//host entry
+//IPv4 type
+//IPv6 type
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+l3 dump host ( ip | ip6 ) from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_L3_ADD_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//path ID (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_ADD_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_NEXTHOP_INTF_ID_MAC_ADDR_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//nexthop configure
+//interface ID
+//MAC address
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> nexthop <UINT:intf_id> <MACADDR:mac_addr> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//set configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//path ID configuration
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 set route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_DEL_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH
+//l3 configuration
+//delete configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+l3 del route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length>
+#endif
+
+#ifdef CMD_L3_ADD_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//path ID (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_ADD_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_NEXTHOP_INTF_ID_MAC_ADDR_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//nexthop configure
+//interface ID
+//MAC address
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> nexthop <UINT:intf_id> <MACADDR:mac_addr> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//set configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//path ID configuration
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 set route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_DEL_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH
+//l3 configuration
+//delete configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+l3 del route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length>
+#endif
+
+#ifdef CMD_L3_DEL_ROUTE_INTF_ID_INTF_ID_NEGATE_IP_IP6
+//l3 configuration
+//delete configuration
+//route entry
+//interface
+//interface ID
+//negate (turn the object to all other interfaces except the specified one)
+//IPv4 type
+//IPv6 type
+l3 del route intf-id <UINT:intf_id> { negate } ( ip | ip6 )
+#endif
+
+#ifdef CMD_L3_DEL_ROUTE_ALL_IP_IP6
+//l3 configuration
+//delete configuration
+//route entry
+//all entries
+//IPv4 type
+//IPv6 type
+l3 del route all ( ip | ip6 )
+#endif
+
+#ifdef CMD_L3_GET_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_HIT_CLEAR
+//l3 configuration
+//get configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//clear hit-bit concurrently
+l3 get route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> { hit-clear }
+#endif
+
+#ifdef CMD_L3_GET_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_HIT_CLEAR
+//l3 configuration
+//get configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//clear hit-bit concurrently
+l3 get route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> { hit-clear }
+#endif
+
+#ifdef CMD_L3_ADD_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//suffix length (use dip for ecmp)
+//suffix length, (0~32, prefix_len + suffix_len <= 32)
+//path ID (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//set configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//suffix length (use dip for ecmp)
+//suffix length, (0~32, prefix_len + suffix_len <= 32)
+//path ID configuration
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 set route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_DEL_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH
+//l3 configuration
+//delete configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//suffix length (use dip for ecmp)
+//suffix length, <0~32>
+l3 del route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length>
+#endif
+
+#ifdef CMD_L3_ADD_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//add configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//suffix length (use dip for ecmp)
+//suffix length, (0~128, prefix_len + suffix_len <= 128)
+//path ID (path id = 0,only support forward action drop/trap-to-cpu)
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 add route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH_PATH_ID_PATH_ID_FWD_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_NULL_INTF_TTL_DEC_IGNORE_TTL_CHK_IGNORE_PRIORITY
+//l3 configuration
+//set configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//suffix length (use dip for ecmp)
+//suffix length, <0~128>
+//path ID configuration
+//path (ECMP/next-hop) ID
+//forwarding action
+//drop
+//forward (route)
+//trap to CPU (local/master)
+//copy to CPU (local/master)
+//null interface as destination (optional flag)
+//TTL decease ignore (optional flag)
+//TTL check ignore (optional flag)
+//priority (internal priority)
+l3 set route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length> path-id <UINT:path_id> fwd-action ( drop | forward | trap-to-cpu | copy-to-cpu ) { null-intf } { ttl-dec-ignore } { ttl-chk-ignore } { <UINT:priority> }
+#endif
+
+#ifdef CMD_L3_DEL_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH
+//l3 configuration
+//delete configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//suffix length (use dip for ecmp)
+//suffix length, <0~128>
+l3 del route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length>
+#endif
+
+#ifdef CMD_L3_GET_ROUTE_VRF_ID_VRF_ID_IP_IP_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH_HIT_CLEAR
+//l3 configuration
+//get configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv4 address configuration
+//IPv4 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~32>
+//suffix length (use dip for ecmp)
+//suffix length, <0~32>
+//clear hit-bit concurrently
+l3 get route vrf-id <UINT:vrf_id> ip <IPV4ADDR:ip_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length> { hit-clear }
+#endif
+
+#ifdef CMD_L3_GET_ROUTE_VRF_ID_VRF_ID_IP6_IP6_ADDR_PREFIX_LENGTH_PREFIX_LENGTH_SUFFIX_LENGTH_SUFFIX_LENGTH_HIT_CLEAR
+//l3 configuration
+//get configuration
+//route entry
+//virtual routing/forwarding ID
+//VRF ID
+//IPv6 address configuration
+//IPv6 address
+//prefix length (specify a network/subnet)
+//prefix length, <0~128>
+//suffix length (use dip for ecmp)
+//suffix length, <0~128>
+//clear hit-bit concurrently
+l3 get route vrf-id <UINT:vrf_id> ip6 <IPV6ADDR:ip6_addr> prefix-length <UINT:prefix_length> suffix-length <UINT:suffix_length> { hit-clear }
+#endif
+
+#ifdef CMD_L3_SET_ROUTE_AGE_IP_IP6_CLEAR_HIT_BIT_REMOVE_UNUSED_ENTRY
+//l3 configuration
+//set configuration
+//route entry
+//aging-out configuration
+//IPv4 type
+//IPv6 type
+//clear hit-bits concurrently
+//remove unused entries concurrently
+l3 set route age ( ip | ip6 ) ( clear-hit-bit | remove-unused-entry )
+#endif
+
+#ifdef CMD_L3_DUMP_ROUTE_IP_IP6_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//l3 configuration
+//dump configuration
+//route entry
+//IPv4 type
+//IPv6 type
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+l3 dump route ( ip | ip6 ) from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_L3_SET_IPUC_IP6UC_PKT_TO_CPU_TARGET_LOCAL_MASTER
+//l3 configuration
+//set configuration
+//IPv4 unicast
+//IPv6 unicast
+//target to trap/copy packet to CPU
+//local CPU
+//master CPU
+l3 set ( ipuc | ip6uc ) pkt-to-cpu-target ( local | master )
+#endif
+
+#ifdef CMD_L3_GET_IPUC_IP6UC_PKT_TO_CPU_TARGET
+//l3 configuration
+//get configuration
+//IPv4 unicast
+//IPv6 unicast
+//target to trap/copy packet to CPU
+l3 get ( ipuc | ip6uc ) pkt-to-cpu-target
+#endif
+
+#ifdef CMD_L3_SET_IPUC_IP6UC_ROUTING_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//IPv4 unicast
+//IPv6 unicast
+//routing configuration
+//state configuration
+//enable function
+//disable function
+l3 set ( ipuc | ip6uc ) routing state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_GET_IPUC_IP6UC_ROUTING_STATE
+//l3 configuration
+//get configuration
+//IPv4 unicast
+//IPv6 unicast
+//routing configuration
+//state configuration
+l3 get ( ipuc | ip6uc ) routing state
+#endif
+
+#ifdef CMD_L3_SET_URPF_BASE_SELECTION_INTF_BASED_PORT_BASED
+//l3 configuration
+//set configuration
+//uRPF (unicast reverse path forwarding)
+//base selection (mode)
+//interface-based configuration
+//port-based configuration
+l3 set urpf base-selection ( intf-based | port-based )
+#endif
+
+#ifdef CMD_L3_GET_URPF_BASE_SELECTION
+//l3 configuration
+//get configuration
+//uRPF (unicast reverse path forwarding)
+//base selection (mode)
+l3 get urpf base-selection
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_NON_IP_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//forwarding action of non-IP packet
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set routing-exception non-ip-action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_GET_ROUTING_EXCEPTION_NON_IP_ACTION
+//l3 configuration
+//get configuration
+//routing exception
+//non-IP action
+l3 get routing-exception non-ip-action
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IP_IP6_HEADER_ERROR_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER_HARD_DROP
+//l3 configuration
+//set configuration
+//routing exception
+//IPv4 type
+//IPv6 type
+//forwarding action of header-error packet
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+//hard drop (unicast is forward)
+l3 set routing-exception ( ip | ip6 ) header-error-action ( drop | trap-to-cpu | trap-to-master | hard-drop )
+#endif
+
+#ifdef CMD_L3_GET_ROUTING_EXCEPTION_IP_IP6_HEADER_ERROR_ACTION
+//l3 configuration
+//get configuration
+//routing exception
+//IPv4 type
+//IPv6 type
+//forwarding action of header-error packet
+l3 get routing-exception ( ip | ip6 ) header-error-action
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IPUC_BAD_SIP_BAD_DIP_ZERO_SIP_DMAC_BC_TTL_FAIL_MTU_FAIL_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv4 unicast
+//bad SIP address
+//bad DIP address
+//zero SIP address
+//broadcast DMAC address
+//TTL fail
+//MTU fail
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set routing-exception ipuc ( bad-sip | bad-dip | zero-sip | dmac-bc | ttl-fail | mtu-fail ) action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IPUC_DMAC_MC_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv4 unicast
+//multicast DMAC address
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set routing-exception ipuc dmac-mc action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IPUC_DMAC_MC_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv4 unicast
+//multicast DMAC address
+//forwarding action
+//drop
+//forward (l2 bridge)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set routing-exception ipuc dmac-mc action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IPUC_HEADER_OPT_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv4 unicast
+//header option
+//forwarding action
+//drop
+//forward (l2 bridge)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set routing-exception ipuc header-opt action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_ROUTING_EXCEPTION_IPUC_BAD_SIP_BAD_DIP_ZERO_SIP_DMAC_BC_DMAC_MC_TTL_FAIL_MTU_FAIL_HEADER_OPT_ACTION
+//l3 configuration
+//get configuration
+//routing exception
+//IPv4 unicast
+//bad SIP address
+//bad DIP address
+//zero SIP address
+//broadcast DMAC address
+//multicast DMAC address
+//TTL fail
+//MTU fail
+//header option
+//forwarding action
+l3 get routing-exception ipuc ( bad-sip | bad-dip | zero-sip | dmac-bc | dmac-mc | ttl-fail | mtu-fail | header-opt ) action
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IP6UC_BAD_SIP_BAD_DIP_ZERO_SIP_HBH_ERR_HEADER_ROUTE_HBH_HL_FAIL_MTU_FAIL_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv6 unicast
+//bad SIP address
+//bad DIP address
+//zero SIP address
+//hop-by-hop error
+//header route
+//hop-by-hop
+//hop-limit fail
+//MTU fail
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set routing-exception ip6uc ( bad-sip | bad-dip | zero-sip | hbh-err | header-route | hbh | hl-fail | mtu-fail ) action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IP6UC_HBH_ERR_HEADER_ROUTE_HBH_ACTION_FORWARD_COPY_TO_CPU_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv6 unicast
+//hop-by-hop error
+//header route
+//hop-by-hop
+//forwarding action
+//forward
+//copy to CPU (local)
+//copy to the master CPU
+l3 set routing-exception ip6uc ( hbh-err | header-route | hbh ) action ( forward | copy-to-cpu | copy-to-master )
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IP6UC_DMAC_MISMATCH_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv6 unicast
+//DMAC mismatch
+//forwarding action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set routing-exception ip6uc dmac-mismatch action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_IP6UC_DMAC_MISMATCH_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//IPv6 unicast
+//DMAC mismatch
+//forwarding action
+//drop
+//forward (l2 bridge)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set routing-exception ip6uc dmac-mismatch action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_ROUTING_EXCEPTION_IP6UC_BAD_SIP_BAD_DIP_ZERO_SIP_DMAC_MISMATCH_HBH_ERR_HEADER_ROUTE_HBH_HL_FAIL_MTU_FAIL_ACTION
+//l3 configuration
+//get configuration
+//routing exception
+//IPv6 unicast
+//bad SIP address
+//bad DIP address
+//zero SIP address
+//DMAC mismatch
+//hop-by-hop error
+//header route
+//hop-by-hop
+//hop-limit fail
+//MTU fail
+//forwarding action
+l3 get routing-exception ip6uc ( bad-sip | bad-dip | zero-sip | dmac-mismatch | hbh-err | header-route | hbh | hl-fail | mtu-fail ) action
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_NEXT_HOP_ERROR_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//next-hop error action
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set routing-exception next-hop-error-action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_GET_ROUTING_EXCEPTION_NEXT_HOP_ERROR_ACTION
+//l3 configuration
+//get configuration
+//routing exception
+//next-hop error action
+l3 get routing-exception next-hop-error-action
+#endif
+
+#ifdef CMD_L3_SET_ROUTING_EXCEPTION_NEXT_HOP_AGE_OUT_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//routing exception
+//next-hop age-out action
+//drop
+//forward (keep routing)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set routing-exception next-hop-age-out-action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_ROUTING_EXCEPTION_NEXT_HOP_AGE_OUT_ACTION
+//l3 configuration
+//get configuration
+//routing exception
+//next-hop age-out action
+l3 get routing-exception next-hop-age-out-action
+#endif
+
+#ifdef CMD_L3_SET_REFERENCE_COUNT_CHECK_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//reference-count check
+//state configuration
+//enable function
+//disable function
+l3 set reference-count-check state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPUC_IP6UC_IPMC_IP6MC_ROUTING_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//IPv4 multicast
+//IPv6 multicast
+//routing configuration
+//state configuration
+//enable function
+//disable function
+l3 set intf <UINT:intf_id> ( ipuc | ip6uc | ipmc | ip6mc ) routing state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPUC_IP6UC_IPMC_IP6MC_ROUTING_STATE
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//IPv4 multicast
+//IPv6 multicast
+//routing configuration
+//state configuration
+l3 get intf <UINT:intf_id> ( ipuc | ip6uc | ipmc | ip6mc ) routing state
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPUC_IP6UC_URPF_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//state configuration
+//enable function
+//disable function
+l3 set intf <UINT:intf_id> ( ipuc | ip6uc ) urpf state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPUC_IP6UC_URPF_STATE
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//state configuration
+l3 get intf <UINT:intf_id> ( ipuc | ip6uc ) urpf state
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPUC_IP6UC_URPF_DEFAULT_ROUTE_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//default route
+//state configuration
+//enable function
+//disable function
+l3 set intf <UINT:intf_id> ( ipuc | ip6uc ) urpf default-route state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPUC_IP6UC_URPF_DEFAULT_ROUTE_STATE
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//default route
+//state configuration
+l3 get intf <UINT:intf_id> ( ipuc | ip6uc ) urpf default-route state
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPUC_IP6UC_URPF_MODE_LOOSE_STRICT
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//mode selection
+//loose mode
+//strict mode
+l3 set intf <UINT:intf_id> ( ipuc | ip6uc ) urpf mode ( loose | strict )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPUC_IP6UC_URPF_MODE
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//mode selection
+l3 get intf <UINT:intf_id> ( ipuc | ip6uc ) urpf mode
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPUC_IP6UC_URPF_FAIL_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//forwarding action of uRPF failure
+//drop
+//forward (keep routing)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set intf <UINT:intf_id> ( ipuc | ip6uc ) urpf fail-action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPUC_IP6UC_URPF_FAIL_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//forwarding action of uRPF failure
+l3 get intf <UINT:intf_id> ( ipuc | ip6uc ) urpf fail-action
+#endif
+
+#ifdef CMD_L3_SET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//state configuration
+//enable function
+//disable function
+l3 set port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_GET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_STATE
+//l3 configuration
+//get configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//state configuration
+l3 get port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf state
+#endif
+
+#ifdef CMD_L3_SET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_DEFAULT_ROUTE_STATE_ENABLE_DISABLE
+//l3 configuration
+//set configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//default route
+//state configuration
+//enable function
+//disable function
+l3 set port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf default-route state ( enable | disable )
+#endif
+
+#ifdef CMD_L3_GET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_DEFAULT_ROUTE_STATE
+//l3 configuration
+//get configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//default route
+//state configuration
+l3 get port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf default-route state
+#endif
+
+#ifdef CMD_L3_SET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_MODE_LOOSE_STRICT
+//l3 configuration
+//set configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//mode selection
+//loose mode
+//strict mode
+l3 set port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf mode ( loose | strict )
+#endif
+
+#ifdef CMD_L3_GET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_MODE
+//l3 configuration
+//get configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//mode selection
+l3 get port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf mode
+#endif
+
+#ifdef CMD_L3_SET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_FAIL_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//forwarding action of uRPF failure
+//drop
+//forward (keep routing)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf fail-action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_PORT_PORTS_ALL_IPUC_IP6UC_URPF_FAIL_ACTION
+//l3 configuration
+//get configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//IPv4 unicast
+//IPv6 unicast
+//uRPF (unicast reverse path forwarding)
+//forwarding action of uRPF failure
+l3 get port ( <PORT_LIST:ports> | all ) ( ipuc | ip6uc ) urpf fail-action
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPUC_IP6UC_ICMP_REDIRECT_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//ICMP configuration
+//forwarding action of redirecting
+//drop
+//forward (keep routing)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set intf <UINT:intf_id> ( ipuc | ip6uc ) icmp redirect-action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPUC_IP6UC_ICMP_REDIRECT_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 unicast
+//IPv6 unicast
+//ICMP configuration
+//forwarding action of redirecting
+l3 get intf <UINT:intf_id> ( ipuc | ip6uc ) icmp redirect-action
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPMC_IP6MC_ROUTING_LOOKUP_MISS_ACTION_DROP_TRAP_TO_CPU_TRAP_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 multicast
+//IPv6 multicast
+//routing function
+//forwarding action of lookup miss
+//drop
+//trap to CPU (local)
+//trap to the master CPU
+l3 set intf <UINT:intf_id> ( ipmc | ip6mc ) routing lookup-miss-action ( drop | trap-to-cpu | trap-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPMC_IP6MC_ROUTING_LOOKUP_MISS_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 multicast
+//IPv6 multicast
+//routing function
+//forwarding action of lookup miss
+l3 get intf <UINT:intf_id> ( ipmc | ip6mc ) routing lookup-miss-action
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IPMC_DIP_224_0_0_X_224_0_1_X_239_X_X_X_ACTION_FORWARD_DROP_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv4 multicast
+//destination IPv4 address
+//224.0.0.X
+//224.0.1.X
+//239.X.X.X
+//forwarding action
+//forward (normal process or flood in the ingress VLAN)
+//drop
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set intf <UINT:intf_id> ipmc dip ( 224-0-0-x | 224-0-1-x | 239-x-x-x ) action ( forward | drop | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IPMC_DIP_224_0_0_X_224_0_1_X_239_X_X_X_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv4 multicast
+//destination IPv4 address
+//224.0.0.X
+//224.0.1.X
+//239.X.X.X
+//forwarding action
+l3 get intf <UINT:intf_id> ipmc dip ( 224-0-0-x | 224-0-1-x | 239-x-x-x ) action
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IP6MC_DIP_FF0X_0000_XXXX_FF0X_XXXX_XXXX_FF0X_DB8_0_0_ACTION_FORWARD_DROP_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv6 multicast
+//destination IPv6 address
+//FF0X::0000:XXXX
+//FF0X::XXXX:XXXX
+//FF0X:DB8::0
+//forwarding action
+//forward (normal process or flood in the ingress VLAN)
+//drop
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set intf <UINT:intf_id> ip6mc dip ( ff0x-0000-xxxx | ff0x-xxxx-xxxx | ff0x-db8-0-0 ) action ( forward | drop | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IP6MC_DIP_FF0X_0000_XXXX_FF0X_XXXX_XXXX_FF0X_DB8_0_0_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv6 multicast
+//destination IPv6 address
+//FF0X::0000:XXXX
+//FF0X::XXXX:XXXX
+//FF0X:DB8::0
+//forwarding action
+l3 get intf <UINT:intf_id> ip6mc dip ( ff0x-0000-xxxx | ff0x-xxxx-xxxx | ff0x-db8-0-0 ) action
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_IP6_NEIGHBOR_DISCOVERY_ACTION_FORWARD_FLOOD_IN_VLAN_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//IPv6 type
+//neighbor discovery packet
+//forwarding action
+//forward (normal process)
+//flood in the ingress VLAN
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set intf <UINT:intf_id> ip6 neighbor-discovery action ( forward | flood-in-vlan | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_IP6_NEIGHBOR_DISCOVERY_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//IPv6 type
+//neighbor discovery packet
+//forwarding action
+l3 get intf <UINT:intf_id> ip6 neighbor-discovery action
+#endif
+
+#ifdef CMD_L3_SET_INTF_INTF_ID_PBR_IPUC_IP6UC_ICMP_REDIRECT_ACTION_DROP_FORWARD_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//l3 configuration
+//set configuration
+//interface
+//interface ID
+//PBR (policy-based routing)
+//IPv4 unicast
+//IPv6 unicast
+//ICMP configuration
+//forwarding action of redirecting
+//drop
+//forward (keep routing)
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to the master CPU
+//copy to the master CPU
+l3 set intf <UINT:intf_id> pbr ( ipuc | ip6uc ) icmp redirect-action ( drop | forward | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_L3_GET_INTF_INTF_ID_PBR_IPUC_IP6UC_ICMP_REDIRECT_ACTION
+//l3 configuration
+//get configuration
+//interface
+//interface ID
+//PBR (policy-based routing)
+//IPv4 unicast
+//IPv6 unicast
+//ICMP configuration
+//forwarding action of redirecting
+l3 get intf <UINT:intf_id> pbr ( ipuc | ip6uc ) icmp redirect-action
+#endif
+

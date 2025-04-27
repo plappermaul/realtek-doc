@@ -1,0 +1,77 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtusr User Library
+#
+
+RTRPC_SRC =
+RTRPC_SRC += rtrpc_init.c
+RTRPC_SRC += rtrpc_mapper.c
+RTRPC_SRC += rtrpc_msg.c
+RTRPC_SRC += rtrpc_l2.c
+RTRPC_SRC += rtrpc_l3.c
+RTRPC_SRC += rtrpc_port.c
+RTRPC_SRC += rtrpc_vlan.c
+RTRPC_SRC += rtrpc_bpe.c
+RTRPC_SRC += rtrpc_stp.c
+RTRPC_SRC += rtrpc_counter.c
+RTRPC_SRC += rtrpc_time.c
+RTRPC_SRC += rtrpc_trap.c
+RTRPC_SRC += rtrpc_qos.c
+RTRPC_SRC += rtrpc_trunk.c
+RTRPC_SRC += rtrpc_debug.c
+RTRPC_SRC += rtrpc_mirror.c
+RTRPC_SRC += rtrpc_flowctrl.c
+RTRPC_SRC += rtrpc_rate.c
+RTRPC_SRC += rtrpc_switch.c
+RTRPC_SRC += rtrpc_sys.c
+RTRPC_SRC += rtrpc_nic.c
+RTRPC_SRC += rtrpc_sds.c
+RTRPC_SRC += rtrpc_diag.c
+RTRPC_SRC += rtrpc_eee.c
+RTRPC_SRC += rtrpc_sec.c
+RTRPC_SRC += rtrpc_led.c
+RTRPC_SRC += rtrpc_acl.c
+RTRPC_SRC += rtrpc_pie.c
+RTRPC_SRC += rtrpc_private.c
+RTRPC_SRC += rtrpc_mpls.c
+RTRPC_SRC += rtrpc_oam.c
+RTRPC_SRC += rtrpc_tunnel.c
+RTRPC_SRC += rtrpc_vxlan.c
+RTRPC_SRC += rtrpc_openflow.c
+RTRPC_SRC += rtrpc_mcast.c
+RTRPC_SRC += rtrpc_ipmcast.c
+RTRPC_SRC += rtrpc_stack.c
+RTRPC_SRC += rtrpc_serdes.c
+RTRPC_SRC += rtrpc_hwp.c
+RTRPC_SRC += rtrpc_util.c
+
+ifeq ($(CONFIG_SDK_DRIVER_L2NTFY), y)
+  RTRPC_SRC += rtrpc_l2_ntfy.c
+endif
+
+ifeq ($(CONFIG_SDK_UART1), y)
+  RTRPC_SRC += rtrpc_uart.c
+endif
+
+ifeq ($(CONFIG_SDK_RTL8380), y)
+  ifeq ($(CONFIG_SDK_APP_DIAG_EXT), y)
+    RTRPC_SRC += rtrpc_ext_8380.c
+    INCLUDE += -I$(MODELDIR)
+  endif
+endif
+
+ifeq ($(CONFIG_SDK_RTL9300), y)
+  ifeq ($(CONFIG_SDK_APP_DIAG_EXT), y)
+    RTRPC_SRC += rtrpc_ext_9300.c
+    INCLUDE += -I$(MODELDIR)
+  endif
+endif
+
+ifeq ($(CONFIG_SDK_RTL9310), y)
+  ifeq ($(CONFIG_SDK_APP_DIAG_EXT), y)
+    RTRPC_SRC += rtrpc_ext_9310.c
+    INCLUDE += -I$(MODELDIR)
+  endif
+endif
+

@@ -1,0 +1,1 @@
+/home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/../../../sdk/sdk_rtk_switch/rtk-sdk/src/hal/chipdef/mango/rtk_mango_tableField_list.c

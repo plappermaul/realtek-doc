@@ -1,0 +1,6 @@
+template_name      := 9300_nor
+FILTER_OUT_OBJS    := 
+mirror             := $(template_name)
+TARGET_OUT         := 
+TARGET_LIB	   := libmips34kc.o
+STANDALONE_UBOOT   := 1

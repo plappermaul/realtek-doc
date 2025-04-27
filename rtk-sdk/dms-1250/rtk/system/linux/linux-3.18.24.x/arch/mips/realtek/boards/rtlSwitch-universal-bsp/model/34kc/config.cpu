@@ -1,0 +1,217 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# CPU Features
+#
+menu "Selected chip feature"
+
+comment "CPU features"
+
+#source "config/config.arm"
+#source "config/config.mips"
+#source "config/config.rlx"
+source "../target/selection/config.mips"
+
+config SOC_ENABLE_MT
+	bool "Enable MT multi-threading support"
+	default n
+	depends on SOC_SUPPORT_MT
+
+config SOC_ENABLE_SMP
+	bool "Enable SMP multi-processing support"
+	default y
+	depends on SOC_SUPPORT_SMP || SOC_ENABLE_MT
+	select SOC_ENABLE_IOCU if SOC_CPU_ARM
+
+config SOC_ENABLE_DSP
+	bool "Enable DSP support"
+	default n
+	depends on SOC_SUPPORT_DSP
+	help
+	  This option enables the MIPS DSP engine support.
+
+config SOC_ENABLE_DSP2
+	bool "Enable DSP2 support"
+	default n
+	depends on SOC_SUPPORT_DSP2
+	help
+	  This option enables the MIPS DSP2 engine support.
+
+config SOC_ENABLE_RADIAX
+	bool "Enable RADIAX support"
+	default n
+	depends on SOC_SUPPORT_RADIAX
+	help
+	  This option enables the Taroko Radiax engine support.
+
+config SOC_ENABLE_VFP
+	bool "Enable VFP support"
+	default y
+	depends on SOC_SUPPORT_VFP
+	help
+	  This option enables the VFP hardware support.
+
+config SOC_ENABLE_NEON
+	bool "Enable NEON support"
+	default y
+	depends on SOC_SUPPORT_NEON
+	select SOC_ENABLE_VFP
+	help
+	  This option enables the ARM Neon engine support.
+
+config SOC_ENABLE_FPU
+	bool "Enable FPU hardware"
+	default n
+	depends on SOC_SUPPORT_FPU
+	help
+	  This option enables the FPU hardware support.
+
+config SOC_ENABLE_EMU
+	bool "Enable FPU emulation"
+	default n
+	depends on SOC_CPU_MIPS || SOC_CPU_RLX
+	help
+	  This option allows building a kernel with or without the
+	  algorithmics FPU emulator enabled. Turning off this option results
+	  in a kernel which does not catch floating operations exceptions.
+	  Make sure that your toolchain is configured to enable software
+	  floating point emulation in that case.
+
+	  If unsure say N here.
+
+config SOC_ENABLE_IRQ_VI
+	bool "Enable vectored interrupt support"
+	default y
+	depends on SOC_SUPPORT_IRQ_VI
+
+config SOC_ENABLE_IRQ_EI
+	bool "Enable external interrupt support"
+	default n
+	depends on SOC_SUPPORT_IRQ_EI
+
+config SOC_ENABLE_WATCH
+	bool "Enable hardware watchpoint support"
+	default n
+	depends on SOC_SUPPORT_WATCH
+
+config SOC_ENABLE_AR7
+	bool
+	default y if SOC_SUPPORT_AR7
+
+config SOC_ENABLE_L2C
+	bool "Enable L2 cache"
+	depends on SOC_SUPPORT_L2C
+	default y if SOC_ENABLE_SMP
+
+config SOC_ENABLE_IOCU
+	bool "Enable coherence unit support"
+	depends on SOC_SUPPORT_SMP
+	default y if SOC_ENABLE_SMP
+
+config SOC_ENABLE_SPRAM
+	bool "Enable scratch pad memory"
+	depends on SOC_SUPPORT_SPRAM
+
+config SOC_ENABLE_CPC
+	bool "Enable Cluster Power Controller"
+	depends on SOC_ENABLE_SMP
+
+comment "Device features"
+
+config SOC_ENABLE_OF
+	bool "Enable device tree support"
+	depends on SOC_CPU_MIPS || SOC_CPU_RLX
+	default n
+
+config SOC_ENABLE_ICTL
+	bool "Enable ICTL controller"
+	depends on SOC_SUPPORT_ICTL
+	depends on !SOC_SUPPORT_SMP || !SOC_ENABLE_SMP
+	default y
+	help
+	  This is the designware interrupt controller integrated
+	  specifically for sheipa platform.
+
+config SOC_ENABLE_PCI
+	bool "Enable PCI controller"
+	depends on SOC_SUPPORT_PCI
+	default n
+
+config SOC_ENABLE_USB
+	bool "Enable USB controller"
+	depends on SOC_SUPPORT_USB
+	default n
+
+config SOC_ENABLE_DRD
+	bool "Enable USB DRD support"
+	depends on SOC_ENABLE_USB
+	default n
+endmenu
+
+#
+# SOC features
+#
+config SOC_CPU_EL
+	bool
+
+config SOC_CPU_EB
+	bool
+
+#
+# CACHE/SPRAM features
+#
+config SOC_SUPPORT_AR7
+	bool
+
+config SOC_SUPPORT_SPRAM
+	bool
+
+#
+# FPU/VFP, NEON/DSP/RADIAX features
+#
+config SOC_SUPPORT_VFP
+	bool
+
+config SOC_SUPPORT_FPU
+	bool
+
+config SOC_SUPPORT_NEON
+	bool
+
+config SOC_SUPPORT_DSP
+	bool
+
+config SOC_SUPPORT_RADIAX
+	bool
+
+#
+# L2C/SMP
+#
+config SOC_SUPPORT_SMP
+	bool
+
+config SOC_SUPPORT_L2C
+	bool
+
+config SOC_SUPPORT_IOCU
+	bool
+
+config SOC_SUPPORT_WATCH
+	bool
+
+#
+# BUS and ICTL
+#
+config SOC_SUPPORT_PCI
+	bool
+
+config SOC_SUPPORT_USB
+	bool
+
+config SOC_SUPPORT_ICTL
+	bool

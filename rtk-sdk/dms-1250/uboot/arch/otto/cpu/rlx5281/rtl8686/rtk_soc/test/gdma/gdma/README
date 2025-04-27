@@ -1,0 +1,159 @@
+
+Summary:
+========
+GDMA pattern matching is an automata-based pattern matching technique. 
+In other word, we need to translate the input pattern into the coresponding
+finite state machine (by FSM compiler), then we use the finite state machine
+data as the input data of hardware to do the pattern matching tasks. Here, we
+implement the FSM complier with three algorithms for different kinds of input
+patterns. They are KMP, Aho-Corasick and the classical regular expression 
+search approaches.We have three FSM translators named "kmptrans", "ahotrans" 
+and "regtrans" here. "kmptrans" is implemented with KMP algorithm for single 
+pattern and "ahotrans" adopts Aho-Corasick algorithm to support mutilple pattern 
+matching. The other one aims for supporting regular expression pattern matching.
+The related techniques used and the basic hardware mechanism is described in
+our IP-Team wiki pages:http://172.21.68.36/mediawiki/index.php/IP_Team_Related
+There are a lot of descriptions in the presentation power point files.
+
+
+Build translators
+========
+We only need to type "make" in the command line, then here goes three execution
+files "kmptrans", "ahotrans" and "regtrans".
+
+
+
+Translator source files list
+========
+kmptrans
+	KmpPM.c: Main file of kmptrans. 
+	_kmp.c : Contain functions which implement the preprocessing phase of KMP and translate it into state machine.
+	_kmp.h : Header file of _kmp.c including declaration of out usage of functions.
+
+ahotrans
+	AhoPM.c: Main file of ahotrans
+	aho.c  : Implement the preprocessing portion of Aho-Corasick algorithm and using them to generate state machine data. 
+	aho.h  : The definition of key trie node used by Aho-Corasick algorithm and out usage functon declaration. 
+
+regtrans
+	RegExp.c: Main file of regtrans
+	ptree.c : Functions needed to build the parse tree.
+	ptree.h : Conation the definition of parse tree node and function declaration used in ptree.c.
+	regPreprocessing.c : Transform the input regluar expression into currently supported core RE symbols. 
+                             Currently our core RE only support '(','|',')','*' and '.'(concatenation).
+	regPreprocessing.h : Header file of regPreprocessing.c and the declaration of the out usage function.
+	Th_Auto.c : Implement Thompson NFA construction and NFA to DFA determinization.
+	Th_Auto.h : The definition of data structure used in Th_Auto.c and the declaration of the out usage function.
+	Th_state_to_sm.c : Transform the DFA into the state machine format defined in stateMachine.h.
+	Th_state_to_sm.h : The declaration of the out usage functions implemented in Th_state_to_sm.c.
+
+common source files
+	stateMachine.c : Include functions to show, free the geneated state machine.
+	stateMachine.h : The definition of the state machine that every algorithm mentioned above transforms to.
+	ruleTransform.c : Transform state machine data into GDMA transition rules format.
+	ruleTransform.h :  The declaration of the out usage functions implemented in ruleTransform.c.
+	gdma_glue.c : The same functionality with rtl_glue.c that simplify code to run in user mode and kernel mode.
+                      For the reason that rtl_glue.c and rtl_util.c are binded with too many flags, we decide to write
+                      gdma_glue.c to simplify it.
+	gdma_glue.h : The declaration of the out usage functions implemented gdma_glue.c.
+
+testing
+	transRuleLoader.c : The transition rules loader for testing.
+	transRuleLoader.h : The declaration of the out usage functions implemented in transRuleLoader.c.
+	contentGen.c : Implement the funcitions to generate compared context for testing.
+	contentGen.h :  The declaration of the out usage functions implemented in contentGen.c.
+
+layer 7 filter loader
+	layer7_loader.c : This is the example loader code of layer 7 filter application. Different applications may
+                          have different requirements, so we write specific loader to meet the requirements.
+	layer7_loader.h : The header file of layer7_loader.c and the declaration of the out usage functions.
+
+Usage description:
+========
+kmptrans
+	general flags:
+        -P      The input pattern.
+        -f      The input file name with the input patterns. Each line cantains one patterns.
+        -o      The output file name of the transition rules for the input regular expression pattern.
+	
+	debug flages:
+        -r      Show transition rules in the generated FSM.
+        -s      Show states in the generated FSM.
+
+	Compile pattern "ABC" into GDMA transitio rules and set output file name to be ABC.gpat.
+	#./kmptrans -P ABC -o ABC.gpat
+
+	Compile pattern within file named "pattern_file", show state matchine debug messages and
+	output the GDMA transition rules to the file named "pattern.gpat".
+	#./kmptrans -f pattern_file -s -o pattern.gpat
+
+ahotrans
+	general flags:
+        -f      The input file name with the input patterns. Each line cantains one patterns.
+        -o      The output file name of the transition rules for the input regular expression pattern.
+        -n      The maximum number of patterns to get in the input file.
+	
+	debug flages:
+        -s      Show states in the generated FSM.
+        -r      Show transition rules in the generated FSM.
+
+	Compile at most 100 patterns in file named "pattern_file" and name the output file ahopattern.gpat.
+	#./ahotrans -f patterns_file -o ahopattern.gpat -n 100
+
+regtrans
+	general flags:
+        -P      The input pattern.
+        -p      Compile the input pattern with prefix feature. currently, our pattern compiler's syntax preprocessing does not
+                support prefix symbol ^, and there are still difficulties to combine with regular expression patterns with prefix
+                feature. We may add this function with combining prefix and non-prefix regular expression patterns in next version
+                of the FSM compiler.
+        -N      Set Not symbol to the indicated character. The transition rules produced with Not symbols are not the same
+                with the last rule in the state with not feature.Since we might go to the next success state when the compared
+                charactor does not belong to the indicated charactors, for example, RE = "[lw]?[lw]?AB", when the first compared
+                charactor may not l or w, we won't go back to the initial state in this case, instead, we go to the next
+                success state. The transition rule for this purpose is not the same with the last transition in the state in the
+                general case of patterns. We don't have a mechanism in our regular expression core, we need to add the Not symbol
+                in the favor of artifical effort. Therefore, in the example RE = "[lw]?[lw]?AB", we need to add a Not symbol into
+                the pattern. Here we use 'N' to be the Not symbol and modify RE pattern to "[lwN][lwN]AB".
+        -F      Enable fail state in FSM. In the FSM generated for patterns with prefix feature, once there is no success charactors
+                match the compared charactor in a state, we just stop the FSM and reply there is no occurance in the context instead
+                of going on proceessing next input charactor from the initial state. If it is required to stop FSM once there is
+                mismatch in a state, we can set this flag on.
+        -o      The output file name of the transition rules for the input regular expression pattern.
+        -f      The input file name with the input pattern.
+	
+	debug flages:
+        -s      Show states in the generated FSM.
+        -r      Show transition rules in the generated FSM.
+	
+	Complile regular expression "^(a(b|c)d" pattern into GDMA transition rules and name output file "regpattern.gpat".
+	-F flag indicates stop FSM when it occurs mismatch. In the other hand, if we don't set the -F flag, GDMA FSM will
+	not stop until all charactors in content are compared.
+	#./regtrans -P a(b|c)d -o regpattern.gpat -p -F
+
+example code with layer 7 filter loader:
+=======
+	//This is an usage example of the loader interface of the layer 7 filter application.
+	//You can see layer7_loader.c for the functions details.
+
+        stateMachine_t* sm;
+        uint8 smFileName[] = "/xboxlive.gpat";
+        uint8 testdata[] ="\x58x80XXXXXXXX\xf3XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        int ret;
+
+        //Read compiled file and get stateMachine data.
+        sm = gdmaReadCompFile(smFileName);
+        if(sm==NULL)
+             return FAILED;
+
+        //Give state machine data , context and length of the context. If the return value equals 1 ,the context match the pattern;
+        //otherwise, it doesn't match the pattern.
+        ret = gdmaRegExec(sm,testdata,sizeof(testdata));
+        if(ret == 1)
+            rtlglue_printf("%d Match.\n",k);
+        else
+            rtlglue_printf("Not Match.\n");
+
+        //We should call this to free sm before we leave the program.
+        gdmaFreeStateMachine(sm);
+

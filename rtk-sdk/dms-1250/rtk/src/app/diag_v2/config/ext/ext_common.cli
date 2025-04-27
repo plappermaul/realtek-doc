@@ -1,0 +1,42 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 35791 $
+// $Date: 2013-01-03 18:34:55 +0800 (Thu, 03 Jan 2013) $
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) common extension commands.
+//
+
+#ifdef CONFIG_SDK_MODEL_MODE
+
+//model test configuration
+//only test real IC
+//only test model code
+//test both real IC and model code
+//model test start item
+//model test end item
+model ( ic-only | model-only | both ) <UINT:start> <UINT:end>
+
+#ifdef CONFIG_SDK_RTL9310
+//model test configuration
+//only test real IC
+//only test model code
+//test both real IC and model code
+//model test start item
+//model test end item
+//model test unit
+model ( ic-only | model-only | both ) <UINT:start> <UINT:end> <UINT:unit>
+#endif
+
+#endif  /* CONFIG_SDK_MODEL_MODE */

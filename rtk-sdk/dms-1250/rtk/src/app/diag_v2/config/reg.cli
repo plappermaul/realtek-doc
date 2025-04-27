@@ -1,0 +1,59 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for reg.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) reg commands.
+//
+
+#ifdef CMD_REGISTER_GET_ALL
+//register configuration
+//get register
+//all register
+register get all
+#endif
+
+#ifdef CMD_REGISTER_SET_ADDRESS_VALUE
+//register configuration
+//set register
+//register address(ex:0x4) or name
+//register value
+register set <STRING:address> <STRING:value>
+#endif
+
+#ifdef CMD_REGISTER_GET_ADDRESS_WORDS
+//register configuration
+//get register
+//register address(ex:0x4) or name
+//number of words
+register get <STRING:address> { <UINT:words> }
+#endif
+
+#ifdef CMD_REGISTER_GET_ADDRESS_WORDS
+//register configuration
+//modify register
+//register name
+//field value pairs(ex:FA=1,FB=0x3)
+register modify <STRING:reg_name> <STRING:field_val_pairs>
+#endif
+
+#ifdef CMD_REGISTER_LIST_KEYWORD
+//register configuration
+//list registers
+//list all MAC register names by keyword
+register list <STRING:key_word>
+#endif
+
+

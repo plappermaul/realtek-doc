@@ -1,0 +1,1 @@
+errno.o: errno.c

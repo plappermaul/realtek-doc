@@ -1,0 +1,21062 @@
+#ifndef __RTK_MANGO_REG_STRUCT_H__
+#define __RTK_MANGO_REG_STRUCT_H__
+
+/*
+ * Include Files
+ */
+#include <common/rt_autoconf.h>
+#include <hal/chipdef/allreg.h>
+#ifdef __BOOTLOADER__
+#include <hal/chipdef/mango/rtk_mango_uboot_feature_def.h>
+#else   /* __BOOTLOADER__ */
+#include <hal/chipdef/mango/rtk_mango_feature_def.h>
+#endif  /* __BOOTLOADER__ */
+
+/* Superset Register Enum */
+typedef enum rtk_mango_reg_list_e
+{
+#if defined(CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_INFO_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MODEL_NAME_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_CHIP_INFO_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_CHIP_INFO_1r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RESET)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_RST_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WDOG_RST_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BONDING_STSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RESET */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PLL___BIAS)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BG_POR_TOPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_XTAL_TOPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_GLB_COMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_TOPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_GLB_SIGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_CPU_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_CPU_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_CPU_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_CPU_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_SW_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_SW_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_SW_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_SW_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_LXB_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_LXB_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_LXB_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_LXB_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_PCIE_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_PCIE_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_PCIE_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_PCIE_MISC_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PLL___BIAS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BIST___BISR)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG00_RX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG00_RX_MAC05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG00_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG00_TX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG00_TX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG01_RX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG01_RX_MAC05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG01_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG01_TX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG01_TX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG02_RX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG02_RX_MAC05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG02_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG02_TX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG02_TX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG03_RX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG03_RX_MAC05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG03_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG03_TX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG03_TX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG04_RX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG04_RX_MAC05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG04_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG04_TX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG04_TX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG05_RX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG05_RX_MAC05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG05_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG05_TX_MAC01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG05_TX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_RX_MAC08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_RX_MAC04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_RX_MAC06r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_RX_MAC06_DMY0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_RX_MAC06_DMY1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_TX_MAC08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG06_TX_MAC02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_RX_MAC08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_RX_MAC04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_RX_MAC06r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_RX_MAC06_DMY0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_RX_MAC06_DMY1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_TX_MAC08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG07_TX_MAC02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG08_RX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG08_RX_MAC07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG08_RX_MAC11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG08_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG08_TX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG08_TX_MAC12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG09_RX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG09_RX_MAC07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG09_RX_MAC11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG09_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG09_TX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG09_TX_MAC12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG10_RX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG10_RX_MAC07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG10_RX_MAC11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG10_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG10_TX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG10_TX_MAC12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG11_RX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG11_RX_MAC07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG11_RX_MAC11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG11_RX_MAC_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG11_TX_MAC10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG11_TX_MAC12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_RX_MAC03r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_RX_MAC09r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_RX_MAC07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_RX_MAC_DMY0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_RX_MAC_DMY1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_TX_MAC02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_PG_MAC13r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PG12_PG_MAC14r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MAC_RESET_00r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MAC_RESET_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MAC_RESET_02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MAC_RESUME_00r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MAC_RESUME_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MAC_RESUME_02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE_START_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE_START_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE_RESUME_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE_RESUME_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE03r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE06r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE09r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE011r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE012r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE13r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE14r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE15r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE16r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE17r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE17_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE18r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE18_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE19r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE19_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE20r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE20_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE21r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE21_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE22r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE22_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE23r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE23_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE24r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE24_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE25r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE25_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE26r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE26_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE27r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE27_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE28r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE28_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE29r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE29_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE30r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE30_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE31r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE31_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE32r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE32_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE33r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE34r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE35r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE36r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE37r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE38r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ALE39r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE01_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE02_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE03r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE03_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE04_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE05_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE06r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE06_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE07_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE08_OUT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE08_OUT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE09r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE09_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE10_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ALE11_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM00_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL00_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM01_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL01_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM02_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL02_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM03_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL03_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM04_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL04_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM05_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL05_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM06_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL06_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM07_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL07_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM08_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL08_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM09_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL09_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM10_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL10_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM11_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL11_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM12_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL12_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM13_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL13_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM14_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL14_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_TCM15_ACL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACL15_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_LOG00_ACL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_LOG01_ACL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_LOG02_ACL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_LOG03_ACL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT00_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT01_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT02_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT03_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT04_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT05_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT06_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ACT07_ACL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ALE_INIT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ALE_INIT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ALE_INIT_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_MBIST_CTRL_DMYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_MBIST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_MBIST_STAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MIB_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MIB_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MIB_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MIB00r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MIB01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MIB02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP03r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP06r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP09r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP13r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ENCAP01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ENCAP02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_ENCAP_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP_TCAMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_ENCAP_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_START_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_START_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_START_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_RESUME_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_RESUME_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_RESUME_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR03r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR06r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR08r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR09r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR13r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR14r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR15r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR16r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR18r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR19r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_EGR20r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_EXA_EGR_OUT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_EXA_EGR_OUT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_EGR_OUT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_EGR_OUT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_EGR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR01_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR01_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_IGR_RESULT_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_IGR_RESULT_23r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR01_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR01_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR02r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR03r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR04r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR05r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR06_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR06_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR06_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR06_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR06_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_IGR07r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_IGR_INITr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ENCAP_INITr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_EGR_INITr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_MIB_INITr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ACL_INITr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_PAR03r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BIST___BISR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERFACE)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_SLV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST_IF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST_IF_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST1_MEMADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST1_DATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST2_MEMADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_MST2_DATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_SLV_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TEST_MDX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TEST_MDX_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_DRV_STRENGTHr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_SLEW_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IO_DRV_STRENGTHr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IO_SLEW_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IO_SMIT_TRIGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERFACE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LED)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_NUM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_3_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_3_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_2_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_2_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_1_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_1_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_0_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SET_0_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_COPR_SET_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_FIB_SET_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_COPR_MASK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_FIB_MASK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_COMBO_MASK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_LED_LOADr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_SW_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_PORT_SW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_INDRT_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_10Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_2P5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_2P5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_2P5Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_TP1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_TP1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_TP1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV1_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV2_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_LV3_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_P_LOAD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_TRIGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_DIR_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_DIR_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_DIR_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_DATA_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_DATA_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_DATA_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_INDRT_ACCESS_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LED */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_PORT_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SERDES_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_REMOTE_INTR_STS_UPDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_EXT_GPIOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_THERMAL_METERr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_AUTO_RECOVERYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SERDES_UPD_PHYSTS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_RLFDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SERDES_RXIDLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_DBGOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_SRC_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_PORT_LINK_STS_CHGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SERDES_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_REMOTE_INTR_STS_UPDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_EXT_GPIOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_INTR_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_THERMAL_METERr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_AUTO_RECOVERYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SERDES_UPD_PHYSTSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_STAT_TRIGGERr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_RLFDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SERDES_RXIDLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_DBGOr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HW_MISC_)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_WDATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_RDATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_SENR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DATA_IN_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DATA_IN_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DATA_IN_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DATA_OUT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DATA_OUT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DATA_OUT_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DBG_OUT_0_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_DBG_OUT_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VOL_CTRL_RESISr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_CTRL7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_RESULT2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_RESULT3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_RESULT0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_RESULT1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_RESULT2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_RESULT3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DEBUG_SELECTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DEBUG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DEBUG_ENABLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DEBUG_PIN_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VOLT_PROB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_CHK_RSLT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_RIR0_DATA_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_RIR1_DATA_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DEBUG_DATA_VALUEr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HW_MISC_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_NIC___DMA)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_RX_BASE_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_RX_CUR_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_TX_BASE_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_TX_CUR_DESC_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_INTR_RX_RUNOUT_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_INTR_RX_DONE_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_INTR_TX_DONE_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_INTR_RX_RUNOUT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_INTR_RX_DONE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_INTR_TX_DONE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_RX_RING_SIZEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_RX_RING_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_PHYSICAL_ADDR_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_NIC_Wr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_NIC_Rr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RING_DUMMYREAD_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RDMA_CNT_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_SEL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_SEL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_SEL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_SEL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_SEL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_RDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICDBG_TESTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMA_IF_RX_RING_CNTR_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBGMUX_SEL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBGMUX_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBGMUX_SEL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBGMUX_SEL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRIVER_READYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_OUT_CURr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RX_SOP_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RX_EOP_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_TX_SOP_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_TX_EOP_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_L2MSG_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_CNT_CLRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RX_TX_FIFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_L2MSG_FIFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_PRSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_FRC_NIC_DBGOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_FRCV_NIC_DBGOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RX_SOP_CNT_LXr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RX_EOP_CNT_LXr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_TX_SOP_CNT_LXr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_TX_EOP_CNT_LXr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_L2MSG_CNT_LXr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_NIC___DMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_ARP_GRAT_PORT_ACTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_L2_METHOD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_DATA_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_DATA_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_DATA_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_DATA_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_DATA_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBL_ACCESS_DATA_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FLEX_TBL_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_GLOBAL_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_GLOBAL_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_PADDING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_CPU_CRCr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_INDRT_ACCESS_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_INDRT_ACCESS_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_INDRT_ACCESS_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_INDRT_ACCESS_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_INDRT_ACCESS_BC_PHYID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_INDRT_ACCESS_MMD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_DBG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_TSETr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_READ_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBGMUX_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBGMUX_SEL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBGMUX_SEL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_OUT_CURr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_CPU_TAG_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HALF_CHG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PORT_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PORT_POLLING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_ABLTY_GET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_GLB_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_GLB_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_BYPASS_ABLTY_LOCK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PORT_POLLING_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IDLE_TMR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_DELAY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO_FREE_CNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_GPHY_RLFD_POLLING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_RLFD_POLLING_BIT_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_10GPHY_RLFD_POLLING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_GPHY_POLLING_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_10GPHY_POLLING_SEL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_10GPHY_POLLING_SEL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_10GPHY_POLLING_SEL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_10GPHY_POLLING_SEL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_10GPHY_POLLING_SEL4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK0_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK1_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK2_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK3_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK4_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK0_MMD_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK1_MMD_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK2_MMD_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK3_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK3_MMD_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK4_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK4_MMD_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK0_DATA_GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK1_DATA_GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK2_DATA_GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK3_DATA_GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK4_DATA_GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK0_DATA_10GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK1_DATA_10GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK2_DATA_10GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK3_DATA_10GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK4_DATA_10GPHYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK0_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK1_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK2_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK3_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK4_RESULTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK0_RESULT_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK1_RESULT_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK2_RESULT_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK3_RESULT_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK4_RESULT_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_FORCE_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_RLFD_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_RLFD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_LINK_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_LINK_MEDIA_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_LINK_SPD_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_LINK_DUP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_TX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_RX_PAUSE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_EEE_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_MSTR_SLV_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FEFI_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FORCE_MAC_SPDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_FORCE_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_PORT_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_L2_CPU_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_SERDES_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GROUP0_1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GROUP2_3_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GROUP4_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GROUP5_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GROUP6_7_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_GROUP8_11_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PROT_SERDSE_MUX_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PROT_SERDSE_MUX_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIB_UNIDIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_DBG_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SDS_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RXDV_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RXDV_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IDLE_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IDLE_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_UNIDIR_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_UNIDIR_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACRX_DUPDET_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACRX_DUPDET_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_RXDV_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_RXDV_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_TX_IDLE_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_TX_IDLE_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_PHY_UNIDIR_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_PHY_UNIDIR_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_MACRX_DUPDET_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRC_MACRX_DUPDET_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_RXDV_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_RXDV_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_TX_IDLE_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_TX_IDLE_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_PHY_UNIDIR_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_PHY_UNIDIR_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_MACRX_DUPDET_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRCV_MACRX_DUPDET_Lr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PHY___SERDES)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_INDRT_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_INDRT_DATA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_BC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_UNIDIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_MISC_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_MISC_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_USXGMII_SUBMODE_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PHY___SERDES */
+#if defined(CONFIG_SDK_CHIP_FEATURE_POWER_SAVING)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_PORT_TX_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_PORT_RX_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MISC_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MISC_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_MINIFG_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_MINIFG_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_MINIFG_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MULTIWAKE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_GELITE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_2P5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_10G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_PORT_TX_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_PORT_RX_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_TX_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_RX_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_1000M_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_500M_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_100M_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_SLV_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TIMER_UNIT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_WAKE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_SLEEP_STEP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_TIMER_500M_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_TIMER_500M_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_TIMER_GIGA_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_TIMER_GIGA_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PS_SLOW_SYSCLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PS_SERDES_OFF_MODE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PS_SOC_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_POWER_SAVING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TAG_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_ETAG_TPID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_OTAG_TPID_CMP_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_ITAG_TPID_CMP_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_ETAG_TPID_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_AFTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_IGR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_FWD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_APP_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_IGR_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_EGR_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_TAG_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PROFILE_SETr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE */
+#if defined(CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PPB_VLAN_SETr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_PPB_VLAN_SETr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IGR_VID_RNG_CHK_SET_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IGR_VID_RNG_CHK_SET_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IGR_VID_RNG_CHK_SET_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IGR_VID_RNG_CHK_SET_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_EGR_VID_RNG_CHK_SET_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_EGR_VID_RNG_CHK_SET_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_EGR_VID_RNG_CHK_SET_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_EGR_VID_RNG_CHK_SET_3r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IVC_BLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_L2TBL_CNVT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_L2TBL_CNVT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_IVC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_PORT_EVC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IVC_ENTRY_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_EVC_ENTRY_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_IVC_ENTRY_INDICATION_AGGRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_EVC_ENTRY_INDICATION_AGGRr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RMA)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_MIRROR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_SMAC_LRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_MGN_LRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_PORT_BPDU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_PORT_PTP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_PORT_LLDP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_PORT_EAPOL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_BPDU_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_EAPOL_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_LLDP_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_USR_DEF_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_USR_DEF_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_MBR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_HASH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_SHFT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_LOCAL_TBL_REFRESHr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_LOCAL_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_STK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOCAL_PORT_TRK_MAPr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ST_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_ISO_RESTRICT_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_ISO_VB_ISO_PMSK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_ISO_VB_EGR_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_AGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_AGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_TRK_AGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_SALRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_NEW_SA_FWDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_DYN_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_DYN_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_STT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_STT_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_TRK_STT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_TRK_STT_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_GLB_STT_PORT_MV_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_GLB_STT_PORT_MV_LRNr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_MV_FORBIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_TRK_MV_FORBIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_MV_FORBID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_SABLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_DABLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_UNKN_UC_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_BC_FLD_PMSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_UC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_L2_MC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_IP4_MC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_PORT_IP6_MC_LM_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_PORT_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_PORT_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_TRK_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_TRK_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_VLAN_CONSTRT_ENTRYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_LRN_VLAN_CONSTRT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_VLAN_CONSTRT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CONSTRT_PORT_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CONSTRT_TRK_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CONSTRT_SYS_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CONSTRT_VLAN_CNT_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_TBL_FLUSH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_SRC_P_FLTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_SA_ACT_REFr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_HASH_FULL_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CAM_ENTRY_STSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_ITAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_MAGIC_NUMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_RING_BASE_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_RING_CUR_ADDRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_IF_INTR_MSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_IF_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_NIC_FIFO_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_FIFO_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_NIC_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_PKT_QUE_IDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_NIC_MSG_CNT_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_DBG_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_DBG_EVENT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFY_BP_STSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_LB_PPS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_LB_PROTO_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_UC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_UC_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_UC_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_MC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_MC_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_MC_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_BC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_BC_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_BC_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_DHCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_DHCP_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_DHCP_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_BPDU_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_BPDU_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_BPDU_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_IGMP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_IGMP_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_IGMP_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_ARP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_ARP_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STORM_PORT_PROTO_ARP_EXCEED_FLAGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_FC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_Q_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_Q_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_Q_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_Q_LB_EXCEED_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PORT_SCHEDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_10M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_1G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_1250M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_2500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_RATE_10G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_PAGE_CNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_Q_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_ADMIT_Q_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_DROP_Q_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGBW_WFQ_LB_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_ENCAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_CPU_PPS_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_PORT_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_PORT_Q_MAX_LB_RST_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_PORT_Q_MAX_LB_RST_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_CPU_Q_MAX_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_CPU_Q_MAX_LB_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_PORT_Q_ASSURED_LB_RST_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_PORT_Q_ASSURED_LB_RST_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_10M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_1G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_1250M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_2500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_5G_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGBW_RATE_10G_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_METER_MARKER)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_LB_EXCEED_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_LB_GLB_EXCEED_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_CNTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_GREEN_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_YELLOW_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_RED_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_TOTAL_CNTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_BYTE_TB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METER_PKT_TB_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_METER_MARKER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_ACT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_SYS_UTIL_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_JUMBO_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_JUMBO_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_JUMBO_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_JUMBO_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_JUMBO_THR_ADJUSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_FCOFF_HI_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_FCOFF_LO_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_GUAR_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_THR_SET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_EGR_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_HOL_PRVNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_CPU_Q_EGR_FORCE_DROP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_CPU_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_EGR_DROP_THR_SET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_LB_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_LB_PORT_Q_EGR_DROP_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_REPCT_FCOFF_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_GLB_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PB_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_PORT_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_CPU_EGR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_CPU_Q_EGR_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_ALE_NON_REPCT_Q_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_ALE_REPCT_Q_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_REPCT_FCON_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_REPCT_FCOFF_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_REPCT_FCOFF_DROP_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_HSA_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_DUMMY_PORT_THR_SET_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FC_DUMMY_PORT_IGR_PAGE_CNTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SWRED_Q_DROP_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SWRED_Q_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SWRED_DROP_CNTR_PIDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SWRED_DROP_CNTR_CIDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SWRED_DROP_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SWRED_DROP_CNTR_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SC_PORT_TIMERr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SC_DRAIN_OUT_THRr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_PORTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_IPRI_CFI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_IPRI_CFI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_OPRI_DEI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_OPRI_DEI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_DSCPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_11Er,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_MPLSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_REMAP_1BRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_PORT_TBL_IDX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_SEL_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_REMAP_ITAG_CFI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_REMAP_ITAG_CFI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_REMAP_OTAG_DEI0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_REMAP_OTAG_DEI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_REMAP_DSCPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_REMAP_MPLSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SEL_PORT_TBL_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_INTPRI2QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_CPUQID2QID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_CPUQID2XGSQID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_9r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_RSN2CPUQID_CTRL_10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_FLAG2CPUQID_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_FLAG2CPUQID_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QM_FLAG2CPUQID_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCHED_PORT_Q_CTRL_SET0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCHED_PORT_Q_CTRL_SET1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCHED_CPU_Q_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCHED_PORT_ALGO_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCHED_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WFQ_LB_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMARKING)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_INTPRI2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_IPRI2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_OPRI2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_DSCP2IPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_INTPRI2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_IPRI2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_OPRI2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_DSCP2OPRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_INTPRI2DEI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_DP2DEI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_INTPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_IPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_OPRI2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_DSCP2DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK_DPINTPRI2DSCP_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMARKING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1QAV)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVB_PORT_CLASS_A_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVB_PORT_CLASS_B_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVB_PORT_CLASS_A_EN_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVB_PORT_CLASS_B_EN_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVB_CTRL_MACr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1QAV */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IP_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_HOST_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPUC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IP6UC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPMC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IP6MC_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_PORT_IP_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_PORT_IP6_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_INTF_IP_MTUr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_INTF_IP6_MTUr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_ENTRY_MV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_ENTRY_MV_PARAMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_ECMP_HASH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_MONT_CNTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_MONT_CNTR_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_HW_LU_KEY_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_HW_LU_KEY_SIP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_HW_LU_KEY_DIP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_HW_LU_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_IP_TUNNEL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNNEL_IP_ADDR_CHK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNNEL_ROUTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNNEL_IP_IDENTIFICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNNEL_6RD_DOMAINr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNNEL_QOS_PROFILEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNNEL_VXLAN_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_IP_TUNNEL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MPLS_VPLS)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_PARSE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_ENCAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_DPINTPRI2TC_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MPLS_VPLS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PORT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_CNT_SET1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_CNT_SET0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_MIB_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_MIB_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_MIB_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_MIB_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_MIB_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_SRAM_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR8r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR9r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR10r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR11r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR12r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR13r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR14r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR15r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR16r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR17r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR18r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR19r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR20r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR21r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR22r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR23r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR24r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR25r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR26r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR27r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR28r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR29r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR30r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR31r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR32r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR33r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR34r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR35r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR36r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR37r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR38r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR39r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR40r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR41r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR42r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR43r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR44r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR45r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR46r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR47r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR48r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR49r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR50r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR51r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR52r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR53r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR54r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR55r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR56r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR57r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR58r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR59r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR60r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR61r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR62r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR63r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR64r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR65r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR66r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR67r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR68r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR69r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR70r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR71r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR72r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR73r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR74r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR75r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR76r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR77r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR78r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR79r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_CNTR80r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIRRORING)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_SPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_DPM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_SAMPLE_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_QID_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIRRORING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RSPAN)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_RSPAN_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_RSPAN_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_RSPAN_RX_TAG_RM_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RSPAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SFLOW)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SFLOW_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SFLOW_PORT_RATE_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SFLOW */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PIE)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_BLK_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_BLK_PHASE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_BLK_GROUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_BLK_TMPLTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_TMPLTE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_MV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_MV_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_CLR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_TAG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_RULE_HIT_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_GLB_HIT_INDICATIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_FIELD_SELTOR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_ENCAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PIE_MISC2r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PIE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ACL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_PORT_LOOKUP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ACL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PKT_LEN_L4PORT_)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RNG_CHK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RNG_CHK_IP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RNG_CHK_IP_RNGr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PKT_LEN_L4PORT_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_PORT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_IPV6_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_ICMP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_TCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_SMURF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_PRVNT_ARP_INVLD_PORT_ACTr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_IP_MAC_BIDING)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEC_IP_MAC_BIND_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEC_PORT_IP_MAC_BIND_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_IP_MAC_BIDING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_OAM)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OAM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OAM_PORT_ACT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OAM_GLB_DYING_GASP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OAM_PORT_DYING_GASP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYING_GASP_POLARITY_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_OAM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CFM)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFM_RX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFM_RX_CCM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFM_RX_LB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFM_RX_LT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_RX_LIFETIME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_RX_INST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_RX_INST_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_TX_TAG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_TX_INST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_TX_INST_MEMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_TX_INST_TRK_PRESENTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_TX_INST_PKTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_PORT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_RX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_TX_DLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_RX_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_CLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_TIME_FREQr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_TIME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH_DM_TIME_CTRL_SECr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CFM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_OPENFLOW)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_VLAN_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_VLAN_AND_PORT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_ACT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_L2_FLOW_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_L3_FLOW_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_GRP_HASH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_IGR_TBL_MISr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_EGR_TBL_MISr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_IGR_TBL_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_EGR_TBL_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_EXCPT_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_OPENFLOW */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_TUNNEL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPWAP_UDP_PORTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPWAP_PARSE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_TUNNEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPWAP_PASSENGER_QOSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPWAP_TID_RMKr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_TUNNEL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_EXTENSION)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_ETAG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_ETAG_MAC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_PORT_ETAG_MAC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_ETAG_RMK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_PORT_ETAG_IGR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_PORT_ETAG_EGR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_PORT_PCID_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_EXTENSION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_UNIT_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_GBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_PORT_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DEV_PORT_MAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_NON_UNICAST_BLOCK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_UNIT_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMOTE_ACCESS)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_REG_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_REG_ACCESS_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_REG_ACCESS_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_ACCESS_SEMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_ACCESS_SEM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_0_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_0_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_0_L2_READ_MTHD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_1_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_1_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_2_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_2_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_3_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_3_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_3_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_4_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_4_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_4_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_5_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_5_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_TBL_ACCESS_SET_5_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_PHY_MSK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_PORT_ID_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_PARAMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_PHY_ACCESS_MMD_PARAMr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMOTE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMOTE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_INTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_INTR_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_INTR_DATA_CCMr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMT_INTR_DATA_LINK_STSr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMOTE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PARSER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GTP_PARSE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DIAMETER_PARSE_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER_HSB)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_DATAr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER_HSB */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HSM)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSM_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSM_FWD_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSM_POST_DATAr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HSM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DBG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DATAr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PER_PORT_MAC_DEBUG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PER_PORT_MAC_DEBUG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PER_PORT_MAC_DEBUG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CIF_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CIF_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CIF_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CIF_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CIF_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CIF_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PAR_DBG_TRI_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DBG_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DBG_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENP_DBG_TRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENP_DBG_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENP_DBG_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENP_DBG_CMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENP_DBG_DATAr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_PORT_DSC_STCr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_PORT_DSC_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RST_SYS_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RST_P_THRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_DSC_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_DSC_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_DSC_CHK_TMRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_FIFO_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_FIFO_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RET_EMPTY_PKT_BUF_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RET_EMPTY_PKT_BUF_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RST_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRIG_AUTO_RECOVER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AUTO_RECOVER_EVENT_FLAG_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AUTO_RECOVER_EVENT_FLAG_ERRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_DSC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_CTRL_1r,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ECO)
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_INFO_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PWRON_REG_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_PARSER_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFM_GEN_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_STK_Wr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_STK_Rr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STKDBG_TSETr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBGMUX_SEL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBGMUX_SEL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBGMUX_SEL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_OUT_CURr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_ENCAP_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_ENCAP_RSVD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_ENCAP_RSVD2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STAT_PRVTE_DBG_ENCAP_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INGR_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PER_PORT_MAC_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIB_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_GLB_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DEBUG_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_PISO_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_LUEN_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_TM_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_BISR_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_MIRROR_CTL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_BIST_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_SFLOW_CTL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_TABLE_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_MIB_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_RMA_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_VLAN_ISO_CTL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_PRE_MISC_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_INGPRI_CTL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_VLAN_CFG_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_VLAN_PROFILE_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_IVC_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_PSTORM_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_CFM_CTL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_Q_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_HSB_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_HSM_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_HSA_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_UNSTORM_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_TRUNK_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_VLAN_PROTOCOL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_L2_CTRL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_L2_CTRL_RSVD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_L2_CTRL_RSVD2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_OF_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_DCNT_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_IBW_CTL_RSVDr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_L3_MISC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_L3_CTRL_RSVD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_L3_CTRL_RSVD2r,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_TIMER_2P5G_5G_LITE_CTRLr,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ECO */
+
+    MANGO_REG_LIST_END,
+} rtk_mango_reg_list_t;
+
+
+/* Internal Register Enum */
+typedef enum rtk_int_mango_reg_list_e
+{
+#if defined(CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CHIP_INFO_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MODEL_NAME_INFO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CHIP_INFO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_CHIP_INFO_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_CHIP_INFO_1_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CHIP_INFORMATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RESET)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RST_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CHIP_RST_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_WDOG_RST_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_BONDING_STS_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RESET */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PLL___BIAS)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_BG_POR_TOP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_XTAL_TOP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_GLB_COM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_TOP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_GLB_SIG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_CPU_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_CPU_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_CPU_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_CPU_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_SW_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_SW_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_SW_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_SW_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_LXB_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_LXB_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_LXB_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_LXB_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_PCIE_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_PCIE_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_PCIE_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_PCIE_MISC_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PLL___BIAS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_BIST___BISR)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG00_RX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG00_RX_MAC05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG00_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG00_TX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG00_TX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG01_RX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG01_RX_MAC05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG01_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG01_TX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG01_TX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG02_RX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG02_RX_MAC05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG02_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG02_TX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG02_TX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG03_RX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG03_RX_MAC05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG03_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG03_TX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG03_TX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG04_RX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG04_RX_MAC05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG04_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG04_TX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG04_TX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG05_RX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG05_RX_MAC05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG05_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG05_TX_MAC01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG05_TX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_RX_MAC08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_RX_MAC04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_RX_MAC06_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_RX_MAC06_DMY0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_RX_MAC06_DMY1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_TX_MAC08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG06_TX_MAC02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_RX_MAC08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_RX_MAC04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_RX_MAC06_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_RX_MAC06_DMY0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_RX_MAC06_DMY1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_TX_MAC08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG07_TX_MAC02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG08_RX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG08_RX_MAC07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG08_RX_MAC11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG08_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG08_TX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG08_TX_MAC12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG09_RX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG09_RX_MAC07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG09_RX_MAC11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG09_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG09_TX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG09_TX_MAC12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG10_RX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG10_RX_MAC07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG10_RX_MAC11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG10_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG10_TX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG10_TX_MAC12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG11_RX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG11_RX_MAC07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG11_RX_MAC11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG11_RX_MAC_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG11_TX_MAC10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG11_TX_MAC12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_RX_MAC03_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_RX_MAC09_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_RX_MAC07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_RX_MAC_DMY0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_RX_MAC_DMY1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_TX_MAC02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_PG_MAC13_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PG12_PG_MAC14_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MAC_RESET_00_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MAC_RESET_01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MAC_RESET_02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MAC_RESUME_00_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MAC_RESUME_01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MAC_RESUME_02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE_START_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE_START_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE_RESUME_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE_RESUME_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE03_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE06_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE09_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE011_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE012_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE13_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE14_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE15_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE16_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE17_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE17_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE18_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE18_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE19_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE19_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE20_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE20_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE21_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE21_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE22_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE22_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE23_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE23_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE24_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE24_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE25_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE25_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE26_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE26_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE27_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE27_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE28_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE28_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE29_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE29_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE30_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE30_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE31_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE31_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE32_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE32_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE33_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE34_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE35_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE36_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE37_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE38_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ALE39_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE_START_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE_RESUME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE01_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE02_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE03_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE03_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE04_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE05_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE06_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE06_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE07_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE08_OUT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE08_OUT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE09_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE09_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE10_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ALE11_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL_START_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL_RESUME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM00_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL00_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM01_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL01_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM02_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL02_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM03_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL03_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM04_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL04_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM05_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL05_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM06_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL06_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM07_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL07_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM08_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL08_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM09_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL09_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM10_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL10_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM11_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL11_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM12_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL12_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM13_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL13_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM14_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL14_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_TCM15_ACL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACL15_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_LOG00_ACL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_LOG01_ACL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_LOG02_ACL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_LOG03_ACL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT00_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT01_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT02_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT03_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT04_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT05_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT06_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ACT07_ACL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_ALE_INIT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_ALE_INIT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_ALE_INIT_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_MBIST_CTRL_DMY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_MBIST_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_MBIST_STA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MIB_START_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MIB_RESUME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MIB_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MIB00_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MIB01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_MIB02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP_START_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP_RESUME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP03_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP06_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP09_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP13_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ENCAP01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ENCAP02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_ENCAP_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP_TCAM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_ENCAP_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_START_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_START_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_START_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_RESUME_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_RESUME_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_RESUME_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR03_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR06_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR08_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR09_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR13_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR14_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR15_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR16_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR18_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR19_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_EGR20_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_EXA_EGR_OUT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_EXA_EGR_OUT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_EGR_OUT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_EGR_OUT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_EGR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR_START_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR_RESUME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR01_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR01_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR_START_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR_RESUME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR_GLB_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_IGR_RESULT_01_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBISR_IGR_RESULT_23_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR01_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR01_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR02_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR03_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR04_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR05_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR06_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR06_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR06_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR06_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR06_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_IGR07_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_IGR_INIT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_ENCAP_INIT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_EGR_INIT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_MIB_INIT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MEM_ACL_INIT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_PAR03_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_BIST___BISR */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERFACE)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_SLV_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST_IF_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST_IF_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST1_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST1_MEMADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST1_DATA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST2_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST2_MEMADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_I2C_MST2_DATA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPI_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPI_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPI_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPI_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPI_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_SLV_TIMEOUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TEST_MDX_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TEST_MDX_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GPIO_DRV_STRENGTH_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GPIO_SLEW_RATE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IO_DRV_STRENGTH_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IO_SLEW_RATE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IO_SMIT_TRIG_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERFACE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LED)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_NUM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_3_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_3_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_2_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_2_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_1_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_1_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_0_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_SET_0_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_COPR_SET_SEL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_FIB_SET_SEL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_COPR_MASK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_FIB_MASK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_COMBO_MASK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SW_LED_LOAD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_SW_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_PORT_SW_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_INDRT_ACCESS_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_10G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_10G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_10G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_5G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_5G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_5G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_2P5G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_2P5G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_2P5G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_TP1G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_TP1G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_TP1G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_1G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_1G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_1G_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_500M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_500M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_500M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_100M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_100M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_100M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV1_10M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV2_10M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_LOAD_LV3_10M_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_P_LOAD_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_TRIG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_DIR_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_DIR_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_DIR_CTRL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_DATA_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_DATA_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_DATA_CTRL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_INDRT_ACCESS_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LED */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_PORT_LINK_STS_CHG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_SERDES_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_REMOTE_INTR_STS_UPD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_MISC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_EXT_GPIO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_THERMAL_METER_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_AUTO_RECOVERY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_SERDES_UPD_PHYSTS_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_RLFD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_SERDES_RXIDLE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IMR_DBGO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DBG_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DBG_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DBG_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_GLB_SRC_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_PORT_LINK_STS_CHG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_SERDES_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_REMOTE_INTR_STS_UPD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_MISC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_EXT_GPIO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EXT_GPIO_INTR_MODE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_THERMAL_METER_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_AUTO_RECOVERY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_SERDES_UPD_PHYSTS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_STAT_TRIGGER_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_RLFD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_SERDES_RXIDLE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ISR_DBGO_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HW_MISC_)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_ACCESS_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_WDATA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_RDATA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_SENR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DATA_IN_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DATA_IN_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DATA_IN_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DATA_OUT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DATA_OUT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DATA_OUT_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DBG_OUT_0_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_DBG_OUT_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VOL_CTRL_RESIS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_CTRL7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_CTRL7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_RESULT0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_RESULT1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_RESULT2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM0_RESULT3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_RESULT0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_RESULT1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_RESULT2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM1_RESULT3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DEBUG_SELECT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DEBUG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DEBUG_ENABLE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DEBUG_PIN_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VOLT_PROB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_CHK_RSLT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_RIR0_DATA_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_RIR1_DATA_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DEBUG_DATA_VALUE_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HW_MISC_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_NIC___DMA)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_RX_BASE_DESC_ADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_RX_CUR_DESC_ADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_TX_BASE_DESC_ADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_TX_CUR_DESC_ADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_INTR_RX_RUNOUT_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_INTR_RX_DONE_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_INTR_TX_DONE_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_INTR_RX_RUNOUT_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_INTR_RX_DONE_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_INTR_TX_DONE_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_PKT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_RX_RING_SIZE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_RX_RING_CNTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_PHYSICAL_ADDR_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_NIC_W_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_NIC_R_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RING_DUMMYREAD_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RDMA_CNT_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_SEL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_SEL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_SEL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_SEL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_SEL_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_SEL_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_RD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NICDBG_TEST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DMA_IF_RX_RING_CNTR_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBGMUX_SEL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBGMUX_SEL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBGMUX_SEL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBGMUX_SEL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DRIVER_READY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_DT_7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_OUT_CUR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_DBG_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RX_SOP_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RX_EOP_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_TX_SOP_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_TX_EOP_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_L2MSG_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_CNT_CLR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RX_TX_FIFO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_L2MSG_FIFO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_PRST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_FRC_NIC_DBGO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_FRCV_NIC_DBGO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RX_SOP_CNT_LX_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RX_EOP_CNT_LX_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_TX_SOP_CNT_LX_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_TX_EOP_CNT_LX_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_L2MSG_CNT_LX_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_NIC___DMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRAP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRAP_ARP_GRAT_PORT_ACT_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_APPLICATION_TRAP */
+#if defined(CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_L2_METHOD_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_DATA_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_DATA_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_DATA_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_CTRL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_DATA_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_CTRL_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_DATA_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_CTRL_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TBL_ACCESS_DATA_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FLEX_TBL_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_TABLE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_GLOBAL_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_GLOBAL_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_PADDING_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_ADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_CPU_CRC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_INDRT_ACCESS_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_INDRT_ACCESS_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_INDRT_ACCESS_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_INDRT_ACCESS_CTRL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_INDRT_ACCESS_BC_PHYID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_INDRT_ACCESS_MMD_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_DBG_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_SEL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_SEL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_SEL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_SEL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_SEL4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_SEL5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_TSET_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDXDBG_READ_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBGMUX_SEL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBGMUX_SEL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBGMUX_SEL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_DT_7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_OUT_CUR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_DBG_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_CPU_TAG_ID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HALF_CHG_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PORT_ADDR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PORT_POLLING_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_ABLTY_GET_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_GLB_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_GLB_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_BYPASS_ABLTY_LOCK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PORT_POLLING_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TX_IDLE_TMR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LINK_DELAY_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDIO_FREE_CNT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_GPHY_RLFD_POLLING_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_RLFD_POLLING_BIT_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_10GPHY_RLFD_POLLING_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_GPHY_POLLING_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_10GPHY_POLLING_SEL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_10GPHY_POLLING_SEL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_10GPHY_POLLING_SEL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_10GPHY_POLLING_SEL3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_10GPHY_POLLING_SEL4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK_CHK0_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK_CHK1_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK_CHK2_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK_CHK3_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK_CHK4_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK0_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK0_MMD_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK1_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK1_MMD_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK2_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK2_MMD_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK3_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK3_MMD_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK4_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK4_MMD_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK0_DATA_GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK1_DATA_GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK2_DATA_GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK3_DATA_GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK4_DATA_GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK0_DATA_10GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK1_DATA_10GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK2_DATA_10GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK3_DATA_10GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK4_DATA_10GPHY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK0_RESULT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK1_RESULT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK2_RESULT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK3_RESULT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK4_RESULT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK0_RESULT_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK1_RESULT_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK2_RESULT_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK3_RESULT_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SMI_PHY_REG_CHK4_RESULT_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_FORCE_MODE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_RLFD_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_RLFD_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_LINK_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_LINK_MEDIA_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_LINK_SPD_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_LINK_DUP_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_TX_PAUSE_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_RX_PAUSE_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_EEE_ABLTY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_MSTR_SLV_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FEFI_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FORCE_MAC_SPD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SPD_FORCE_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_PORT_MAX_LEN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_L2_CPU_MAX_LEN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_SERDES_MODE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GROUP0_1_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GROUP2_3_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GROUP4_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GROUP5_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GROUP6_7_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_GROUP8_11_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PROT_SERDSE_MUX_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PROT_SERDSE_MUX_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FIB_UNIDIR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_DBG_SEL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SDS_ABLTY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RXDV_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RXDV_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TX_IDLE_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TX_IDLE_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PHY_UNIDIR_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PHY_UNIDIR_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MACRX_DUPDET_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MACRX_DUPDET_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_RXDV_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_RXDV_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_TX_IDLE_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_TX_IDLE_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_PHY_UNIDIR_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_PHY_UNIDIR_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_MACRX_DUPDET_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRC_MACRX_DUPDET_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_RXDV_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_RXDV_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_TX_IDLE_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_TX_IDLE_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_PHY_UNIDIR_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_PHY_UNIDIR_L_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_MACRX_DUPDET_H_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FRCV_MACRX_DUPDET_L_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PHY___SERDES)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_MODE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_INDRT_ACCESS_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_INDRT_DATA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_BC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_UNIDIR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_MISC_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SERDES_MISC_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_USXGMII_SUBMODE_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PHY___SERDES */
+#if defined(CONFIG_SDK_CHIP_FEATURE_POWER_SAVING)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_PORT_TX_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_PORT_RX_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_MISC_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_MISC_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_MINIFG_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_MINIFG_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_MINIFG_CTRL2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_WAIT_RX_INACTIVE_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_WAIT_RX_INACTIVE_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_MULTIWAKE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_100M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_GELITE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_GIGA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_2P5G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_5G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_10G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_PORT_TX_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_PORT_RX_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_PORT_TX_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_PORT_RX_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_PORT_1000M_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_PORT_500M_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_PORT_100M_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_SLV_EN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_TIMER_UNIT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_TX_WAKE_TIMER_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_TX_IDLE_TIMER_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_TX_RATE_100M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_TX_RATE_500M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_TX_RATE_GIGA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_SLEEP_STEP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_IDLE_TIMER_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_TIMER_100M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_TIMER_500M_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_TIMER_500M_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_TIMER_GIGA_CTRL0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_TIMER_GIGA_CTRL1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_RATE_100M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_RATE_500M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEEP_RX_RATE_GIGA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PS_SLOW_SYSCLK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PS_SERDES_OFF_MODE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PS_SOC_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_POWER_SAVING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_TAG_TPID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_ETAG_TPID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_OTAG_TPID_CMP_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_ITAG_TPID_CMP_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_ETAG_TPID_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_AFT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_IGR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_FWD_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_APP_PKT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_IGR_FLTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_EGR_FLTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_TAG_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1Q_VLAN___QINQ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PROFILE_SET_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_PROFILE */
+#if defined(CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PPB_VLAN_SET_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_PPB_VLAN_SET_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE__IEEE802_1V__PROTOCOL_BASED_VLAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IGR_VID_RNG_CHK_SET_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IGR_VID_RNG_CHK_SET_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IGR_VID_RNG_CHK_SET_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IGR_VID_RNG_CHK_SET_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_EGR_VID_RNG_CHK_SET_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_EGR_VID_RNG_CHK_SET_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_EGR_VID_RNG_CHK_SET_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_EGR_VID_RNG_CHK_SET_3_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_RANGE_CHECK */
+#if defined(CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IVC_BLK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_L2TBL_CNVT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_L2TBL_CNVT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_TRUNK_L2TBL_CNVT_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_IVC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_PORT_EVC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IVC_ENTRY_INDICATION_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_EVC_ENTRY_INDICATION_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_IVC_ENTRY_INDICATION_AGGR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_VLAN_EVC_ENTRY_INDICATION_AGGR_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_VLAN_TRANSLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RMA)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_MIRROR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_SMAC_LRN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_MGN_LRN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_PORT_BPDU_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_PORT_PTP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_PORT_LLDP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_PORT_EAPOL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_BPDU_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_EAPOL_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_LLDP_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_USR_DEF_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMA_USR_DEF_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RMA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_ID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_MBR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_HASH_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_SHFT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_LOCAL_TBL_REFRESH_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_LOCAL_TBL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRK_STK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LOCAL_PORT_TRK_MAP_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LINK_AGGREGATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ST_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SPANNING_TREE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PORT_ISO_RESTRICT_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PORT_ISO_VB_ISO_PMSK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PORT_ISO_VB_EGR_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_ISOLATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_AGE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_AGE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_TRK_AGE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_SALRN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_NEW_SA_FWD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_DYN_MV_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_DYN_MV_LRN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_STT_MV_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_STT_MV_LRN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_TRK_STT_MV_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_TRK_STT_MV_LRN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_GLB_STT_PORT_MV_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_GLB_STT_PORT_MV_LRN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_MV_FORBID_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_TRK_MV_FORBID_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_MV_FORBID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_SABLK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_DABLK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_UNKN_UC_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_BC_FLD_PMSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_UC_LM_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_L2_MC_LM_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_IP4_MC_LM_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_PORT_IP6_MC_LM_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_CONSTRT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_CONSTRT_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_PORT_CONSTRT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_PORT_CONSTRT_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_TRK_CONSTRT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_TRK_CONSTRT_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_VLAN_CONSTRT_ENTRY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_LRN_VLAN_CONSTRT_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_VLAN_CONSTRT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_CONSTRT_PORT_CNT_DBG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_CONSTRT_TRK_CNT_DBG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_CONSTRT_SYS_CNT_DBG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_CONSTRT_VLAN_CNT_DBG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_TBL_FLUSH_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_SRC_P_FLTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_SA_ACT_REF_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_HASH_FULL_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_CAM_ENTRY_STS_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MAC_FORWARDING_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_TIMEOUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_MAC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_ITAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_MAGIC_NUM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_RING_BASE_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_RING_CUR_ADDR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_IF_INTR_MSK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_IF_INTR_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_NIC_FIFO_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_FIFO_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_NIC_TIMEOUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_PKT_QUE_ID_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_NIC_MSG_CNT_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_DBG_PKT_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_DBG_EVENT_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_NTFY_BP_STS_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_ENTRY_NOTIFICATION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_LB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_LB_PPS_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_LB_PROTO_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_UC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_UC_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_UC_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_MC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_MC_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_MC_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_BC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_BC_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_BC_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_DHCP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_DHCP_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_DHCP_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_BPDU_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_BPDU_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_BPDU_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_IGMP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_IGMP_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_IGMP_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_ARP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_ARP_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STORM_PORT_PROTO_ARP_EXCEED_FLAG_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_STORM_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_LB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_FC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_Q_DROP_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_Q_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_Q_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_Q_LB_EXCEED_FLAG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PORT_SCHED_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_10M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_100M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_500M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_1G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_1250M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_2500M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_5G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_RATE_10G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_PAGE_CNT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_Q_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_ADMIT_Q_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_DROP_Q_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGBW_WFQ_LB_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_ENCAP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_CPU_PPS_LB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_LB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_PORT_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_PORT_Q_MAX_LB_RST_SET0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_PORT_Q_MAX_LB_RST_SET1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_CPU_Q_MAX_LB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_CPU_Q_MAX_LB_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_PORT_Q_ASSURED_LB_RST_SET0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_PORT_Q_ASSURED_LB_RST_SET1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_10M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_100M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_500M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_1G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_1250M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_2500M_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_5G_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGBW_RATE_10G_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_EGRESS_BANDWIDTH_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_METER_MARKER)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_LB_EXCEED_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_LB_GLB_EXCEED_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_CNTR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_GREEN_CNTR_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_YELLOW_CNTR_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_RED_CNTR_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_TOTAL_CNTR_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_BYTE_TB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_METER_PKT_TB_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_METER_MARKER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_ACT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_SYS_UTIL_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_DROP_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_HI_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_LO_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_FCOFF_HI_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_FCOFF_LO_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_JUMBO_HI_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_JUMBO_LO_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_JUMBO_FCOFF_HI_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_JUMBO_FCOFF_LO_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_JUMBO_THR_ADJUST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_HI_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_LO_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_FCOFF_HI_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_FCOFF_LO_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_GUAR_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_THR_SET_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_EGR_DROP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_HOL_PRVNT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_Q_EGR_FORCE_DROP_CTRL_SET1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_CPU_Q_EGR_FORCE_DROP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_Q_EGR_DROP_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_CPU_Q_EGR_DROP_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_EGR_DROP_THR_SET_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_LB_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_LB_PORT_Q_EGR_DROP_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_REPCT_FCOFF_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_GLB_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PB_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_PORT_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_CPU_EGR_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_CPU_Q_EGR_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_ALE_NON_REPCT_Q_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_ALE_REPCT_Q_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_REPCT_FCON_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_REPCT_FCOFF_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_REPCT_FCOFF_DROP_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_HSA_PAGE_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_DUMMY_PORT_THR_SET_SEL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_FC_DUMMY_PORT_IGR_PAGE_CNT_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_FLOWCONTROL___BACKPRESSURE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SWRED_Q_DROP_RATE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SWRED_Q_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SWRED_DROP_CNTR_PIDX_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SWRED_DROP_CNTR_CIDX_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SWRED_DROP_CNTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SWRED_DROP_CNTR_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SC_PORT_TIMER_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SC_DRAIN_OUT_THR_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CONGESTION_AVOIDANCE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_PORT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_IPRI_CFI0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_IPRI_CFI1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_OPRI_DEI0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_OPRI_DEI1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_DSCP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_11E_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_MPLS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_REMAP_1BR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_PORT_TBL_IDX_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PRI_SEL_TBL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_REMAP_ITAG_CFI0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_REMAP_ITAG_CFI1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_REMAP_OTAG_DEI0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_REMAP_OTAG_DEI1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_REMAP_DSCP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_REMAP_MPLS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DP_SEL_PORT_TBL_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_INGRESS_PRIORITY_DECISION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_INTPRI2QID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_CPUQID2QID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_CPUQID2XGSQID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_8_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_9_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_RSN2CPUQID_CTRL_10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_FLAG2CPUQID_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_FLAG2CPUQID_CTRL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_QM_FLAG2CPUQID_CTRL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SCHED_PORT_Q_CTRL_SET0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SCHED_PORT_Q_CTRL_SET1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SCHED_CPU_Q_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SCHED_PORT_ALGO_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SCHED_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_WFQ_LB_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SCHEDULING___QUEUE_MANAGEMENT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMARKING)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_INTPRI2IPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_IPRI2IPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_OPRI2IPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_DSCP2IPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_INTPRI2OPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_IPRI2OPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_OPRI2OPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_DSCP2OPRI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_INTPRI2DEI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_DP2DEI_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_INTPRI2DSCP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_IPRI2DSCP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_OPRI2DSCP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_DSCP2DSCP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMK_DPINTPRI2DSCP_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMARKING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_802_1QAV)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AVB_PORT_CLASS_A_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AVB_PORT_CLASS_B_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AVB_PORT_CLASS_A_EN_MAC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AVB_PORT_CLASS_B_EN_MAC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AVB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AVB_CTRL_MAC_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_802_1QAV */
+#if defined(CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_IP_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_HOST_TBL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_IPUC_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_IP6UC_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_IPMC_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_IP6MC_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_PORT_IP_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_PORT_IP6_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_INTF_IP_MTU_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_INTF_IP6_MTU_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_ENTRY_MV_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_ENTRY_MV_PARAM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_ECMP_HASH_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_MONT_CNTR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_MONT_CNTR_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_HW_LU_KEY_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_HW_LU_KEY_SIP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_HW_LU_KEY_DIP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L3_HW_LU_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_LAYER_3_ROUTING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_IP_TUNNEL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TUNNEL_IP_ADDR_CHK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TUNNEL_ROUTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TUNNEL_IP_IDENTIFICATION_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TUNNEL_6RD_DOMAIN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TUNNEL_QOS_PROFILE_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TUNNEL_VXLAN_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_IP_TUNNEL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MPLS_VPLS)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MPLS_GLB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MPLS_PARSE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MPLS_ENCAP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MPLS_DPINTPRI2TC_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MPLS_VPLS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PORT_RST_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_CNT_SET1_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_CNT_SET0_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_MIB_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_MIB_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_MIB_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_MIB_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFG_DMY_MIB_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_SRAM_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDS_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIB_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR8_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR9_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR10_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR11_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR12_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR13_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR14_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR15_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR16_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR17_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR18_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR19_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR20_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR21_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR22_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR23_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR24_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR25_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR26_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR27_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR28_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR29_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR30_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR31_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR32_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR33_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR34_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR35_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR36_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR37_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR38_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR39_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR40_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR41_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR42_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR43_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR44_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR45_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR46_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR47_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR48_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR49_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR50_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR51_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR52_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR53_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR54_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR55_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR56_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR57_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR58_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR59_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR60_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR61_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR62_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR63_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR64_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR65_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR66_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR67_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR68_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR69_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR70_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR71_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR72_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR73_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR74_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR75_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR76_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR77_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR78_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR79_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_CNTR80_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUG_COUNTER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MIRRORING)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_SPM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_DPM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_SAMPLE_RATE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_QID_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MIRRORING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RSPAN)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_RSPAN_VLAN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_RSPAN_TX_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIR_RSPAN_RX_TAG_RM_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RSPAN */
+#if defined(CONFIG_SDK_CHIP_FEATURE_SFLOW)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SFLOW_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SFLOW_PORT_RATE_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_SFLOW */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PIE)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_BLK_LOOKUP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_BLK_PHASE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_BLK_GROUP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_BLK_TMPLTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_TMPLTE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_MV_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_MV_LEN_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_CLR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_TAG_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_RULE_HIT_INDICATION_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_GLB_HIT_INDICATION_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_MISC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_FIELD_SELTOR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_ENCAP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PIE_MISC2_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PIE */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ACL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_PORT_LOOKUP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ACL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PKT_LEN_L4PORT_)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RNG_CHK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RNG_CHK_IP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RNG_CHK_IP_RNG_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_RANGE_CHECK__PKT_LEN_L4PORT_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_PORT_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_ACT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_IPV6_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_ICMP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_TCP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_SMURF_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ATK_PRVNT_ARP_INVLD_PORT_ACT_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ATTACK_PREVENTION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_IP_MAC_BIDING)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SEC_IP_MAC_BIND_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SEC_PORT_IP_MAC_BIND_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_IP_MAC_BIDING */
+#if defined(CONFIG_SDK_CHIP_FEATURE_OAM)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OAM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OAM_PORT_ACT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OAM_GLB_DYING_GASP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OAM_PORT_DYING_GASP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DYING_GASP_POLARITY_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_OAM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_CFM)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFM_RX_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFM_RX_CCM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFM_RX_LB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFM_RX_LT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_RX_LIFETIME_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_RX_INST_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_RX_INST_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_TX_TAG_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_TX_INST_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_TX_INST_MEM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_TX_INST_TRK_PRESENT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CCM_TX_INST_PKT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_PORT_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_RX_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_TX_DLY_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_RX_TIME_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_CLK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_TIME_FREQ_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_TIME_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ETH_DM_TIME_CTRL_SEC_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_CFM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_OPENFLOW)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_PORT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_VLAN_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_VLAN_AND_PORT_EN_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_ACT_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_L2_FLOW_TBL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_L3_FLOW_TBL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_GRP_HASH_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_IGR_TBL_MIS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_EGR_TBL_MIS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_IGR_TBL_CNTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_EGR_TBL_CNTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_OF_EXCPT_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_OPENFLOW */
+#if defined(CONFIG_SDK_CHIP_FEATURE_L2_TUNNEL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CAPWAP_UDP_PORT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CAPWAP_PARSE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_L2_TUNNEL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CAPWAP_PASSENGER_QOS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CAPWAP_TID_RMK_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_L2_TUNNEL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PORT_EXTENSION)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_ETAG_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_ETAG_MAC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_PORT_ETAG_MAC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_ETAG_RMK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_PORT_ETAG_IGR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_PORT_ETAG_EGR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PE_PORT_PCID_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PORT_EXTENSION */
+#if defined(CONFIG_SDK_CHIP_FEATURE_UNIT_CONTROL)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_GBL_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_PORT_ID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DEV_PORT_MAP_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_NON_UNICAST_BLOCK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_UNIT_CONTROL */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMOTE_ACCESS)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_REG_ACCESS_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_REG_ACCESS_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_REG_ACCESS_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_ACCESS_SEM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_ACCESS_SEM_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_0_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_0_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_0_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_0_L2_READ_MTHD_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_1_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_1_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_1_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_2_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_2_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_2_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_3_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_3_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_3_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_4_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_4_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_4_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_5_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_5_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_TBL_ACCESS_SET_5_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_CFG_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_PHY_MSK_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_PORT_ID_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_PARAM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_PHY_ACCESS_MMD_PARAM_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMOTE_ACCESS */
+#if defined(CONFIG_SDK_CHIP_FEATURE_REMOTE_INTERRUPT)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_INTR_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_INTR_INFO_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_INTR_DATA_CCM_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RMT_INTR_DATA_LINK_STS_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_REMOTE_INTERRUPT */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PARSER_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GTP_PARSE_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_DIAMETER_PARSE_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER */
+#if defined(CONFIG_SDK_CHIP_FEATURE_PARSER_HSB)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSB_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSB_DATA_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_PARSER_HSB */
+#if defined(CONFIG_SDK_CHIP_FEATURE_HSM)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSM_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSM_FWD_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSM_POST_DATA_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_HSM */
+#if defined(CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSA_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSA_DBG_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_HSA_DATA_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_MODIFIER_HSA */
+#if defined(CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PER_PORT_MAC_DEBUG0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PER_PORT_MAC_DEBUG1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PER_PORT_MAC_DEBUG2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EFUSE_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CIF_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CIF_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CIF_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CIF_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CIF_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CIF_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGR_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGR_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGR_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGR_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGR_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_IGR_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PAR_DBG_TRI_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_DBG_VAL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_DBG_DATA_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ENP_DBG_TRI_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ENP_DBG_CTL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ENP_DBG_MASK_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ENP_DBG_CMP_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ENP_DBG_DATA_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_DEBUGGING__ALE__LOOPBACK__DROP_MECHANISM__FC_AND_QM_ */
+#if defined(CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RX_PORT_DSC_STC_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RX_PORT_DSC_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SW_Q_RST_SYS_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SW_Q_RST_P_THR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TX_DSC_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TX_DSC_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TX_DSC_CHK_TMR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RX_FIFO_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RX_FIFO_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LINK_LIST_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LINK_LIST_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RET_EMPTY_PKT_BUF_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_RET_EMPTY_PKT_BUF_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SW_Q_RST_CNT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TRIG_AUTO_RECOVER_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AUTO_RECOVER_EVENT_FLAG_STS_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_AUTO_RECOVER_EVENT_FLAG_ERR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_SYS_DSC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LINK_LIST_CTRL_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LINK_LIST_CTRL_1_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_AUTO_RECOVERY */
+#if defined(CONFIG_SDK_CHIP_FEATURE_ECO)
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CHIP_INFO_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_TM_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PWRON_REG_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PKT_PARSER_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_CFM_GEN_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_LED_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_NIC_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PLL_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MDX_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_STK_W_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MBIST_STK_R_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STKDBG_TSET_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBGMUX_SEL_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBGMUX_SEL_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBGMUX_SEL_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_0_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_3_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_4_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_5_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_6_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_DT_7_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_OUT_CUR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STK_DBG_OUT_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_GLB_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EGR_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ACL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PKT_ENCAP_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PKT_ENCAP_RSVD1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PKT_ENCAP_RSVD2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_STAT_PRVTE_DBG_ENCAP_CNTR_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_INGR_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MAC_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_PER_PORT_MAC_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_MIB_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_GLB_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DEBUG_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_PISO_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_LUEN_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_TM_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_BISR_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_MIRROR_CTL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_BIST_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_SFLOW_CTL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_TABLE_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_MIB_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_RMA_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_VLAN_ISO_CTL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_PRE_MISC_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_INGPRI_CTL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_VLAN_CFG_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_VLAN_PROFILE_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_IVC_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_PSTORM_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_CFM_CTL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_Q_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_HSB_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_HSM_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_HSA_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_UNSTORM_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_TRUNK_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_VLAN_PROTOCOL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_L2_CTRL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_L2_CTRL_RSVD1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_L2_CTRL_RSVD2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_OF_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_DCNT_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_IBW_CTL_RSVD_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_L3_MISC_CTRL_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_L3_CTRL_RSVD1_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_ALE_L3_CTRL_RSVD2_RTL9310,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    INT_MANGO_EEE_TX_TIMER_2P5G_5G_LITE_CTRL_RTL9310,
+#endif
+#endif   /* CONFIG_SDK_CHIP_FEATURE_ECO */
+
+    INT_MANGO_REG_LIST_END,
+} rtk_int_mango_reg_list_t;
+
+
+typedef enum rtk_mango_regField_list_e
+{
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RTL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MODEL_CHAR_1STf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MODEL_CHAR_2NDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MODEL_CHAR_3RDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RTL_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RL_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MCIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BOIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_INFO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RESERVEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYP_NIC_ACK_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_POR_PULL_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_POR_LVDTCTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_PULSE_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_GLB_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_RST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WDOG_RST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_MEM_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_SERDES_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_NIC_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CHIP_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHIP_RST_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WDOG_RST_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_FREQ_PARA_3_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_FREQ_PARA_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V10TH_SEL_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V33TH_SEL_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_FORCE_VAL_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_FORCE_EN_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PWR_1V_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PWR_3V_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_RST_DUR_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_ENVBGUP_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_RBG2_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_RBGLOOP2_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_RBG_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEL_OSC_CLK_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEL_125M_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CKREFBUF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CKREFBUF_CML_I_SDS1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CKREFBUF_CML_I_SDS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_TEST_EN_FREFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_CLK_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEL_IBLPF_XTALPLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_BG_POWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PLL_REG_BGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CK25M_FREF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CKREFBUF_CML_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CKREFBUF_CML_If,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CKREF_TERM_R_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_DEBUG_SEL_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_PLL_TOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CLK_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CLK_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CLK_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CLK_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CLKSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_DDR_PLL_REFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_DDR_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_NOR_CLKSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CLKSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EN_PLL_MONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEL_PLL_MONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_SW_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_PCIE_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_SPI_NOR_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_LXB_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVN1_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVN2_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVN3_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_CPUCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_25MOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_LDO_MODESELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CMU_DLY_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_FLD_DSEL_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVNSEL_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV2_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_SWCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_25MOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_LDO_MODESELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CMU_DLY_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_FLD_DSEL_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV1_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV2_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_IFCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV1_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV2_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV1_LXBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIV2_LXBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_LXBCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_SPICLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_25MOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_LDO_MODESELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LXB_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CMU_DLY_LXBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_FLD_DSEL_LXBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_FCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_NCODE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVN1_PCIEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVN2_PCIEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMU_DIVN3_PCIEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_SEL_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_TIME2_RST_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_TIME0_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_EN_WDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_EN_SSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_STEP_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_TBASE_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_SSC_ORDERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_25MOUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_CLKRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_CP_NEW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_BIG_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_EN_CENTER_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_PI_I_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_LDO_MODESELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_LDO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_LPF_RSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_LPF_CPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_SEL_CP_If,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_CMU_VC_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CMU_DLY_PCIEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_FLD_DSEL_PCIEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG05_TX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG05_RX_MAC05_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG05_RX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG04_TX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG04_RX_MAC05_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG04_RX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG03_TX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG03_RX_MAC05_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG03_RX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG02_TX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG02_RX_MAC05_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG02_RX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG01_TX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG01_RX_MAC05_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG01_RX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG00_TX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG00_RX_MAC05_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG00_RX_MAC01_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_MAC14_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_MAC13_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_TX_MAC02_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_RX_MAC07_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_RX_MAC09_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_RX_MAC03_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_TX_MAC02_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_TX_MAC08_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_RX_MAC06_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_RX_MAC04_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_RX_MAC08_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_TX_MAC02_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_TX_MAC08_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_RX_MAC06_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_RX_MAC04_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_RX_MAC08_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_TX_MAC12_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_TX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_RX_MAC11_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_RX_MAC07_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_RX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_TX_MAC12_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_TX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_RX_MAC11_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_RX_MAC07_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_RX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_TX_MAC12_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_TX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_RX_MAC11_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_RX_MAC07_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_RX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_TX_MAC12_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_TX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_RX_MAC11_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_RX_MAC07_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_RX_MAC10_RST_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG05_TX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG05_RX_MAC05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG05_RX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG04_TX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG04_RX_MAC05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG04_RX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG03_TX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG03_RX_MAC05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG03_RX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG02_TX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG02_RX_MAC05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG02_RX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG01_TX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG01_RX_MAC05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG01_RX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG00_TX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG00_RX_MAC05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG00_RX_MAC01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_MAC14_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_MAC13_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_TX_MAC02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_RX_MAC07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_RX_MAC09_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG12_RX_MAC03_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_TX_MAC02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_TX_MAC08_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_RX_MAC06_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_RX_MAC04_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG07_RX_MAC08_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_TX_MAC02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_TX_MAC08_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_RX_MAC06_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_RX_MAC04_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG06_RX_MAC08_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_TX_MAC12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_TX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_RX_MAC11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_RX_MAC07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG11_RX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_TX_MAC12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_TX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_RX_MAC11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_RX_MAC07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG10_RX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_TX_MAC12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_TX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_RX_MAC11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_RX_MAC07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG09_RX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_TX_MAC12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_TX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_RX_MAC11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_RX_MAC07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG08_RX_MAC10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE32_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE31_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE30_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE29_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE28_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE27_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE26_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE25_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE24_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE23_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE22_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE21_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE20_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE19_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE18_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE17_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE16_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE15_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE14_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE13_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE12_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE11_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE10_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE9_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE8_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE7_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE6_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE5_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE39_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE38_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE37_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE36_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE35_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE34_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE33_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE32_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE31_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE30_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE29_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE28_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE27_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE26_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE25_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE24_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE23_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE22_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE21_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE20_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE19_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE18_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE17_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE16_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE15_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE14_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE13_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE9_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE8_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE7_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE6_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE5_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE4_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE3_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE2_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE39_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE38_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE37_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE36_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE35_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE34_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE33_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BCAM_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BCAM_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BCAM_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BCAM_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BCAM_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCAM_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCAM_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCAM_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCAM_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCAM_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_REPAIREf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RDS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDS_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RDS_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDS_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RDS_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE11_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE10_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE9_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE8_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE7_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE6_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE5_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE9_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE8_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE7_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE6_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE5_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE4_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE3_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE2_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BISR_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION07_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION06_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION05_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION04_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION03_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION02_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION01_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL3_ACTION00_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG03_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG02_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG01_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG00_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM15_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM14_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM13_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM12_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM11_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM10_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM09_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM08_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM07_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM06_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM05_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM04_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM03_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM02_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM01_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM00_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION06_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION04_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION03_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_ACTION00_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG03_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL2_LOG00_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM15_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM14_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM13_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM09_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM08_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM06_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM04_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM03_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM01_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACL1_TCAM00_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE32_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE31_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE30_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE29_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE28_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE27_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE26_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE25_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE24_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE23_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE22_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE21_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE20_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE19_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE18_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE17_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE16_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE15_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE14_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE13_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE12_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE11_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE10_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE9_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE8_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE7_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE6_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE5_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE4_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE3_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE2_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE1_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE39_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE38_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE37_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE36_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE35_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE34_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALE33_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE11_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE10_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE9_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE8_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE7_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE6_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE5_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE4_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE3_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE2_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRALE1_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_DRF_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_CORNERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HOLD_REMAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_DRF_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMIB2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMIB1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMIB0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMIB2_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMIB1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMIB0_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTCAM_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MUNTAG_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBS1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBS0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTS1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTS0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMPLS_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEVC_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRMK1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRMK0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MKELL_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTCAM_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF4_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF3_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF2_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPHF1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF4_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF3_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF2_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPF1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT4_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT3_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT2_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPT1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG4_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG3_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG2_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPG1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MUNTAG_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBS1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBS0_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTS1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTS0_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMPLS_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEVC_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRMK1_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MRMK0_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MKELL_DRF_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_22f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_18f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_17f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_22f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_18f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_17f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG4_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG4_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG3_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG3_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG2_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG2_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT4_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT4_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT3_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT3_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT2_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT2_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF4_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF4_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF3_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF3_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF2_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF2_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF4_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF4_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF3_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF3_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF2_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF2_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG4_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG3_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG2_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT4_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT3_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT2_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PT1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF4_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF3_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF2_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PF1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF4_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF3_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF2_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHF1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_KCELL_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_KCELL_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_KCELL_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS0_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS0_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK0_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMK0_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVC_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVC_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVC_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS0_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS0_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_DRF_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_BIST_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_DRF_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_BIST_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BS1_BISR_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAG_BISR_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ26_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ25_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ24_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ23_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ22_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ21_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ20_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ19_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ18_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ17_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ16_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ15_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ14_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ13_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ12_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ11_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ10_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ9_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ8_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ7_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ6_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ5_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MLINK_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_EXA_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDRC_CC_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ57_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ56_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ55_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ54_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ53_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ52_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ51_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ50_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ49_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ48_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ47_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ46_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ45_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ44_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ43_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ42_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ41_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ40_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ39_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ38_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ37_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ36_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ35_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ34_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ33_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ32_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ31_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ30_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ29_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ28_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ27_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_EXA_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ26_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ25_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ24_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ23_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ22_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ21_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ20_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ19_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ18_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ17_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ16_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ15_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ14_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ13_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ12_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ11_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ10_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ9_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ8_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ7_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ6_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ5_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ4_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ3_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ2_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ0_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MLINK_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_EXA_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDRC_CC_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ57_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ56_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ55_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ54_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ53_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ52_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ51_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ50_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ49_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ48_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ47_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ46_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ45_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ44_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ43_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ42_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ41_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ40_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ39_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ38_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ37_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ36_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ35_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ34_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ33_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ32_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ31_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ30_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ29_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ28_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ27_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_EXA_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_29f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_28f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_27f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_26f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_25f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_24f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BIST_FAIL_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_29f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_28f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_27f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_26f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_25f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_24f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRF_FAIL_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ26_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ25_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ24_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ23_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ22_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ21_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ20_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ19_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ18_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ17_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ16_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ15_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ14_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ13_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ12_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ11_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ10_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ9_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ8_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ7_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ6_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ5_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ4_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ3_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ2_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ1_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ0_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MLINK_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_EXA_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDRC_CC_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ57_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ56_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ55_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ54_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ53_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ52_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ51_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ50_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ49_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ48_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ47_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ46_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ45_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ44_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ43_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ42_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ41_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ40_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ39_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ38_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ37_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ36_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ35_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ34_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ33_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ32_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ31_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ30_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ29_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ28_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ27_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_EXA_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ26_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ25_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ24_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ23_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ22_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ21_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ20_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ19_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ18_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ17_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ16_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ15_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ14_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ13_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ12_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ11_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ10_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ9_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ8_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ7_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ6_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ5_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ4_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ3_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ2_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ1_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ0_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MLINK_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_EXA_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDRC_CC_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ57_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ56_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ55_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ54_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ53_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ52_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ51_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ50_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ49_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ48_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ47_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ46_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ45_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ44_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ43_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ42_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ41_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ40_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ39_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ38_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ37_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ36_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ35_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ34_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ33_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ32_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ31_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ30_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ29_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ28_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ27_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_EXA_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ26_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ25_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ24_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ23_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ22_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ21_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ20_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ19_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ18_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ17_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ16_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ15_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ14_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ13_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ12_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ11_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ10_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ9_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ8_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ7_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ6_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ5_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ4_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ3_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ2_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ1_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ0_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MLINK_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_EXA_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPORT_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDRC_CC_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ57_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ56_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ55_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ54_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ53_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ52_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ51_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ50_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ49_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ48_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ47_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ46_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ45_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ44_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ43_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ42_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ41_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ40_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ39_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ38_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ37_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ36_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ35_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ34_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ33_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ32_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ31_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ30_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ29_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ28_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MOUTQ27_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MBISR_HSA_EXA_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EXA_BISR_OUT_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EXA_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EXA_BISR_OUT_53_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BISR_OUT_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BISR_OUT_52_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_MEM_WTSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_MEM_RTSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_MEM_VSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_MEM_VGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRC_MEM_WTSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRC_MEM_RTSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRC_MEM_VSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRC_MEM_VGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CC_MEM_WTSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CC_MEM_RTSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CC_MEM_VSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CC_MEM_VGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR03_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR02_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR01_1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR01_0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR03_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR01_1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPAR01_0_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR07_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_4_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_3_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_2_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR05_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR04_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR03_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR02_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR01_1_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR01_0_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR07_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_4_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_3_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_2_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR06_0_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR05_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR04_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR03_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR02_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR01_1_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIGR01_0_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR1_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR0_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR3_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR2_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYBASS_PG_ADDR2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_SDA_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DATA_ENDIAN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DATA_HOLD_TIME_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DATA_HOLD_TIME_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_SCK_I_DLY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_SCK_I_DLY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_WAIT_SCK_MODE_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_WAIT_SCK_MODE_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_OPEN_DRN_SCK_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_OPEN_DRN_SCK_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I2C_OPEN_DRN_SDAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_SCL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_SDA_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCL_FREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK_ACK_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRV_ACK_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SDA_OUT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEV_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ADDR_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DATA_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_READ_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADDR_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_SPI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO12_CSB1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO11_CSB0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CPHAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CPOLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_TSLCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_TCHSHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_RX_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CLK_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_TX_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CSB_OUT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CMD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_TIMEOUT_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPI_TIMEOUT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_NO_TAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_REGADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_PHYADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_WRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEBUG_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SCK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SDA_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDC0_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO0_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDC1_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO1_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDCXG_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIOXG_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPISLV_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPIMST_CLK_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPIMST_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UART_IO_DRVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SCK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SDA_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDC0_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO0_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDC1_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO1_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDCXG_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIOXG_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPISLV_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPIMST_CLK_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPIMST_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UART_IO_SLEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_JTAG_RST_SMIT_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UART0_SMIT_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UART1_SMIT_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPISLV_SMIT_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_JTAG_SMIT_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_STREAM_XCHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LEDIC_RESTARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LEDIC_PAGE_ACCESSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_ACTIVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SIGNAL_INVERTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BLINK_TIME_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_LOAD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_LED_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STP2_PWR_ON_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STP1_PWR_ON_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PWR_ON_BLINK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_MODf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_NUM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET3_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET3_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET3_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET3_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET2_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET2_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET2_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET2_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET1_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET1_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET1_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET1_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET0_LED3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET0_LED2_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET0_LED1_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET0_LED0_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_COPR_SET_PSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_FIB_SET_PSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_COPR_PMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_FIB_PMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_COMBO_PMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_LED_LOADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_CTRL_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_FIB_LED3_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_FIB_LED2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_FIB_LED1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_FIB_LED0_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_COPR_LED3_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_COPR_LED2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_COPR_LED1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_COPR_LED0_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHYADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_TP1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_TP1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_TP1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV1_THR_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV2_THR_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LV3_THR_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P_LOAD_CNTR_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P_LOAD_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX4_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX5_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDIO_PREMBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDC_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX4_ACCESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX5_ACCESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX4_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX5_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX4_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_MDX5_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_31_0_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_63_32_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_73_64_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_31_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_30_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_29_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_28_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_27_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_26_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_25_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_24_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_23_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_22_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_21_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_20_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_19_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_18_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_17_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_16_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_15_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_14_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_13_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_12_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_11_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_10_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_9_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_8_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_7_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_6_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_5_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_4_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_3_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_2_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_1_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_0_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_63_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_62_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_61_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_60_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_59_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_58_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_57_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_56_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_55_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_54_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_53_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_52_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_51_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_50_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_49_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_48_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_47_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_46_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_45_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_44_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_43_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_42_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_41_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_40_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_39_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_38_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_37_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_36_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_35_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_34_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_33_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_32_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_73_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_72_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_71_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_70_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_69_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_68_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_67_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_66_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_65_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_64_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_RCMD_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_PHYADRRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GPIO_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_PORT_LINK_STS_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SERDES_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_RMT_INTR_STS_UPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_STAT_TRIGGERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_ETHDMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_OAM_DYGASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_CCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_EXT_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_TM_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_TM_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_AUTO_RECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_TX_CRC_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SMI_CHECK_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SDS_UPD_PHYSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_RLFDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_SERDES_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IMR_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DBGO_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DBGO_CMP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DBGO_MGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DBGO_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_SERDES_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_RLFDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_STAT_TRIGGERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_RMT_INTR_STS_UPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_AUTO_RECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_TX_CRC_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_SMI_CHECKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_SERDES_UPD_PHYSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_TMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_EXT_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_ETHDMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_OAM_DYGASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_CCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_TIMESTAMP_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_SERDESf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_GLB_LINK_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_PORT_LINK_STS_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SERDES_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_RMT_INTR_STS_UPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_ETHDMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_OAM_DYGASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_CCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_EXT_GPIOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_GPIO_INTR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_TM_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_TM_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_AUTO_RECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_TX_CRC_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SMI_REG_CHECK4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SDS_UPD_PHYSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_STAT_TRIGGERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_RLFDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_SERDES_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ISR_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PTMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PTM_REPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_CTRL_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_ACCESS_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_RWOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_WSORT_GO_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_WSORT_GO_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_WSORT_GO_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_READY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_READY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_READY_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS2_WIRE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS1_WIRE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS0_WIRE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS2_RO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS1_RO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS0_RO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS2_RST_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS1_RST_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS0_RST_Nf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS2_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS1_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS0_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_IN_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_IN_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_IN_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_OUT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_OUT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DATA_OUT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DBGO_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DBGO_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSS_DBGO_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VOL_CTRL_RESIS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VREF_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VREF_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_ADC_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CALBRTN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_BAIS_CHOP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_ADC_CHOP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CLK_SRC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_ADC_OSR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_FLTR_EDG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_HOLD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_DIGT_ORDER_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_DC_OFFESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_PWR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_Rf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_OP_CUR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_HOLD_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_OSC_CUR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_OUT_RESOL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_SDM_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_SDM_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_VCM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_VBE_BIAS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_CHOP_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_BIAS_DEM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_TD_WREP_EDGE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_Sf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_HIGHCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_HIGH_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_LOWCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_LOW_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_HIGHCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_HIGH_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_LOWCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_LOW_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CT_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_U_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM0_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TM1_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_SELECTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_OUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_OUT_PIN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_VOLT_PROB_OEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_CHK_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_DUMYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_DATA_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_ALL_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_TRUNCATE_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_TRUNCATE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_HIGH_FETCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_LOW_FETCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_HIGH_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_LOW_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_ETAG_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_ETAG_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_PKT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_PKT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_VLAN_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DRF_TEST_RESUME_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DRF_TEST_RESUME_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_BIST_RSTN_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_BIST_RSTN_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_START_PAUSE_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_BIST_FAIL_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_BIST_FAIL_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_BIST_DONE_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_BIST_DONE_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_START_PAUSE_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_BIST_FAIL_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_BIST_FAIL_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_BIST_DONE_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_BIST_DONE_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_RX_READY_Ff,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_TX_READY_Ff,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_RDMA_CNT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_SEL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_SEL_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_SEL_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_SEL_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_RDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICDBG_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DBGBIT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DBG_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_BSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_SRATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DBG_MGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DBG_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_CLK_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DBG_SEL_BLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DBG_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_CMP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_DRIVER_READY_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_DT_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_OUT_CURf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_DBG_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_SOP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_EOP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_SOP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_EOP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICMG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICMG_FULL_LH_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICRX_FULL_LH_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICTX_FULL_LH_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NIC_LBKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICRX_SOP_CNT_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICRX_EOP_CNT_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICTX_SOP_CNT_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICTX_EOP_CNT_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_NICMG_CNT_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_FIFO_FULL_LHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_FIFO_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_FIFO_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_FIFO_FULL_LHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_FIFO_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_FIFO_EOP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_FIFO_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICMG_FIFO_FULL_LHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICMG_FIFO_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICMG_FIFO_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_DRIVER_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_DRIVER_READYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_PRST_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_PRST_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_PRST_REQ_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_NIC_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_NIC_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_SOP_CNT_LXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICRX_EOP_CNT_LXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_SOP_CNT_LXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICTX_EOP_CNT_LXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NICMG_CNT_LXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CRC_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GARP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_METHODf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HIT_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FLEX_TBL_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIB_UNIDIR_WIN_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_5G_4NBYTE_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_PAUSE_TAG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_INTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIB_UNIDIR_ONLY_CPUTX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_10G_4NBYTE_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_5G_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_5G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_2P5G_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_2P5G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_INVLD_MAC_CTRL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_UNKN_OPCODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LIMIT_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_1G_100M_10M_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_1G_100M_10M_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_10G_COMPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPG_10G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IOL_LEN_ERR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IOL_MAX_LEN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LIMIT_IPG_CFG_1G_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LIMIT_IPG_CFG_10M_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STRAP_DUMMY_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STRAP_DUMMY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STRAP_DUMMY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STRAP_DUMMY_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IFU_PATCH_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HW_RESET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DDR_DATA_BUS_WIDTH_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_OC0_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_INITIALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_CMD_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_STANDBY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OUTPUT_125M_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LED_SYNC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_JTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET3_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET2_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET1_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET0_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BOOT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DDR_TYPE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_POR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_CPU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG_IF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EFUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PER_PORT_MAC_ECOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_1G_PKT_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PADDING_UND_SIZE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PASS_ALL_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYP_TX_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PADDING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_MAC_ADDR_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_MAC_ADDR_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CRC_CPU_RC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACCESSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAIN_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BROADCASTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXT_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_READ_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WRTIE_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BC_PHYIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMD_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_SPEED_UPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_SEL5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_TSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDXDBG_READf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_DBG_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_BSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_SRATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_DBG_MGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_DBG_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_CLK_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_DBG_SEL_BLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_DBG_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_MDX_CMP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_DT_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_OUT_CURf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDX_DBG_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_48PASS1_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORIGINAL_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORIGINAL_COLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEFER_PKT_CONT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_RETX_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LATE_COLI_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IOL_MAX_RETRY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BKOFF_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BKOFF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HALF_48PASS1_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BKPRES_MTHD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEFER_IPG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRECOLLAT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LATE_COLI_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BKPRES_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_TAG_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HALF_TO_FULL_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REF_RX_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHG_DUP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FULL_DET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_CHG_DUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_COL_CUR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_POLLING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_ABLTY_GET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_POLLING_KP_CUR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_POLLING_EN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_GATING_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_SMPLEDG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_SMPLEDG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_SMPLEDG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_SMPLEDG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ABORT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TMOUT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_WRITE_PHY_PAGE0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_WRITE_PHY_PAGE0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_WRITE_PHY_PAGE0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_WRITE_PHY_PAGE0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_FMT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_FMT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_FMT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_FMT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_PRVTE1_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_PRVTE1_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_PRVTE1_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_PRVTE1_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_PRVTE0_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_PRVTE0_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_PRVTE0_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_PRVTE0_POLLINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_POLLING_PARK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_FREQ_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET3_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET2_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET1_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SET0_PREAMBLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_ABLTY_LOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_POLLING_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IDLE_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_SEL_ABLTY_RSLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LNKDN_FRC_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_DOWN_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_DOWN_TIME_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINKUP_DELAY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINKUP_DELAY_10G_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINKUP_DELAY_2P5G_1000M_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINKUP_DELAY_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO_FREE_CNT_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO_FREE_CNT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDIO_FREE_CNT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_PAGE_POLLING_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_REG_POLLING_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_BIT_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_BIT_POLLING_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_DEV_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_REG_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPAGE_POLLING_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTREG_POLLING_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTDEV0_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTREG0_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTDEV1_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTREG1_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG0_BIT_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG0_DEV_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG0_REG_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG9_BIT_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG9_DEV_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG9_REG_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG10_BIT_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG10_DEV_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REG10_REG_POLLING_10GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK0_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK1_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK2_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK3_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_PHY_REG_CHK_CHK4_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_MMD_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_MMD_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_MMD_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_MMD_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_MODE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_MMD_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_MMD_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_DMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_DMSK_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_DATA_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK0_RESULT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK1_RESULT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK2_RESULT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK3_RESULT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK4_RESULT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FORCE_SDS_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FEFI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FORCE_MSTR_SLVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_1000M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_500M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_100M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_RX_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_TX_PAUSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_SPD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_DUP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_MEDIAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_LINKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_FEFI_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_MSTR_SLV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_EEE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_FC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_SPD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_DUP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_MEDIA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMI_FORCE_LINK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RLFD_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEDIA_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUP_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_PAUSE_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_PAUSE_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MSTR_SLV_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FEFI_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FORCE_MAC_SPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_FORCE_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_LEN_TAG_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_LEN_100M_10M_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_LEN_1G_2P5G_5G_10G_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_PORT_RX_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_PORT_TX_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC10G_SERDES_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC5G_SERDES_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC2P5G_SERDES_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC1G_SERDES_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC3_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC2_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC7_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC6_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC5_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC4_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC3_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC2_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP1_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC3_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC2_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC7_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC6_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC5_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC4_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC3_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC2_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP0_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC3_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC2_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC7_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC6_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC5_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC4_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC3_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC2_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP3_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC3_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC2_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC7_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC6_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC5_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC4_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC3_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC2_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP2_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC3_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC2_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC7_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC6_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC5_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC4_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC3_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC2_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP4_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC7_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC6_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC5_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC4_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC3_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC2_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC7_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC6_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC5_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC4_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC3_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC2_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP5_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP7_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC1_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC0_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC1_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC0_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC1_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP6_MAC0_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP11_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP11_MAC_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP11_MAC_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP11_MAC_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP10_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP10_MAC_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP10_MAC_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP10_MAC_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP9_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP9_MAC_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP9_MAC_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP9_MAC_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP8_MAC_10G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP8_MAC_5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP8_MAC_2P5G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GROUP8_MAC_1G_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P47_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P46_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P45_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P44_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P43_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P42_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P37_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P36_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P29_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P28_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P21_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P20_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P15_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P14_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P13_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P12_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P11_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P10_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P9_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P8_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P7_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P6_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P5_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P4_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P1_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P0_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES9_0_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES7_3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES7_2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES6_3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES6_2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES5_3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES5_2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES4_3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES4_2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES3_3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES3_2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES3_1_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES3_0_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES2_3_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES2_2_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES2_1_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES2_0_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P50_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIB_UNIDIR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SDS_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RXDV_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RXDV_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IDLE_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_IDLE_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_UNIDIR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_UNIDIR_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACRX_DUPDET_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MACRX_DUPDET_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_RXDV_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_RXDV_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_TX_IDLE_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_TX_IDLE_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_PHY_UNIDIR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_PHY_UNIDIR_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_MACRX_DUPDET_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRC_MACRX_DUPDET_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_RXDV_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_RXDV_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_TX_IDLE_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_TX_IDLE_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_PHY_UNIDIR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_PHY_UNIDIR_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_MACRX_DUPDET_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_FRCV_MACRX_DUPDET_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_BC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SERDES_BC_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SDS_UNIDIR_TX_ABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_UNIDIR_EN_TGXRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SDS_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SDS_ISO_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEL_ORI_312P5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_USXGMII_SUBMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_PORT_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_PORT_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_EN_FC_EFCTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_REF_RXLPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LINK_UP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_WAKE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_HIGH_Qf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_LPI_MINIPG_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_LPI_MINIPG_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_LPI_MINIPG_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_LPI_MINIPG_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_LPI_MINIPG_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_LPI_MINIPG_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_TIMER_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_TIMER_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_WAIT_RX_INACTIVE_TIMER_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MULTIWAKE_PORTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MULTIWAKE_INTLVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MULTIWAKE_TIME_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_MULTIWAKE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_TX_DELAY_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_WAKE_TIMER_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_PAUSE_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_TX_DELAY_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_PAUSE_WAKE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_TX_DELAY_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_WAKE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_PAUSE_WAKE_TIMER_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_TX_DELAY_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_WAKE_TIMER_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_PAUSE_WAKE_TIMER_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_TX_DELAY_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_WAKE_TIMER_5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_PAUSE_WAKE_TIMER_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_LOW_Q_TX_DELAY_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_TX_WAKE_TIMER_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_EEEP_TX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEE_EEEP_RX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_1000M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_500M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_PORT_100M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_SLAVE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TIMER_UNIT_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TIMER_UNIT_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TIMER_UNIT_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_WAKE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_WAKE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_EN_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_EN_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_TX_RATE_EN_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_SLEEP_STEP_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_MIN_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_PAUSE_ON_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_WAKE_TIMER_500M_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_MIN_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_PAUSE_ON_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_WAKE_TIMER_500M_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_WAKE_TIMER_GIGA_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_MIN_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_PAUSE_ON_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_WAKE_TIMER_GIGA_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EEEP_RX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_SYSCLK_DIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SLOW_DOWN_SYSCLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS13_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS12_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS11_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS10_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS9_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS8_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS7_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS6_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS5_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS4_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS3_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS2_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS1_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GATED_SDS0_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCIE_PWR_DOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SOC_SLEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTPID_CMP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITPID_CMP_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETPID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTAG_UNTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTAG_TAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITAG_UNTAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITAG_TAG_ACCEPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STP_LEAK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LEAK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SVL_FID_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_SVL_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UC_SVL_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OCFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ICFI_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SA_LRN_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRIVATE_VLAN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPVID_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPVID_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBL_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_REP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_REQ_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DHCP6_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DHCP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MLD_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGMP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_FLTR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_OTAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_ITAG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_OTAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_ITAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_OTAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_ITAG_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTPID_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITPID_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NEW_SA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NEW_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_BRIDGE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6MC_BRIDGE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2MC_BRIDGE_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_BRIDGE_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6MC_BRIDGE_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2MC_UNKN_FLD_PMSK_52_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2MC_UNKN_FLD_PMSK_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_UNKN_FLD_PMSK_52_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_UNKN_FLD_PMSK_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6MC_UNKN_FLD_PMSK_52_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6MC_UNKN_FLD_PMSK_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETHER_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_ASf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_VID_CNVT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_CNVT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PRI_TAG_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_SELECTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_CNVT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_RANGE_SET_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IVC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_VLAN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_VLAN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OTAG_LU_MIS_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITAG_LU_MIS_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HIT_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_0F_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_0E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_0D_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_0C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_0B_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_0A_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_09_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_08_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_07_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_06_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_05_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_04_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_03_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_02_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_01_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_1F_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_1E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_1D_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_1C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_1B_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_1A_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_19_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_18_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_17_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_16_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_15_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_14_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_13_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_12_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_11_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_10_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_2F_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_2E_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_2D_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_2C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_2B_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_2A_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_29_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_28_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_27_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_26_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_25_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_24_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_23_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_22_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_21_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_20_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIRROR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PTP_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LLDP_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EAPOL_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UDP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETH2_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PMSK_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PMSK_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADDR_MAX_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADDR_MAX_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADDR_MIN_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADDR_MIN_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BYPASS_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PPM_55_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_HASH_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_HASH_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_DOWN_AVOIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CONGST_AVOIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOCAL_FIRSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_HASH_CALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_STAND_ALONE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEP_PORT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NON_TMN_TUNNEL_HASH_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_FLOW_LABELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_PROTOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_L4DPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_L4SPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_DIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_SIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_DMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_SMACf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_BITS_SPPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_LOCAL_TBL_REFRESHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NUM_TX_CANDIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_HASH_MSK_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PORT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEP_FLOOD_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEP_KWN_MC_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NUM_AVL_TX_CANDIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_TRK_PORT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_SEP_FLOOD_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AVL_SEP_KWN_MC_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_TRK_PPMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IS_TRK_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MSTI_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RESTRICT_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VB_ISO_MBR_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VB_ISO_MBR_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VB_ISO_EGR_BYPASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ECID_RPF_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_LM_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CNT_PROTECT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_STT_MV_REFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LUTCAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_AUTO_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HASH_FULL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_DOWN_P_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_BC_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ZERO_SA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ZERO_SA_LRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_HASH_ALGO_BLK1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_HASH_ALGO_BLK0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_KEEP_AGE_OUT_ENTRY_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SUS_AGE_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FAST_AGE_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AGE_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AGE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SALRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NEW_SA_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FORBID_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CONSTRT_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LRN_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BELOW_ZERO_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FVID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AGG_VID_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_CMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENTRY_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REPLACING_PORT_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AGG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SRC_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYN_NTFY_AGE_OUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYN_NTFY_PORT_MV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYN_NTFY_NEW_LRN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NTFY_DST_TPYEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HASHFULL_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LD_FLUSH_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TAGSTS_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SUS_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DASABLK_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STTC_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYN_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NTFY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ITAGIFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_EVENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIN_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMAC_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMAC_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BASE_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CUR_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NTFY_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NTFY_BUF_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOCAL_NTFY_BUF_RUN_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIFO_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PEAKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_L2MSG_TMROUT_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_L2MSG_TMROUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INC_BYPASS_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INC_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_VLAN_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DHCP_VLAN_CONSTRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_RIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_DHCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_ARPREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_RMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_BPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_RTKPKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ADMIT_IGMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TICKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BURSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HIGHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIX_BW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BW_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_TAG_FEED_BACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RATE_MODE_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRTCM_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SRTCM_SMART_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INCL_PREIFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LB_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_METER_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNTR_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GREEN_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_YELLOW_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RED_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TOTAL_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TICK_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GUAR_PAGE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALLOW_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_ALLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_USED_PAGE_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_DROP_ALGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REF_RXCNGSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HOL_PRVNT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_MC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_MC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNKN_UC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FORCE_DROP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REPCT_HSA_FREE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_IDX_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_COLOR_IDX_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_CNTR_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNGST_TMR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNGST_SUST_TMR_LMT_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNGST_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNGST_SUST_TMR_LMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRAIN_OUT_THR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DRAIN_OUT_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_PRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PROTO_VLAN_PRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_IP_VLAN_PRI_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCP_INVLD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCP_INVLD_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_PRI_REMAP_TBL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_CFI0_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_CFI1_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_DEI0_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_DEI1_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_11Ef,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_MPLS_TCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTPRI_1BRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_1BRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_MPLSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_11Ef,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_TUNNELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_ROUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_PROTO_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_MAC_VLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_VACLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WT_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_CFI0_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_CFI1_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_DEI0_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_DEI1_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_TCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU2CPU_TALKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TTL_EXCPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_TBL_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INVLD_CAPWAP_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPWAP_CTRL_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPWAP_TT_EXCPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OAMPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFM_ETHDMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PASR_EXCPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALFORM_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_MAC_BINDINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPUC_RPFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INN_OUTER_CFI_EQL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_VLAN_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_UC_MC_BRIDGE_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_IP6_BRIDGE_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PTPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_USR_DEFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EST_TX_LEN_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EST_MISMATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ECID_EQ_PCIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_BPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_LACPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_LLDPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_EAPOLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_XXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNL_MAC_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TUNL_IP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTER_MAC_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPUC_NON_IP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_IP6_HDR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTING_IP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_ROUTING_DIP_DMAC_MISMATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_UC_MC_HOP_BY_HOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_UC_MC_ROUTING_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_IP_OPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_IP6_MC_ROUTING_LU_MISSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPUC_NULL_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPUC_PBR_NULL_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_UC_HOST_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_UC_NET_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_MC_BRIDGE_ENTRYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_MC_ROUTE_ENTRYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_IPMC_RPFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTING_EXCPT_NH_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTING_EXCPT_NH_AGE_OUT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTING_EXCPT_ROUTE_TO_TUNNEL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_IP6_ICMP_REDRTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPUC_MTUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_MTUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPUC_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGMP_MLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DHCP_DHCP6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_REQ_REPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NEIGHBOR_DISCOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP4_IP6_RSV_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_EXCPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_NTFYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NORMAL_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_CSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NEW_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PMV_FORBIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_STTC_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_DYN_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HASH_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INVALID_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ATK_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SFLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STRICT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SCHED_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_Q_PKT_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_UP_REFILLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPRI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPRI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEI_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCP_RMK_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPRI_DFLT_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPRI_DFLT_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEI_RMK_TAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCP_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPRI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPRI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_NON_B_REDIRECT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_NON_A_REDIRECT_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_B_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_A_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_B_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_A_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_NON_B_RMK_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_NON_A_RMK_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NON_IP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_URPF_BASE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NH_AGE_OUT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NH_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_HDR_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_HDR_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_HASH_ALG_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_HASH_ALG_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UC_HASH_ALG_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UC_HASH_ALG_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LU_FORCE_MODE_HASH_KEY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LU_MODE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_TO_CPU_TARGETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TTL_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTU_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HDR_OPT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_MC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_BC_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ZERO_SIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BAD_DIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BAD_SIP_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HL_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HDR_ROUTE_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HBH_ERR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HBH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_MISMATCH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SRC_INTF_FLTR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_URPF_FAIL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_URPF_CHK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_URPF_DFLT_ROUTE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_URPF_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_DPORT_BIT_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_SPORT_BIT_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DIP_BIT_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SIP_BIT_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_DPORT_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_SPORT_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_PROTO_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_LABEL_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCP_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DIP_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SIP_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRUNK_ID_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_PORT_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNIVERSAL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TEST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUNDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPMC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VRFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_KEY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_INTF_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXEC_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RESULT_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ENTRY_IDX_TCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_6RD_DIP_FAIL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_6RD_DIP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_6TO4_DIP_FAIL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_6TO4_DIP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_6TO4_SIP_FAIL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_6TO4_SIP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_ISATAP_SIP_FAIL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_ISATAP_SIP_MAP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_ISATAP_SIP_TYPE_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_IP6_SIP_FAIL_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_IP6_SIP_IP4MAP_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_IP6_SIP_IP4CMPT_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTE_TO_TUNNEL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PREFIX_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PREFIX_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPV4_MASK_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PREFIX_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OPRI_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPRI_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DSCP_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UDP_SPORT_PARSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UDP_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LABEL_0_15_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TTL_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HASH_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LABEL_NUM_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LABEL_UNKWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTRL_WORD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTRL_WORD_ADDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_MIB_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_GLB_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_PORT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RST_PORT_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_MULTIPKT_CNT_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_STACK_CNT_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_STACK_CNT_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_CNT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_CNT_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_SET1_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_SET1_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_SET0_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNT_SET0_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_DMY_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_LS2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_LS1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_LS0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RM2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RM1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RM0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RME2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RME1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_RME0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_TEST2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_TEST1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEM_TEST0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DOT1DTPLEARNEDENTRYDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_17f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_18f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_22f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_24f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_25f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_26f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_27f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_28f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_29f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_33f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_34f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_35f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_36f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_37f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_38f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_39f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_40f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_41f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_42f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_43f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_44f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_45f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_46f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_47f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_48f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_49f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_50f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_51f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_52f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_53f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_54f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_55f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_56f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_57f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_58f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_59f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_60f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_61f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_62f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_63f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_64f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_65f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_66f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_67f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_68f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_69f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_70f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_71f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_72f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_73f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_74f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_75f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_76f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_77f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_78f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_79f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REASON_80f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTP_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTP_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTP_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUP_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTP_TX_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_RX_TX_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MTP_SELF_FLTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPM_56_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DPM_56_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SAMPLE_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_QID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSPAN_TAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSPAN_TAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSPAN_TAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSPAN_TAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSPAN_TX_TAG_ADDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSPAN_RX_TAG_RMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMPL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOOKUP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GRP_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOGIC_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BLK_TMPLTE2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BLK_TMPLTE1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TMPLTE_FIELDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MV_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MV_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MV_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLR_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLR_FROMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_E_TMPLTE0_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_E_TMPLTE1_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_E_TMPLTE2_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_E_TMPLTE4_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V_TMPLTE0_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V_TMPLTE1_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V_TMPLTE2_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V_TMPLTE4_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I_TMPLTE0_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I_TMPLTE1_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I_TMPLTE2_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_I_TMPLTE4_IOTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_V_TMPLTE_IOTAG_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RULE_INDICATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_INDICATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DP_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_MAC_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PAYLOAD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_MIR_SFLOW_BYPASS_POSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FILTER_8021BR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EGR_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_LUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LB_LIMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCP_FRAG_OFF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYN_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYN_FINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_XMASf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NULL_SCANf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYN_SPORT_LESS_1024f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCP_HDR_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMURFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ICMPV6_PING_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ICMPV4_PING_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ICMP_FRAG_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPV6_FRAG_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PODf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCP_BLATf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UDP_BLATf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LANDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INVALID_HEADERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MCSAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ZERO_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DA_EQUAL_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FRAG_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_LEN_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HDR_LEN_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NETMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_INVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TCP_HDR_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MISMATCH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MATCH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ARP_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_SWAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PAR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MUX_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYING_GASP_VTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYING_GASP_PKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYING_GASP_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TBP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_OAM_DYING_GASP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DYGASP_POLARITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_UNKN_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MD_LV_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LIFETIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PRESENT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEMBER1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PRESENT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEMBER0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNTR1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNTR0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VID_ADDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTLVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_PRESENTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MEPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CCM_INTLVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MDLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_10Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPD_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NSECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TIME_FREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_TARGETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BLK1_ALGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BLK0_ALGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LU_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LU_PRI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HASH_LU_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAM_LU_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMAC_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_PORT_INCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOOKUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TTL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DATA_SPORT_PARSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_GPE_EXCPT_FLAGSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_EXCPT_FLAGSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_EXCPT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_CTRL_PKT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_INVLD_HDR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_TRAP_TARGETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_VNI_LU_MIS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SA_MISf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BSSID_CAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BSSID_HASH_ALGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EXCPT_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTRL_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ETAG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ECID_RPF_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RSVD_ECID_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_ECID_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ECID_NSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LU_KEY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VLAN_TAG_STS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TAG_DEI_RMK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TAG_PRI_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TAG_STS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_USE_DEFAULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BASE_PEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCID_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PCID_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ECID_EQ_PCID_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_SRC_PORT_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_MY_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MY_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MASTER_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_PORT_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEV_PORT_MAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NON_UNICAST_BLOCK_PMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_PORT_DEBUGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TIMEOUT_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TIMEOUT_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_REQ_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_ACK_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACCESS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_MSK_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PHY_MSK_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MMD_DEV_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_TRIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMP_SEQ_MARGINf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_FORCE_UPDATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_SEQ_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_LINK_STS_HIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_LINK_STS_LOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VXLAN_GPE_UDP_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MALFORMED_PKT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PARSER_CANT_HANDLE_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WL_OFFSET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PPPOE_PARSE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RFC1042_OUI_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_USR_DATA_L4_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTRL_L4_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SESSION_ID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HDR_L4_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L2_CRC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_PKT_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_PARSER_CANT_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_MALFORMED_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_SPPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_RTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_RTAG_239_208f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_RTAG_207_176f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_RTAG_175_144f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_RTAG_143_128f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_DMAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_DMAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_SMAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_SMAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_OTAG_TPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_ITAG_TPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_ETAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_OMPLS_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IMPLS_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_OMPLS_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IMPLS_HDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_ETHTYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_OAMPDUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_PPPOE_IF_MPLS_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IPV4_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IPV6_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_HDR_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_TOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_FLOW_LBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_PROTOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L4_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_SIP3_FIELD_SEL11_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_SIP2_FIELD_SEL9_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_SIP1_FIELD_SEL7_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_SIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_DIP3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_DIP2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_DIP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP_DIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_HOPBYHOP_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_HOPBYHOP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_ROUTE_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_FRAGMENT_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_ESP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_AUTH_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_DESTINATION_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_MOBILITY_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_REPEATf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_IP6_EH_TOTAL_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L4_HDR_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L4_SPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L4_DPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L4_OPCODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_L4_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_PREf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_HLENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_RIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_WBIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_RMAC_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_HDR_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_BSSID_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_BSSID_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OHSB_CAPWAP_BSSID_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L3_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L4_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_PARSER_CANT_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_MALFORMED_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L2_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_FRAME_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_QOS_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_DMAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_DMAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_SMAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_SMAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_OTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_ITAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_ETHTYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_OTAG_TPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_ITAG_TPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IPV4_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IPV6_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_HDR_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_TOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_FLOW_LBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_PROTOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_SIP3_FIELD_SEL5_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_SIP2_FIELD_SEL3_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_SIP1_FIELD_SEL1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_SIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_DIP3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_DIP2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_DIP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP_DIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_HOPBYHOP_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_HOPBYHOP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_ROUTE_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_FRAGMENT_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_ESP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_AUTH_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_DESTINATION_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_MOBILITY_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_REPEATf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L4_HDR_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_IP6_EH_TOTAL_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L4_SPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L4_DPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L4_OPCODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_L4_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_FIELD_SEL12f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_FIELD_SEL13f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IHSB_FIELD_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PKT_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_EST_INVALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ETAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ETAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ETAG_DEIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_IGR_ECID_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ETAG_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ECID_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ECID_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_IGR_ECID_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PE_ECID_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_BEGIN_DESCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_END_DESCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EST_MATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DST_PE_ECIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_LU_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PE_NSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INT_PE_ECID_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ECID_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_IGR_ECID_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ECID_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ECID_GRPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ETAG_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_IGR_ECID_BASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ETAG_DEIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ETAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_PE_ETAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_UC_HASH_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_UC_HASH_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SMAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DMAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_APP_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_MISS_TBL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_FLOOD_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_AS_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_OF_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_TBL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_RX_SFLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_RX_L3_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_RX_L2_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DM_RXIDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_ITPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_OTPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IACL_ITPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IACL_OTPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_N21_OVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_OVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_ITAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_OTAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_P_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_N21_IVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OAM_LBKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_MDF_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VRF_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_ITAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_OTAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IACL_OPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_OPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_ITAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EACL_IVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_OTAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SURF_IVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IACL_IPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_OTAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_IPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ITAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SURF_OVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_TCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_N21_OPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_N21_OPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_N21_IPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_DECAP_STAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_DSCP_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_N21_IPRI_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_HDR_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_DECAP_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_ENCAP_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BSSID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MPLS_ENCAP_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_L3_INTF_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SET_IP_RSVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CNGST_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BP_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BP_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BP_VLAN_EGRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ALE_AS_TAGSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_AS_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SRC_FILTER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPF_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPF_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTX_DPM_55_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CTX_DPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_TX_FWD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REMOTE_REASON_RX_TAG_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LOCAL_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_COPY_TO_REMOTE_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_COPY_TO_REMOTE_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_TO_REMOTE_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_TO_REMOTE_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_COPY_TO_LOCAL_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_COPY_TO_LOCAL_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_TO_LOCAL_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRAP_TO_LOCAL_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_VID_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LEARN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_VB_ISO_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_MIR_CANCELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DG_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DM_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IGR_L3_INTF_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INTERNAL_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRK_HASHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_META_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RMA_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FWD_VID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INT_OTAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_INT_ITAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SP_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SP_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IN_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L4_HDR_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_FLAG_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_OFFSET_ZEROf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_PROTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_REPEATf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_MOBILITY_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_DESTINATION_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_AUTH_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_ESP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_FRAGMENT_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_ROUTE_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_HOPBYHOP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP6_EH_HOPBYHOP_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PARSER_CANT_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORG_IMPLS_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORG_OMPLS_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPV6_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IPV4_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVLAN_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PPPOE_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLASS_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_OTAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_OTAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_OTAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_OTAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_ITAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_ITAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_ITAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_ITAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ORI_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STACK_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_PIPELINEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OF_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CPU_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STACK_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_EADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_SADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IP_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_ACL_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PKT_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_ACL_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIR_ACL_CANCELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RPF_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RPF_ASSERTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TS_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_OIL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_BSSID_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_WLAN_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_PORT_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LAN_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DA_BLOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L2VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_MIRR_CANCELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LDPM_57_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LDPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_MIRR_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ACL_MIRR_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_CDPMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_NDPMf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REP_QUEUE_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REP_QUEUE_FETCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_REP_QUEUE_STICKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_CPUf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_55_52f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_51_50f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_49_40f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_39_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_29_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_19_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_QID_9_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SMAC_47_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SMAC_15_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DMAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DMAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_OF_MISS_TBL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ACL_OF_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_OF_TBL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CPU_RX_SFLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CPU_RX_L3_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CPU_RX_L2_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ATK_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ACL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MAC_CSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DM_RXIDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_NEW_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PMV_FORBIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L2_STTC_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L2_DYN_PMVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_HASH_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INVALID_SAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PORT_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PORT_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ACL_ITPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_ITPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_OTPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IACL_ITPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IACL_OTPID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_N21_OVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_OVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_ITAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_OTAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_FWD_P_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_N21_IVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_OAM_LBKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L3_MDF_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_VRF_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ACL_OTPID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EACL_IVID_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SURF_IVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SURF_OVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MPLS_TCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MPLS_DECAP_STAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP_HDR_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MPLS_DECAP_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MPLS_ENCAP_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BSSID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_TS_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MPLS_ENCAP_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_TS_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IGR_L3_INTF_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SET_IP_RSVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_STK_MIR_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ACL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CNGST_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BP_FLTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BP_STPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_BP_VLAN_EGRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ALE_AS_TAGSTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_AS_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SRC_FILTER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SPF_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SPF_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SW_DEVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CTX_DPM_55_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CTX_DPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CPU_TX_FWD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_FWD_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_REMOTE_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_LOCAL_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_RVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_FWD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_FWD_VID_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_LEARN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_VB_ISO_MBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_TX_MIR_CANCELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DG_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DM_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SFLOW_MIRROREDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SFLOW_MIRRORINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_LOCAL_CPU_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MIRR_NFWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MIRRORED_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_MIRRORING_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_STK_NM_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_STK_CPU_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DPM_57_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DPM_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_HSB_SADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_TT_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_TT_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IGR_L3_INTF_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INTERNAL_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DPf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_TRK_HASHf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_META_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_RMA_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_FWD_VID_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_DA_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L2_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_OTAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_INT_ITAG_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SP_IS_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SP_TRKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IN_SPNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L3_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L3_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L2_ERR_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L4_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_L4_HDR_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP_FLAG_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP_OFFSET_ZEROf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP_PROTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_REPEATf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_MOBILITY_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_DESTINATION_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_AUTH_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_ESP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_FRAGMENT_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_ROUTE_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_HOPBYHOP_EXISTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IP6_EH_HOPBYHOP_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PARSER_CANT_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORG_IMPLS_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORG_OMPLS_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IPV6_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_IPV4_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_EVLAN_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PPPOE_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CLASS_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CLASS_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_OTAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_OTAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_OTAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_OTAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_ITAG_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_ITAG_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_ITAG_CFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_ITAG_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_OTAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_ORI_ITAG_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_STACK_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_OF_PIPELINEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_OF_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_CPU_TX_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_STACK_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_PKT_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSA_HSB_EADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SHIFT_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SAMPL_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLK_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_MERGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CMP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CURRENT_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CAPTURE_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_NO_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_NO_PKTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLR_MAC_TX_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CUR_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLR_MAC_RX_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIN_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CUR_PRMB_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MIN_PRMB_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_PRMB_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_RX_BUF_OVRUNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_TX_BUF_OVRUNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAX_COL_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CUR_COL_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLK_10G_TX_DEADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLK_10G_RX_DEADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLK_1G_TX_DEADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CLK_1G_RX_DEADf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_TO_NIC_TMOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_NIC_TO_SW_TMOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_DBG_MON_RSVf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_FIFO_ERR_EVNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_FIFO_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_FIFO_BUSY_EVNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_HSB_FIFO_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DBG_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RXPORT_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RXPORT_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RST_SYS_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RST_P_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LD_TX_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LD_TX_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_DSC_CHK_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_FIFO_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_FIFO_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RET_EMPTY_PKT_BUF_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RET_EMPTY_PKT_BUF_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SW_Q_RST_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVENTX_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_FIFO_ERR_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LINK_LIST_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RET_EMPTY_PKT_BUF_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LD_TX_DSC_ERR_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_RX_P_DSC_ERR_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_DSC_ERR_TRIG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_EVENTX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_FIFO_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_LINK_LIST_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_RET_EMPTY_PKT_BUF_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_LD_TX_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_RX_P_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_SYS_DSC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_EVENTX_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_FIFO_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_LINK_LIST_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_RET_EMPTY_PKT_BUF_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_LD_TX_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_RX_P_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_GLB_SYS_DSC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_DSC_OVER_EVNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_DSC_OVER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_DSC_OVER_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_SYS_DSC_OVER_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LL_ERR_RST_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LL_ERR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LL_ERR_EVN_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LL_ERR_EVNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LL_ERR_1ST_EVNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_LL_RTN_FIFO_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_BIST_RSTNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STKDBG_TSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_DBG_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_BSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_SRATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_DBG_MGf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_DBG_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_CLK_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_DBG_SEL_BLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_DBG_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_CFG_STK_CMP_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_DT_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_OUT_CURf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_DBG_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVC_TCAM_LU_EXECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_EVC_TCAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_13Af,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_13Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_OFf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_EACLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_EVCf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DROP_TTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_17f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_18f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DOWNGRADE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_MAC_DOWNGRADE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_19_RSVDf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_22f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_48f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_49f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_24f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_25f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_26f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_27f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_28f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_29f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_33f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_34f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_IVC_TCAM_LU_EXECf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_35f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_36f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_37f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_38f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_39f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_40f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_41f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_42f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_43f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_44f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_44Af,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_44Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_45f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_50f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_STK_PKT_BUF_RETURNf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_46f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_47f,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_ROUTER_MAC_TCAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TT_TCAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_L3_TCAM_BLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_47Af,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_DUMY_47Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_WAKE_TIMER_5G_LITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9310)
+    MANGO_TX_WAKE_TIMER_2P5G_LITEf,
+#endif
+
+    MANGO_REGFIELD_LIST_END,
+} rtk_mango_regField_list_t;
+
+extern rtk_reg_t rtk_mango_reg_list[];
+
+
+#endif    /* __RTK_MANGO_REG_STRUCT_H__ */

@@ -1,0 +1,351 @@
+#
+# Copyright (C) 2015 Realtek Semiconductor Corp.
+#
+# Makefile for SDK U-Boot Module (SDK-3 usage)
+#
+
+SWITCH_DIR 	= ../switch
+SDK_DIR     = $(SWITCH_DIR)/sdk
+
+COBJS += $(SDK_DIR)/system/uboot/uboot_init.o
+
+
+ifeq ($(CONFIG_TURNKEY_SYSINFO),y)
+  COBJS += $(SDK_DIR)/system/uboot/cmd/cmd_sysinfo.o
+endif
+
+ifeq ($(CONFIG_UBOOT_SDK_SUPPORT),y)
+    COBJS += $(SDK_DIR)/system/uboot/cmd/cmd_upgrade.o
+    COBJS += $(SDK_DIR)/system/uboot/cmd/cmd_partition.o
+    COBJS += $(SDK_DIR)/system/uboot/cmd/uboot_cmd.o
+    COBJS += $(SDK_DIR)/system/uboot/cmd/uboot_func.o
+    COBJS += $(SDK_DIR)/system/common/rtcore/rtcore_init.o
+    COBJS += $(SDK_DIR)/system/hwp/hwp_init.o
+    COBJS += $(SDK_DIR)/system/hwp/hwp.o
+    COBJS += $(SDK_DIR)/system/hwp/hwp_probe.o
+    COBJS += $(SDK_DIR)/system/hwp/profile_list.o
+    COBJS += $(SDK_DIR)/system/ioal/ioal_init.o
+    COBJS += $(SDK_DIR)/system/ioal/ioal_param.o
+    COBJS += $(SDK_DIR)/system/ioal/ioal_log.o
+    COBJS += $(SDK_DIR)/system/ioal/mem32.o
+    COBJS += $(SDK_DIR)/system/ioal/phy_reset.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/time.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/lib.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/memory.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/sem.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/spl.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/cache.o
+    COBJS += $(SDK_DIR)/system/osal/uboot/thread.o
+    COBJS += $(SDK_DIR)/system/drv/swcore/swcore.o
+    COBJS += $(SDK_DIR)/system/drv/swcore/chip_probe.o
+
+    ifeq ($(CONFIG_SDK_DRIVER_NIC),y)
+      COBJS += $(SDK_DIR)/system/drv/nic/nic_probe.o
+      COBJS += $(SDK_DIR)/system/drv/nic/nic.o
+      COBJS += $(SDK_DIR)/system/uboot/rtnic/uboot_rtnic_drv.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8231),y)
+      COBJS += $(SDK_DIR)/system/drv/gpio/ext_gpio.o
+      COBJS += $(SDK_DIR)/system/drv/rtl8231/rtl8231_probe.o
+      COBJS += $(SDK_DIR)/system/drv/rtl8231/rtl8231.o
+    endif
+
+    ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+      COBJS += $(SDK_DIR)/system/drv/gpio/gpio.o
+      COBJS += $(SDK_DIR)/system/drv/gpio/generalCtrl_gpio.o
+      COBJS += $(SDK_DIR)/system/drv/gpio/gpio_probe.o
+    endif
+
+    ifeq ($(CONFIG_SDK_DRIVER_SPI),y)
+      COBJS += $(SDK_DIR)/system/drv/spi/spi.o
+      ifeq ($(CONFIG_SDK_SPI_DEV_1),y)
+          COBJS += $(SDK_DIR)/system/drv/spi/spi_dev1.o
+      endif
+      ifeq ($(CONFIG_SDK_SPI_DEV_2),y)
+          COBJS += $(SDK_DIR)/system/drv/spi/spi_dev2.o
+      endif
+      ifeq ($(CONFIG_SDK_SPI_DEV_3),y)
+          COBJS += $(SDK_DIR)/system/drv/spi/spi_dev3.o
+      endif
+      ifeq ($(CONFIG_SDK_SPI_DEV_4),y)
+          COBJS += $(SDK_DIR)/system/drv/spi/spi_dev4.o
+      endif
+      ifeq ($(CONFIG_SDK_SPI_DEV_5),y)
+          COBJS += $(SDK_DIR)/system/drv/spi/spi_dev5.o
+          COBJS += $(SDK_DIR)/system/drv/spi/spi_dev3.o
+      endif
+    endif
+
+    ifeq ($(CONFIG_SDK_DRIVER_I2C),y)
+      COBJS += $(SDK_DIR)/system/drv/i2c/i2c.o
+      COBJS += $(SDK_DIR)/system/drv/i2c/i2c_probe.o
+      COBJS += $(SDK_DIR)/system/drv/i2c/i2c_software_drv.o
+    endif
+
+    ifeq ($(CONFIG_SDK_TC_DRV),y)
+      COBJS += $(SDK_DIR)/system/drv/tc/tc_probe.o
+      COBJS += $(SDK_DIR)/system/drv/tc/tc.o
+      COBJS += $(SDK_DIR)/system/drv/tc/tc_common.o
+      ifeq ($(CONFIG_SDK_TC_TC1_TIME),y)
+        COBJS += $(SDK_DIR)/system/common/util/rt_util_time.o
+      endif
+    endif
+
+    COBJS += $(SDK_DIR)/system/common/rt_chip.o
+    COBJS += $(SDK_DIR)/system/common/util/rt_util_system.o
+    COBJS += $(SDK_DIR)/src/common/util/rt_util.o
+    COBJS += $(SDK_DIR)/src/common/util/rt_bitop.o
+    COBJS += $(SDK_DIR)/src/hal/chipdef/chipdef.o
+    COBJS += $(SDK_DIR)/src/hal/chipdef/driver.o
+    COBJS += $(SDK_DIR)/src/hal/common/halctrl.o
+    COBJS += $(SDK_DIR)/src/hal/common/miim.o
+    COBJS += $(SDK_DIR)/src/hal/mac/reg.o
+    COBJS += $(SDK_DIR)/src/hal/mac/miim_common_drv.o
+    COBJS += $(SDK_DIR)/src/hal/mac/mac_probe.o
+    COBJS += $(SDK_DIR)/src/hal/mac/drv/drv.o
+    COBJS += $(SDK_DIR)/src/hal/mac/mem.o
+    COBJS += $(SDK_DIR)/src/hal/mac/serdes.o
+ifneq ($(filter y,$(CONFIG_SDK_RTL8295) $(CONFIG_SDK_RTL8295R) $(CONFIG_SDK_RTL8214QF)),)
+    COBJS += $(SDK_DIR)/src/hal/mac/rtl8295.o
+endif
+    COBJS += $(SDK_DIR)/src/hal/phy/phy_construct.o
+    COBJS += $(SDK_DIR)/src/hal/phy/phy_probe.o
+    COBJS += $(SDK_DIR)/src/hal/phy/identify.o
+    COBJS += $(SDK_DIR)/src/dal/dal_construct.o
+    COBJS += $(SDK_DIR)/src/dal/dal_mgmt.o
+    COBJS += $(SDK_DIR)/src/dal/dal_phy.o
+    COBJS += $(SDK_DIR)/src/dal/dal_common.o
+    COBJS += $(SDK_DIR)/src/rtk/init.o
+    COBJS += $(SDK_DIR)/src/rtk/port.o
+    COBJS += $(SDK_DIR)/src/rtk/phy.o
+    COBJS += $(SDK_DIR)/src/rtk/l2.o
+    COBJS += $(SDK_DIR)/src/rtk/trunk.o
+
+
+
+    COBJS += $(SDK_DIR)/src/hal/phy/phy_common.o
+
+    ifeq ($(CONFIG_SDK_RTL8208D),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8208.o
+    else ifeq ($(CONFIG_SDK_RTL8208G),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8208.o
+    else ifeq ($(CONFIG_SDK_RTL8208L),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8208.o
+    endif
+
+
+    ifeq ($(CONFIG_SDK_RTL8212B),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8214fb.o
+    else ifeq ($(CONFIG_SDK_RTL8214B),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8214fb.o
+    else ifeq ($(CONFIG_SDK_RTL8214FB),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8214fb.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8218B),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218b.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218b_patch.o
+    else ifeq ($(CONFIG_SDK_RTL8218FB),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218b.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218b_patch.o
+    else ifeq ($(CONFIG_SDK_RTL8214FC),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218b.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218b_patch.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8218D),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218d.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218d_patch.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8218E),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218e.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8218e_patch.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8226),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8226.o
+    endif
+
+    ifneq ($(filter y,$(CONFIG_SDK_RTL826X) $(CONFIG_SDK_RTL826XI) $(CONFIG_SDK_RTL825X) $(CONFIG_SDK_RTL825XI) $(CONFIG_SDK_RTL825XL) $(CONFIG_SDK_RTL8224)),)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl826x.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl826x_patch.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL826XB),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl826xb.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl826xb_patch.o
+    endif
+
+    ifneq ($(filter y,$(CONFIG_SDK_RTL8226) $(CONFIG_SDK_RTL8284)),)
+      COBJS += $(SDK_DIR)/src/hal/phy/nic_rtl8226/nic_rtl8226.o
+      COBJS += $(SDK_DIR)/src/hal/phy/nic_rtl8226/nic_rtl8226b.o
+      COBJS += $(SDK_DIR)/src/hal/phy/nic_rtl8226/nic_rtl8226_init.o
+      COBJS += $(SDK_DIR)/src/hal/phy/nic_rtl8226/nic_rtl8226b_init.o
+      COBJS += $(SDK_DIR)/src/hal/phy/nic_rtl8226/nic_rtl8226_port.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8214C),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8214c.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8214c_patch.o
+    endif
+
+    ifeq ($(CONFIG_SDK_RTL8224),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8224.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8224_patch.o
+    endif
+
+    ifneq ($(filter y,$(CONFIG_SDK_RTL8295R) $(CONFIG_SDK_RTL8214QF)),)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8295.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8295_patch.o
+    endif
+
+    ifeq ($(CONFIG_SDK_PHY_CUST2),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_cust2.o
+    endif
+
+    ifeq ($(CONFIG_SDK_PHY_CUST3),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_cust3.o
+    endif
+
+    ifeq ($(CONFIG_SDK_PHY_CUST4),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_cust4.o
+    endif
+
+    ifeq ($(CONFIG_SDK_PHY_CUST5),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_cust5.o
+    endif
+
+    ifeq ($(CONFIG_SDK_EXPERIMENTAL_RTL8211FS),y)
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_experimental_rtl8211fs.o
+    endif
+
+    ifeq ($(SWBOARD),rtl9310)
+        COBJS += $(SDK_DIR)/src/dal/mango/dal_mango_mapper.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/mango/chip_rtl9310.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/mango/rtk_mango_regField_list.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/mango/rtk_mango_reg_list.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/mango/rtk_mango_tableField_list.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/mango/rtk_mango_table_list.o
+        COBJS += $(SDK_DIR)/src/dal/mango/dal_mango_construct.o
+        COBJS += $(SDK_DIR)/src/dal/mango/dal_mango_sds.o
+        COBJS += $(SDK_DIR)/src/dal/mango/dal_mango_port.o
+
+        COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl9310.o
+        COBJS += $(SDK_DIR)/src/hal/mac/drv/drv_rtl9310.o
+        COBJS += $(SDK_DIR)/src/hal/mac/led/led_rtl9310.o
+
+        ifeq ($(CONFIG_SDK_DRIVER_NIC_R9310),y)
+            COBJS += $(SDK_DIR)/system/drv/nic/nic_rtl9310.o
+        endif
+        ifeq ($(CONFIG_SDK_RTL8231),y)
+            COBJS += $(SDK_DIR)/system/drv/rtl8231/rtl8231_rtl9310.o
+        endif
+        ifneq ($(CONFIG_SDK_DRIVER_I2C_R9310),)
+            COBJS += $(SDK_DIR)/system/drv/i2c/i2c_rtl9310.o
+        endif
+
+        ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+            COBJS += $(SDK_DIR)/system/drv/gpio/gpio_common.o
+        endif
+
+    endif
+
+    ifeq ($(SWBOARD),rtl9300)
+      ifeq ($(CONFIG_SDK_DRIVER_NIC_R9300),y)
+        COBJS += $(SDK_DIR)/system/drv/nic/nic_rtl9300.o
+      endif
+
+      ifeq ($(CONFIG_SDK_RTL8231),y)
+        COBJS += $(SDK_DIR)/system/drv/rtl8231/rtl8231_rtl9300.o
+      endif
+
+      ifneq ($(CONFIG_SDK_DRIVER_I2C_R9300),)
+        COBJS += $(SDK_DIR)/system/drv/i2c/i2c_rtl9300.o
+      endif
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl9300.o
+      COBJS += $(SDK_DIR)/src/hal/mac/drv/drv_rtl9300.o
+      COBJS += $(SDK_DIR)/src/hal/mac/led/led_rtl9300.o
+
+      ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+          COBJS += $(SDK_DIR)/system/drv/gpio/gpio_rtl9300.o
+      endif
+
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_mapper.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/longan/chip_rtl9300.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/longan/rtk_longan_regField_list.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/longan/rtk_longan_reg_list.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/longan/rtk_longan_tableField_list.o
+        COBJS += $(SDK_DIR)/src/hal/chipdef/longan/rtk_longan_table_list.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_port.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_l2.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_flowctrl.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_stack.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_trunk.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_eee.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_sds.o
+        COBJS += $(SDK_DIR)/src/dal/longan/dal_longan_construct.o
+      endif
+
+
+    ifeq ($(SWBOARD),rtl8380)
+      ifeq ($(CONFIG_SDK_DRIVER_NIC_R8380),y)
+        COBJS += $(SDK_DIR)/system/drv/nic/nic_rtl8380.o
+      endif
+      ifeq ($(CONFIG_SDK_RTL8231),y)
+        COBJS += $(SDK_DIR)/system/drv/rtl8231/rtl8231_rtl8380.o
+      endif
+      ifneq ($(CONFIG_SDK_DRIVER_I2C_R8380),)
+        COBJS += $(SDK_DIR)/system/drv/i2c/i2c_rtl8380.o
+      endif
+      ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+        COBJS += $(SDK_DIR)/system/drv/gpio/gpio_rtl8380.o
+      endif
+      COBJS += $(SDK_DIR)/src/dal/maple/dal_maple_construct.o
+      COBJS += $(SDK_DIR)/src/dal/maple/dal_maple_mapper.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/maple/chip_rtl8380.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/maple/rtk_maple_regField_list.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/maple/rtk_maple_reg_list.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/maple/rtk_maple_tableField_list.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/maple/rtk_maple_table_list.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8380.o
+      COBJS += $(SDK_DIR)/src/hal/mac/led/led_rtl8380.o
+      COBJS += $(SDK_DIR)/src/hal/mac/drv/drv_rtl8380.o
+      COBJS += $(SDK_DIR)/src/dal/maple/dal_maple_port.o
+#      COBJS += $(SDK_DIR)/src/dal/maple/dal_maple_l2.o
+      COBJS += $(SDK_DIR)/src/dal/maple/dal_maple_eee.o
+    endif
+
+    ifeq ($(SWBOARD),rtl8390)
+      ifeq ($(CONFIG_SDK_DRIVER_NIC_R8390),y)
+        COBJS += $(SDK_DIR)/system/drv/nic/nic_rtl8390.o
+      endif
+
+      ifeq ($(CONFIG_SDK_RTL8231),y)
+        COBJS += $(SDK_DIR)/system/drv/rtl8231/rtl8231_rtl8390.o
+      endif
+
+      ifneq ($(CONFIG_SDK_DRIVER_I2C_R8390),)
+        COBJS += $(SDK_DIR)/system/drv/i2c/i2c_rtl8390.o
+      endif
+
+      ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+        COBJS += $(SDK_DIR)/system/drv/gpio/gpio_rtl8390.o
+      endif
+
+      COBJS += $(SDK_DIR)/src/dal/cypress/dal_cypress_construct.o
+      COBJS += $(SDK_DIR)/src/dal/cypress/dal_cypress_mapper.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/cypress/chip_rtl8390.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/cypress/rtk_cypress_regField_list.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/cypress/rtk_cypress_reg_list.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/cypress/rtk_cypress_tableField_list.o
+      COBJS += $(SDK_DIR)/src/hal/chipdef/cypress/rtk_cypress_table_list.o
+      COBJS += $(SDK_DIR)/src/hal/phy/phy_rtl8390.o
+      COBJS += $(SDK_DIR)/src/hal/mac/led/led_rtl8390.o
+      COBJS += $(SDK_DIR)/src/hal/mac/drv/drv_rtl8390.o
+      COBJS += $(SDK_DIR)/src/dal/cypress/dal_cypress_port.o
+#      COBJS += $(SDK_DIR)/src/dal/cypress/dal_cypress_l2.o
+      COBJS += $(SDK_DIR)/src/dal/cypress/dal_cypress_eee.o
+    endif
+endif

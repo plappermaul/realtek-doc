@@ -1,0 +1,221 @@
+/*
+ * Realtek Semiconductor Corp.
+ *
+ * Device Tree Structure
+ *
+ * RTK Management Switch
+ */
+
+/dts-v1/;
+
+#include <dt-bindings/interrupt-controller/mips-gic.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+#include "../chipDrv/rtl931x/rtk_bsp_rtl9310_intr.h"
+
+/ {
+    compatible = "rtk,switch1";
+    #address-cells = <1>;
+    #size-cells = <1>;
+
+    rtl9310 {
+        compatible = "rtl9310", "simple-bus";
+        #address-cells = <1>;
+        #size-cells = <1>;
+        ranges;
+
+        cpus {
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            cpu@0 {
+                compatible = "mti,interaptiv";
+                device_type = "cpu";
+                reg = <0>;
+            };
+        };
+
+        gic: gic@1bdc0000 {
+            compatible = "mti,gic";
+            reg = <0x1bdc0000 0x20000>;
+            interrupt-controller;
+            #interrupt-cells = <3>;
+            interrupt-parent = <&cpuintc>;
+            interrupts = <2>;
+
+        };
+
+        timer {
+            compatible = "rtk,cevt-ext";
+        };
+
+
+        uart0: uart@18002000 {
+            compatible = "ns16550a";
+            reg = <0x18002000 0x100>;
+            clock-frequency = <200000000>;
+            current-speed = <115200>;
+            interrupt-parent = <&gic>;
+            interrupts = <GIC_SHARED RTL9310_UART0_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            reg-shift = <2>;
+        };
+
+        rtcore: rtcore@1b00126c {
+
+            compatible = "rtcore";
+            #address-cells = <1>;
+            #size-cells = <1>;
+            ranges;
+
+            rtl9310_tc0: rtl9310_tc0@0 {
+                compatible = RTL9310_TC0;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC0_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_tc1: rtl9310_tc1@0 {
+                compatible = RTL9310_TC1;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC1_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_tc2: rtl9310_tc2@0 {
+                compatible = RTL9310_TC2;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC2_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_tc3: rtl9310_tc3@0 {
+                compatible = RTL9310_TC3;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC3_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_tc4: rtl9310_tc4@0 {
+                compatible = RTL9310_TC4;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC4_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_tc5: rtl9310_tc5@0 {
+                compatible = RTL9310_TC5;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC5_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_tc6: rtl9310_tc6@0 {
+                compatible = RTL9310_TC6;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC6_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_wdt0: rtl9310_wdt0@0 {
+                compatible = RTL9310_WDT0;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_WDT0_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_wdt1: rtl9310_wdt1@0 {
+                compatible = RTL9310_WDT1;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_WDT1_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_rxi300: rtl9310_rxi300@0 {
+                compatible = RTL9310_RXI300;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_RXI300_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_swcore: rtl9310_swcore@0 {
+                compatible = RTL9310_SWCORE;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_SWCORE_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_nic: rtl9310_nic@0 {
+                compatible = RTL9310_NIC;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_NIC_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_gpio: rtl9310_gpio@0 {
+                compatible = RTL9310_GPIO;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_GPIO_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_uart1: rtl9310_uart1@0 {
+                compatible = RTL9310_UART1;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_UART1_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_del_tc4: rtl9310_del_tc4@0 {
+                compatible = RTL9310_DEL_TC4;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC4DEL_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_del_tc5: rtl9310_del_tc5@0 {
+                compatible = RTL9310_DEL_TC5;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC5DEL_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_del_tc6: rtl9310_del_tc6@0 {
+                compatible = RTL9310_DEL_TC6;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_TC6DEL_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_lxsto: rtl9310_lxsto@0 {
+                compatible = RTL9310_LXSTO;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_LXSTO_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_lxmto: rtl9310_lxmto@0 {
+                compatible = RTL9310_LXMTO;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_LXMTO_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_btg: rtl9310_btg@0 {
+                compatible = RTL9310_BTG;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_BTG_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_usbh2: rtl9310_usbh2@0 {
+                compatible = RTL9310_USBH2;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_USBH2_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_spi_nand: rtl9310_spi_nand@0 {
+                compatible = RTL9310_SPI_NAND;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_SPINAND_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+
+            rtl9310_ecc: rtl9310_ecc@0 {
+                compatible = RTL9310_ECC;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_ECC_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };
+        
+            rtl9310_sec: rtl9310_sec@0 {
+                compatible = RTL9310_SEC;
+                interrupt-parent = <&gic>;
+                interrupts = <GIC_SHARED RTL9310_SEC_INTRSRC IRQ_TYPE_LEVEL_HIGH>;
+            };        
+        };
+    };
+      cpuintc: cpuintc@0 {
+        #address-cells = <0>;
+        #interrupt-cells = <1>;
+        interrupt-controller;
+        compatible = "mti,cpu-interrupt-controller";
+    };
+
+};

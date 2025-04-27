@@ -1,0 +1,60 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 75072 $
+// $Date: 2017-01-05 20:13:38 +0800 (Thu, 05 Jan 2017) $
+//
+// Purpose : Define diag shell commands for system related function.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) hardware profile commands.
+//
+
+
+//system
+//dump configuration
+//hardware profile
+//all info
+//hwp info
+//unit info
+//parsed info
+sys dump hwp ( all | info | unit | parsed_info )
+
+//system
+//load configuration
+//PHY config file
+//port configuration
+//port list
+//all ports
+sys load port-config port ( <PORT_LIST:ports> | all )
+
+//system
+//command
+//command
+sys command <STRING:cmd>
+
+#ifdef CMD_RTSTK_DC_DCBOX_TA_CFG_PORT
+//stacking protocol demo
+//DC info
+//DC box info
+//TA info
+//cfg info
+//port info
+//parameter value
+rise ( dc | dcbox | ta | cfg | port ) { <UINT:param> }
+#endif
+
+#ifdef CMD_RTSTK_NAME_PARAM
+//stacking protocol demo 2
+//command string
+//command int
+rise  <STRING:name> { <UINT:param> }
+#endif

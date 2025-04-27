@@ -1,0 +1,598 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) trunk commands.
+//
+
+
+#ifdef CMD_TRUNK_DUMP_TRUNK_GROUP_ALL
+//trunk configuration
+//dump configuration
+//trunk group configuration
+//all trunk groups
+trunk dump trunk-group all
+#endif
+
+#ifdef CMD_TRUNK_DUMP_TRUNK_GROUP_TRUNK_ID
+//trunk configuration
+//dump configuration
+//trunk group configuration
+//trunk group id
+trunk dump trunk-group <UINT:trunk_id>
+#endif
+
+#ifdef CMD_TRUNK_GET_MODE
+//trunk configuration
+//get configuration
+//trunk mode
+trunk get mode
+#endif
+
+#ifdef CMD_TRUNK_SET_MODE_STAND_ALONE_STACKING
+//trunk configuration
+//set configuration
+//trunk mode configuration
+//trunk stand-alone mode
+//trunk stacking mode
+trunk set mode ( stand-alone | stacking )
+#endif
+
+#ifdef CMD_TRUNK_GET_MEMBER_PORT_TRUNK_GROUP_TRUNK_ID
+//trunk configuration
+//get configuration
+//member port
+//trunk group configuration
+//trunk group id
+trunk get member-port trunk-group <UINT:trunk_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_MEMBER_PORT_TRUNK_GROUP_TRUNK_ID_PORTS_NONE
+//trunk configuration
+//set configuration
+//member port
+//trunk group configuration
+//trunk group id
+//port list
+//none member
+trunk set member-port trunk-group <UINT:trunk_id> ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_TRUNK_GET_LOCAL_PORT_TRUNK_GROUP_TRUNK_ID
+//trunk configuration
+//get configuration
+//trunk local member ports
+//trunk group configuration
+//trunk group id
+trunk get local-port trunk-group <UINT:trunk_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_LOCAL_PORT_TRUNK_GROUP_TRUNK_ID_MEMBER_PORTS_NONE
+//trunk configuration
+//set configuration
+//trunk local member ports
+//trunk group configuration
+//trunk group id
+//member ports
+//port list
+//none member
+trunk set local-port trunk-group <UINT:trunk_id> member ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_TRUNK_GET_EGRESS_PORT_TRUNK_GROUP_TRUNK_ID
+//trunk configuration
+//get configuration
+//trunk egress member ports
+//trunk group configuration
+//trunk group id
+trunk get egress-port trunk-group <UINT:trunk_id>
+#endif
+
+
+#ifdef CMD_TRUNK_SET_EGRESS_PORT_TRUNK_GROUP_TRUNK_ID_PORT_DEV_PORTS_NONE
+//trunk configuration
+//set configuration
+//trunk egress member ports
+//trunk group configuration
+//trunk group id
+//trunk egress member ports configuration
+//trunk egress member port list (format: devID:port, ex: 0:1, 2:2)
+//none member
+trunk set egress-port trunk-group <UINT:trunk_id> port ( <DEV_PORT_LIST:devID_ports> | none )
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_BIND_TRUNK_GROUP_TRUNK_ID
+//trunk configuration
+//get configuration
+//distribution algorithm binding
+//binding between a trunk and a distribution algorithm set
+//trunk group configuration
+//trunk group id
+trunk get distribute-algorithm bind trunk-group <UINT:trunk_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_BIND_TRUNK_GROUP_TRUNK_ID_ALGO_ID_ALGO_ID
+//trunk configuration
+//set configuration
+//distribution algorithm
+//binding between a trunk and a distribution algorithm set
+//trunk group configuration
+//trunk group id
+//algorithm id configuratin
+//algorithm id
+trunk set distribute-algorithm bind trunk-group <UINT:trunk_id> algo-id <UINT:algo_id>
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_BIND_TRUNK_GROUP_TRUNK_ID_TYPE_L2_IPV4_IPV6
+//trunk configuration
+//get configuration
+//distribution algorithm binding
+//binding between a trunk and a distribution algorithm set
+//trunk group configuration
+//trunk group id
+//bind packet type
+//l2 packets
+//ipv4 packets
+//ipv6 packets
+trunk get distribute-algorithm bind trunk-group <UINT:trunk_id> type ( l2 | ipv4 | ipv6 )
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_BIND_TRUNK_GROUP_TRUNK_ID_TYPE_L2_IPV4_IPV6_ALGO_ID_ALGO_ID
+//trunk configuration
+//set configuration
+//distribution algorithm
+//binding between a trunk and a distribution algorithm set
+//trunk group configuration
+//trunk group id
+//bind packet type
+//l2 packets
+//ipv4 packets
+//ipv6 packets
+//algorithm id configuratin
+//algorithm id
+trunk set distribute-algorithm bind trunk-group <UINT:trunk_id> type ( l2 | ipv4 | ipv6 ) algo-id <UINT:algo_id>
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_PARAMETER_ALGORITHM_ID_ALGO_ID
+//trunk configuration
+//get configuration
+//distribute algorithm
+//parameters
+//algorithm id configuration
+//algorithm id
+trunk get distribute-algorithm parameter algorithm-id <UINT:algo_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_PARAMETER_ALGORITHM_ID_ALGO_ID_DST_IP_DST_L4_PORT_DST_MAC_SRC_IP_SRC_L4_PORT_SRC_MAC_SRC_PORT
+//trunk configuration
+//set configuration
+//distribute algorithm parameter
+//parameters
+//algorithm id configuration
+//algorithm id
+//destination IP
+//destination layer4 port
+//destination MAC
+//source IP
+//source layer4 port
+//source MAC
+//source port
+trunk set distribute-algorithm parameter algorithm-id <UINT:algo_id> { dst-ip } { dst-l4-port } { dst-mac } { src-ip } { src-l4-port } { src-mac } { src-port }
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_PARAMETER_TYPE_L2_L3_ALGORITHM_ID_ALGO_ID
+//trunk configuration
+//get configuration
+//distribute algorithm
+//parameters
+//packet type
+//l2 packets
+//l3 packets
+//algorithm id configuration
+//algorithm id
+trunk get distribute-algorithm parameter type ( l2 | l3 ) algorithm-id <UINT:algo_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_PARAMETER_TYPE_L2_ALGORITHM_ID_ALGO_ID_DST_MAC_SRC_MAC_SRC_PORT_VLAN
+//trunk configuration
+//set configuration
+//distribute algorithm parameter
+//parameters
+//packet type
+//l2 packets
+//algorithm id configuration
+//algorithm id
+//destination MAC
+//source MAC
+//source port
+//vlan id
+trunk set distribute-algorithm parameter type l2 algorithm-id <UINT:algo_id> { dst-mac } { src-mac } { src-port } { vlan }
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_PARAMETER_TYPE_L3_ALGORITHM_ID_ALGO_ID_DST_IP_DST_L4_PORT_DST_MAC_FLOW_LABEL_PROTOCOL_SRC_IP_SRC_L4_PORT_SRC_MAC_SRC_PORT_VLAN
+//trunk configuration
+//set configuration
+//distribute algorithm parameter
+//parameters
+//algorithm id configuration
+//algorithm id
+//packet type
+//l3 packets
+//destination IP
+//destination layer4 port
+//destination MAC
+//ipv6 flow label
+//protocol
+//source IP
+//source layer4 port
+//source MAC
+//source port
+//vlan id
+trunk set distribute-algorithm parameter type l3 algorithm-id <UINT:algo_id> { dst-ip } { dst-l4-port } { dst-mac } { flow-label } { protocol } { src-ip } { src-l4-port } { src-mac } { src-port } { vlan }
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID
+//trunk configuration
+//get configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+trunk get distribute-algorithm shift algorithm-id <UINT:algo_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_SRC_PORT_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//source port shift configuration
+//source port shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> src-port <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_SRC_MAC_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//source MAC shift configuration
+//source MAC shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> src-mac <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_DST_MAC_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//destination MAC shift configuration
+//destination MAC shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> dst-mac <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_SRC_IP_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//source IP shift configuration
+//source IP shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> src-ip <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_DST_IP_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//destination IP shift configuration
+//destination IP shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> dst-ip <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_SRC_L4_PORT_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//source layer4 port shift configuration
+//source layer4 port shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> src-l4-port <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_ALGORITHM_ID_ALGO_ID_DST_L4_PORT_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//algorithm id configuration
+//algorithm id
+//destination layer4 port shift configuration
+//destination layer4 port shift
+trunk set distribute-algorithm shift algorithm-id <UINT:algo_id> dst-l4-port <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_SHIFT
+//trunk configuration
+//get configuration
+//distribute algorithm
+//parameter shift
+trunk get distribute-algorithm shift
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_SHIFT_SRC_PORT_SRC_MAC_DST_MAC_VLAN_SRC_IP_DST_IP_SRC_L4_PORT_DST_L4_PORT_PROTO_FLOW_LABEL_SHIFT
+//trunk configuration
+//set configuration
+//distribute algorithm
+//parameter shift
+//source port shift configuration
+//source MAC shift configuration
+//destination MAC shift configuration
+//vlan id shift configuration
+//source IP shift configuration
+//destination IP shift configuration
+//source layer4 port shift configuration
+//destination layer4 port shift configuration
+//protocol shift configuration
+//ipv6 flow label configuration
+//shift bits <0~5>
+trunk set distribute-algorithm shift ( src-port | src-mac | dst-mac | vlan | src-ip | dst-ip | src-l4-port | dst-l4-port | proto | flow-label ) <UINT:shift>
+#endif
+
+#ifdef CMD_TRUNK_GET_TRAFFIC_SEPARATION_TRUNK_GROUP_TRUNK_ID_KNOWN_MCAST_STATE
+//trunk configuration
+//get configuration
+//traffic separate
+//trunk group configuration
+//trunk group id
+//known multicast traffic separate
+//separate enable state configuration
+trunk get traffic-separation trunk-group <UINT:trunk_id> known-mcast state
+#endif
+
+#ifdef CMD_TRUNK_SET_TRAFFIC_SEPARATION_TRUNK_GROUP_TRUNK_ID_KNOWN_MCAST_STATE_DISABLE_ENABLE
+//trunk configuration
+//set configuration
+//traffic separate
+//trunk group configuration
+//trunk group id
+//known multicast traffic separate
+//separate enable state configuration
+//disable configuration
+//enable configuration
+trunk set traffic-separation trunk-group <UINT:trunk_id> known-mcast state ( disable | enable )
+#endif
+
+#ifdef CMD_TRUNK_GET_TRAFFIC_SEPARATION_TRUNK_GROUP_TRUNK_ID_FLOODING_STATE
+//trunk configuration
+//get configuration
+//traffic separate
+//trunk-group configuration
+//trunk group id
+//flooding traffic separate
+//separate enable state configuration
+trunk get traffic-separation trunk-group <UINT:trunk_id> flooding state
+#endif
+
+#ifdef CMD_TRUNK_SET_TRAFFIC_SEPARATION_TRUNK_GROUP_TRUNK_ID_FLOODING_STATE_DISABLE_ENABLE
+//trunk configuration
+//set configuration
+//traffic separate
+//trunk group configuration
+//trunk group id
+//flooding traffic separate
+//separate enable state configuration
+//disable configuration
+//enable configuration
+trunk set traffic-separation trunk-group <UINT:trunk_id> flooding state ( disable | enable )
+#endif
+
+#ifdef CMD_TRUNK_GET_TRAFFIC_SEPARATION_DIVISION_STATE
+//trunk configuration
+//get configuration
+//traffic separation
+//known multicast traffic separation divides from other separate traffic
+//separation division enable state configuration
+trunk get traffic-separation division state
+#endif
+
+#ifdef CMD_TRUNK_SET_TRAFFIC_SEPARATION_DIVISION_STATE_DISABLE_ENABLE
+//trunk configuration
+//set configuration
+//traffic separation
+//known multicast traffic separation divides from other separate traffic
+//separation division enable state configuration
+//disable configuration
+//enable configuration
+trunk set traffic-separation division state ( disable | enable )
+#endif
+
+#ifdef CMD_TRUNK_GET_TUNNEL_HASH_SRC
+//trunk configuration
+//get configuration
+//hash of non-terminate tunnel packets based on inner or outer header
+trunk get tunnel-hash-src
+#endif
+
+#ifdef CMD_TRUNK_SET_TUNNEL_HASH_SRC_INNER_OUTER
+//trunk configuration
+//set configuration
+//hash of non-terminate tunnel packets based on inner or outer header
+//hash based on inner header
+//hash based on outer header
+trunk set tunnel-hash-src ( inner | outer )
+#endif
+
+#ifdef CMD_TRUNK_GET_MEMBER_PORT_STACK_TRUNK_GROUP_STACK_TRUNK_ID
+//trunk configuration
+//get configuration
+//member port
+//stacking trunk group configuration
+//stacking trunk group id
+trunk get member-port stack-trunk-group <UINT:stack_trunk_id>
+#endif
+
+#ifdef CMD_TRUNK_SET_MEMBER_PORT_STACK_TRUNK_GROUP_STACK_TRUNK_ID_PORTS_NONE
+//trunk configuration
+//set configuration
+//member port
+//stacking trunk group configuration
+//stacking trunk group id
+//port list
+//none member
+trunk set member-port stack-trunk-group <UINT:stack_trunk_id> ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_TRUNK_GET_STACK_TRUNK_HASH
+//trunk configuration
+//get configuration
+//stacking trunk hash configuration
+trunk get stack-trunk-hash
+#endif
+
+#ifdef CMD_TRUNK_SET_STACK_TRUNK_HASH_TRUST_RECALCULATE
+//trunk configuration
+//set configuration
+//stacking trunk hash configuration
+//packet sent to stacking trunk would trust the hash value in stacking header to decide outgoing port
+// packet sent to stacking trunk would recalculate hash value to decide outgoing port
+trunk set stack-trunk-hash ( trust | recalculate )
+#endif
+
+#ifdef CMD_TRUNK_GET_DISTRIBUTE_ALGORITHM_BIND_STACK_TRUNK_GROUP_STACK_TRUNK_ID_TYPE_L2_IPV4_IPV6
+//trunk configuration
+//get configuration
+//distribution algorithm binding
+//binding between a trunk and a distribution algorithm set
+//stacking trunk group configuration
+//stacking trunk group id
+//bind packet type
+//l2 packets
+//ipv4 packets
+//ipv6 packets
+trunk get distribute-algorithm bind stack-trunk-group <UINT:stack_trunk_id> type ( l2 | ipv4 | ipv6 )
+#endif
+
+#ifdef CMD_TRUNK_SET_DISTRIBUTE_ALGORITHM_BIND_STACK_TRUNK_GROUP_STACK_TRUNK_ID_TYPE_L2_IPV4_IPV6_ALGO_ID_ALGO_ID
+//trunk configuration
+//set configuration
+//distribution algorithm
+//binding between a trunk and a distribution algorithm set
+//stacking trunk group configuration
+//stacking trunk group id
+//bind packet type
+//l2 packets
+//ipv4 packets
+//ipv6 packets
+//algorithm id configuratin
+//algorithm id
+trunk set distribute-algorithm bind stack-trunk-group <UINT:stack_trunk_id> type ( l2 | ipv4 | ipv6 ) algo-id <UINT:algo_id>
+#endif
+
+#ifdef CMD_TRUNK_GET_LOCAL_FIRST_STATE
+//trunk configuration
+//get configuration
+//local first load balancing configuration
+//local first enable state configuration
+trunk get local-first state
+#endif
+
+#ifdef CMD_TRUNK_GET_CONGST_AVOID_STATE
+//trunk configuration
+//get configuration
+//congstion avoid configuration
+//congstion avoid enable state configuration
+trunk get congst-avoid state
+#endif
+
+#ifdef CMD_TRUNK_GET_LINK_FAIL_AVOID_STATE
+//trunk configuration
+//get configuration
+//link fail avoid configuration
+//link fail avoid state configuration
+trunk get link-fail-avoid state
+#endif
+
+#ifdef CMD_TRUNK_SET_LOCAL_FIRST_STATE_DISABLE_ENABLE
+//trunk configuration
+//set configuration
+//local first load balancing configuration
+//local first enable state configuration
+//disable configuration
+//enable configuration
+trunk set local-first state ( disable | enable )
+#endif
+
+#ifdef CMD_TRUNK_SET_CONGST_AVOID_STATE_DISABLE_ENABLE
+//trunk configuration
+//set configuration
+//congstion avoid configuration
+//congstion avoid enable state configuration
+//disable configuration
+//enable configuration
+trunk set congst-avoid state ( disable | enable )
+#endif
+
+#ifdef CMD_TRUNK_SET_LINK_FAIL_AVOID_STATE_DISABLE_ENABLE
+//trunk configuration
+//set configuration
+//link fail avoid configuration
+//link fail avoid state configuration
+//disable configuration
+//enable configuration
+trunk set link-fail-avoid state ( disable | enable )
+#endif
+
+#ifdef CMD_TRUNK_GET_SRC_PORT_MAPPING_DEV_DEV_ID_PORT_PORTS_NONE
+//trunk configuration
+//get configuration
+//src port mapping
+//device configuration
+//device id
+//port configuration
+//port list
+//none member
+trunk get src-port-mapping devID <UINT:devID> port ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_TRUNK_SET_SRC_PORT_MAPPING_DEV_DEV_ID_PORT_PORTS_NONE_TRK_GROUP_TRUNK_ID_NONE
+//trunk configuration
+//set configuration
+//src port mapping
+//device configuration
+//device id
+//port configuration
+//port list
+//none member
+//trunk group configuration
+//trunk group id
+//none member
+trunk set src-port-mapping devID <UINT:devID> port ( <PORT_LIST:ports> | none ) trk_group ( <UINT:trunk_id> | none )
+#endif
+

@@ -1,0 +1,430 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for BPE.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) BPE commands.
+//
+
+#ifdef CMD_BPE_GET_PE_ETAG_TPID
+//bpe configuration
+//get configuration
+//E-TAG of port extenter
+//tpid value of E-TAG
+bpe get pe-etag tpid
+#endif
+
+#ifdef CMD_BPE_SET_PE_ETAG_TPID_TPID
+//BPE configuration
+//set configuration
+//E-TAG of port extenter
+//TPID value of E-TAG
+//TPID value (default 0x893f)
+bpe set pe-etag tpid <UINT:tpid>
+#endif
+
+#ifdef CMD_BPE_GET_PE_ETAG_CPU_KEEP_STATE
+//BPE configuration
+//get configuration
+//E-TAG of port extenter
+//keep E-TAG of packets from CPU port
+//state
+bpe get pe-etag cpu-keep state
+#endif
+
+#ifdef CMD_BPE_SET_PE_ETAG_CPU_KEEP_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//E-TAG of port extenter
+//keep E-TAG of packets from CPU port
+//state configuration
+//enable function
+//disable function
+bpe set pe-etag cpu-keep state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_GET_ECID_RPF_FAIL_ACTION
+//BPE configuration
+//get configuration
+//E-CID RPF check fail
+//action configuration
+bpe get ecid-rpf-fail action
+#endif
+
+#ifdef CMD_BPE_SET_ECID_RPF_FAIL_ACTION_FORWARD_DROP_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//BPE configuration
+//set configuration
+//E-CID RPF check fail
+//action configuration
+//forward (normal process)
+//drop
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to master CPU
+//copy to master CPU
+bpe set ecid-rpf-fail action ( forward | drop | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_BPE_GET_PE_MISS_FILTER_STATE
+//BPE configuration
+//get configuration
+//pe forwarding lookup miss filter
+//state
+bpe get pe-miss-filter state
+#endif
+
+#ifdef CMD_BPE_SET_PE_MISS_FILTER_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//pe forwarding lookup miss filter
+//state configuration
+//enable function
+//disable function
+bpe set pe-miss-filter state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_DUMP_PORT_PORTS_ALL
+//BPE configuration
+//dump configuration
+//port configuration
+//port list
+//all ports
+bpe dump port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_CONTROL_PE_ETAG_PARSE_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//control configuration
+//parse and forward packets with E-TAG
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) control pe-etag-parse state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_CONTROL_FWD_MODE_CONTROL_BRIDGE_PORT_EXTENDER
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//control configuration
+//forward mode selection
+//control-bridge (normal L2 lookup)
+//port-extender (L2 lookup by E-CID)
+bpe set port ( <PORT_LIST:ports> | all ) control fwd-mode ( control-bridge | port-extender )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_NSG_NSG
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//name space group ID of E-CID
+//nsg value
+bpe set port ( <PORT_LIST:ports> | all ) nsg <UINT:nsg>
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_PCID_EXTENSION_PCID_EXT
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//port E-CID
+//extension bits of PCID
+//extension bits value
+bpe set port ( <PORT_LIST:ports> | all ) pcid extension <UINT:pcid_ext>
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_PCID_BASE_PCID_BASE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//port E-CID
+//base bits of PCID
+//base bits value
+bpe set port ( <PORT_LIST:ports> | all ) pcid base <UINT:pcid_base>
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_CONTROL_PCID_USE_DEFAULT_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//control configuration
+//port E-CID
+//replace extension bits from PCID
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) control pcid use-default state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_CONTROL_PCID_BASE_PE_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//control configuration
+//port E-CID
+//base PE which does not support extension bits
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) control pcid base-pe state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_CONTROL_PCID_MATCH_ECID_ACTION_FORWARD_DROP_TRAP_TO_CPU_COPY_TO_CPU
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//control configuration
+//port E-CID
+//ECID of received packets is equal to the PCID
+//forwarding action
+//forward (normal process)
+//drop
+//trap to CPU (local)
+//copy to CPU (local)
+bpe set port ( <PORT_LIST:ports> | all ) control pcid match-ecid action ( forward | drop | trap-to-cpu | copy-to-cpu )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_INGRESS_MULTICAST_ECID_FILTER_RESERVED_ECID_FILTER_ECID_RPF_CHECK_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//ingress configuration
+//filter packets with multicast E-CID of E-TAG
+//filter packets with reserved E-CID of E-TAG
+//E-CID RPF check
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) ingress ( multicast-ecid-filter | reserved-ecid-filter | ecid-rpf-check ) state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_EGRESS_PE_ETAG_PRI_KEEP_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//egress configuration
+//E-TAG of port extenter
+//keep priority value of E-TAG
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) egress pe-etag pri-keep state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_EGRESS_PE_ETAG_DEI_RMK_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//egress configuration
+//E-TAG of port extenter
+//remark DEI value of E-TAG
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) egress pe-etag dei-rmk state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_EGRESS_PE_ETAG_TAG_STATUS_UNTAG_TAG_MCAST_UNTAG_MCAST_TAG
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//egress configuration
+//E-TAG of port extenter
+//tag status configuration
+//always remove E-TAG
+//always insert E-TAG
+//untagged for multicast (tag-status for unicast is decided by PCID)
+//tagged for multicast (tag-status for unicast is decided by PCID)
+bpe set port ( <PORT_LIST:ports> | all ) egress pe-etag tag-status ( untag | tag | mcast-untag | mcast-tag )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_EGRESS_VLAN_TAG_TAG_STATUS_NORMAL_MCAST_TAG
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//egress configuration
+//vlan tag
+//tag status configuration
+//follow vlan untagged set
+//tagged for multicast (unicast follow untagged set)
+bpe set port ( <PORT_LIST:ports> | all ) egress vlan-tag tag-status ( normal | mcast-tag )
+#endif
+
+#ifdef CMD_BPE_SET_PORT_PORTS_ALL_EGRESS_SRC_PORT_FILTER_STATE_ENABLE_DISABLE
+//BPE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//egress configuration
+//filter packet by ingress E-CID check
+//state configuration
+//enable function
+//disable function
+bpe set port ( <PORT_LIST:ports> | all ) egress src-port-filter state ( enable | disable )
+#endif
+
+#ifdef CMD_BPE_GET_REMARKING_PE_ETAG_SYSTEM_INTERNAL_PRIORITY
+//BPE configuration
+//get configuration
+//remark priority of E-TAG
+//E-TAG of port extenter
+//system
+//remarking configuration of internal priority
+bpe get remarking pe-etag system internal-priority
+#endif
+
+#ifdef CMD_BPE_SET_REMARKING_PE_ETAG_SYSTEM_INTERNAL_PRIORITY_INTERNAL_PRIORITY_REMARK_PE_PRIORITY_REMARK_PE_PRIORITY
+//BPE configuration
+//set configuration
+//remark priority of E-TAG
+//E-TAG of port extenter
+//system
+//remarking configuration of internal priority
+//internal priority value
+//priority of E-TAG
+//E-TAG priority value
+bpe set remarking pe-etag system internal-priority <UINT:internal_priority> remark-pe-priority <UINT:remark_pe_priority>
+#endif
+
+#ifdef CMD_BPE_ADD_PVID_TABLE_NSG_NSG_ECID_ECID_VID_VID
+//BPE configuration
+//add configuration
+//E-CID to PVID table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+//VLAN ID
+//VLAN ID value
+bpe add pvid-table nsg <UINT:nsg> ecid <UINT:ecid> vid <UINT:vid>
+#endif
+
+#ifdef CMD_BPE_ADD_PVID_TABLE_NSG_NSG_ECID_ECID_VID_VID_INGRESS_PORT_TRUNK_ID
+//BPE configuration
+//add configuration
+//E-CID to PVID table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+//VLAN ID
+//VLAN ID value
+//ingress info
+//port type is port
+//port type is trunk
+//port id or trunk id
+bpe add pvid-table nsg <UINT:nsg> ecid <UINT:ecid> vid <UINT:vid> ingress ( port | trunk ) <UINT:id>
+#endif
+
+#ifdef CMD_BPE_DEL_PVID_TABLE_NSG_NSG_ECID_ECID
+//BPE configuration
+//del configuration
+//E-CID to PVID table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+bpe del pvid-table nsg <UINT:nsg> ecid <UINT:ecid>
+#endif
+
+#ifdef CMD_BPE_GET_PVID_TABLE_NSG_NSG_ECID_ECID
+//BPE configuration
+//get configuration
+//E-CID to PVID table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+bpe get pvid-table nsg <UINT:nsg> ecid <UINT:ecid>
+#endif
+
+#ifdef CMD_BPE_DUMP_PVID_TABLE
+//BPE configuration
+//dump configuration
+//E-CID to PVID table
+bpe dump pvid-table
+#endif
+
+#ifdef CMD_BPE_ADD_FWD_TABLE_NSG_NSG_ECID_ECID_PORT_PORTS_ALL
+//BPE configuration
+//add configuration
+//ECID forwarding table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+//port configuration
+//port list
+//all ports
+bpe add fwd-table nsg <UINT:nsg> ecid <UINT:ecid> port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_BPE_DEL_FWD_TABLE_NSG_NSG_ECID_ECID
+//BPE configuration
+//delete configuration
+//ECID forwarding table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+bpe del fwd-table nsg <UINT:nsg> ecid <UINT:ecid>
+#endif
+
+#ifdef CMD_BPE_GET_FWD_TABLE_NSG_NSG_ECID_ECID
+//BPE configuration
+//get configuration
+//ECID forwarding table
+//name space group ID
+//name space group ID value
+//E-CID
+//E-CID value
+bpe get fwd-table nsg <UINT:nsg> ecid <UINT:ecid>
+#endif
+
+#ifdef CMD_BPE_DUMP_FWD_TABLE
+//BPE configuration
+//dump configuration
+//ECID forwarding table
+bpe dump fwd-table
+#endif
+

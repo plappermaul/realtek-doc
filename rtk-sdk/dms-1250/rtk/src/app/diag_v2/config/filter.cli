@@ -1,0 +1,876 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for filter.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) filter commands.
+//
+
+
+#ifdef CMD_FILTER_GET_CUT_LINE
+//filter configuration
+//get configuration
+//cut line
+filter get cut-line
+#endif
+
+#ifdef CMD_FILTER_GET_STATE
+//filter configuration
+//get configuration
+//state
+filter get state 
+#endif
+
+#ifdef CMD_FILTER_GET_LOG_COUNTER_INDEX
+//filter configuration
+//get configuration
+//log counter
+//index <0-127>
+filter get log-counter <UINT:index> 
+#endif
+
+#ifdef CMD_FILTER_GET_RATE_LIMIT_INDEX
+//filter configuration
+//dump configuration
+//get limit
+//index <0-127>
+filter get rate-limit { <UINT:index> }
+#endif
+
+#ifdef CMD_FILTER_GET_ACL_FLOW_TABLE_RULE_START_INDEX_END_INDEX
+//filter configuration
+//get configuration
+//ACL configuration
+//flow-table configuration
+//rule index
+//start rule index
+//end rule index
+filter get ( acl | flow-table ) rule <UINT:start_index> { <UINT:end_index> }
+#endif
+
+#ifdef CMD_FILTER_SET_CUT_LINE_VALUE
+//filter configuration
+//set configuration
+//cut line
+//cut line value (block id 0-8)
+filter set cut-line <UINT:value>
+#endif
+
+#ifdef CMD_FILTER_SET_STATE_DISABLE_ENABLE
+//filter configuration
+//set configuration
+//state
+//disable function
+//enable function
+filter set state ( disable | enable )
+#endif
+
+#ifdef CMD_FILTER_DUMP_ACL_FLOW_TABLE_RULE_START_INDEX_END_INDEX
+//filter configuration
+//dump configuration
+//ACL configuration
+//flow-table configuration
+//rule index
+//start rule index
+//end rule index
+filter dump ( acl | flow-table ) rule <UINT:start_index> { <UINT:end_index> }
+#endif
+
+#ifdef CMD_FILTER_DUMP_LOG_COUNTER_INDEX
+//filter configuration
+//dump configuration
+//log counter
+//index <0-127>
+filter dump log-counter { <UINT:index> }
+#endif
+
+#ifdef CMD_FILTER_SET_LOG_COUNTER_INDEX_PACKET_COUNTER_BYTE_COUNTER
+//filter configuration
+//set configuration
+//log counter
+//index <0-127>
+//packet counter
+//byte counter
+filter set log-counter <UINT:index> <UINT:packet_counter> <UINT64:byte_counter>
+#endif
+
+#ifdef CMD_FILTER_SET_RATE_LIMIT_INDEX_RATE_VALUE
+//filter configuration
+//set configuration
+//rate limit
+//index <0-127>
+//rate
+//rate value
+filter set rate-limit <UINT:index> rate <UINT:value>
+#endif
+
+#ifdef CMD_FILTER_DUMP_RATE_LIMIT_INDEX
+//filter configuration
+//dump configuration
+//rate limit
+//index <0-127>
+filter dump rate-limit { <UINT:index> }
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_PERMIT_DROP_COPY_TO_CPU
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//permit
+//drop
+//copy to CPU
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action ( permit | drop | copy-to-cpu )
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_REDIRECT_PORT_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//redirect packet
+//port number <0-28>
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action redirect <UINT:port_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_MIRROR_MIRROR_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//mirror packet
+//mirror index
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action mirror <UINT:mirror_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_LOG_LOG_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//log counter
+//log index
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action log <UINT:log_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_RATE_LIMIT_RATE_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//rate limit
+//rate index
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action rate-limit <UINT:rate_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_NEW_SVID_SVID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//new SVID
+//SVID
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action new-svid <UINT:svid>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_NEW_CVID_CVID_CVID_CPRI_CPRI
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//new CVID
+//CVID
+//CVID value
+//cpri
+//cpri value
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action new-cvid cvid <UINT:cvid> cpri <UINT:cpri>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_NEW_CVID_CVID_CVID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//new CVID
+//CVID
+//CVID value
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action new-cvid cvid <UINT:cvid>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_NEW_CVID_CPRI_CPRI
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//new CVID
+//cpri
+//cpri value
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action new-cvid cpri <UINT:cpri>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_RVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_TCP_FLAG_PATTERN_MATCH_PKT_SVID_CONTENT_CAREBITS_ACTION_NEW_CVID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//relay vid
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//TCP flag field
+//pattern match result
+//the SVID in stag
+//rule content
+//care bits
+//action
+//new CVID
+filter set acl rule <UINT:index> ( slp | frame-type | ether-type | rvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | tcp-flag | pattern-match | pkt-svid ) <STRING:content> <STRING:carebits> action new-cvid 
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_PERMIT_DROP_COPY_TO_CPU
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//permit
+//drop
+//copy to CPU
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action ( permit | drop | copy-to-cpu )
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_REDIRECT_PORT_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//redirect packet
+//port number <0-28>
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action redirect <UINT:port_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_MIRROR_MIRROR_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//mirror
+//mirror index
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action mirror <UINT:mirror_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_LOG_LOG_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//log counter
+//log index
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action log <UINT:log_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_RATE_LIMIT_RATE_ID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//rate limit
+//rate index
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action rate-limit <UINT:rate_id>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_NEW_SVID_SVID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//new SVID
+//SVID
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action new-svid <UINT:svid>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_NEW_CVID_CVID_CVID_CPRI_CPRI
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//new CVID
+//CVID
+//CVID value
+//cpri
+//cpri value
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action new-cvid cvid <UINT:cvid> cpri <UINT:cpri>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_NEW_CVID_CVID_CVID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//new CVID
+//CVID
+//CVID value
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action new-cvid cvid <UINT:cvid>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_NEW_CVID_CPRI_CPRI
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//new CVID
+//cpri
+//cpri value
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action new-cvid cpri <UINT:cpri>
+#endif
+
+#ifdef CMD_FILTER_SET_ACL_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_NEW_CVID
+//filter configuration
+//set configuration
+//ACL configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//new CVID
+filter set acl rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action new-cvid
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_PKT_CTAG_IF_PKT_CPRI_PKT_CVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_PKT_STAG_IF_PKT_SPRI_PKT_SVID_CONTENT_CAREBITS_ACTION_LOG_LOG_ID
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//if VLAN tagged
+//the priority in packet
+//the vid in packet
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//if SVLAN tag
+//the user priority of stag
+//the SVID in stag
+//rule content
+//care bits
+//action
+//log counter
+//log index
+filter set flow-table rule <UINT:index> ( slp | frame-type | ether-type | pkt-ctag-if | pkt-cpri | pkt-cvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | pkt-stag-if | pkt-spri | pkt-svid ) <STRING:content> <STRING:carebits> action log <UINT:log_id>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_PKT_CTAG_IF_PKT_CPRI_PKT_CVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_PKT_STAG_IF_PKT_SPRI_PKT_SVID_CONTENT_CAREBITS_ACTION_ASSIGN_VLAN_CTAG_CTAG_SPRI_SPRI
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//if VLAN tagged
+//the priority in packet
+//the vid in packet
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//if SVLAN tag
+//the user priority of stag
+//the SVID in stag
+//rule content
+//care bits
+//action
+//assign VLAN
+//ctag
+//CTAG
+//spri
+//SPRI
+filter set flow-table rule <UINT:index> ( slp | frame-type | ether-type | pkt-ctag-if | pkt-cpri | pkt-cvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | pkt-stag-if | pkt-spri | pkt-svid ) <STRING:content> <STRING:carebits> action assign-vlan ctag <UINT:ctag> spri <UINT:spri>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_PKT_CTAG_IF_PKT_CPRI_PKT_CVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_PKT_STAG_IF_PKT_SPRI_PKT_SVID_CONTENT_CAREBITS_ACTION_ASSIGN_VLAN_CTAG_CTAG
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//if VLAN tagged
+//the priority in packet
+//the vid in packet
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//if SVLAN tag
+//the user priority of stag
+//the SVID in stag
+//rule content
+//care bits
+//action
+//assign VLAN
+//ctag
+//CTAG
+filter set flow-table rule <UINT:index> ( slp | frame-type | ether-type | pkt-ctag-if | pkt-cpri | pkt-cvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | pkt-stag-if | pkt-spri | pkt-svid ) <STRING:content> <STRING:carebits> action assign-vlan ctag <UINT:ctag>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_PKT_CTAG_IF_PKT_CPRI_PKT_CVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_PKT_STAG_IF_PKT_SPRI_PKT_SVID_CONTENT_CAREBITS_ACTION_ASSIGN_VLAN_SPRI_SPRI
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//if VLAN tagged
+//the priority in packet
+//the vid in packet
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//if SVLAN tag
+//the user priority of stag
+//the SVID in stag
+//rule content
+//care bits
+//action
+//assign VLAN
+//spri
+//SPRI
+filter set flow-table rule <UINT:index> ( slp | frame-type | ether-type | pkt-ctag-if | pkt-cpri | pkt-cvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | pkt-stag-if | pkt-spri | pkt-svid ) <STRING:content> <STRING:carebits> action assign-vlan spri <UINT:spri>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_SLP_FRAME_TYPE_ETHER_TYPE_PKT_CTAG_IF_PKT_CPRI_PKT_CVID_IPV4_IPV6_IPV6_MLD_SIP_DIP_FLOW_LABEL_IP_PROTO_TOS_SRC_PORT_DST_PORT_PKT_STAG_IF_PKT_SPRI_PKT_SVID_CONTENT_CAREBITS_ACTION_ASSIGN_VLAN
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//source logical port
+//frame type
+//ether type
+//if VLAN tagged
+//the priority in packet
+//the vid in packet
+//IPv4 packet
+//IPv6 packet
+//IPv6 MLD packet
+//IPv4 source IP address
+//IPv4 destination IP address
+//IPv6 flow label field
+//IPv4 protocol/IPv6 next header
+//IPv4 TOS/IPv6 class
+//TCP/UDP source port
+//TCP/UDP destination port
+//if SVLAN tag
+//the user priority of stag
+//the SVID in stag
+//rule content
+//care bits
+//action
+//assign VLAN
+filter set flow-table rule <UINT:index> ( slp | frame-type | ether-type | pkt-ctag-if | pkt-cpri | pkt-cvid | ipv4 | ipv6 | ipv6-mld | sip | dip | flow-label | ip-proto | tos | src-port | dst-port | pkt-stag-if | pkt-spri | pkt-svid ) <STRING:content> <STRING:carebits> action assign-vlan
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_LOG_LOG_ID
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//log counter
+//log index
+filter set flow-table rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action log <UINT:log_id>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_ASSIGN_VLAN_CTAG_CTAG_SPRI_SPRI
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//assign VLAN
+//ctag
+//CTAG
+//spri
+//SPRI
+filter set flow-table rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action assign-vlan ctag <UINT:ctag> spri <UINT:spri>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_ASSIGN_VLAN_CTAG_CTAG
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//assign VLAN
+//ctag
+//CTAG
+filter set flow-table rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action assign-vlan ctag <UINT:ctag>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_ASSIGN_VLAN_SPRI_SPRI
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//assign VLAN
+//spri
+//SPRI
+filter set flow-table rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action assign-vlan spri <UINT:spri>
+#endif
+
+#ifdef CMD_FILTER_SET_FLOW_TABLE_RULE_INDEX_DMAC_SMAC_MAC_CAREBITS_MAC_ACTION_ASSIGN_VLAN
+//filter configuration
+//set configuration
+//flow table configuration
+//rule index
+//index <0-511>
+//destination MAC
+//source MAC
+//mac-address A:B:C:D:E:F
+//care bits A:B:C:D:E:F
+//action
+//assign vlan
+filter set flow-table rule <UINT:index> ( dmac | smac ) <MACADDR:mac> <MACADDR:carebits_mac> action assign-vlan
+#endif
+
+#ifdef CMD_FILTER_DEL_ACL_FLOW_TABLE_RULE_START_INDEX_END_INDEX
+//filter configuration
+//delete configuration
+//ACL configuration
+//flow-table configuration
+//rule index
+//start rule index
+//end rule index
+filter del ( acl | flow-table ) rule <UINT:start_index> { <UINT:end_index> }
+#endif
+
+#ifdef CMD_FILTER_DUMP
+//filter configuration
+//dump information
+filter dump 
+#endif
+

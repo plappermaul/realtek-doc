@@ -1,0 +1,330 @@
+#
+# Format of this file: description<nl>variable<nl>  helptext<nl>...<nl><nl>.
+# If the question being documented is of type "choice", we list
+# only the first occurring config variable. The help texts
+# must not contain empty lines. No variable should occur twice; if it
+# does, only the first occurrence will be used by Configure. The lines
+# in a help text should be indented two positions. Lines starting with
+# `#' are ignored. To be nice to menuconfig, limit your lines to 70
+# characters. Use emacs' kfill.el to edit this file or you lose.
+#
+
+CONFIG_SDK_RTL9310
+	Realtek RTL9310 Switch SoC
+
+CONFIG_SDK_RTL9300
+	Realtek RTL9300 Switch SoC
+
+CONFIG_SDK_RTL8390
+	Realtek RTL8390 Switch SoC
+
+CONFIG_SDK_RTL8380
+	Realtek RTL8380 Switch SoC
+
+CONFIG_SDK_RTL8208
+	Realtek RTL8208/RTL8208D PHY SoC - 8 port 10/100 Fast Ethernet PHY
+CONFIG_SDK_RTL8208D
+        Realtek RTL8208D PHY SoC - 8 port 10/100 Fast Ethernet PHY
+CONFIG_SDK_RTL8208G
+        Realtek RTL8208G PHY SoC - 8 port 10/100 Fast Ethernet PHY
+CONFIG_SDK_RTL8208L
+        Realtek RTL8208L PHY SoC - 8 port 10/100 Fast Ethernet PHY
+
+CONFIG_SDK_RTL8218B
+	Realtek RTL8218B PHY SoC - 8 port 10/100/1000 Giga Ethernet PHY
+
+CONFIG_SDK_RTL8218FB
+	Realtek RTL8218FB PHY SoC - 4 port 10/100/1000+ 4 port 10/100/1000 Combo Giga Ethernet PHY
+
+CONFIG_SDK_RTL8212B
+	Realtek RTL8212B PHY SoC - 2 port 10/100/1000 Combo Giga Ethernet PHY
+
+CONFIG_SDK_RTL8214B
+	Realtek RTL8214B PHY SoC - 4 port 10/100/1000 Combo Giga Ethernet PHY
+
+CONFIG_SDK_RTL8214FB
+	Realtek RTL8214FB PHY SoC - 4 port 10/100/1000 Combo Giga Ethernet PHY,
+	pin-to-pin compatible with RTL8214F
+
+CONFIG_SDK_RTL8214FC
+	Realtek RTL8214FC PHY SoC - 4 port 10/100/1000 Combo Giga Ethernet PHY,
+
+CONFIG_SDK_RTL8214QF
+    Realtek RTL8214QF PHY SoC - 4 port Fiber Giga Ethernet PHY
+
+CONFIG_SDK_RTL8218D
+    Realtek RTL8218D PHY SoC - 8 port 10/100/1000 Giga Ethernet PHY
+
+CONFIG_SDK_RTL8218E
+    Realtek RTL8218E PHY SoC - 8 port 10/100/1000 Giga Ethernet PHY
+
+CONFIG_SDK_RTL8224QF
+    Realtek RTL8224QF PHY SoC - 4 port 2.5G Fiber Ethernet PHY
+
+CONFIG_SDK_RTL8226
+    Realtek RTL8226 and RTL8226B PHY SoC - 1 port 2.5G Ethernet PHY
+
+CONFIG_SDK_RTL826X
+    Realtek RTL8261/8264 PHY SoC - 1/4 port 10G Ethernet PHY
+
+CONFIG_SDK_RTL826XI
+    Realtek RTL8261I/8264I PHY SoC - 1/4 port 10G Ethernet PHY
+
+CONFIG_SDK_RTL825X
+    Realtek RTL8251/8254 PHY SoC - 1/4 port 5G Ethernet PHY
+
+CONFIG_SDK_RTL825XI
+    Realtek RTL8251I/8254I PHY SoC - 1/4 port 5G Ethernet PHY
+
+CONFIG_SDK_RTL825XL
+    Realtek RTL8251L/8254L PHY SoC - 1/4 port 5G Ethernet PHY
+
+CONFIG_SDK_RTL826XB
+    Realtek RTL8264B/8261B/8261N PHY - 1/4 port 10G Ethernet PHY
+
+CONFIG_SDK_RTL8224
+    Realtek RTL8224 PHY SoC - 1/4 port 2.5G Ethernet PHY
+
+CONFIG_SDK_RTL8295R
+    Realtek RTL8295R PHY SoC - 1 port Fiber 10 Giga Ethernet PHY
+
+CONFIG_SDK_RTL8231
+	Realtek RTL8231 SoC - LED/GPIO chip
+
+CONFIG_SDK_ENDIAN_LITTLE
+	SDK for Little Endian CPU
+
+CONFIG_SDK_KERNEL_LINUX
+	SDK for Linux platform
+
+CONFIG_SDK_KERNEL_LINUX_MODULE_LOADABLE
+	Compile SDK component to become a loadable Linux module
+
+CONFIG_SDK_DRIVER_COMPILE
+	Compile all drivers below RTK Layer as built-in or module
+
+CONFIG_SDK_DRIVER_NIC
+    Select the option to compile the NIC driver
+
+CONFIG_SDK_DRIVER_EXTC_NIC
+    Select the option to compile the NIC driver for External CPU
+
+CONFIG_SDK_DRIVER_EXTC_PCI
+    Select the option to compile the PCI driver for External CPU
+
+CONFIG_SDK_DRIVER_NIC_KERNEL_MODE
+    Select the NIC driver in kernel mode
+
+CONFIG_SDK_DRIVER_NIC_USER_MODE
+    Select the NIC driver in user mode
+
+CONFIG_SDK_DRIVER_NIC_R9310
+    Select the option to compile the 9310 NIC driver
+
+CONFIG_SDK_DRIVER_NIC_R9300
+    Select the option to compile the 9300 NIC driver
+
+CONFIG_SDK_DRIVER_NIC_R8390
+    Select the option to compile the 8390 NIC driver
+
+CONFIG_SDK_DRIVER_NIC_R8380
+    Select the option to compile the 8380 NIC driver
+
+CONFIG_SDK_DRIVER_L2NTFY
+    Select the option to compile the L2 notification driver
+
+CONFIG_SDK_DRIVER_L2NTFY_R9310
+    Select the option to compile the 9310 L2 notification driver
+
+CONFIG_SDK_DRIVER_L2NTFY_R9300
+    Select the option to compile the 9300 L2 notification driver
+
+CONFIG_SDK_DRIVER_L2NTFY_R8390
+    Select the option to compile the 8390 L2 notification driver
+
+CONFIG_SDK_DRIVER_RTCORE
+	Select the option to compile the feature code for SDK Kernel Core Driver
+
+CONFIG_SDK_NIC_RX_CB_IN_ISR_CONTEXT
+  The packet RX user callback would execute in ISR context if selected.
+  Otherwise, it would execute in thread or Bottom Half ... etc.
+
+CONFIG_SDK_DRIVER_RTK
+	Select the option to compile the feature code for RTK Kernel Driver or RTK User Library
+
+CONFIG_SDK_DRIVER_RTK_CUSTOMER
+	Select the option to compile the customer RTK API code for RTK Kernel Driver or RTK User Library
+
+CONFIG_SDK_DRIVER_TEST
+	Select the option to compile the internal testing code for SDK Kernel Driver
+
+CONFIG_SDK_DRIVER_MX
+	SDK Linux Net Driver
+
+CONFIG_SDK_DRIVER_RTDRV
+	SDK Linux User/Kernel Common Driver
+
+CONFIG_SDK_DRIVER_RTNIC
+	SDK Linux Ethernet Driver
+
+CONFIG_SDK_DEBUG
+	Enable or disable SDK debug messages. Reduce the code size when you do not select this
+
+CONFIG_SDK_DEBUG_LOG_TYPE_LEVEL
+	Type: log level of debug messages
+
+CONFIG_SDK_DEBUG_LOG_TYPE_LEVEL_MASK
+	Type: log level-mask of debug messages
+
+CONFIG_SDK_DEBUG_LOG_LEVEL
+	default "3"
+
+	Designate the logging level of debug messages.
+
+	0: FATAL ERROR
+	1: MAJOR ERROR
+	2: MINOR ERROR
+	3: WARNING
+	4: EVENT
+	5: INFO
+	6: FUNC_ENTER
+	7: DEBUG
+	8: TRACE
+
+CONFIG_SDK_DEBUG_LOG_LEVEL_MASK
+	default "0xF"
+
+	Assign a bitmask of debug levels
+
+	0xF     : DEFAULT LEVEL MASK OF MESSAGES (WARNING)
+	0x0     : ALL MESSAGES OFF
+	0x1FF   : ALL MESSAGES ON
+
+CONFIG_SDK_DEBUG_LOG_MOD_MASK
+	default "0xFFFFFFFFFFFFFFFF"
+
+	Assign a bitmask of debug modules
+
+	0x0     : ALL MODULES OFF
+	0xFFFFFFFFFFFFFFFF: ALL MODULES ON
+
+	Please refer to the debug header file for other bit definition
+
+CONFIG_SDK_APP_COMPILE
+	Compile SDK application code
+
+CONFIG_SDK_APP_DIAG
+	Compile SDK Diag Shell
+
+CONFIG_SDK_SQUT_CMD_OPT
+    Add additional command option for SDK QA Unit Test
+
+CONFIG_RRCP_MASTER
+    Compile the RRCP function
+
+CONFIG_SDK_DRIVER_GPIO
+	Select the option to enable GPIO driver support
+
+CONFIG_SDK_BSP_FLASH
+    Enable the flash common setting
+
+CONFIG_FLASH_BLOCK_SIZE
+    The flash block size definition
+
+CONFIG_FLASH_SIZE_4MB
+    Select the flash size
+
+CONFIG_FLASH_SIZE_8MB
+    Select the flash size
+
+CONFIG_FLASH_SIZE_16MB
+    Select the flash size
+
+CONFIG_DUAL_IMAGE
+    Enable the dual image support
+
+CONFIG_FLASH_LAYOUT_TYPE1
+    Select the flash layout type 1
+
+CONFIG_SDK_BSP_MTD
+    Enable the MTD driver
+
+CONFIG_SDK_BSP_MTD_SPI
+    Enable the SPI flash driver
+
+CONFIG_SDK_BSP_MTD_SPI_QUAD_IO
+    Select the SPI flash driver to QUAD IO type
+
+CONFIG_SDK_BSP_MTD_NOR
+    Enable the NOR flash driver
+
+CONFIG_SDK_FPGA_PLATFORM
+	Select the option to verify SDK on FPGA development platform
+
+CONFIG_SDK_MODEL_MODE
+	Select the option to verify SDK on x86 development platform
+
+CONFIG_SDK_LINKED_KMOD
+	Select the option to linked the SDK kernel mode and don't build from source again
+
+CONFIG_TRUNK_FAILOVER_HANDLING
+    Select the option to enable the trunk failover handing mechanism
+
+CONFIG_SDK_REG_DFLT_VAL
+    Select the option to include the register default value in strcuture
+
+CONFIG_SDK_REG_FIELD_TYPE
+    Select the option to include the register field type in strcuture
+
+CONFIG_SDK_RX_THREAD
+    Select the option to enable the NIC receive thread
+
+CONFIG_SDK_LINKMON_POLLING_MODE
+    Select the option to enable the LinkMon thread by polling mode
+
+CONFIG_SDK_LINKMON_ISR_MODE
+    Select the option to enable the LinkMon thread by interrupt mode
+
+CONFIG_SDK_LINKMON_MIXED_MODE
+    Select the option to enable the LinkMon thread by polling and interrupt mixed mode
+
+CONFIG_SDK_AUTO_COMBO_MEDIA_BY_GPIO
+    Detect the GPIO signal and auto configure media of combo port by software thread
+
+CONFIG_SDK_WA_EEE_COMPATIBLE
+    Select the option to workaround the eee compatible issue in RTL8208D PHY
+
+CONFIG_SDK_WA_RTL8231_RESET
+    Select the option to workaround the reset issue in RTL8231
+
+CONFIG_SDK_WA_PKTBUF_WATCHDOG
+    Select the option to monitor packet buffer status and trigger packet buffer recovery procedure
+
+CONFIG_SDK_WA_RTL833X_COMBO_LED
+    Select the option to workaround the combo port led display in MAC RTL833X chip.
+
+CONFIG_SDK_UART1
+    Select the option to enable uart1 function.
+
+CONFIG_SDK_PORT_VIEW_PHYSICAL_PORT
+    Select the RTK API port view option to physical port
+
+CONFIG_SDK_HW_PROFILE_BRAND_RTK
+    Select the option to use Realtek demo board hardware profiles.
+
+CONFIG_SDK_SPI_DEV_1
+    839x SPI master to 8380 slave
+CONFIG_SDK_SPI_DEV_2
+    839x SPI, 839x GPIO, 838x GPIO to max slave
+CONFIG_SDK_SPI_DEV_3
+    9300 SPI master to 9300 SPI slave
+CONFIG_SDK_SPI_DEV_4
+    9300 SPI master to max slave (testing)
+CONFIG_SDK_SPI_DEV_5
+    9300 SPI master to multiple 9300 SPI slave
+
+CONFIG_SDK_EXPERIMENTAL
+    Select the option to show experimental functions in menu
+
+CONFIG_SDK_EXPERIMENTAL_RTL8211FS
+    Experimental driver for Realtek RTL8211FS PHY

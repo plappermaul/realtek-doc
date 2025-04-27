@@ -1,0 +1,60 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtcore User Library
+#
+
+TARGET := $(SDK_LIBDIR)/librtcore.a
+
+SDK_TOP_DIR := ../..
+SDK_SYS_DIR := ../system
+
+#
+# main
+#
+#Added by ZhaoPan on 2017/12/13. update the directory path
+#include $(SDK_TOP_DIR)/sdk/build/Makefile.rtcore
+include $(SDK_TOP_DIR)/rtk-sdk/build/Makefile.rtcore
+
+
+RTCORE_USR_DIR := $(SDK_SYS_DIR)/linux/rtcore/user
+RTCORE_USR_OBJ :=
+ifeq ($(CONFIG_SDK_DRIVER_NIC_USER_MODE),y)
+    RTCORE_USR_OBJ += \
+    	$(RTCORE_USR_DIR)/rtcore_drv_usr.o
+endif
+
+
+
+ALL_OBJ := $(RTCORE_OBJ) $(RTCORE_USR_OBJ)
+DEPS := $(ALL_OBJ:.o=.d)
+
+EXTRA_CFLAGS += -Wall -Werror -Wuninitialized -Wstrict-prototypes
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE) -URTK_UNIVERSAL_BSP
+
+.PHONY: $(TARGET)
+
+$(TARGET): $(ALL_OBJ)
+	$(AR) rcs $@ $(ALL_OBJ)
+	$(STRIP) --strip-debug -R .note -R .comment $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c -o $@ $<
+
+%.d: %.c
+	@set -e; rm -f $@; \
+	$(CC) -MM $(CFLAGS) $(EXTRA_CFLAGS) $< > $@.$$$$; \
+	sed 's,\($(*F)\)\.o[ :]*,$(@D)/$(*F).o $@ : ,g' < $@.$$$$ > $@
+	@rm -f $@.*
+
+NODEP := clean install romfs
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEP))))
+    -include $(DEPS)
+endif
+
+
+romfs:
+
+clean:
+	rm -rf $(TARGET) $(ALL_OBJ) $(DEPS)
+

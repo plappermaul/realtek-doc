@@ -1,0 +1,4997 @@
+//
+// Copyright (C) 2015 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 40427 $
+// $Date: 2013-06-23 11:28:09 +0800 (Sun, 23 Jun 2013) $
+//
+// Purpose : Define diag shell commands for OpenFlow.
+//
+// Feature : The file includes the following module and sub-modules
+//           1) OpenFlow commands.
+//
+
+#ifdef CMD_OPENFLOW_GET_CLASSIFIER_PORT_PORT_ALL
+//openflow configuration
+//get configuration
+//classifier configuration
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all
+openflow get classifier port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_CLASSIFIER_VLAN_VID_ALL
+//openflow configuration
+//get configuration
+//classifier configuration
+//VLAN configuration
+//VLAN list (e.g. 1 or 10-20)
+//all VLAN
+openflow get classifier vlan ( <MASK_LIST:vid> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_CLASSIFIER_VLAN_AND_PORT_VID_ALL
+//openflow configuration
+//get configuration
+//classifier configuration
+//VLAN configuration
+//VLAN list (e.g. 1 or 10-20)
+//all VLAN
+openflow get classifier vlan-and-port ( <MASK_LIST:vid> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_CLASSIFIER_PORT_PORT_ALL_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//classifier configuration
+//port configuration
+//port list (e.g. 3 or 6-8)
+//all
+//state configuration
+//disable function
+//enable function
+openflow set classifier port ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_CLASSIFIER_VLAN_VID_ALL_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//classifier configuration
+//VLAN configuration
+//VLAN list (e.g. 1 or 10-20)
+//all VLAN
+//state configuration
+//disable function
+//enable function
+openflow set classifier vlan ( <MASK_LIST:vid> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_CLASSIFIER_VLAN_AND_PORT_VID_ALL_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//classifier configuration
+//VLAN configuration
+//VLAN list (e.g. 1 or 10-20)
+//all VLAN
+//state configuration
+//disable function
+//enable function
+openflow set classifier vlan-and-port ( <MASK_LIST:vid> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_PHASE_MAPPING
+//openflow configuration
+//get configuration
+//flow table phase configuration
+//phase mapping configuration (e.g. 0 -> Ingress flow table 0)
+openflow get flowtable phase-mapping
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_ENTRY_SIZE
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//flow entry size, unit: byte
+openflow get entry <UINT:phase> entry-size
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_STATE
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//state configuration
+openflow get entry <UINT:phase> <UINT:index> state
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//state configuration
+//disable function
+//enable function
+openflow set entry <UINT:phase> <UINT:index> state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_MATCH_FIELD_LIST
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//match field list
+openflow get entry <UINT:phase> match-field-list
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_MATCH_FIELD_FIELD_NAME
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//match field configuration
+//field name
+openflow get entry <UINT:phase> <UINT:index> match-field <STRING:field_name>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_MATCH_FIELD_FIELD_NAME_DATA_MASK
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//match field configuration
+//field name
+//field data
+//field mask
+openflow set entry <UINT:phase> <UINT:index> match-field <STRING:field_name> <STRING:data> <STRING:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_OPERATION
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//operation configuration
+openflow get entry <UINT:phase> <UINT:index> operation
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_OPERATION_REVERSE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//operation configuration
+//reverse operation
+//state configuration
+//disable action
+//enable action
+openflow set entry <UINT:phase> <UINT:index> operation reverse state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_OPERATION_AGGREGATE_2_ENTRY_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//operation configuration
+//aggregation 2 entries operation
+//state configuration
+//disable action
+//enable action
+openflow set entry <UINT:phase> <UINT:index> operation aggregate-2-entry state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_OPERATION_AGGREGATE_4_ENTRY_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//operation configuration
+//aggregation 4 entries operation
+//state configuration
+//disable action
+//enable action
+openflow set entry <UINT:phase> <UINT:index> operation aggregate-4-entry state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_INSTRUCTION
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+openflow get entry <UINT:phase> <UINT:index> instruction
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_METER_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//meter instruction
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable action
+//enable action
+openflow set entry <UINT:phase> <UINT:index> instruction ( meter | clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_METER_METER_INDEX_YELLOW_DROP_DSCP_REMARK_RED_DROP_DSCP_REMARK
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//meter instruction
+//meter index
+//yellow color configuration
+//discard
+//DSCP remark
+//red color configuration
+//discard
+//DSCP remark
+openflow set entry <UINT:phase> <UINT:index> instruction meter <UINT:meter_index> yellow ( drop | dscp-remark ) red ( drop | dscp-remark )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_COPY_TTL_INWARD_COPY_TTL_OUTWARD_PUSH_VLAN_POP_VLAN_PUSH_MPLS_POP_MPLS_DEC_MPLS_TTL_DEC_IP_TTL_SET_QUEUE_GROUP_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//copy TTL inward
+//copy TTL outward
+//push VLAN
+//pop VLAN
+//push MPLS
+//pop MPLS
+//decrease MPLS TTL
+//decrease IP TTL
+//set queue
+//group action
+//state configuration
+//disable action
+//enable action
+openflow set entry <UINT:phase> <UINT:index> instruction write-action ( copy-ttl-inward | copy-ttl-outward | push-vlan | pop-vlan | push-mpls | pop-mpls | dec-mpls-ttl | dec-ip-ttl | set-queue | group ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_POP_MPLS_LABEL_NUM_OUTERMOST_DOUBLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//pop MPLS
+//label number
+//outer most label
+//dobule label
+openflow set entry <UINT:phase> <UINT:index> instruction write-action pop-mpls label-num ( outermost | double )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_PUSH_MPLS_ETHERTYPE_0X8847_0X8848
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//push MPLS
+//ethertype
+//0x8847
+//0x8848
+openflow set entry <UINT:phase> <UINT:index> instruction write-action push-mpls ethertype ( 0x8847 | 0x8848 )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_PUSH_MPLS_MODE_NORMAL_ENCAP_TABLE_ENCAP_IDX
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//push MPLS
+//MPLS push mode
+//normal push operation
+//push/swap MPLS label according to encap. table
+//index to MPLS encap. table
+openflow set entry <UINT:phase> <UINT:index> instruction write-action push-mpls mode ( normal | encap-table ) { <UINT:encap_idx> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_PUSH_MPLS_VPN_L2_L3
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//push MPLS
+//VPN type
+//L2 VPN encapsulation
+//L3 VPN encapsulation
+openflow set entry <UINT:phase> <UINT:index> instruction write-action push-mpls vpn ( l2 | l3 )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set entry <UINT:phase> <UINT:index> instruction write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_IP_TTL_L4_SPORT_L4_DPORT_VALUE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//IPv4 TTL/IPv6 Hop Limit
+//L4(TCP/UDP/SCTP) source port
+//L4(TCP/UDP/SCTP) destination port
+//field value
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp | ip-ttl | l4-sport | l4-dport ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_MPLS_LABEL_MPLS_TC_MPLS_TTL_VALUE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//MPLS label
+//MPLS Traffic Class
+//MPLS TTL
+//field value
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-field <UINT:field_id> field-type ( mpls-label | mpls-tc | mpls-ttl ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SIP_DIP_IP
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-field <UINT:field_id> field-type ( sip | dip ) <IPV4ADDR:ip>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_IP_FLAG_RSVD
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//IPv4 Flag reserved bit
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-field <UINT:field_id> field-type ip-flag-rsvd
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set entry <UINT:phase> <UINT:index> instruction write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_GROUP_GID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//group
+//group ID
+openflow set entry <UINT:phase> <UINT:index> instruction write-action group <UINT:gid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//disable output action
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_FORWARD
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//forward directly
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output forward
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//packet's ingress port
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//FLOOD reserved port
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//NORMAL reserved port
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//tunnel interface
+//interface ID
+openflow set entry <UINT:phase> <UINT:index> instruction write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set entry <UINT:phase> <UINT:index> instruction write-metadata <UINT:data> <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set entry <UINT:phase> <UINT:index> instruction goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_INSTRUCTION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//instruction configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set entry <UINT:phase> <UINT:index> instruction goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_HIT_INDICATION
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//hit indication
+openflow get entry <UINT:phase> <UINT:index> hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_ENTRY_PHASE_INDEX_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//hit indication
+openflow reset entry <UINT:phase> <UINT:index> hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_ENTRY_PHASE_START_END
+//openflow configuration
+//delete configuration
+//entry configuration
+//flow table phase configuration
+//start entry index
+//end entry index
+openflow del entry <UINT:phase> <UINT:start> <UINT:end>
+#endif
+
+#ifdef CMD_OPENFLOW_MOVE_ENTRY_PHASE_START_END_ENTRY_NUM
+//openflow configuration
+//move configuration
+//entry configuration
+//flow table phase configuration
+//start entry index
+//end entry index
+//entry number to be moved
+openflow move entry <UINT:phase> <UINT:start> <UINT:end> <UINT:entry_num>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_SELECTOR_PHASE_BLOCK_ID
+//openflow configuration
+//get configuration
+//flow table configuration
+//template selector configuration
+//flow table phase configuration
+//full match flow table block ID
+openflow get flowtable selector <UINT:phase> <UINT:block_id>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_SELECTOR_PHASE_BLOCK_ID_TEMPLATE_INDEX0_TEMPLATE_INDEX
+//openflow configuration
+//set configuration
+//flow table configuration
+//template selector configuration
+//flow table phase configuration
+//full match flow table block ID
+//first mapping template
+//template ID
+openflow set flowtable selector <UINT:phase> <UINT:block_id> template-index0 <UINT:template_index>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_SELECTOR_PHASE_BLOCK_ID_TEMPLATE_INDEX1_TEMPLATE_INDEX
+//openflow configuration
+//set configuration
+//flow table configuration
+//template selector configuration
+//flow table phase configuration
+//full match flow table block ID
+//second mapping template
+//template ID
+openflow set flowtable selector <UINT:phase> <UINT:block_id> template-index1 <UINT:template_index>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_COUNTER_MODE
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//counter configuration
+//counter mode
+openflow get entry <UINT:phase> <UINT:index> counter mode
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_COUNTER_MODE_PACKET_AND_BYTE_COUNTER_PACKET_COUNTER_AND_THRESHOLD_BYTE_COUNTER_AND_THRESHOLD_DISABLE
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//counter configuration
+//counter mode
+//packet counter and byte counter
+//packet counter and packet counter trigger threshold
+//byte counter and byte counter trigger threshold
+//Disable
+openflow set entry <UINT:phase> <UINT:index> counter mode ( packet-and-byte-counter |  packet-counter-and-threshold | byte-counter-and-threshold | disable )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_COUNTER_TYPE_BYTE_PACKET
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//counter configuration
+//counter type
+//byte counter
+//packet counter
+openflow get entry <UINT:phase> <UINT:index> counter type ( byte | packet )
+#endif
+
+#ifdef CMD_OPENFLOW_CLEAR_ENTRY_PHASE_INDEX_COUNTER_TYPE_BYTE_PACKET
+//openflow configuration
+//clear configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//counter configuration
+//counter type
+//byte counter
+//packet counter
+openflow clear entry <UINT:phase> <UINT:index> counter type ( byte | packet )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_ENTRY_PHASE_INDEX_COUNTER_THRESHOLD
+//openflow configuration
+//get configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//counter configuration
+//counter threshold
+openflow get entry <UINT:phase> <UINT:index> counter threshold
+#endif
+
+#ifdef CMD_OPENFLOW_SET_ENTRY_PHASE_INDEX_COUNTER_THRESHOLD_THRESHOLD
+//openflow configuration
+//set configuration
+//entry configuration
+//flow table phase configuration
+//entry index
+//counter configuration
+//counter threshold
+//threshold value
+openflow set entry <UINT:phase> <UINT:index> counter threshold <UINT64:threshold>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_EXCEPTION_TTL
+//openflow configuration
+//get configuration
+//exception configuration
+//TTL exception
+openflow get exception ttl
+#endif
+
+#ifdef CMD_OPENFLOW_SET_EXCEPTION_TTL_DROP_FORWARD
+//openflow configuration
+//set configuration
+//exceptioin configuration
+//TTL exception
+//discard
+//forward
+openflow set exception ttl ( drop | forward )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_MAX_LOOPBACK
+//openflow configuration
+//get configuration
+//flow table configuration
+//maximum loopback times configuration
+openflow get flowtable max-loopback
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_MAX_LOOPBACK_TIME
+//openflow configuration
+//set configuration
+//flow table configuration
+//maximum loopback times configuration
+//maximum loopback time
+openflow set flowtable max-loopback <UINT:time>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L2_MATCH_FIELD
+//openflow configuration
+//get configuration
+//flow table configuration
+//L2 flow table
+//match field configuration for the 1st and 2nd lookup
+openflow get flowtable l2 match-field
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L2_MATCH_FIELD_VID_SA_SA_VID_SA_VID_DA_VID_SA_DA_SA_VID_DA_SA_DA_VID_DA_DA_DA_SA_VID_SA_DA_SA_SA_DA_SA_VID_DA_DA_SA_DA_5_TUPLE
+//openflow configuration
+//set configuration
+//flow table configuration
+//L2 flow table
+//match field configuration for the 1st and 2nd lookup
+//(VID,SA) and (0,SA)
+//(VID,SA) and (VID,DA)
+//(VID,SA) and (0,DA)
+//(0,SA) and (VID,DA)
+//(0,SA) and (0,DA)
+//(VID,DA) and (0,DA)
+//(DA,SA) and (VID,SA)
+//(DA,SA) and (0,SA)
+//(DA,SA) and (VID,DA)
+//(DA,SA) and (0,DA)
+//(IP PROTOCOL,L4_DPORT,L4_SPORT,DIP,SIP) and (VID,L4_DPORT,L4_SPORT,DIP,SIP)
+openflow set flowtable l2 match-field ( vid-sa-sa | vid-sa-vid-da | vid-sa-da | sa-vid-da | sa-da | vid-da-da | da-sa-vid-sa | da-sa-sa | da-sa-vid-da | da-sa-da | 5-tuple )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+openflow get l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+openflow get l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+openflow get l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+openflow get l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//hit indication
+openflow get l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//hit indication
+openflow reset l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_DUMP_L2_ENTRY
+//openflow table configuration
+//dump configuration
+//L2 flow entry configuration
+openflow dump l2-entry
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_SET_QUEUE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//push VLAN
+//set queue
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action ( push-vlan | set-queue ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_SET_QUEUE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//push VLAN
+//set queue
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action ( push-vlan | set-queue ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_SET_QUEUE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//push VLAN
+//set queue
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action ( push-vlan | set-queue ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_SET_QUEUE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//push VLAN
+//set queue
+//state configuration
+//disable function
+//enable function
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action ( push-vlan | set-queue ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field data
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field data
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field data
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field data
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//disable output action
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//disable output action
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//disable output action
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//disable output action
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output phy-port-src-port-filter <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output phy-port-src-port-filter <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output phy-port-src-port-filter <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output phy-port-src-port-filter <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//trunk port with source port filtering
+//trunk ID
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output trunk-src-port-filter <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//trunk port with source port filtering
+//trunk ID
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output trunk-src-port-filter <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//trunk port with source port filtering
+//trunk ID
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output trunk-src-port-filter <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//trunk port with source port filtering
+//trunk ID
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output trunk-src-port-filter <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//packet's ingress port
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//packet's ingress port
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//packet's ingress port
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//packet's ingress port
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//FLOOD reserved port
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//FLOOD reserved port
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//FLOOD reserved port
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//FLOOD reserved port
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//NORMAL reserved port
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//NORMAL reserved port
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//NORMAL reserved port
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//NORMAL reserved port
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//tunnel interface
+//interface ID
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//tunnel interface
+//interface ID
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write action instruction
+//output
+//tunnel interface
+//interface ID
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write action instruction
+//output
+//tunnel interface
+//interface ID
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-metadata <UINT:data>  <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction write-metadata <UINT:data>  <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction write-metadata <UINT:data>  <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction write-metadata <UINT:data>  <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE_INSTRUCTION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none ) instruction goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE_INSTRUCTION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none ) instruction goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE_INSTRUCTION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+//instruction configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none ) instruction goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID_INSTRUCTION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+//instruction configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid> instruction goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L2_ENTRY_TYPE_SMAC_DMAC_MAC_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L2 flow entry configuration
+//flow entry type
+//source MAC address
+//destination MAC address
+//MAC address
+//metadata match field
+//no metadata match field
+openflow del l2-entry type ( smac | dmac ) <MACADDR:mac> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L2_ENTRY_TYPE_VID_SMAC_VID_DMAC_VID_MAC_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L2 flow entry configuration
+//flow entry type
+//VID + source MAC address
+//VID + destination MAC address
+//VLAN ID
+//MAC address
+//metadata match field
+//no metadata match field
+openflow del l2-entry type ( vid-smac | vid-dmac ) <UINT:vid> <MACADDR:mac> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L2_ENTRY_TYPE_SMAC_DMAC_SMAC_DMAC_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L2 flow entry configuration
+//flow entry type
+//source + destination MAC address
+//source MAC address
+//destination MAC address
+//metadata match field
+//no metadata match field
+openflow del l2-entry type smac-dmac <MACADDR:smac> <MACADDR:dmac> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L2_ENTRY_TYPE_5_TUPLE_IPPROTO_5_TUPLE_VID_SIP_DIP_L4_SPORT_L4_DPORT_IPPROTO_VID
+//openflow configuration
+//delete configuration
+//L2 flow entry configuration
+//flow entry type
+//5-tuple IP Protocol
+//5-tuple VID
+//source IPv4 address
+//dest. IPv4 address
+//L4 source port
+//L4 dest. port
+//IP Protocol or VLAN ID
+openflow del l2-entry type ( 5-tuple-ipproto | 5-tuple-vid ) <IPV4ADDR:sip> <IPV4ADDR:dip> <UINT:l4_sport> <UINT:l4_dport> <UINT:ipproto_vid>
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L2_ENTRY_ALL
+//openflow configuration
+//delete configuration
+//L2 flow entry configuration
+//all entries
+openflow del l2-entry all
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L2_HASH_ALGORITHM_BLOCK_ID
+//openflow configuration
+//get configuration
+//flow table configuration
+//L2 flow table
+//hash algorithm
+//l2 flow table memory block
+openflow get flowtable l2 hash-algorithm <UINT:block_id>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L2_HASH_ALGORITHM_BLOCK_ID_ALGO_ID
+//openflow configuration
+//set configuration
+//flow table configuration
+//L2 flow table
+//hash algorithm
+//l2 flow table memory block
+//algorithm ID
+openflow set flowtable l2 hash-algorithm <UINT:block_id> <UINT:algo_id>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L2_TABLE_MISS
+//openflow configuration
+//get configuration
+//flow table configuration
+//L2 flow table
+//table misss configuration
+openflow get flowtable l2 table-miss
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L2_TABLE_MISS_DROP_TRAP_NEXT_TABLE_EXECUTE
+//openflow configuration
+//set configuration
+//flow table configuration
+//L2 flow table
+//table misss configuration
+//discard
+//trap to CPU
+//forward to next table
+//execute current action set
+openflow set flowtable l2 table-miss ( drop | trap | next-table | execute )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L2_COUNTER
+//openflow configuration
+//get configuration
+//flow table configuration
+//L2 flow table
+//counter configuration
+//packet that lookup the flow table
+//packet that match the flow table
+openflow get flowtable l2 counter ( loopkup | match )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L3_TABLE_MISS
+//openflow configuration
+//get configuration
+//flow table configuration
+//L3 flow table
+//table misss configuration
+openflow get flowtable l3 table-miss
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L3_TABLE_MISS_DROP_TRAP_NEXT_TABLE_EXECUTE
+//openflow configuration
+//set configuration
+//flow table configuration
+//L3 flow table
+//table misss configuration
+//discard
+//trap to CPU
+//forward to next table
+//execute current action set
+openflow set flowtable l3 table-miss ( drop | trap | next-table | execute )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L3_COUNTER
+//openflow configuration
+//get configuration
+//flow table configuration
+//L3 flow table
+//counter configuration
+//packet that lookup the flow table
+//packet that match the flow table
+openflow get flowtable l3 counter ( loopkup | match )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L3_PRECEDENCE
+//openflow configuration
+//get configuration
+//flow table configuration
+//L3 flow table
+//precedence configuration
+openflow get flowtable l3 precedence
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L3_PRECEDENCE_CAM_HASH
+//openflow configuration
+//set configuration
+//flow table configuration
+//L3 flow table
+//precedence configuration
+//CAM-based flow table
+//hash-based flow table
+openflow set flowtable l3 precedence ( cam | hash )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L3_CAM_MATCH_FIELD
+//openflow configuration
+//get configuration
+//flow table configuration
+//L3 CAM-based flow table
+//match field configuration
+openflow get flowtable l3-cam match-field
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L3_CAM_MATCH_FIELD_SIP_MD_DIP_MD_SIP_DIP_MD_SIP_MD_SIP_DIP_MD_DIP_MD
+//openflow configuration
+//set configuration
+//flow table configuration
+//L3 CAM-based flow table
+//match field configuration
+//(Metadata,SIP) and (Metadata,DIP)
+//(Metadata,SIP,DIP) and (Metadata,SIP)
+//(Metadata,SIP,DIP) and (Metadata,DIP)
+openflow set flowtable l3-cam match-field ( sip-md-dip-md | sip-dip-md-sip-md | sip-dip-md-dip-md )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L3_HASH_MATCH_FIELD
+//openflow configuration
+//get configuration
+//flow table configuration
+//L3 hash-based flow table
+//match field configuration
+openflow get flowtable l3-hash match-field
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L3_HASH_MATCH_FIELD_SIP_DIP_SIP_DIP_SIP_SIP_DIP_DIP
+//openflow configuration
+//set configuration
+//flow table configuration
+//L3 hash-based flow table
+//match field configuration
+//SIP and DIP
+//(SIP,DIP) and SIP
+//(SIP,DIP) and DIP
+openflow set flowtable l3-hash match-field ( sip-dip | sip-dip-sip | sip-dip-dip )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_L3_HASH_HASH_ALGORITHM_BLOCK_ID
+//openflow configuration
+//get configuration
+//flow table configuration
+//L3 hash-based flow table
+//hash algorithm
+//l3 flow table memory block
+openflow get flowtable l3-hash hash-algorithm <UINT:block_id>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_L3_HASH_HASH_ALGORITHM_BLOCK_ID_ALGO_ID
+//openflow configuration
+//set configuration
+//flow table configuration
+//L3 hash-based flow table
+//hash algorithm
+//l3 flow table memory block
+//algorithm ID
+openflow set flowtable l3-hash hash-algorithm <UINT:block_id> <UINT:algo_id>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_CAM_ENTRY_INDEX
+//openflow configuration
+//get configuration
+//L3 CAM-based flow entry configuration
+//entry index
+openflow get l3-cam-entry <UINT:index>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_TYPE_SIP_DIP_IP_MASK_MD_MD_MSK
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//Mask address
+//metadata
+//metadata mask
+openflow add l3-cam-entry <UINT:index> type ( sip | dip ) <IPV4ADDR:ip> <IPV4ADDR:mask> <UINT:md> <UINT:md_msk>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_TYPE_SIP_DIP_SIP_SMASK_DIP_DMASK_MD_MD_MSK
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//source Mask address
+//destination IPv4 address
+//destination Mask address
+//metadata
+//metadata mask
+openflow add l3-cam-entry <UINT:index> type sip-dip <IPV4ADDR:sip> <IPV4ADDR:smask> <IPV4ADDR:dip> <IPV4ADDR:dmask> <UINT:md> <UINT:md_msk>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_TYPE_SIP6_DIP6_IP_MASK_MD_MD_MSK
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//Mask address
+//metadata
+//metadata mask
+openflow add l3-cam-entry <UINT:index> type ( sip6 | dip6 ) <IPV6ADDR:ip> <IPV6ADDR:mask> <UINT:md> <UINT:md_msk>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_TYPE_SIP6_DIP6_SIP_SMASK_DIP_DMASK_MD_MD_MSK
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//source Mask addres
+//destination IPv6 address
+//destination Mask addres
+//metadata
+//metadata mask
+openflow add l3-cam-entry <UINT:index> type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:smask> <IPV6ADDR:dip> <IPV6ADDR:dmask> <UINT:md> <UINT:md_msk>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable action
+//enable action
+openflow add l3-cam-entry <UINT:index> instruction ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_DEC_IP_TTL_SET_QUEUE_GROUP_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//push VLAN
+//decrease IP TTL
+//set queue
+//group action
+//state configuration
+//disable action
+//enable action
+openflow add l3-cam-entry <UINT:index> instruction write-action ( push-vlan | dec-ip-ttl | set-queue | group ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow add l3-cam-entry <UINT:index> instruction write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow add l3-cam-entry <UINT:index> instruction write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow add l3-cam-entry <UINT:index> instruction write-action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field value
+openflow add l3-cam-entry <UINT:index> instruction write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//set queue
+//queue ID
+openflow add l3-cam-entry <UINT:index> instruction write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_GROUP_GID
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//group
+//group ID
+openflow add l3-cam-entry <UINT:index> instruction write-action group <UINT:gid>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//disable output action
+openflow add l3-cam-entry <UINT:index> instruction write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow add l3-cam-entry <UINT:index> instruction write-action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow add l3-cam-entry <UINT:index> instruction write-action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow add l3-cam-entry <UINT:index> instruction write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//packet's ingress port
+openflow add l3-cam-entry <UINT:index> instruction write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//FLOOD reserved port
+openflow add l3-cam-entry <UINT:index> instruction write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//NORMAL reserved port
+openflow add l3-cam-entry <UINT:index> instruction write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write action instruction
+//output
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow add l3-cam-entry <UINT:index> instruction write-action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//write metadata
+//metadata
+//metadata mask
+openflow add l3-cam-entry <UINT:index> instruction write-metadata <UINT:data> <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow add l3-cam-entry <UINT:index> instruction goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_ADD_L3_CAM_ENTRY_INDEX_INSTRUCTION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//instruction configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow add l3-cam-entry <UINT:index> instruction goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L3_CAM_ENTRY_INDEX
+//openflow configuration
+//delete configuration
+//L3 CAM-based flow entry configuration
+//entry index
+openflow del l3-cam-entry <UINT:index>
+#endif
+
+#ifdef CMD_OPENFLOW_MOVE_L3_CAM_ENTRY_START_END_ENTRY_NUM
+//openflow configuration
+//move configuration
+//L3 CAM-based flow entry configuration
+//start entry index
+//end entry index
+//entry number to be moved
+openflow move l3-cam-entry <UINT:start> <UINT:end> <UINT:entry_num>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_CAM_ENTRY_INDEX_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//hit indication
+openflow get l3-cam-entry <UINT:index> hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L3_CAM_ENTRY_INDEX_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L3 CAM-based flow entry configuration
+//entry index
+//hit indication
+openflow reset l3-cam-entry <UINT:index> hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata
+//no metadata match field
+openflow get l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+openflow get l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+openflow get l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+openflow get l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DUMP_L3_HASH_ENTRY
+//openflow table configuration
+//dump configuration
+//L3 hash-based flow entry configuration
+openflow dump l3-hash-entry
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_CLEAR_ACTION_WRITE_ACTION_WRITE_METADATA_GOTO_TABLE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//clear action instruction
+//write action instruction
+//write metadata instruction
+//goto table instruction
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion ( clear-action | write-action | write-metadata | goto-table ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_DEC_IP_TTL_SET_QUEUE_GROUP_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//decrease IP TTL
+//set queue
+//group action
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action ( push-vlan | dec-ip-ttl | set-queue | group ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_DEC_IP_TTL_SET_QUEUE_GROUP_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//decrease IP TTL
+//set queue
+//group action
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action ( push-vlan | dec-ip-ttl | set-queue | group ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_DEC_IP_TTL_SET_QUEUE_GROUP_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//decrease IP TTL
+//set queue
+//group action
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action ( push-vlan | dec-ip-ttl | set-queue | group ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_DEC_IP_TTL_SET_QUEUE_GROUP_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//decrease IP TTL
+//set queue
+//group action
+//state configuration
+//disable action
+//enable action
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action ( push-vlan | dec-ip-ttl | set-queue | group ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//disable
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field value
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field value
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field value
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_VALUE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//field value
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//set queue
+//queue ID
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_GROUP_GID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//group
+//group ID
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action group <UINT:gid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_GROUP_GID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//group
+//group ID
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action group <UINT:gid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_GROUP_GID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//group
+//group ID
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action group <UINT:gid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_GROUP_GID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//group
+//group ID
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action group <UINT:gid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//disable output action
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//packet's ingress port
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//packet's ingress port
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//packet's ingress port
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_INGRESS_PORT
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//packet's ingress port
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output ingress-port
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//FLOOD reserved port
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//FLOOD reserved port
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//FLOOD reserved port
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FLOOD
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//FLOOD reserved port
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output flood
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//NORMAL reserved port
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//NORMAL reserved port
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//NORMAL reserved port
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_NORMAL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//NORMAL reserved port
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output normal
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction]
+//output action
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//tunnel interface
+//interface ID
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//tunnel interface
+//interface ID
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//tunnel interface
+//interface ID
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write action instruction
+//output action
+//tunnel interface
+//interface ID
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-metadata <UINT:data> <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-metadata <UINT:data> <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion write-metadata <UINT:data> <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_WRITE_METADATA_DATA_MASK
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//write metadata
+//metadata
+//metadata mask
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion write-metadata <UINT:data> <UINT:mask>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_NORMAL_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//normal Goto operation
+//the next table ID
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion goto-table normal <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) instrutcion goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) instrutcion goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) instrutcion goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_INSTRUTCION_GOTO_TABLE_LOOPBACK_APPLY_THEN_LOOPBACK_TID
+//openflow configuration
+//set configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//instrutcion configuration
+//goto table
+//don't apply current action set, loopback packet to OpenFlow pipeline directly
+//apply current action set and loopback packet to OpenFlow pipeline
+//the next table ID after loopbacked
+openflow set l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) instrutcion goto-table ( loopback | apply-then-loopback ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+openflow del l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+openflow del l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+openflow del l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE
+//openflow configuration
+//delete configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+openflow del l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none )
+#endif
+
+#ifdef CMD_OPENFLOW_DEL_L3_HASH_ENTRY_ALL
+//openflow configuration
+//delete configuration
+//L3 hash-based flow entry configuration
+//all entries
+openflow del l3-hash-entry all
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//get configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow get l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L3_HASH_ENTRY_TYPE_SIP_DIP_IP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv4 address
+//destination IPv4 address
+//IPv4 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l3-hash-entry type ( sip | dip ) <IPV4ADDR:ip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L3_HASH_ENTRY_TYPE_SIP_DIP_SIP_DIP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv4 address
+//source IPv4 address
+//destination IPv4 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l3-hash-entry type sip-dip <IPV4ADDR:sip> <IPV4ADDR:dip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_IP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source IPv6 address
+//destination IPv6 address
+//IPv6 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l3-hash-entry type ( sip6 | dip6 ) <IPV6ADDR:ip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_RESET_L3_HASH_ENTRY_TYPE_SIP6_DIP6_SIP_DIP_METADATA_NONE_HIT_INDICATION
+//openflow configuration
+//reset configuration
+//L3 hash-based flow entry configuration
+//flow entry type
+//source + destination IPv6 address
+//source IPv6 address
+//destination IPv6 address
+//metadata match field
+//no metadata match field
+//hit indication
+openflow reset l3-hash-entry type sip6-dip6 <IPV6ADDR:sip> <IPV6ADDR:dip> ( <UINT:metadata> | none ) hit-indication
+#endif
+
+#ifdef CMD_OPENFLOW_GET_GROUP_INDEX
+//openflow configuration
+//get configuration
+//group table configuration
+//group entry index
+openflow get group <UINT:index>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_INDEX_ALL_SELECT_BUCKET_NUM_BUCKET_ID
+//openflow configuration
+//set configuration
+//group table configuration
+//group entry index
+//group entry type 'all'
+//group entry type 'select'
+//the number of consecutive action buckets
+//index to the first bucket of consecutive action buckets
+openflow set group <UINT:index> ( all | select ) <UINT:bucket_num> <UINT:bucket_id>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_GROUP_HASH_PARAMETER
+//openflow configuration
+//get configuration
+//group table configuration
+//hash paramter for group entry type 'select'
+openflow get group hash-parameter
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_HASH_PARAMETER_IGR_PORT_SMAC_DMAC_SIP_DIP_L4_SPORT_L4_DPORT
+//openflow configuration
+//set configuration
+//group table configuration
+//hash paramter for group entry type 'select'
+//ingress port
+//source MAC address
+//destination MAC addres
+//source IP address
+//destination IP address
+//L4 source port
+//L4 destination port
+openflow set group hash-parameter { igr-port } { smac } { dmac } { sip } { dip } { l4-sport } { l4-dport }
+#endif
+
+#ifdef CMD_OPENFLOW_GET_GROUP_ACTION_BUCKET_INDEX
+//openflow configuration
+//get configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+openflow get group action-bucket <UINT:index>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_COPY_TTL_INWARD_COPY_TTL_OUTWARD_PUSH_VLAN_POP_VLAN_PUSH_MPLS_POP_MPLS_DEC_MPLS_TTL_DEC_IP_TTL_SET_QUEUE_STATE_DISABLE_ENABLE
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//copy TTL inward
+//copy TTL outward
+//push VLAN
+//pop VLAN
+//push MPLS
+//pop MPLS
+//decrease MPLS TTL
+//decrease IP TTL
+//set queue
+//state configuration
+//disable action
+//enable action
+openflow set group action-bucket <UINT:index> action ( copy-ttl-inward | copy-ttl-outward | push-vlan | pop-vlan | push-mpls | pop-mpls | dec-mpls-ttl | dec-ip-ttl | set-queue ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_POP_MPLS_LABEL_NUM_OUTERMOST_DOUBLE
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//pop MPLS
+//label number
+//outer most label
+//dobule label
+openflow set group action-bucket <UINT:index> action pop-mpls label-num ( outermost | double )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_PUSH_MPLS_ETHERTYPE_0X8847_0X8848
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//push MPLS
+//ethertype
+//0x8847
+//0x8848
+openflow set group action-bucket <UINT:index> action push-mpls ethertype ( 0x8847 | 0x8848 )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_PUSH_MPLS_MODE_NORMAL_ENCAP_TABLE_ENCAP_IDX
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//push MPLS
+//MPLS push mode
+//normal push operation
+//push/swap MPLS label according to encap. table
+//index to MPLS encap. table
+openflow set group action-bucket <UINT:index> action push-mpls mode ( normal | encap-table ) { <UINT:encap_idx> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_PUSH_MPLS_VPN_L2_L3
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//push MPLS
+//VPN type
+//L2 VPN encapsulation
+//L3 VPN encapsulation
+openflow set group action-bucket <UINT:index> action push-mpls vpn ( l2 | l3 )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_PUSH_VLAN_ETHERTYPE_TPID_IDX
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//push VLAN
+//ethertype
+//index to inner TPID pool
+openflow set group action-bucket <UINT:index> action push-vlan ethertype <UINT:tpid_idx>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_NONE
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//set field
+//field ID
+//field type
+//disable
+openflow set group action-bucket <UINT:index> action set-field <UINT:field_id> field-type none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_SMAC_DMAC_MAC
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//set field
+//field ID
+//field type
+//source MAC address
+//destination MAC address
+//MAC address
+openflow set group action-bucket <UINT:index> action set-field <UINT:field_id> field-type ( smac | dmac ) <MACADDR:mac>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_VLAN_PRIORITY_VID_DSCP_IP_TTL_VALUE
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//set field
+//field ID
+//field type
+//VLAN priority
+//VLAN ID
+//IPv4/IPv6 DSCP
+//IPv4 TTL/IPv6 Hop Limit
+//field value
+openflow set group action-bucket <UINT:index> action set-field <UINT:field_id> field-type ( vlan-priority | vid | dscp | ip-ttl ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_MPLS_LABEL_MPLS_TC_MPLS_TTL_VALUE
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//set field
+//field ID
+//field type
+//MPLS label
+//MPLS Traffic Class
+//MPLS TTL
+//field value
+openflow set group action-bucket <UINT:index> action set-field <UINT:field_id> field-type ( mpls-label | mpls-tc | mpls-ttl ) <UINT:value>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_SET_FIELD_FIELD_ID_FIELD_TYPE_IP_FLAG_RSVD
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//set field
+//field ID
+//field type
+//IPv4 Flag reserved bit
+openflow set group action-bucket <UINT:index> action set-field <UINT:field_id> field-type ip-flag-rsvd
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_SET_QUEUE_QID
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//set queue
+//queue ID
+openflow set group action-bucket <UINT:index> action set-queue <UINT:qid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_OUTPUT_NONE
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//output
+//disable output action
+openflow set group action-bucket <UINT:index> action output none
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_OUTPUT_PHY_PORT_PHY_PORT_SRC_PORT_FILTER_PORT_UID
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//output
+//physical egress port
+//physical egress port with source port filtering
+//egress port
+//stacking device ID
+openflow set group action-bucket <UINT:index> action output ( phy-port | phy-port-src-port-filter ) <UINT:port> { <UINT:devid> }
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_OUTPUT_TRUNK_TRUNK_SRC_PORT_FILTER_TID
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//output
+//trunk port
+//trunk port with source port filtering
+//trunk ID
+openflow set group action-bucket <UINT:index> action output ( trunk | trunk-src-port-filter ) <UINT:tid>
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_OUTPUT_MULTI_EGRESS_PORT_PORT_ALL
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//output
+//multiple egress port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set group action-bucket <UINT:index> action output multi-egress-port ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_OUTPUT_FAILOVER_PORT_ALL
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//output
+//auto fail-over to the next linkup port
+//port list (e.g. 3 or 6-8)
+//all
+openflow set group action-bucket <UINT:index> action output failover ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_GROUP_ACTION_BUCKET_INDEX_ACTION_OUTPUT_TUNNEL_IFID
+//openflow configuration
+//set configuration
+//group table configuration
+//action bucket table configuration
+//action bucket entry index
+//action configuration
+//output
+//tunnel interface
+//interface ID
+openflow set group action-bucket <UINT:index> action output tunnel <UINT:ifid>
+#endif
+
+#ifdef CMD_OPENFLOW_GET_TRAP_TARGET
+//openflow configuration
+//get configuration
+//trap target configuration
+openflow get trap-target
+#endif
+
+#ifdef CMD_OPENFLOW_SET_TRAP_TARGET_LOCAL_MASTER
+//openflow configuration
+//set configuration
+//trap target configuration
+//trap to local CPU
+//trap to master CPU
+openflow set trap-target ( local | master )
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_PHASE_TABLE_MISS
+//openflow configuration
+//get configuration
+//flow table configuration
+//flow table phase configuration
+//table miss action
+openflow get flowtable <UINT:phase> table-miss
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_PHASE_TABLE_MISS_DROP_TRAP_NEXT_TABLE
+//openflow configuration
+//set configuration
+//flow table configuration
+//flow table phase configuration
+//table miss action
+//discard
+//trap to CPU
+//forward to next table
+openflow set flowtable <UINT:phase> table-miss ( drop | trap | next-table )
+#endif
+
+#ifdef CMD_OPENFLOW_SET_FLOWTABLE_PHASE_TABLE_MISS_EXECUTE
+//openflow configuration
+//set configuration
+//flow table configuration
+//flow table phase configuration
+//table miss action
+//execute current action set
+openflow set flowtable <UINT:phase> table-miss execute
+#endif
+
+#ifdef CMD_OPENFLOW_GET_FLOWTABLE_PHASE_COUNTER_LOOPKUP_MATCH
+//openflow configuration
+//get configuration
+//flow table configuration
+//flow table phase configuration
+//counter configuration
+//packet that lookup the flow table
+//packet that match the flow table
+openflow get flowtable <UINT:phase> counter ( loopkup | match )
+#endif
+

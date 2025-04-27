@@ -1,0 +1,55 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtk Kernel Module
+#
+
+SDK_TOP_DIR := ../../..
+
+#
+# main
+#
+sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.rtk
+sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.phy
+
+
+#
+# for linux kernel module
+#
+MOD_DIR := ../system/linux/rtk
+MOD_OBJ := \
+	$(MOD_DIR)/module.o
+
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+    MOD_OBJ += \
+    	$(MOD_DIR)/model_module.o
+else ifeq ($(CONFIG_SDK_APP_DIAG_EXT),y)
+    MOD_OBJ += \
+    	$(MOD_DIR)/model_module.o
+endif
+
+
+ALL_OBJ := $(RTK_ALL_OBJ) $(PHY_OBJ) $(CUST_PHY)
+
+ifeq ($(CONFIG_SDK_DRIVER_COMPILE),m)
+    ALL_OBJ += $(MOD_OBJ)
+    EXTRA_CFLAGS += -mlong-calls -fno-pic 
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_COMPILE),y)
+    ALL_OBJ += $(MOD_OBJ)
+    EXTRA_CFLAGS += -mlong-calls -fno-pic 
+endif
+
+EXTRA_CFLAGS += -DRTK_LKM
+TARGET := rtk
+obj-$(CONFIG_SDK_DRIVER_COMPILE) += $(TARGET).o
+$(TARGET)-objs := $(ALL_OBJ)
+
+clean:
+	@$(RM) $(ALL_OBJ)
+	@find \( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' \
+		-o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' \) \
+		-type f -print | xargs rm -f
+
+

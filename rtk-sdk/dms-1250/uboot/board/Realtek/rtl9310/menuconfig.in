@@ -1,0 +1,12 @@
+mainmenu_option next_comment
+comment '9300 Diagnosis Tools'
+
+bool 'DRAM Test' CONFIG_CMD_DRAM_TEST
+#bool 'DRAM Diagnosis' CONFIG_CMD_DRAM_DIG
+bool 'SPI FLASH Test' CONFIG_CMD_FLASH_TEST
+#bool 'GDMA Test' CONFIG_CMD_GDMA_TEST
+#bool 'SRAM Test' CONFIG_CMD_SRAM_TEST
+bool 'Concurrent Test' CONFIG_CMD_CONCURENT_TEST
+#bool 'Forever Test' CONFIG_CMD_FOREVER_TEST
+bool 'DRAM AC DC Test' CONFIG_CMD_DRAM_AC_TEST
+endmenu

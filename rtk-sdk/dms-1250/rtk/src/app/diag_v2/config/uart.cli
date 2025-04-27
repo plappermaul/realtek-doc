@@ -1,0 +1,61 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for uart1.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) uart1 commands.
+//
+
+#ifdef CMD_UART1_GET_CHARACTER_NUMBER_TIMEOUT_TIMEOUT
+//uart1 configuration
+//get configuration
+//character configuration
+//number of input character
+//timeout configuration
+//timeout value (unit: milli-second); 0 mean no timeout
+uart1 get character <UINT:number> timeout <UINT:timeout>
+#endif
+
+#ifdef CMD_UART1_PUT_CHARACTER_STRING
+//uart1 configuration
+//put configuration
+//character configuration
+//put string
+uart1 put character <STRING:string>
+#endif
+
+#ifdef CMD_UART1_GET_BAUDRATE
+//uart1 configuration
+//get configuration
+//baudrate configuration
+uart1 get baudrate
+#endif
+
+#ifdef CMD_UART1_SET_BAUDRATE_9600_19200_38400_57600_115200
+//uart1 configuration
+//set configuration
+//baudrate configuration
+//baudrate 9600
+//baudrate 19200
+//baudrate 38400
+//baudrate 57600
+//baudrate 115200
+uart1 set baudrate ( 9600 | 19200 | 38400 | 57600 | 115200 )
+#endif
+
+//uart1 configuration
+//poe configuration
+//init configuration
+uart1 poe init

@@ -1,0 +1,453 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for security.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) security commands.
+//
+
+
+#ifdef CMD_SECURITY_GET_ARP_VALIDATION_PORT_ALL_ACTION
+//security configuration
+//get configuration
+//arp validation
+//port list
+//all ports
+//action configuration
+security get arp-validation ( <PORT_LIST:port> | all ) action
+#endif
+
+#ifdef CMD_SECURITY_GET_ATTACK_PREVENT
+//security configuration
+//get configuration
+//attack prevent
+security get attack-prevent
+#endif
+
+#ifdef CMD_SECURITY_GET_ATTACK_PREVENT_PORT_ALL_STATE
+//security configuration
+//get configuration
+//attack prevent
+//port list
+//all ports
+//state configuration
+security get attack-prevent ( <PORT_LIST:port> | all ) state
+#endif
+
+#ifdef CMD_SECURITY_GET_GRATUITOUS_ARP_PORT_ALL_ACTION
+//security configuration
+//get configuration
+//gratuitous arp
+//port list
+//all ports
+//action configuration
+security get gratuitous-arp ( <PORT_LIST:port> | all ) action
+#endif
+
+#ifdef CMD_SECURITY_GET_MAX_PING_MIN_IPV6_FRAG_MIN_TCP_HEADER_SMURF_NETMASK
+//security configuration
+//get configuration
+//max ping
+//min IPv6 fragement
+//min tcp header
+//smurf netmask
+security get ( max-ping | min-ipv6-frag | min-tcp-header | smurf-netmask )
+#endif
+
+#ifdef CMD_SECURITY_SET_ARP_VALIDATION_PORT_ALL_ACTION_DROP_FORWARD_TRAP_TO_CPU
+//security configuration
+//set configuration
+//arp validation
+//port list
+//all ports
+//action configuration
+//drop
+//forward
+//trap to cpu
+security set arp-validation ( <PORT_LIST:port> | all ) action ( drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_SECURITY_SET_ATTACK_PREVENT_DAEQSA_DENY_ICMP_FRAG_PKTS_DENY_ICMPV4_PING_MAX_CHECK_ICMPV6_PING_MAX_CHECK_IPV6_MIN_FRAG_SIZE_CHECK_LAND_DENY_NULLSCAN_DENY_POD_DENY_SMURF_DENY_SYN_SPORTL1024_DENY_SYNFIN_DENY_SYNRST_DENY_TCP_FRAG_OFF_MIN_CHECK_TCPBLAT_DENY_TCPHDR_MIN_CHECK_UDPBLAT_DENY_XMA_DENY_ACTION_DROP_FORWARD_TRAP_TO_CPU
+//security configuration
+//set configuration
+//attack prevent
+//destination MAC equals to source MAC
+//fragmented ICMP packets
+//check ICMPv4 ping maximum packets size
+//check ICMPv6 ping maximum packets size
+//check minimum size of IPv6 fragments
+//source IP equals to destination IP
+//NULL Scan Attacks
+//Ping of Death Attacks
+//Smurf Attacks
+//SYN packets with sport less than 1024
+//SYN and FIN bits set in the packet
+//SYNC and RST bits set in the packet
+//TCP fragment packet with offset equals to one
+//source TCP port equals to destination TCP port
+//check minimum TCP header
+//source UDP port equals to destination UDP port
+//Xmascan: sequence number is zero and the FIN, URG and PSH bits are set
+//action
+//drop
+//forward
+//trap-to-cpu
+security set attack-prevent ( daeqsa-deny | icmp-frag-pkts-deny | icmpv4-ping-max-check | icmpv6-ping-max-check | ipv6-min-frag-size-check | land-deny | nullscan-deny | pod-deny | smurf-deny | syn-sportl1024-deny | synfin-deny | synrst-deny | tcp-frag-off-min-check | tcpblat-deny | tcphdr-min-check | udpblat-deny | xma-deny ) action ( drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_SECURITY_SET_ATTACK_PREVENT_PORT_ALL_STATE_DISABLE_ENABLE
+//security configuration
+//set configuration
+//attack prevent
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+security set attack-prevent ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_SECURITY_SET_GRATUITOUS_ARP_PORT_ALL_ACTION_DROP_FORWARD_TRAP_TO_CPU
+//security configuration
+//set configuration
+//gratuitous arp
+//port list
+//all ports
+//action configuration
+//drop
+//forward
+//trap to cpu
+security set gratuitous-arp ( <PORT_LIST:port> | all ) action ( drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_SECURITY_SET_GRATUITOUS_ARP_PORT_ALL_ACTION_COPY_TO_CPU
+//security configuration
+//set configuration
+//gratuitous arp
+//port list
+//all ports
+//action configuration
+//copy to cpu
+security set gratuitous-arp ( <PORT_LIST:port> | all ) action copy-to-cpu
+#endif
+
+#ifdef CMD_SECURITY_SET_MAX_PING_MIN_IPV6_FRAG_MIN_TCP_HEADER_SMURF_NETMASK_LENGTH
+//security configuration
+//set configuration
+//max ping
+//min IPv6 fragement
+//min tcp header
+//smurf netmask
+//length
+security set ( max-ping | min-ipv6-frag | min-tcp-header | smurf-netmask ) <UINT:length>
+#endif
+
+#ifdef CMD_SECURITY_GET_TRAP_TARGET
+//security configuration
+//get configuration
+//trap target configuration
+security get trap-target
+#endif
+
+#ifdef CMD_SECURITY_SET_TRAP_TARGET_LOCAL_MASTER
+//security configuration
+//set configuration
+//trap target configuration
+//local CPU configuration
+//master CPU configuration
+security set trap-target ( local | master )
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_LOOK_UP_MISS_MATCH_MISMATCH_ACTION_FORWARD_DROP_TRAP_TO_CPU_COPY_TO_CPU_TRAP_TO_MASTER_COPY_TO_MASTER
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//look-up-miss configuration
+//match configuration
+//mismatch configuration
+//action configuration
+//forward (normal process)
+//drop
+//trap to CPU (local)
+//copy to CPU (local)
+//trap to master CPU
+//copy to master CPU
+security set ip-mac-bind ( look-up-miss | match | mismatch ) action ( forward | drop | trap-to-cpu | copy-to-cpu | trap-to-master | copy-to-master )
+#endif
+
+#ifdef CMD_SECURITY_GET_IP_MAC_BIND_LOOK_UP_MISS_MATCH_MISMATCH_ACTION
+//security configuration
+//get configuration
+//IP-MAC bind configuration
+//look-up-miss configuration
+//match configuration
+//mismatch configuration
+//action configuration
+security get ip-mac-bind ( look-up-miss | match | mismatch ) action
+#endif
+
+#ifdef CMD_SECURITY_SET_PORT_PORTS_ALL_IP_MAC_BIND_IP_ARP_STATE_ENABLE_DISABLE
+//security configuration
+//set configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all port
+//IP-MAC bind configuration
+//IP packet
+//ARP packet
+//state configuration
+//enable function
+//disable function
+security set port ( <PORT_LIST:ports> | all ) ip-mac-bind ( ip | arp ) state ( enable | disable )
+#endif
+
+#ifdef CMD_SECURITY_GET_PORT_PORTS_ALL_IP_MAC_BIND_IP_ARP_STATE
+//security configuration
+//get configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all port
+//IP-MAC bind configuration
+//IP packet
+//ARP packet
+//state configuration
+security get port ( <PORT_LIST:ports> | all ) ip-mac-bind ( ip | arp ) state
+#endif
+
+#ifdef CMD_SECURITY_ADD_IP_MAC_BIND_ENTRY_IP_ADDR_IP_MAC_ADDR_MAC
+//security configuration
+//add configuration
+//IP-MAC bind configuration
+//entry configuration
+//IPv4 address
+//IP address (e.g. 192.168.0.1)
+//MAC address
+//MAC address (e.g. 00:01:02:03:04:05)
+security add ip-mac-bind entry ip-addr <IPV4ADDR:ip> mac-addr <MACADDR:mac>
+#endif
+
+#ifdef CMD_SECURITY_DEL_IP_MAC_BIND_ENTRY_INDEX
+//security configuration
+//del configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+security del ip-mac-bind entry <UINT:index>
+#endif
+
+#ifdef CMD_SECURITY_ADD_IP_MAC_BIND_ENTRY_IP_IP_MAC_MAC_VID_VID_ANY_PORT_TRUNK_ID_ANY
+//security configuration
+//add configuration
+//IP-MAC bind configuration
+//entry configuration
+//IPv4 address
+//IP address (e.g. 192.168.0.1)
+//MAC address
+//MAC address (e.g. 00:01:02:03:04:05)
+//VLAN ID
+//VID, <0-4095>
+//any VLAN
+//port
+//trunk
+//(port/trunk) ID
+//any (port/trunk)
+security add ip-mac-bind entry ip <IPV4ADDR:ip> mac <MACADDR:mac> vid ( <UINT:vid> | any ) ( port | trunk ) ( <UINT:id> | any )
+#endif
+
+#ifdef CMD_SECURITY_DEL_IP_MAC_BIND_ENTRY_IP_IP_MAC_MAC_VID_VID_ANY_PORT_TRUNK_ID_ANY
+//security configuration
+//del configuration
+//IP-MAC bind configuration
+//entry configuration
+//IPv4 address
+//IP address (e.g. 192.168.0.1)
+//MAC address
+//MAC address (e.g. 00:01:02:03:04:05)
+//VLAN ID
+//VID, <0-4095>
+//any VLAN
+//port
+//trunk
+//(port/trunk) ID
+//any (port/trunk)
+security del ip-mac-bind entry ip <IPV4ADDR:ip> mac <MACADDR:mac> vid ( <UINT:vid> | any ) ( port | trunk ) ( <UINT:id> | any )
+#endif
+
+#ifdef CMD_SECURITY_DUMP_IP_MAC_BIND_ENTRY_FROM_BEGIN_INDEX_BEGIN_TO_END_INDEX_END
+//security configuration
+//dump configuration
+//IP-MAC bind configuration
+//entry configuration
+//from
+//index of the beginning
+//the beginning
+//to
+//index of the end
+//the end
+security dump ip-mac-bind entry from ( <UINT:begin_index> | begin ) to ( <UINT:end_index> | end )
+#endif
+
+#ifdef CMD_SECURITY_GET_IP_MAC_BIND_ENTRY_IP_ADDR_IP_MAC_ADDR_MAC
+//security configuration
+//get configuration
+//IP-MAC bind configuration
+//entry configuration
+//IPv4 address
+//IP address (e.g. 192.168.0.1)
+//MAC address
+//MAC address (e.g. 00:01:02:03:04:05)
+security get ip-mac-bind entry ip-addr <IPV4ADDR:ip> mac-addr <MACADDR:mac>
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_STATE_ENABLE_DISABLE
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//state configuration
+//enable function
+//disable function
+security set ip-mac-bind entry <UINT:index> state ( enable | disable )
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_IP_ADDR_IP_MAC_ADDR_MAC
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//IPv4 address
+//IP address (e.g. 192.168.0.1)
+//MAC address
+//MAC address (e.g. 00:01:02:03:04:05)
+security set ip-mac-bind entry <UINT:index> ip-addr <IPV4ADDR:ip> mac-addr <MACADDR:mac>
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_PORT_BINDING_STATE_ENABLE_DISABLE
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//port binding
+//state configuration
+//enable function
+//disable function
+security set ip-mac-bind entry <UINT:index> port-binding state ( enable | disable )
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_PORT_BINDING_PORT_TYPE_PORT_TRUNK
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//port binding
+//port type
+//idividual port
+//trunk port
+security set ip-mac-bind entry <UINT:index> port-binding port-type ( port | trunk )
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_PORT_BINDING_PORT_PORT
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//port binding
+//port configuration
+//port id
+security set ip-mac-bind entry <UINT:index> port-binding port <UINT:port>
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_PORT_BINDING_TRUNK_TRUNK_ID
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//port binding
+//trunk configuration
+//trunk id
+security set ip-mac-bind entry <UINT:index> port-binding trunk <UINT:trunk_id>
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_VLAN_BINDING_STATE_ENABLE_DISABLE
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//vlan binding
+//state configuration
+//enable function
+//disable function
+security set ip-mac-bind entry <UINT:index> vlan-binding state ( enable | disable )
+#endif
+
+#ifdef CMD_SECURITY_SET_IP_MAC_BIND_ENTRY_INDEX_VLAN_BINDING_VID_VID
+//security configuration
+//set configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+//vlan binding
+//vlan configuration
+//vlan id
+security set ip-mac-bind entry <UINT:index> vlan-binding vid <UINT:vid>
+#endif
+
+#ifdef CMD_SECURITY_GET_IP_MAC_BIND_ENTRY_INDEX
+//security configuration
+//get configuration
+//IP-MAC bind configuration
+//entry configuration
+//index configuration
+security get ip-mac-bind entry <UINT:index>
+#endif
+
+#ifdef CMD_SECURITY_SET_ATTACK_PREVENT_IP4_INVALID_LEN_ACTION_DROP_FORWARD_TRAP_TO_CPU
+//security configuration
+//set configuration
+//attack prevent
+//ipv4 invalid length
+//action
+//drop
+//forward
+//trap-to-cpu
+security set attack-prevent ip4-invalid-len action ( drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_SECURITY_SET_ATTACK_PREVENT_IP4_INVALID_HEADER_ACTION_DROP_FORWARD_TRAP_TO_CPU
+//security configuration
+//set configuration
+//attack prevent
+//ipv4 invalid header
+//action
+//drop
+//forward
+//trap-to-cpu
+security set attack-prevent ip4-invalid-header action ( drop | forward | trap-to-cpu )
+#endif
+
+#ifdef CMD_SECURITY_DUMP_ATTACK_PREVENT_HIT_INDICATION
+//security configuration
+//dump configuration
+//attack prevent
+//hit status
+security dump attack-prevent hit-indication
+#endif

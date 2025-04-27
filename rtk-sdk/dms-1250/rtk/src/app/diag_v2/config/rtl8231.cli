@@ -1,0 +1,75 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for rtl8231.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) rtl8231 commands.
+//           2) external GPIO commands.
+//
+
+#ifdef CMD_RTL8231_GET_MDC_PHY_ID_PAGE_REGISTER
+//rtl8231 configuration
+//get configuration
+//mdc/mdio configuration
+//phy id address
+//page number (29: internal page; 30: system page)
+//register address <0-31>
+rtl8231 get mdc <UINT:phy_id> <UINT:page> <UINT:register>
+#endif
+
+#ifdef CMD_RTL8231_SET_MDC_PHY_ID_PAGE_REGISTER_DATA
+//rtl8231 configuration
+//set configuration
+//mdc/mdio configuration
+//phy id address
+//page number (29: internal page; 30: system page)
+//register address <0-31>
+//data value
+rtl8231 set mdc <UINT:phy_id> <UINT:page> <UINT:register> <UINT:data>
+#endif
+
+#ifdef CMD_EXT_SMI_GET_PERIPHERAL_PERIPHERAL_ID_REG_ADD
+//Extensional SMI configuration
+//Get configuration
+//Peripheral
+//Peripheral id
+//Register Address
+ext-smi get peripheral <UINT:peripheral_id> <UINT:reg_add>
+#endif
+
+#ifdef CMD_EXT_SMI_SET_PERIPHERAL_PERIPHERAL_ID_INIT_DEV_DEV_ID_SCK_SCK_ID_SDA_SDA_ID
+//Extensional SMI configuration
+//set configuration
+//Peripheral
+//Peripheral id
+//Init configuration
+//GPIO device configuration
+//GPIO device id
+//SCK configuration
+//Pin id for SCK
+//SDA configuration
+//Pin id for SDA
+ext-smi set peripheral <UINT:peripheral_id> init dev <UINT:dev_id> sck <UINT:sck_id> sda <UINT:sda_id>
+#endif
+
+#ifdef CMD_EXT_SMI_SET_PERIPHERAL_PERIPHERAL_ID_REG_ADD_REG_DATA
+//Extensional SMI configuration
+//set configuration
+//Peripheral
+//Peripheral id
+//Register Address
+//Register Data
+ext-smi set peripheral <UINT:peripheral_id> <UINT:reg_add> <UINT:reg_data>
+#endif

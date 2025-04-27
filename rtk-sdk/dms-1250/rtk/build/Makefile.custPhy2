@@ -1,0 +1,23 @@
+#
+# Copyright (C) 2016 Realtek Semiconductor Corp.
+#
+# Makefile for PHY
+#
+
+
+#
+# include configuration file
+#
+ifeq ($(SDK_CONFIG), $(wildcard $(SDK_CONFIG)))
+include $(SDK_CONFIG)
+endif
+
+CUST2_PHY_DIR :=
+CUST2_PHY_OBJ :=
+
+ifeq ($(CONFIG_SDK_PHY_CUST2),y)
+    CUST_PHY += $(CUST2_PHY_OBJ)
+    CUST_PHY_CFLAGS += -I$(CUST2_PHY_DIR)
+endif
+
+

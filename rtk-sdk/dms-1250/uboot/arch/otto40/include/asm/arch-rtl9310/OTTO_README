@@ -1,0 +1,4 @@
+This directory contains soc.h and pblr.h, both are
+generated on-the-fly at build time before release.
+
+After release, this README should be deleted.

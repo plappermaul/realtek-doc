@@ -1,0 +1,77 @@
+OUTPUT_FORMAT("elf32-tradbigmips", "elf32-tradbigmips", "elf32-tradlittlemips")
+OUTPUT_ARCH(mips)
+ENTRY(_start)
+SECTIONS
+{
+  /* set to uncached address */
+  .ucflash (OTTO_FLASH_BASE | 0x20000000) :
+  AT(OTTO_FLASH_BASE) {
+    __LDS_START_O__(.text*)
+    *(preloader.uc)
+  }
+
+  .sram (ALIGN((OTTO_SRAM_BASE + SIZEOF(.ucflash)), 4)) :
+  AT(ALIGN((LOADADDR(.ucflash) + SIZEOF(.ucflash)), 4)) {
+    __LDS_LIBSOC_O__(.text*)
+    . = ALIGN(4);
+    *(.flash_text)
+    . = ALIGN(4);
+    __LDS_LIBSOC_O__(.rodata*)
+    . = ALIGN(4);
+    __LDS_LIBSOC_O__(.data*)
+    . = ALIGN(4);
+    __LDS_LIBSOC_O__(.sdata*)
+  }
+  preloader_sram_start = LOADADDR(.ucflash);
+  preloader_sram_size  = SIZEOF(.sram) + SIZEOF(.ucflash);
+
+  . = ALIGN(4);
+  .sram.bss :
+  AT(0x0) {
+    __LDS_LIBSOC_O__(.sbss*)
+    . = ALIGN(4);
+    __LDS_LIBSOC_O__(.bss*)
+  }
+  preloader_bss_start = ADDR(.sram.bss);
+  preloader_bss_size  = SIZEOF(.sram.bss);
+
+  .dram (OTTO_UBOOT_BASE) :
+  AT(ALIGN((LOADADDR(.sram) + SIZEOF(.sram)), 4)) {
+    *(EXCLUDE_FILE (__LDS_START_O__
+                    __LDS_LIBSOC_O__)
+                   .text*)
+
+    . = ALIGN(4);
+    *(EXCLUDE_FILE (__LDS_LIBSOC_O__) .data*)
+
+    . = ALIGN(4);
+    *(EXCLUDE_FILE (__LDS_LIBSOC_O__) .sdata*)
+
+    . = ALIGN(4);
+    *(EXCLUDE_FILE (__LDS_LIBSOC_O__) .rodata*)
+
+    . = ALIGN(4);
+	  __u_boot_cmd_start = .;
+    *(.u_boot_cmd)
+	  __u_boot_cmd_end = .;
+
+    . = ALIGN(4);
+    *(.rel.dyn)
+  }
+  uboot_start = LOADADDR(.dram);
+  uboot_size  = SIZEOF(.dram);
+
+  . = ALIGN(4);
+  uboot_end_data = .;
+  .sbss :
+  AT(0x100000) {
+    *(EXCLUDE_FILE (__LDS_LIBSOC_O__) .sbss*)
+  }
+
+	. = ALIGN(4);
+	.bss :
+  AT(0x200000) {
+    *(EXCLUDE_FILE (__LDS_LIBSOC_O__) .bss*)
+  }
+  uboot_end = .;
+}

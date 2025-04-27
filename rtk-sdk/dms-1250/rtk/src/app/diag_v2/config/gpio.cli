@@ -1,0 +1,81 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for internal GPIO.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) internal GPIO commands.
+//
+
+#ifdef CMD_GPIO_SET_DEV_DEV_ID_ACCESS_MDC_EXTRA_ADDRESS_DEV_ADDRESS
+//generalCtrl GPIO configuration
+//set configuration
+//GPIO device configuration
+//GPIO device id
+//access method
+//MDC/MDIO interface
+//GPIO simulation MDC/MDIO interface
+//device address
+//device address (0~31)
+gpio set dev <UINT:dev_id> access ( mdc | extra ) address <UINT:dev_address>
+#endif
+
+#ifdef CMD_GPIO_SET_DEV_DEV_ID_PIN_GPIO_ID_INIT_DIRECTION_IN_OUT_DEFAULT_DEFAULT_VALUE
+//generalCtrl GPIO configuration
+//set configuration
+//GPIO device configuration
+//GPIO device id
+//pin configuration
+//GPIO pin id <0-36>
+//GPIO pin init configuration
+//GPIO direction
+//GPIO direction input
+//GPIO direction ouput
+//default value
+//default value <0-1>
+gpio set dev <UINT:dev_id> pin <UINT:gpio_id> init direction ( in | out ) default <UINT:default_value>
+#endif
+
+#ifdef CMD_GPIO_SET_DEV_DEV_ID_STATE_DISABLE_ENABLE
+//generalCtrl GPIO configuration
+//set configuration
+//GPIO device configuration
+//GPIO device id
+//state configuration
+//disable function
+//enable function
+gpio set dev <UINT:dev_id> state ( disable | enable )
+#endif
+
+#ifdef CMD_GPIO_SET_DEV_DEV_ID_PIN_GPIO_ID_DATA
+//generalCtrl GPIO configuration
+//set configuration
+//GPIO device configuration
+//GPIO device id
+//GPIO pin configuration
+//GPIO pin id <0-36>
+//GPIO data value (0 or 1)
+gpio set dev <UINT:dev_id> pin <UINT:gpio_id> <UINT:data>
+#endif
+
+#ifdef CMD_GPIO_GET_DEV_DEV_ID_PIN_GPIO_ID
+//generalCtrl GPIO configuration
+//get configuration
+//GPIO device configuration
+//GPIO device id
+//GPIO pin configuration
+//GPIO pin id <0-36>
+gpio get dev <UINT:dev_id> pin <UINT:gpio_id>
+#endif
+

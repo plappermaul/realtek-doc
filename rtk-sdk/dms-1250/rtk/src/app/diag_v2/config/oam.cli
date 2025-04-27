@@ -1,0 +1,708 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for OAM.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) OAM commands.
+//
+
+#ifdef CMD_OAM_GET_ASIC_AUTO_DYING_GASP_PORT_PORTS_ALL_STATE
+//OAM configuration
+//get configuration
+//asic dying gasp configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//state configuration
+oam get asic-auto-dying-gasp port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_OAM_GET_DYING_GASP_WAITING_TIME
+//OAM configuration
+//get configuration
+//dying gasp configuration
+//dying gasp waiting time configuration
+oam get dying-gasp waiting-time
+#endif
+
+#ifdef CMD_OAM_SET_ASIC_AUTO_DYING_GASP_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//asic dying gasp configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//state configuration
+//disable function
+//enable function
+oam set asic-auto-dying-gasp port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_SET_DYING_GASP_PORT_PORTS_ALL_PAYLOAD_PAYLOAD
+//OAM configuration
+//set configuration
+//dying gasp configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//payload
+//payload content
+oam set dying-gasp port ( <PORT_LIST:ports> | all ) payload <STRING:payload>
+#endif
+
+#ifdef CMD_OAM_SET_DYING_GASP_SEND_ENABLE
+//OAM configuration
+//set configuration
+//dying gasp configuration
+//trigger dying gasp send
+//enable configuration
+oam set dying-gasp send enable
+#endif
+
+#ifdef CMD_OAM_SET_DYING_GASP_WAITING_TIME_TIME
+//OAM configuration
+//set configuration
+//dying gasp configuration
+//dying gasp waiting time configuration
+//time value
+oam set dying-gasp waiting-time <UINT:time>
+#endif
+
+#ifdef CMD_OAM_GET_LOOPBACK_CTRL_MAC_SWAP_STATE
+//OAM configuration
+//get configuration
+//loopback mode configuration
+//mac-swap configuration
+//state configuration
+oam get loopback-ctrl mac-swap state
+#endif
+
+#ifdef CMD_OAM_SET_LOOPBACK_CTRL_MAC_SWAP_STATE_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//loopback mode configuration
+//mac-swap configuration
+//state configuration
+//disable function
+//enable function
+oam set loopback-ctrl mac-swap state ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_GET_LOOPBACK_CTRL_PORT_PORTS_ALL_MUX
+//OAM configuration
+//get configuration
+//loopback mode configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//mux configuration
+oam get loopback-ctrl port ( <PORT_LIST:ports> | all ) mux
+#endif
+
+#ifdef CMD_OAM_SET_LOOPBACK_CTRL_PORT_PORTS_ALL_MUX_ACTION_DROP_FORWARD
+//OAM configuration
+//set configuration
+//loopback mode configuration
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//mux configuration
+//action configuration
+//drop function
+//forward function
+oam set loopback-ctrl port ( <PORT_LIST:ports> | all ) mux action ( drop | forward )
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_PCP
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//priority code point configuration for tx frame
+oam get cfm ccm pcp
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_PCP_VALUE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//priority code point configuration for tx frame
+//priority code point value <0-7>
+oam set cfm ccm pcp <UINT:value>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_CFI
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//canonical format identifier configuration for tx frame
+oam get cfm ccm cfi
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_CFI_VALUE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//canonical format identifier configuration for tx frame
+//canonical format identifier value <0-1>
+oam set cfm ccm cfi <UINT:value>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_TPID
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tag protocol identifier configuration for tx frame
+oam get cfm ccm tpid
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_TPID_VALUE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tag protocol identifier configuration for tx frame
+//tag protocol identifier value
+oam set cfm ccm tpid <HEX:value>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_LIFETIME
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//lifetime configuration
+oam get cfm ccm <UINT:instance> lifetime
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_LIFETIME_VALUE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//lifetime configuration when receive CCM frame
+//lifetime value <0-1023>
+oam set cfm ccm <UINT:instance> lifetime <UINT:value>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_MEPID
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//packet tx MEPID configuration
+oam get cfm ccm mepid
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_MEPID_MEPID
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//packet tx MEPID configuration
+//packet tx MEPID value <0-8191>
+oam set cfm ccm mepid <UINT:mepid>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_LIFETIME
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//packet tx lifetime configuration
+oam get cfm ccm lifetime
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_LIFETIME_LIFETIME
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//packet tx lifetime configuration
+//packet tx lifetime value <0-7>
+oam set cfm ccm lifetime <UINT:lifetime>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_MDL
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//packet tx MD level configuration
+oam get cfm ccm mdl
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_MDL_MDL
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//packet tx MD level configuration
+//packet tx MD level value <0-7>
+oam set cfm ccm mdl <UINT:mdl>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_TAG_STATE
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//tag state configuration for tx frame
+oam get cfm ccm <UINT:instance> tag-state
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_TAG_STATE_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//tag state configuration for tx frame
+//disable function
+//enable function
+oam set cfm ccm <UINT:instance> tag-state ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_VID
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//packet tx vlan id configuration
+oam get cfm ccm <UINT:instance> vid
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_VID_VID
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//packet tx vlan id configuration
+//packet tx vlan id value <1-4095>
+oam set cfm ccm <UINT:instance> vid <UINT:vid>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_MAID
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//packet tx MAID configuration
+oam get cfm ccm <UINT:instance> maid
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_MAID_MAID
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//packet tx MAID configuration
+//packet tx MAID value <0-255>
+oam set cfm ccm <UINT:instance> maid <UINT:maid>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_TX_STATE
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//transmit state configuration
+oam get cfm ccm <UINT:instance> tx-state
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_TX_STATE_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//transmit state configuration
+//disable function
+//enable function
+oam set cfm ccm <UINT:instance> tx-state ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_INTERVAL
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//packet tx interval configuration
+oam get cfm ccm <UINT:instance> interval
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_INTERVAL_INTERVAL
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//packet tx interval configuration
+//packet tx interval value <0-1023>
+oam set cfm ccm <UINT:instance> interval <UINT:interval>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_TX_PORT_INDEX_PORT
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//tx instance control
+//index of tx control of port member <0-1>
+//tx control member port
+oam get cfm ccm <UINT:instance> tx <UINT:port_index> port
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_TX_PORT_INDEX_PORT_PORT
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//tx instance
+//tx instance control
+//index of tx control of port member <0-1>
+//tx control member port
+//port of tx control member port
+oam set cfm ccm <UINT:instance> tx <UINT:port_index> port <UINT:port>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_RX_VID
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//rx instance
+//rx instance control
+//vlan id configuration for rx control
+oam get cfm ccm <UINT:instance> rx vid
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_RX_VID_VID
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//rx instance
+//rx instance control
+//vlan id configuration for rx control
+//vlan id value <0-4095>
+oam set cfm ccm <UINT:instance> rx vid <UINT:vid>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_RX_PORT_INDEX_PORT
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//rx instance
+//rx instance control
+//index of rx control of port member <0-1>
+//rx control member port
+oam get cfm ccm <UINT:instance> rx <UINT:port_index> port
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_RX_PORT_INDEX_PORT_PORT
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//rx instance
+//rx instance control
+//index of rx control of port member <0-1>
+//rx control member port
+//port of rx control member port
+oam set cfm ccm <UINT:instance> rx <UINT:port_index> port <UINT:port>
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_RX_PORT_INDEX_TRUNK_TRUNK
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//rx instance
+//rx instance control
+//index of rx control of port member <0-1>
+//rx control member port
+//trunk of rx control member
+oam set cfm ccm <UINT:instance> rx <UINT:port_index> trunk <UINT:trunk>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_INDEX_KEEPALIVE_COUNTER
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//rx instance
+//index of rx control of port member <0-1>
+//keep alive counter
+oam get cfm ccm <UINT:instance> <UINT:index> keepalive-counter
+#endif
+
+#ifdef CMD_OAM_GET_CFM_ETH_DM_PORT_PORT_ALL_STATE
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//port configuration
+//port list, <0-51>
+//all ports
+//state configuration
+oam get cfm eth-dm port ( <PORT_LIST:port> | all ) state
+#endif
+
+#ifdef CMD_OAM_SET_CFM_ETH_DM_PORT_PORT_ALL_STATE_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//port list, <0-51>
+//port configuration
+//all ports
+//state configuration
+//disable function
+//enable function
+oam set cfm eth-dm port ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_GET_CFM_ETH_DM_RX_TIMESTAMP_INDEX_INDEX
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//Rx timestamp
+//index of Rx timestamp
+//index
+oam get cfm eth-dm rx-timestamp index <UINT:index>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_ETH_DM_SPEED_10M_100M_1G_10G_TX_ADJUST
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//link speed
+//10M
+//100M
+//500M/ 1G/2.5G
+//10G
+//TX delay adjustment configuration
+oam get cfm eth-dm speed ( 10m | 100m | 1g | 10g ) tx-adjust
+#endif
+
+#ifdef CMD_OAM_SET_CFM_ETH_DM_SPEED_10M_100M_1G_10G_TX_ADJUST_TX_DELAY
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//link speed
+//10M
+//100M
+//500M/ 1G/2.5G
+//10G
+//TX delay adjustment configuration
+//TX delay adjustment value that would be added to TX time-stamp (unit: 8 ns)
+oam set cfm eth-dm speed ( 10m | 100m | 1g | 10g ) tx-adjust <UINT:tx_delay>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_ETH_DM_REFERENCE_TIME
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//reference time
+oam get cfm eth-dm reference-time
+#endif
+
+#ifdef CMD_OAM_SET_CFM_ETH_DM_REFERENCE_TIME_SECOND_SECOND_NANOSECOND_NANOSECOND
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//reference time
+//second configuration
+//second
+//nanosecond configuration
+//nanosecond
+oam set cfm eth-dm reference-time second <UINT:second> nanosecond <UINT:nanosecond>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_ETH_DM_REFERENCE_TIME_STATE
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//reference time
+//state
+oam get cfm eth-dm reference-time state
+#endif
+
+#ifdef CMD_OAM_SET_CFM_ETH_DM_REFERENCE_TIME_STATE_ENABLE_DISABLE
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//reference time
+//state configuration
+//enable function
+//disable function
+oam set cfm eth-dm reference-time state ( enable | disable )
+#endif
+
+#ifdef CMD_OAM_GET_CFM_ETH_DM_REFERENCE_TIME_FREQUENCY
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//reference time
+//frequency configuration
+oam get cfm eth-dm reference-time frequency
+#endif
+
+#ifdef CMD_OAM_SET_CFM_ETH_DM_REFERENCE_TIME_FREQUENCY_FREQUENCYVAL
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM ETH-DM frame
+//reference time
+//frequency configuration
+//tick frequency value, <0-0xFFFFFFF, default value is 0x8000000>
+oam set cfm eth-dm reference-time frequency <UINT:frequencyVal>
+#endif
+
+#ifdef CMD_OAM_GET_DYING_GASP_PACKET_COUNT
+//OAM configuration
+//get configuration
+//dying gasp configuration
+//send packet count
+oam get dying-gasp packet-count
+#endif
+
+#ifdef CMD_OAM_SET_DYING_GASP_PACKET_COUNT_COUNT
+//OAM configuration
+//set configuration
+//dying gasp configuration
+//send packet count
+//send packet count value
+oam set dying-gasp packet-count <UINT:count>
+#endif
+
+#ifdef CMD_OAM_SET_LINK_FAULT_MONITOR_STATE_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//link fault
+//monitor
+//state configuration
+//disable function
+//enable function
+oam set link-fault monitor state ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_GET_PDU_SA_LEARN
+//OAM configuration
+//get configuration
+//pdu configuration
+//source MAC address learn configuration
+oam get pdu sa-learn
+#endif
+
+#ifdef CMD_OAM_SET_PDU_SA_LEARN_DISABLE_ENABLE
+//OAM configuration
+//set configuration
+//pdu configuration
+//source MAC address learn configuration
+//disable function
+//enable function
+oam set pdu sa-learn ( disable | enable )
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_MEPID
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//packet tx MEPID configuration
+oam get cfm ccm <UINT:instance> mepid
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_MEPID_MEPID
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//packet tx MEPID configuration
+//packet tx MEPID value <0-8191>
+oam set cfm ccm <UINT:instance> mepid <UINT:mepid>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_TX_INTERVAL
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//Tx configuration
+//packet tx interval configuration
+oam get cfm ccm <UINT:instance> tx interval
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_TX_INTERVAL_INTERVAL
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//Tx configuration
+//packet tx interval configuration
+//packet tx interval
+oam set cfm ccm <UINT:instance> tx interval <UINT:interval>
+#endif
+
+#ifdef CMD_OAM_GET_CFM_CCM_INSTANCE_MDL
+//OAM configuration
+//get configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//packet tx MD level configuration
+oam get cfm ccm <UINT:instance> mdl
+#endif
+
+#ifdef CMD_OAM_SET_CFM_CCM_INSTANCE_MDL_MDL
+//OAM configuration
+//set configuration
+//CFM entry configuration
+//CFM CCM frame
+//control instance
+//packet tx MD level configuration
+//packet tx MD level value <0-7>
+oam set cfm ccm <UINT:instance> mdl <UINT:mdl>
+#endif
+

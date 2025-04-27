@@ -1,0 +1,324 @@
+#
+# Copyright (C) 2016 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Rtcore Module
+#
+
+
+#
+# include configuration file
+#
+ifeq ($(SDK_CONFIG), $(wildcard $(SDK_CONFIG)))
+include $(SDK_CONFIG)
+endif
+
+
+#
+# path definition
+#
+DRV_DIR := $(SDK_SYS_DIR)/drv
+
+# decide target file path for kernel or user mode (will change the arch. later, may remove)
+
+ifeq ($(CONFIG_SDK_KERNEL_LINUX),y)
+    ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+      TGT_DIR :=
+    else ifeq ($(CONFIG_SDK_KERNEL_LINUX_USER_MODE),y)
+      TGT_DIR := /user
+    else
+      $(warning: Should define one of CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE or CONFIG_SDK_KERNEL_LINUX_USER_MODE)
+    endif
+else
+    TGT_DIR :=
+endif
+
+
+COMMON_DIR :=       $(SDK_SYS_DIR)/common
+DBG_DIR :=          $(COMMON_DIR)/debug$(TGT_DIR)
+RTCORE_INIT_DIR :=  $(COMMON_DIR)/rtcore$(TGT_DIR)
+UTIL_DIR :=         $(COMMON_DIR)/util$(TGT_DIR)
+
+GPIO_DIR :=         $(DRV_DIR)/gpio$(TGT_DIR)
+I2C_DIR :=          $(DRV_DIR)/i2c$(TGT_DIR)
+INTR_DIR :=         $(DRV_DIR)/intr$(TGT_DIR)
+RTL8231_DIR :=      $(DRV_DIR)/rtl8231$(TGT_DIR)
+SPI_DIR :=          $(DRV_DIR)/spi$(TGT_DIR)
+SWCORE_DIR :=       $(DRV_DIR)/swcore$(TGT_DIR)
+TC_DIR :=           $(DRV_DIR)/tc$(TGT_DIR)
+UART1_DIR :=        $(DRV_DIR)/uart$(TGT_DIR)
+WATCHDOG_DIR :=     $(DRV_DIR)/watchdog$(TGT_DIR)
+
+HWP_DIR :=          $(SDK_SYS_DIR)/hwp$(TGT_DIR)
+IOAL_DIR :=         $(SDK_SYS_DIR)/ioal$(TGT_DIR)
+OSAL_DIR :=         $(SDK_SYS_DIR)/osal/linux$(TGT_DIR)
+
+IOAL_INIT_DIR := $(IOAL_DIR)
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+    ifeq ($(CONFIG_SDK_MODEL_MODE_USER),y)
+        IOAL_INIT_DIR := $(SDK_TOP_DIR)/model/ioal
+    endif
+endif
+
+#
+# compiler/linker option
+#
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE) -URTK_UNIVERSAL_BSP -Werror -Wno-array-bounds
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+    EXTRA_CFLAGS += -I$(UT_INCLUDE)
+endif
+
+
+#
+# main
+#
+COMMON_OBJ :=
+DRV_OBJ :=
+NTFY_OBJ :=
+NIC_OBJ :=
+
+COMMON_OBJ += \
+	$(COMMON_DIR)$(TGT_DIR)/rt_chip.o \
+	$(DBG_DIR)/rt_log.o \
+	$(RTCORE_INIT_DIR)/rtcore_init.o
+
+ifneq ($(filter y,$(CONFIG_SDK_TC_DRV) $(CONFIG_SDK_TC_TC1_TIME)),)
+    COMMON_OBJ += $(UTIL_DIR)/rt_util_system.o
+endif
+
+ifeq ($(CONFIG_SDK_KERNEL_LINUX),y)
+    COMMON_OBJ += \
+    	$(DBG_DIR)/mem_debug.o
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_GPIO),y)
+    DRV_OBJ += \
+    	$(GPIO_DIR)/gpio.o \
+    	$(GPIO_DIR)/gpio_probe.o
+    ifneq ($(CONFIG_SDK_RTL9310),)
+        DRV_OBJ += \
+                $(GPIO_DIR)/gpio_common.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL9300),)
+        DRV_OBJ += \
+                $(GPIO_DIR)/gpio_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8390),)
+        DRV_OBJ += \
+                $(GPIO_DIR)/gpio_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8380),)
+        DRV_OBJ += \
+                $(GPIO_DIR)/gpio_rtl8380.o
+    endif
+
+    ifeq ($(CONFIG_SDK_KERNEL_LINUX_USER_MODE),y)
+        DRV_OBJ += $(GPIO_DIR)/rtusr_gpio.o
+    endif
+endif
+
+
+ifeq ($(CONFIG_SDK_DRIVER_I2C),y)
+    DRV_OBJ += \
+    	$(I2C_DIR)/i2c.o \
+    	$(I2C_DIR)/i2c_probe.o \
+    	$(I2C_DIR)/i2c_software_drv.o
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R9300),)
+        DRV_OBJ += \
+        	$(I2C_DIR)/i2c_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R9310),)
+        DRV_OBJ += \
+        	$(I2C_DIR)/i2c_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R8390),)
+        DRV_OBJ += \
+        	$(I2C_DIR)/i2c_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_I2C_R8380),)
+        DRV_OBJ += \
+        	$(I2C_DIR)/i2c_rtl8380.o
+    endif
+endif
+
+    DRV_OBJ += \
+        $(INTR_DIR)/intr.o \
+    	$(INTR_DIR)/intr_probe.o
+    ifneq ($(CONFIG_SDK_RTL9310),)
+        DRV_OBJ += \
+        	$(INTR_DIR)/intr_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL9300),)
+        DRV_OBJ += \
+        	$(INTR_DIR)/intr_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8390),)
+        DRV_OBJ += \
+        	$(INTR_DIR)/intr_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8380),)
+        DRV_OBJ += \
+        	$(INTR_DIR)/intr_rtl8380.o
+    endif
+
+
+    DRV_OBJ += $(UTIL_DIR)/rt_util_intr.o
+
+  ifneq ($(CONFIG_SDK_KERNEL_LINUX_USER_MODE),y)
+    DRV_OBJ += $(UTIL_DIR)/rt_util_intrk.o
+  endif
+
+
+NTFY_DIR    := $(DRV_DIR)/l2ntfy
+NTFY_USR_DIR:= $(DRV_DIR)/l2ntfy/user
+ifneq ($(CONFIG_SDK_DRIVER_NIC),)
+    NIC_DIR     := $(DRV_DIR)/nic
+    NIC_KRN_DIR := $(DRV_DIR)/nic
+    include $(SDK_BUILD)/Makefile.rtnic
+endif
+
+ifeq ($(CONFIG_SDK_RTL8231),y)
+    DRV_OBJ += \
+    	$(GPIO_DIR)/ext_gpio.o \
+    	$(RTL8231_DIR)/rtl8231.o \
+    	$(RTL8231_DIR)/rtl8231_probe.o
+    ifneq ($(CONFIG_SDK_RTL9310),)
+        DRV_OBJ += \
+                $(RTL8231_DIR)/rtl8231_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL9300),)
+        DRV_OBJ += \
+        	$(RTL8231_DIR)/rtl8231_rtl9300.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8390),)
+        DRV_OBJ += \
+        	$(RTL8231_DIR)/rtl8231_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_RTL8380),)
+        DRV_OBJ += \
+        	$(RTL8231_DIR)/rtl8231_rtl8380.o
+    endif
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL8231) $(CONFIG_SDK_DRIVER_GPIO)),)
+    DRV_OBJ += $(GPIO_DIR)/generalCtrl_gpio.o
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_SPI),y)
+    DRV_OBJ += $(SPI_DIR)/spi.o
+    ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+    ifeq ($(CONFIG_SDK_BSP_SPI_DRV),y)
+        DRV_OBJ += $(SPI_DIR)/spi-controller-driver.o
+    endif
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_1),y)
+        DRV_OBJ += $(SPI_DIR)/spi_dev1.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_2),y)
+        DRV_OBJ += $(SPI_DIR)/spi_dev2.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_3),y)
+        DRV_OBJ += $(SPI_DIR)/spi_dev3.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_4),y)
+        DRV_OBJ += $(SPI_DIR)/spi_dev4.o
+    endif
+    ifeq ($(CONFIG_SDK_SPI_DEV_5),y)
+        DRV_OBJ += $(SPI_DIR)/spi_dev5.o
+        DRV_OBJ += $(SPI_DIR)/spi_dev3.o
+    endif
+endif
+
+ifeq ($(CONFIG_SDK_KERNEL_LINUX),y)
+  ifneq ($(KERNELRELEASE),)
+    #this is linux mode, and in kernel space (i.e. lkm)
+  else
+    #this is linux mode, and in user space
+    DRV_OBJ += $(SWCORE_DIR)/chip_probe.o
+  endif
+else
+    #this is non-linux mode or loader
+    DRV_OBJ += $(SWCORE_DIR)/chip_probe.o
+endif
+
+    DRV_OBJ += $(SWCORE_DIR)/swcore.o
+
+ifeq ($(CONFIG_SDK_TC_DRV),y)
+    DRV_OBJ += $(TC_DIR)/tc_probe.o \
+               $(TC_DIR)/tc.o\
+               $(TC_DIR)/tc_common.o
+  ifeq ($(CONFIG_SDK_TC_TC1_TIME),y)
+    	    DRV_OBJ += $(UTIL_DIR)/rt_util_time.o
+    ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+    	    DRV_OBJ += $(UTIL_DIR)/rt_util_timeIsr.o
+    endif
+  endif
+endif
+
+ifeq ($(CONFIG_SDK_UART1),y)
+    DRV_OBJ += \
+    	$(UART1_DIR)/uart.o \
+    	$(UART1_DIR)/uart_probe.o\
+        $(UART1_DIR)/uart_common.o
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_WATCHDOG),y)
+DRV_OBJ += \
+    $(WATCHDOG_DIR)/watchdog.o \
+    $(WATCHDOG_DIR)/watchdog_probe.o\
+    $(WATCHDOG_DIR)/watchdog_common.o
+endif
+
+HWP_OBJ := \
+    $(HWP_DIR)/hwp_init.o \
+    $(HWP_DIR)/hwp_probe.o \
+    $(HWP_DIR)/hwp.o \
+    $(HWP_DIR)/profile_list.o
+
+
+IOAL_OBJ := \
+    $(IOAL_INIT_DIR)/ioal_init.o \
+	$(IOAL_DIR)/mem32.o \
+	$(IOAL_DIR)/phy_reset.o \
+    $(IOAL_DIR)/ioal_param.o \
+    $(IOAL_DIR)/ioal_log.o
+
+ifeq ($(CONFIG_SDK_KERNEL_LINUX),y)
+OSAL_OBJ := \
+	$(OSAL_DIR)/atomic.o \
+	$(OSAL_DIR)/cache.o \
+	$(OSAL_DIR)/lib.o \
+	$(OSAL_DIR)/memory.o \
+	$(OSAL_DIR)/sem.o \
+	$(OSAL_DIR)/thread.o \
+	$(OSAL_DIR)/time.o \
+	$(OSAL_DIR)/wait.o
+
+  ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+    OSAL_OBJ += \
+    	$(OSAL_DIR)/isr.o \
+	    $(OSAL_DIR)/spl.o
+  endif
+endif
+
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+    EXTRA_CFLAGS += -I$(SDK_TOP_DIR)/model
+    ifeq ($(CONFIG_SDK_RTL9300),y)
+        EXTRA_CFLAGS += -I$(SDK_TOP_DIR)/model/behavior_src/9300
+    endif
+    ifeq ($(CONFIG_SDK_RTL9310),y)
+        EXTRA_CFLAGS += -I$(SDK_TOP_DIR)/model/behavior_src/9310
+    endif
+    EXTRA_CFLAGS += -I$(SDK_TOP_DIR)/model/common
+    EXTRA_CFLAGS += -I$(SDK_TOP_DIR)/kernel/uClinux/uClibc/include
+    IOAL_OBJ += \
+    	$(SDK_TOP_DIR)/../model/virtualmac/vmac_target.o
+endif
+
+
+
+RTCORE_OBJ := $(COMMON_OBJ) $(DRV_OBJ) $(HWP_OBJ) $(IOAL_OBJ) $(OSAL_OBJ) $(NTFY_OBJ)
+
+ifneq ($(CONFIG_SDK_DRIVER_NIC),)
+    RTCORE_OBJ += $(NIC_OBJ)
+endif
+

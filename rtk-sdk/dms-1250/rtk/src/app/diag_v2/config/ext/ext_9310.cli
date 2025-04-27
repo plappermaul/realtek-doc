@@ -1,0 +1,920 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 58444 $
+// $Date: 2015-05-08 10:57:15 +0800 (Fri, 08 May 2015) $
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) extension commands.
+//
+
+//testio configuration
+//set configuration
+//ocp reg
+//reg address
+//value
+testio set ocp <UINT:address> <UINT:value>
+
+//testio configuration
+//get configuration
+//ocp reg
+//reg address
+testio get ocp <UINT:address>
+
+//testio configuration
+//set configuration
+//ephy reg
+//reg address
+//value
+testio set ephy <UINT:address> <UINT:value>
+
+//testio configuration
+//get configuration
+//ephy reg
+//reg address
+testio get ephy <UINT:address>
+
+//testio configuration
+//set configuration
+//efuse command
+//efuse self-testing
+testio set efuse check
+
+//testio configuration
+//set configuration
+//efuse command
+//efuse entry
+//efuse entry index
+//ephy reg address
+//value
+testio set efuse entry <UINT:index> ephy <UINT:address> <UINT:value>
+
+//testio configuration
+//get configuration
+//efuse command
+//efuse entry
+//efuse entry index
+testio get efuse entry <UINT:index>
+
+//bandwidth configuration
+//get configuration
+//egress configuration
+//CPU tag for CPU port information
+bandwidth get egress cpu-tag
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//CPU tag for CPU port
+//exclude cpu tag
+//include cpu tag
+bandwidth set egress cpu-tag ( exclude | include )
+
+//SDK configuration
+//reset configuration
+//test case environment
+sdk reset tc
+
+//FPGA configuration
+//get configuration
+//info
+fpga get info
+
+//FPGA configuration
+//init configuration
+//FE version
+//FE version with 325MHz
+//enable CPU port simulation
+//disable CPU port simulation
+fpga init { fe } { fe325 } { cpu-enable } { cpu-disable }
+
+//FPGA configuration
+//test table R/W
+fpga test
+
+//Diagnostic
+//Test
+//MBIST
+diag test mbist
+
+//Diagnostic
+//Test
+//SBIST
+diag test socbist
+
+//mib configuration
+//get configuration
+//reset MIB value configuration
+mib get reset-value
+
+//mib configuration
+//dump configuration
+//tx-error counter
+//port configuration
+//port list
+//all ports
+mib dump tx-error-counter port ( <PORT_LIST:ports> | all )
+
+//mib configuration
+//reset configuration
+//tx-error counter
+//port configuration
+//port list
+//all ports
+mib reset tx-error-counter port ( <PORT_LIST:ports> | all )
+
+//switch configuration
+//get configuration
+//48 pass 1 configuration
+//state configuration
+switch get 48-pass-1 state
+
+//switch configuration
+//get configuration
+//limit pause configuration
+//state configuration
+switch get limit-pause state
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+//state configuration
+switch get ipg-compensation ( ge | 10g ) state
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//2.5G port
+//5G port
+//state configuration
+switch get ipg-compensation ( 2_5g | 5g ) state
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+switch get ipg-compensation ( ge | 10g )
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//2.5G port
+//5G port
+switch get ipg-compensation ( 2_5g | 5g )
+
+//switch configuration
+//get configuration
+//IPG minimal receive length
+switch get ipg-min-length
+
+//switch configuration
+//get configuration
+//pass all mode configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get pass-all-mode port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//get configuration
+//bypass TX CRC configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get bypass-tx-crc port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//get configuration
+//backpressure configuration
+switch get back-pressure
+
+//switch configuration
+//get configuration
+//padding the packet length to 64-Byte for under size packets configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get padding-under-size port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//get configuration
+//special-congest
+//drain-out-thresh
+port get special-congest drain-out-thresh
+
+//port configuration
+//get configuration
+//special-congest
+//port configuration
+//port list
+//all port
+port get special-congest port ( <PORT_LIST:ports> | all )
+
+//mib configuration
+//set configuration
+//reset MIB value configuration
+//all MIB to be 0
+//all MIB to be 0xFFFF-FFFF
+mib set reset-value ( 0 | 1 )
+
+//SQA configuration
+//reset to default configuration
+sqa reset
+
+//SQA configuration
+//reset to default configuration
+//table configuration
+//VLAN table
+sqa reset table vlan
+
+//SQA configuration
+//testcase configuration
+//L3 entry hit indication
+//0 - reset hit bit
+//1 - check odd
+//2 - check even
+sqa testcase l3hit ( 0 | 1 | 2 )
+
+//switch configuration
+//reset to default configuration
+//software queue reset configuration (Please disable MAC RX First)
+switch reset software-queue-reset
+
+//switch configuration
+//set configuration
+//48 pass 1 configuration
+//state configuration
+//disable function
+//enable function
+switch set 48-pass-1 state ( disable | enable )
+
+//switch configuration
+//set configuration
+//limit pause configuration
+//state configuration
+//disable function
+//128 pause frames
+//32 pause frames
+switch set limit-pause state ( disable | 128-pause | 32-pause )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+//state configuration
+//disable function
+//enable function
+switch set ipg-compensation ( ge | 10g ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//2.5G port
+//5G port
+//state configuration
+//disable function
+//enable function
+switch set ipg-compensation ( 2_5g | 5g ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//Giga port
+//10G port
+//65ppm
+//90ppm
+switch set ipg-compensation ( ge | 10g ) ( 65ppm | 90ppm )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//2.5G port
+//5G port
+//65ppm
+//90ppm
+switch set ipg-compensation ( 2_5g | 5g ) ( 65ppm | 90ppm )
+
+//switch configuration
+//set configuration
+//IPG minimal receive length
+//10M and 100M port
+//length in byte
+switch set ipg-min-length 10m_100m <UINT:len>
+
+//switch configuration
+//set configuration
+//IPG minimal receive length
+//1G and 2.5G port
+//length in byte
+switch set ipg-min-length 1g_2_5g <UINT:len>
+
+//switch configuration
+//set configuration
+//pass all mode configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set pass-all-mode port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//bypass TX CRC configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set bypass-tx-crc port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//backpressure configuration
+//CRS-based backpressure
+//Collision-based backpressure
+switch set back-pressure ( jam | defer )
+
+//switch configuration
+//set configuration
+//padding the packet length to 64-Byte for under size packets configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set padding-under-size port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//set configuration
+//interrupt configuration
+//link status change
+//state configuration
+//disable function
+//enable function
+switch set interrupt link-change state ( disable | enable )
+
+//EEE configuration
+//set configuration
+//tx configuration
+//wake mode configuration
+//wake when there is packet to tx
+//wake based on qos (high queue/ low queue)
+eee set tx wake-mode ( packet-tx | qos-based )
+
+//EEE configuration
+//get configuration
+//tx configuration
+//wake mode configuration
+eee get tx wake-mode
+
+//EEE configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//port eee/eeep LPI status
+eee get port ( <PORT_LIST:ports> | all ) status
+
+//EEE configuration
+//set configuration
+//link up delay time
+//1 ms
+//256 ms
+//512 ms
+//1024 ms
+eee set link-up-delay ( 1ms | 256ms | 512ms | 1024ms )
+
+//EEE configuration
+//get configuration
+//link up delay time
+eee get link-up-delay
+
+//EEE configuration
+//set configuration
+//multi-wake
+//state configuration
+//disable function
+//enable function
+eee set multi-wake state ( disable | enable )
+
+//EEE configuration
+//get configuration
+//multi-wake
+//state configuration
+eee get multi-wake state
+
+//EEE configuration
+//set configuration
+//multi-wake
+//interval
+//1 us
+//2 us
+//3 us
+//4 us
+eee set multi-wake interval ( 1us | 2us | 3us | 4us )
+
+//EEE configuration
+//get configuration
+//multi-wake
+//interval
+eee get multi-wake interval
+
+//EEE configuration
+//set configuration
+//multi-wake
+//port number of a group
+//2 ports
+//4 ports
+//6 ports
+//8 ports
+//10 ports
+//12 ports
+//16 ports
+//20 ports
+eee set multi-wake port-num ( 2port | 4port | 6port | 8port | 10port | 12port | 16port | 20port )
+
+//EEE configuration
+//get configuration
+//multi-wake
+//port number of a group
+eee get multi-wake port-num
+
+//EEEP configuration
+//set configuration
+//rx configuration
+//tx configuration
+//sleep rate
+//rate (unit:0.5Mbps)
+eeep set ( rx | tx ) sleep-rate <UINT:rate>
+
+//EEEP configuration
+//get configuration
+//rx configuration
+//tx configuration
+//sleep rate
+eeep get ( rx | tx ) sleep-rate
+
+//port configuration
+//set configuration
+//special-congest
+//drain-out-thresh
+//threshold, unit: page
+//duplex configuration
+//full duplex
+//half duplex
+port set special-congest drain-out-thresh <UINT:threshold> duplex ( full | half )
+
+//port configuration
+//set configuration
+//special-congest
+//port configuration
+//port list
+//all port
+//sustain-timer
+//second
+//duplex configuration
+//full duplex
+//half duplex
+port set special-congest port ( <PORT_LIST:ports> | all ) sustain-timer <UINT:second> duplex ( full | half )
+
+//iol configuration
+//dump configuration
+iol dump
+
+//iol configuration
+//get configuration
+//conllision max attempt action
+iol get collision-max-attempt
+
+//iol configuration
+//get configuration
+//error length action
+iol get error-length
+
+//iol configuration
+//get configuration
+//late collision action
+iol get late-collision
+
+//iol configuration
+//get configuration
+//max length action
+iol get max-length
+
+//iol configuration
+//get configuration
+//conllision max attempt action
+//retry
+//drop
+iol set collision-max-attempt ( retry | drop )
+
+//iol configuration
+//set configuration
+//error length action
+//forward
+//drop
+iol set error-length ( forward | drop )
+
+//iol configuration
+//set configuration
+//late collision action
+//re-transmit
+//drop
+iol set late-collision ( re-transmit | drop )
+
+//iol configuration
+//set configuration
+//max length action
+//disable function
+//enable function
+iol set max-length ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast MAC entry
+//vid value, <0-4095>
+//unicast MAC address, A:B:C:D:E:F
+//switch unit
+//unit id
+//port
+//trunk
+//port or trunk id
+//tag status
+//tag status
+//agg vid
+//agg vid
+//agg pri
+//agg pri
+//source MAC blocking entry
+//destination MAC blocking entry
+//static entry
+//nexthop entry
+//suspend entry
+//age out entry
+l2-table add mac-ucast <UINT:vid> <MACADDR:mac> devID <UINT:devID> ( port | trunk ) <UINT:id> tagif <UINT:tagif> agg_vid <UINT:agg_vid> agg_pri <UINT:agg_pri> { sa-block } { da-block } { static } { nexthop } { suspend } { aged }
+
+//l2 table configuration
+//get configuration
+//l2 table aging time configuration (unit 0.6s)
+l2-table get aging-unit
+
+//l2 table configuration
+//set configuration
+//l2 table aging time configuration (unit 0.6s)
+//time value(0.1 second), 0 means disable aging
+l2-table set aging-unit <UINT:time>
+
+//l2 table configuration
+//clear table
+//l2 table
+l2-table clear table
+
+//l2 table configuration
+//get configuration
+//cam table
+//state configuration
+l2-table get cam state
+
+//l2 table configuration
+//set configuration
+//cam table
+//state configuration
+//enable function
+//disable function
+l2-table set cam state ( enable | disable )
+
+//ACL configuration
+//get configuration
+//meter configuration
+//meter counter configuration
+acl get meter counter
+
+//ACL configuration
+//set configuration
+//meter configuration
+//meter counter configuration
+//unit: 1 byte
+//unit: 16 byte
+//unit: packet
+//meter index
+acl set meter counter ( 1byte | 16byte | packet ) <UINT:index>
+
+//ACL configuration
+//reset configuration
+//meter configuration
+//meter counter configuration
+acl reset meter counter
+
+//time configuration
+//get configuration
+//precision time protocol
+//ports
+//all ports
+//timestamp
+//Rx Sync
+//Rx Delay-Req
+//Rx PDelay-Req
+//Rx PDelay-Resp
+//Tx Sync
+//Tx Delay-Req
+//Tx PDelay-Req
+//Tx PDelay-Resp
+time get ptp ( <PORT_LIST:ports> | all ) timestamp ( rx-sync | rx-dreq | rx-pdrq | rx-pdrp | tx-sync | tx-dreq | tx-pdrq | tx-pdrp )
+
+//nic configuration
+//set configuration
+//packet send configuration
+//source MAC configuration
+//source MAC
+//destination MAC configuration
+//destination MAC
+//unit configuration
+//unit ID
+//port configuration
+//port list
+//all ports
+//with cpu-tag
+//do trunk hash when TX to trunk member port
+nic set pkt-send src-mac <MACADDR:src_mac> dst-mac <MACADDR:dst_mac> unit <UINT:unit> port ( <PORT_LIST:ports> | all ) { cpu-tag } { trunk-hash }
+
+//NIC configuration
+//send configuration
+//packet configuration
+//priority configuration
+//priority start
+//priority end
+//packet length configuration
+//packet length (bytes)
+//packet number
+//packet number
+nic send packet pri <UINT:start> <UINT:end> len <UINT:len> num <UINT:num>
+
+//NIC configuration
+//reset configuration
+//system
+nic reset system
+
+//l2 table configuration
+//dump configuration
+//unicast MAC entry
+//cam entry
+l2-table dump mac-ucast cam
+
+//port configuration
+//get configuration
+//polling phy
+//port setting
+//port list
+//all ports
+//state configuration
+port get polling-phy port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//set configuration
+//polling phy
+//port setting
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+port set polling-phy port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//get configuration
+//mac force configuration
+//port setting
+//port list
+//all ports
+//state configuration
+port get mac-force port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//set configuration
+//mac force configuration
+//port setting
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+port set mac-force port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//get configuration
+//mac force configuration
+//port setting
+//port list
+//all ports
+//link configuration
+port get mac-force port ( <PORT_LIST:ports> | all ) link
+
+//port configuration
+//set configuration
+//mac force configuration
+//port setting
+//port list
+//all ports
+//link configuration
+//link up
+//link down
+port set mac-force port ( <PORT_LIST:ports> | all ) link ( up | down )
+
+//port configuration
+//get configuration
+//mac force configuration
+//port setting
+//port list
+//all ports
+//flow control configuration
+port get mac-force port ( <PORT_LIST:ports> | all ) flowctrl
+
+//port configuration
+//set configuration
+//mac force configuration
+//port setting
+//port list
+//all ports
+//flow control configuration
+//enable
+//disable
+port set mac-force port ( <PORT_LIST:ports> | all ) flowctrl ( enable | disable )
+
+//port configuration
+//set configuration
+//phy calibration configuration
+//port setting
+//port list
+//all ports
+port set phy-cali port ( <PORT_LIST:ports> | all )
+
+//stack configuration
+//get configuration
+//debug mode configuration
+//state configuration
+stack get debug state
+
+//stack configuration
+//set configuration
+//debug mode configuration
+//state configuration
+//disable function
+//enable function
+stack set debug state ( disable | enable )
+
+//trunk configuration
+//get configuration
+//member port
+//trunk group configuration
+//trunk group id
+trunk get local-table ( <UINT:entry_idx> | all )
+
+//trunk configuration
+//reset all configuration
+trunk reset
+
+//switch configuration
+//get configuration
+//padding content configuration
+switch get padding-content
+
+//switch configuration
+//set configuration
+//padding content configuration
+//padding content value
+switch set padding-content <UINT:byte>
+
+//trunk configuration
+//set configuration
+//trunk member ports
+//trunk group configuration
+//trunk group id
+//trunk member ports configuration
+//trunk member port list (format: unit:port, ex: 0:1, 2:2)
+//none member
+trunk set member trunk-group <UINT:trunk_id> port ( <DEV_PORT_LIST:dev_ports> | none )
+
+//register configuration
+//set register
+//remote device
+//target unit id
+//register address
+//register value
+register set remote <UINT:unit> <UINT:address> <UINT:value>
+
+//register configuration
+//get register
+//remote device
+//target unit id
+//register address
+register get remote <UINT:unit> <UINT:address>
+
+//ACL configuration
+//set configuration
+//mirror and sflow bypass post acl configuration
+//state configuration
+//disable function
+//enable function
+acl set mirror-sflow-bypass-post state ( disable | enable )
+
+//ACL configuration
+//get configuration
+//mirror and sflow bypass post acl configuration
+//state configuration
+acl get mirror-sflow-bypass-post state
+
+//diag configuration
+//get configuration
+//register array
+//unit id
+//register id
+//index of array 1
+//index of array 2
+//number of words (buffer)
+diag get reg-array <UINT:unit> <UINT:reg_id> <UINT:idx1> <UINT:idx2> <UINT:words>
+
+//diag configuration
+//set configuration
+//register array
+//unit id
+//register id
+//index of array 1
+//index of array 2
+//number of words
+//value (hex string)
+diag set reg-array <UINT:unit> <UINT:reg_id> <UINT:idx1> <UINT:idx2> <UINT:words> <STRING:value_hex>
+
+//diag configuration
+//get configuration
+//register array
+//unit id
+//register id
+//index of array 1
+//index of array 2
+//field id
+//number of words (buffer)
+diag get reg-array-field <UINT:unit> <UINT:reg_id> <UINT:idx1> <UINT:idx2> <UINT:field_id> <UINT:words>
+
+//diag configuration
+//set configuration
+//register array
+//unit id
+//register id
+//index of array 1
+//index of array 2
+//field id
+//number of words
+//value (hex string)
+diag set reg-array-field <UINT:unit> <UINT:reg_id> <UINT:idx1> <UINT:idx2> <UINT:field_id> <UINT:words> <STRING:value_hex>
+
+//diag configuration
+//get configuration
+//table entry
+//unit id
+//table id
+//entry address (index)
+//number of words (buffer)
+diag get table-entry <UINT:unit> <UINT:table_id> <UINT:entry_addr> <UINT:words>
+
+//diag configuration
+//set configuration
+//table entry
+//unit id
+//table id
+//entry address (index)
+//number of words
+//entry data (hex string)
+diag set table-entry <UINT:unit> <UINT:table_id> <UINT:entry_addr> <UINT:words> <STRING:value_hex>
+
+//thermal configuration
+//get configuration
+//current configuration
+//low configuration
+//high configuration
+thermal get current ( low | high )
+
+//diag configuration
+//send configuration
+//value
+diag send <UINT:val>

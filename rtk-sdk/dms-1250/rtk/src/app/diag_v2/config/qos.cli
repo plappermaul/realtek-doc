@@ -1,0 +1,2382 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for QoS.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) QoS commands.
+//
+
+#ifdef CMD_QOS_SET_AVB_PORT_PORTS_ALL_SR_CLASS_A_SR_CLASS_B_STATE_ENABLE_DISABLE
+//QoS configuration
+//set configuration
+//AV Bridging
+//port configuration
+//port list
+//all ports
+//SR Class-A
+//SR Class-B
+//state configuration
+//enable function
+//disable function
+qos set avb port ( <PORT_LIST:ports> | all ) ( sr-class-a | sr-class-b ) state ( enable | disable )
+#endif
+
+#ifdef CMD_QOS_SET_AVB_SR_CLASS_A_SR_CLASS_B_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//AV Bridging
+//SR Class-A
+//SR Class-B
+//priority configuration
+//priority
+qos set avb ( sr-class-a | sr-class-b ) priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_AVB_SR_CLASS_A_SR_CLASS_B_QUEUE_ID_QUEUE_ID
+//QoS configuration
+//set configuration
+//AV Bridging
+//SR Class-A
+//SR Class-B
+//queue-id configuration
+//queue-id
+qos set avb ( sr-class-a | sr-class-b ) queue-id <UINT:queue_id>
+#endif
+
+#ifdef CMD_QOS_SET_AVB_NON_SR_CLASS_A_NON_SR_CLASS_B_REDIRECT_QUEUE_ID_QUEUE_ID
+//QoS configuration
+//set configuration
+//AV Bridging
+//Non SR Class-A
+//Non SR Class-B
+//redirect queue-id configuration
+//queue-id
+qos set avb ( non-sr-class-a | non-sr-class-b ) redirect-queue-id <UINT:queue_id>
+#endif
+
+#ifdef CMD_QOS_SET_AVB_NON_SR_CLASS_A_NON_SR_CLASS_B_REMARK_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//AV Bridging
+//Non SR Class-A
+//Non SR Class-B
+//remarking priority configuration
+//priority
+qos set avb ( non-sr-class-a | non-sr-class-b ) remark-priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_DROP_PRECEDENCE_SOURCE_DEI_DSCP
+//QoS configuration
+//set configuration
+//drop precedence remapping
+//drop precedence configuration
+//remapping source configuration
+//DEI value. Get drop precedence from DEI
+//DSCP value. Get drop precedence from DSCP
+qos set remapping drop-precedence source ( dei | dscp )
+#endif
+
+#ifdef CMD_QOS_GET_DROP_PRECEDENCE_SELECTOR_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//drop precedence selector
+//port configuration
+//port list
+//all ports
+qos get drop-precedence-selector port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_SET_DROP_PRECEDENCE_SELECTOR_PORT_PORTS_ALL_DSCP_WEIGHT
+//QoS configuration
+//set configuration
+//drop precedence selector
+//port configuration
+//port list
+//all ports
+//DSCP configuration
+//weight of DSCP-based drop precedence
+qos set drop-precedence-selector port ( <PORT_LIST:ports> | all ) dscp <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_DROP_PRECEDENCE_SELECTOR_PORT_PORTS_ALL_INNER_TAG_WEIGHT
+//QoS configuration
+//set configuration
+//drop precedence selector
+//port configuration
+//port list
+//all ports
+//inner tag configuration
+//weight of inner-tag-based drop precedence
+qos set drop-precedence-selector port ( <PORT_LIST:ports> | all ) inner-tag <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_DROP_PRECEDENCE_SELECTOR_PORT_PORTS_ALL_OUTER_TAG_WEIGHT
+//QoS configuration
+//set configuration
+//drop precedence selector
+//port configuration
+//port list
+//all ports
+//outer tag configuration
+//weight of outer-tag-based drop precedence
+qos set drop-precedence-selector port ( <PORT_LIST:ports> | all ) outer-tag <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_DROP_PRECEDENCE_SELECTOR_PORT_PORTS_ALL_MPLS_WEIGHT
+//QoS configuration
+//set configuration
+//drop precedence selector
+//port configuration
+//port list
+//all ports
+//MPLS configuration
+//weight of MPLS-based drop precedence
+qos set drop-precedence-selector port ( <PORT_LIST:ports> | all ) mpls <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_PORT_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//port configuration
+//weight of port priority
+qos set priority-selector group-id <UINT:index> port <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_DSCP_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//DSCP configuration
+//weight of DSCP priority
+qos set priority-selector group-id <UINT:index> dscp <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_INNER_TAG_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//inner tag configuration
+//weight of inner tag priority
+qos set priority-selector group-id <UINT:index> inner-tag <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_OUTER_TAG_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//outer tag configuration
+//weight of outer tag priority
+qos set priority-selector group-id <UINT:index> outer-tag <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_PE_TAG_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//Port extension tag configuration
+//weight of outer tag priority
+qos set priority-selector group-id <UINT:index> pe-tag <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_PORT_INNER_PRIORITY_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//port inner priority configuration
+//weight of port inner priority
+qos set priority-selector group-id <UINT:index> port-inner-priority <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_PORT_OUTER_PRIORITY_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//port outer priority configuration
+//weight of port outer priority
+qos set priority-selector group-id <UINT:index> port-outer-priority <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_INGRESS_ACL_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//ingress ACL configuration
+//weight of ingress ACL priority
+qos set priority-selector group-id <UINT:index> ingress-acl <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_VLAN_ACL_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//VLAN ACL configuration
+//weight of VLAN ACL priority
+qos set priority-selector group-id <UINT:index> vlan-acl <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_MAC_BASED_VLAN_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//MAC-based-VLAN configuration
+//weight of MAC-based-VLAN priority
+qos set priority-selector group-id <UINT:index> mac-based-vlan <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_PROTOCOL_BASED_VLAN_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//protocol-based-VLAN configuration
+//weight of protocol-based-VLAN priority
+qos set priority-selector group-id <UINT:index> protocol-based-vlan <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_ROUTING_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//routing configuration
+//weight of routing-based priority
+qos set priority-selector group-id <UINT:index> routing <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_DOT11E_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//802.11e configuration
+//weight of 802.11e-based priority
+qos set priority-selector group-id <UINT:index> dot11e <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_TUNNEL_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//tunnel configuration
+//weight of Tunnel-VLAN priority
+qos set priority-selector group-id <UINT:index> tunnel <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_GROUP_ID_INDEX_MPLS_WEIGHT
+//QoS configuration
+//set configuration
+//priority selector
+//group id configuration
+//group index
+//MPLS configuration
+//weight of MPLS-based priority
+qos set priority-selector group-id <UINT:index> mpls <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_SELECTOR_PORT_PORTS_ALL_GROUP_ID_INDEX
+//QoS configuration
+//set configuration
+//priority selector
+//port configuration
+//port list
+//all ports
+//config group id for ports
+//group index of ports
+qos set priority-selector port ( <PORT_LIST:ports> | all ) group-id <UINT:index>
+#endif
+
+#ifdef CMD_QOS_SET_QUEUE_NUMBER_QUEUE_NUM
+//QoS configuration
+//set configuration
+//queue configuration
+//number of queue
+//queue number <1-8>
+qos set queue number <UINT:queue_num>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_TO_QUEUE_QUEUE_NUMBER_QUEUE_NUM_PRIORITY_PRIORITY_QUEUE_ID_QID
+//QoS configuration
+//set configuration
+//queue mapping
+//queue number configuration
+//queue number
+//priority
+//priority <0-7>
+//queue id
+//queue id <0-7>
+qos set priority-to-queue queue-number <UINT:queue_num> priority <UINT:priority> queue-id <UINT:qid>
+#endif
+
+#ifdef CMD_QOS_SET_PRIORITY_TO_QUEUE_PRIORITY_PRIORITY_QUEUE_ID_QID
+//QoS configuration
+//set configuration
+//queue mapping
+//priority
+//priority <0-7>
+//queue id
+//queue id <0-7>
+qos set priority-to-queue priority <UINT:priority> queue-id <UINT:qid>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_FORWARD_TO_CPU_INTERNAL_PRIORITY_INTERNAL_PRIORITY_REMAPPING_PRIORITY_REMAPPING_PRIORITY
+//QoS configuration
+//set configuration
+//packet to CPU priority remapping configuration
+//forward to CPU configuration
+//internal priority configuration
+//internal priority
+//remapping priority configuration
+//remapping priority
+qos set remapping forward-to-cpu internal-priority <UINT:internal_priority> remapping-priority <UINT:remapping_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PORT_PORTS_ALL_INTERNAL_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//port based priority configuration
+//port list
+//all ports
+//internal priority configuration
+//internal priority
+qos set remapping port ( <PORT_LIST:ports> | all ) internal-priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PORT_PORTS_ALL_INNER_TAG_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//port configuration
+//port list
+//all ports
+//port based priority for inner tag
+//priority configuration
+//priority
+qos set remapping port ( <PORT_LIST:ports> | all ) inner-tag priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PORT_PORTS_ALL_OUTER_TAG_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//port configuration
+//port list
+//all ports
+//port based priority for outer tag
+//priority configuration
+//priority value
+qos set remapping port ( <PORT_LIST:ports> | all ) outer-tag priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_DEI_SYSTEM_DEI_DEI_DROP_PRECEDENCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//drop precedence(DP) remapping
+//DEI remapping
+//system configuration
+//DEI configuration
+//DEI value
+//drop precedence configuration
+//drop precedence value
+qos set remapping dei system dei <UINT:dei> drop-precedence <UINT:drop_precedence>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_DEI_TAG_SELECTOR_PORT_PORTS_ALL_INNER_TAG_OUTER_TAG
+//QoS configuration
+//set configuration
+//drop precedence(DP) remapping
+//DEI remapping
+//tag selection
+//port configuration
+//port list
+//all ports
+//inner-tag. Remapping inner-tag CFI/DEI for getting DP value
+//outer-tag. Remapping outer-tag CFI/DEI for getting DP value
+qos set remapping dei tag-selector port ( <PORT_LIST:ports> | all ) ( inner-tag | outer-tag )
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_INNER_TAG_SYSTEM_INNER_PRIORITY_INNER_PRIORITY_INTERNAL_PRIORITY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//inner-tag priority remapping
+//system configuration
+//inner-tag priority configuration
+//inner-tag priority
+//internal priority configuration
+//internal priority
+qos set remapping inner-tag system inner-priority <UINT:inner_priority> internal-priority <UINT:internal_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_DSCP_SYSTEM_DSCP_DSCP_DROP_PRECEDENCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//priority remapping
+//DSCP to drop precedence remapping
+//system configuration
+//DSCP configuration
+//DSCP list
+//drop precedence configuration
+//drop precedence value
+qos set remapping dscp system dscp <MASK_LIST:dscp> drop-precedence <UINT:drop_precedence>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_DSCP_SYSTEM_DSCP_DSCP_INTERNAL_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//DSCP to internal priority remapping
+//system configuration
+//DSCP configuration
+//DSCP list
+//internal priority configuration
+//internal priority
+qos set remapping dscp system dscp <MASK_LIST:dscp> internal-priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_INNER_TAG_SYSTEM_DEI_DEI_PRIORITY_PRIORITY_DROP_PRECEDENCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//priority remapping
+//outer tag remapping
+//System configuration
+//inner-tag DEI configuration
+//DEI value
+//inner-tag priority configuration
+//priority value
+//drop precedence configuration
+//drop precedence value
+qos set remapping inner-tag system dei <UINT:dei> priority <UINT:priority> drop-precedence <UINT:drop_precedence>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_INNER_TAG_SYSTEM_DEI_DEI_PRIORITY_PRIORITY_INTERNAL_PRIORITY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//outer tag remapping
+//System configuration
+//inner-tag DEI configuration
+//DEI value
+//inner-tag priority configuration
+//priority value
+//internal priority configuration
+//internal priority
+qos set remapping inner-tag system dei <UINT:dei> priority <UINT:priority> internal-priority <UINT:internal_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_OUTER_TAG_SYSTEM_DEI_DEI_PRIORITY_PRIORITY_DROP_PRECEDENCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//priority remapping
+//outer tag remapping
+//System configuration
+//outer-tag DEI configuration
+//DEI value
+//outer-tag priority configuration
+//priority value
+//drop precedence configuration
+//drop precedence value
+qos set remapping outer-tag system dei <UINT:dei> priority <UINT:priority> drop-precedence <UINT:drop_precedence>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_OUTER_TAG_SYSTEM_DEI_DEI_PRIORITY_PRIORITY_INTERNAL_PRIORITY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//outer tag remapping
+//System configuration
+//outer-tag DEI configuration
+//DEI value
+//outer-tag priority configuration
+//priority value
+//internal priority configuration
+//internal priority
+qos set remapping outer-tag system dei <UINT:dei> priority <UINT:priority> internal-priority <UINT:internal_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PE_TAG_SYSTEM_DEI_DEI_PRIORITY_PRIORITY_INTERNAL_PRIORITY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//Port-extension tag remapping
+//System configuration
+//Bridge Port-extension tag DEI configuration
+//DEI value
+//Bridge Port-extension tag priority configuration
+//priority value
+//internal priority configuration
+//internal priority
+qos set remapping pe-tag system dei <UINT:dei> priority <UINT:priority> internal-priority <UINT:internal_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_80211E_SYSTEM_TID_TID_INTERNAL_PRIORITY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//802.11e TID remapping
+//System configuration
+//802.11e TID configuration
+//TID value
+//internal priority configuration
+//internal priority
+qos set remapping 80211e system tid <UINT:tid> internal-priority <UINT:internal_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_MPLS_SYSTEM_TC_TC_INTERNAL_PRIORITY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//priority remapping
+//MPLS TC remapping
+//System configuration
+//MPLS TC configuration
+//TC value
+//internal priority configuration
+//internal priority
+qos set remapping mpls system tc <UINT:tc> internal-priority <UINT:internal_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_MPLS_SYSTEM_TC_TC_DROP_PRECEDENCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//priority remapping
+//MPLS TC remapping
+//System configuration
+//MPLS TC configuration
+//TC value
+//drop precedence configuration
+//drop precedence
+qos set remapping mpls system tc <UINT:tc> drop-precedence <UINT:drop_precedence>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DEI_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//QoS configuration
+//set configuration
+//remarking
+//DEI value
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+qos set remarking dei port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_DSCP_DSCP_REMARK_INNER_PRIORITY_REMARK_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//original DSCP configuration
+//original DSCP
+//remarking inner-tag priority configuration
+//remarking inner-tag priority
+qos set remarking inner-tag system dscp <UINT:dscp> remark-inner-priority <UINT:remark_inner_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_INNER_PRIORITY_INNER_PRIORITY_REMARK_INNER_PRIORITY_REMARK_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//original inner-tag priority configuration
+//original inner-tag priority
+//remarking inner-tag priority configuration
+//remarking inner-tag priority
+qos set remarking inner-tag system inner-priority <UINT:inner_priority> remark-inner-priority <UINT:remark_inner_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_OUTER_PRIORITY_OUTER_PRIORITY_REMARK_INNER_PRIORITY_REMARK_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//original outer-tag priority configuration
+//original outer-tag priority
+//remarking inner-tag priority configuration
+//remarking inner-tag priority
+qos set remarking inner-tag system outer-priority <UINT:outer_priority> remark-inner-priority <UINT:remark_inner_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_INTERNAL_PRIORITY_INTERNAL_PRIORITY_REMARK_INNER_PRIORITY_REMARK_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//internal priority configuration
+//internal priority
+//remarking inner-tag priority configuration
+//remarking inner-tag priority
+qos set remarking inner-tag system internal-priority <UINT:internal_priority> remark-inner-priority <UINT:remark_inner_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DEI_SYSTEM_DROP_PRECEDENCE_DROP_PRECEDENCE_DEI_DEI
+//QoS configuration
+//set configuration
+//remarking
+//DEI remarking
+//system configuration
+//drop precedence configuration
+//drop precedence
+//DEI value configuration
+//DEI value
+qos set remarking dei system drop-precedence <UINT:drop_precedence> dei <UINT:dei>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DEI_TAG_SELECTOR_PORT_PORTS_ALL_INNER_TAG_OUTER_TAG
+//QoS configuration
+//set configuration
+//remarking
+//DEI remarking
+//tag selection
+//port configuration
+//port list
+//all ports
+//inner-tag. Remarking inner-tag CFI/DEI value
+//outer-tag. Remarking outer-tag CFI/DEI value
+qos set remarking dei tag-selector port ( <PORT_LIST:ports> | all ) ( inner-tag | outer-tag )
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//inner-tag priority
+//system configuration
+//priority configuration
+//priority
+qos set default-priority inner-tag system priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_SOURCE_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//remarking source configuration
+//internal priority
+qos set remarking inner-tag system source internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_SOURCE_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//remarking source configuration
+//inner priority
+qos set remarking inner-tag system source inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_SOURCE_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//remarking source configuration
+//outer priority
+qos set remarking inner-tag system source outer-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_INNER_TAG_SYSTEM_SOURCE_DSCP
+//QoS configuration
+//set configuration
+//remarking
+//inner-tag priority remarking
+//system configuration
+//remarking source configuration
+//dscp
+qos set remarking inner-tag system source dscp
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_SOURCE_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//remarking source configuration
+//inner tag priority
+qos set remarking dscp system source inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_SOURCE_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//remarking source configuration
+//internal priority
+qos set remarking dscp system source internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_SOURCE_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//remarking source configuration
+//outer tag priority
+qos set remarking dscp system source outer-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_SOURCE_DSCP
+//QoS configuration
+//set configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//remarking source configuration
+//DSCP
+qos set remarking dscp system source dscp
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_SOURCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//remarking source configuration
+//drop precedence
+qos set remarking dscp system source drop-precedence
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_INNER_PRIORITY_PRIORITY_REMARK_DSCP_REMARK_DSCP
+//QoS configuration
+//set configuration
+//remarking
+//DSCP remarking
+//system configuration
+//original inner-tag priority configuration
+//original inner-priority value
+//remarking DSCP configuration
+//remarking DSCP value
+qos set remarking dscp system inner-priority <UINT:priority> remark-dscp <UINT:remark_dscp>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_INTERNAL_PRIORITY_PRIORITY_REMARK_DSCP_REMARK_DSCP
+//QoS configuration
+//set configuration
+//remarking
+//DSCP remarking
+//system configuration
+//internal priority configuration
+//internal priority
+//remarking DSCP configuration
+//remarking DSCP value
+qos set remarking dscp system internal-priority <UINT:priority> remark-dscp <UINT:remark_dscp>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_OUTER_PRIORITY_PRIORITY_REMARK_DSCP_REMARK_DSCP
+//QoS configuration
+//set configuration
+//remarking
+//DSCP remarking
+//system configuration
+//original outer-tag priority configuration
+//original outer-priority value
+//remarking DSCP configuration
+//remarking DSCP value
+qos set remarking dscp system outer-priority <UINT:priority> remark-dscp <UINT:remark_dscp>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_DSCP_DSCP_REMARK_DSCP_REMARK_DSCP
+//QoS configuration
+//set configuration
+//remarking
+//DSCP remarking
+//system configuration
+//original DSCP configuration
+//original DSCP value
+//remarking DSCP configuration
+//remarking DSCP value
+qos set remarking dscp system dscp <MASK_LIST:dscp> remark-dscp <UINT:remark_dscp>
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_SOURCE_COPY_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from inner tag priority
+qos set default-priority outer-tag port ( <PORT_LIST:ports> | all ) source copy-inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_SOURCE_COPY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from internal priority
+qos set default-priority outer-tag port ( <PORT_LIST:ports> | all ) source copy-internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE_COPY_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from inner tag priority
+qos set default-priority outer-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source copy-inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE_COPY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from internal priority
+qos set default-priority outer-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source copy-internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_SOURCE_DSCP
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//remarking source configuration
+//DSCP value
+qos set remarking outer-tag system source dscp
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_SOURCE_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//remarking source configuration
+//inner tag priority
+qos set remarking outer-tag system source inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_SOURCE_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//remarking source configuration
+//internal priority
+qos set remarking outer-tag system source internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_SOURCE_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//remarking source configuration
+//outer tag priority
+qos set remarking outer-tag system source outer-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_DSCP_DSCP_REMARK_OUTER_PRIORITY_REMARK_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//original DSCP configuration
+//original DSCP value
+//outer-tag priority configuration
+//outer-tag priority
+qos set remarking outer-tag system dscp <UINT:dscp> remark-outer-priority <UINT:remark_outer_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_INNER_PRIORITY_INNER_PRIORITY_REMARK_OUTER_PRIORITY_REMARK_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//original inner-tag priority configuration
+//original inner-tag priority
+//outer-tag priority configuration
+//outer-tag priority
+qos set remarking outer-tag system inner-priority <UINT:inner_priority> remark-outer-priority <UINT:remark_outer_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_OUTER_PRIORITY_OUTER_PRIORITY_REMARK_OUTER_PRIORITY_REMARK_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//original outer-tag priority configuration
+//original outer-tag priority
+//outer-tag priority configuration
+//outer-tag priority
+qos set remarking outer-tag system outer-priority <UINT:outer_priority> remark-outer-priority <UINT:remark_outer_priority>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_SYSTEM_INTERNAL_PRIORITY_INTERNAL_PRIORITY_REMARK_OUTER_PRIORITY_REMARK_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//internal priority configuration
+//internal priority
+//outer tag priority configuration
+//outer tag priority
+qos set remarking outer-tag system internal-priority <UINT:internal_priority> remark-outer-priority <UINT:remark_outer_priority>
+#endif
+
+#ifdef CMD_QOS_SET_SCHEDULING_ALGORITHM_PORT_PORTS_ALL_WRR_WFQ
+//QoS configuration
+//set configuration
+//queue scheduling
+//scheduling algorithm
+//port configuration
+//port list
+//all ports
+//WRR
+//WFQ
+qos set scheduling algorithm port ( <PORT_LIST:ports> | all ) ( wrr | wfq )
+#endif
+
+#ifdef CMD_QOS_SET_SCHEDULING_QUEUE_WEIGHT_PORT_PORTS_ALL_QUEUE_ID_QID_WEIGHT_WEIGHT
+//QoS configuration
+//set configuration
+//queue scheduling
+//queue weight
+//port configuration
+//port list
+//all ports
+//queue id configuration
+//queue id
+//queue weight configuration
+//queue weight
+qos set scheduling queue-weight port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> weight <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_INNER_TAG_OUTER_TAG_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//QoS configuration
+//set configuration
+//remarking
+//DSCP
+//inner-tag priority
+//outer-tag priority
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+qos set remarking ( dscp | inner-tag | outer-tag ) port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_QOS_GET_AVB_PORT_PORTS_ALL_SR_CLASS_A_SR_CLASS_B_STATE
+//QoS configuration
+//get configuration
+//AV Bridging
+//port configuration
+//port list
+//all ports
+//SR Class-A
+//SR Class-B
+//state configuration
+qos get avb port ( <PORT_LIST:ports> | all ) ( sr-class-a | sr-class-b ) state
+#endif
+
+#ifdef CMD_QOS_GET_AVB_SR_CLASS_A_SR_CLASS_B_PRIORITY
+//QoS configuration
+//get configuration
+//AV Bridging
+//SR Class-A
+//SR Class-B
+//priority configuration
+qos get avb ( sr-class-a | sr-class-b ) priority
+#endif
+
+#ifdef CMD_QOS_GET_AVB_SR_CLASS_A_SR_CLASS_B_QUEUE_ID
+//QoS configuration
+//get configuration
+//AV Bridging
+//SR Class-A
+//SR Class-B
+//queue-id configuration
+qos get avb ( sr-class-a | sr-class-b ) queue-id
+#endif
+
+#ifdef CMD_QOS_GET_AVB_NON_SR_CLASS_A_NON_SR_CLASS_B_REDIRECT_QUEUE_ID
+//QoS configuration
+//get configuration
+//AV Bridging
+//Non SR Class-A
+//Non SR Class-B
+//redirect queue-id configuration
+qos get avb ( non-sr-class-a | non-sr-class-b ) redirect-queue-id
+#endif
+
+#ifdef CMD_QOS_GET_AVB_NON_SR_CLASS_A_NON_SR_CLASS_B_REMARK_PRIORITY
+//QoS configuration
+//get configuration
+//AV Bridging
+//Non SR Class-A
+//Non SR Class-B
+//remarking priority configuration
+qos get avb ( non-sr-class-a | non-sr-class-b ) remark-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_DROP_PRECEDENCE_SOURCE
+//QoS configuration
+//get configuration
+//drop precedence remapping
+//drop precedence configuration
+//remapping source configuration
+qos get remapping drop-precedence source
+#endif
+
+#ifdef CMD_QOS_GET_PRIORITY_SELECTOR_GROUP_ID_INDEX
+//QoS configuration
+//get configuration
+//priority selector configuration
+//group configuration
+//group index
+qos get priority-selector group-id { <UINT:index> }
+#endif
+
+#ifdef CMD_QOS_GET_PRIORITY_SELECTOR_PORT_PORTS_ALL_GROUP_ID
+//QoS configuration
+//get configuration
+//priority selector configuration
+//port configuration
+//port list
+//all ports
+//group of ports
+qos get priority-selector port ( <PORT_LIST:ports> | all ) group-id
+#endif
+
+#ifdef CMD_QOS_GET_QUEUE_NUMBER
+//QoS configuration
+//get configuration
+//queue configuration
+//queue number
+qos get queue number
+#endif
+
+#ifdef CMD_QOS_GET_PRIORITY_TO_QUEUE_QUEUE_NUMBER_QUEUE_NUM
+//QoS configuration
+//get configuration
+//priority mapping to queue configuration
+//queue number configuration
+//queue number
+qos get priority-to-queue queue-number { <UINT:queue_num> }
+#endif
+
+#ifdef CMD_QOS_GET_PRIORITY_TO_QUEUE
+//QoS configuration
+//get configuration
+//queue mapping
+qos get priority-to-queue
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_FORWARD_TO_CPU_INTERNAL_PRIORITY_PRIORITY
+//QoS configuration
+//get configuration
+//priority remapping configuration
+//packet forward to CPU priority remapping configuration
+//internal priority configuration
+//internal priority
+qos get remapping forward-to-cpu internal-priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//priority remapping configuration
+//priority remapping configuration of port
+//port list
+//all ports
+qos get remapping port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_INNER_TAG_SYSTEM
+//QoS configuration
+//get configuration
+//priority remapping configuration
+//inner-tag remapping configuration
+//system configuration
+qos get remapping inner-tag system
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_DEI_SYSTEM
+//QoS configuration
+//get configuration
+//remapping configuration
+//DEI remapping configuration
+//system configuration
+qos get remapping dei system
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_DEI_TAG_SELECTOR_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//remapping configuration
+//DEI remapping configuration
+//tag selection
+//port configuration
+//port list
+//all ports
+qos get remapping dei tag-selector port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_DSCP_SYSTEM
+//QoS configuration
+//get configuration
+//priority remapping configuration
+//DSCP remapping configuration
+//system configuration
+qos get remapping dscp system
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_OUTER_TAG_SYSTEM
+//QoS configuration
+//get configuration
+//priority remapping
+//outer tag remapping
+//System configuration
+qos get remapping outer-tag system
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_PE_TAG_SYSTEM
+//QoS configuration
+//get configuration
+//priority remapping
+//Port extension tag remapping
+//System configuration
+qos get remapping pe-tag system
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_80211E_SYSTEM
+//QoS configuration
+//get configuration
+//priority remapping
+//802.11e remapping
+//System configuration
+qos get remapping 80211e system
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_MPLS_SYSTEM
+//QoS configuration
+//get configuration
+//priority remapping
+//MPLS remapping
+//System configuration
+qos get remapping mpls system
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DEI_PORT_PORTS_ALL_STATE
+//QoS configuration
+//get configuration
+//remarking configuration
+//DEI remarking configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+qos get remarking dei port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DEI_SYSTEM_DROP_PRECEDENCE
+//QoS configuration
+//get configuration
+//remarking
+//DEI remarking
+//system configuration
+//drop precedence
+qos get remarking dei system drop-precedence
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DEI_TAG_SELECTOR_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//remarking
+//DEI remarking
+//tag selection
+//port configuration
+//port list
+//all ports
+qos get remarking dei tag-selector port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_INNER_TAG_SYSTEM_INNER_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//inner-tag priority remarking
+//system configuration
+//inner-priority to inner-priority configuration
+qos get remarking inner-tag system inner-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_INNER_TAG_SYSTEM_INTERNAL_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//inner-tag priority remarking
+//system configuration
+//internal-priority to inner-priority configuration
+qos get remarking inner-tag system internal-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_INNER_TAG_SYSTEM_OUTER_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//inner-tag priority remarking
+//system configuration
+//outer-priority to inner-priority configuration
+qos get remarking inner-tag system outer-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_INNER_TAG_SYSTEM_DSCP
+//QoS configuration
+//get configuration
+//remarking configuration
+//inner-tag priority remarking
+//system configuration
+//DSCP to inner-priority configuration
+qos get remarking inner-tag system dscp
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_INNER_TAG_SYSTEM_SOURCE
+//QoS configuration
+//get configuration
+//remarking configuration
+//inner-tag priority remarking
+//system configuration
+//remarking source configuration
+qos get remarking inner-tag system source
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_PRIORITY
+//QoS configuration
+//get configuration
+//default value configuration
+//inner-tag priority
+//system configuration
+//priority configuration
+qos get default-priority inner-tag system priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_SYSTEM_INNER_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//inner-priority to DSCP configuration
+qos get remarking dscp system inner-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_SYSTEM_INTERNAL_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//internal-priority to DSCP configuration
+qos get remarking dscp system internal-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_SYSTEM_OUTER_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//outer-priority to DSCP configuration
+qos get remarking dscp system outer-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_SYSTEM_DSCP
+//QoS configuration
+//get configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//DSCP to DSCP configuration
+qos get remarking dscp system dscp
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_SYSTEM_SOURCE
+//QoS configuration
+//get configuration
+//remarking configuration
+//DSCP remarking configuration
+//system configuration
+//remarking source configuration
+qos get remarking dscp system source
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_SOURCE
+//QoS configuration
+//get configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//default priority source configuration
+qos get default-priority outer-tag port ( <PORT_LIST:ports> | all ) source
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_OUTER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE
+//QoS configuration
+//get configuration
+//default outer tag priority
+//outer tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//default priority source configuration
+qos get default-priority outer-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_PRIORITY
+//QoS configuration
+//get configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//default outer-priority configuration
+qos get default-priority outer-tag port ( <PORT_LIST:ports> | all ) priority
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_OUTER_TAG_DEV_DEVID_PORT_PORTS_ALL_PRIORITY
+//QoS configuration
+//get configuration
+//default outer tag priority
+//outer tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//default outer-priority configuration
+qos get default-priority outer-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_OUTER_TAG_SYSTEM_INNER_PRIORITY
+//QoS configuration
+//get configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//inner-priority to outer-priority configuration
+qos get remarking outer-tag system inner-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_OUTER_TAG_SYSTEM_OUTER_PRIORITY
+//QoS configuration
+//get configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//outer-priority to outer-priority configuration
+qos get remarking outer-tag system outer-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_OUTER_TAG_SYSTEM_INTERNAL_PRIORITY
+//QoS configuration
+//get configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//internal-priority to outer-priority configuration
+qos get remarking outer-tag system internal-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_OUTER_TAG_SYSTEM_DSCP
+//QoS configuration
+//get configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//DSCP to outer-priority configuration
+qos get remarking outer-tag system dscp
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_OUTER_TAG_SYSTEM_SOURCE
+//QoS configuration
+//get configuration
+//remarking
+//outer tag priority remarking
+//system configuration
+//remarking source configuration
+qos get remarking outer-tag system source
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_INNER_TAG_OUTER_TAG_PORT_PORTS_ALL_STATE
+//QoS configuration
+//get configuration
+//remarking configuration
+//DSCP remarking configuration
+//inner-tag priority remarking configuration
+//outer-tag priority remarking configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+qos get remarking ( dscp | inner-tag | outer-tag ) port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_QOS_GET_SCHEDULING_ALGORITHM_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//scheduling configuration
+//scheduling algorithm configuration
+//port configuration
+//port list
+//all ports
+qos get scheduling algorithm port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_GET_SCHEDULING_QUEUE_WEIGHT_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//scheduling configuration
+//queue weight configuration
+//port configuration
+//port list
+//all ports
+qos get scheduling queue-weight port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_GET_INGRESS_QUEUE_MAPPING_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//ingress configuration
+//queue configuration
+//queue mapping
+//port configuration
+//port list
+//all ports
+qos get ingress queue mapping port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_SET_INGRESS_QUEUE_MAPPING_PORT_PORTS_ALL_PRIORITY_QUEUE_ID
+//QoS configuration
+//set configuration
+//ingress configuration
+//queue configuration
+//queue mapping
+//port configuration
+//port list
+//all ports
+//priority
+//queue id
+qos set ingress queue mapping port ( <PORT_LIST:ports> | all ) <UINT:priority> <UINT:queue_id>
+#endif
+
+#ifdef CMD_QOS_GET_INGRESS_QUEUE_MAPPING_PORT_PORTS_ALL_STATE
+//QoS configuration
+//get configuration
+//ingress configuration
+//queue configuration
+//queue mapping
+//port configuration
+//port list
+//all ports
+//state
+qos get ingress queue mapping port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_QOS_SET_INGRESS_QUEUE_MAPPING_PORT_PORTS_ALL_STATE_ENABLE_DISABLE
+//QoS configuration
+//set configuration
+//ingress configuration
+//queue configuration
+//queue mapping
+//port configuration
+//port list
+//all ports
+//state configuration
+//enable function
+//disable function
+qos set ingress queue mapping port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+#endif
+
+#ifdef CMD_QOS_GET_SCHEDULING_INGRESS_QUEUE_WEIGHT_PORT_PORTS_ALL
+//QoS configuration
+//get configuration
+//scheduling configuration
+//ingress configuration
+//queue weight configuration
+//port configuration
+//port list
+//all ports
+qos get scheduling ingress queue-weight port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_QOS_SET_SCHEDULING_INGRESS_QUEUE_WEIGHT_PORT_PORTS_ALL_QUEUE_ID_WEIGHT
+//QoS configuration
+//set configuration
+//scheduling configuration
+//ingress configuration
+//queue weight configuration
+//port configuration
+//port list
+//all ports
+//queue id
+//queue weight. 0 is strict priority.
+qos set scheduling ingress queue-weight port ( <PORT_LIST:ports> | all ) <UINT:queue_id> <UINT:weight>
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_OUTER_TAG_SYSTEM_PRIORITY
+//QoS configuration
+//get configuration
+//default value configuration
+//outer-tag priority
+//system configuration
+//priority configuration
+qos get default-priority outer-tag system priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_SYSTEM_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//outer-tag priority
+//system configuration
+//priority configuration
+//priority
+qos set default-priority outer-tag system priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_OUTER_TAG_SYSTEM_CONFIG_SOURCE
+//QoS configuration
+//get configuration
+//default value configuration
+//outer-tag priority
+//system configuration
+//configured source
+qos get default-priority outer-tag system config-source
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_SYSTEM_CONFIG_SOURCE_EGRESS_INGRESS
+//QoS configuration
+//set configuration
+//default priority configuration
+//outer-tag priority
+//system configuration
+//configured source
+//egress direction
+//ingress direction
+qos set default-priority outer-tag system config-source ( egress | ingress )
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_OUTER_TAG_PORT_PORTS_ALL_SOURCE
+//QoS configuration
+//get configuration
+//remarking priority configuration
+//outer-tag priority
+//port configuration
+//port list
+//all ports
+//source
+qos get remarking outer-tag port ( <PORT_LIST:ports> | all ) source
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_PORT_PORTS_ALL_SOURCE_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//outer-tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//internal priority
+qos set remarking outer-tag port ( <PORT_LIST:ports> | all ) source internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_OUTER_TAG_PORT_PORTS_ALL_SOURCE_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//outer-tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//outer tag priority
+qos set remarking outer-tag port ( <PORT_LIST:ports> | all ) source outer-priority
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_PORT_PORTS_ALL_SOURCE
+//QoS configuration
+//get configuration
+//default inner tag priority
+//inner tag priority
+//port configuration
+//port list
+//all ports
+//default priority source configuration
+qos get default-priority inner-tag port ( <PORT_LIST:ports> | all ) source
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE
+//QoS configuration
+//get configuration
+//default inner tag priority
+//inner tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//default priority source configuration
+qos get default-priority inner-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_PORT_PORTS_ALL_PRIORITY
+//QoS configuration
+//get configuration
+//default inner tag priority
+//inner tag priority
+//port configuration
+//port list
+//all ports
+//default inner-priority configuration
+qos get default-priority inner-tag port ( <PORT_LIST:ports> | all ) priority
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_DEV_DEVID_PORT_PORTS_ALL_PRIORITY
+//QoS configuration
+//get configuration
+//default inner tag priority
+//inner tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//default inner-priority configuration
+qos get default-priority inner-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) priority
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_SOURCE
+//QoS configuration
+//get configuration
+//default priority configuration
+//inner-tag priority
+//system
+//source
+qos get default-priority inner-tag system source
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_SOURCE_PORT_BASED_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//inner-tag priority
+//system
+//priority source configuration
+//port-based inner tag priority
+qos set default-priority inner-tag system source port-based-inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_SOURCE_PORT_BASED_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//inner-tag priority
+//system
+//priority source configuration
+//port-based priority
+qos set default-priority inner-tag system source port-based-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_SOURCE_DEFAULT_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//inner-tag priority
+//system
+//priority source configuration
+//default inner tag priority
+qos set default-priority inner-tag system source default-inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_SOURCE_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//default priority configuration
+//inner-tag priority
+//system
+//priority source configuration
+//internal priority
+qos set default-priority inner-tag system source internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_SOURCE_COPY_PORT_BASED_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from port-based outer priority
+qos set default-priority outer-tag port ( <PORT_LIST:ports> | all ) source copy-port-based-outer-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_SOURCE_COPY_PORT_BASED_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from port-based priority
+qos set default-priority outer-tag port ( <PORT_LIST:ports> | all ) source copy-port-based-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_SOURCE_COPY_DEFAULT_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from default outer priority
+qos set default-priority outer-tag port ( <PORT_LIST:ports> | all ) source copy-default-outer-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE_COPY_DEFAULT_OUTER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from default outer priority
+qos set default-priority outer-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source copy-default-outer-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_PORT_PORTS_ALL_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//port configuration
+//port list
+//all ports
+//default outer-priority configuration
+//priority
+qos set default-priority outer-tag port ( <PORT_LIST:ports> | all ) priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_OUTER_TAG_DEV_DEVID_PORT_PORTS_ALL_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//outer tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//default outer-priority configuration
+//priority
+qos set default-priority outer-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_GET_INVALID_DSCP_VALUE
+//QoS configuration
+//get configuration
+//invalid-dscp configuration
+//value
+qos get invalid-dscp value
+#endif
+
+#ifdef CMD_QOS_SET_INVALID_DSCP_VALUE_DSCP
+//QoS configuration
+//set configuration
+//invalid-dscp configuration
+//value
+//dscp value
+qos set invalid-dscp value <UINT:dscp>
+#endif
+
+#ifdef CMD_QOS_GET_INVALID_DSCP_MASK
+//QoS configuration
+//get configuration
+//invalid-dscp configuration
+//mask
+qos get invalid-dscp mask
+#endif
+
+#ifdef CMD_QOS_SET_INVALID_DSCP_MASK_DSCP_MASK
+//QoS configuration
+//get configuration
+//invalid-dscp configuration
+//mask
+//dscp mask
+qos set invalid-dscp mask <UINT:dscp_mask>
+#endif
+
+#ifdef CMD_QOS_GET_INVALID_DSCP_PORT_PORTS_ALL_STATE
+//QoS configuration
+//get configuration
+//invalid-dscp configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+qos get invalid-dscp port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_QOS_SET_INVALID_DSCP_PORT_PORTS_ALL_STATE_ENABLE_DISABLE
+//QoS configuration
+//set configuration
+//invalid-dscp configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//enable function
+//disable function
+qos set invalid-dscp port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+#endif
+
+#ifdef CMD_QOS_GET_INVALID_DSCP_STATE
+//QoS configuration
+//get configuration
+//invalid-dscp configuration
+//state configuration
+qos get invalid-dscp state
+#endif
+
+#ifdef CMD_QOS_SET_INVALID_DSCP_STATE_ENABLE_DISABLE
+//QoS configuration
+//set configuration
+//invalid-dscp configuration
+//state configuration
+//enable function
+//disable function
+qos set invalid-dscp state ( enable | disable )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_PORT_PRIORITY_REMAP_PORT_PORTS_ALL_TABLE_SELECTOR
+//QoS configuration
+//get configuration
+//priority remapping
+//port-base priority remapping configuraion
+//port configuration
+//port list
+//all ports
+//remapping table selection
+qos get remapping port-priority-remap port ( <PORT_LIST:ports> | all ) table-selector
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PORT_PRIORITY_REMAP_PORT_PORTS_ALL_TABLE_SELECTOR_INNER_PRIORITY_REMAP_TABLE_OUTER_PRIORITY_REMAP_TABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//port-base priority remapping configuraion
+//port configuration
+//port list
+//all ports
+//remapping table selection
+//inner-tag DEI0 priority remapping table
+//outer-tag DEI0 priority remapping table
+qos set remapping port-priority-remap port ( <PORT_LIST:ports> | all ) table-selector ( inner-priority-remap-table | outer-priority-remap-table )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_PORT_PRIORITY_REMAP_SYSTEM_STATE
+//QoS configuration
+//get configuration
+//priority remapping
+//port-base priority remapping configuraion
+//system configuration
+//state configuration
+qos get remapping port-priority-remap system state
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PORT_PRIORITY_REMAP_SYSTEM_STATE_DISABLE_ENABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//port-base priority remapping configuraion
+//system configuration
+//state configuration
+//disable function
+//enable function
+qos set remapping port-priority-remap system state ( disable | enable )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_MAC_BASED_VLAN_PRIORITY_REMAP_SYSTEM_STATE
+//QoS configuration
+//get configuration
+//priority remapping
+//MAC-based-VLAN priority remapping configuraion
+//system configuration
+//state configuration
+qos get remapping mac-based-vlan-priority-remap system state
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_MAC_BASED_VLAN_PRIORITY_REMAP_SYSTEM_STATE_DISABLE_ENABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//MAC-based-VLAN priority remapping configuraion
+//system configuration
+//state configuration
+//disable function
+//enable function
+qos set remapping mac-based-vlan-priority-remap system state ( disable | enable )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_PROTOCOL_BASED_VLAN_PRIORITY_REMAP_SYSTEM_STATE
+//QoS configuration
+//get configuration
+//priority remapping
+//protocol-based-VLAN priority remapping configuration
+//system configuration
+//state configuration
+qos get remapping protocol-based-vlan-priority-remap system state
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PROTOCOL_BASED_VLAN_PRIORITY_REMAP_SYSTEM_STATE_DISABLE_ENABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//protocol-based-VLAN priority remapping configuration
+//system configuration
+//state configuration
+//disable function
+//enable function
+qos set remapping protocol-based-vlan-priority-remap system state ( disable | enable )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_PORT_PRIORITY_REMAP_SYSTEM_TABLE_SELECTOR
+//QoS configuration
+//get configuration
+//priority remapping
+//port-base priority remapping configuraion
+//system configuration
+//remapping table selection
+qos get remapping port-priority-remap system table-selector
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_PORT_PRIORITY_REMAP_SYSTEM_TABLE_SELECTOR_INNER_PRIORITY_DEI0_REMAP_TABLE_OUTER_PRIORITY_DEI0_REMAP_TABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//port-base priority remapping configuraion
+//system configuration
+//remapping table selection
+//inner-tag DEI0 priority remapping table
+//outer-tag DEI0 priority remapping table
+qos set remapping port-priority-remap system table-selector ( inner-priority-dei0-remap-table | outer-priority-dei0-remap-table )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_INNER_PORTBASE_PRIORITY_STATE
+//QoS configuration
+//get configuration
+//priority remapping
+//inner-portbase-priority remapping
+//state configuration
+qos get remapping inner-portbase-priority state
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_INNER_PORTBASE_PRIORITY_STATE_ENABLE_DISABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//inner-portBase-priority remapping
+//state configuration
+//enable function
+//disable function
+qos set remapping inner-portbase-priority state ( enable | disable )
+#endif
+
+#ifdef CMD_QOS_GET_REMAPPING_OUTER_PORTBASE_PRIORITY_STATE
+//QoS configuration
+//get configuration
+//priority remapping
+//outer-portbase-priority remapping
+//state configuration
+qos get remapping outer-portbase-priority state
+#endif
+
+#ifdef CMD_QOS_SET_REMAPPING_OUTER_PORTBASE_PRIORITY_STATE_ENABLE_DISABLE
+//QoS configuration
+//set configuration
+//priority remapping
+//outer-portBase-priority remapping
+//state configuration
+//enable function
+//disable function
+qos set remapping outer-portbase-priority state ( enable | disable )
+#endif
+
+#ifdef CMD_QOS_GET_SCHEDULING_EGRESS_STRICT_PRIORITY_PORT_PORTS_ALL_QUEUE_ID_QID_STATE
+//QoS configuration
+//get configuration
+//scheduling configuration
+//egress configuration
+//queue strict-priority configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state
+qos get scheduling egress strict-priority port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> state
+#endif
+
+#ifdef CMD_QOS_SET_SCHEDULING_EGRESS_STRICT_PRIORITY_PORT_PORTS_ALL_QUEUE_ID_QID_STATE_DISABLE_ENABLE
+//QoS configuration
+//set configuration
+//scheduling configuration
+//egress configuration
+//queue strict-priority configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue id
+//state
+//enable function
+//disable function
+qos set scheduling egress strict-priority port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> state ( disable | enable )
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_PORT_PORTS_ALL_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//inner tag priority
+//port configuration
+//port list
+//all ports
+//default inner-priority configuration
+//priority
+qos set default-priority inner-tag port ( <PORT_LIST:ports> | all ) priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_DEV_DEVID_PORT_PORTS_ALL_PRIORITY_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//inner tag priority
+//device  configuration
+//device
+//port configuration
+//port list
+//all ports
+//default inner-priority configuration
+//priority
+qos set default-priority inner-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) priority <UINT:priority>
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_PORT_PORTS_ALL_SOURCE_COPY_DEFAULT_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//inner tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from default inner priority
+qos set default-priority inner-tag port ( <PORT_LIST:ports> | all ) source copy-default-inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE_COPY_DEFAULT_INNER_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//inner tag priority
+//device configuration
+//device id
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from default inner priority
+qos set default-priority inner-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source copy-default-inner-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_PORT_PORTS_ALL_SOURCE_COPY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//inner tag priority
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from internal priority
+qos set default-priority inner-tag port ( <PORT_LIST:ports> | all ) source copy-internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_DEV_DEVID_PORT_PORTS_ALL_SOURCE_COPY_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//default outer tag priority
+//inner tag priority
+//device configuration
+//device
+//port configuration
+//port list
+//all ports
+//priority source configuration
+//copy from internal priority
+qos set default-priority inner-tag dev <UINT:devID> port ( <PORT_LIST:ports> | all ) source copy-internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_CONFIG_SOURCE_EGRESS_INGRESS
+//QoS configuration
+//set configuration
+//default priority configuration
+//inner-tag priority
+//system configuration
+//configure source
+//egress port
+//ingress port
+qos set default-priority inner-tag system config-source ( egress | ingress )
+#endif
+
+#ifdef CMD_QOS_GET_DEFAULT_PRIORITY_INNER_TAG_SYSTEM_CONFIG_SOURCE
+//QoS configuration
+//get configuration
+//default priority configuration
+//inner-tag priority
+//system configuration
+//configure source
+qos get default-priority inner-tag system config-source
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_DROP_PRECEDENCE_PRECEDENCE_INTERNAL_PRIORITY_PRIORITY_REMARK_DSCP_REMARK_DSCP
+//QoS configuration
+//set configuration
+//remarking configuration
+//dscp configuration
+//system configuration
+//drop precedence configuration
+//drop precedence
+//internal priority configuration
+//internal priority
+//remark dscp configuration
+//remark dscp value
+qos set remarking dscp system drop-precedence <UINT:precedence> internal-priority <UINT:priority> remark-dscp <UINT:remark_dscp>
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DSCP_SYSTEM_SOURCE_DROP_PRECEDENCE_AND_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//remarking configuration
+//dscp configuration
+//system configuration
+//source configuration
+//drop precedence and internal priority
+qos set remarking dscp system source drop-precedence-and-internal-priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DSCP_SYSTEM_DROP_PRECEDENCE_AND_INTERNAL_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//dscp configuration
+//system configuration
+//drop precedence and internal priority
+qos get remarking dscp system drop-precedence-and-internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DEI_SYSTEM_INTERNAL_PRIORITY_PRIORITY_DEI_DEI
+//QoS configuration
+//set configuration
+//remarking configuration
+//dei configuration
+//system configuration
+//internal priority configuration
+//internal priority
+//dei configuration
+//dei
+qos set remarking dei system internal_priority <UINT:priority> dei <UINT:dei>
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DEI_SYSTEM_INTERNAL_PRIORITY
+//QoS configuration
+//get configuration
+//remarking configuration
+//dei configuration
+//system configuration
+//internal priority configuration
+qos get remarking dei system internal_priority
+#endif
+
+#ifdef CMD_QOS_GET_REMARKING_DEI_SYSTEM_SOURCE
+//QoS configuration
+//get configuration
+//remarking configuration
+//dei configuration
+//system configuration
+//source
+qos get remarking dei system source
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DEI_SYSTEM_SOURCE_INTERNAL_PRIORITY
+//QoS configuration
+//set configuration
+//remarking configuration
+//dei configuration
+//system configuration
+//source
+//internal priority
+qos set remarking dei system source internal-priority
+#endif
+
+#ifdef CMD_QOS_SET_REMARKING_DEI_SYSTEM_SOURCE_DROP_PRECEDENCE
+//QoS configuration
+//set configuration
+//remarking configuration
+//dei configuration
+//system configuration
+//source
+//drop precedence
+qos set remarking dei system source drop-precedence
+#endif
+
+#ifdef CMD_QOS_GET_CPUQ_TO_STACKQ
+//QoS configuration
+//get configuration
+//cpu queue to stacking queue mapping
+qos get cpu-queue-to-stack-queue
+#endif
+
+#ifdef CMD_QOS_SET_CPUQ_TO_STACKQ_CPU_QUEUE_CPU_QID_QUEUE_ID_STK_QID
+//QoS configuration
+//set configuration
+//cpu queue to stacking queue mapping
+//cpu queue
+//queue id <0-31>
+//stacking queue
+//queue id <0-11>
+qos set cpu-queue-to-stack-queue cpu-queue-id <UINT:cpu_qid> queue-id <UINT:stack_qid>
+#endif
+
+#ifdef CMD_QOS_GET_CPUQ_TO_NORMALQ
+//QoS configuration
+//get configuration
+//cpu queue to normal queue mapping
+qos get cpu-queue-to-normal-queue
+#endif
+
+#ifdef CMD_QOS_SET_CPUQ_TO_NORMALQ_CPU_QUEUE_CPU_QID_QUEUE_ID_NRML_QID
+//QoS configuration
+//set configuration
+//cpu queue to normal queue mapping
+//cpu queue
+//queue id <0-31>
+//normal queue
+//queue id <0-7>
+qos set cpu-queue-to-normal-queue cpu-queue-id <UINT:cpu_qid> queue-id <UINT:normal_qid>
+#endif
+
+#ifdef CMD_QOS_GET_RSPAN_PRI_MAPPING
+//QoS configuration
+//get configuration
+//rspan priority to internal priority mapping
+qos get rspan-pri-mapping
+#endif
+
+#ifdef CMD_QOS_SET_RSPAN_PRI_MAPPING_PRI_INT_PRI
+//QoS configuration
+//set configuration
+//rspan priority to internal priority mapping
+//rspan priority
+//internal priority
+qos set rspan-pri-mapping <UINT:pri> <UINT:int_pri>
+#endif
+

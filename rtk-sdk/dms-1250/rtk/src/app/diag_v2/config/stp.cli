@@ -1,0 +1,78 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for stp.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) stp commands.
+//
+
+#ifdef CMD_STP_CREATE_INSTANCE
+//stp configuration
+//create configuration
+//msti instance
+stp create <UINT:instance>
+#endif
+
+#ifdef CMD_STP_DESTROY_INSTANCE
+//stp configuration
+//destroy configuration
+//msti instance
+stp destroy <UINT:instance>
+#endif
+
+#ifdef CMD_STP_GET_INSTANCE
+//stp configuration
+//get configuration
+//msti instance
+stp get <UINT:instance>
+#endif
+
+#ifdef CMD_STP_DUMP_INSTANCE_PORT_ALL
+//stp configuration
+//dump configuration
+//msti instance
+//port list
+//all ports
+stp dump <UINT:instance> ( <PORT_LIST:port> | all )
+#endif
+
+#ifdef CMD_STP_SET_INSTANCE_PORT_ALL_BLOCKING_DISABLE_FORWARDING_LEARNING
+//stp configuration
+//create configuration
+//msti instance
+//port list
+//all ports
+//blocking state
+//disable state
+//forwarding state
+//learning stat
+stp set <UINT:instance> ( <PORT_LIST:port> | all )  ( blocking | disable | forwarding | learning )
+#endif
+
+#ifdef CMD_STP_GET_MSTI_MODE
+//stp configuration
+//get configuration
+//msti mode
+stp get msti_mode
+#endif
+
+#ifdef CMD_STP_SET_MSTI_MODE_NORMAL_CIST
+//stp configuration
+//set configuration
+//msti mode
+//From VLAN table
+//Always be 0
+stp set msti_mode ( normal | cist )
+#endif

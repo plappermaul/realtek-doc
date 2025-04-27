@@ -1,0 +1,417 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for port.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) diag commands.
+//
+
+#ifdef CMD_DIAG_GET_LOOPBACK_MAC_LOCAL_PORT_ALL_STATE
+//diag configuration
+//get configuration
+//loopback configuration
+//MAC configuration
+//local loopback
+//port list
+//all port
+//state configuration
+diag get loopback mac local ( <PORT_LIST:port> | all ) state
+#endif
+
+#ifdef CMD_DIAG_SET_CABLE_DOCTOR_PORT_PORTS_ALL_START
+//diag configuration
+//set configuration
+//cable doctor configuration
+//port configuration
+//port list
+//all ports
+//start test
+diag set cable-doctor port ( <PORT_LIST:ports> | all ) start
+#endif
+
+#ifdef CMD_DIAG_GET_CABLE_DOCTOR_PORT_PORTS_ALL
+//diag configuration
+//get configuration
+//RTCT configuration
+//ports
+//port list
+//all ports
+diag get cable-doctor port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_DIAG_DUMP_TABLE_INDEX
+//customer configuration
+//dump registers or tables in console
+//whole tables
+//table index, which used for table token
+diag dump table <UINT:index>
+#endif
+
+#ifdef CMD_DIAG_DUMP_TABLE_INDEX_START_INDEX_END_INDEX_DETAIL
+//diag configuration
+//dump registers or tables in console
+//dump table(s)
+//table index, which used for table token
+//table entry start index
+//table entry end index
+//display field information
+diag dump table <UINT:index> <UINT:start_index> <UINT:end_index> { detail }
+#endif
+
+#ifdef CMD_DIAG_DUMP_TABLE_INDEX_NAME
+//diag configuration
+//dump registers or tables in console
+//table
+//name
+//table index, which used for table token
+//all tables
+diag dump table name ( <UINT:index> | all )
+#endif
+
+#ifdef CMD_DIAG_DUMP_TABLE_NAME_START_INDEX_END_INDEX_RAW
+//diag configuration
+//dump registers or tables in console
+//dump table(s)
+//table name
+//table entry start index
+//table entry end index
+//no field parsing
+diag dump table <STRING:name> <UINT:start_index> <UINT:end_index> { raw }
+#endif
+
+#ifdef CMD_DIAG_LIST_TABLE_KEYWORD
+//diag configuration
+//dump registers or tables in console
+//dump table(s)
+//keyword for searching table
+diag list table <STRING:keyword>
+#endif
+
+#ifdef CMD_DIAG_MODIFY_TABLE_TBL_NAME_START_INDEX_END_INDEX_FIELD_VAL_PAIRS
+//diag configuration
+//modify table entries in console
+//modify table(s)
+//table name
+//table entry start index
+//table entry end index
+//field value pairs(ex:FA=1,FB=0x3)
+diag modify table <STRING:tbl_name> <UINT:start_index> <UINT:end_index> <STRING:field_val_pairs>
+#endif
+
+#ifdef CMD_DIAG_WRITE_TABLE_DATAREG_INDEX_ENTRY_INDEX_DATAREG_INDEX_VALUE
+//diag configuration
+//write a data reg of a table entry in console
+//write a data reg of a table entry
+//write a 32-bit data reg
+//table index, which used for table token
+//table entry index
+//32-bit data reg index
+//32-bits data (ex: 0x7a808080)
+diag write table datareg <UINT:index> <UINT:entry_index> <UINT:datareg_index> <UINT:value>
+#endif
+
+#ifdef CMD_DIAG_WRITE_TABLE_DATAREG_NAME_ENTRY_INDEX_DATAREG_INDEX_VALUE
+//diag configuration
+//write a data reg of a table entry in console
+//write a data reg of a table entry
+//write a 32-bit data reg
+//table name
+//table entry index
+//32-bit data reg index
+//32-bits data (ex: 0x7a808080)
+diag write table datareg <STRING:name> <UINT:entry_index> <UINT:datareg_index> <UINT:value>
+#endif
+
+
+#ifdef CMD_DIAG_WRITE_TABLE_ENTRY_INDEX_ENTRY_INDEX_VALUE
+//diag configuration
+//write a table entry in console
+//write a table entry
+//write a table entry
+//table index, which used for table token
+//table entry index
+//data (ex: 7a808080-80808080-00000010-00000000)
+diag write table entry <UINT:index> <UINT:entry_index> <STRING:value>
+#endif
+
+#ifdef CMD_DIAG_WRITE_TABLE_ENTRY_NAME_ENTRY_INDEX_VALUE
+//diag configuration
+//write a table entry in console
+//write a table entry
+//write a table entry
+//table name
+//table entry index
+//data (ex: 7a808080-80808080-00000010-00000000)
+diag write table entry <STRING:name> <UINT:entry_index> <STRING:value>
+#endif
+
+#ifdef CMD_DIAG_WHOLEDUMP_MAC_REG_PHY_REG_SOC_REG_TABLE_ALL
+//customer configuration
+//dump whole chip information in console
+//whole MAC realted registers
+//whole PHY standard registers
+//soc related registers
+//whole switch related tables
+//mac-reg, phy-reg, soc-reg and table
+diag wholedump ( mac-reg | phy-reg | soc-reg | table | all )
+#endif
+
+#ifdef CMD_DIAG_GET_PHY_PHYID_SERDES_LINK_STATUS
+//diag configuration
+//get configuration
+//PHY configuration
+//PHY index
+//serdes interface
+//link status information
+diag get phy <UINT:phyId> serdes link-status
+#endif
+
+#ifdef CMD_DIAG_GET_PHY_PHYID_SERDES_RX_SYM_ERR
+//diag configuration
+//get configuration
+//PHY configuration
+//PHY index
+//serdes interface
+//rx symbol error count
+diag get phy <UINT:phyId> serdes rx-sym-err
+#endif
+
+#ifdef CMD_DIAG_CLEAR_PHY_PHYID_SERDES_RX_SYM_ERR
+//diag configuration
+//clear configuration
+//PHY configuration
+//PHY index
+//serdes interface
+//rx symbol error count
+diag clear phy <UINT:phyId> serdes rx-sym-err
+#endif
+
+#ifdef CMD_DIAG_GET_PHY_PORT_PORTS_ALL_RX_CNT
+//diag configuration
+//get configuration
+//PHY configuration
+//port configuration
+//port list
+//all ports
+//rx count
+diag get phy port ( <PORT_LIST:ports> | all ) rx-cnt
+#endif
+
+#ifdef CMD_DIAG_CLEAR_PHY_PORT_PORTS_ALL_RX_CNT
+//diag configuration
+//clear configuration
+//PHY configuration
+//port configuration
+//port list
+//all ports
+//rx count
+diag clear phy port ( <PORT_LIST:ports> | all ) rx-cnt
+#endif
+
+#ifdef CMD_DIAG_SET_PHY_PORT_PORTS_ALL_RX_CNT_MAC_TX_PHY_RX
+//diag configuration
+//set configuration
+//PHY configuration
+//port configuration
+//port list
+//all ports
+//rx count configuration
+//from mac-tx
+//from phy-rx
+diag set phy port ( <PORT_LIST:ports> | all ) rx-cnt ( mac-tx | phy-rx )
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//sff-8431 test
+//port
+//port number
+//serdes
+//serdes index
+//pattern
+//init
+//Square 8180
+//PRBS 9
+//PRBS 31
+//disable
+diag set 8295r sff-8431-test port <UINT:port> serdes <UINT:sdsId> pattern ( init | square8180 | prbs9 | prbs31 | disable )
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//rx-calibration
+//parameter configuration
+//port
+//port number
+//DAC long cable calibration LEQ offset
+//offset value
+diag set 8295r rx-cali param-cfg port <UINT:port> dac-long-cable-offset <UINT:offset>
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//rx-calibration
+//parameter configuration
+//port
+//port number
+//serdes ID 0 or 1
+//Vth minimum
+//threshold
+//DFE tap0 init
+//value
+diag set 8295r rx-cali param-cfg port <UINT:port> <UINT:sdsId> vth-min <UINT:threshold> tap0_init <UINT:value>
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//rx-calibration
+//parameter configuration
+//port
+//port number
+//serdes ID 0 or 1
+//eq-hold
+//enable
+//disable
+//DFE Tap1-4 Training
+//enable
+//disable
+//DFE Auto Training
+//enable
+//disable
+diag set 8295r rx-cali param-cfg port <UINT:port> <UINT:sdsId> eq-hold ( enable | disable ) dfe-tap1-4 ( enable | disable ) dfe-auto ( enable | disable )
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//rx-calibration
+//parameter configuration
+//port
+//port number
+//serdes ID 0 or 1
+//rx-calibration. for s0 rx-calibration is depending on PCB trace.
+//enable
+//disable
+diag set 8295r rx-cali param-cfg port <UINT:port> <UINT:sdsId> rx-cali ( enable | disable )
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//get configuration
+//8295r
+//rx-calibration
+//parameter configuration
+//port
+//port number
+diag get 8295r rx-cali param-cfg port <UINT:port>
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//rx-calibration
+//port number
+//serdes ID
+//disable function
+//enable function
+diag set 8295r rx-cali <UINT:port> <UINT:sdsId> ( enable | disable )
+#endif
+
+#ifdef CONFIG_SDK_RTL8295R
+//diag configuration
+//set configuration
+//8295r
+//rx-calibration
+//port number
+//serdes ID
+//start rx-calibration process
+diag set 8295r rx-cali <UINT:port> <UINT:sdsId> start
+#endif
+
+
+#ifdef CONFIG_SDK_RTL8214QF
+//diag configuration
+//set configuration
+//8214qf
+//rx-calibration
+//parameter configuration
+//port (base port number of the PHY)
+//port number (base port number of the PHY)
+//serdes ID 0 or 1
+//Vth minimum
+//threshold
+//DFE tap0 init
+//value
+diag set 8214qf rx-cali param-cfg port <UINT:port> <UINT:sdsId> vth-min <UINT:threshold> tap0_init <UINT:value>
+#endif
+
+#ifdef CONFIG_SDK_RTL8214QF
+//diag configuration
+//set configuration
+//8214qf
+//rx-calibration
+//parameter configuration
+//port (base port number of the PHY)
+//port number (base port number of the PHY)
+//serdes ID 0 or 1
+//eq-hold
+//enable
+//disable
+//DFE Tap1-4 Training
+//enable
+//disable
+//DFE Auto Training
+//enable
+//disable
+diag set 8214qf rx-cali param-cfg port <UINT:port> <UINT:sdsId> eq-hold ( enable | disable ) dfe-tap1-4 ( enable | disable ) dfe-auto ( enable | disable )
+#endif
+
+#ifdef CONFIG_SDK_RTL8214QF
+//diag configuration
+//set configuration
+//8214qf
+//rx-calibration
+//parameter configuration
+//port (base port number of the PHY)
+//port number (base port number of the PHY)
+//serdes ID 0 or 1
+//rx-calibration. it is depending on PCB trace.
+//enable
+//disable
+diag set 8214qf rx-cali param-cfg port <UINT:port> <UINT:sdsId> rx-cali ( enable | disable )
+#endif
+
+#ifdef CONFIG_SDK_RTL8214QF
+//diag configuration
+//get configuration
+//8214qf
+//rx-calibration
+//parameter configuration
+//port (base port number of the PHY)
+//port number (base port number of the PHY)
+diag get 8214qf rx-cali param-cfg port <UINT:port>
+#endif
+
+

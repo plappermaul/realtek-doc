@@ -1,0 +1,526 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for switch
+//
+// Feature : The file includes the following module and sub-modules
+//           1) switch commands.
+//
+
+#ifdef CMD_SWITCH_GET_CHKSUM_ERR_TYPE_L2_PORT_PORTS_ALL_ACTION
+//switch configuration
+//get configuration
+//checksum error type
+//layer 2 checksum error
+//port configuration
+//port list
+//all ports
+//action configuration
+switch get chksum-err-type l2 port ( <PORT_LIST:ports> | all ) action
+#endif
+
+#ifdef CMD_SWITCH_GET_CRC_RECAL_PORT_PORTS_ALL_STATE
+//switch configuration
+//get configuration
+//CRC recalculation
+//port configuration
+//port list
+//all ports
+//state configuration
+switch get crc-recal port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_SWITCH_GET_DEV_CAPABILITIES
+//switch configuration
+//get configuration
+//dev capabilities
+switch get dev-capabilities
+#endif
+
+#ifdef CMD_SWITCH_GET_IPV4_ADDRESS
+//switch configuration
+//get configuration
+//system IPv4 address configuration
+switch get ipv4-address
+#endif
+
+#ifdef CMD_SWITCH_GET_MAC_ADDRESS
+//switch configuration
+//get configuration
+//system MAC address configuration
+switch get mac-address
+#endif
+
+#ifdef CMD_SWITCH_GET_OUI_00_00_00_STATE
+//switch configuration
+//get configuration
+//OUI(00-00-00) comparing configuration
+//state configuration
+switch get oui-00-00-00 state
+#endif
+
+#ifdef CMD_SWITCH_GET_CPU_MAX_PKT_LEN_RX_DIR_TX_DIR_LENGTH
+//switch configuration
+//get configuration
+//CPU port maximum packet length
+//Rx direction
+//Tx direction
+//length configuration
+switch get cpu-max-pkt-len ( rx-dir | tx-dir ) length
+#endif
+
+#ifdef CMD_SWITCH_GET_MAX_PKT_LEN_FE_GE_LENGTH
+//switch configuration
+//get configuration
+//max packet length
+//fast ethernet speed
+//giga speed
+//length configuration
+switch get max-pkt-len ( fe | ge ) length
+#endif
+
+#ifdef CMD_SWITCH_GET_MAX_PKT_LEN_PORT_PORTS_ALL_FE_GE_LENGTH
+//switch configuration
+//get configuration
+//max packet length
+//port configuration
+//port list
+//all ports
+//fast ethernet speed
+//giga speed
+//length configuration
+switch get max-pkt-len port ( <PORT_LIST:ports> | all ) ( fe | ge ) length
+#endif
+
+#ifdef CMD_SWITCH_GET_MAX_PKT_LEN_TAG_LENGTH_STATE
+//switch configuration
+//get configuration
+//max packet length
+//tag counting state configuration
+switch get max-pkt-len tag-length-state
+#endif
+
+#ifdef CMD_SWITCH_GET_MAX_PKT_LEN_PORT_PORTS_ALL_TAG_LENGTH_STATE
+//switch configuration
+//get configuration
+//max packet length
+//port configuration
+//port list
+//all ports
+//tag counting state configuration
+switch get max-pkt-len port ( <PORT_LIST:ports> | all )  tag-length-state
+#endif
+
+#ifdef CMD_SWITCH_GET_PROBE_INFORMATION
+//switch configuration
+//get configuration
+//probe information
+switch get probe-information
+#endif
+
+#ifdef CMD_SWITCH_GET_SDK_VERSION
+//switch configuration
+//get configuration
+//sdk version
+switch get sdk-version
+#endif
+
+#ifdef CMD_SWITCH_GET_SPECIAL_CONGEST_DRAIN_OUT_THRESHOLD
+//switch configuration
+//get configuration
+//special congest configuration
+//drain out threshold
+switch get special-congest drain-out-threshold
+#endif
+
+#ifdef CMD_SWITCH_SET_TC_ID_ID_STATE_ENABLE_DISABLE
+//switch configuration
+//set configuration
+//tc configuration
+//tc id
+//id configuraiton 0-4
+//state configuration
+//enable tc counter/timer
+//disable tc counter/timer
+switch set tc id <UINT:id> state ( enable | disable )
+#endif
+
+#ifdef CMD_SWITCH_SET_TC_ID_ID_MODE_TIMER_COUNTER
+//switch configuration
+//set configuration
+//tc configuration
+//tc id
+//id configuration 0-4
+//mode configuration
+//timer mode
+//counter mode
+switch set tc id <UINT:id> mode ( timer | counter )
+#endif
+
+#ifdef CMD_SWITCH_SET_TC_ID_ID_DIV_FACTOR_FACTOR
+//switch configuration
+//set configuration
+//tc configuration
+//tc id
+//id configuration 0-4
+//devide factor
+//factor configuration
+switch set tc id <UINT:id> div-factor <UINT:factor>
+#endif
+
+#ifdef CMD_SWITCH_SET_TC_ID_ID_INIT_VALUE_VALUE
+//switch configuration
+//set configuration
+//tc configuration
+//tc id
+//id configuration 0-4
+//init value
+//value configuration
+switch set tc id <UINT:id> init-value <UINT:value>
+#endif
+
+#ifdef CMD_SWITCH_GET_TC_ID_ID_COUNTER
+//switch configuration
+//get configuration
+//tc configuration
+//tc id
+//id configuration 0-4
+//counter value
+switch get tc id <UINT:id> counter
+#endif
+
+#ifdef CMD_SWITCH_GET_WATCHDOG_SCALE_BITS
+//switch configuration
+//get configuration
+//watchdog configuration
+//overflow scale bits configuration
+switch get watchdog scale-bits
+#endif
+
+#ifdef CMD_SWITCH_SET_WATCHDOG_PHASE_1_PHASE_2_THRESHOLD_THRESHOLD
+//switch configuration
+//set configuration
+//watchdog configuration
+//phase 1 configuration
+//phase 2 configuration
+//threshold phase configuration
+//threshold configuration
+switch set watchdog ( phase_1 | phase_2 ) threshold <UINT:threshold>
+#endif
+
+#ifdef CMD_SWITCH_GET_WATCHDOG_PHASE_1_PHASE_2_THRESHOLD
+//switch configuration
+//get configuration
+//watchdog configuration
+//phase configuration
+//threshold phase configuration
+//threshold configuration
+switch get watchdog ( phase_1 | phase_2 ) threshold
+#endif
+
+#ifdef CMD_SWITCH_KICK_WATCHDOG
+//switch configuration
+//kick configuration
+//watchdog configuration
+switch kick watchdog
+#endif
+
+#ifdef CMD_SWITCH_GET_WATCHDOG_STATE
+//switch configuration
+//get configuration
+//watchdog configuration
+//state configuration
+switch get watchdog state
+#endif
+
+#ifdef CMD_SWITCH_GET_PPPOE_IP_PARSE_STATE
+//switch configuration
+//get configuration
+//pppoe-IP-parse configuration
+//state configuration
+switch get pppoe-ip-parse state
+#endif
+
+#ifdef CMD_SWITCH_SET_CHKSUM_ERR_TYPE_L2_PORT_PORTS_ALL_ACTION_DROP_FORWARD
+//switch configuration
+//set configuration
+//checksum error type
+//layer 2 checksum error
+//port configuration
+//port list
+//all ports
+//action configuration
+//drop action
+//forward action
+switch set chksum-err-type l2 port ( <PORT_LIST:ports> | all ) action ( drop | forward )
+#endif
+
+#ifdef CMD_SWITCH_SET_CRC_RECAL_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//switch configuration
+//set configuration
+//CRC recalculation
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set crc-recal port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_SWITCH_SET_IPV4_ADDRESS_IP
+//switch configuration
+//set configuration
+//system IPv4 address configuration
+//IPv4 address
+switch set ipv4-address <IPV4ADDR:ip>
+#endif
+
+#ifdef CMD_SWITCH_SET_MAC_ADDRESS_MAC
+//switch configuration
+//set configuration
+//system MAC address configuration
+//MAC address
+switch set mac-address <MACADDR:mac>
+#endif
+
+#ifdef CMD_SWITCH_SET_OUI_00_00_00_STATE_DISABLE_ENABLE
+//switch configuration
+//set configuration
+//OUI(00-00-00) comparing configuration
+//state configuration
+//disable function
+//enable function
+switch set oui-00-00-00 state ( disable | enable )
+#endif
+
+#ifdef CMD_SWITCH_SET_CPU_MAX_PKT_LEN_RX_DIR_TX_DIR_LENGTH_LEN
+//switch configuration
+//set configuration
+//CPU port maximum packet length
+//Rx direction
+//Tx direction
+//length configuration
+//length in bytes
+switch set cpu-max-pkt-len ( rx-dir | tx-dir ) length <UINT:len>
+#endif
+
+#ifdef CMD_SWITCH_SET_MAX_PKT_LEN_FE_GE_LENGTH_LEN
+//switch configuration
+//set configuration
+//max packet length
+//fast ethernet speed
+//giga speed
+//length configuration
+//packet length
+switch set max-pkt-len ( fe | ge ) length <UINT:len>
+#endif
+
+#ifdef CMD_SWITCH_SET_MAX_PKT_LEN_PORT_PORTS_ALL_FE_GE_LENGTH_LEN
+//switch configuration
+//set configuration
+//max packet length
+//port configuration
+//port list
+//all ports
+//fast ethernet speed
+//giga speed
+//length configuration
+//packet length
+switch set max-pkt-len port ( <PORT_LIST:ports> | all ) ( fe | ge ) length <UINT:len>
+#endif
+
+#ifdef CMD_SWITCH_SET_MAX_PKT_LEN_TAG_LENGTH_STATE_EXCLUDE_INCLUDE
+//switch configuration
+//set configuration
+//max packet length
+//tag counting state configuration
+//exclude tag length
+//include tag length
+switch set max-pkt-len tag-length-state ( exclude | include )
+#endif
+
+#ifdef CMD_SWITCH_SET_MAX_PKT_LEN_PORT_PORTS_ALL_TAG_LENGTH_STATE_EXCLUDE_INCLUDE
+//switch configuration
+//set configuration
+//max packet length
+//port configuration
+//port list
+//all ports
+//tag counting state configuration
+//exclude tag length
+//include tag length
+switch set max-pkt-len port ( <PORT_LIST:ports> | all )  tag-length-state ( exclude | include )
+#endif
+
+#ifdef CMD_SWITCH_SET_SPECIAL_CONGEST_DRAIN_OUT_THRESHOLD_THRESHOLD
+//switch configuration
+//set configuration
+//special congest configuration
+//drain out threshold
+//threshold
+switch set special-congest drain-out-threshold <UINT:threshold>
+#endif
+
+#ifdef CMD_SWITCH_SET_WATCHDOG_SCALE_BITS_25_26_27_28
+//switch configuration
+//set configuration
+//watchdog configuration
+//overflow scale bits configuration
+//25-bits
+//26-bits
+//27-bits
+//28-bits
+switch set watchdog scale-bits ( 25 | 26 | 27 | 28 )
+#endif
+
+#ifdef CMD_SWITCH_SET_WATCHDOG_STATE_DISABLE_ENABLE
+//switch configuration
+//set configuration
+//watchdog configuration
+//state configuration
+//disable function
+//enable function
+switch set watchdog state ( disable | enable )
+#endif
+
+#ifdef CMD_SWITCH_GET_PKT2CPU_FORWARD_TRAP_FORMAT
+//switch configuration
+//get configuration
+//packet to cpu configuration
+//forward to CPU
+//trap to CPU
+//format configuration
+switch get pkt2cpu ( forward | trap ) format
+#endif
+
+#ifdef CMD_SWITCH_SET_PKT2CPU_FORWARD_TRAP_FORMAT_MODIFIED_ORIGINAL
+//switch configuration
+//set configuration
+//packet to cpu configuration
+//forward to CPU
+//trap to CPU
+//format configuration
+//with modified format
+//with original format
+switch set pkt2cpu ( forward | trap ) format ( modified | original )
+#endif
+
+#ifdef CMD_SWITCH_GET_PKT2CPU_VLAN_FORMAT
+//switch configuration
+//get configuration
+//packet to cpu configuration
+//VLAN tag configuration
+//format configuration
+switch get pkt2cpu vlan format
+#endif
+
+#ifdef CMD_SWITCH_SET_PKT2CPU_VLAN_FORMAT_MODIFIED_ORIGINAL
+//switch configuration
+//set configuration
+//packet to cpu configuration
+//VLAN tag configuration
+//format configuration
+//with modified format
+//with original format
+switch set pkt2cpu vlan format ( modified | original )
+#endif
+
+#ifdef CMD_SWITCH_GET_ETAGPKT2CPU_FORWARD_TRAP_FORMAT
+//switch configuration
+//get configuration
+//E-TAGed packet to cpu configuration
+//forward to CPU
+//trap to CPU
+//format configuration
+switch get etagpkt2cpu ( forward | trap ) format
+#endif
+
+#ifdef CMD_SWITCH_SET_ETAGPKT2CPU_FORWARD_TRAP_FORMAT_MODIFIED_ORIGINAL
+//switch configuration
+//set configuration
+//E-TAGed packet to cpu configuration
+//forward to CPU
+//trap to CPU
+//format configuration
+//with modified format
+//with original format
+switch set etagpkt2cpu ( forward | trap ) format ( modified | original )
+#endif
+
+#ifdef CMD_SWITCH_SET_PPPOE_IP_PARSE_STATE_DISABLE_ENABLE
+//switch configuration
+//set configuration
+//pppoe-IP-parse configuration
+//state configuration
+//disable function
+//enable function
+switch set pppoe-ip-parse state ( disable | enable )
+#endif
+
+#ifdef CMD_SWITCH_GET_CPU_PACKET_TRUNCATE_STATE
+//switch configuration
+//set configuration
+//CPU packet truncation configuration
+//state configuration
+switch get cpu-packet-truncate state
+#endif
+
+#ifdef CMD_SWITCH_SET_CPU_PACKET_TRUNCATE_STATE_DISABLE_ENABLE
+//switch configuration
+//set configuration
+//CPU packet truncation configuration
+//state configuration
+//disable function
+//enable function
+switch set cpu-packet-truncate state ( disable | enable )
+#endif
+
+#ifdef CMD_SWITCH_GET_CPU_PACKET_TRUNCATE_LEN
+//switch configuration
+//get configuration
+//CPU packet truncation configuration
+//packet length configuration
+switch get cpu-packet-truncate len
+#endif
+
+#ifdef CMD_SWITCH_SET_CPU_PACKET_TRUNCATE_LEN_LEN
+//switch configuration
+//set configuration
+//CPU packet truncation configuration
+//packet length configuration
+//length
+switch set cpu-packet-truncate len <UINT:len>
+#endif
+
+#ifdef CMD_SWITCH_GET_FLEXIBLE_TABLE_FORMAT
+//switch configuration
+//get configuration
+//flexible table
+//format configuration
+switch get flexible-table format
+#endif
+
+#ifdef CMD_SWITCH_SET_FLEXIBLE_TABLE_FORMAT_L2_TUNNEL_MPLS_IP_MAC_BINDING_ECID
+//switch configuration
+//set configuration
+//flexible table
+//format configuration
+//l2 tunnel
+//mpls
+//ip-mac binding table
+//ecid
+switch set flexible-table format ( l2-tunnel | mpls | ip-mac-binding | ecid )
+#endif
+

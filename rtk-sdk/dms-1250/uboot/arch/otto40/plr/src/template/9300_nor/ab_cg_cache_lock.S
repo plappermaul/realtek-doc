@@ -1,0 +1,1 @@
+platform/cg/cg_cache_lock.S

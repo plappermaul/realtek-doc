@@ -1,0 +1,7 @@
+div64.o: div64.c \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/linux/types.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/linux/config.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/linux/posix_types.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/linux/stddef.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/asm/posix_types.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/asm/types.h

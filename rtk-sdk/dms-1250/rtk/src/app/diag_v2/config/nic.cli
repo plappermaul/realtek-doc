@@ -1,0 +1,215 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 97102 $
+// $Date: 2019-05-22 18:51:00 +0800 (Wed, 22 May 2019) $
+//
+// Purpose : Define diag shell commands for NIC.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) NIC commands.
+//
+
+#ifdef CMD_NIC_SET_RX_STATE_DISABLE_ENABLE
+//NIC configuration
+//set configuration
+//receive packet
+//state configuration
+//disable function
+//enable function
+nic set rx state ( disable | enable )
+#endif
+
+#ifdef CMD_NIC_SET_RX_TX_TRACE_START_RAW_DATA_CPU_TAG
+//NIC configuration
+//set configuration
+//receive packet
+//transmit packet
+//trace packet flow
+//start trace
+//packet raw data
+//CPU tag information
+nic set ( rx | tx ) trace start { raw-data } { cpu-tag }
+#endif
+
+#ifdef CMD_NIC_SET_RX_TX_TRACE_STOP
+//NIC configuration
+//set configuration
+//receive packet
+//transmit packet
+//trace packet flow
+//stop trace
+nic set ( rx | tx ) trace stop
+#endif
+
+#ifdef CMD_NIC_DUMP_BUFFER_USAGE
+//NIC configuration
+//dump configuration
+//buffer usage
+//TX ring
+//RX ring
+nic dump buffer-usage ( tx | rx )
+#endif
+
+#ifdef CMD_NIC_DUMP_PKTHDR_MBUF_RAW_DATA
+//NIC configuration
+//dump configuration
+//packet and mbuf usage
+//display raw data
+nic dump pkthdr-mbuf { raw-data }
+#endif
+
+#ifdef CMD_NIC_DUMP_PKTHDR_MBUF_TX_RING_IDX_RAW_DATA
+//NIC configuration
+//dump configuration
+//packet and mbuf usage
+//transmit packet
+//ring index <0-1>
+//display raw data
+nic dump pkthdr-mbuf tx { <UINT:ring_idx> } { raw-data }
+#endif
+
+#ifdef CMD_NIC_DUMP_PKTHDR_MBUF_RX_RING_IDX_RAW_DATA
+//NIC configuration
+//dump configuration
+//packet and mbuf usage
+//receive packet
+//ring index <0-7>
+//display raw data
+nic dump pkthdr-mbuf rx { <UINT:ring_idx> } { raw-data }
+#endif
+
+#ifdef CMD_NIC_RESET_DUMP_COUNTER
+//NIC configuration
+//reset configuration
+//dump configuration
+//counter
+nic ( reset | dump ) counter
+#endif
+
+#ifdef CMD_NIC_GET
+//NIC configuration
+//get configuration
+nic get
+#endif
+
+#ifdef CMD_NIC_GET_RX_TX
+//NIC configuration
+//get configuration
+//receive packet
+//transmit packet
+nic get ( rx | tx )
+#endif
+
+#ifdef CMD_NIC_SET_TAG_MANUAL_TAG
+//NIC configuration
+//set configuration
+//specify CPU TX-tag
+//manual
+//content of TX-tag
+nic set tag manual <STRING:tag>
+#endif
+
+#ifdef CMD_NIC_SET_TAG_NONE
+//NIC configuration
+//set configuration
+//specify CPU TX-tag
+//none
+nic set tag none
+#endif
+
+#ifdef CMD_NIC_SET_TAG_AUTO_PORT_PORTS_ALL
+//NIC configuration
+//set configuration
+//specify CPU TX-tag
+//auto add CPU TX-tag
+//port
+//port list
+//all
+nic set tag auto port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_NIC_SET_TX_DATA_DATA_AUTO_LEN
+//NIC configuration
+//set configuration
+//specify packet TX data
+//content of TX data
+//auto
+//packet length
+nic set tx-data ( <STRING:data> | auto ) <UINT:len>
+#endif
+
+#ifdef CMD_NIC_SEND_PACKET_NUM_NUM
+//NIC configuration
+//send configuration
+//packet configuration
+//packet number
+//packet number
+nic send packet num  <UINT:num>
+#endif
+
+
+#ifdef CMD_NIC_SET_DEBUG_FLAG
+//NIC configuration
+//set configuration
+//debug
+//flag
+nic set debug <UINT:flag>
+#endif
+
+#ifdef CMD_NIC_SET_DEBUG_FLAG
+//NIC configuration
+//set configuration
+//debug
+//flag
+nic get debug flag
+#endif
+
+#ifdef CMD_NIC_SET_DEBUG_APP_LOOPBACK_MODE_STATE_DISABLE_ENABLE
+//NIC configuration
+//set configuration
+//debug
+//loopback-mode in user's callback example function
+//state configuration
+//disable function
+//enable function
+nic set debug app-loopback-mode state ( disable | enable )
+#endif
+
+#ifdef CMD_NIC_GET_DEBUG_APP_LOOPBACK_MODE_STATE
+//NIC configuration
+//get configuration
+//debug
+//loopback-mode in user's callback example function
+//state configuration
+nic get debug app-loopback-mode state
+#endif
+
+#ifdef CMD_NIC_GET_REG_REG16_REG8_ADDRESS
+//NIC configuration
+//get configuration
+//32 bit reg
+//16 bit reg
+//8 bit reg
+//address
+nic get ( reg | reg16 | reg8 ) <UINT:address>
+#endif
+
+#ifdef CMD_NIC_SET_REG_REG16_REG8_ADDRESS_VALUE
+//NIC configuration
+//set configuration
+//32 bit reg
+//16 bit reg
+//8 bit reg
+//address
+//value
+nic set ( reg | reg16 | reg8 ) <UINT:address>  <UINT:value>
+#endif

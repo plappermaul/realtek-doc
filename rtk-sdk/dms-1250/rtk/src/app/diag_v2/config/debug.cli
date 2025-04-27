@@ -1,0 +1,818 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) debug commands.
+//
+
+#ifdef CMD_DEBUG_GET_VERSION
+//debug configuration
+//get configuration
+//versions
+debug get version
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSA
+//debug configuration
+//dump configuration
+//header stamp after information
+debug dump hsa
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSA_OPENFLOW
+//debug configuration
+//dump configuration
+//header stamp after information
+//OpenFlow mode
+debug dump hsa openflow
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSB
+//debug configuration
+//dump configuration
+//header stamp before information
+debug dump hsb
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSB_OPENFLOW
+//debug configuration
+//dump configuration
+//header stamp before information
+//OpenFlow mode
+debug dump hsb openflow
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSM
+//debug configuration
+//dump configuration
+//header stamp middle information
+debug dump hsm
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSM_OPENFLOW
+//debug configuration
+//dump configuration
+//header stamp middle information
+//OpenFlow mode
+debug dump hsm openflow
+#endif
+
+#ifdef CMD_DEBUG_DUMP_HSM_INDEX
+//debug configuration
+//dump configuration
+//header stamp middle information
+//HSM index, <0-2>
+debug dump hsm <UINT:index>
+#endif
+
+#ifdef CMD_DEBUG_DUMP_PMI
+//debug configuration
+//dump configuration
+//packet modification information
+debug dump pmi
+#endif
+
+#ifdef CMD_DEBUG_DUMP_PPI_INDEX
+//debug configuration
+//dump configuration
+//packet process information
+//PPI index, <0-6>
+debug dump ppi <UINT:index>
+#endif
+
+#ifdef CMD_DEBUG_DUMP_MIB_COUNTER_DEBUG_INDEX
+//debug configuration
+//dump configuration
+//mib configuration
+//counter configuration
+//debug configuration
+//debug counter index
+debug dump mib counter debug <UINT:index>
+#endif
+
+#ifdef CMD_DEBUG_DUMP_MIB_COUNTER_DEBUG_ALL
+//debug configuration
+//dump configuration
+//mib configuration
+//counter configuration
+//debug counter configuration
+//all debug counter
+debug dump mib counter debug all
+#endif
+
+#ifdef CMD_DEBUG_GET_FLOWCTRL_USED_PAGE_CNT_EGRESS_INGRESS_PORT_PORTS_ALL
+//debug configuration
+//get configuration
+//flowctrl configuration
+//used page count information
+//egress configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+debug get flowctrl used-page-cnt ( egress | ingress ) port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_DEBUG_GET_FLOWCTRL_USED_PAGE_CNT_SYSTEM
+//debug configuration
+//get configuration
+//flowctrl configuration
+//used page count information
+//system configuration
+debug get flowctrl used-page-cnt system
+#endif
+
+#ifdef CMD_DEBUG_GET_FLOWCTRL_USED_PAGE_CNT_SYSTEM_INGRESS_QUEUE
+//debug configuration
+//get configuration
+//flowctrl configuration
+//used page count information
+//system configuration
+//ingress queue information
+debug get flowctrl used-page-cnt system ingress-queue
+#endif
+
+#ifdef CMD_DEBUG_GET_FLOWCTRL_USED_PAGE_CNT_QUEUE_BASED_PORT_PORTS_ALL
+//debug configuration
+//get configuration
+//flowctrl configuration
+//used page count information
+//queue-based
+//port configuration
+//port list
+//all ports
+debug get flowctrl used-page-cnt queue-based port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_DEBUG_GET_FLOWCTRL_USED_PAGE_CNT_REPLICATION_QUEUE
+//debug configuration
+//get configuration
+//flowctrl configuration
+//used page count information
+//Replication queue configuration
+debug get flowctrl used-page-cnt replication-queue
+#endif
+
+#ifdef CMD_DEBUG_GET_REPLICATION_QUEUE_STATUS
+//debug configuration
+//get configuration
+//Replication queue configuration
+//current status
+debug get replication-queue status
+#endif
+
+#ifdef CMD_DEBUG_GET_REPLICATION_STICK_FETCH_STATE
+//debug configuration
+//get configuration
+//Replication queue configuration
+//stuck function
+//fetch function
+//state configuration
+debug get replication-queue ( stick | fetch ) state
+#endif
+
+#ifdef CMD_DEBUG_RESET_FLOWCTRL_USED_PAGE_CNT_EGRESS_INGRESS_PORT_PORTS_ALL
+//debug configuration
+//reset configuration
+//flowctrl configuration
+//used page count information
+//egress configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+debug reset flowctrl used-page-cnt ( egress | ingress ) port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_DEBUG_GET_FLOWCTRL_USED_PAGE_CNT_EGRESS_INGRESS_PORT_PORTS_ALL_QUEUE
+//debug configuration
+//get configuration
+//flowctrl configuration
+//used page count information
+//egress configuration
+//ingress configuration
+//port configuration
+//port list
+//all ports
+//queue configuration
+debug get flowctrl used-page-cnt ( egress | ingress ) port ( <PORT_LIST:ports> | all ) queue
+#endif
+
+#ifdef CMD_DEBUG_RESET_FLOWCTRL_USED_PAGE_CNT_SYSTEM
+//debug configuration
+//reset configuration
+//flowctrl configuration
+//used page count information
+//system configuration
+debug reset flowctrl used-page-cnt system
+#endif
+
+#ifdef CMD_DEBUG_RESET_FLOWCTRL_USED_PAGE_CNT_REPLICATION_QUEUE
+//debug configuration
+//reset configuration
+//flowctrl configuration
+//used page count information
+//Replication queue
+debug reset flowctrl used-page-cnt replication-queue
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_GET_LOG
+//debug configuration
+//get configuration
+//log information
+debug get log
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_SET_LOG_STATE_DISABLE_ENABLE
+//debug configuration
+//set configuration
+//log information
+//state configuration
+//disable function
+//enable function
+debug set log state ( disable | enable )
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_SET_LOG_LEVEL_VALUE
+//debug configuration
+//set configuration
+//log information
+//level of log
+//level <0-8>
+debug set log level <UINT:value>
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_SET_LOG_LEVEL_MASK_BITMASK
+//debug configuration
+//set configuration
+//log information
+//mask of log
+//bit mask
+debug set log level-mask <UINT:bitmask>
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_SET_LOG_LEVEL_TYPE_LEVEL_LEVEL_MASK
+//debug configuration
+//set configuration
+//log information
+//configure type of level
+//configure by level
+//configure by level mask
+debug set log level-type ( level | level-mask )
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_SET_LOG_FORMAT_NORMAL_DETAIL
+//debug configuration
+//set configuration
+//log information
+//log format
+//normal display
+//detail display
+debug set log format ( normal | detail )
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DEBUG
+#ifdef CMD_DEBUG_SET_LOG_MODULE_BITMASK
+//debug configuration
+//set configuration
+//log information
+//component module
+//module mask HEX
+debug set log module <UINT64:bitmask>
+#endif
+#endif
+
+#ifdef CMD_DEBUG_SET_MEMORY_ADDRESS_VALUE
+//debug configuration
+//set configuration
+//memory configuration
+//register address
+//register value
+debug set memory <UINT:address> <UINT:value>
+#endif
+
+#ifdef CMD_DEBUG_GET_MEMORY_ADDRESS_WORDS
+//debug configuration
+//get configuration
+//memory register
+//register address
+//number of words
+debug get memory <UINT:address> { <UINT:words> }
+#endif
+
+#ifdef CMD_DEBUG_SET_REPLICATION_STICK_FETCH_STATE_DISABLE_ENABLE
+//debug configuration
+//set configuration
+//Replication queue configuration
+//stuck function
+//fetch function
+//state configuration
+//disable function
+//enable function
+debug set replication-queue ( stick | fetch ) state ( disable | enable )
+#endif
+
+#ifdef CMD_DEBUG_GET_TABLE_TABLE_IDX_ADDRESS
+//debug configuration
+//set configuration
+//table configuration
+//table index
+//entry address
+debug get table <UINT:table_idx> <UINT:address>
+#endif
+
+#ifdef CMD_DEBUG_GET_SW_WD
+//debug configuration
+//get configuration
+//switch watchdog
+debug get sw_wd
+#endif
+
+#ifdef CMD_DEBUG_SET_SW_WD_STATE_DISABLE_ENABLE
+//debug configuration
+//set configuration
+//switch watchdog
+//state configuration
+//disable processing
+//enable processing
+debug set sw_wd state ( disable | enable )
+#endif
+
+#ifdef CMD_DEBUG_GET_CHIP
+//debug configuration
+//get configuration
+//mac chip id
+debug get chip
+#endif
+
+#ifdef CMD_DEBUG_FLASHTEST_MTD_MTD_IDX
+//debug configuration
+//flashtest configuration
+//mtd configuration
+//mtd partition id
+debug flashtest mtd <UINT:mtd_idx>
+#endif
+
+#ifdef CMD_DEBUG_GET_MEMORY_ALLOCATED
+//debug configuration
+//get configuration
+//sdk or other memory information
+//allocated memory
+debug get memory allocated
+#endif
+
+
+#ifdef CMD_DEBUG_GET_MEMORY_AVAILABLE
+//debug configuration
+//get configuration
+//memory information
+//available memory from system
+debug get memory available
+#endif
+
+
+//debug configuration
+//dump configuration
+//8295r
+//eye parameter
+//Rigister operation
+//MAC ID for MDC/MDIO
+//s18431 configuration
+//daclong configuration
+//DAC type string. E.g. dac50cm, dac100cm, dac300cm, or dac500cm
+debug dump 8295r eye-param reg <UINT:mdx_macId> ( 8431 | daclong | <STRING:dac_type> )
+
+
+//diag configuration
+//set configuration
+//Serdes Converter operation
+//Register operation
+//MAC ID for MDC/MDIO
+//Register Address
+//Register Data
+diag set sc reg <UINT:mdx_macId> <UINT:reg_addr> <UINT:reg_data>
+
+//diag configuration
+//set configuration
+//Serdes Converter operation
+//Register operation
+//MAC ID for MDC/MDIO
+//Register Address
+diag get sc reg <UINT:mdx_macId> <UINT:reg_addr>
+
+//diag configuration
+//set configuration
+//Serdes Converter operation
+//Serdes operation
+//MAC ID for MDC/MDIO
+//SerDes index (0-2, 4-7)
+//PHY page
+//PHY register
+//Register Data
+diag set sc serdes <UINT:mdx_macId> <UINT:sds_idx> <UINT:page> <UINT:reg> <UINT:data>
+
+//diag configuration
+//set configuration
+//Serdes Converter operation
+//Serdes operation
+//MAC ID for MDC/MDIO
+//SerDes index (0-2, 4-7)
+//PHY page
+//PHY register
+diag get sc serdes <UINT:mdx_macId> <UINT:sds_idx> <UINT:page> <UINT:reg>
+
+//diag configuration
+//set configuration
+//Serdes Converter operation
+//Patch
+//PORT Id for chip MDC/MDIO access
+//MAC Id for chip MDC/MDIO access
+//(Optional) SerDes number, set to 0 if not used.
+//patch name
+diag set sc patch <UINT:port> <UINT:mdx_macId> <UINT:serdes> <STRING:name>
+
+//diag configuration
+//set configuration
+//Serdes Converter operation
+//Patch
+//debug
+//enable
+//disable
+diag set sc patch debug ( enable | disable )
+
+//diag configuration
+//set configuration
+//RTL8390
+//10G media
+//port
+//port list
+//all ports
+//Fiber 10G
+//Fiber 1G
+//None
+diag set 8390 10g-media port ( <PORT_LIST:ports> | all ) ( fiber10g | fiber1g | none )
+
+#ifdef CMD_SERDES_GET_SDSID_RXCALI_PARAM_CFG
+//serdes interface
+//get configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+serdes get <UINT:sdsId> rx-cali param-cfg
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_DAC_LONG_CABLE_OFFSET_OFFSET
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//DAC long cable calibration LEQ offset
+//offset value
+serdes set <UINT:sdsId> rx-cali param-cfg dac-long-cable-offset <UINT:offset>
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_OFFSET_OFFSET
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//calibration LEQ offset
+//offset value
+serdes set <UINT:sdsId> rx-cali param-cfg offset <UINT:offset>
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_VTH_MIN_THRESHOLD_TAP0_INIT_VALUE
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//Vth minimum
+//threshold
+//DFE tap0 init
+//value
+serdes set  <UINT:sdsId> rx-cali param-cfg vth-min <UINT:threshold> tap0-init <UINT:value>
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_EQ_HOLD_ENABLE_DISABLE_DFE_TAP1_4_ENABLE_DISABLE
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//eq-hold
+//enable
+//disable
+//DFE Tap1-4 Training
+//enable
+//disable
+serdes set <UINT:sdsId> rx-cali param-cfg eq-hold ( enable | disable ) dfe-tap1-4 ( enable | disable )
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_DFE_AUTO_ENABLE_DISABLE
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//DFE auto
+//enable
+//disable
+serdes set <UINT:sdsId> rx-cali param-cfg dfe-auto ( enable | disable )
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_LEQ_AUTO_ENABLE_DISABLE
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//LEQ auto
+//enable
+//disable
+serdes set <UINT:sdsId> rx-cali param-cfg leq-auto ( enable | disable )
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_PARAM_CFG_DFE_TAP1_4_ENABLE_DISABLE
+//serdes interface
+//set configuration
+//serdes index
+//rx-calibration
+//parameter configuration
+//DFE Tap1-4 Training
+//enable
+//disable
+serdes set <UINT:sdsId> rx-cali param-cfg dfe-tap1-4 ( enable | disable )
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_RXCALI_STATE
+//serdes interface
+//get configuration
+//serdes index
+//rx calibration
+//state configuration
+serdes get <UINT:sdsId> rx-cali state
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_STATE_DISABLE_ENABLE
+//serdes interface
+//set configuration
+//serdes index
+//rx calibration
+//state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> rx-cali state ( disable | enable )
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_RXCALI_STATUS
+//serdes interface
+//get configuration
+//serdes index
+//rx calibration
+//status
+serdes get <UINT:sdsId> rx-cali status
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_RXCALI_START
+//serdes interface
+//set configuration
+//serdes index
+//rx calibration
+//start function
+serdes set <UINT:sdsId> rx-cali start
+#endif
+
+#ifdef CMD_SERDES_SET_RX_CALI_DEBUG_ENABLE_DISABLE
+//serdes interface
+//set configuration
+//rx calibration
+//debug
+//enable
+//disable
+serdes set rx-cali debug ( enable | disable )
+#endif
+
+#ifdef CMD_DEBUG_GET_IMAGE_INFO
+//debug configuration
+//get configuration
+//runtime image
+//information
+debug get image info
+#endif
+
+
+
+//debug
+//phy
+//cmd_name
+//port
+//ports
+//none
+//param1
+//param2
+//param3
+//param4
+//param5
+debug phy <STRING:cmd_name> port ( <PORT_LIST:ports> | none ) { <UINT:param1> } { <UINT:param2> } { <UINT:param3> } { <UINT:param4> } { <UINT:param5> }
+
+//debug
+//set
+//phy
+//port
+//<UINT:port>
+//serdes-id
+//<UINT:sdsId>
+//rx-cali
+//start
+debug set phy port <UINT:port> serdes-id <UINT:sdsId> rx-cali start
+
+#ifdef CMD_DEBUG_TX_SCAN_TESTPORT_PEERPORT
+//debug
+//tx-scan
+//port num under test
+//peer port num
+//pre AMP
+//range and step (ex:3 or 3-10 or 3-10,2)
+//main AMP
+//range and step (ex: 13 or 10-13 or 0-10,2)
+//post AMP
+//range and step(ex: 0 or 1-2, 1-6,2)
+//cpu-tx
+//packet count value
+//packet length value
+//print log
+//run tx-scan in both two ports
+//do rx-calibration
+//manual leq number
+debug tx-scan <UINT:testPort> <UINT:peerPort> pre-amp <STRING:preAmp> main-amp <STRING:mainAmp> post-amp <STRING:postAmp> cpu-tx <UINT:pktn> <UINT:pktl> { verbose } { pair-scan } { rx-cali } { <UINT:leqValue> }
+#endif
+
+#ifdef CMD_DEBUG_TX_SCAN_TESTPORT_PEERPORT
+//debug
+//tx-scan
+//port num under test
+//peer port num
+//pre AMP
+//range and step (ex:3 or 3-10 or 3-10,2)
+//main AMP
+//range and step (ex: 13 or 10-13 or 0-10,2)
+//post AMP
+//range and step(ex: 0 or 1-2, 1-6,2)
+//serdes test mode
+//pattern square8
+//pattern prbs9
+//pattern prbs31
+//serdes test time
+//print log
+//run tx-scan in both two ports
+//do rx-calibration
+//manual leq number
+debug tx-scan <UINT:testPort> <UINT:peerPort> pre-amp <STRING:preAmp> main-amp <STRING:mainAmp> post-amp <STRING:postAmp> sds-test ( square8180 | prbs9 | prbs31 ) <UINT:sec> { verbose } { pair-scan } { rx-cali } { <UINT:leqValue> }
+#endif
+
+#ifdef CMD_DEBUG_TX_SCAN_TESTPORT_PEERPORT
+//debug
+//tx-scan
+//test port num
+//peer port num
+//pre AMP
+//range and step (ex:3 or 3-10 or 3-10,2)
+//main AMP
+//range and step (ex: 13 or 10-13 or 0-10,2)
+//post AMP
+//range and step(ex: 0 or 1-2, 1-6,2)
+//display eye info and leq value
+//frame number (should be 1-9)
+//print log
+//run tx-scan in both two ports
+//do rx-calibration
+//manual leq number
+debug tx-scan <UINT:testPort> <UINT:peerPort> pre-amp <STRING:preAmp> main-amp <STRING:mainAmp> post-amp <STRING:postAmp> eye-monitor <UINT:frameNum> { verbose } { pair-scan } { rx-cali } { <UINT:leqValue> }
+#endif
+
+#ifdef CMD_DEBUG_LINKMON_POLLING_STOP
+//debug
+//linkmon
+//polling
+//stop
+debug linkmon polling stop
+#endif
+
+#ifdef CMD_DEBUG_LINKMON_POLLING_RESUME
+//debug
+//linkmon
+//polling
+//resume
+debug linkmon polling resume
+#endif
+
+#ifdef CMD_DEBUG_PHY_DUMP_DSP
+//debug
+//dump
+//PHY
+//port configuration
+//port list
+//all ports
+//dump DPS information
+//dump count
+//count
+//item mask
+//bitmask
+debug dump phy port ( <PORT_LIST:ports> | all ) dsp cnt <UINT:count> mask <UINT64:bitmask>
+#endif
+
+#ifdef CMD_DEBUG_PHY_DUMP_COUPLING
+//debug
+//dump
+//PHY
+//port configuration
+//port list
+//all ports
+//dump coupling information
+//target channel
+debug dump phy port ( <PORT_LIST:ports> | all ) coupling { <UINT:channel> }
+#endif
+
+#ifdef CMD_DEBUG_BATCH
+//debug
+//batch tool
+//port configuration
+//port list
+//all ports
+debug batch port ( <PORT_LIST:ports> | all )
+
+//debug
+//batch tool
+//cmd string
+debug batch <STRING:cmd>
+
+//debug
+//batch tool
+//cmd string
+//param1
+debug batch <STRING:cmd> <UINT:param1>
+
+//debug
+//batch tool
+//cmd string
+//param1
+//param2
+debug batch <STRING:cmd> <UINT:param1> <UINT:param2>
+
+//debug
+//batch tool
+//cmd string
+//param1
+//param2
+//param3
+debug batch <STRING:cmd> <UINT:param1> <UINT:param2> <UINT:param3>
+
+//debug
+//batch tool
+//cmd string
+//param1
+//param2
+//param3
+//param4
+debug batch <STRING:cmd> <UINT:param1> <UINT:param2> <UINT:param3> <UINT:param4>
+
+//debug
+//batch tool
+//cmd string
+//param1
+//param2
+//param3
+//param4
+//param5
+debug batch <STRING:cmd> <UINT:param1> <UINT:param2> <UINT:param3> <UINT:param4> <UINT:param5>
+
+#endif
+

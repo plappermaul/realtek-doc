@@ -1,0 +1,77 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for EEE.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) EEE commands.
+//
+
+#ifdef CMD_EEE_GET_PORT_PORTS_ALL_STATE
+//EEE configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+eee get port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_EEE_SET_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//EEE configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+eee set port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_EEE_GET_PORT_PORTS_ALL_DIRECTION_INGRESS_EGRESS_POWER_STATE
+//EEE configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//direction configuration
+//ingress configuration
+//egress configuration
+//power state configuration
+eee get port ( <PORT_LIST:ports> | all ) direction ( ingress | egress ) power-state
+#endif
+
+#ifdef CMD_EEEP_GET_PORT_PORTS_ALL_STATE
+//EEEP configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+eeep get port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_EEEP_SET_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//EEEP configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+eeep set port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+

@@ -1,0 +1,10 @@
+memsize.o: memsize.c \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/config.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/config_cmd_defaults.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/config_defaults.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/configs/rtl9300.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/configs/autoconf.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/asm/arch/soc.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/board/Realtek/include/rtk_flash_common.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/asm/config.h \
+ /home/zhouquqing/Desktop/DMS-1250-SERIES-GPLSourceCode/boot/uboot_rtk_switch/u-boot-2011.12/include/configs/cameo/dlink_customer.h

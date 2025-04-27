@@ -1,0 +1,1 @@
+platform/spi_nand/spi_nand_util.c

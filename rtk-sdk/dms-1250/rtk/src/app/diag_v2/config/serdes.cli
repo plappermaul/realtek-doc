@@ -1,0 +1,283 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 27701 $
+// $Date: 2012-04-02 11:10:51 +0800 (Mon, 02 Apr 2012) $
+//
+// Purpose : Define diag shell commands for reg.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) serdes commands.
+//
+
+#ifdef CMD_SERDES_GET_ID_SDSID_PAGE_PAGE_REG_REG
+//serdes configuration
+//get configuration
+//serdes index
+//serdes index
+//page configuration
+//page address
+//register configuration
+//register address
+serdes get id <UINT:sdsId> page <UINT:page> reg <UINT:reg>
+#endif
+
+#ifdef CMD_SERDES_SET_ID_SDSID_PAGE_PAGE_REG_REG_DATA_DATA
+//serdes configuration
+//set configuration
+//serdes index
+//serdes index
+//page configuration
+//page address
+//register configuration
+//register address
+//data configuration
+//data value
+serdes set id <UINT:sdsId> page <UINT:page> reg <UINT:reg> data <UINT:data>
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_LINK_STATUS
+//serdes configuration
+//get configuration
+//serdes interface
+//link status information
+serdes get <UINT:sdsId> link-status
+#endif
+
+#ifdef CMD_SERDES_RESET_SDSID
+//serdes configuration
+//reset configuration
+//serdes interface
+serdes reset <UINT:sdsId>
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_RX_SYM_ERR
+//serdes configuration
+//get configuration
+//serdes interface
+//rx symbol error count
+serdes get <UINT:sdsId> rx-sym-err
+#endif
+
+#ifdef CMD_SERDES_CLEAR_SDSID_RX_SYM_ERR
+//serdes configuration
+//clear configuration
+//serdes interface
+//rx symbol error count
+serdes clear <UINT:sdsId> rx-sym-err
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_TESTMODE_CNT
+//serdes configuration
+//get configuration
+//serdes interface
+//test mode
+//counter
+serdes get <UINT:sdsId> testmode cnt
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_10G_SQUARE_STATE_DISABLE_ENABLE
+//serdes configuration
+//set configuration
+//serdes interface
+//10g square pattern test
+//state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> 10g-square state ( disable | enable )
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_10G_PRBS9_STATE_DISABLE_ENABLE
+//serdes configuration
+//set configuration
+//serdes interface
+//10g PRBS9 test
+//state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> 10g-prbs9 state ( disable | enable )
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_10G_PRBS31_STATE_DISABLE_ENABLE
+//serdes configuration
+//set configuration
+//serdes interface
+//10g PRBS31 test
+//state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> 10g-prbs31 state ( disable | enable )
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_LEQ_ADAPT
+//serdes configuration
+//set configuration
+//serdes interface
+//LEQ configuration
+//adapt
+serdes set <UINT:sdsId> leq adapt
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_LEQ
+//serdes configuration
+//get configuration
+//serdes interface
+//LEQ configuration
+serdes get <UINT:sdsId> leq
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_LEQ_MANUAL_ENABLE_DISABLE_VAL
+//serdes configuration
+//set configuration
+//serdes interface
+//LEQ configuration
+//manual configuration
+//disable function
+//enable function
+//LEQ value
+serdes set <UINT:sdsId> leq manual ( enable | disable ) { <UINT:val> }
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_XSG_NWAY_STATE_DISABLE_ENABLE
+//serdes configuration
+//set configuration
+//serdes interface
+//xsg n-way
+//state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> xsg-nway state ( disable | enable )
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_CMU_BAND
+//serdes configuration
+//get configuration
+//serdes interface
+//cmu band
+serdes get <UINT:sdsId> cmu-band
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_CMU_BAND_STATE_DISABLE_ENABLE_DATA_DATA
+//serdes configuration
+//set configuration
+//serdes interface
+//cmu band
+//state configuration
+//disable function
+//enable function
+//data configuration
+//data value
+serdes set <UINT:sdsId> cmu-band state ( disable | enable ) data <UINT:data>
+#endif
+
+#ifdef CMD_SERDES_EYE_MONITOR_SDSID_FRAMENUM
+//serdes configuration
+//eye-monitor configuration
+//serdes interface
+//frame number configuration
+serdes eye-monitor <UINT:sdsId> <UINT:frameNum>
+#endif
+
+#ifdef CMD_SERDES_EYE_MONITOR_INFO_SDSID_FRAMENUM
+//serdes configuration
+//eye-monitor configuration
+//information configuration
+//serdes interface
+//frame number configuration
+serdes eye-monitor info <UINT:sdsId> <UINT:frameNum>
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_PRE_STATE_DISABLE_ENABLE
+//serdes interface
+//set configuration
+//serdes index
+//eye parameter configuration
+//pre state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> eye-param pre-state ( disable | enable ) 
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_POST_STATE_DISABLE_ENABLE
+//serdes interface
+//set configuration
+//serdes index
+//eye parameter configuration
+//post state configuration
+//disable function
+//enable function
+serdes set <UINT:sdsId> eye-param post-state ( disable | enable ) 
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_PRE_AMP_PRE_AMP
+//serdes interface
+//set configuration
+//serdes index
+//eye parameter configuration
+//pre amp configuration
+//pre amp value
+serdes set <UINT:sdsId> eye-param pre-amp <UINT:pre_amp>
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_MAIN_AMP_MAIN_AMP
+//serdes interface
+//set configuration
+//serdes index
+//eye parameter configuration
+//main amp configuration
+//main amp value
+serdes set <UINT:sdsId> eye-param main-amp <UINT:main_amp>
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_POST_AMP_POST_AMP
+//serdes interface
+//set configuration
+//serdes index
+//eye parameter configuration
+//post amp configuration
+//post amp value
+serdes set <UINT:sdsId> eye-param post-amp <UINT:post_amp>
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_EYE_PARAM
+//serdes interface
+//get configuration
+//serdes index
+//eye parameter configuration
+serdes get <UINT:sdsId> eye-param 
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_INFO
+//serdes interface
+//get configuration
+//serdes index
+//serdes information
+serdes get <UINT:sdsId> info
+#endif
+
+#ifdef CMD_SERDES_GET_SDSID_LOOPBACK
+//serdes interface
+//get configuration
+//serdes index
+//loopback configuration
+serdes get <UINT:sdsId> loopback
+#endif
+
+#ifdef CMD_SERDES_SET_SDSID_LOOPBACK_DISABLE_ENABLE
+//serdes interface
+//set configuration
+//serdes index
+//loopback configuration
+//disable action
+//enable action
+serdes set <UINT:sdsId> loopback ( disable | enable )
+#endif
+

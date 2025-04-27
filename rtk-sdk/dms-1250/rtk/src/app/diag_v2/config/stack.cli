@@ -1,0 +1,197 @@
+//
+// Copyright (C) 2014 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 53040 $
+// $Date: 2014-11-14 10:57:03 +0800 (週五, 14 十一月 2014) $
+//
+// Purpose : Define diag shell commands for stack.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) stack commands.
+//
+
+
+#ifdef CMD_STACK_GET_PORT
+//stack configuration
+//get configuration
+//stacking ports
+stack get port
+#endif
+
+#ifdef CMD_STACK_SET_PORT_PORTS_NONE
+//stack configuration
+//set configuration
+//stacking ports
+//port list
+//none member
+stack set port ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_STACK_GET_DEVID
+//stack configuration
+//get configuration
+//stacking device ID of the switch
+stack get devID
+#endif
+
+#ifdef CMD_STACK_SET_DEVID_DEVID
+//stack configuration
+//set configuration
+//stacking device ID of the switch
+//device ID
+stack set devID <UINT:devID>
+#endif
+
+#ifdef CMD_STACK_GET_MASTER_DEVID
+//stack configuration
+//get configuration
+//stacking master device
+stack get master-devID
+#endif
+
+#ifdef CMD_STACK_SET_MASTER_DEVID_DEVID
+//stack configuration
+//set configuration
+//stacking master device
+//device ID
+stack set master-devID <UINT:devID>
+#endif
+
+#ifdef CMD_STACK_GET_LOOP_GUARD_STATE
+//stack configuration
+//get configuration
+//loop guard that drop the packets looping back to the switch
+//enable state configuration
+stack get loop-guard state
+#endif
+
+#ifdef CMD_STACK_SET_LOOP_GUARD_STATE_DISABLE_ENABLE
+//stack configuration
+//set configuration
+//loop guard that drop the packets looping back to the switch
+//enable state configuration
+//disable configuration
+//enable configuration
+stack set loop-guard state ( disable | enable )
+#endif
+
+#ifdef CMD_STACK_GET_DEV_PORT_MAP_DEV_DEVID_ALL
+//stack configuration
+//get configuration
+//device to port map
+//device configuration
+//device list
+//all device
+stack get dev-port-map dev ( <MASK_LIST:devID> | all )
+#endif
+
+#ifdef CMD_STACK_SET_DEV_PORT_MAP_DEV_DEVID_ALL_PORT_PORTS_NONE
+//stack configuration
+//set configuration
+//device to port map
+//device configuration
+//device list
+//all device
+//stacking port
+//port list
+//none member
+stack set dev-port-map dev ( <MASK_LIST:devID> | all ) port ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_STACK_GET_NON_UNICAST_BLOCK_SRC_DEV_DEVID_PORT
+//stack configuration
+//get configuration
+//non-unicast packets blocking configuration
+//source device
+//device id
+//port list
+stack get non-unicast-block src-dev <UINT:devID> port
+#endif
+
+#ifdef CMD_STACK_SET_NON_UNICAST_BLOCK_SRC_DEV_DEVID_PORT_PORTS_NONE
+//stack configuration
+//set configuration
+//non-unicast packets blocking configuration
+//source device
+//device id
+//port list
+//port list
+//none member
+stack set non-unicast-block src-dev <UINT:devID> port ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_STACK_SET_REMOTE_INTERRUPT_NOTIFICATION_TX_STATE_DISABLE_ENABLE
+//stack configuration
+//set configuration
+//remote interrupt notification
+//transmit frame
+//enable state configuration
+//disable configuration
+//enable configuration
+stack set remote-interrupt-notification tx state ( disable | enable )
+#endif
+
+#ifdef CMD_STACK_SET_REMOTE_INTERRUPT_NOTIFICATION_TX_TRIGGER
+//stack configuration
+//set configuration
+//remote interrupt notification
+//transmit frame
+//trigger an event
+stack set remote-interrupt-notification tx trigger
+#endif
+
+#ifdef CMD_STACK_SET_REMOTE_INTERRUPT_NOTIFICATION_RX_SEQUENCE_COMPARE_MARGIN_MARGIN
+//stack configuration
+//set configuration
+//remote interrupt notification
+//receive frame
+//sequence compare margin
+//margin value
+stack set remote-interrupt-notification rx sequence-compare-margin <UINT:margin>
+#endif
+
+#ifdef CMD_STACK_SET_REMOTE_INTERRUPT_NOTIFICATION_RX_FORCE_UPDATE_STATE_DISABLE_ENABLE
+//stack configuration
+//set configuration
+//remote interrupt notification
+//receive frame
+//force update state configuration
+//disable configuration
+//enable configuration
+stack set remote-interrupt-notification rx force-update-state ( disable | enable )
+#endif
+
+#ifdef CMD_STACK_GET_REMOTE_INTERRUPT_NOTIFICATION_INFO
+//stack configuration
+//get configuration
+//remote interrupt notification
+//information
+stack get remote-interrupt-notification info
+#endif
+
+#ifdef CMD_STACK_GET_SHRINK_STATE
+//stack configuration
+//get configuration
+//stacking shrink of the switch
+//enable state configuration
+stack get shrink state
+#endif
+
+#ifdef CMD_STACK_SET_SHRINK_STATE_DISABLE_ENABLE
+//stack configuration
+//set configuration
+//stacking shrink of the switch
+//state
+//disable configuration
+//enable configuration
+stack set shrink state ( disable | enable )
+#endif
+

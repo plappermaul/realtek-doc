@@ -1,0 +1,21 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtdrv Kernel Module
+#
+
+RTDRV_ALL_OBJ :=
+
+ifeq ($(CONFIG_SDK_APP_DIAG_EXT),y)
+	ifeq ($(CONFIG_SDK_RTL9310),y)
+		RTDRV_ALL_OBJ += ext/rtdrv_netfilter_ext_9310.o
+	else ifeq ($(CONFIG_SDK_RTL9300),y)
+		RTDRV_ALL_OBJ += ext/rtdrv_netfilter_ext_9300.o
+	else ifeq ($(CONFIG_SDK_RTL8390),y)
+		RTDRV_ALL_OBJ += ext/rtdrv_netfilter_ext_8390.o
+	else ifeq ($(CONFIG_SDK_RTL8380),y)
+		RTDRV_ALL_OBJ += ext/rtdrv_netfilter_ext_8380.o
+	endif
+endif
+
+
