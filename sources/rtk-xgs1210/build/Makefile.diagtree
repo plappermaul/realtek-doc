@@ -1,0 +1,135 @@
+# Copyright (C) 2015 Realtek Semiconductor Corp.
+#
+# Makefile for including all system configurations
+#
+
+#
+# This makefile is used for generate diag cparser_tree.c/h independently form source code build flow.
+# cparser_tree.c/h are the command tree source code of diag shell commands.
+# They are generated at source code build time before building diag executable.
+#
+
+
+
+DEF =
+ifneq ($(CONFIG_SDK_DRIVER_NIC),)
+DEF += -D CONFIG_SDK_DRIVER_NIC
+endif
+ifneq ($(CONFIG_SDK_DRIVER_I2C),)
+DEF += -D CONFIG_SDK_DRIVER_I2C
+endif
+ifneq ($(CONFIG_SDK_DRIVER_L2NTFY),)
+DEF += -D CONFIG_SDK_DRIVER_L2NTFY
+endif
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+DEF += -D CONFIG_SDK_DRIVER_TEST
+endif
+ifneq ($(CONFIG_SDK_RTL8231),)
+DEF += -D CONFIG_SDK_RTL8231
+endif
+ifneq ($(CONFIG_SDK_DRIVER_GPIO),)
+DEF += -D CONFIG_SDK_DRIVER_GPIO
+endif
+ifneq ($(CONFIG_SDK_DRIVER_SPI),)
+DEF += -D CONFIG_SDK_DRIVER_SPI
+endif
+ifneq ($(CONFIG_SDK_DEBUG),)
+DEF += -D CONFIG_SDK_DEBUG
+endif
+ifneq ($(CONFIG_SDK_UART1),)
+DEF += -D CONFIG_SDK_UART1
+endif
+ifneq ($(CONFIG_SDK_APP_DIAG_EXT),)
+DEF += -D CONFIG_SDK_APP_DIAG_EXT
+    ifeq ($(CONFIG_SDK_RTL9310),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL9310
+    else ifeq ($(CONFIG_SDK_RTL9300),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL9300
+    else ifeq ($(CONFIG_SDK_RTL8390),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL8390
+    else ifeq ($(CONFIG_SDK_RTL8380),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL8380
+    endif
+endif
+ifeq ($(CONFIG_SDK_RTL8390),y)
+DEF += -D CONFIG_SDK_RTL8390
+endif
+ifeq ($(CONFIG_SDK_RTL8380),y)
+DEF += -D CONFIG_SDK_RTL8380
+endif
+ifeq ($(CONFIG_SDK_RTL9310),y)
+DEF += -D CONFIG_SDK_RTL9310
+endif
+ifeq ($(CONFIG_SDK_RTL9300),y)
+DEF += -D CONFIG_SDK_RTL9300
+endif
+ifneq ($(CONFIG_SDK_RTL8295),)
+DEF += -D CONFIG_SDK_RTL8295
+endif
+ifneq ($(CONFIG_SDK_RTL8295R),)
+DEF += -D CONFIG_SDK_RTL8295R
+endif
+ifneq ($(CONFIG_SDK_RTL8214QF),)
+DEF += -D CONFIG_SDK_RTL8214QF
+endif
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+DEF += -D CONFIG_SDK_MODEL_MODE
+endif
+ifeq ($(CONFIG_SDK_FPGA_PLATFORM),y)
+DEF += -D CONFIG_SDK_FPGA_PLATFORM
+endif
+ifeq ($(CONFIG_SDK_EXTERNAL_CPU),y)
+DEF += -D CONFIG_SDK_EXTERNAL_CPU
+endif
+
+DIAGDIR  = $(SDK_ROOT_DIR)/src/app/diag_v2
+DIAG_SRC = $(DIAGDIR)/src
+SYS_INC = $(SDK_ROOT_DIR)/system/include
+
+CLI_SRC := $(shell find $(DIAG_CFG)/ -name *.cli)
+FLAG_HDR := $(shell find $(DIAG_INC)/flag/ -name *.h)
+
+CMD_TREE_DEP := \
+    $(SYS_INC)/common/sdk_autoconf.h \
+    $(SYS_INC)/common/rt_autoconf.h  \
+    $(CLI_SRC) \
+    $(FLAG_HDR)
+
+CMD_TREE_SRC := $(DIAG_SRC)/parser/cparser_tree.c
+CMD_TREE_OBJ := $(DIAG_SRC)/parser/cparser_tree.o
+CMD_TREE_HDR := $(DIAG_INC)/parser/cparser_tree.h
+
+SCRIPT_OPTS :=
+ifeq ($(CONFIG_SDK_SQUT_CMD_OPT),y)
+    SCRIPT_OPTS += -sdktest
+endif
+
+PHONY += diag-tree
+diag-tree: $(CMD_TREE_SRC)
+
+PHONY += diag-tree-clean
+diag-tree-clean:
+	-rm -f $(CMD_TREE_SRC)
+	-rm -f $(CMD_TREE_HDR)
+
+$(CMD_TREE_SRC): $(CMD_TREE_DEP)
+	@echo "Build cparser command tree."
+	@-rm -f $(CMD_TREE_SRC)
+	@-rm -f $(CMD_TREE_HDR)
+	@-rm -f $(CMD_TREE_OBJ)
+	@cd $(DIAGDIR)/config; \
+	chmod 755 ./script/mk_parser.py; \
+	./script/mk_parser.py $(DEF) $(SCRIPT_OPTS) diag_shell.cli -fd ../include/flag/ -f cmd_flag.h; \
+	echo "Prepare to copy cparser files"; \
+	if [ -f $(DIAGDIR)/config/cparser_tree.h ]; \
+	then \
+		mv $(DIAGDIR)/config/cparser_tree.h  $(CMD_TREE_HDR); \
+	fi
+	@if [ -f $(DIAGDIR)/config/cparser_tree.c ]; \
+	then \
+		mv $(DIAGDIR)/config/cparser_tree.c $(CMD_TREE_SRC); \
+	fi
+
+
+                    
+

@@ -1,0 +1,86 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# MIPS CPU
+#
+choice
+	prompt "Selected cpu core"
+	depends on SOC_CPU_MIPS
+
+config SOC_CPU_MIPS4K
+	bool "mips4k"
+	depends on SOC_SUPPORT_MIPS4K
+	select SOC_SUPPORT_WATCH
+
+config SOC_CPU_MIPS24K
+	bool "mips24k"
+	depends on SOC_SUPPORT_MIPS24K
+	select SOC_SUPPORT_WATCH
+	select SOC_SUPPORT_AR7
+
+config SOC_CPU_MIPS34K
+	bool "mips34k"
+	depends on SOC_SUPPORT_MIPS34K
+	select SOC_SUPPORT_WATCH
+	select SOC_SUPPORT_MT
+	select SOC_SUPPORT_AR7
+
+config SOC_CPU_MIPS74K
+	bool "mips74k"
+	depends on SOC_SUPPORT_MIPS74K
+	select SOC_SUPPORT_WATCH
+	select SOC_SUPPORT_AR7
+
+config SOC_CPU_MIPS1004K
+	bool "mips1004k"
+	depends on SOC_SUPPORT_MIPS1004K
+	select SOC_SUPPORT_SMP
+	select SOC_SUPPORT_WATCH
+	select SOC_SUPPORT_MT
+	select SOC_SUPPORT_AR7
+
+config SOC_CPU_MIPS1074K
+	bool "mips1074k"
+	depends on SOC_SUPPORT_MIPS1074K
+	select SOC_SUPPORT_SMP
+	select SOC_SUPPORT_WATCH
+	select SOC_SUPPORT_AR7
+
+endchoice
+
+#
+# MIPS features
+#
+config SOC_SUPPORT_MIPS4K
+	bool
+
+config SOC_SUPPORT_MIPS24K
+	bool
+
+config SOC_SUPPORT_MIPS34K
+	bool
+
+config SOC_SUPPORT_MIPS74K
+	bool
+
+config SOC_SUPPORT_MIPS1004K
+	bool
+
+config SOC_SUPPORT_MIPS1074K
+	bool
+
+config SOC_SUPPORT_MT
+	bool
+
+# vectored interrupt controller
+config SOC_SUPPORT_IRQ_VI
+	bool
+
+# external interrupt controller
+config SOC_SUPPORT_IRQ_EI
+	bool

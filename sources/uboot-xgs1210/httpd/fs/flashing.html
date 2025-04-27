@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>XGS1210-12</title>
+		<meta charset="UTF-8">
+		<style>
+*
+{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box
+}
+
+html,body,div
+{
+	margin:0;
+	padding:0;
+	border:0
+}
+
+ul
+{
+	list-style:none;
+	margin:0;
+	padding:0
+}
+
+header,footer
+{
+	display:block
+}
+
+html
+{
+	font-family:"Arial","HelveticaNeue","Helvetica";
+	font-size:16px;
+	height:100%
+}
+
+body
+{
+	height:100%;
+	font-weight:400;
+	margin:0;
+	padding:0;
+	background:#273d42
+}
+
+.top
+{
+	width:960px;
+	padding-bottom:1em;
+	margin:0 auto
+}
+
+.general
+{
+	float:right;
+	margin-top:26px
+}
+
+.bg
+{
+	background:#d4f4f6
+}
+
+.L_outline
+{
+	height:334px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-167px 0 0 -190px;
+}
+
+.L_outline ul li
+{
+	font-weight:700
+}
+
+.L_outline .title
+{
+	width:330px;
+	height:34px;
+	font-size:18px;
+	font-weight:700;
+	background:#B9D9D9;
+	padding:8px;
+	text-align:center
+}
+
+.fw_dn
+{
+	width:330px;
+	height:265px;
+	margin:0 0 0 46px;
+}
+
+.fw_dn ul
+{
+	margin:43px 20px;
+}
+
+.fw_dn ul li p
+{
+	margin-top:90px;
+	font-size:12px;
+	font-weight:400;
+	color:#303a3a;
+}
+
+#progress
+{
+	height:40px;
+	width:40px;
+	margin:30px auto;
+	-webkit-animation:r 1s infinite linear;
+	-moz-animation:r 1s infinite linear;
+	-o-animation:r 1s infinite linear;
+	animation:r 1s infinite linear;
+	border-left:5px solid #e17d33;
+	border-right:5px solid #d4f4f6;
+	border-bottom:5px solid #e17d33;
+	border-top:5px solid #e17d33;
+	border-radius:100%
+}
+
+@-webkit-keyframes r{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(359deg)}}
+@-moz-keyframes r{from{-moz-transform:rotate(0deg)}to{-moz-transform:rotate(359deg)}}
+@-o-keyframes r{from{-o-transform:rotate(0deg)}to{-o-transform:rotate(359deg)}}
+@keyframes r{from{transform:rotate(0deg)}to{transform:rotate(359deg)}}
+
+		</style>
+	</head>
+
+	<body>
+		<div class="L_outline">
+		<div class="fw_dn bg">
+		<div class="title">Upgrade in progress</div>
+		<div id="progress"></div>
+		<ul>
+		<li><p Style="margin-top: 10px">Image file was successfully uploaded and upgrade is in progress.<br>Please wait for automatic reboot of the switch...</p></li>
+		</ul>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1564 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 98180 $
+// $Date: 2019-06-25 16:10:41 +0800 (Tue, 25 Jun 2019) $
+//
+// Purpose : Define diag shell commands for port.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) port commands.
+//
+
+#ifdef CMD_PORT_DUMP_CPU_PORT
+//port configuration
+//dump configuration
+//CPU port id
+port dump cpu-port
+#endif
+
+#ifdef CMD_PORT_DUMP_ISOLATION
+//port configuration
+//dump configuration
+//traffic isolation configuration
+port dump isolation
+#endif
+
+#ifdef CMD_PORT_DUMP_PORT_PORTS_ALL
+//port configuration
+//dump configuration
+//port configuration
+//port list
+//all ports
+port dump port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_DUMP_ISOLATION_VLAN_BASED
+//port configuration
+//dump configuration
+//traffic isolation configuration
+//VLAN based configuration
+port dump isolation vlan-based
+#endif
+
+#ifdef CMD_PORT_GET_AUTO_NEGO_PORT_PORTS_ALL_ABILITY
+//port configuration
+//get configuration
+//auto negotiation configuration
+//port configuration
+//port list
+//all port
+//ability
+port get auto-nego port ( <PORT_LIST:ports> | all ) ability
+#endif
+
+#ifdef CMD_PORT_GET_AUTO_NEGO_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//auto negotiation configuration
+//port configuration
+//port list
+//all port
+//state
+port get auto-nego port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_BACK_PRESSURE_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//back pressure configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get back-pressure port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_COMBO_MODE_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//combo mode configuration
+//port configuration
+//port list
+//all port
+port get combo-mode port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_COMBO_FIBER_MODE_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//combo fiber mode configuration
+//port configuration
+//port list
+//all port
+port get combo-fiber-mode port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_GREEN_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//green configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get green port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_SRC_PORT_SRC_PORTS
+//port configuration
+//get configuration
+//traffic isolation configuration
+//source port configuration
+//source port list
+port get isolation src-port <PORT_LIST:src_ports>
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_DEV_ID_DEV_ID_SRC_PORT_SRC_PORTS
+//port configuration
+//get configuration
+//traffic isolation configuration
+//dev id configuration
+//dev id
+//source port configuration
+//source port list
+port get isolation dev-id <UINT:dev_id> src-port <PORT_LIST:src_ports>
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_VLAN_BASED_VID
+//port configuration
+//get configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN ID
+port get isolation vlan-based <UINT:vid>
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_VLAN_BASED_VLAN_SOURCE
+//port configuration
+//get configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN tag source configuration
+port get isolation vlan-based vlan-source
+#endif
+
+#ifdef CMD_PORT_GET_GIGA_LITE_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//giga lite configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get giga-lite port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_2PT5G_LITE_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//2.5G lite configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get 2pt5g-lite port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_PHY_FORCE_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//force mode configuration
+//port configuration
+//port list
+//all port
+port get phy-force port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_LINK_DOWN_POWER_SAVING_PORT_PORT_ALL_STATE
+//port configuration
+//get configuration
+//link down power saving configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get link-down-power-saving port ( <PORT_LIST:port> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_PHY_REG_PORT_PORTS_ALL_PAGE_PAGE_REGISTER_REGISTER
+//port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+//page configuration
+//page value
+//register configuration
+//register address
+port get phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_REG_PORT_PORTS_ALL_PAGE_PAGE_REGISTER_REGISTER_NUMBER_NUMBER
+//port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+//page configuration
+//page value
+//register configuration
+//register address
+//register number configuration
+//register numbers
+port get phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> number <UINT:number>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_EXT_REG_PORT_PORTS_ALL_MAIN_PAGE_MAINPAGE_EXT_PAGE_EXTPAGE_PARK_PAGE_PARKPAGE_REGISTER_REGISTER
+//port configuration
+//get configuration
+//phy register configuration with extension/park page config
+//port configuration
+//port list include CPU port
+//all port
+//main page configuration
+//main page
+//extension page configuration
+//extension page
+//parking page configuration
+//parking page
+//register configuration
+//register address
+port get phy-ext-reg port ( <PORT_LIST:ports> | all ) main-page <UINT:mainPage> ext-page <UINT:extPage> park-page <UINT:parkPage> register <UINT:register>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_EXT_REG_PORT_PORTS_ALL_MAIN_PAGE_MAINPAGE_EXT_PAGE_EXTPAGE_PARK_PAGE_PARKPAGE_REGISTER_REGISTER_NUMBER_NUMBER
+//port configuration
+//get configuration
+//phy register configuration with extension/park page config
+//port configuration
+//port list include CPU port
+//all port
+//main page configuration
+//main page
+//extension page configuration
+//extension page
+//parking page configuration
+//parking page
+//register configuration
+//register address
+//register number configuration
+//register numbers
+port get phy-ext-reg port ( <PORT_LIST:ports> | all ) main-page <UINT:mainPage> ext-page <UINT:extPage> park-page <UINT:parkPage> register <UINT:register> number <UINT:number>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_MMD_REG_PORT_PORTS_ALL_MMD_ADDR_MMD_ADDR_MMD_REG_MMD_REG
+//port configuration
+//get configuration
+//phy mmd register configuration
+//port configuration
+//port list include CPU port
+//all port
+//mmd device address configuration
+//mmd device address
+//mmd register address configuration
+//mmd register address
+port get phy-mmd-reg port ( <PORT_LIST:ports> | all ) mmd-addr <UINT:mmd_addr> mmd-reg <UINT:mmd_reg>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_MMD_REG_PORT_PORTS_ALL_MMD_ADDR_MMD_ADDR_MMD_REG_MMD_REG_NUMBER_NUMBER
+//port configuration
+//get configuration
+//phy mmd register configuration
+//port configuration
+//port list include CPU port
+//all port
+//mmd device address configuration
+//mmd device address
+//mmd register address configuration
+//mmd register address
+//mmd register number configuration
+//mmd register numbers
+port get phy-mmd-reg port ( <PORT_LIST:ports> | all ) mmd-addr <UINT:mmd_addr> mmd-reg <UINT:mmd_reg> number <UINT:number>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_REG_PORT_PORTS_ALL_PAGE_PAGE
+//port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+//page configuration
+//page value
+port get phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_REG_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+port get phy-reg port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_RX_TX_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//rx configuration
+//tx configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get ( rx | tx ) port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_STATE
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//state configuration
+port get port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_PORT_SET_AUTO_NEGO_PORT_PORTS_ALL_ABILITY_10H_10F_100H_100F_1000F_FLOW_CONTROL_ASY_FLOW_CONTROL
+//port configuration
+//set configuration
+//auto negotiation configuration
+//port configuration
+//port list
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//2.5G
+//5G
+//10GBase-T
+//flow control
+//asynchronism flow control
+port set auto-nego port ( <PORT_LIST:ports> | all ) ability { 10h } { 10f } { 100h } { 100f } { 1000f } { 2_5g } { 5g } { 10gbase-t } { flow-control } { asy-flow-control }
+#endif
+
+#ifdef CMD_PORT_SET_AUTO_NEGO_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//auto negotiation configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set auto-nego port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_BACK_PRESSURE_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//back pressure configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set back-pressure port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_COMBO_MODE_PORT_PORTS_ALL_COPPER_FORCE_FIBER_FORCE
+//port configuration
+//set configuration
+//combo mode configuration
+//port configuration
+//port list
+//all port
+//copper force mode
+//fiber force mode
+port set combo-mode port ( <PORT_LIST:ports> | all ) ( copper-force | fiber-force )
+#endif
+
+#ifdef CMD_PORT_SET_COMBO_FIBER_MODE_PORT_PORTS_ALL_FIBER_1000_FIBER_100_FIBER_AUTO
+//port configuration
+//set configuration
+//combo fiber mode configuration
+//port configuration
+//port list
+//all port
+//fiber 1000Base-X
+//fiber 100Base-FX
+//fiber 1000Base-X and 100Base-FX auto
+port set combo-fiber-mode port ( <PORT_LIST:ports> | all ) ( fiber-1000 | fiber-100 | fiber-auto )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_FORCE_PORT_PORTS_ALL_ABILITY_10H_10F_100H_100F_1000F
+//port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//2.5G
+//10G full
+port set phy-force port ( <PORT_LIST:ports> | all ) ability ( 10h | 10f | 100h | 100f | 1000f | 2_5g | 10000f )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_FORCE_PORT_PORTS_ALL_FLOW_CONTROL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list
+//all port
+//flow control
+//state configuration
+//disable function
+//enable function
+port set phy-force port ( <PORT_LIST:ports> | all ) flow-control state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_FORCE_PORT_PORTS_ALL_FLOW_CONTROL_TX_PAUSE_DISABLE_ENABLE_RX_PAUSE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list
+//all port
+//flow control
+//tx-pause state configuration
+//disable function
+//enable function
+//rx-pause state configuration
+//disable function
+//enable function
+port set phy-force port ( <PORT_LIST:ports> | all ) flow-control tx-pause ( disable | enable ) rx-pause ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_GREEN_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//green configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set green port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_SRC_PORT_SRC_PORTS_DST_PORT_DST_PORTS_ALL
+//port configuration
+//set configuration
+//traffic isolation configuration
+//source port configuration
+//sourece port list
+//destination port configuration
+//destination port list
+//all port
+port set isolation src-port <PORT_LIST:src_ports> dst-port ( <PORT_LIST:dst_ports> | all )
+#endif
+
+
+#ifdef CMD_PORT_ADD_ISOLATION_SRC_PORT_SRC_PORT_DST_PORT_DST_PORT
+//port configuration
+//add configuration
+//traffic isolation configuration
+//source port configuration
+//sourece port
+//destination port configuration
+//destination port
+port add isolation src-port <UINT:src_port> dst-port <UINT:dst_port>
+#endif
+
+#ifdef CMD_PORT_DEL_ISOLATION_SRC_PORT_SRC_PORT_DST_PORT_DST_PORT
+//port configuration
+//del configuration
+//traffic isolation configuration
+//source port configuration
+//sourece port
+//destination port configuration
+//destination port
+port del isolation src-port <UINT:src_port> dst-port <UINT:dst_port>
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_DEV_ID_DEV_ID_SRC_PORT_SRC_PORTS_DST_PORT_DST_PORTS_ALL
+//port configuration
+//set configuration
+//traffic isolation configuration
+//dev id configuration
+//dev id
+//source port configuration
+//sourece port list
+//destination port configuration
+//destination port list
+//all port
+port set isolation dev-id <UINT:dev_id> src-port <PORT_LIST:src_ports> dst-port ( <PORT_LIST:dst_ports> | all )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_PORT_BASED_RESTRICT_ROUTE_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//traffic isolation configuration
+//port-based configuration
+//restrict routed configuration
+//state
+//disable function
+//enable function
+port set isolation port-based restrict-route state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_LINK_DOWN_POWER_SAVING_PORT_PORT_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//link down power saving configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set link-down-power-saving port ( <PORT_LIST:port> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_VLAN_BASED_VID_TRUST_PORT_PORTS_NONE
+//port configuration
+//set configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN ID
+//trust port configuration
+//trust port list, other ports are forbidden ports
+//trust port list is none, the entry will be deleted
+port set isolation vlan-based <UINT:vid> trust-port ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_VLAN_BASED_ENTRY_INDEX_TRUST_PORT_PORTS_NONE
+//port configuration
+//set configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN Based entry
+//entry index configuration
+//trust port configuration
+//trust port list, other ports are forbidden ports
+//trust port list is none, the entry will be deleted
+port set isolation vlan-based entry <UINT:index> trust-port ( <PORT_LIST:ports> | none )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_VLAN_BASED_ENTRY_INDEX_VID_LOWER_UPPER_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN Based entry
+//entry index configuration
+//vid configuration
+//lowwer vid
+//upper vid
+//state configuration
+//disable function
+//enable function
+port set isolation vlan-based entry <UINT:index> vid <UINT:lower> <UINT:upper> state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_VLAN_BASED_VID_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN ID
+//state configuration
+//disable function
+//enable function
+port set isolation vlan-based <UINT:vid> state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_GIGA_LITE_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//giga lite configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set giga-lite port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_2PT5G_LITE_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//2.5G lite configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set 2pt5g-lite port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_VLAN_BASED_VLAN_SOURCE_INNER_OUTER_FORWARDING
+//port configuration
+//set configuration
+//traffic isolation configuration
+//VLAN based configuration
+//VLAN tag source configuration
+//inner VID
+//outer VID
+//forwarding VID
+port set isolation vlan-based vlan-source ( inner | outer | forwarding )
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_PORT_BASED_RESTRICT_ROUTE_STATE
+//port configuration
+//get configuration
+//traffic isolation configuration
+//port based configuration
+//restrict routed configuration
+//state
+port get isolation port-based restrict-route state
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_VLAN_BASED_EGRESS_PORT_PORTS_ALL_BYPASS_STATE
+//port configuration
+//get configuration
+//traffic isolation configuration
+//VLAN based configuration
+//egress direction
+//port configuration
+//port list
+//all port
+//bypass configuration
+//state
+port get isolation vlan-based egress port ( <PORT_LIST:ports> | all ) bypass state
+#endif
+
+#ifdef CMD_PORT_SET_ISOLATION_VLAN_BASED_EGRESS_PORT_PORTS_ALL_BYPASS_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//traffic isolation configuration
+//VLAN based configuration
+//egress direction
+//port configuration
+//port list
+//all port
+//bypass configuration
+//state
+//disable function
+//enable function
+port set isolation vlan-based egress port ( <PORT_LIST:ports> | all ) bypass state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_GET_ISOLATION_VLAN_BASED_ENTRY_INDEX
+//port configuration
+//get configuration
+//traffic isolation configuration
+//VLAN based configuration
+//Vlan based entry
+//entry index
+port get isolation vlan-based entry <UINT:index>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_REG_PORT_PORTS_ALL_PAGE_PAGE_REGISTER_REGISTER_DATA_DATA
+//port configuration
+//set configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+//page configuration
+//page address
+//register configuration
+//register address
+//data configuration
+//data value
+port set phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> data <UINT:data>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_EXT_REG_PORT_PORTS_ALL_MAIN_PAGE_MAINPAGE_EXT_PAGE_EXTPAGE_PARK_PAGE_PARKPAGE_REGISTER_REGISTER_DATA_DATA
+//port configuration
+//set configuration
+//phy register configuration with extension/park page config
+//port configuration
+//port list include CPU port
+//all port
+//main page configuration
+//main page
+//extension page configuration
+//extension page
+//parking page configuration
+//parking page
+//register address configuration
+//register address
+//data value configuration
+//data value
+port set phy-ext-reg port ( <PORT_LIST:ports> | all ) main-page <UINT:mainPage> ext-page <UINT:extPage> park-page <UINT:parkPage> register <UINT:register> data <UINT:data>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_MMD_REG_PORT_PORTS_ALL_MMD_ADDR_MMD_ADDR_MMD_REG_MMD_REG_DATA_DATA
+//port configuration
+//set configuration
+//phy mmd register configuration
+//port configuration
+//port list include CPU port
+//all port
+//mmd device address configuration
+//mmd device address
+//mmd register address configuration
+//mmd register address
+//data value configuration
+//data value
+port set phy-mmd-reg port ( <PORT_LIST:ports> | all ) mmd-addr <UINT:mmd_addr> mmd-reg <UINT:mmd_reg> data <UINT:data>
+#endif
+
+#ifdef CMD_PORT_SET_RX_TX_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//rx configuration
+//tx configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set ( rx | tx ) port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_STATE_DISABLE_ENABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//state configuration
+//disable function
+//enable function
+port set port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_CROSS_OVER_PORT_PORTS_ALL_MODE_AUTO_MDI_MDIX
+//port configuration
+//set configuration
+//cross over configuration
+//port configuration
+//port list
+//all ports
+//mode configuration
+//auto MDI/MDIX mode
+//force MDI mode
+//force MDIX mode
+port set cross-over port ( <PORT_LIST:ports> | all ) mode ( auto | mdi | mdix )
+#endif
+
+#ifdef CMD_PORT_GET_CROSS_OVER_PORT_PORTS_ALL_MODE
+//port configuration
+//get configuration
+//cross over configuration
+//port configuration
+//port list
+//all ports
+//mode configuration
+port get cross-over port ( <PORT_LIST:ports> | all ) mode
+#endif
+
+#ifdef CMD_PORT_GET_CROSS_OVER_PORT_PORTS_ALL_STATUS
+//port configuration
+//get configuration
+//cross over configuration
+//port configuration
+//port list
+//all ports
+//status
+port get cross-over port ( <PORT_LIST:ports> | all ) status
+#endif
+
+#ifdef CMD_PORT_SET_MASTER_SLAVE_PORT_PORTS_ALL_AUTO_MASTER_SLAVE
+//port configuration
+//set configuration
+//master slave mode configuration
+//port configuration
+//port list
+//all port
+//auto mode
+//master mode
+//slave mode
+port set master-slave port ( <PORT_LIST:ports> | all ) ( auto | master | slave )
+#endif
+
+#ifdef CMD_PORT_GET_MASTER_SLAVE_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//master slave mode configuration
+//port configuration
+//port list
+//all port
+port get master-slave port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_LOOPBACK_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//loopback config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) fiber loopback ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_FIBER_LOOPBACK
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//loopback config
+port get port ( <PORT_LIST:ports> | all ) fiber loopback
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_DOWN_SPEED_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//down speed config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) down-speed ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_DOWN_SPEED
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//down speed config
+port get port ( <PORT_LIST:ports> | all ) down-speed
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_DOWN_SPEED_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//down speed config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) fiber down-speed ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_FIBER_DOWN_SPEED
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//down speed config
+port get port ( <PORT_LIST:ports> | all ) fiber down-speed
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_NWAY_FORCE_LINK_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//nway force config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) fiber nway-force-link ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_FIBER_NWAY_FORCE_LINK
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//nway force config
+port get port ( <PORT_LIST:ports> | all ) fiber nway-force-link
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_UNIDIR_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//unidirection config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) fiber unidir ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_FIBER_UNIDIR_STATE
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//fiber config
+//unidirection config
+//state configuration
+port get port ( <PORT_LIST:ports> | all ) fiber unidir state
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_OAM_LOOPBACK_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//oam loopback force config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) fiber oam-loopback ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_PHY_LOOPBACK
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//PHY
+//loopback
+port get port ( <PORT_LIST:ports> | all ) phy loopback
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_PHY_LOOPBACK_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//PHY
+//loopback
+//enable loopback
+//disable loopback
+port set port ( <PORT_LIST:ports> | all ) phy loopback ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_PHY_MDI_LOOPBACK
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//PHY
+//MDI loopback
+port get port ( <PORT_LIST:ports> | all ) phy mdi-loopback
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_PHY_MDI_LOOPBACK_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//PHY
+//MDI loopback
+//enable loopback
+//disable loopback
+port set port ( <PORT_LIST:ports> | all ) phy mdi-loopback ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_SET_10G_MEDIA_PORT_PORTS_ALL_FIBER10G_FIBER1G_DAC50CM_DAC100CM_DAC300CM_NONE
+//port configuration
+//set configuration
+//10g media configuration
+//port configuration
+//port list
+//all port
+//10G fiber
+//1G fiber
+//50cm DAC
+//100cm DAC
+//300cm DAC
+//500cm DAC
+//none media
+port set 10g-media port ( <PORT_LIST:ports> | all ) ( fiber10g | fiber1g | dac50cm | dac100cm | dac300cm | dac500cm | none )
+#endif
+
+#ifdef CMD_PORT_GET_10G_MEDIA_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//10g media configuration
+//port configuration
+//port list
+//all port
+port get 10g-media port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_FIBER_RX
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//oam loopback force config
+port get port ( <PORT_LIST:ports> | all ) fiber rx
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_RX_ENABLE_DISABLE
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//fiber rx config
+//enable function
+//disable function
+port set port ( <PORT_LIST:ports> | all ) fiber rx ( enable | disable )
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_FIBER_TX_ENABLE_DISABLE_OUTPUT_DATA
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//fiber config
+//fiber tx config
+//enable function
+//disable function
+//output config
+//data output value
+port set port ( <PORT_LIST:ports> | all ) fiber tx ( enable | disable ) output <UINT:data>
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_LINK_MEDIA
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//link media status
+port get port ( <PORT_LIST:ports> | all ) link-media
+#endif
+
+
+#ifdef CMD_PORT_SET_PHY_TEST_MODE_PORT_PORT_MODE_MODE_CHANNEL_A_B_C_D_NONE_ALL_PHY_PORTS
+//port configuration
+//set configuration
+//IEEE PHY Transmitter test mode
+//port configuration
+//port number
+//Giga mode configuration
+//test mode 1~4
+//channel configuration
+//channel A
+//channel B
+//channel C
+//channel D
+//none of the channel is configured
+//apply the test mode on all ports of the PHY. the port shall use the first port number of the phy.
+port set phy-test-mode port <UINT:port> mode <UINT:mode>  channel ( a | b | c | d | none )  { all_phy_ports }
+#endif
+
+
+
+#ifdef CMD_PORT_SET_PHY_TEST_MODE_PORT_PORT_MODE_MODE_CHANNEL_A_B_C_D_NONE_ALL_PHY_PORTS
+//port configuration
+//set configuration
+//IEEE PHY Transmitter test mode
+//port configuration
+//port number
+//10G mode configuration
+//10GBASE-T Test Mode #1
+//10GBASE-T Test Mode #2
+//10GBASE-T Test Mode #3
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=1 (Dual Tone 1)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=2 (Dual Tone 2)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=4 (Dual Tone 3)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=5 (Dual Tone 4)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=6 (Dual Tone 5)
+//10GBASE-T Test Mode #5
+//10GBASE-T Test Mode #6
+//10GBASE-T Test Mode #7
+//No test mode
+port set phy-test-mode port <UINT:port> 10g-mode ( 1 | 2 | 3 | 4-1 | 4-2 | 4-4 | 4-5 | 4-6 | 5 | 6 | 7 | none )
+#endif
+
+
+#ifdef CMD_PORT_SET_PHY_TEST_MODE_PORT_PORT_MODE_MODE_CHANNEL_A_B_C_D_NONE_ALL_PHY_PORTS
+//port configuration
+//set configuration
+//IEEE PHY Transmitter test mode
+//port configuration
+//port number
+//10G mode configuration
+//10GBASE-T Test Mode #1
+//10GBASE-T Test Mode #2
+//10GBASE-T Test Mode #3
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=1 (Dual Tone 1)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=2 (Dual Tone 2)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=4 (Dual Tone 3)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=5 (Dual Tone 4)
+//10GBASE-T Test Mode #4 with transmitter_test_frequencies=6 (Dual Tone 5)
+//10GBASE-T Test Mode #5
+//10GBASE-T Test Mode #6
+//10GBASE-T Test Mode #7
+//No test mode
+//channel configuration (Optional)
+//channel A
+//channel B
+//channel C
+//channel D
+//none of the channel is configured
+port set phy-test-mode port <UINT:port> 10g-mode ( 1 | 2 | 3 | 4-1 | 4-2 | 4-4 | 4-5 | 4-6 | 5 | 6 | 7 | none )  channel ( a | b | c | d | none )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_TEST_MODE_PORT_PORT_MODE_MODE_CHANNEL_A_B_C_D_NONE_ALL_PHY_PORTS
+//port configuration
+//set configuration
+//IEEE PHY Transmitter test mode
+//port configuration
+//port number
+//100M mode configuration
+//100BASE-TX IEEE test mode
+//100BASE-TX ANSI Jitter test mode
+//100BASE-TX ANSI Droop test mode
+//No test mode
+port set phy-test-mode port <UINT:port> 100m-mode ( ieee | ansi-jitter | ansi-droop | none )
+#endif
+
+#ifdef CMD_PORT_GET_PHY_POLARITY_PORT_PORT
+//port configuration
+//set configuration
+//10GE PHY polarity configuration
+//port configuration
+//port number
+port get phy-polarity port <UINT:port>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_POLARITY_PORT_PORT_TX_NORMAL_INVERSE
+//port configuration
+//set configuration
+//10GE PHY polarity configuration
+//port configuration
+//port number
+//tx direction
+//polarity normal
+//polarity inverse
+port set phy-polarity port <UINT:port> tx ( normal | inverse )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_POLARITY_PORT_PORT_RX_NORMAL_INVERSE
+//port configuration
+//set configuration
+//10GE PHY polarity configuration
+//port configuration
+//port number
+//rx direction
+//polarity normal
+//polarity inverse
+port set phy-polarity port <UINT:port> rx ( normal | inverse )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_SERDES
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//SerDes config
+port get port ( <PORT_LIST:ports> | all ) serdes
+#endif
+
+#ifdef CMD_PORT_SET_PORT_PORTS_ALL_SERDES_SGMII_1000BX
+//port configuration
+//set configuration
+//port configuration
+//port list
+//all ports
+//SerDes config
+//SGMII mode
+//1000 base-X
+port set port ( <PORT_LIST:ports> | all ) serdes ( sgmii | 1000bx )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_PHY_RX_CALI_STATUS_SERDES_ID_SDSID
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all ports
+//PHY
+//rx-calibration status
+//serdes ID of the PHY
+//serdes id value
+port get port ( <PORT_LIST:ports> | all ) phy rx-cali-status serdes-id <UINT:sdsId>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_EYE_MONITOR_PORT_SDSID_FRAMENUM
+//port configuration
+//set configuration
+//phy serdes RX eye-monitor
+//port ID
+//serdes id or 0 for serdes port or the PHY has no serdes id.
+//frame number configuration
+port set phy-eye-monitor <UINT:port> <UINT:sdsId> <UINT:frameNum>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_REG_PORT_PORTS_ALL_PAGE_PAGE_REGISTER_REGISTER_BITS_MSB_LSB
+//port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+//page configuration
+//page address
+//register configuration
+//register address
+//bit range to read
+//most significant bit
+//least significant bit
+port get phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> bits <UINT:msb> <UINT:lsb>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_REG_PORT_PORTS_ALL_PAGE_PAGE_REGISTER_REGISTER_BITS_MSB_LSB_VALUE
+//port configuration
+//set configuration
+//phy register configuration
+//port configuration
+//port list
+//all port
+//page configuration
+//page address
+//register configuration
+//register address
+//bit range to write
+//most significant bit
+//least significant bit
+//value
+port set phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> bits <UINT:msb> <UINT:lsb> <UINT:value>
+#endif
+
+#ifdef CMD_PORT_GET_PHY_MAC_INTF_SERDES_MODE_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//phy to MAC interface
+//serdes mode
+//port configuration
+//port list
+//all port
+port get phy-mac-intf serdes-mode port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_PORT_PORTS_ALL_PHY_LINK_STATUS
+//port configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//phy link status
+port get port ( <PORT_LIST:ports> | all ) phy-link-status
+#endif
+
+#ifdef CMD_PORT_GET_PEER_AUTO_NEGO_PORT_PORTS_ALL_ABILITY
+//port configuration
+//get configuration
+//peer
+//auto-nego configuration
+//port configuration
+//port list
+//all port
+//auto-nego ability
+port get peer auto-nego port ( <PORT_LIST:ports> | all ) ability
+#endif
+
+#ifdef CMD_PORT_RESET_PORT_PORTS_ALL
+//port configuration
+//reset configuration
+//port configuration
+//port list
+//all port
+port reset port ( <PORT_LIST:ports> | all )
+#endif
+
+
+#ifdef CMD_PORT_SET_PHY_LED_MODE_PORT_PORTS_ALL_LED_ID_MDI_MDI_LED_INDICATOR_1000M_SPEED_100M_SPEED_10M_SPEED_1000M_ACT_100M_ACT_10M_ACT_DUPLEX_COLLISION_TX_ACT_RX_ACT
+//port configuration
+//set configuration
+//phy-led configuration
+//mode configuration
+//port configuration
+//port list
+//all port
+//led configuration
+//LED ID
+//mdi
+//mdi ID
+//led-indicator
+//1000M-speed
+//100M-speed
+//10M-speed
+//1000M-act
+//100M-act
+//10M-act
+//duplex
+//collision
+//tx-act
+//rx-act
+port set phy-led mode port ( <PORT_LIST:ports> | all ) led <UINT:id> mdi <UINT:mdi> led-indicator { 1000M-speed } { 100M-speed } { 10M-speed } { 1000M-act } { 100M-act } { 10M-act } { duplex } { collision } { tx-act } { rx-act }
+#endif
+
+#ifdef CMD_PORT_SET_PHY_LED_CONTROL_PORT_PORTS_ALL_BLINK_RATE_32MS_48MS_64MS_96MS_128MS_256MS_512MS_1024MS
+//port configuration
+//set configuration
+//phy-led configuration
+//LED control
+//port configuration
+//port list
+//all port
+//blink-rate
+//32ms
+//48ms
+//64ms
+//96ms
+//128ms
+//256ms
+//512ms
+//1024ms
+port set phy-led control port ( <PORT_LIST:ports> | all ) blink-rate ( 32ms | 48ms | 64ms | 96ms | 128ms | 256ms | 512ms | 1024ms )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_LED_CONTROL_PORT_PORTS_ALL_BURST_CYCLE_8MS_16MS_32MS_64MS
+//port configuration
+//set configuration
+//phy-led configuration
+//LED control
+//port configuration
+//port list
+//all port
+//burst-cycle
+//8ms
+//16ms
+//32ms
+//64ms
+port set phy-led control port ( <PORT_LIST:ports> | all ) burst-cycle ( 8ms | 16ms | 32ms | 64ms )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_LED_CONTROL_PORT_PORTS_ALL_CLOCK_CYCLE_32NS_64NS_96NS_192NS
+//port configuration
+//set configuration
+//phy-led configuration
+//LED control
+//port configuration
+//port list
+//all port
+//clock-cycle
+//32ns
+//64ns
+//96ns
+//192ns
+port set phy-led control port ( <PORT_LIST:ports> | all ) clock-cycle ( 32ns | 64ns | 96ns | 192ns )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_LED_CONTROL_PORT_PORTS_ALL_ACTIVE_HIGH_LOW
+//port configuration
+//set configuration
+//phy-led configuration
+//LED control
+//port configuration
+//port list
+//all port
+//active configuration
+//active high
+//active low
+port set phy-led control port ( <PORT_LIST:ports> | all ) active ( high | low )
+#endif
+
+#ifdef CMD_PORT_GET_PHY_LED_CONTROL_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//phy-led configuration
+//LED control
+//port configuration
+//port list
+//all port
+port get phy-led control port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_PHY_MAC_INTF_SERDES_LINK_STATUS_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//phy to MAC interface
+//serdes link status
+//port configuration
+//port list
+//all port
+port get phy-mac-intf serdes-link-status port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_GET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+port get phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId>
+#endif
+
+
+#ifdef CMD_PORT_SET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID_PRE_STATE_DISABLE_ENABLE
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+//pre state configuration
+//disable function
+//enable function
+port set phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId> pre-state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID_POST_STATE_DISABLE_ENABLE
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+//post state configuration
+//disable function
+//enable function
+port set phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId> post-state ( disable | enable )
+#endif
+
+#ifdef CMD_PORT_SET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID_PRE_AMP_PRE_AMP
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+//pre amp configuration
+//pre amp value
+port set phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId> pre-amp <UINT:pre_amp>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID_MAIN_AMP_MAIN_AMP
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+//main amp configuration
+//main amp value
+port set phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId> main-amp <UINT:main_amp>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID_POST_AMP_POST_AMP
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+//post amp configuration
+//post amp value
+port set phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId> post-amp <UINT:post_amp>
+#endif
+
+#ifdef CMD_PORT_SET_PHY_SERDES_EYE_PARAM_PORT_PORTS_ALL_SERDES_ID_SDSID_IMPEDANCE_IMPEDANCE
+//port configuration
+//get configuration
+//PHY serdes
+//eye parameter
+//port configuration
+//port list
+//all port
+//serdes id
+//serdes id
+//impedance configuration
+//impedance value
+port set phy-serdes eye-param port ( <PORT_LIST:ports> | all ) serdes-id <UINT:sdsId> impedance <UINT:impedance>
+#endif
+
+#ifdef CMD_PORT_GET_CONGEST_TIME_PORT_PORTS_ALL
+//port configuration
+//get configuration
+//congest time
+//port configuration
+//port list
+//all port
+port get congest-time port ( <PORT_LIST:ports> | all )
+#endif
+
+#ifdef CMD_PORT_SET_CONGEST_TIME_PORT_PORTS_ALL_TIME_TIME
+//port configuration
+//set configuration
+//congest time
+//port configuration
+//port list
+//all port
+//time
+//time:0~15
+port set congest-time port ( <PORT_LIST:ports> | all ) time <UINT:time>
+#endif
+

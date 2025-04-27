@@ -1,0 +1,182 @@
+//
+// Copyright (C) 2015 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 40427 $
+// $Date: 2013-06-23 11:28:09 +0800 (Sun, 23 Jun 2013) $
+//
+// Purpose : Define diag shell commands for OpenFlow.
+//
+// Feature : The file includes the following module and sub-modules
+//           1) Mecdpa commands.
+//
+
+#ifdef CMD_MECDPA_INIT
+//meddpa configuration
+//init configuration
+mecdpa init
+#endif
+
+#ifdef CMD_MECDPA_PORT_ADD_DEL
+//mecdpa configuration
+//port configuration
+//port number
+//add configuration
+//del configuration
+mecdpa port <UINT:port_idx> ( add | del )
+#endif
+
+#ifdef CMD_MECDPA_RULE_ADD_DEL_FIND_TABLE_MATCH_UDP_DEST_PORT_ACTION_DATA
+//mecdpa configuration
+//rule configuration
+//add configuration
+//table configuration
+//table number
+//match configuration
+//udp_dest_port configuration
+//udp_destPort configuration
+//action configuration
+//action configuration
+//data configuration
+//action_data configuration
+mecdpa rule ( add | del | find ) table <UINT:table_idx> match upd_dest_port <UINT:upd_destPort> action ( goto | output | encap | decap ) data <UINT:action_data> 
+#endif
+
+#ifdef CMD_MECDPA_TABLE_TEID_LEARN_RULE_ADD_DEL_FIND_MATCH_UDP_PORT_SRC_PORT_ACTION_DATA
+//mecdpa configuration
+//table configuration
+//teid_learn configuration
+//rule configuration
+//rule action configuration
+//match configuration
+//udp_dest_port configuration
+//udp_destPort number
+//phy_src_port configuration
+//src_port number
+//action configuration
+//action type
+//data configuration
+//action_data configuration
+mecdpa table teid_learn rule ( add | del | find ) match upd_dest_port <UINT:upd_destPort> phy_src_port <UINT:src_port> action ( goto | output | encap | decap ) data <UINT:action_data> 
+#endif
+
+#ifdef CMD_MECDPA_TABLE_IP_FWD_RULE_ADD_DEL_FIND_MATCH_DIP_SRC_PORT_ACTION_DATA
+//mecdpa configuration
+//table configuration
+//ip_fwd configuration
+//rule configuration
+//rule action configuration
+//match configuration
+//dip configuration
+//dest IP number
+//phy_src_port configuration
+//src_port number
+//action configuration
+//action type
+//data configuration
+//action_data configuration
+mecdpa table ip_fwd rule ( add | del | find ) match dip <UINT:destIp> phy_src_port <UINT:src_port> action ( goto | output | encap ) data <UINT:action_data>
+#endif
+
+#ifdef CMD_MECDPA_TABLE_APP_LIST_RULE_ADD_DEL_FIND_MATCH_L4DP_ETH_TYPE_ACTION_DATA
+//mecdpa configuration
+//table configuration
+//ip_fwd configuration
+//rule configuration
+//rule action configuration
+//match configuration
+//l4_dp configuration
+//L4 dest port number
+//eth_type configuration
+//ethType number
+//action configuration
+//action type
+//data configuration
+//action_data configuration
+mecdpa table app_list rule ( add | del | find ) match l4_dp <UINT:l4dp> eth_type <UINT:ethType> action ( output | decap ) data <UINT:action_data>
+#endif
+
+#ifdef CMD_MECDPA_TABLE_L2_FWD_RULE_ADD_DEL_FIND_MATCH_DIP_L4DP_ETH_TYPE_ACTION_DATA
+//mecdpa configuration
+//table configuration
+//ip_fwd configuration
+//rule configuration
+//rule action configuration
+//match configuration
+//l4_dp configuration
+//L4 dest port number
+//eth_type configuration
+//ethType number
+//action configuration
+//action type
+//data configuration
+//action_data configuration
+mecdpa table l2_fwd rule ( add | del | find ) match l4_dp <UINT:l4dp> eth_type <UINT:ethType> action ( output | goto ) data <UINT:action_data>
+#endif
+
+#ifdef CMD_MECDPA_STATUS_GET_SETDEF_ACTIVE_CAPACITY
+//meddpa configuration
+//status configuration
+//get opeartion
+//set default opeartion
+//active_rule opeartion
+//capacity opeartion
+mecdpa status ( get | set_default | active_rule | capacity )
+#endif
+
+#ifdef CMD_MECDPA_HIT_STS_GET_TABLE_ID_ENTRY_ID
+//meddpa configuration
+//hit_status configuration
+//get opeartion
+//table opeartion
+//table_id
+//entry
+//entry_id
+mecdpa hit_status get table <UINT:table_id> entry <UINT:entry_id>
+#endif
+
+#ifdef CMD_MECDPA_TABLE_TEID_LEARN_COUNTER_MATCH_UDP_PORT_SRC_PORT
+//mecdpa configuration
+//table configuration
+//teid_learn configuration
+//rule configuration
+//rule action configuration
+//match configuration
+//udp_dest_port configuration
+//udp_destPort number
+//phy_src_port configuration
+//src_port number
+mecdpa table teid_learn counter match upd_dest_port <UINT:upd_destPort> phy_src_port <UINT:src_port> 
+#endif
+
+#ifdef CMD_MECDPA_FPGA_TX_INBAND_VP_IDX_TX_PORT
+//mecdpa configuration
+//fpga configuration
+//tx_inband configuration
+//vp_idx configuration
+//vp_index value
+//tx_port configuration
+//port value
+mecdpa fpga tx_inband vp_idx <UINT:vp_index> tx_port <UINT:port> 
+#endif
+
+#ifdef CMD_MECDPA_TABLE_APP_LIST_COUNTER_MATCH_UDP_PORT_SRC_PORT
+//mecdpa configuration
+//table configuration
+//all_list configuration
+//rule configuration
+//rule action configuration
+//match configuration
+//udp_dest_port configuration
+//udp_destPort number
+//phy_src_port configuration
+//src_port number
+mecdpa table app_list counter match upd_dest_port <UINT:upd_destPort> phy_src_port <UINT:src_port> 
+#endif

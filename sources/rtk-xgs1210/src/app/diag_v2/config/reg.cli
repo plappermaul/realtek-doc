@@ -1,0 +1,43 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 27701 $
+// $Date: 2012-04-02 11:10:51 +0800 (Mon, 02 Apr 2012) $
+//
+// Purpose : Define diag shell commands for reg.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) reg commands.
+//
+
+#ifdef CMD_REGISTER_SET_ADDRESS_VALUE
+//register configuration
+//set register
+//register address
+//register value
+register set <UINT:address> <UINT:value>
+#endif
+
+#ifdef CMD_REGISTER_GET_ADDRESS_WORDS
+//register configuration
+//get register
+//register address
+//number of words
+register get <UINT:address> { <UINT:words> }
+#endif
+
+#ifdef CMD_REGISTER_GET_ALL
+//register configuration
+//get register
+//all register
+register get all
+#endif
+

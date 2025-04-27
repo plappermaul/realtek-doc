@@ -1,0 +1,184 @@
+*
+{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box
+}
+
+html,body,div
+{
+	margin:0;
+	padding:0;
+	border:0
+}
+
+ul
+{
+	list-style:none;
+	margin:0;
+	padding:0
+}
+
+header,footer
+{
+	display:block
+}
+
+html
+{
+	font-family:"Arial","HelveticaNeue","Helvetica";
+	font-size:16px;
+	height:100%
+}
+
+body
+{
+	height:100%;
+	font-weight:400;
+	margin:0;
+	padding:0;
+	background:#273d42
+}
+
+.top
+{
+	width:960px;
+	padding-bottom:1em;
+	margin:0 auto
+}
+
+.general
+{
+	float:right;
+	margin-top:26px
+}
+
+.bg
+{
+	background:#d4f4f6
+}
+
+a
+{
+	color:#dd5e00;
+	text-decoration:underline;
+	cursor:pointer
+}
+
+a.btn
+{
+	width:130px;
+	height:32px;
+	border:1px solid #a1cbcd;
+	color:#a1cbcd;
+	text-align:center;
+	padding:7px 0;
+	font-size:14px;
+	text-decoration:none;
+	display:block
+}
+
+.L_outline
+{
+	height:334px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-167px 0 0 -190px;
+}
+
+.L_outline ul li
+{
+	font-weight:700
+}
+
+.L_outline input
+{
+	width:204px;
+	height:30px;
+	border:1px solid #2a3c40;
+	background-color:#d4f4f6;
+	text-indent:5px;
+	margin:0
+}
+
+.L_outline ul li.path
+{ 	width:82px;
+	height:30px;
+	background-color:#e17d33;
+	color:#d4f4f6;
+	text-align:center;
+	padding:5px 0;
+	margin-top:-30px;
+	margin-left:208px;
+	margin-bottom:25px;
+}
+
+.L_outline .title
+{
+	width:330px;
+	height:34px;
+	font-size:18px;
+	font-weight:700;
+	background:#B9D9D9;
+	padding:8px;
+	text-align:center
+}
+
+.L_outline a.btn
+{
+	border:1px solid #2a3c40;
+	color:#2a3c40;
+	margin:0 auto
+}
+
+.L_outline a.btn:hover
+{
+	background:#2a3c40;
+	color:#d4f4f6
+}
+
+.L_outline a.btn.move1
+{
+	float: left;
+    width: 100px;
+    margin: 0 2px;
+	margin-left:40px;
+}
+
+.L_outline a.btn.move2
+{
+	float: left;
+    width: 100px;
+    margin: 0 2px;
+}
+
+.fw_dn
+{
+	width:330px;
+	height:265px;
+	margin:0 0 0 46px;
+}
+.fw_dn ul
+{
+	margin:43px 20px;
+}
+.fw_dn ul li p
+{
+	margin-top:90px;
+	font-size:12px;
+	font-weight:400;
+	color:#303a3a;
+}
+
+.cfg_path{height:28px;overflow:hidden;
+  position:absolute;
+  z-index:9;
+  filter:alpha(Opacity=20);
+  opacity:0;
+}
+.cfg_path input{
+  width:76px;
+  height:26px;
+  font-size:17px;
+}

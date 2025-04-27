@@ -1,0 +1,7 @@
+# $(CROSS_COMPILE) stands for prefix of your own toolkits.
+# Modify it so $(CROSS_COMPILE)gcc points to your compiler,
+# and rename this file to `toolkit_path.in'.
+#
+# Since content of toolkit_path.in differs from users to users,
+# ** THOU SHALL NOT COMMIT toolkit_path.in TO REPOSITORY! **
+CROSS_COMPILE?=msdk-4.8.5-3.18-linux-

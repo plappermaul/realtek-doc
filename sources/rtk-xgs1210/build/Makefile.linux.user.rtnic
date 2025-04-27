@@ -1,0 +1,55 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtk User Library
+#
+
+SDK_TOP_DIR := ../../../..
+
+#
+# main
+#
+NTFY_DIR    := ../l2ntfy
+NTFY_USR_DIR:= ../l2ntfy/user
+NIC_DIR     := .
+NIC_KRN_DIR := .
+include $(SDK_TOP_DIR)/sdk/build/Makefile.rtnic
+
+
+#
+# for lib
+#
+
+ALL_OBJ := $(NIC_ALL_OBJ)
+
+DEPS := $(ALL_OBJ:.o=.d)
+
+
+TARGET := $(SDK_LIBDIR)/librtnic.a
+.PHONY: $(TARGET)
+
+$(TARGET): $(ALL_OBJ)
+	$(AR) rcs $@ $(ALL_OBJ)
+	$(STRIP) --strip-debug -R .note -R .comment $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c -o $@ $<
+
+%.d: %.c
+	@set -e; rm -f $@; \
+	$(CC) -MM $(CFLAGS) $(EXTRA_CFLAGS) $< > $@.$$$$; \
+	sed 's,\($(*F)\)\.o[ :]*,$(@D)/$(*F).o $@ : ,g' < $@.$$$$ > $@
+	@rm -f $@.*
+
+#Don't create dependencies when we're cleaning, installing, ...
+NODEP := clean install romfs
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEP))))
+    -include $(DEPS)
+endif
+
+
+romfs:
+
+clean:
+	rm -rf $(TARGET) $(ALL_OBJ) $(DEPS)
+

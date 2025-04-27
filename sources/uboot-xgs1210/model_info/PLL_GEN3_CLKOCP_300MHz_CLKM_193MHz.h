@@ -1,0 +1,7 @@
+.set_by = 0x00000001,
+.pll_cpu_ctl0 = 0x000005c8,
+.pll_cpu_ctl1 = 0x14000000,
+.pll_cpu_misc_ctrl = 0x00000000,
+.pll_mem_ctl0 = 0x000041bc,
+.pll_mem_ctl1 = 0x14000000,
+.pll_mem_misc_ctrl = 0x00000000,

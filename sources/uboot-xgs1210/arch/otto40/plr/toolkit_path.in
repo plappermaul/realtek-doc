@@ -1,0 +1,11 @@
+# $(CROSS_COMPILE) stands for prefix of your own toolkt.
+# Modify it so $(CROSS_COMPILE)gcc points to your compiler,
+# and rename `toolkit_path.in.sample' to `toolkit_path.in.cfg'.
+#
+# Since content of otto.cfg differs from users to users,
+# ** THOU SHALL NOT COMMIT toolkit_path.in TO REPOSITORY! **
+CROSS_COMPILE?=/share/rlx/rsdk-1.5.6-5281-EB-2.6.30-0.9.30.3-110915/bin/rsdk-linux-
+#CROSS_COMPILE?=/share/rlx/msdk-4.3.6-mips-EB-2.6.32-0.9.30.3-m32-120424/bin/mips-linux-
+#CROSS_COMPILE?=/share/rlx/mips-linux-uclibc/bin/mips-linux-
+
+###BOOTLOADER_IMG?=/home/scku/prog/svn/otto/release/u-boot.pimg

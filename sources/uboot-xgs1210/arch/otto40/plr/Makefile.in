@@ -1,0 +1,273 @@
+#
+# include necessary files, toolkit_path.in and info.in
+#
+ifneq ($(wildcard ./toolkit_path.in), ./toolkit_path.in)
+    $(error EE: Missing './toolkit_path.in'. Refer './toolkit_path.in.sample' to create your own './toolkit_path.in')
+else
+    include ./toolkit_path.in
+endif
+
+ifneq ($(wildcard $(PROJECT_NAME)), $(PROJECT_NAME))
+    $(error EE: Missing '$(PROJECT_NAME)'. It could be due to missing 'make preconfig_<project_name>')
+else
+    include $(PROJECT_NAME)
+endif
+
+include $(INFO_IN)
+sinclude ./rlz_ver
+sinclude ./rlz.makefile
+
+TKINFO := $(shell echo $(CROSS_COMPILE) | sed -e 's|/bin.*||' -e 's|.*/||')
+MAKE_DATE := 0x$(shell date +%y%m%d%H)
+
+project_dir := project/$(project_name)
+project_info_in := $(project_dir)/info.in
+template_dir := src/template/$(template_name)
+template_info_in := $(template_dir)/info.in
+platform_dir := src/platform/$(platform_name)
+platform_info_in := $(platform_dir)/info.in
+
+
+CC := $(CROSS_COMPILE)gcc
+AS := $(CROSS_COMPILE)as
+LD := $(CROSS_COMPILE)ld
+OC := $(CROSS_COMPILE)objcopy
+OD := $(CROSS_COMPILE)objdump
+RE := $(CROSS_COMPILE)readelf
+NM := $(CROSS_COMPILE)nm
+
+#
+# common used variables
+#
+
+
+#
+# startup.S
+#
+LIST_STARTUP := $(shell ls -U $(OTTO_STARTUP) $(project_dir)/startup.S $(template_dir)/startup.S 2> /dev/null)
+STARTUP := $(firstword $(LIST_STARTUP))
+ifeq ($(suffix $(STARTUP)), .S)
+    STARTUP_S := $(STARTUP)
+else
+    STARTUP_C := $(STARTUP)
+endif
+
+#
+# parameters.c
+#
+LIST_PARAMETERS_C := $(shell ls -U $(OTTO_PARAMETERS_C) $(project_dir)/parameters.c $(template_dir)/parameters.c 2> /dev/null)
+PARAMETERS_C := $(firstword $(LIST_PARAMETERS_C))
+
+#
+# collect source files from `project`
+#
+C_SRC := $(EXTRA_C_SRC) $(STARTUP_C) $(shell find -L $(project_dir) -name ab_*.c) $(PARAMETERS_C)
+S_SRC := $(EXTRA_S_SRC) $(STARTUP_S) $(shell find -L $(project_dir) -name ab_*.S)
+
+#
+# collect source files from `template`
+#
+C_SRC += $(shell find -L $(template_dir) -name ab_*.c)
+S_SRC += $(shell find -L $(template_dir) -name ab_*.S)
+
+#
+# objs files (input parameter: FILTER_OUT_OBJS and MIPS16_OBJS)
+#
+ALL_C_OBJS := $(addprefix $(OBJS)/, $(filter-out $(FILTER_OUT_OBJS), $(notdir $(patsubst %.c, %.o, $(C_SRC)))))
+ALL_S_OBJS := $(addprefix $(OBJS)/, $(filter-out $(FILTER_OUT_OBJS), $(notdir $(patsubst %.S, %.o, $(S_SRC)))))
+ALL_OBJS := $(ALL_S_OBJS) $(ALL_C_OBJS)
+NORMAL_C_OBJS := $(filter-out $(addprefix $(OBJS)/, $(MIPS16_OBJS)), $(ALL_C_OBJS))
+MIPS16_C_OBJS := $(filter-out $(NORMAL_C_OBJS), $(ALL_C_OBJS))
+
+#
+# depends files
+#
+ALL_DEPS := $(patsubst %.o, %.d, $(ALL_OBJS))
+
+#
+# Linker script
+#
+LIST_LDS += $(shell ls -U $(OTTO_LDS) $(project_dir)/*.lds $(template_dir)/*.lds 2> /dev/null)
+LDS := $(firstword $(LIST_LDS))
+OTTO_LMA_BASE ?= 0
+OTTO_ENTRY ?= 0x9fc00000
+OTTO_SRAM_SIZE ?= 0
+OTTO_HEADER_OFFSET ?= 0x20
+OTTO_ISR_ENTRY_OFFSET ?= 0x180
+OTTO_KSEG2_BASE ?= 0xC0000000
+LD_FLAGS := \
+    --defsym=KSEG2_BASE=$(OTTO_KSEG2_BASE) \
+    --defsym=LMA_BASE=$(OTTO_LMA_BASE) \
+    --defsym=ENTRY=$(OTTO_ENTRY) \
+    --defsym=SRAM_START=$(OTTO_SRAM_START) \
+    --defsym=SRAM_SIZE=$(OTTO_SRAM_SIZE) \
+    --defsym=HEADER_OFFSET=$(OTTO_HEADER_OFFSET) \
+    --defsym=ISR_ENTRY_OFFSET=$(OTTO_ISR_ENTRY_OFFSET)
+
+LD_ENTRY := $(if $(strip $(OTTO_ENTRY_SYMB)),-e $(OTTO_ENTRY_SYMB),)
+TARGET_OUT ?= release/plr.out
+TARGET_IMG := $(addsuffix .img, $(basename $(TARGET_OUT)))
+TARGET_CODE := $(addsuffix .code, $(basename $(TARGET_OUT)))
+
+#
+# flags
+#
+INC_DIR += -I $(project_dir) -I $(template_dir) -I $(platform_dir) -I ./release -I ./src/include -I ./src
+CC_GPOPT ?= -mno-gpopt
+
+ifeq ($(CC_PLAT_FLAGS),)
+    $(error EE: Missing definition for CC_PLAT_FLAGS. Please check 'src/platform/{platform}/info.in')
+endif
+ifdef BUILD_CMD
+BUILDTEST_FLAG := -DBUILDTEST=1
+endif
+
+BUILD_STAT_FLAG += -DVCS_VER=$(VCS_VER)
+BUILD_STAT_FLAG += -DMAKE_DATE=$(MAKE_DATE)
+BUILD_STAT_FLAG += -DTKINFO=\"$(TKINFO)\"
+
+CC_FLAGS := $(INC_DIR) -nostdinc -fno-pic -fno-builtin -mno-abicalls -mno-memcpy -EB -Wall $(CC_PLAT_FLAGS) $(CC_OPT_FLAGS) $(CC_GPOPT) $(BUILD_STAT_FLAG) $(BUILDTEST_FLAG)
+
+ifeq ($(AS_PLAT_FLAGS),)
+    $(error EE: Missing definition for AS_PLAT_FLAGS. Please check 'src/platform/{platform}/info.in')
+endif
+AS_FLAGS := $(INC_DIR) -nostdinc -fno-pic -fno-builtin $(AS_PLAT_FLAGS) -mno-abicalls -mno-memcpy -EB $(BUILDTEST_FLAG)
+
+#
+# include dependence files when make all
+#
+ifeq ($(MAKECMDGOALS),all)
+    include $(DEPEND_IN)
+    include $(ALL_DEPS)
+endif
+
+#
+# used by making objects/images
+#
+OC_GAP_FILL ?= 0xff
+
+all_dep := existing_test $(TARGET_IMG) $(TARGET_LIB)
+all:: $(all_dep)
+
+target_img_dep := $(TARGET_OUT)
+$(TARGET_IMG):: $(target_img_dep)
+	$(OC) --gap-fill=$(OC_GAP_FILL) -O binary $(TARGET_OUT) $@
+	@echo "\nINFO: $@:" `du --apparent-size -h $@ | cut -f1` "(`du --apparent-size -b $@ | cut -f1` Bytes)"
+	@if [ ! -z "`grep physical_sram_size $(TARGET_OUT)`" ] ; then \
+	    echo "INFO: in SRAM size:" `$(NM) --radix=d $(TARGET_OUT) | grep physical_sram_size | \
+	    cut -d ' ' -f1` "(dec) Bytes (bss/data/uns/tables included, but stack excluded)"; \
+	fi
+
+target_out_dep := $(SOC_H) $(ALL_OBJS) $(LDS) $(OTTO_MAKEFILES)
+$(TARGET_OUT):: $(target_out_dep)
+	@$(DECHO) "C_SRC=$(C_SRC)"
+	@$(DECHO) "S_SRC=$(S_SRC)"
+	@$(DECHO) "ALL_OBJS=$(ALL_OBJS)"
+	@$(DECHO) "ALL_DEPS=$(ALL_DEPS)"
+	@$(DECHO) "OTTO_LDS=$(OTTO_LDS); LIST_LDS=$(LIST_LDS); LDS=$(LDS)"
+	@$(DECHO) "OTTO_STARTUP=$(STARTUP)"
+	@$(DECHO) "OTTO_PARAMETERS_C=$(OTTO_PARAMETERS_C), LIST_PARAMETERS_C=$(LIST_PARAMETERS_C), PARAMETERS_C=$(PARAMETERS_C)"
+	@$(DECHO) "OTTO_ENTRY_SYMB=$(OTTO_ENTRY_SYMB); LD_ENTRY=$(LD_ENTRY)"
+	@$(DECHO) "TARGET_OUT=$(TARGET_OUT); TARGET_IMG=$(TARGET_IMG)"
+	@echo "MIPS16_OBJS=$(MIPS16_OBJS)"
+	@echo "NORMAL_C_OBJS=$(NORMAL_C_OBJS)"
+	@echo "MIPS16_C_OBJS=$(MIPS16_C_OBJS)"
+	$(LD) $(LD_FLAGS) -T $(LDS) $(LD_ENTRY) -o $@ $(ALL_OBJS)
+	$(OD) -Dlxt $@ > $(TARGET_CODE)
+$(TARGET_LIB):: $(target_out_dep)
+	$(LD) $(LD_FLAGS) -r -o $@ $(ALL_OBJS)
+#
+# compilation
+#
+$(ALL_S_OBJS):
+ifneq ($(preprocessor),)
+	$(CC) -E -dD -fdirectives-only  $< $(AS_FLAGS) > $(patsubst %.o, %.E, $@)
+endif
+	$(CC) -c $< -o $@ $(AS_FLAGS)
+
+$(NORMAL_C_OBJS):
+ifneq ($(preprocessor),)
+	$(CC) -E -dD -fdirectives-only $< $(CC_FLAGS) > $(patsubst %.o, %.E, $@)
+endif
+	$(CC) -c $< -o $@ $(CC_FLAGS)
+
+$(MIPS16_C_OBJS):
+ifneq ($(preprocessor),)
+	$(CC) -E -dD -fdirectives-only $< $(CC_FLAGS) -mips16 > $(patsubst %.o, %.E, $@)
+endif
+	$(CC) -c $< -o $@ $(CC_FLAGS) -mips16
+
+#
+# preparation
+#
+
+existing_test::
+	@if [ "$(STARTUP)" = "" ] ; then echo "can not find startup in neither $(project_dir)/ nor $(template_dir)/"; exit 1; fi
+	@if [ "$(PARAMETERS_C)" = "" ] ; then echo "can not find parameters.c in neither $(project_dir)/ nor $(template_dir)/"; exit 1; fi
+	@if [ "$(LDS)" = "" ] ; then echo "can not find linker script (.lds) in neither $(project_dir)/ nor $(template_dir)/"; exit 1; fi
+	@$(DECHO) "existing_test done----"
+
+
+$(DEPEND_IN): $(C_SRC) $(S_SRC)
+	@echo "#\n# This file is generated automatically; please don't edit it. (`date`)\n#" > $(DEPEND_IN)
+	@for f in $(C_SRC) ; do echo "$(OBJS)/$$(basename $$f .c).d : $$f" >> $(DEPEND_IN); done
+	@for f in $(S_SRC) ; do echo "$(OBJS)/$$(basename $$f .S).d : $$f" >> $(DEPEND_IN); done
+
+$(ALL_DEPS):
+	@echo -n "$@ $(OBJS)/" > $@;
+	@$(CC) $(CC_FLAGS) -MM $< >> $@ || ( rm -f $@ ; exit 1);
+
+#
+# used by preconfig
+#
+soc_h_dep := release/conf.h release/info.h $(shell ls -U $(template_dir)/arch.h $(project_dir)/arch.h 2> /dev/null)
+$(SOC_H): $(soc_h_dep)
+	@echo "building soc.h ...."
+	@-rm -f $@
+	@printf "/*CAUTION: This file is generated automatically. Don't modify it*/\n#ifndef SOC_H\n#define SOC_H\n" >> $@
+	@for f in $(soc_h_dep) ; do echo "#include \"../$$f\"" >> $@; done
+	@echo "#endif //SOC_H\n" >> $@
+
+conf_h_dep := $(shell ls -U $(platform_dir)/arch.h 2> /dev/null)
+release/conf.h: src/include/soc.in.h $(platform_info_in) $(conf_h_dep)
+	@echo "building conf.h ...."
+	@-rm -f $@ release/conf.tmp.h release/Makefile.conf release/conf.tmp.h.ext
+	@echo "include $(platform_info_in)" >> release/Makefile.conf
+	@echo "release/conf.tmp.h:" >> release/Makefile.conf
+	@grep -v "^#" $(platform_info_in) | grep -e ":\|?="  | sed -e "s/\(\ \|\t\)*\([:alnum:]\)*\(\ \|\t\)*\(:\|?=\)\(.*\)/\2/"  | xargs -I% echo -e "\t@echo \"#define % \$$(%)\" >> release/conf.tmp.h" >> release/Makefile.conf
+	@$(MAKE) -f release/Makefile.conf release/conf.tmp.h
+	@for f in $(conf_h_dep) ; do echo "#include \"../$$f\"" >> release/conf.tmp.h; done
+	@echo "#ifndef __ASSEMBLER__" >> release/conf.tmp.h.ext
+	@$(CC) $(CC_FLAGS) -E -dD -fpreprocessed -fdirectives-only release/conf.tmp.h | grep -v "^# [0-9]" | sed 's/\(.*\)/    \1/' >> release/conf.tmp.h.ext
+	@echo "#else //__ASSEMBLER__" >> release/conf.tmp.h.ext
+	@$(CC) -D__ASSEMBLER__ $(AS_FLAGS) -E -dD -fpreprocessed -fdirectives-only release/conf.tmp.h | grep -v "^# [0-9]" | sed 's/\(.*\)/    \1/' >> release/conf.tmp.h.ext
+	@echo "#endif //__ASSEMBLER__\n" >> release/conf.tmp.h.ext
+	@sed -e '/^\/\/ OTTO_ANCHOR_PLATFORM/r release/conf.tmp.h.ext' -e '/OTTO_ANCHOR_/d' -e '/CAUTION: Do/d' src/include/soc.in.h > $@
+
+release/info.h: release/info2.in release/conf.h
+	@-rm -f $@ release/Makefile.info
+	@echo "include $(platform_info_in)" >> release/Makefile.info
+	@echo "include release/info2.in" >> release/Makefile.info
+	@echo "$@:" >> release/Makefile.info
+	@grep -v "^#" release/info2.in | grep -e ":\|?="  | sed -e "s/\(\ \|\t\)*\([:alnum:]\)*\(\ \|\t\)*\(:\|?=\)\(.*\)/\2/"  | xargs -I% echo -e "\t@echo \"#define % \$$(%)\" >> $@" >> release/Makefile.info
+	@$(MAKE) -f release/Makefile.info $@
+
+info_in_dep := $(shell ls -U $(PROJECT_NAME) $(template_info_in) $(project_info_in) 2> /dev/null)
+release/info2.in: $(info_in_dep)
+	@echo "# this is a tempoary file" > $@
+	@for f in $(info_in_dep) ; do echo "# from $$f" >> $@; cat $$f  >> $@;  done
+
+$(INFO_IN): $(info_in_dep)
+	@$(MAKE) -f Makefile.name $@
+
+#import extra makefiles
+project_makefile := $(project_dir)/Makefile
+template_makefile := $(template_dir)/Makefile
+imported_makefile_list := $(shell ls -U $(project_makefile) $(template_makefile) 2> /dev/null)
+imported_makefile := $(strip $(firstword $(imported_makefile_list)))
+ifeq ($(wildcard $(imported_makefile)), $(imported_makefile))
+    include $(imported_makefile)
+endif
+
+.EXPORT_ALL_VARIABLES:
+.PHONY: all link_template_name existing_test

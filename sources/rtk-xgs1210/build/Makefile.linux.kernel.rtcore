@@ -1,0 +1,55 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtcore Kernel Module
+#
+
+TARGET := rtcore
+
+#
+# include configuration file
+#
+ifeq ($(SDK_CONFIG), $(wildcard $(SDK_CONFIG)))
+include $(SDK_CONFIG)
+endif
+
+SDK_TOP_DIR := ../../..
+SDK_SYS_DIR := ../..
+
+#
+# main
+#
+ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.rtcore
+else
+    sinclude $(SDK_TOP_DIR)/sdk/build/Makefile.rtcore_u
+endif
+
+
+#
+# for linux kernel module
+#
+RTCORE_LINUX_OBJ := \
+	$(SDK_SYS_DIR)/linux/dev_config.o \
+	rtcore_drv.o
+ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+    ifeq ($(CONFIG_SDK_DRIVER_RTCORE),m)
+        RTCORE_LINUX_OBJ += \
+        	rtcore_export.o
+    endif
+endif
+
+
+
+ALL_OBJ := $(RTCORE_LINUX_OBJ) $(RTCORE_OBJ) $(USER_MODE_EXTRA)
+
+EXTRA_CFLAGS += -DRTK_LKM
+obj-$(CONFIG_SDK_DRIVER_RTCORE) += $(TARGET).o
+$(TARGET)-objs := $(ALL_OBJ)
+
+clean:
+	@$(RM) $(ALL_OBJ)
+	@find $(SDK_SYS_DIR) \( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' \
+		-o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' \) \
+		-type f -print | xargs rm -f
+

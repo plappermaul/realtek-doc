@@ -1,0 +1,155 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 96604 $
+// $Date: 2019-04-29 19:04:39 +0800 (Mon, 29 Apr 2019) $
+//
+// Purpose : Define diag shell commands.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) All diag shell commands.
+//
+
+
+//exit diag shell
+exit
+
+
+//unit configure
+//unit id
+unit <UINT:id>
+
+//terminal configuration
+//set configuration
+//pager function
+//number of lines to display before \"--More--\"
+//number of lines. set 0 will disable pager.
+terminal set pager length <UINT:num>
+
+//sdk configuration
+//set configuration
+//backward compatible type configuration configuration
+//state configuration
+//enable rtk api backward compatible
+//disable rtk api backward compatible
+sdk set rtk-api-backward-compatible state ( enable | disable )
+
+#ifdef CONFIG_SDK_APP_DIAG_EXT
+#include "./ext/ext_common.cli"
+#ifdef CONFIG_SDK_DIAG_EXT_RTL9310
+#include "./ext/ext_9310.cli"
+#endif
+#ifdef CONFIG_SDK_DIAG_EXT_RTL9300
+#include "./ext/ext_9300.cli"
+#endif
+#ifdef CONFIG_SDK_DIAG_EXT_RTL8390
+#include "./ext/ext_8390.cli"
+#endif
+#ifdef CONFIG_SDK_DIAG_EXT_RTL8380
+#include "./ext/ext_8380.cli"
+#endif
+#endif
+
+#ifdef CONFIG_SDK_DRIVER_NIC
+#include "./nic.cli"
+#endif
+
+#ifdef CONFIG_SDK_DRIVER_TEST
+#include "./sdk.cli"
+#endif
+
+#ifdef CONFIG_SDK_RTL8390
+#include "./mpls.cli"
+#include "./oam.cli"
+#endif
+
+#ifdef CONFIG_SDK_RTL8380
+#endif
+
+#ifdef CONFIG_SDK_RTL9310
+#include "./mpls.cli"
+#include "./oam.cli"
+
+#include "./stack.cli"
+#include "./tunnel.cli"
+#include "./vxlan.cli"
+#include "./openflow.cli"
+//#include "./capwap.cli"
+#include "./bpe.cli"
+#endif
+
+#ifdef CONFIG_SDK_RTL9300
+#include "./stack.cli"
+#include "./oam.cli"
+#endif
+
+#ifdef CONFIG_SDK_RTL8231
+#include "./rtl8231.cli"
+#endif
+
+#ifdef CONFIG_SDK_UART1
+#include "./uart.cli"
+#endif
+
+
+#ifdef CONFIG_SDK_DRIVER_L2NTFY
+#include "./l2_ntfy.cli"
+#endif
+
+#ifdef CONFIG_SDK_APP_OVS
+#include "./ovs.cli"
+#endif
+
+#include "./acl.cli"
+#include "./debug.cli"
+#include "./dot1x.cli"
+#include "./eee.cli"
+#include "./filter.cli"
+#include "./flowctrl.cli"
+#include "./l2.cli"
+#include "./l3.cli"
+#include "./led.cli"
+#include "./counter.cli"
+#include "./mirror.cli"
+#include "./port.cli"
+#include "./qos.cli"
+#include "./rate.cli"
+#include "./reg.cli"
+#include "./serdes.cli"
+#include "./vlan.cli"
+#include "./sec.cli"
+#include "./stp.cli"
+#include "./switch.cli"
+#include "./sys.cli"
+#include "./svlan.cli"
+#include "./time.cli"
+#include "./trap.cli"
+#include "./trunk.cli"
+#include "./diag.cli"
+#include "./ipmcast.cli"
+#include "./mcast.cli"
+#include "./pie.cli"
+
+#ifdef CONFIG_SDK_DRIVER_GPIO
+#include "./gpio.cli"
+#endif
+
+#ifdef CONFIG_SDK_DRIVER_SPI
+#include "./spi.cli"
+#endif
+
+#ifdef CONFIG_SDK_DRIVER_I2C
+#include "./i2c.cli"
+#endif
+
+#ifdef CONFIG_SDK_RTSDN
+#include "./mecdpa.cli"
+#endif

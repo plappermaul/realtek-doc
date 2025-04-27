@@ -1,0 +1,89 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Unit Test User Library
+#
+
+TARGET := $(SDK_LIBDIR)/libut.a
+
+COMMONUTIL_DIR := common
+SDKTEST_DIR := sdk
+HALTEST_DIR := hal
+DALTEST_DIR := dal
+NICTEST_DIR := nic
+OSALTEST_DIR := osal
+EXTRA_CFLAGS += -Wall -Werror -Wuninitialized -Wstrict-prototypes
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE) -I$(UT_INCLUDE)
+
+SDKTEST_OBJ := \
+        $(SDKTEST_DIR)/sdk_test.o
+
+SDK_SYS_DIR := ../system
+OSAL_DIR := $(SDK_SYS_DIR)/osal/linux/user
+OSAL_OBJ :=
+ifneq ($(CONFIG_SDK_KERNEL_LINUX_USER_MODE),)
+OSAL_OBJ += \
+	$(OSAL_DIR)/time.o
+endif
+
+COMMONUTIL_OBJ := \
+	$(COMMONUTIL_DIR)/unittest_util.o
+
+HALTEST_OBJ := \
+	$(HALTEST_DIR)/hal_api_test_case.o \
+	$(HALTEST_DIR)/hal_database_test_case.o \
+	$(HALTEST_DIR)/hal_mechanism_test_case.o
+
+DALTEST_OBJ := \
+	$(DALTEST_DIR)/dal_vlan_test_case.o \
+	$(DALTEST_DIR)/dal_qos_test_case.o \
+	$(DALTEST_DIR)/dal_eee_test_case.o \
+	$(DALTEST_DIR)/dal_flowctrl_test_case.o \
+	$(DALTEST_DIR)/dal_rate_test_case.o \
+	$(DALTEST_DIR)/dal_l2_test_case.o \
+	$(DALTEST_DIR)/dal_trunk_test_case.o \
+	$(DALTEST_DIR)/dal_switch_test_case.o \
+	$(DALTEST_DIR)/dal_stp_test_case.o \
+	$(DALTEST_DIR)/dal_trap_test_case.o \
+	$(DALTEST_DIR)/dal_port_test_case.o \
+	$(DALTEST_DIR)/dal_stat_test_case.o \
+	$(DALTEST_DIR)/dal_mirror_test_case.o \
+	$(DALTEST_DIR)/dal_mpls_test_case.o \
+	$(DALTEST_DIR)/dal_time_test_case.o \
+	$(DALTEST_DIR)/dal_led_test_case.o \
+	$(DALTEST_DIR)/dal_acl_test_case.o \
+	$(DALTEST_DIR)/dal_l3_test_case.o \
+	$(DALTEST_DIR)/dal_sec_test_case.o \
+	$(DALTEST_DIR)/dal_oam_test_case.o
+
+NICTEST_OBJ := \
+        $(NICTEST_DIR)/nic_test_case.o
+
+ALL_OBJ := $(SDKTEST_OBJ) $(OSAL_OBJ) $(OSALTEST_OBJ) $(HALTEST_OBJ) $(DALTEST_OBJ) $(NICTEST_OBJ) $(COMMONUTIL_OBJ)
+DEPS := $(ALL_OBJ:.o=.d)
+
+.PHONY: $(TARGET)
+
+$(TARGET): $(ALL_OBJ)
+	$(AR) rcs $@ $(ALL_OBJ)
+	$(STRIP) --strip-debug -R .note -R .comment $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c -o $@ $<
+
+%.d: %.c
+	@set -e; rm -f $@; \
+	$(CC) -MM $(CFLAGS) $(EXTRA_CFLAGS) $< > $@.$$$$; \
+	sed 's,\($(*F)\)\.o[ :]*,$(@D)/$(*F).o $@ : ,g' < $@.$$$$ > $@
+	@rm -f $@.*
+
+NODEP := clean install romfs
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEP))))
+    -include $(DEPS)
+endif
+
+romfs:
+
+clean:
+	rm -rf $(TARGET) $(ALL_OBJ) $(DEPS)
+

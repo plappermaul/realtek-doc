@@ -1,0 +1,523 @@
+#############################################################################
+#
+# NOTE : it is fairly important that changes to this file consider their
+#        effect on other platforms and default setups.  If you can, only
+#        add to the file,  changing the name of a variable will break
+#        many configurations.
+#
+#        www.snapgear.com
+#
+#############################################################################
+
+mainmenu_name "SDK Configuration"
+
+#############################################################################
+
+mainmenu_option next_comment
+
+comment 'Chip Support'
+comment 'Select your target MAC chip(s)'
+if [ "$CONFIG_IN_UBOOT" == "y" ]; then
+    choice 'MAC chip' "RTL8380 CONFIG_SDK_RTL8380
+                       RTL8390 CONFIG_SDK_RTL8390
+                       RTL9300 CONFIG_SDK_RTL9300
+                       RTL9310 CONFIG_SDK_RTL9310" RTL9300
+else
+    bool 'RTL9310' CONFIG_SDK_RTL9310 n
+    bool 'RTL9300' CONFIG_SDK_RTL9300 n
+    bool 'RTL8390' CONFIG_SDK_RTL8390 n
+    bool 'RTL8380' CONFIG_SDK_RTL8380 n
+fi
+
+comment 'Select your target PHYs chip'
+bool 'RTL8208D'       CONFIG_SDK_RTL8208D  n
+bool 'RTL8208G'       CONFIG_SDK_RTL8208G  n
+bool 'RTL8208L'       CONFIG_SDK_RTL8208L  n
+bool 'RTL8212B'       CONFIG_SDK_RTL8212B  n
+bool 'RTL8214B'       CONFIG_SDK_RTL8214B  n
+bool 'RTL8214FB'      CONFIG_SDK_RTL8214FB n
+bool 'RTL8214FC'      CONFIG_SDK_RTL8214FC n
+bool 'RTL8214C'       CONFIG_SDK_RTL8214C  n
+bool 'RTL8214QF'      CONFIG_SDK_RTL8214QF n
+bool 'RTL8218B'       CONFIG_SDK_RTL8218B  n
+bool 'RTL8218D'       CONFIG_SDK_RTL8218D  n
+bool 'RTL8218FB'      CONFIG_SDK_RTL8218FB n
+bool 'RTL8226'        CONFIG_SDK_RTL8226   n
+bool 'RTL8284'        CONFIG_SDK_RTL8284   n
+bool 'RTL8295R'       CONFIG_SDK_RTL8295R  n
+
+comment 'Select your target Peripheral chip'
+bool 'RTL8231'        CONFIG_SDK_RTL8231   n
+
+comment 'Select customer defined PHYs chip'
+bool 'CUSTOMER PHY 1'   CONFIG_SDK_PHY_CUST1  n
+bool 'CUSTOMER PHY 2'   CONFIG_SDK_PHY_CUST2  n
+bool 'CUSTOMER PHY 3'   CONFIG_SDK_PHY_CUST3  n
+bool 'CUSTOMER PHY 4'   CONFIG_SDK_PHY_CUST4  n
+bool 'CUSTOMER PHY 5'   CONFIG_SDK_PHY_CUST5  n
+
+endmenu
+
+
+
+#############################################################################
+
+#if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+    mainmenu_option next_comment
+
+    comment 'CPU'
+    bool 'External CPU' CONFIG_SDK_EXTERNAL_CPU n
+    bool 'CPU Little Endian' CONFIG_SDK_ENDIAN_LITTLE n
+    endmenu
+#fi
+
+#############################################################################
+if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+
+    mainmenu_option next_comment
+
+    comment 'Operating System'
+    choice 'Select OS Kernel' "Linux CONFIG_SDK_KERNEL_LINUX \
+                               Other CONFIG_SDK_OS_KERNEL_OTHER \
+                              " Linux
+
+    if [ "$CONFIG_SDK_KERNEL_LINUX" = "y" ]; then
+    	choice 'Mode Support' "Kernel CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE \
+                	User CONFIG_SDK_KERNEL_LINUX_USER_MODE" Kernel
+    	bool ' Loadable Module Support' CONFIG_SDK_KERNEL_LINUX_MODULE_LOADABLE y
+    else
+    	define_bool CONFIG_SDK_KERNEL_LINUX_MODULE_LOADABLE n
+    fi
+
+
+    if [ "$PREV_CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE" == "n" -a "$CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE" == "y" ]; then
+        # Once the Linux mode change to Kernel mode, recover some settings here
+        define_tristate CONFIG_SDK_DRIVER_MX m
+        define_tristate CONFIG_SDK_DRIVER_RTDRV m
+        define_tristate CONFIG_SDK_DRIVER_RTNIC m
+        define_tristate CONFIG_SDK_DRIVER_COMPILE m
+        if [ "$CONFIG_SDK_DRIVER_RTK" = "y" ]; then
+        	define_tristate CONFIG_SDK_DRIVER_RTK m
+    	fi
+    	if [ "$CONFIG_SDK_DRIVER_TEST" = "y" ]; then
+        	define_tristate CONFIG_SDK_DRIVER_TEST m
+    	fi
+    fi
+    PREV_CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE=$CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE
+
+    if [ "$CONFIG_SDK_KERNEL_LINUX_USER_MODE" = "y" ]; then
+    	if [ "$CONFIG_SDK_DRIVER_RTK" = "m" ]; then
+        	define_tristate CONFIG_SDK_DRIVER_RTK y
+    	fi
+    	if [ "$CONFIG_SDK_DRIVER_RTDRV" = "m" -o "$CONFIG_SDK_DRIVER_RTDRV" = "y" ]; then
+        	define_tristate CONFIG_SDK_DRIVER_RTDRV n
+    	fi
+
+    	if [ "$CONFIG_SDK_DRIVER_RTNIC" = "m" -o "$CONFIG_SDK_DRIVER_RTNIC" = "y" ]; then
+        	define_tristate CONFIG_SDK_DRIVER_RTNIC n
+    	fi
+
+    	if [ "$CONFIG_SDK_DRIVER_TEST" = "m" ]; then
+        	define_tristate CONFIG_SDK_DRIVER_TEST y
+    	fi
+    fi
+
+    endmenu
+fi
+#############################################################################
+
+if [ "$CONFIG_IN_UBOOT" == "y" ]; then
+    bool 'SDK support' CONFIG_UBOOT_SDK_SUPPORT y
+fi
+
+if [ "$CONFIG_UBOOT_SDK_SUPPORT" == "y" -o "$CONFIG_IN_UBOOT" != "y" ]; then
+
+    mainmenu_option next_comment
+    comment 'SDK Driver'
+
+    comment 'Rtcore Driver support'
+    tristate 'Rtcore Driver' CONFIG_SDK_DRIVER_RTCORE m
+	bool 'Build Rtcore Driver in Linux Kernel' CONFIG_SDK_DRIVER_RTCORE_IN_LINUX_KERNEL y
+
+    dep_mbool '   Nic Driver' CONFIG_SDK_DRIVER_NIC $CONFIG_SDK_DRIVER_RTCORE
+
+    if [ "$CONFIG_SDK_EXTERNAL_CPU" == "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_GPIO n
+        define_bool CONFIG_SDK_DRIVER_SPI n
+        define_bool CONFIG_SDK_DRIVER_I2C n
+        define_bool CONFIG_SDK_TC_DRV n
+        define_bool CONFIG_SDK_DRIVER_WATCHDOG n
+        define_bool CONFIG_SDK_TC_TC1_TIME n
+        define_bool CONFIG_SDK_UART1 n
+        define_bool CONFIG_SDK_BSP_USBHCD n
+    else
+        if [ "$CONFIG_SDK_DRIVER_RTCORE" != "n" ]; then
+            define_bool CONFIG_SDK_DRIVER_GPIO y
+            define_bool CONFIG_SDK_DRIVER_SPI y
+            define_bool CONFIG_SDK_DRIVER_I2C y
+            if [ "$CONFIG_IN_UBOOT" == "y" ]; then
+                define_bool CONFIG_SDK_TC_DRV n
+                define_bool CONFIG_SDK_DRIVER_WATCHDOG n
+            else
+                define_bool CONFIG_SDK_TC_DRV y
+                define_bool CONFIG_SDK_DRIVER_WATCHDOG y
+            fi
+            #
+            # Timer/Counter(TC), Config TC1 as time stamps(debug/time-measure purpose)
+            #
+            if [ "$CONFIG_SDK_TC_DRV" = "y" ]; then
+                define_bool CONFIG_SDK_TC_TC1_TIME y
+            fi
+            if [ "$CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE" = "y" ]; then
+                define_bool CONFIG_SDK_UART1 n
+            else
+                define_bool CONFIG_SDK_UART1 n
+            fi
+            if [ "$CONFIG_SDK_KERNEL_LINUX" = "y" ]; then
+                if [ "$CONFIG_SDK_RTL9300" = "y" -o "$CONFIG_SDK_RTL9310" = "y" ]; then
+                    define_bool CONFIG_SDK_BSP_USBHCD y
+                fi
+            fi
+        fi
+    fi
+
+    if [ "$CONFIG_SDK_DRIVER_NIC" = "y" ]; then
+        if [ "$CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE" = "y" ]; then
+            define_bool CONFIG_SDK_DRIVER_NIC_KERNEL_MODE y
+            define_bool CONFIG_SDK_DRIVER_NIC_USER_MODE n
+        fi
+        if [ "$CONFIG_SDK_KERNEL_LINUX_USER_MODE" = "y" ]; then
+            define_bool CONFIG_SDK_DRIVER_NIC_KERNEL_MODE n
+            define_bool CONFIG_SDK_DRIVER_NIC_USER_MODE y
+        fi
+    fi
+
+    #
+    # Set per chip NIC driver configuration according to Chip Support and NIC driver support status
+    #
+    if [ "$CONFIG_SDK_DRIVER_NIC" = "y" -a "$CONFIG_SDK_RTL9310" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_NIC_R9310 y
+    else
+        define_bool CONFIG_SDK_DRIVER_NIC_R9310 n
+    fi
+
+    if [ "$CONFIG_SDK_DRIVER_NIC" = "y" -a "$CONFIG_SDK_RTL9300" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_NIC_R9300 y
+    else
+        define_bool CONFIG_SDK_DRIVER_NIC_R9300 n
+    fi
+
+
+    if [ "$CONFIG_SDK_DRIVER_NIC" = "y" -a "$CONFIG_SDK_RTL8390" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_NIC_R8390 y
+    else
+        define_bool CONFIG_SDK_DRIVER_NIC_R8390 n
+    fi
+
+    if [ "$CONFIG_SDK_DRIVER_NIC" = "y" -a "$CONFIG_SDK_RTL8380" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_NIC_R8380 y
+    else
+        define_bool CONFIG_SDK_DRIVER_NIC_R8380 n
+    fi
+
+    if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+
+        dep_mbool '   L2 Notification Driver' CONFIG_SDK_DRIVER_L2NTFY $CONFIG_SDK_DRIVER_RTCORE $CONFIG_SDK_DRIVER_NIC
+
+        if [ "$CONFIG_SDK_DRIVER_L2NTFY" = "y" -a "$CONFIG_SDK_DRIVER_NIC_R9310" = "y" ]; then
+            define_bool CONFIG_SDK_DRIVER_L2NTFY_R9310 y
+        else
+            define_bool CONFIG_SDK_DRIVER_L2NTFY_R9310 n
+        fi
+
+        if [ "$CONFIG_SDK_DRIVER_L2NTFY" = "y" -a "$CONFIG_SDK_DRIVER_NIC_R9300" = "y" ]; then
+            define_bool CONFIG_SDK_DRIVER_L2NTFY_R9300 y
+        else
+            define_bool CONFIG_SDK_DRIVER_L2NTFY_R9300 n
+        fi
+
+        if [ "$CONFIG_SDK_DRIVER_L2NTFY" = "y" -a "$CONFIG_SDK_DRIVER_NIC_R8390" = "y" ]; then
+            define_bool CONFIG_SDK_DRIVER_L2NTFY_R8390 y
+        else
+            define_bool CONFIG_SDK_DRIVER_L2NTFY_R8390 n
+        fi
+    fi
+
+    #
+    # Set per chip I2C driver configuration according to Chip Support and I2C driver support status
+    #
+    if [ "$CONFIG_SDK_DRIVER_I2C" = "y" -a "$CONFIG_SDK_RTL9310" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_I2C_R9310 y
+    else
+        define_bool CONFIG_SDK_DRIVER_I2C_R9310 n
+    fi
+
+    if [ "$CONFIG_SDK_DRIVER_I2C" = "y" -a "$CONFIG_SDK_RTL9300" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_I2C_R9300 y
+    else
+        define_bool CONFIG_SDK_DRIVER_I2C_R9300 n
+    fi
+
+    if [ "$CONFIG_SDK_DRIVER_I2C" = "y" -a "$CONFIG_SDK_RTL8390" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_I2C_R8390 y
+    else
+        define_bool CONFIG_SDK_DRIVER_I2C_R8390 n
+    fi
+
+    if [ "$CONFIG_SDK_DRIVER_I2C" = "y" -a "$CONFIG_SDK_RTL8380" = "y" ]; then
+        define_bool CONFIG_SDK_DRIVER_I2C_R8380 y
+    else
+        define_bool CONFIG_SDK_DRIVER_I2C_R8380 n
+    fi
+
+
+    if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+        comment 'Rtk Driver / RTK API support'
+        tristate 'Rtk Driver / RTK API' CONFIG_SDK_DRIVER_RTK m
+        bool '   Support RTK Legacy API' CONFIG_SDK_DRIVER_RTK_LEGACY_API y
+        if [ "$CONFIG_SDK_DRIVER_RTK" = "m" -o "$CONFIG_SDK_DRIVER_RTK" = "y" ]; then
+        	bool '   Customization API' CONFIG_SDK_DRIVER_RTK_CUSTOMER y
+        fi
+
+
+        if [ "$CONFIG_SDK_KERNEL_LINUX_USER_MODE" = "y" ]; then
+        	tristate 'Rtk Driver / RTK API' CONFIG_SDK_DRIVER_RTK y
+        	if [ "$CONFIG_SDK_DRIVER_RTK" = "m" -o "$CONFIG_SDK_DRIVER_RTK" = "y" ]; then
+            	bool '   Customization API' CONFIG_SDK_DRIVER_RTK_CUSTOMER y
+        	fi
+        fi
+
+        if [ "$CONFIG_SDK_KERNEL_LINUX" = "y" -a "$CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE" = "y" ]; then
+            comment 'Linux Net Driver support'
+        	tristate 'Linux Net Driver' CONFIG_SDK_DRIVER_MX m
+        else
+        	define_tristate CONFIG_SDK_DRIVER_MX n
+        fi
+
+        if [ "$CONFIG_SDK_DRIVER_MX" = "y" ]; then
+        	bool '  Linux User/Kernel Interface' CONFIG_SDK_DRIVER_RTDRV y
+        	if [ "$CONFIG_SDK_DRIVER_RTDRV" = "m" ]; then
+            	define_bool CONFIG_SDK_DRIVER_RTDRV y
+        	fi
+
+            #"Linux Ethernet Driver" depends on "NIC Driver"
+            if [ "$CONFIG_SDK_DRIVER_NIC" = "y" ]; then
+            	bool '  Linux Ethernet Driver' CONFIG_SDK_DRIVER_RTNIC y
+            	if [ "$CONFIG_SDK_DRIVER_RTNIC" = "m" ]; then
+                	define_bool CONFIG_SDK_DRIVER_RTNIC y
+            	fi
+            else
+                define_bool CONFIG_SDK_DRIVER_RTNIC n
+            fi
+        elif [ "$CONFIG_SDK_DRIVER_MX" = "m" ]; then
+        	tristate '  Linux User/Kernel Interface' CONFIG_SDK_DRIVER_RTDRV m
+
+            #"Linux Ethernet Driver" depends on "NIC Driver"
+            if [ "$CONFIG_SDK_DRIVER_NIC" = "y" ]; then
+                tristate '  Linux Ethernet Driver' CONFIG_SDK_DRIVER_RTNIC m
+            else
+                define_tristate CONFIG_SDK_DRIVER_RTNIC n
+            fi
+        fi
+
+        tristate 'build driver in linux kernel' CONFIG_SDK_DRIVER_COMPILE m
+
+    fi
+    endmenu
+fi
+
+#############################################################################
+
+if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+    mainmenu_option next_comment
+    comment 'SDK Application'
+
+    bool 'SDK Diag Shell' CONFIG_SDK_APP_DIAG y
+    if [ "$CONFIG_SDK_APP_DIAG" = "y" ]; then
+    	define_bool CONFIG_SDK_APP_DIAG_DIR_DIAG_V2 y
+    	bool '  Extension Diag Shell' CONFIG_SDK_APP_DIAG_EXT y
+    	bool '  Extra command option for QA unit test' CONFIG_SDK_SQUT_CMD_OPT y
+    fi
+
+    if [ "$CONFIG_SDK_APP_DIAG" = "y" ]; then
+    	define_bool CONFIG_SDK_APP_COMPILE y
+    fi
+
+    endmenu
+fi
+#############################################################################
+if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+    mainmenu_option next_comment
+    comment 'SDK Debug'
+
+    bool 'Enable SDK Debug Message' CONFIG_SDK_DEBUG y
+    if [ "$CONFIG_SDK_DEBUG" = "y" ]; then
+    	choice 'Debug Log Type' "Level CONFIG_SDK_DEBUG_LOG_TYPE_LEVEL \
+                     Level-Mask CONFIG_SDK_DEBUG_LOG_TYPE_LEVEL_MASK \
+                    " Level
+
+    	if [ "$CONFIG_SDK_DEBUG_LOG_TYPE_LEVEL" = "y" ]; then
+        	int 'Log Level' CONFIG_SDK_DEBUG_LOG_LEVEL 3
+    	else
+        	hex 'Log Level Mask' CONFIG_SDK_DEBUG_LOG_LEVEL_MASK 0xF
+    	fi
+
+    	hex_ull 'Debug Log Module Mask' CONFIG_SDK_DEBUG_LOG_MOD_MASK FFFFFFFFFFFFFFFF
+    fi
+    bool 'Dump Register content with Name' CONFIG_SDK_DUMP_REG_WITH_NAME n
+    bool 'Dump Table content with Name' CONFIG_SDK_DUMP_TABLE_WITH_NAME n
+    endmenu
+fi
+#############################################################################
+
+mainmenu_option next_comment
+comment 'BSP Option'
+
+  if [ "$CONFIG_SDK_EXTERNAL_CPU" == "y" ]; then
+
+    define_bool CONFIG_SDK_BSP_FLASH n
+    define_bool CONFIG_TURNKEY_SYSINFO n
+    define_bool CONFIG_DUAL_IMAGE n
+    hex 'BDINFO MTD Index' CONFIG_BDINFO_MTD_INDEX ""
+    define_bool CONFIG_SDK_BSP_MTD n
+    define_bool CONFIG_SDK_BSP_MTD_SPI n
+    define_bool CONFIG_SDK_BSP_MTD_NOR n
+    define_bool CONFIG_SDK_BSP_MTD_SPIM n
+    define_bool CONFIG_SDK_BSP_MTD_NORSF_G3 n
+    define_bool CONFIG_SDK_BSP_MTD_COMMON n
+    define_bool CONFIG_SDK_BSP_MTD_RTK_SPI_NAND n
+    define_bool CONFIG_SDK_BSP_MTD_SPI_NAND_G2 n
+    define_bool CONFIG_SDK_BSP_MTD_ECC_G1 n
+    define_bool CONFIG_SDK_BSP_MTD_SPI_NAND_G3 n
+    define_bool CONFIG_SDK_BSP_MTD_ECC_G2 n
+    define_bool CONFIG_SDK_BSP_SPI_DRV n
+
+  else
+    bool 'Flash Common Setting' CONFIG_SDK_BSP_FLASH y
+    if [ "$CONFIG_SDK_BSP_FLASH" = "y" ]; then
+        choice 'Flash Layout' " Type5 CONFIG_FLASH_LAYOUT_TYPE5 \
+                                " Type5
+        define_bool CONFIG_TURNKEY_SYSINFO y
+        if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+          hex 'BDINFO MTD Index' CONFIG_BDINFO_MTD_INDEX ""
+        fi
+    fi
+
+    if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+        if [ "$CONFIG_SDK_KERNEL_LINUX" = "y" ]; then
+            tristate 'Linux Mtd Driver' CONFIG_SDK_BSP_MTD m
+
+            if [ "$CONFIG_SDK_BSP_MTD" = "m" ]; then
+                tristate '  SPI Flash Driver' CONFIG_SDK_BSP_MTD_SPI m
+                tristate '  NOR Flash Driver' CONFIG_SDK_BSP_MTD_NOR n
+
+                define_tristate CONFIG_SDK_BSP_MTD_SPIM m
+                define_bool CONFIG_SDK_BSP_MTD_NORSF_G3 m
+                define_bool CONFIG_SDK_BSP_MTD_COMMON m
+            if [ "$CONFIG_SDK_RTL9310" = "y" -o "$CONFIG_SDK_RTL9300" = "y" ]; then
+                    tristate '  SPI NAND_Flash Driver' CONFIG_SDK_BSP_MTD_RTK_SPI_NAND m
+                if [ "$CONFIG_SDK_BSP_SPI_NAND_BOOT" = "y" ]; then
+                        define_bool CONFIG_SDK_BSP_MTD_SPI_NAND_G2 m
+                        define_bool CONFIG_SDK_BSP_MTD_ECC_G1 m
+                else
+                        define_bool CONFIG_SDK_BSP_MTD_SPI_NAND_G3 m
+                        define_bool CONFIG_SDK_BSP_MTD_ECC_G2 m
+                fi
+            fi
+            fi
+
+            if [ "$CONFIG_SDK_BSP_MTD" = "y" ]; then
+                bool '  SPI Flash Driver' CONFIG_SDK_BSP_MTD_SPI y
+                bool '  NOR Flash Driver' CONFIG_SDK_BSP_MTD_NOR n
+
+                define_bool CONFIG_SDK_BSP_MTD_SPIM y
+                define_bool CONFIG_SDK_BSP_MTD_NORSF_G3 y
+                define_bool CONFIG_SDK_BSP_MTD_COMMON y
+            if [ "$CONFIG_SDK_RTL9310" = "y" -o "$CONFIG_SDK_RTL9300" = "y" ]; then
+                    bool '  SPI NAND_Flash Driver' CONFIG_SDK_BSP_MTD_RTK_SPI_NAND y
+                if [ "$CONFIG_SDK_BSP_SPI_NAND_BOOT" = "y" ]; then
+                        define_bool CONFIG_SDK_BSP_MTD_SPI_NAND_G2 y
+                        define_bool CONFIG_SDK_BSP_MTD_ECC_G1 y
+                else
+                        define_bool CONFIG_SDK_BSP_MTD_SPI_NAND_G3 y
+                        define_bool CONFIG_SDK_BSP_MTD_ECC_G2 y
+                fi
+            fi
+            fi
+        fi
+
+        if [ "$CONFIG_SDK_KERNEL_LINUX" = "y" ]; then
+            if [ "$CONFIG_DEFAULTS_KERNEL_3_18_24" = "y" -a "$CONFIG_SDK_SPI_DEV_NONE" != "y" ]; then
+                bool 'Linux SPI Controller Driver' CONFIG_SDK_BSP_SPI_DRV y
+            fi
+        fi
+    fi
+
+    choice 'SPI device' "none CONFIG_SDK_SPI_DEV_NONE \
+                        dev1 CONFIG_SDK_SPI_DEV_1 \
+                        dev2 CONFIG_SDK_SPI_DEV_2 \
+                        dev3 CONFIG_SDK_SPI_DEV_3 \
+                        dev4 CONFIG_SDK_SPI_DEV_4" none
+    choice 'Device Boot Type' "SPI_NOR_Boot CONFIG_SDK_BSP_SPI_NOR_BOOT
+                    SPI_NAND_Boot CONFIG_SDK_BSP_SPI_NAND_BOOT" SPI_NOR_Boot
+  fi
+endmenu
+
+#############################################################################
+
+#############################################################################
+
+mainmenu_option next_comment
+comment 'Misc Option'
+
+bool 'FPGA Platform' CONFIG_SDK_FPGA_PLATFORM n
+
+if [ "$CONFIG_IN_UBOOT" != "y" ]; then
+    tristate 'SDK Unit Test' CONFIG_SDK_DRIVER_TEST y
+    bool 'Model Code Simulation' CONFIG_SDK_MODEL_MODE n
+    if [ "$CONFIG_SDK_MODEL_MODE" = "y" ]; then
+        choice 'Select Model Execution Mode' "KERNEL CONFIG_SDK_MODEL_MODE_KERNEL \
+                                          USER CONFIG_SDK_MODEL_MODE_USER" KERNEL
+    	bool '  Virtual Array ONLY' CONFIG_VIRTUAL_ARRAY_ONLY n
+    fi
+    bool 'Linked Kernel Module Mode' CONFIG_SDK_LINKED_KMOD n
+    bool 'TRUNK FailOver Handling' CONFIG_TRUNK_FAILOVER_HANDLING n
+    bool 'NIC Rx Thread' CONFIG_SDK_NIC_RX_CB_IN_THREAD n
+    if [ "$CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE" = "y" ]; then
+        choice 'Select LinkMon Thread Mode' "Polling CONFIG_SDK_LINKMON_POLLING_MODE \
+                                         Interrupt CONFIG_SDK_LINKMON_ISR_MODE \
+                                         Mixed CONFIG_SDK_LINKMON_MIXED_MODE" Polling
+    else
+        choice 'Select LinkMon Thread Mode' "Polling CONFIG_SDK_LINKMON_POLLING_MODE \
+                                         Interrupt CONFIG_SDK_LINKMON_ISR_MODE \
+                                         Mixed CONFIG_SDK_LINKMON_MIXED_MODE" Polling
+    fi
+
+    bool 'RISE' CONFIG_RISE y
+    bool 'RTSDN' CONFIG_SDK_RTSDN y
+fi
+
+choice 'Hardware profile probe method' "GPIO CONFIG_SDK_HW_PROFILE_PROBE_GPIO \
+                                      UBOOT-ENV CONFIG_SDK_HW_PROFILE_PROBE_UBOOT_ENV" UBOOT-ENV
+
+if [ "$CONFIG_DEFAULTS_KERNEL_3_18_24" = "y" ]; then
+	string 'OS Version' CONFIG_SDK_OS_VERSION 'Linux 3.18.24'
+	string 'GCC Version' CONFIG_SDK_COMPILER_VERSION 'GCC 4.8.5'
+elif [ "$CONFIG_DEFAULTS_KERNEL_2_6" = "y" ]; then
+	string 'OS Version' CONFIG_SDK_OS_VERSION 'Linux 2.6.19'
+	string 'GCC Version' CONFIG_SDK_COMPILER_VERSION 'GCC 4.4.7'
+else
+	string 'OS Version' CONFIG_SDK_OS_VERSION ''
+	string 'GCC Version' CONFIG_SDK_COMPILER_VERSION ''
+fi
+
+if [ "$CONFIG_LIBCDIR" = "uClibc-0.9.33-485-318" ]; then
+	string 'C Library Version' CONFIG_SDK_LIBC_VERSION 'uClibc-0.9.33.2 with NPTL'
+elif [ "$CONFIG_LIBCDIR" = "uClibc-0.9.33" ]; then
+	string 'C Library Version' CONFIG_SDK_LIBC_VERSION 'uClibc-0.9.33.2 with NPTL'
+else
+	string 'C Library Version' CONFIG_SDK_LIBC_VERSION ''
+fi
+endmenu
+
+#############################################################################

@@ -1,0 +1,277 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 95405 $
+// $Date: 2019-02-21 21:46:25 +0800 (Thu, 21 Feb 2019) $
+//
+// Purpose : Define diag shell commands for stp.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) time commands.
+//
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_STATE
+//time configuration
+//get configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//state configuration
+time get ptp port ( <PORT_LIST:ports> | all ) state
+#endif
+
+#ifdef CMD_TIME_SET_PTP_PORT_PORTS_ALL_STATE_ENABLE_DISABLE
+//time configuration
+//set configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//state configuration
+//enable function
+//disable function
+time set ptp port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_TIME_STAMP_RX_MESSAGE_TYPE_DELAY_REQUEST_PEER_DELAY_REQUEST_PEER_DELAY_RESPONSE_SYNC_SEQUENCE_ID_SEQUENCE_ID
+//time configuration
+//get configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//time stamp information
+//RX time stamp
+//message type configuration
+//delay request packet
+//peer delay request packet
+//peer delay response packet
+//sync packet
+//sequence ID of received packet
+//sequence ID value
+time get ptp port ( <PORT_LIST:ports> | all ) time-stamp rx message-type ( delay-request | peer-delay-request | peer-delay-response | sync ) sequence-id <UINT:sequence_id>
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_TIME_STAMP_TX_MESSAGE_TYPE_DELAY_REQUEST_PEER_DELAY_REQUEST_PEER_DELAY_RESPONSE_SYNC_SEQUENCE_ID_SEQUENCE_ID
+//time configuration
+//get configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//time stamp information
+//TX time stamp
+//message type configuration
+//delay request packet
+//peer delay request packet
+//peer delay response packet
+//sync packet
+//sequence ID of received packet
+//sequence ID value
+time get ptp port ( <PORT_LIST:ports> | all ) time-stamp tx message-type ( delay-request | peer-delay-request | peer-delay-response | sync ) sequence-id <UINT:sequence_id>
+#endif
+
+#ifdef CMD_TIME_GET_REFERENCE_TIME
+//time configuration
+//get configuration
+//reference time
+time get reference-time
+#endif
+
+#ifdef CMD_TIME_SET_REFERENCE_TIME_SECOND_SECOND_NANOSECOND_NANOSECOND
+//time configuration
+//set configuration
+//reference time
+//secound configuration
+//secound
+//nanosecond configuration
+//nanosecond
+time set reference-time second <UINT64:second> nanosecond <UINT:nanosecond>
+#endif
+
+#ifdef CMD_TIME_SET_REFERENCE_TIME_INCREASE_DECREASE_SECOND_SECOND_NANOSECOND_NANOSECOND
+//time configuration
+//set configuration
+//reference time
+//adjust (increase time)
+//adjust (decrease time)
+//secound configuration
+//secound
+//nanosecond configuration
+//nanosecond
+time set reference-time ( increase | decrease ) second <UINT64:second> nanosecond <UINT:nanosecond>
+#endif
+
+#ifdef CMD_TIME_GET_REFERENCE_TIME_STATE
+//time configuration
+//get configuration
+//reference time
+//state
+time get reference-time state
+#endif
+
+#ifdef CMD_TIME_SET_REFERENCE_TIME_STATE_ENABLE_DISABLE
+//time configuration
+//set configuration
+//reference time
+//state configuration
+//enable function
+//disable function
+time set reference-time state ( enable | disable )
+#endif
+
+#ifdef CMD_TIME_GET_REFERENCE_TIME_FREQUENCY
+//time configuration
+//get configuration
+//reference time
+//frequency configuration
+time get reference-time frequency
+#endif
+
+#ifdef CMD_TIME_SET_REFERENCE_TIME_FREQUENCY_FREQUENCYVAL
+//OAM configuration
+//set configuration
+//reference time
+//frequency configuration
+//tick frequency value, <0-0xFFFFFFF, default value is 0x8000000>
+time set reference-time frequency <UINT:frequencyVal>
+#endif
+
+#ifdef CMD_TIME_GET_CORRECT_FIELD_TRANS_VAL_CORRECT_FIELD_ORI_CF_SECOND_SECOND_NANOSECOND_NANOSECOND
+//time configuration
+//get configuration
+//correction field transparent value configuration
+//correction field configuration
+//original correction field
+//second configuration
+//secound
+//nanosecond configuration
+//nanosecond
+time get correct-field-trans-val correct-field <UINT64:ori_cf> second <UINT64:second> nanosecond <UINT:nanosecond> 
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_MAC_ADDRESS
+//switch configuration
+//get configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//system MAC address configuration
+time get ptp port ( <PORT_LIST:ports> | all ) mac-address
+#endif
+
+#ifdef CMD_TIME_SET_PTP_PORT_PORTS_ALL_MAC_ADDRESS_MAC
+//switch configuration
+//set configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//system MAC address configuration
+//MAC address
+//MAC address
+time set ptp port ( <PORT_LIST:ports> | all ) mac-address <MACADDR:mac>
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_MAC_ADDRESS_RANGE
+//switch configuration
+//get configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//system MAC address range configuration
+time get ptp port ( <PORT_LIST:ports> | all ) mac-address-range
+#endif
+
+#ifdef CMD_TIME_SET_PTP_PORT_PORTS_ALL_MAC_ADDRESS_RANGE_RANGE
+//switch configuration
+//set configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//system MAC address range configuration
+//MAC address range
+time set ptp port ( <PORT_LIST:ports> | all ) mac-address-range <UINT:range>
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_TPID_OUTER_INNER
+//time configuration
+//get configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//TPID configuration
+//outer tag
+//inner tag
+time get ptp port ( <PORT_LIST:ports> | all ) tpid ( outer | inner )
+#endif
+
+#ifdef CMD_TIME_SET_PTP_PORT_PORTS_ALL_TPID_OUTER_INNER_ENTRY_TPID_IDX_TPID_TPID
+//time configuration
+//set configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//TPID configuration
+//outer tag
+//inner tag
+//Entry configuration
+//TPID index
+//TPID configuration
+//TPID
+time set ptp port ( <PORT_LIST:ports> | all ) tpid ( outer | inner ) entry <UINT:tpid_idx> tpid <UINT:tpid>
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_TIME_OP
+//time configuration
+//get configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//time operation configuration
+time get ptp port ( <PORT_LIST:ports> | all ) time-op
+#endif
+
+#ifdef CMD_TIME_SET_PTP_PORT_PORTS_ALL_TIME_OP_START_STOP_LATCH_RISE_TRI_ENABLE_DISABLE_FALL_TRI_ENABLE_DISABLE
+//time configuration
+//set configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//time operation configuration
+//start time free run
+//stop time free run
+//latch system time
+//trigger edge configuration
+//rising edge
+//falling edge
+time set ptp port ( <PORT_LIST:ports> | all ) time-op ( start | stop | latch ) rise_tri ( enable | disable ) fall_tri ( enable | disable )
+#endif
+
+#ifdef CMD_TIME_GET_PTP_PORT_PORTS_ALL_LATCH_TIME
+//time configuration
+//get configuration
+//precision time protocol
+//port list
+//port list (e.g. 3 or 6-8)
+//all ports
+//latched time configuration
+time get ptp port ( <PORT_LIST:ports> | all ) latch-time
+#endif
+

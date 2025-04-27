@@ -1,0 +1,79 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Unit Test Directory
+#
+
+COMMONUTIL_DIR := common
+SDKTEST_DIR := sdk
+HALTEST_DIR := hal
+DALTEST_DIR := dal
+NICTEST_DIR := nic
+OSALTEST_DIR := osal
+EXTRA_CFLAGS += -Wall -Werror -Wuninitialized -Wstrict-prototypes
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+EXTRA_CFLAGS += -I$(UT_INCLUDE)
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_TEST),m)
+EXTRA_CFLAGS += -mlong-calls -fno-pic -mno-abicalls
+endif
+
+SDKTEST_OBJ := \
+        $(SDKTEST_DIR)/sdk_test.o
+
+COMMONUTIL_OBJ := \
+	$(COMMONUTIL_DIR)/unittest_util.o
+
+OSALTEST_OBJ := \
+        $(OSALTEST_DIR)/osal_test_memory_cache.o \
+        $(OSALTEST_DIR)/osal_test_isr.o \
+        $(OSALTEST_DIR)/osal_test_time.o \
+        $(OSALTEST_DIR)/osal_test_thread.o \
+        $(OSALTEST_DIR)/osal_test_mutex.o \
+        $(OSALTEST_DIR)/osal_test_sem.o
+
+HALTEST_OBJ := \
+	$(HALTEST_DIR)/hal_api_test_case.o \
+	$(HALTEST_DIR)/hal_database_test_case.o \
+	$(HALTEST_DIR)/hal_mechanism_test_case.o
+
+DALTEST_OBJ := \
+        $(DALTEST_DIR)/dal_vlan_test_case.o \
+        $(DALTEST_DIR)/dal_qos_test_case.o \
+        $(DALTEST_DIR)/dal_eee_test_case.o \
+        $(DALTEST_DIR)/dal_flowctrl_test_case.o \
+        $(DALTEST_DIR)/dal_rate_test_case.o \
+        $(DALTEST_DIR)/dal_l2_test_case.o \
+        $(DALTEST_DIR)/dal_trunk_test_case.o \
+        $(DALTEST_DIR)/dal_switch_test_case.o \
+        $(DALTEST_DIR)/dal_stp_test_case.o \
+        $(DALTEST_DIR)/dal_trap_test_case.o \
+        $(DALTEST_DIR)/dal_port_test_case.o \
+        $(DALTEST_DIR)/dal_stat_test_case.o \
+        $(DALTEST_DIR)/dal_mirror_test_case.o \
+        $(DALTEST_DIR)/dal_mpls_test_case.o \
+        $(DALTEST_DIR)/dal_time_test_case.o \
+        $(DALTEST_DIR)/dal_led_test_case.o \
+        $(DALTEST_DIR)/dal_acl_test_case.o \
+        $(DALTEST_DIR)/dal_l3_test_case.o \
+        $(DALTEST_DIR)/dal_sec_test_case.o \
+        $(DALTEST_DIR)/dal_oam_test_case.o
+
+NICTEST_OBJ := \
+        $(NICTEST_DIR)/nic_test_case.o
+
+TARGET = sdktest
+
+ALL_OBJ := $(SDKTEST_OBJ) $(OSALTEST_OBJ) $(HALTEST_OBJ) $(DALTEST_OBJ) $(NICTEST_OBJ) $(COMMONUTIL_OBJ)
+
+EXTRA_CFLAGS += -DRTK_LKM
+obj-$(CONFIG_SDK_DRIVER_TEST) += $(TARGET).o
+$(TARGET)-objs := $(ALL_OBJ)
+
+ifeq ($(CONFIG_SDK_DRIVER_TEST),m)
+$(TARGET)-objs += \
+	$(SDKTEST_DIR)/sdk_test_module.o
+endif
+

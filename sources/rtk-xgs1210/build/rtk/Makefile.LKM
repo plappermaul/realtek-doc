@@ -1,0 +1,27 @@
+#
+# For Building Linux Kernel Module
+#
+
+CFLAGS += $(EXTRA_CFLAGS)
+
+ifneq ($(KERNELRELEASE),)
+    obj-m := $(LKM_TARGET).o
+    $(LKM_TARGET)-objs := $(LKM_ALL_OBJ)
+else
+    PWD := $(shell pwd)
+default:
+	$(MAKE) -C $(KERNEL_PATH) M=$(PWD) "CC=$(CC)" "LD=$(LD)" "AR=$(AR)" "CFLAGS=$(CFLAGS)" "LDFLAGS=$(LDFLAGS)" modules
+endif
+
+
+clean:
+	@find \( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' -o -name '.depend' -o -name '*.o.cmd' \
+		-o -name 'Module.symvers' -o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' -o -name 'modules.order' \) \
+		-type f -print | xargs rm -rf
+
+depend .depend dep:
+	$(CC) $(CFLAGS) -M *.c > .depend
+
+ifeq (.depend,$(wildcard .depend))
+include .depend
+endif

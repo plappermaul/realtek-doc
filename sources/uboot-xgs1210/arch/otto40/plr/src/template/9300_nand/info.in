@@ -1,0 +1,24 @@
+## PLATFORM
+platform_name := 9300
+OTTO_ENTRY := $(OTTO_SPI_NAND_PLR_ENTRY)
+OTTO_LMA_BASE := 0
+
+## LDS
+#OTTO_LDS := "./src/lds/spi_nand_with_lplr.lds"
+OTTO_LDS := "./src/template/9300_nand/spi_nand_with_lplr.lds"
+#OTTO_LDS := "./src/lds/standard_nand.lds"
+OTTO_STARTUP := "./src/lib/startup/startup_nand_with_lplr.S"
+
+## MMU Setting
+MMU_PHY_SIZE := $(OTTO_SRAM_SIZE)
+MMU_VM_SIZE := 0x40000
+MMU_PHY_BASE_ADDR := $(OTTO_SRAM_START)
+MMU_CHECK_INETRNAL_ERROR := 1
+
+## gpopt
+USE_CC_GPOPT := 1
+CC_GPOPT := -mgpopt -mlocal-sdata -mextern-sdata -G 4
+
+# Recycle section check
+IS_RECYCLE_SECTION_EXIST :=
+

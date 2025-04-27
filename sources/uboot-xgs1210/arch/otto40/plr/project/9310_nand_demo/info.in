@@ -1,0 +1,24 @@
+template_name := 9310_nand
+OTTO_FLASH_NAND_SPI := 1
+
+FILTER_OUT_OBJS :=
+
+## spi nand flash relative definition and macro
+spi_nand_path_prefix := src/platform/$(platform_name)/spi_nand/spi_nand_
+CONFIG_SPI_NAND_FLASH_INIT_FIRST := 1
+#NSU_TOSHIBA_USING_DIO :=
+#SPI_NAND_VENDOR += mxic.c
+#SPI_NAND_VENDOR += zentel.c
+#SPI_NAND_VENDOR += gd.c
+SPI_NAND_VENDOR += toshiba.c
+#SPI_NAND_VENDOR += winbond.c
+# SPI_NAND_VENDOR += micron.c
+EXTRA_C_SRC += $(addprefix $(spi_nand_path_prefix), $(SPI_NAND_VENDOR))
+
+NSU_USING_SYMBOL_TABLE_FUNCTION :=
+
+#MIPS16_OBJS += ab_tlzma.o
+#mirror := $(template_name)
+
+PREFERRED_TK_PREFIX:=/share/rlx/msdk-4.8.5-1004k-EB-3.18-u0.9.33-m32t-150818/bin/msdk-linux-
+

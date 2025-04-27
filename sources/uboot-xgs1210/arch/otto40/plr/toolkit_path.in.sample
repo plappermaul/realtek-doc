@@ -1,0 +1,10 @@
+# $(CROSS_COMPILE) stands for prefix of your own toolkt.
+# Modify it so $(CROSS_COMPILE)gcc points to your compiler,
+# and rename `toolkit_path.in.sample' to `toolkit_path.in.cfg'.
+#
+# Since content of otto.cfg differs from users to users,
+# ** THOU SHALL NOT COMMIT toolkit_path.in TO REPOSITORY! **
+CROSS_COMPILE?=/path/to/your/own/tool/kit
+BOOTLOADER_IMG?=./..
+KERNEL_IMG?=/path/to/your/own/kernel
+ROOTFS_IMG?=/path/to/your/own/root/filesystem

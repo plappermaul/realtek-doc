@@ -1,0 +1,371 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Diag Shell Source
+#
+
+CFLAGS_y += -Wall -Werror -Wuninitialized -Wstrict-prototypes -Wno-strict-aliasing -DRTUSR
+INCLUDE =
+
+CMDS_y =
+CMDS_y							+= diag_main.c
+CMDS_y							+= diag_cmd.c
+CMDS_y							+= diag_om.c
+CMDS_y							+= diag_eee.c
+CMDS_y							+= diag_reg.c
+CMDS_y							+= diag_serdes.c
+CMDS_y							+= diag_trap.c
+CMDS_y							+= diag_port.c
+CMDS_y							+= diag_stp.c
+CMDS_y							+= diag_time.c
+CMDS_y							+= diag_l2.c
+CMDS_y							+= diag_l3.c
+CMDS_y							+= diag_qos.c
+CMDS_y							+= diag_trunk.c
+CMDS_y							+= diag_rate.c
+CMDS_y							+= diag_switch.c
+CMDS_y							+= diag_sys.c
+CMDS_y							+= diag_counter.c
+CMDS_y							+= diag_sec.c
+CMDS_y							+= diag_mirror.c
+CMDS_y							+= diag_vlan.c
+CMDS_y							+= diag_flowctrl.c
+CMDS_y							+= diag_led.c
+ifneq ($(CONFIG_SDK_DRIVER_GPIO),)
+CMDS_y							+= diag_gpio.c
+endif
+CMDS_y							+= diag_diag.c
+CMDS_y							+= diag_debug.c
+CMDS_y							+= diag_acl.c
+CMDS_y							+= diag_pie.c
+ifneq ($(CONFIG_SDK_APP_OVS),)
+CMDS_y							+= diag_ovs.c
+endif
+ifneq ($(filter y,$(CONFIG_SDK_RTL8390) $(CONFIG_SDK_RTL9310)),)
+CMDS_y							+= diag_mpls.c
+endif
+ifneq ($(filter y,$(CONFIG_SDK_RTL8390) $(CONFIG_SDK_RTL9300) $(CONFIG_SDK_RTL9310)),)
+CMDS_y							+= diag_oam.c
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_SPI),)
+CMDS_y							+= diag_spi.c
+endif
+
+ifeq ($(CONFIG_SDK_RTL9310),y)
+CMDS_y							+= diag_tunnel.c
+CMDS_y							+= diag_vxlan.c
+CMDS_y							+= diag_openflow.c
+CMDS_y							+= diag_bpe.c
+endif
+
+ifneq ($(filter y,$(CONFIG_SDK_RTL9300) $(CONFIG_SDK_RTL9310)),)
+CMDS_y							+= diag_stack.c
+CMDS_y							+= diag_ipmcast.c
+CMDS_y							+= diag_mcast.c
+endif
+
+ifneq ($(CONFIG_SDK_RTL8231),)
+CMDS_y							+= diag_rtl8231.c
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_NIC),)
+CMDS_y							+= diag_nic.c
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_I2C),)
+CMDS_y							+= diag_i2c.c
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_L2NTFY),)
+CMDS_y							+= diag_l2_ntfy.c
+endif
+
+ifneq ($(CONFIG_RRCP_MASTER),)
+CMDS_y				  			+= diag_rrcpmaster.c
+endif
+
+ifneq ($(CONFIG_SDK_UART1),)
+CMDS_y				  			+= diag_uart.c
+endif
+
+ifneq ($(CONFIG_SDK_RTSDN),)
+CMDS_y				  			+= diag_dpa.c
+endif
+
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+CMDS_y				  			+= diag_sdk.c
+INCLUDE += -I$(UT_INCLUDE)
+endif
+
+DEF =
+ifneq ($(CONFIG_SDK_DRIVER_NIC),)
+DEF += -D CONFIG_SDK_DRIVER_NIC
+endif
+ifneq ($(CONFIG_SDK_DRIVER_I2C),)
+DEF += -D CONFIG_SDK_DRIVER_I2C
+endif
+ifneq ($(CONFIG_SDK_DRIVER_L2NTFY),)
+DEF += -D CONFIG_SDK_DRIVER_L2NTFY
+endif
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+DEF += -D CONFIG_SDK_DRIVER_TEST
+endif
+ifneq ($(CONFIG_SDK_RTL8231),)
+DEF += -D CONFIG_SDK_RTL8231
+endif
+ifneq ($(CONFIG_SDK_DRIVER_GPIO),)
+DEF += -D CONFIG_SDK_DRIVER_GPIO
+endif
+ifneq ($(CONFIG_SDK_DRIVER_SPI),)
+DEF += -D CONFIG_SDK_DRIVER_SPI
+endif
+ifneq ($(CONFIG_SDK_DEBUG),)
+DEF += -D CONFIG_SDK_DEBUG
+endif
+ifneq ($(CONFIG_SDK_UART1),)
+DEF += -D CONFIG_SDK_UART1
+endif
+ifneq ($(CONFIG_SDK_APP_DIAG_EXT),)
+DEF += -D CONFIG_SDK_APP_DIAG_EXT
+    ifeq ($(CONFIG_SDK_RTL9310),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL9310
+    else ifeq ($(CONFIG_SDK_RTL9300),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL9300
+    else ifeq ($(CONFIG_SDK_RTL8390),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL8390
+    else ifeq ($(CONFIG_SDK_RTL8380),y)
+        DEF += -D CONFIG_SDK_DIAG_EXT_RTL8380
+    endif
+endif
+
+ifeq ($(CONFIG_SDK_RTL8390),y)
+DEF += -D CONFIG_SDK_RTL8390
+endif
+
+ifeq ($(CONFIG_SDK_RTL8380),y)
+DEF += -D CONFIG_SDK_RTL8380
+endif
+
+ifeq ($(CONFIG_SDK_RTL9310),y)
+DEF += -D CONFIG_SDK_RTL9310
+endif
+
+ifeq ($(CONFIG_SDK_RTL9300),y)
+DEF += -D CONFIG_SDK_RTL9300
+endif
+
+ifneq ($(CONFIG_SDK_RTL8295),)
+DEF += -D CONFIG_SDK_RTL8295
+endif
+ifneq ($(CONFIG_SDK_RTL8295R),)
+DEF += -D CONFIG_SDK_RTL8295R
+endif
+ifneq ($(CONFIG_SDK_RTL8214QF),)
+DEF += -D CONFIG_SDK_RTL8214QF
+endif
+
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+DEF += -D CONFIG_SDK_MODEL_MODE
+endif
+
+ifeq ($(CONFIG_SDK_FPGA_PLATFORM),y)
+DEF += -D CONFIG_SDK_FPGA_PLATFORM
+endif
+
+ifeq ($(CONFIG_SDK_EXTERNAL_CPU),y)
+DEF += -D CONFIG_SDK_EXTERNAL_CPU
+endif
+
+CFLAGS += -D CONFIG_SDK_GENERAL_TABLE_REG_ACCESS
+
+
+SDK_ROOT_DIR = $(SDKDIR)
+SYS_DIR = $(SDK_ROOT_DIR)/system/linux
+OSAL_DIR = $(SDK_ROOT_DIR)/system/osal/linux
+SYS_INC = $(SDK_ROOT_DIR)/system/include
+RTUSR_INC = $(SYS_DIR)/rtk/rtusr/include
+COMMON_DIR = $(SDK_ROOT_DIR)/src/common/user
+PHONY :=
+
+ifeq ($(CONFIG_SDK_APP_DIAG_DIR_DIAG_V2),y)
+DIAG_NAME = diag_v2
+endif
+
+DIAGDIR  = $(SDK_ROOT_DIR)/src/app/$(DIAG_NAME)
+DIAG_INC = $(DIAGDIR)/include
+DIAG_SRC = $(DIAGDIR)/src
+DIAG_CFG = $(DIAGDIR)/config
+DIAG_BIN = $(DIAGDIR)/bin
+
+INCLUDE += -I$(SDK_INCLUDE) -I$(SDK_INCLUDE)/dal -I$(SYS_INC) -I$(DRV_INCLUDE) -I$(APP_LIB_INCLUDE)/rrcp -I$(DIAG_INC) -I$(SDK_ROOT_DIR)/../app
+FLTFLAGS += -s 524288
+CFLAGS_EXTRA = $(CFLAGS_y)
+LIB = -L$(SDK_LIBDIR) -lc
+LIB_DEP :=
+
+SDK_VCS_HDR := $(SDK_ROOT_DIR)/system/include/common/vcs_rev.h
+ifeq ($(SDK_VCS_HDR), $(wildcard $(SDK_VCS_HDR)))
+    CFLAGS += -DVCS_REVISION
+endif
+
+ifeq ($(CONFIG_SDK_MODEL_MODE),y)
+INCLUDE += -I$(MODELDIR) -I$(MODELDIR)/common
+endif
+
+UTIL = diag_util.c
+CMDS = $(CMDS_y)
+OBJ = $(COMMON_DIR)/rt_error.o
+
+ifneq ($(CONFIG_RRCP_MASTER),)
+LIB += -L$(APP_LIB_INCLUDE)/rrcp -lrrcp
+endif
+
+ifneq ($(CONFIG_SDK_KERNEL_LINUX_USER_MODE),)
+    OBJ += $(SYS_DIR)/usrAppStart.o
+    LIB += -lrtk -lrtnic -lrtcore -lpthread
+    LIB_DEP += $(SDK_LIBDIR)/librtk.a $(SDK_LIBDIR)/librtcore.a $(SDK_LIBDIR)/librtnic.a
+    ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+        LIB += -lut
+        LIB_DEP += $(SDK_LIBDIR)/libut.a
+    endif
+else
+    INCLUDE += -I$(RTUSR_INC)
+    #OBJ += $(OSAL_DIR)/user/cache.o
+    #OBJ += $(OSAL_DIR)/user/memory.o
+    #OBJ += $(OSAL_DIR)/user/wait.o
+    OBJ += $(OSAL_DIR)/user/sem.o
+    OBJ += $(OSAL_DIR)/user/thread.o
+    #OBJ += $(OSAL_DIR)/user/time.o
+    LIB += -lrtusr -lpthread
+    LIB_DEP += $(SDK_LIBDIR)/librtusr.a
+endif
+
+EXEC = diag
+TARGET := $(DIAG_SRC)/obj
+SRC = $(UTIL) $(CMDS)
+OBJ += $(shell for i in $(SRC); do n=`basename $$i`; echo -n $(TARGET)/$${n%%.*}.o ""; done)
+OBJ += $(DIAG_SRC)/parser/cparser.o \
+       $(DIAG_SRC)/parser/cparser_fsm.o \
+       $(DIAG_SRC)/parser/cparser_io_unix.o \
+       $(DIAG_SRC)/parser/cparser_line.o \
+       $(DIAG_SRC)/parser/cparser_token.o \
+       $(DIAG_SRC)/parser/cparser_token_tbl.o \
+       $(DIAG_SRC)/parser/cparser_tree.o
+
+
+CMD_TREE_SRC := $(DIAG_SRC)/parser/cparser_tree.c
+CMD_TREE_HDR := $(DIAG_INC)/parser/cparser_tree.h
+
+CLI_SRC := $(shell find $(DIAG_CFG)/ -name *.cli)
+
+FLAG_HDR := $(shell find $(DIAG_INC)/flag/ -name *.h)
+
+ifeq ($(CONFIG_RISE),y)
+    INCLUDE += -I$(SDK_ROOT_DIR)/../module
+endif
+
+
+# Dependency of building cparser command tree
+CMD_TREE_DEP := \
+    $(SYS_INC)/common/sdk_autoconf.h \
+    $(SYS_INC)/common/rt_autoconf.h  \
+    $(CLI_SRC) \
+    $(FLAG_HDR)
+
+
+ifneq ($(CONFIG_SDK_APP_DIAG_EXT),)
+    OBJ += $(DIAG_SRC)/ext/diag_ext_common.o
+    ifeq ($(CONFIG_SDK_RTL9310),y)
+        OBJ += $(DIAG_SRC)/ext/diag_ext_9310.o
+    else ifeq ($(CONFIG_SDK_RTL9300),y)
+        OBJ += $(DIAG_SRC)/ext/diag_ext_9300.o
+    else ifeq ($(CONFIG_SDK_RTL8390),y)
+        OBJ += $(DIAG_SRC)/ext/diag_ext_8390.o
+    else ifeq ($(CONFIG_SDK_RTL8380),y)
+        OBJ += $(DIAG_SRC)/ext/diag_ext_8380.o
+    endif
+endif
+
+DEPS := $(OBJ:.o=.d)
+
+SCRIPT_OPTS :=
+ifeq ($(CONFIG_SDK_SQUT_CMD_OPT),y)
+    SCRIPT_OPTS += -sdktest
+endif
+
+PHONY += all
+all: diag-tree $(CLI_OBJ) $(DIAG_BIN)/$(EXEC)
+
+PHONY += diag-tree
+diag-tree: $(CMD_TREE_SRC)
+
+PHONY += diag-tree-clean
+diag-tree-clean:
+	-rm -f $(CMD_TREE_SRC)
+	-rm -f $(CMD_TREE_HDR)
+
+$(CMD_TREE_SRC) $(CMD_TREE_HDR): $(CMD_TREE_DEP)
+	@echo "Build cparser command tree."
+	@-rm -f $(CMD_TREE_SRC)
+	@-rm -f $(CMD_TREE_HDR)
+	@-rm -f ./parser/cparser_tree.o
+	@cd ../config; \
+	chmod 755 ./script/mk_parser.py; \
+	./script/mk_parser.py $(DEF) $(SCRIPT_OPTS) diag_shell.cli -fd ../include/flag/ -f cmd_flag.h; \
+	echo "Prepare to copy cparser files"; \
+	if [ -f ../config/cparser_tree.h ]; \
+	then \
+		mv ../config/cparser_tree.h  $(CMD_TREE_HDR); \
+	fi
+	@if [ -f ../config/cparser_tree.c ]; \
+	then \
+		mv ../config/cparser_tree.c $(CMD_TREE_SRC); \
+	fi
+
+$(DIAG_BIN)/$(EXEC): $(OBJ) $(LIB_DEP)
+	$(CC) $(CFLAGS) $(CFLAGS_EXTRA) $(LDFLAGS) $(INCLUDE) $(OPTIMIZE) $(OBJ) $(LIB) -o $@
+	$(STRIP) $@
+
+
+$(TARGET)/%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS_EXTRA) $(CFLAGS) -c -o $@ $<
+
+%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS_EXTRA) $(CFLAGS) -c -o $@ $<
+
+%.d $(TARGET)/%.d: %.c
+	@set -e; rm -f $@; rm -f $@.*;\
+	$(CC) -MM  $(INCLUDE) $< > $@.$$$$; \
+	sed 's,\($(*F)\)\.o[ :]*,$(@D)/$(*F).o $@ : ,g' < $@.$$$$ > $@; \
+	rm -f $@.*
+
+#Don't create dependencies when we're cleaning, installing, ...
+NODEP := clean tgz install romfs $(CMD_TREE_SRC) $(CMD_TREE_HDR) diag-tree diag-tree-clean
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEP))))
+    -include $(DEPS)
+endif
+
+PHONY += install
+install: $(DIAG_BIN)/$(EXEC)
+	cp $(EXEC) $(BINDIR)
+
+
+PHONY += romfs
+ifdef CONFIG_SYS_KERNEL_LINUX_COMPRESSED_FS
+romfs: $(DIAG_BIN)/$(EXEC)
+	$(SQFSINST) $(DIAG_BIN)/$(EXEC) /bin/$(EXEC)
+else
+romfs: $(DIAG_BIN)/$(EXEC)
+	$(ROMFSINST) $(DIAG_BIN)/$(EXEC) /bin/$(EXEC)
+endif
+
+PHONY += clean
+clean:
+	rm -f $(OBJ) $(DIAG_BIN)/$(EXEC) $(DEPS) *.gdb *.elf *.elf2flt
+
+PHONY += tgz
+tgz: clean
+	cd ..; cd ..; tar zcvf $(EXEC).tgz $(EXEC)
+
+.PHONY: $(PHONY)

@@ -1,0 +1,57 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 40450 $
+// $Date: 2013-06-24 17:45:49 +0800 (Mon, 24 Jun 2013) $
+//
+// Purpose : Define diag shell commands for internal GPIO.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) SPI commands.
+//
+
+
+#ifdef CMD_SPI_SET_REG_REG_ADD_REG_DATA
+//SPI configuration
+//set configuration
+//Register operation
+//Register Address
+//Register Data
+spi set reg <UINT:reg_add> <UINT:reg_data>
+#endif
+
+#ifdef CMD_SPI_GET_REG_REG_ADD
+//SPI configuration
+//get configuration
+//Register operation
+//Register Address
+spi get reg <UINT:reg_add>
+#endif
+
+#ifdef CMD_SPI_SET_SCLK_SCLK_MOSI_MOSI_MISO_MISO_SS_SS_RESET_RESET_INT_INT
+//SPI configuration
+//set configuration
+//GPIO pin number for clock
+//GPIO pin number for clock
+//GPIO pin number for mosi
+//GPIO pin number for mosi
+//GPIO pin number for miso
+//GPIO pin number for miso
+//GPIO pin number for ss
+//GPIO pin number for ss
+//GPIO pin number for reset
+//GPIO pin number for reset
+//GPIO pin number for int
+//GPIO pin number for int
+spi set sclk <UINT:sclk> mosi <UINT:mosi> miso <UINT:miso> ss <UINT:ss> reset <UINT:reset> int <UINT:int>
+#endif
+
+

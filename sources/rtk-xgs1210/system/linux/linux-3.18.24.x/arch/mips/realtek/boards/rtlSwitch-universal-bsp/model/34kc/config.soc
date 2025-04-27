@@ -1,0 +1,34 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# SoC System Config
+#
+config SOC_PLATFORM
+	string
+	default "SHEIPA"
+
+config SOC_CPU_TYPE
+	string
+	default "mips"
+
+config SOC_CPU_MIPS
+	bool
+	default y
+	select SOC_SUPPORT_MIPS4K
+	select SOC_SUPPORT_MIPS24K
+	select SOC_SUPPORT_MIPS34K
+	select SOC_SUPPORT_MIPS74K
+	select SOC_SUPPORT_MIPS1004K
+	select SOC_SUPPORT_MIPS1074K
+	select SOC_SUPPORT_IRQ_VI
+	select SOC_SUPPORT_FPU
+	select SOC_SUPPORT_PCI
+	select SOC_SUPPORT_USB
+	select SOC_SUPPORT_L2C
+	select SOC_SUPPORT_ICTL
+	select SOC_CPU_EB

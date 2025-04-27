@@ -1,0 +1,40 @@
+
+ifneq ($(wildcard $(PROJECT_NAME)), $(PROJECT_NAME))
+    $(error EE: Missing '$(PROJECT_NAME)'. It could be due to missing 'make preconfig_<project_name>')
+endif
+include $(PROJECT_NAME)
+
+ifeq ($(strip $(project_name)),)
+    $(error EE: project_name was not defined before calling Makefile.name)
+endif
+project_dir := project/$(project_name)
+project_info_in := $(project_dir)/info.in
+ifneq ($(wildcard $(project_info_in)), $(project_info_in))
+    $(error EE: missing $(project_info_in))
+endif
+include $(project_info_in)
+
+ifeq ($(strip $(template_name)),)
+    $(error EE: template_name was not defined in '$(project_info_in)')
+endif
+template_dir := src/template/$(template_name)
+template_info_in := $(template_dir)/info.in
+ifneq ($(wildcard $(template_info_in)), $(template_info_in))
+    $(error EE: missing $(template_info_in))
+endif
+include $(template_info_in)
+
+ifeq ($(strip $(platform_name)),)
+    $(error EE: platform_name was not defined in '$(template_info_in)')
+endif
+platform_dir := src/platform/$(platform_name)
+platform_info_in := $(platform_dir)/info.in
+
+
+
+info_in_dep := $(platform_info_in) $(template_info_in) $(project_info_in)
+release/info.in:
+	@echo "# this file is generated automatcally, don't edit it." > $@
+	@for f in $(info_in_dep) ; do echo "include $$f"  >> $@;  done
+
+.PHONY: release/info.in

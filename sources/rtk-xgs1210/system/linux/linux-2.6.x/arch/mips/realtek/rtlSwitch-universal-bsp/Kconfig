@@ -1,0 +1,6 @@
+config RTL8390_TEST_OPTION
+        bool "Test Option for RTL8390"
+        depends on RTL8390
+        help
+          This is a Test Option which depends on RTL8390.
+ 

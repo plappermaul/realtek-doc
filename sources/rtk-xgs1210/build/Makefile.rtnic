@@ -1,0 +1,86 @@
+#
+# Copyright (C) 2016 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Rtnic Module
+#
+
+
+#
+# include configuration file
+#
+ifeq ($(SDK_CONFIG), $(wildcard $(SDK_CONFIG)))
+include $(SDK_CONFIG)
+endif
+
+
+#
+# compiler/linker option
+#
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE) -URTK_UNIVERSAL_BSP -Werror -Wno-array-bounds
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+    EXTRA_CFLAGS += -I$(UT_INCLUDE)
+endif
+
+
+#
+# main
+#
+NTFY_OBJ    :=
+NIC_OBJ     :=
+
+ifeq ($(CONFIG_SDK_DRIVER_L2NTFY),y)
+    NTFY_OBJ += \
+    	$(NTFY_DIR)/l2ntfy_probe.o
+    ifneq ($(CONFIG_SDK_DRIVER_L2NTFY_R9310),)
+        NTFY_OBJ += \
+        	$(NTFY_DIR)/l2ntfy_rtl9310.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_L2NTFY_R8390),)
+        NTFY_OBJ += \
+        	$(NTFY_DIR)/l2ntfy_rtl8390.o
+    endif
+    ifneq ($(CONFIG_SDK_DRIVER_L2NTFY_R9300),)
+            NTFY_OBJ += \
+            	$(NTFY_DIR)/l2ntfy_rtl9300.o
+    endif
+    ifeq ($(CONFIG_SDK_DRIVER_NIC_KERNEL_MODE),y)
+        NTFY_OBJ += \
+            $(NTFY_DIR)/l2ntfy.o
+    else
+        NTFY_OBJ += \
+            $(NTFY_DIR)/l2ntfy_usr.o
+    endif
+endif
+
+ifeq ($(CONFIG_SDK_DRIVER_NIC),y)
+    NIC_OBJ += \
+    	$(NIC_KRN_DIR)/nic_probe.o \
+    	$(NIC_KRN_DIR)/nic_diag.o
+    ifeq ($(CONFIG_SDK_DRIVER_NIC_R9310),y)
+        NIC_OBJ += \
+        	$(NIC_DIR)/nic_rtl9310.o
+    endif
+    ifeq ($(CONFIG_SDK_DRIVER_NIC_R9300),y)
+        NIC_OBJ += \
+        	$(NIC_DIR)/nic_rtl9300.o
+    endif
+    ifeq ($(CONFIG_SDK_DRIVER_NIC_R8390),y)
+        NIC_OBJ += \
+          	$(NIC_DIR)/nic_rtl8390.o
+    endif
+    ifeq ($(CONFIG_SDK_DRIVER_NIC_R8380),y)
+        NIC_OBJ += \
+        	$(NIC_DIR)/nic_rtl8380.o
+    endif
+    ifeq ($(CONFIG_SDK_DRIVER_NIC_KERNEL_MODE),y)
+        NIC_OBJ += \
+        	$(NIC_DIR)/nic.o
+    else
+        NIC_OBJ += \
+        	$(NIC_KRN_DIR)/nic_usr.o \
+        	$(NIC_KRN_DIR)/nic_rx.o
+    endif
+endif
+
+
+NIC_ALL_OBJ := $(NIC_OBJ) $(NTFY_OBJ)

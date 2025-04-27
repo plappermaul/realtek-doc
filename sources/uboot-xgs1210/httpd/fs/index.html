@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>XGS1210-12</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="base.css">
+
+<script>
+function do_upgrade()
+{
+  document.getElementById('upgrade').style.pointerEvents="none";
+  document.getElementById('cancel').style.pointerEvents="none";
+  document.getElementById('form1').submit();
+}
+function do_cancel()
+{
+  document.getElementById('firmwarefile').value="";
+  window.location.reload();
+}
+</script>
+
+	</head>
+
+	<body>
+		<div class="L_outline">
+		<div class="fw_dn bg">
+		<div class="title">Firmware Upgrade</div>
+		<ul>
+		<li><input name="firmwarefile" type="text"><br></li>
+		<form method="post" enctype="multipart/form-data" id="form1">
+		<li class="path"><div class="cfg_path">
+		<input name="firmware" id="firmware" type="file" onchange="document.getElementsByName('firmwarefile')[0].value=this.value;"></div>path</li>
+		</form>
+		<li><a href="#" onclick="do_upgrade();" id="upgrade" class="btn move1">Upgrade</a></li>
+		<li><a href="#" onclick="do_cancel();" id="cancel" class="btn move2">Cancel</a></li>
+		<li><p>Please do not power off, or unplug Ethernet cable during the upgrade...</p></li>
+		</ul>
+		</div>
+		</div>
+		</div>
+	</body>
+</html>
