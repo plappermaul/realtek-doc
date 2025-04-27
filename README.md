@@ -2,7 +2,8 @@ This repository serves as a well selected collection of Realtek switch SoC docum
 
 What RTK (development kit) we have
 
-- It is based on the D-Link DMS-1250 GPL source at https://tsd.dlink.com.tw/GPL.asp
+- The most recent SDK from 2022 is based on the D-Link DMS-1250 GPL source. It contains a lot of PHY code for RTL8224, RTL8261 and RTL8264. Download from https://tsd.dlink.com.tw/GPL.asp
+- An older SDK from 2016 is based on the Zyxel XGS1210-12 GPL source. It contains some totaly unknown PHY code for RTL8284. Download can be requested from https://www.zyxel.com/global/en/form/gpl-oss-software-notice
 
 What PDF datasheets we have
 
