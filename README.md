@@ -1,6 +1,12 @@
+This repository serves as a well selected collection of Realtek switch SoC documentation and source. Focus is on the Otto platform with the RTL838x (maple), RTL839x (cypress), RTL930x (longan) and RTL931x (mango) chips. Additional infos can be found at https://svanheule.net/switches/start
+
+What RTK (development kit) we have
+
+- It is based on the D-Link DMS-1250 GPL source at https://tsd.dlink.com.tw/GPL.asp
+
 What PDF datasheets we have
 
-- Sveral application notes GPON/EON SoC RTL9607C 
+- Several application notes GPON/EON SoC RTL9607C 
 - Switch controller RTL8330 datasheet
 - Switch controller RTL8332 datasheet
 - Switch controller RTL8370MB datasheet
@@ -29,32 +35,4 @@ What PDF datasheets are we missing
 - Switch controller RTL9302B, RTL9302C, RTL930D datasheet
 - POE controller RTL8239 datasheet
 - POE controller RTL8239 host command guide
-- Transceiver RTL8224 (maybe RTL8284 in the GPL source drops is a older version)
-
-Transceiver IDs according to the GPL source drops
-
-- #define PHY_MODEL_ID_RTL8208G           (0x08)
-- #define PHY_MODEL_ID_RTL8208D_EXT       (0x08)
-- #define PHY_MODEL_ID_RTL8208L           (0x08)
-- #define PHY_MODEL_ID_RTL8218B_INT       (0x24) /* For RTL8380M internal phy*/
-- #define PHY_MODEL_ID_RTL8208L_INT       (0x24) /* For RTL8330/RTL8332 internal phy */
-- #define PHY_MODEL_ID_RTL8218B_EXT       (0x18)
-- #define PHY_MODEL_ID_RTL8218D           (0x18)
-- #define PHY_MODEL_ID_RTL8218FB          (0x18)
-- #define PHY_MODEL_ID_RTL8214FC          (0x18)
-- #define PHY_MODEL_ID_RTL8218E           (0x18)
-- #define PHY_MODEL_ID_RTL8214C           (0x14)
-- #define PHY_MODEL_ID_RTL8214B           (0x14)
-- #define PHY_MODEL_ID_RTL8212B           (0x14)
-- #define PHY_MODEL_ID_RTL8214FB          (0x14)
-- #define PHY_MODEL_ID_RTL8295            (0x2B)
-- #define PHY_MODEL_ID_RTL8295R           (0x2B)
-- #define PHY_MODEL_ID_RTL8214QF          (0x2B)
-- #define PHY_MODEL_ID_RTL8224QF          (0x2B)
-- #define PHY_MODEL_ID_RTL8226            (0x03)
-- #define PHY_MODEL_ID_RTL8226B           (0x04)
-- #define PHY_MODEL_ID_RTL826X            (0x2F)
-- #define PHY_MODEL_ID_RTL8264B           (0x01)
-- #define PHY_MODEL_ID_RTL8224            (0x2D)
-- #define PHY_MODEL_ID_RTL8284            (0x2D)
-- #define PHY_MODEL_ID_RTL8211FS          (0x11)
+- Transceiver RTL8224
