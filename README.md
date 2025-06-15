@@ -23,7 +23,7 @@ What PDF datasheets we have
 - POE controller RTL8238B datasheet
 - POE controller RTL8238B host command guide
 - Transceiver RTL8218B, RTL8218D, RTL8218E
-- Transceiver RTL8221B (formerly known as RTL8226)
+- Transceiver RTL8221B-VB-CG (3rd generation 2.5Gbps)
 - Transceiver RTL8216N
 
 What PDF datasheets are we missing
@@ -37,6 +37,9 @@ What PDF datasheets are we missing
 - Switch controller RTL9302B, RTL9302C, RTL930D datasheet
 - POE controller RTL8239 datasheet
 - POE controller RTL8239 host command guide
+- Transceiver RTL8226 (1st generation 2.5Gbps)
+- Transceiver RTL8226B-CG (2nd generation 2.5Gbps)
+- Transceiver RTL8221B-CG (2nd generation 2.5Gbps)
 - Transceiver RTL8224
 - Transceiver RTL8264
 - Transceiver RTL8261BE
