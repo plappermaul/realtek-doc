@@ -1,4 +1,7 @@
-This repository serves as a well selected collection of Realtek switch SoC documentation and source. Focus is on the Otto platform with the RTL838x (maple), RTL839x (cypress), RTL930x (longan) and RTL931x (mango) chips. Additional infos can be found at https://svanheule.net/switches/start
+This repository serves as a well selected collection of Realtek switch SoC documentation and source. Focus is on the Otto platform with the RTL838x (maple), RTL839x (cypress), RTL930x (longan) and RTL931x (mango) chips. 
+
+- Roadmap https://github.com/plappermaul/realtek-doc/blob/main/Roadmap.pdf
+- Additional infos can be found at https://svanheule.net/switches/start
 
 What RTK (development kit) we have
 
