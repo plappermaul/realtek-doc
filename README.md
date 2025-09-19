@@ -14,6 +14,7 @@ What PDF datasheets we have
 - Switch controller RTL8330 datasheet
 - Switch controller RTL8332 datasheet
 - Switch controller RTL8370MB datasheet
+- Switch controller RTL8372 datasheet
 - Switch controller RTL8376 datasheet
 - Switch controller RTL8380 datasheet
 - Switch controller RTL8382 datasheet
@@ -32,7 +33,6 @@ What PDF datasheets we have
 What PDF datasheets are we missing
 
 - Switch controller RTL8353M datasheet
-- Switch controller RTL8372 datasheet
 - Switch controller RTL8373 datasheet
 - Switch controller RTL838x register file
 - Switch controller RTL839x register file
