@@ -28,7 +28,7 @@ What PDF datasheets we have
 - POE controller RTL8238B host command guide
 - Transceiver RTL8218B, RTL8218D, RTL8218E
 - Transceiver RTL8221B-VB-CG (3rd generation 2.5Gbps)
-- Transceiver RTL8216N
+- Transceiver RTL8261N
 
 What PDF datasheets are we missing
 
