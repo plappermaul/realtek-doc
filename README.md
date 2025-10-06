@@ -8,9 +8,10 @@ What RTK (development kit) we have
 - The most recent SDK from 2022 is based on the D-Link DMS-1250 GPL source. It contains a lot of modern PHY code for RTL8218E, RTL8224, RTL8261 and RTL8264. Download from https://tsd.dlink.com.tw/GPL.asp
 - An older SDK from 2016 is based on the Zyxel XGS1210-12 GPL source. It contains code for a totally unknown RTL8284 PHY. Download can be requested from https://www.zyxel.com/global/en/form/gpl-oss-software-notice
 
-What PDF datasheets we have
+The PDFs we have
 
-- Several application notes GPON/EON SoC RTL9607C 
+- GPON/EON controller RTL9601 datasheets
+- GPON/EON controller RTL9607C several application notes  
 - Switch controller RTL8330 datasheet
 - Switch controller RTL8332 datasheet
 - Switch controller RTL8370MB datasheet
