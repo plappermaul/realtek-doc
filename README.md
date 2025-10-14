@@ -42,8 +42,12 @@ The PDFs we have
 - Switch controller RTL9313 datasheet
 - POE controller RTL8238B datasheet
 - POE controller RTL8238B host command guide
+- Transceiver RTL8211B, RTL8211C, RTL8211D, RTL8211E, RTL8211F
+- Transceiver RTL8212, RTL8212F, RTL8212G
+- Transceiver RTL8214FC
 - Transceiver RTL8218B, RTL8218D, RTL8218E
 - Transceiver RTL8221B-VB-CG (3rd generation 2.5Gbps)
+- Transceiver RTL8251C
 - Transceiver RTL8261N
 
 What PDF datasheets are we missing
