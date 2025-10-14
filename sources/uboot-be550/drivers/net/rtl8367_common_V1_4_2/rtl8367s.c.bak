@@ -1,0 +1,688 @@
+/*
+ * Copyright (c) 2020, The Linux Foundation. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+#include "sw.h"
+#include "fal_port_ctrl.h"
+#include "hsl_api.h"
+#include "hsl.h"
+#include "hsl_phy.h"
+#include "ssdk_plat.h"
+#include "qca808x_phy.h"
+#include "rtl8221b.h"
+
+#include <linux/of_mdio.h>
+#include <linux/of_platform.h>
+#include <linux/of_gpio.h>
+#include <linux/proc_fs.h>
+#include <linux/mdio.h>
+#include <linux/mutex.h>
+
+#include "rtk_switch.h"
+#include "rtl8367c_reg.h"
+#include "rtl8367c_asicdrv.h"
+#include "rtl8367c_asicdrv_phy.h"
+#include "rtl8367c_asicdrv_vlan.h"
+#include "rtl8367c_asicdrv_port.h"
+#include "port.h"
+#include "vlan.h"
+#include "l2.h"
+#include "acl.h"
+#include "eee.h"
+
+
+/*
+ *
+ */
+//#define MDC_MDIO_PHY_ID		(29)
+#define MII_ADDR_C45		(1<<30)
+
+#define LOG_ERR(fmt, ...) \
+	do { \
+		printk("[rtl8367s] %s[%d]: "fmt, __func__, __LINE__, ##__VA_ARGS__); \
+	} while(0)
+#define ERR_PRINT(ret) \
+	do {	\
+		if ( ret != SUCCESS ) printk("[rtl8367s] %s[%d]: error, return. ", __FUNCTION__, __LINE__); \
+	} while(0)
+
+
+#define RTL8367C_STATUS_LINK_10M			 0
+#define RTL8367C_STATUS_LINK_100M			 1
+#define RTL8367C_STATUS_LINK_1000M			 2
+#define RTL8367C_CTRL_POWER_DOWN	0x0800
+#define CONFIG_VLAN_PER_PORT 1
+#define RTL8367C_PHY0_ADDR   0x0
+#define RTL8367C_PHY1_ADDR   0x1
+#define RTL8367C_PHY2_ADDR   0x2
+#define RTL8367C_PHY3_ADDR   0x3
+#define RTL8367C_PHY4_ADDR   0x4
+#define NO_WAN_PORT -1
+#define RTL_LAN_PORT_VLAN          1
+#define RTL_WAN_PORT_VLAN          2
+#define ENET_UNIT_GE1 1
+#define ENET_UNIT_GE0 0 /* Connected to the switch */
+#define ENET_UNIT_LAN ENET_UNIT_GE0
+#define ENET_UNIT_WAN ENET_UNIT_GE1
+
+#define RTL8367C_IS_ENET_PORT(phyUnit) (rtlPhyInfo[phyUnit].isEnetPort)
+#define RTL8367C_IS_PHY_ALIVE(phyUnit) (rtlPhyInfo[phyUnit].isPhyAlive)
+#define RTL8367C_ETHUNIT(phyUnit) (rtlPhyInfo[phyUnit].ethUnit)
+#define RTL8367C_PHYBASE(phyUnit) (rtlPhyInfo[phyUnit].phyBase)
+#define RTL8367C_PHYADDR(phyUnit) (rtlPhyInfo[phyUnit].phyAddr)
+#define RTL8367C_VLAN_TABLE_SETTING(phyUnit) (rtlPhyInfo[phyUnit].VLANTableSetting)
+
+
+typedef struct {
+    bool   isEnetPort;       /* normal enet port */
+    bool   isPhyAlive;       /* last known state of link */
+    int    ethUnit;          /* MAC associated with this phy port */
+   	unsigned int phyBase;
+    unsigned int phyAddr;          /* PHY registers associated with this phy port */
+    unsigned int VLANTableSetting; /* Value to be written to VLAN table */
+} rtlPhyInfo_t;
+
+static rtlPhyInfo_t rtlPhyInfo[] = {
+
+    {TRUE,   /* port 1 -- LAN port 1 */
+     FALSE,
+#if defined(WAN_AT_P0)
+     ENET_UNIT_WAN,
+#else
+	 ENET_UNIT_LAN,
+#endif
+     0,
+     RTL8367C_PHY0_ADDR,
+     RTL_LAN_PORT_VLAN
+    },
+
+    {TRUE,   /* port 2 -- LAN port 2 */
+     FALSE,
+     ENET_UNIT_LAN,
+     0,
+     RTL8367C_PHY1_ADDR,
+     RTL_LAN_PORT_VLAN
+    },
+
+    {TRUE,   /* port 3 -- LAN port 3 */
+     FALSE,
+     ENET_UNIT_LAN,
+     0,
+     RTL8367C_PHY2_ADDR,
+     RTL_LAN_PORT_VLAN
+    },
+
+    {TRUE,   /* port 4 --  LAN port 4 */
+     FALSE,
+     ENET_UNIT_LAN,
+     0,
+     RTL8367C_PHY3_ADDR,
+     RTL_LAN_PORT_VLAN   /* Send to all ports */
+    },
+
+    {TRUE,  /* port 5 -- WAN Port 5 */
+     FALSE,
+ #if defined(WAN_AT_P4)
+     ENET_UNIT_WAN,
+ #else
+ 	 ENET_UNIT_LAN,
+ #endif
+     0,
+     RTL8367C_PHY4_ADDR,
+     RTL_LAN_PORT_VLAN    /* Send to all ports */
+    },
+
+    {FALSE,   /* port 0 -- cpu port 0 */
+     TRUE,
+     ENET_UNIT_LAN,
+     0,
+     0x00,
+     RTL_LAN_PORT_VLAN
+    },
+};
+
+/*
+ *
+ */
+static struct mii_bus *g_mii_bus = NULL;
+
+/*
+ *
+ */
+int rtl8367s_mdio_write(unsigned int phy_addr, unsigned int reg, unsigned int data)
+{
+	if (!g_mii_bus)
+	{
+		return -1;
+	}
+
+	mutex_lock(&g_mii_bus->mdio_lock);
+	__mdiobus_write(g_mii_bus, 29, reg, data);
+	mutex_unlock(&g_mii_bus->mdio_lock);
+	
+	return 0;
+}
+
+int rtl8367s_mdio_read(unsigned int phy_addr, unsigned int reg, unsigned int* data)
+{
+	if (!g_mii_bus)
+	{
+		return -1;
+	}
+
+	mutex_lock(&g_mii_bus->mdio_lock);
+	*data = __mdiobus_read(g_mii_bus, 29, reg);
+	mutex_unlock(&g_mii_bus->mdio_lock);
+
+	return 0;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_mii_read - mii register read
+*
+*/
+static a_uint16_t
+rtl8211_phy_reg_read (rtk_uint32 dev_id, rtk_uint32 phy_id, rtk_uint32 reg_id)
+{
+	return qca808x_phy_reg_read (dev_id, phy_id, reg_id);
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_mii_write - mii register write
+*
+*/
+static sw_error_t
+rtl8211_phy_reg_write (rtk_uint32 dev_id, rtk_uint32 phy_id, rtk_uint32 reg_id,
+	a_uint16_t reg_val)
+{
+	return qca808x_phy_reg_write (dev_id, phy_id, reg_id, reg_val);
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_debug_read - debug port read
+*
+*/
+static a_uint16_t
+rtl8211_phy_debug_read(rtk_uint32 dev_id, rtk_uint32 phy_id, a_uint16_t reg_id)
+{
+	return qca808x_phy_debug_read(dev_id, phy_id, reg_id);
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_debug_write - debug port write
+*
+*/
+static sw_error_t
+rtl8211_phy_debug_write(rtk_uint32 dev_id, rtk_uint32 phy_id, a_uint16_t reg_id,
+	a_uint16_t reg_val)
+{
+	return qca808x_phy_debug_write (dev_id, phy_id, reg_id, reg_val);
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_mmd_read -  PHY MMD register read
+*
+*/
+static a_uint16_t
+rtl8211_phy_mmd_read(rtk_uint32 dev_id, rtk_uint32 phy_id,
+	a_uint16_t mmd_num, a_uint16_t reg_id)
+{
+	return qca808x_phy_mmd_read(dev_id, phy_id, mmd_num, reg_id);
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_mmd_write - PHY MMD register write
+*
+*/
+static sw_error_t
+rtl8211_phy_mmd_write(rtk_uint32 dev_id, rtk_uint32 phy_id,
+	a_uint16_t mmd_num, a_uint16_t reg_id, a_uint16_t reg_val)
+{
+	return qca808x_phy_mmd_write (dev_id, phy_id, mmd_num,
+		reg_id, reg_val);
+}
+
+
+bool
+rtl8367c_phy_is_link_alive(int phyUnit, int *plinkStatus, int *pspeed, int *pduplex)
+{
+	uint32_t phyBase;
+	uint32_t phyAddr;
+	rtk_api_ret_t retVal;
+	int linkStatus, speed, duplex;
+
+	phyBase = RTL8367C_PHYBASE(phyUnit);
+	phyAddr = RTL8367C_PHYADDR(phyUnit);
+
+	if (phyAddr > RTK_PHY_ID_MAX)
+		return FALSE;
+
+	retVal = rtk_port_phyStatus_get(phyAddr, (rtk_port_linkStatus_t *)&linkStatus,
+		(rtk_port_speed_t *)&speed, (rtk_port_duplex_t *)&duplex);
+
+	if (retVal != RT_ERR_OK)
+	{
+		printk("rtl8367c_phy_is_link_alive failed!!!\r\n");
+		return FALSE;
+	}
+	*plinkStatus = linkStatus;
+	switch(speed)
+	{
+	case PORT_SPEED_10M:
+		*pspeed = FAL_SPEED_10;
+		break;
+	case PORT_SPEED_100M:
+		*pspeed = FAL_SPEED_100;
+		break;
+	case PORT_SPEED_1000M:
+		*pspeed = FAL_SPEED_1000;
+		break;
+	case PORT_SPEED_2500M:
+		*pspeed = FAL_SPEED_2500;
+		break;
+	default:
+		*pspeed = FAL_SPEED_10;
+		break;
+	}
+	switch (duplex)
+	{
+	case PORT_HALF_DUPLEX:
+		*pduplex = FAL_HALF_DUPLEX;
+		break;
+	case PORT_FULL_DUPLEX:
+		*pduplex = FAL_FULL_DUPLEX;
+		break;
+	default:
+		*pduplex = FAL_FULL_DUPLEX;
+		break;
+	}
+
+	return linkStatus;
+}
+
+
+
+/******************************************************************************
+*
+* rtl8211_phy_get_status - get the phy status
+*
+*/
+static sw_error_t
+rtl8211_phy_get_status(rtk_uint32 dev_id, rtk_uint32 phy_id,
+		struct port_phy_status *phy_status)
+{
+	int i;
+	bool alive;
+	int linkStatus, speed, duplex;
+		
+	SSDK_ERROR("[ZC]===>rtl8211_phy_get_status\n");
+
+	for (i = 0; i < 5; i++)
+	{
+		alive = rtl8367c_phy_is_link_alive(i, &linkStatus, &speed, &duplex);
+		SSDK_DEBUG("[%d] linkstatus=%d speed=%d duplex=%d\n", 
+			i, linkStatus, speed, duplex);
+		if (linkStatus)
+		{
+			phy_status->link_status = linkStatus;
+			phy_status->speed = speed;
+			phy_status->duplex = duplex;
+		}
+	}
+	
+	SSDK_DEBUG("get rtl8211 linkstatus: %u, speed: %d, duplex: %d\n", phy_status->link_status, phy_status->speed, phy_status->duplex);
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_set_autoneg_adv - set the phy autoneg Advertisement
+*
+*/
+static sw_error_t
+rtl8211_phy_set_autoneg_adv(rtk_uint32 dev_id, rtk_uint32 phy_id,
+			   rtk_uint32 autoneg)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_set_autoneg_adv\n");
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_get_autoneg_adv - get the phy autoneg Advertisement
+*
+*/
+static sw_error_t
+rtl8211_phy_get_autoneg_adv(rtk_uint32 dev_id, rtk_uint32 phy_id,
+			   rtk_uint32 * autoneg)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_get_autoneg_adv\n");
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_get_speed - Determines the speed of phy ports associated with the
+* specified device.
+*/
+
+static sw_error_t
+rtl8211_phy_get_speed(rtk_uint32 dev_id, rtk_uint32 phy_id,
+		     fal_port_speed_t * speed)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_get_speed\n");
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_get_duplex - Determines the duplex of phy ports associated with the
+* specified device.
+*/
+static sw_error_t
+rtl8211_phy_get_duplex(rtk_uint32 dev_id, rtk_uint32 phy_id,
+		      fal_port_duplex_t * duplex)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_get_duplex\n");
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_set_speed - Set the speed of phy ports associated with the
+* specified device.
+*/
+static sw_error_t
+rtl8211_phy_set_speed(rtk_uint32 dev_id, rtk_uint32 phy_id,
+		     fal_port_speed_t speed)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_set_speed\n");
+	
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_set_duplex - Set the duplex of phy ports associated with the
+* specified device.
+*/
+static sw_error_t
+rtl8211_phy_set_duplex(rtk_uint32 dev_id, rtk_uint32 phy_id,
+		      fal_port_duplex_t duplex)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_set_duplex\n");
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_enable_autoneg - enable the phy autoneg
+*
+*/
+static sw_error_t
+rtl8211_phy_enable_autoneg(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_enable_autoneg\n");
+	 
+	return SW_OK;
+
+}
+
+/******************************************************************************
+*
+* rtl8211_restart_autoneg - restart the phy autoneg
+*
+*/
+static sw_error_t
+rtl8211_phy_restart_autoneg(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_restart_autoneg\n");
+ 
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_autoneg_status - get the phy autoneg status
+*
+*/
+static a_bool_t
+rtl8211_phy_autoneg_status(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_autoneg_status\n");
+	
+	return A_FALSE;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_status - get the phy link status
+*
+* RETURNS:
+*    A_TRUE  --> link is alive
+*    A_FALSE --> link is down
+*/
+static a_bool_t
+rtl8211_phy_get_link_status(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_get_link_status\n");
+	
+	return A_FALSE;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_reset - reset the phy
+*
+*/
+static sw_error_t
+rtl8211_phy_reset(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_reset\n");
+ 
+	return SW_OK;
+}
+
+
+/******************************************************************************
+*
+* rtl8211_phy_get_phy_id - get the phy id
+*
+*/
+static sw_error_t
+rtl8211_phy_get_phy_id(rtk_uint32 dev_id, rtk_uint32 phy_id,
+	rtk_uint32 *phy_data)
+{
+	return qca808x_phy_get_phy_id (dev_id, phy_id, phy_data);
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_off - power off the phy
+*
+*/
+static sw_error_t
+rtl8211_phy_poweroff(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_poweroff\n");
+
+	return SW_OK;
+}
+
+/******************************************************************************
+*
+* rtl8211_phy_on - power on the phy
+*
+*/
+static sw_error_t
+rtl8211_phy_poweron(rtk_uint32 dev_id, rtk_uint32 phy_id)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_poweron\n");
+
+	return SW_OK;
+}
+
+
+/******************************************************************************
+*
+* rtl8211_interface_mode_set
+*
+*/
+static sw_error_t
+rtl8211_phy_interface_mode_set(rtk_uint32 dev_id, rtk_uint32 phy_id, fal_port_interface_mode_t interface_mode)
+{
+	return SW_OK;
+}
+
+static sw_error_t
+rtl8211_phy_interface_mode_get(rtk_uint32 dev_id, rtk_uint32 phy_id, fal_port_interface_mode_t *interface_mode)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_interface_mode_get\n");
+	*interface_mode = PORT_SGMII_PLUS;
+	return SW_OK;
+}
+
+static sw_error_t
+rtl8211_phy_interface_modestatus_get(rtk_uint32 dev_id, rtk_uint32 phy_id, fal_port_interface_mode_t *interface_mode)
+{
+	SSDK_ERROR("[ZC]===>rtl8211_phy_interface_modestatus_get\n");
+	*interface_mode = PORT_SGMII_PLUS;
+	return SW_OK;
+}
+
+static sw_error_t rtl8367_phy_api_ops_init(void)
+{
+	sw_error_t ret = SW_OK;
+	hsl_phy_ops_t *rtl8367_phy_api_ops = NULL;
+
+	rtl8367_phy_api_ops = kzalloc(sizeof(hsl_phy_ops_t), GFP_KERNEL);
+	if (rtl8367_phy_api_ops == NULL)
+	{
+		SSDK_ERROR("rtl8211 phy ops kzalloc failed!\n");
+		return -ENOMEM;
+	}
+
+	phy_api_ops_init(RTL8367S_PHY_CHIP);
+
+	rtl8367_phy_api_ops->phy_reg_write = rtl8211_phy_reg_write;
+	rtl8367_phy_api_ops->phy_reg_read = rtl8211_phy_reg_read;
+	rtl8367_phy_api_ops->phy_debug_write = rtl8211_phy_debug_write;
+	rtl8367_phy_api_ops->phy_debug_read = rtl8211_phy_debug_read;
+	rtl8367_phy_api_ops->phy_mmd_write = rtl8211_phy_mmd_write;
+	rtl8367_phy_api_ops->phy_mmd_read = rtl8211_phy_mmd_read;
+	rtl8367_phy_api_ops->phy_get_status = rtl8211_phy_get_status;
+	rtl8367_phy_api_ops->phy_speed_get = rtl8211_phy_get_speed;
+	rtl8367_phy_api_ops->phy_speed_set = rtl8211_phy_set_speed;
+	rtl8367_phy_api_ops->phy_duplex_get = rtl8211_phy_get_duplex;
+	rtl8367_phy_api_ops->phy_duplex_set = rtl8211_phy_set_duplex;
+	rtl8367_phy_api_ops->phy_autoneg_enable_set = rtl8211_phy_enable_autoneg;
+	rtl8367_phy_api_ops->phy_restart_autoneg = rtl8211_phy_restart_autoneg;
+	rtl8367_phy_api_ops->phy_autoneg_status_get = rtl8211_phy_autoneg_status;
+	rtl8367_phy_api_ops->phy_autoneg_adv_set = rtl8211_phy_set_autoneg_adv;
+	rtl8367_phy_api_ops->phy_autoneg_adv_get = rtl8211_phy_get_autoneg_adv;
+	rtl8367_phy_api_ops->phy_link_status_get = rtl8211_phy_get_link_status;
+	rtl8367_phy_api_ops->phy_reset = rtl8211_phy_reset;
+	rtl8367_phy_api_ops->phy_id_get = rtl8211_phy_get_phy_id;
+	rtl8367_phy_api_ops->phy_power_off = rtl8211_phy_poweroff;
+	rtl8367_phy_api_ops->phy_power_on = rtl8211_phy_poweron;
+	rtl8367_phy_api_ops->phy_interface_mode_set = rtl8211_phy_interface_mode_set;
+	rtl8367_phy_api_ops->phy_interface_mode_get = rtl8211_phy_interface_mode_get;
+	rtl8367_phy_api_ops->phy_interface_mode_status_get = rtl8211_phy_interface_modestatus_get;
+
+	ret = hsl_phy_api_ops_register(RTL8367S_PHY_CHIP, rtl8367_phy_api_ops);
+
+	if (ret == SW_OK)
+	{
+		SSDK_INFO("qca probe rtl8367 phy driver succeeded!\n");
+	}
+	else
+	{
+		SSDK_ERROR("qca probe rtl8367 phy driver failed! (code: %d)\n", ret);
+	}
+
+	return ret;
+}
+
+int rtl8367s_init(rtk_uint32 dev_id, rtk_uint32 port_bmp)
+{
+	a_int32_t ret = 0;
+	static a_bool_t phy_ops_flag = A_FALSE;
+
+	rtk_port_mac_ability_t mac_cfg;
+	rtk_mode_ext_t mode;
+//	rtk_vlan_cfg_t vlan1, vlan2;
+//	int i;
+//	rtk_uint32 rddata = 0;
+
+	struct device_node *mdio;
+	struct mii_bus *mdio_bus;
+
+	SSDK_ERROR("Init RTL8367, dev_id: %d, port_bmp: %0x\n", dev_id, port_bmp);
+	if(phy_ops_flag == A_FALSE &&
+			rtl8367_phy_api_ops_init() == SW_OK) {
+		phy_ops_flag = A_TRUE;
+	}
+
+	mdio = of_find_node_by_path("/soc/mdio@90000");
+
+	if (!mdio)
+		return -EINVAL;
+
+	mdio_bus = of_mdio_find_bus(mdio);
+
+	if (!mdio_bus)
+		return -EPROBE_DEFER;
+
+	g_mii_bus = mdio_bus;
+
+	rtk_switch_init();
+#if 0
+	rtk_vlan_reset();
+	rtk_vlan_init();
+#endif
+	memset(&mac_cfg, 0x0, sizeof(mac_cfg));
+	mode = MODE_EXT_HSGMII;
+	mac_cfg.forcemode = MAC_FORCE;
+	mac_cfg.speed = PORT_SPEED_2500M;
+	mac_cfg.duplex = PORT_FULL_DUPLEX;
+	mac_cfg.link = PORT_LINKUP;
+	mac_cfg.nway = DISABLED;
+	mac_cfg.txpause = ENABLED;
+	mac_cfg.rxpause = ENABLED;
+//	rtk_port_macForceLinkExt_set(EXT_PORT0, mode, &mac_cfg);
+//	rtk_port_sgmiiNway_set(EXT_PORT0, DISABLED);
+//	rtk_port_phyEnableAll_set(ENABLED);
+
+#if 0
+	for (i = UTP_PORT0; i <= UTP_PORT4; i++)
+	{
+		rtl8367c_phy_on(i);
+	}
+#endif
+	return ret;
+}
+

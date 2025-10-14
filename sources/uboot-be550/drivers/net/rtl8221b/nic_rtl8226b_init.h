@@ -1,0 +1,21 @@
+
+#ifndef __NIC_RTL8226B_INIT_H__
+#define __NIC_RTL8226B_INIT_H__
+
+#if 0
+#else
+#include "rtl8226_typedef.h"
+#endif
+
+BOOLEAN
+Rtl8226b_phy_init(
+    IN HANDLE hDevice,
+    IN PHY_LINK_ABILITY *pphylinkability,
+    IN BOOL singlephy
+    );
+
+#endif
+
+
+
+
