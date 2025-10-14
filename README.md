@@ -5,8 +5,15 @@ This repository serves as a well selected collection of Realtek switch SoC docum
 
 What RTK (development kit) we have
 
+- Some fragments from the TP-Link BE550. There are several drivers for Realtek PHYs that are used on non-Realtek platforms.
 - The most recent SDK from 2022 is based on the D-Link DMS-1250 GPL source. It contains a lot of modern PHY code for RTL8218E, RTL8224, RTL8261 and RTL8264. Download from https://tsd.dlink.com.tw/GPL.asp
 - An older SDK from 2016 is based on the Zyxel XGS1210-12 GPL source. It contains code for a totally unknown RTL8284 PHY. Download can be requested from https://www.zyxel.com/global/en/form/gpl-oss-software-notice
+
+Direct Links
+
+PHY | BE550 | DMS-1250 | XGS-1210 XGS-210
+--- | --- | --- | --- 
+RTL8221B | [U-Boot](/sources/uboot-be550/drivers/net/rtl8221b) | d | d
 
 The PDFs we have
 
