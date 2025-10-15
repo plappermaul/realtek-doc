@@ -53,6 +53,7 @@ The PDFs we have
 What PDF datasheets are we missing
 
 - Switch controller RTL8353M datasheet
+- Switch controller RTL8367 datasheet
 - Switch controller RTL8373 datasheet
 - Switch controller RTL838x register file
 - Switch controller RTL839x register file
