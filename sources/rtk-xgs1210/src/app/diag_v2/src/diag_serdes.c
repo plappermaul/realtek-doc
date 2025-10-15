@@ -66,7 +66,122 @@ cparser_cmd_serdes_get_id_sdsId_page_page_reg_reg(cparser_context_t *context,
 }
 #endif /* CMD_SERDES_GET_ID_SDSID_PAGE_PAGE_REG_REG */
 
+#ifdef CMD_SERDES_DUMP
+/**
+ * serdes dump
+ */
+#define SDS_MAX_SDS 25
+#define SDS_MAX_PAGES (0x31)
+#define SDS_MAX_REGS (0x20)
+cparser_result_t
+cparser_cmd_serdes_dump(cparser_context_t *context)
+{
+    uint32 unit;
+    uint32 data;
+    int sds, page, reg;
+    DIAG_UTIL_PARAM_CHK();
+    DIAG_OM_GET_UNIT_ID(unit);
+    DIAG_UTIL_OUTPUT_INIT();
+    for (sds = 0; sds < SDS_MAX_SDS; sds++) {
+        for (page = 0; page < SDS_MAX_PAGES; page++) {
+            for (reg = 0; reg < SDS_MAX_REGS; reg++) {
+                hal_serdes_reg_get(unit, sds, page, reg, &data);
+                diag_util_printf("%d,%d,0x%x,0x%x,0x%x\n",sds, page, page, reg, data);
+            }
+        }
+    }
+    return CPARSER_OK;
+}
+#endif /* CMD_SERDES_DUMP */
 
+#ifdef CMD_SERDES_DUMPOWRT_ID_SDSID
+#define RTSDS_DBG_PAGE_NAMES	48
+
+#define RTSDS_SUBPAGE(page)		(page % 64)
+#define RTSDS_REG_CNT			32
+
+#define RTSDS_931X_SDS_CNT		14
+#define RTSDS_931X_PAGE_CNT		192
+
+static const char * const rtsds_page_name[RTSDS_DBG_PAGE_NAMES] = {
+	[0] = "SDS",		[1] = "SDS_EXT",
+	[2] = "FIB",		[3] = "FIB_EXT",
+	[4] = "DTE",		[5] = "DTE_EXT",
+	[6] = "TGX",		[7] = "TGX_EXT",
+	[8] = "ANA_RG",		[9] = "ANA_RG_EXT",
+	[10] = "ANA_TG",	[11] = "ANA_TG_EXT",
+	[31] = "ANA_WDIG",
+	[32] = "ANA_MISC",	[33] = "ANA_COM",
+	[34] = "ANA_SP",	[35] = "ANA_SP_EXT",
+	[36] = "ANA_1G",	[37] = "ANA_1G_EXT",
+	[38] = "ANA_2G",	[39] = "ANA_2G_EXT",
+	[40] = "ANA_3G",	[41] = "ANA_3G_EXT",
+	[42] = "ANA_5G",	[43] = "ANA_5G_EXT",
+	[44] = "ANA_6G",	[45] = "ANA_6G_EXT",
+	[46] = "ANA_10G",	[47] = "ANA_10G_EXT",
+};
+
+static int rtsds_get_backing_sds(int sds, int page)
+{
+	int map[] = { 0, 1, 2, 3, 6, 7, 10, 11, 14, 15, 18, 19, 22, 23 };
+	int backsds;
+
+	/* non-RTL931x and first two RTL931x SerDes have 1:1 frontend/backend mapping */
+	if (CONFIG_SDK_RTL9310 || sds < 2)
+		return sds;
+
+	backsds = map[sds];
+	if (sds & 1)
+		backsds += (page >> 6); /* distribute "odd" to 3 background SerDes */
+	else
+		backsds += (page >> 7); /* distribute "even" to 2 background SerDes */
+
+	return backsds;
+}
+
+/**
+ * serdes dumpowrt id <UINT:sdsId>
+ */
+cparser_result_t
+cparser_cmd_serdes_dumpowrt_id_sdsId(cparser_context_t *context, uint32_t *sdsId_ptr)
+{
+    uint32 unit;
+    uint32 data;
+    int regnum, subpage, page = 0;
+
+    DIAG_UTIL_PARAM_CHK();
+    DIAG_OM_GET_UNIT_ID(unit);
+    DIAG_UTIL_OUTPUT_INIT();
+
+    if (!CONFIG_SDK_RTL9310) {
+        diag_util_printf("Not supported!");
+        return CPARSER_OK;
+    }
+
+    do {
+        subpage = RTSDS_SUBPAGE(page);
+        if (!subpage) {
+            diag_util_printf("Back SDS %02d:", rtsds_get_backing_sds(*sdsId_ptr, page));
+            for (regnum = 0; regnum < RTSDS_REG_CNT; regnum++)
+                diag_util_printf("   %02X", regnum);
+            diag_util_printf("\n");
+        }
+
+        if (subpage < RTSDS_DBG_PAGE_NAMES && rtsds_page_name[subpage])
+            diag_util_printf("%*s: ", -11, rtsds_page_name[subpage]);
+        else
+            diag_util_printf("PAGE %02X    : ", page);
+
+        for (regnum = 0; regnum < RTSDS_REG_CNT; regnum++) {
+            hal_serdes_reg_get(unit, *sdsId_ptr, page, regnum, &data);
+            diag_util_printf("%04X ", data);
+        }
+        diag_util_printf("\n");
+    } while (++page < RTSDS_931X_PAGE_CNT);
+
+    return CPARSER_OK;
+}
+#endif /* CMD_SERDES_DUMPOWRT */
 
 #ifdef CMD_SERDES_SET_ID_SDSID_PAGE_PAGE_REG_REG_DATA_DATA
 /*

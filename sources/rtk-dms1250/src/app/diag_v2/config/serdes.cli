@@ -30,6 +30,20 @@
 serdes get id <UINT:sdsId> page <UINT:page> reg <UINT:reg>
 #endif
 
+#ifdef CMD_SERDES_DUMP
+//serdes configuration
+//dump configuration
+serdes dump
+#endif
+
+#ifdef CMD_SERDES_DUMPOWRT_ID_SDSID
+//serdes configuration
+//dump configuration in openwrt format
+//serdes index
+//serdes index
+serdes dumpowrt id <UINT:sdsId>
+#endif
+
 #ifdef CMD_SERDES_SET_ID_SDSID_PAGE_PAGE_REG_REG_DATA_DATA
 //serdes configuration
 //set configuration
@@ -203,7 +217,7 @@ serdes eye-monitor info <UINT:sdsId> <UINT:frameNum>
 //pre state configuration
 //disable function
 //enable function
-serdes set <UINT:sdsId> eye-param pre-state ( disable | enable ) 
+serdes set <UINT:sdsId> eye-param pre-state ( disable | enable )
 #endif
 
 #ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_POST_STATE_DISABLE_ENABLE
@@ -214,7 +228,7 @@ serdes set <UINT:sdsId> eye-param pre-state ( disable | enable )
 //post state configuration
 //disable function
 //enable function
-serdes set <UINT:sdsId> eye-param post-state ( disable | enable ) 
+serdes set <UINT:sdsId> eye-param post-state ( disable | enable )
 #endif
 
 #ifdef CMD_SERDES_SET_SDSID_EYE_PARAM_PRE_AMP_PRE_AMP
@@ -252,7 +266,7 @@ serdes set <UINT:sdsId> eye-param post-amp <UINT:post_amp>
 //get configuration
 //serdes index
 //eye parameter configuration
-serdes get <UINT:sdsId> eye-param 
+serdes get <UINT:sdsId> eye-param
 #endif
 
 #ifdef CMD_SERDES_GET_SDSID_INFO
