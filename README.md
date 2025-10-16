@@ -1,6 +1,7 @@
 This repository serves as a well selected collection of Realtek SOC/PHY/NIC documentation and source. Focus is on the Otto platform with the RTL838x (maple), RTL839x (cypress), RTL930x (longan) and RTL931x (mango) chips. 
 
-- [Roadmap](/datasheets/Roadmap.pdf) for the Realtek switch platform
+- [SOC Roadmap](/datasheets/_SOC_Roadmap.pdf) for the Realtek switch platform
+- [NIC Roadmap](/datasheets/_NIC_Roadmap.pdf) for the Realtek PHYs & NICs
 - Additional infos can be found at https://svanheule.net/switches/start
 
 What RTK (development kit) we have
