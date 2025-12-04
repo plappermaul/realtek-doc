@@ -1,0 +1,1 @@
+./build/hal_peripheral.mk

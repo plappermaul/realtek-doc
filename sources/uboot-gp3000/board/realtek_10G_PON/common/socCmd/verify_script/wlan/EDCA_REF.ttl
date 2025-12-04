@@ -1,0 +1,122 @@
+
+; sample macro of Tera Term
+;
+; File: EDCA_REF.tll
+; Description: Test EDCA_REF MAC function
+; Environment: 97G FPGA
+; Update: 2018/7/23
+; Author: Eric
+
+
+;staA RX : 
+;0x9e0[0] : enable staA fakecca
+;1 -> enable, 0 -> disable
+;0x9e0[1] : 設定fakecca要套用在ofdm還是cck 
+;1 -> ofdmcca_to_mac = ofdmcca_bb | fakecca
+;0 -> cckcca_to_mac = cckcca_bb | fakecca
+;0x9e0[3:2] : staA EDCA_ref控制選項
+;00 - EDCA_ref永遠不會拉起
+;01- EDCA_ref在cckcca_bb | ofdmcca_bb | fakecca拉起後3us跟著拉起, 並於cca放下後跟著放下
+;10 - 隨機版 (一樣在3us後才會拉起)
+;
+;0x9e4[15:0] : fakecca的寬度, 單位是us, 0 -> 1us, 1 -> 2us, …
+;0x9e4[31:0] : fakecca的週期, 單位是us, 0 -> 1us, 1 -> 2us, …
+;週期一定要比寬度大
+;
+;staB RX : 
+;0x9e0[4] : enable staB fakecca
+;0x9e0[5] : 設定fakecca要套用在ofdm還是cck 
+;0x9e0[7:6] : staB EDCA_ref控制選項
+;0x9e8[15:0] : fakecca的寬度
+;0x9e8[31:0] : fakecca的週期-
+;
+;staC RX : 
+;
+;0x9e0[8] : enable staC fakecca
+;0x9e0[9] : 設定fakecca要套用在ofdm還是cck 
+;0x9e0[11:10] : staB EDCA_ref控制選項
+;0x9ec[15:0] : fakecca的寬度
+;0x9ec[31:0] : fakecca的週期-
+;
+;**************
+;請先把fakecca套用選項, EDCA_ref控制選項, 寬度跟週期設好之後
+;再開啟fakecca enable
+;fakecca跟EDCA_ref可以分開使用 (EDCA_ref可以由ofdmcca_bb or cckcca_bb產生)
+;**************
+; In Uboot
+; Enable CONFIG_EDCAREF_VERIFICATION compile flag in wlan_config.h
+;
+;
+
+;Case 1 
+;0x9e0[1] = 1 // enable function
+;0x9e0[3:2] = 00 // No EDCA_REF signal
+;0x9e4[31:0] = 0xC000400 //CCA 拉起來1ms, idle 2ms
+
+; 基本設定
+; 0x534[18]=1
+; 可以讀 0x15D0[31:16]
+
+sendln  'socTest WLCTRL 1 1'
+mpause 100
+sendln  'socTest WL2MAC 1'
+mpause 100
+sendln  'socTest WLPKTOPT1 0 0 0 10 0'
+mpause 100
+sendln  'socTest WLPKTOPT1 1 0 0 10 0'
+
+
+sendln  'socTest wlwreg 0 55c ff 0 a'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 638 ff 0 a'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 1 55c ff 0 a'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 1 638 ff 0 a'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 1 574 1 27 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 640 ff 0 40'
+wait 'CmdWriteWlanRegister
+sendln  'socTest wlwreg 1 640 ff 0 40'
+wait 'CmdWriteWlanRegister
+
+sendln  'socTest wlwreg 0 428 ffff 16 0'
+wait 'CmdWriteWlanRegister
+
+sendln  'socTest wlwreg 0 640 ff 0 40'
+wait 'CmdWriteWlanRegister
+sendln  'socTest wlwreg 1 640 ff 0 40'
+wait 'CmdWriteWlanRegister
+
+sendln  'socTest wlwreg 0 534 7 18 7'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 50C FFFF 0 CC10'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 1 534 7 18 7'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 15d0 1 0 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 1 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 1 614 ffffffff 0 0000'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 14F0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister'
+sendln  'socTest wlwreg 0 668 1 28 1'
+wait 'CmdWriteWlanRegister'
+sendln  'socTest wlwreg 1 668 1 28 1'
+wait 'CmdWriteWlanRegister'
+
+sendln  'socTest wlwreg 0 9e4 ffffffff 0 01A000D0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 9e0 ffffffff 0 3'
+wait 'CmdWriteWlanRegister' 
+
+
+;sendln  'socTest wltxampdu 0 1 0 1'
+sendln  'socTest wltxloop 0 1'

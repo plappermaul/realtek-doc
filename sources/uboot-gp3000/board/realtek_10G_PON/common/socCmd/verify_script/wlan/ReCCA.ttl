@@ -1,0 +1,674 @@
+
+; sample macro of Tera Term
+;
+; File: ReCCA.tll
+; Description: Test ReCCA MAC function
+; Environment: 97G FPGA
+; Update: 2018/7/23
+; Author: Eric
+
+; Description
+;0x9d4 : 用來設定staA TX時, 造成staB or staC發生BB_reset_MAC
+;0x9d8 : 用來設定staB TX時, 造成staA or staC發生BB_reset_MAC
+;0x9dc : 用來設定staC TX時, 造成staA or staB發生BB_reset_MAC
+;
+;32bit格式如下
+;
+;[31] enable this function
+;[30:29] 發生區間
+;00 - ofdmcca拉起到第一個rdrdy前
+;01 - 第一個rdrdy到MAC_reset_protect前
+;10 - MAC_reset_protect間
+;11 - MAC_reset_proteck後
+;
+;[28:27]發生的packet format
+;01 : OFDM
+;10 : HT
+;11 : VHT
+;
+;[26:25]發生的BW
+;00 : BW20
+;01 : BW40
+;10 : BW80
+;11 : BW160
+;
+;[24:19]發生的MCS設定
+;BB_reset_MAC針對的rate 
+;Legacy 06M : 001011   Legacy 09M : 001111   Legacy 12M : 001010        
+;Legacy 18M : 001110   Legacy 24M : 001001   Legacy 36M : 001101        
+;Legacy 48M : 001000   Legacy 12M : 001100                                                         
+;HT : 0,5bitMCS   VHT : 2bitNSS,4bitMCS
+;
+;[18] 開啟全檔模式
+;只要packet format對就發生BB_reset_MAC
+;
+;[16] enable手動調時間
+;[15:0] 時間設定 單位是12.5ns
+;
+; In Uboot
+; Enable CONFIG_RECCA_VERIFICATION compile flag in wlan_config.h
+;
+;
+
+
+Counter=0
+
+; // Init RX paramter 
+sendln  'socTest wlwreg 0 1610 1 3 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 1610 1 4 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 1610 1 5 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 24 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 6 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 7 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 11 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 13 0'
+wait 'CmdWriteWlanRegister' 
+
+; enable AP mode
+sendln  'socTest wlwreg 0 100 3 16 3'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 1 100 3 16 3'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+; // enable RXAI circuit
+sendln  'socTest wlwreg 0 1668 1 0 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 1668 1 1 0'
+wait 'CmdWriteWlanRegister' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+; ///////////////////////// Test Case 1 /////////////////////////////
+; Unicast packet, A1,A2,A3 unmatch Test result 0x1668[6] should be 1
+; ///////////////////////////////////////////////////////////////////
+sendln  'socTest wlwreg 0 610 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 2 ///////////////////////////////////
+; Unicast packet, A1 match。A2,A3 unmatch Test result 0x1668[6] should be 0
+; /////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+
+; ///////////////////////// Test Case 3 ///////////////////////////////////
+; Unicast packet, A1,A3 unmatch。A2 match Test result 0x1668[6] should be 1
+; /////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 10'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 30303030'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a4 ffffffff 0 3030'
+wait 'CmdWriteWlanRegister' 
+
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 4 ///////////////////////////////////
+; Unicast packet, A1,A2 unmatch。A3 match Test result 0x1668[6] should be 1
+; /////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 10'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 20202020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 61C ffffffff 0 2020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a4 ffffffff 0 3030'
+wait 'CmdWriteWlanRegister' 
+
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+
+
+; ///////////////////////// Test Case 5 /////////////////////////////////////////////////
+; BroadCast Data packet, A1 broadcast 。A2,A3 dont care 。Test result 0x1668[6] should be 1
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 10'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 20202020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 61C ffffffff 0 2020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 30303030'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a4 ffffffff 0 3030'
+wait 'CmdWriteWlanRegister' 
+
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+
+; // set A1 broadcast
+sendln  'socTest wlsetaddr 1 1'
+wait 'Setting ok'
+
+sendln  'socTest wlwreg 0 608 1 6 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 7 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 11 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 13 0'
+wait 'CmdWriteWlanRegister' 
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+
+; ///////////////////////// Test Case 6 /////////////////////////////////////////////////
+; Probe Response packet, A1,A2,A3 unmatch 。Test result 0x1668[6] should be 1
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 610 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 10'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 61C ffffffff 0 3020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 2030'
+wait 'CmdWriteWlanRegister' 
+
+; // Probe Response
+sendln  'socTest WLPKTTYPE 1 50'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 7 /////////////////////////////////////////////////
+; Probe Response packet, A1 match A2,A3 unmatch 。Test result 0x1668[6] should be 0
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+
+; // Probe Response
+sendln  'socTest WLPKTTYPE 1 50'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 8 /////////////////////////////////////////////////
+; Probe Response packet, A1 match A2,A3 unmatch 。
+; 0x608[13]= 1, Test result 0x1668[6] should be 1 
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+
+; set 0x608 BIT13=1
+sendln  'socTest wlwreg 0 608 1 12 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 7 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 11 1'
+wait 'CmdWriteWlanRegister' 
+
+; // Probe Response
+sendln  'socTest WLPKTTYPE 1 50'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+
+
+; ///////////////////////// Test Case 9 /////////////////////////////////////////////////
+; Beacon packet, A1 broadcast 。A2,A3 unmatch 。Test result 0x1668[6] should be 1
+; Now test FAIL
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 10'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 61C ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 30'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a4 ffffffff 0 3030'
+wait 'CmdWriteWlanRegister' 
+
+; // Beacon
+sendln  'socTest WLPKTTYPE 1 80'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 1'
+wait 'Setting ok'
+
+sendln  'socTest wlwreg 0 608 1 6 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 7 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 11 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 13 0'
+wait 'CmdWriteWlanRegister' 
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 10 /////////////////////////////////////////////////
+; Beacon packet, A1 broadcast 。A2 dont care, A3 match 。Test result 0x1668[6] should be 1
+; Now test fail
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 20202020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 61C ffffffff 0 2020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 30303030'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 3030'
+wait 'CmdWriteWlanRegister' 
+
+; // Beacon
+sendln  'socTest WLPKTTYPE 1 80'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 1'
+wait 'Setting ok'
+
+sendln  'socTest wlwreg 0 608 1 6 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 7 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 11 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 13 0'
+wait 'CmdWriteWlanRegister' 
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+
+; ///////////////////////// Test Case 11 /////////////////////////////////////////////////
+; other packet, A1 broadcast 。A2 dont care, A3 match 。Test result 0x1668[6] should be 0
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 20202020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 61C ffffffff 0 2020'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 30303030'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 3030'
+wait 'CmdWriteWlanRegister' 
+
+; // RTS
+sendln  'socTest WLPKTTYPE 1 B4'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+sendln  'socTest wlwreg 0 608 1 6 1'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 7 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 11 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 608 1 13 0'
+wait 'CmdWriteWlanRegister' 
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 12 /////////////////////////////////////////////////
+; BIT_RXAI_AGG_CHKEN 0x1668[1] = 1, Unicast single MPDU packet。
+; A1 match。A2,A3 unmatch Test result 0x1668[6] should be 1
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+sendln  'socTest wlwreg 0 1668 3 0 3'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest WLTX 1 1 0 1'
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 1'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+; ///////////////////////// Test Case 13 /////////////////////////////////////////////////
+; BIT_RXAI_AGG_CHKEN 0x1668[1] = 1, Unicast AMPDU packet。
+; A1 match。A2,A3 unmatch Test result 0x1668[6] should be 0
+; ///////////////////////////////////////////////////////////////////////////////////////
+
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+sendln  'socTest wlwreg 0 1668 3 0 3'
+wait 'CmdWriteWlanRegister' 
+
+sendln  'socTest wlwreg 0 610 ffffffff 0 10101010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 614 ffffffff 0 1010'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 618 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+sendln  'socTest wlwreg 0 16a0 ffffffff 0 0'
+wait 'CmdWriteWlanRegister' 
+
+; // unicast data 
+sendln  'socTest WLPKTTYPE 1 88'
+wait 'Setting ok'
+sendln  'socTest wlsetaddr 1 0'
+wait 'Setting ok'
+
+; TX pakcet
+sendln  'socTest wltxampdu 0 3 1 1 '
+wait 'After Write TX'
+pause 1
+
+; // check RXAI status
+sendln  'socTest wlcreg 0 1668 1 6 0'
+wait 'Check regsiter status pass' 
+
+; // clear RXAI value
+sendln  'socTest wlwreg 0 1668 1 7 1'
+wait 'CmdWriteWlanRegister' 
+
+Counter=Counter+1
+
+
+sprintf2 msg "Pass Number = %d" Counter
+messagebox msg "Test Result"
+exit
+
+

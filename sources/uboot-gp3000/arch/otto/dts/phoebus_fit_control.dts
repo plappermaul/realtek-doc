@@ -1,0 +1,13 @@
+/dts-v1/;
+
+/ {
+	model = "Keys";
+	compatible = "RTK FIT";
+	signature {
+		key-dev {
+			required = "conf";
+			algo = "sha1,rsa2048";
+			key-name-hint = "rtk_key";
+		};
+	};
+};

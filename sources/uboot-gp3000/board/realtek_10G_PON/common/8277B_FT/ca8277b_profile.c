@@ -1,0 +1,803 @@
+#define CHIP_NAME "CA8289"
+
+#undef TEST_PROG_VER
+/* version: reserved[31:16], major[15:8], minor[7:0]*/
+#define TEST_PROG_VER 0x0002
+
+#define DEFAULT_TESTS ((0x1 << FT2_PARAM_GPHY_K)  | \
+					(0x1 << FT2_PARAM_GMII_PORT_LOOPBACK) | \
+					(0x1 << FT2_PARAM_RGMII_PORT_LOOPBACK) | \
+					(0x1 << FT2_PARAM_SERDES) | \
+					(0x1 << FT2_PARAM_PON_BEN) | \
+					(0x1 << FT2_PARAM_GPIO) | \
+					(0x1 << FT2_PARAM_SSP) | \
+					(0x1 << FT2_PARAM_DYINGASP) | \
+					(0x1 << FT2_PARAM_LDMA)  | \
+					(0x1 << FT2_PARAM_PCIE) | \
+					(0x1 << FT2_PARAM_USB) | \
+					(0x1 << FT2_PARAM_DDR_ZQ) | \
+					(0x1 << FT2_PARAM_CPU) | \
+					(0x1 << FT2_PARAM_TAROKO) | \
+					(0x1 << FT2_PARAM_RTC) | \
+					(0x1 << FT2_PARAM_NAND) | \
+					(0x1 << FT2_PARAM_CFG_W))
+
+/*******************************************************************************
+ * GPHY Calibration
+ ******************************************************************************/
+#define PHY_K_PORT_NUM		4
+
+#define GPIO_LAN_SWITCH_LP	10
+#define GPIO_LAN_SWITCH_SEL	3
+
+#define I2C_MUX_ADDR 0x71
+
+int8_t ads_layout[PHY_K_PORT_NUM][PHY_CHANNEL_NUM][4] = {
+	{{0, 0x49, 0, 0}, {0, 0x49, 3, 0}, {1, 0x49, 0, 0}, {1, 0x49, 3, 0}},
+	{{2, 0x49, 0, 0}, {2, 0x49, 3, 0}, {3, 0x49, 0, 0}, {3, 0x49, 3, 0}},
+	{{0, 0x48, 0, 0}, {0, 0x48, 3, 0}, {1, 0x48, 0, 0}, {1, 0x48, 3, 0}},
+	{{2, 0x48, 0, 0}, {2, 0x48, 3, 0}, {3, 0x48, 0, 0}, {3, 0x48, 3, 0}}
+};
+
+static uint8_t ge_ports[] = {CA_PORT_ID_NI0, CA_PORT_ID_NI1, CA_PORT_ID_NI2, CA_PORT_ID_NI3, INVALID_PORT};
+static uint8_t phy_addr[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x8};
+static uint16_t ado_verify_times = 30;
+static uint16_t ado_volt_diff = 3;
+static int16_t ado_over_times = 12;
+static phy_ado_current_t ado_curr = PHY_ADO_CURR_MED;
+static int16_t rc_k_diff = 0;
+static uint16_t rc_k_max[PHY_CHANNEL_MAX] = {11, 11, 11, 11};
+static uint16_t rc_k_min[PHY_CHANNEL_MAX] = {7, 7, 7, 7};
+static int16_t r_k_diff = 0;
+static uint16_t amp_volt_aid = 2080;
+static uint16_t amp_volt_range = 20;
+static uint16_t ch_mdi_max[PHY_CHANNEL_MAX] = {1070, 1070, 1070, 1070};
+static uint16_t ch_mdi_min[PHY_CHANNEL_MAX] = {990, 990, 990, 990};
+
+#define GPHY_SNR_MASK	 (1 << 0)
+#if (GPHY_SNR_MASK > 0)
+/* SNR 22 dB */
+static uint16_t gphy_avg_snr = 0x672;
+#endif
+
+/*******************************************************************************
+ * Registers
+ ******************************************************************************/
+#define OTP_FT2_CFG_BASE 0xfff80360
+#define OTP_FT2_CFG_END 0xfff8039f
+
+/* PON Registers */
+#define PSDS_GBOX_CTRL			0xf550a218
+#define PSDS_PRBS_ERR_CNT_L						0xf550a22c
+#define PSDS_PRBS_ERR_CNT_H						0xf550a230
+#define PSDS_PRBS_CTRL								0xf550a21c
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_DATAFIELD_VALID	0xf5501488
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_COMMAND_CONTROL	0xf5501438
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_SADB_KEY0_3		0xf550143c
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_INTERRUPT_0		0xf5501420
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_INTENABLE_0		0xf5501424
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_INTERRUPT_1		0xf5501428
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_INTENABLE_1		0xf550142c
+#define EPON_XGEPN_CORESEC10_TOP_NANDI_SADB_Control		0xf5501484
+#define EPON_XGEPN_CORESEC10_TOP_CORESEC10_TX_RX_MIB_MEM_ACCESS	0xf55014e4
+#define EPON_XGEPN_CORESEC10_TOP_CORESEC10_TX_RX_MIB_MEM_DATA10	0xf55014e8
+#define EPON_ONU_EPON_AES_DEC_KEY_TBL_ACCESS		0xf550097c
+#define EPON_ONU_EPON_AES_DEC_KEY_TBL_DATA3		0xf5500980
+#define GLOBAL_PON_CNTL							0xf4320024
+#define GLOBAL_EPON_CNTL							0xf4320004
+#define CLKGEN_PSDS_INIT_CNTL						0xf43201b4
+
+#define APB1_EPON_XGEPN_CORESEC10_TOP_STRIDE		320
+#define APB0_NI_HV_SXGMII_STRIDE 0
+
+/*******************************************************************************
+ * CPU
+ ******************************************************************************/
+#define CPU_CORE_NUM	4
+#define CPU_CORE_MASK	((1 << 0) | (1 << 1) | (1 << 2) | (1 << 3))
+#define CPU_CORE_VERIFY_ADDR	0x80000000
+
+#define TAROKO_CORE_NUM		2
+#define TAROKO_CORE_MASK		((1 << 0) | (1 << 1))
+#define TAROKO_LOAD_ADDR		0x80000000
+#define TAROKO_VERIFY_ADDR	0x80001000
+
+/*******************************************************************************
+ * Network Interface
+ ******************************************************************************/
+#define SERDES_PORT_NUM	1
+#define SERDES_PORT_MASK	((1 << 0))
+
+#define GMII_PORT_NUM	4
+#define GMII_PORT_MASK	((1 << 0) | (1 << 1) | (1 << 2) | (1 << 3))
+
+#define RGMII_PORT_NUM	1
+#define RGMII_PORT_MASK	(1 << 0)
+
+uint8_t gmii_ports[] = {CA_PORT_ID_NI0, CA_PORT_ID_NI1, CA_PORT_ID_NI2, CA_PORT_ID_NI3, INVALID_PORT};
+uint8_t rgmii_ports[] = {CA_PORT_ID_NI4, INVALID_PORT};
+
+/* GPIO Group 4 GPIO 7 */
+#define GPIO_PON_BEN 135
+#define GLD_I2C_MUX_ADDR 0x70
+
+typedef enum {
+	GLD_FIX_DEV = 0x51,
+	GLD_A_PROGRAM_DEV = 0x54,
+	GLD_B_PROGRAM_DEV = 0x56,
+	GLD_C_PROGRAM_DEV = 0x58,
+} i2c_slave_addr_t;
+
+static char *serdes_port_name[] = {"PON", "SFI"};
+static uint8_t mod_1_serdes_ports[] = {CA_PORT_ID_NI7/*PON*/, INVALID_PORT};
+static uint8_t mod_2_serdes_ports[] = {CA_PORT_ID_NI7/*PON*/, INVALID_PORT};
+static uint8_t gld_dev[] = {GLD_A_PROGRAM_DEV, GLD_B_PROGRAM_DEV, INVALID_PORT};
+
+/*******************************************************************************
+ * PCIE
+ ******************************************************************************/
+#define PCIE_PORT_NUM	2
+#define PCIE_PORT_MASK	((1 << 0) | (1 << 1) )
+static char *pcie_port_name[] = {"PCIE0", "PCIE1", "PCIE2"};
+int pcie_test_items[PCIE_PORT_NUM] = {
+	TEST_PCIE_LINK,
+	TEST_PCIE_LINK,
+	TEST_PCIE_LINK
+};
+
+int pcie_vendor_id[PCIE_PORT_NUM] = {
+	0x126f,
+	0x126f,
+	0x10ec
+};
+
+/*******************************************************************************
+ * USB
+ ******************************************************************************/
+/* GPIO Group 0 GPIO 4 */
+#define GPIO_USB_PWR 4
+#define USB_PORT_NUM	5
+#define USB_PORT_MASK	((1 << 0) | (1 << 1)  | (1 << 2) | (1 << 3) | (1 << 4))
+
+#define USB_0_BASE 0xf0200000
+#define USB_1_BASE 0xf0400000
+
+static char *usb_port_name[] = {"USB2", "USB2", "USB3", "USB3", "USB2"};
+int usb_target_link[USB_PORT_NUM] = {
+	3, /* usb 2.0, high speed */
+	3,
+	5,
+	5, /* usb 3.0, super speed*/
+	3
+};
+int usb_test_items[USB_PORT_NUM] = {
+	TEST_USB_LINK,
+	TEST_USB_LINK,
+	TEST_USB_LINK,
+	TEST_USB_LINK,
+	TEST_USB_LINK
+};
+
+/*******************************************************************************
+ * Misc.
+ ******************************************************************************/
+#define PON_BEN_MASK		(1 << 0)
+#define PON_SRAM_MASK	(0 << 0)
+
+#define DDR_ZQ_MASK	(1 << 0)
+
+#define RTC_MASK	(1 << 0)
+
+#define DYINGASP_MASK	(1 << 0)
+
+#define SSP_MASK	(1 << 0)
+
+/*  cortex cores and tensilica cores */
+#define LDMA_CORE_NUM	2
+#define LDMA_CORE_MASK	((1 << 0) | (1 << 1))
+
+#define UUID_MASK		(1 << 0)
+
+#define NAND_MASK	(1 << 0)
+
+#define TEST_GPIO_MASK	(1 << 0)
+#define GPIO_PAIR_NUM	 18
+uint16_t gpio_pair[GPIO_PAIR_NUM][2] = {
+	/* GPIO 14 <--> GPIO 11 */
+	{14, 11},
+	{11, 14},
+	/* GPIO 5	<--> GPIO 8 */
+	{5, 8},
+	{8, 5},
+	/* GPIO 6	<--> GPIO 12 */
+	{6, 12},
+	{12, 6},
+	/* GPIO 7	<--> GPIO Group 4 GPIO 6 */
+	{7, 134},
+	{134, 7},
+	/* GPIO Group 2 GPIO 7  <-->  GPIO Group 2 GPIO 11 */
+	{71, 75},
+	{75, 71},
+	/* GPIO Group 2 GPIO 6  <-->  GPIO Group 2 GPIO 9 */
+	{70, 73},
+	{73, 70},
+	/* GPIO Group 2 GPIO 10  <--> GPIO Group 2 GPIO 8 */
+	{74, 72},
+	{72, 74},
+	/* GPIO Group 2 GPIO 0  <-->  GPIO Group 2 GPIO 2 */
+	{64, 66},
+	{66, 64},
+	/* GPIO Group 2 GPIO 1  <-->  GPIO Group 2 GPIO 3 */
+	{65, 67},
+	{67, 65}
+};
+
+/*******************************************************************************
+ * SERDES Config
+ ******************************************************************************/
+serdes_cfg_t mode_1_pon_serdes_cfg[] = {
+	/* change speed */
+	{0xf550A04C, 0x00000002},
+	/* init config */
+	{0xf4320010, 0x40000000},
+	{0xf43201b4, 0x1},
+	{0xf4320024, 0x1},
+	{0xf4320004, 0x30000},
+	{0xf4320024, 0x5},
+	{0xf550a000, 0x00008000},
+	{0xf550a004, 0x0000046d},
+	{0xf550a008, 0x0000180d},
+	{0xf550a00c, 0x00001000},
+	{0xf550a010, 0x0000004c},
+	{0xf550a014, 0x0000328d},
+	{0xf550a018, 0x0000c921},
+	{0xf550a01c, 0x00002000},
+	{0xf550a020, 0x00000000},
+	{0xf550a024, 0x00000048},
+	{0xf550a028, 0x00007aa1},
+	{0xf550a02c, 0x00000000},
+	{0xf550a030, 0x00000002},
+	{0xf550a034, 0x0000610A},
+	{0xf550a038, 0x0000AA62},
+	{0xf550a03c, 0x0000000A},
+	{0xf550a040, 0x00004252},
+	{0xf550a044, 0x00000012},
+	{0xf550a048, 0x00000220},
+	{0xf550a04c, 0x00000002},
+	{0xf550a050, 0x0000000f},
+	{0xf550a054, 0x0000003b},
+	{0xf550a058, 0x00003275},
+	{0xf550a05c, 0x00005555},
+	{0xf550a060, 0x00007e00},
+	{0xf550a064, 0x00000036},
+	{0xf550a068, 0x00000000},
+	{0xf550a06c, 0x00000000},
+	{0xf550a070, 0x00000000},
+	{0xf550a074, 0x00008000},
+	{0xf550a078, 0x00000000},
+	{0xf550a07c, 0x00000000},
+	{0xf550a080, 0x00000000},
+	{0xf550a084, 0x00006048},
+	{0xf550a088, 0x00000000},
+	{0xf550a08c, 0x00000050},
+	{0xf550a090, 0x00000025},
+	{0xf550a094, 0x0000f777},
+	{0xf550a098, 0x00000929},
+	{0xf550a09c, 0x00000008},
+	{0xf550a0a0, 0x00005930},
+	{0xf550a0a4, 0x00004000},
+	{0xf550a0a8, 0x00000000},
+	{0xf550a0ac, 0x00001134},
+	{0xf550a0b0, 0x00000282},
+	{0xf550a0b4, 0x00000200},
+	{0xf550a0b8, 0x0000fe43},
+	{0xf550a0bc, 0x0000003f},
+	{0xf550a0c0, 0x00002000},
+	{0xf550a0c4, 0x00001003},
+	{0xf550a0c8, 0x00000000},
+	{0xf550a0cc, 0x00000000},
+	{0xf550a0d0, 0x00000000},
+	{0xf550a0d4, 0x00000000},
+	{0xf550a0d8, 0x00007fff},
+	{0xf550a0dc, 0x00005027},
+	{0xf550a0e0, 0x00000031},
+	{0xf550a0e4, 0x00000000},
+	{0xf550a0e8, 0x0000ffff},
+	{0xf550a0ec, 0x00000300},
+	{0xf550a0f0, 0x00000000},
+	{0xf550a0f4, 0x00000000},
+	{0xf550a0f8, 0x00000000},
+	{0xf550a0fc, 0x00007fbe},
+	{0xf550a100, 0x00003ff0},
+	{0xf550a104, 0x00000f00},
+	{0xf550a108, 0x00008000},
+	{0xf550a10c, 0x00008440},
+	{0xf550a110, 0x00000000},
+	{0xf550a114, 0x00000fff},
+	{0xf550a118, 0x0000ffff},
+	{0xf550a11c, 0x00002020},
+	{0xf550a120, 0x00002020},
+	{0xf550a124, 0x00002020},
+	{0xf550a128, 0x00002080},
+	{0xf550a12c, 0x00000000},
+	{0xf550a130, 0x00000000},
+	{0xf550a134, 0x00000000},
+	{0xf550a138, 0x00000070},
+	{0xf550a13c, 0x00003fff},
+	{0xf550a140, 0x00000000},
+	{0xf550a144, 0x00000020},
+	{0xf550a148, 0x00000000},
+	{0xf550a14c, 0x00001000},
+	{0xf550a150, 0x00000087},
+	{0xf550a154, 0x0000f077},
+	{0xf550a158, 0x0000018f},
+	{0xf550a15c, 0x00003030},
+	{0xf550a160, 0x00000000},
+	{0xf550a164, 0x0000001f},
+	{0xf550a168, 0x00003f00},
+	{0xf550a16c, 0x00001f1f},
+	{0xf550a170, 0x00000008},
+	{0xf550a174, 0x0000003f},
+	{0xf550a178, 0x00000000},
+	{0xf550a17c, 0x00000000},
+	{0xf550a180, 0x00000000},
+	{0xf550a184, 0x00000000},
+	{0xf550a188, 0x00001f3f},
+	{0xf550a18c, 0x00001f1f},
+	{0xf550a190, 0x00001f1f},
+	{0xf550a194, 0x00001f1f},
+	{0xf550a198, 0x00000404},
+	{0xf550a19c, 0x00000404},
+	{0xf550a1a0, 0x00000004},
+	{0xf550a1a4, 0x0000007f},
+	{0xf550a1a8, 0x00000018},
+	{0xf550a1ac, 0x00000000},
+	{0xf550a1b0, 0x00000018},
+	{0xf550a1b4, 0x00000000},
+	{0xf550a1b8, 0x00000000},
+	{0xf550a1bc, 0x00000003},
+	{0xf550a1c0, 0x000011CF},
+	{0xf550a1c4, 0x0000A3C1},
+	{0xf550a1c8, 0x00002000},
+	{0xf550a1cc, 0x0000414A},
+	{0xf550a1d0, 0x0000054A},
+	{0xf550a1d4, 0x0000099B},
+	{0xf550a1d8, 0x0000320B},
+	{0xf550a1dc, 0x00001F10},
+	{0xf550a1e0, 0x00002000},
+	{0xf550a1e4, 0x00006B5a},
+	{0xf550a1e8, 0x0000035a},
+	{0xf550a1ec, 0x00000980},
+	{0xf550a1f0, 0x0000003b},
+	{0xf550a1f4, 0x00001E00},
+	{0xf550a1f8, 0x00002000},
+	{0xf550a1fc, 0x00008051},
+	{0xf550a200, 0x00000033},
+	{0xf550a204, 0x00000000},
+	{0xf550a208, 0x0000d755},
+	{0xf550a20c, 0x00000006},
+	{0xf550a210, 0x00000100},
+	{0xf550a214, 0x00005c01},
+	{0xf550a218, 0x00000454},
+	{0xf550a21c, 0x00000000},
+	{0xf550a220, 0x00000001},
+	{0xf550a224, 0x00000000},
+	{0xf550a228, 0x00000000},
+	{0xf550a22c, 0x00000000},
+	{0xf550a230, 0x00000000},
+	{0xf550a234, 0x00000000},
+	{0xf550a238, 0x00000000},
+	{0xf550a23c, 0x00000012},
+	{0xf550a240, 0x0000c000},
+	{0xf550a244, 0x00000001},
+	{0xf550a248, 0x00005d03},
+	{0xf550a24c, 0x0000c020},
+	{0xf550a250, 0x00000000},
+	{0xf550a254, 0x00000000},
+	{0xf550a258, 0x00000ffc},
+	{0xf550a25c, 0x0000ffff},
+	{0xf550a260, 0x00000000},
+	{0xf550a264, 0x00000000},
+	{0xf550a268, 0x00000000},
+	{0xf550a26c, 0x00000000},
+	{0xf550a270, 0x00000000},
+	{0xf550a274, 0x00001010},
+	{0xf550a278, 0x00000003},
+	{0xf550a27c, 0x00000000},
+	{0xf550A20c, 0x0},
+	/* delay 100 msec */
+	{0xffffffff, 100000},
+	{0xf550A208, 0x5755},
+	{0xffffffff, 100000},
+	{0xf43201b4, 0x21},
+	{0xffffffff, 100000},
+	{0xf550A20c, 0x6},
+	{0xffffffff, 100000},
+	{0xf550A208, 0xd755},
+	{0xffffffff, 100000},
+	{0xf4320024, 0x7},
+	{0xffffffff, 100000},
+	{0xf43201b4, 0x31},
+	{0xffffffff, 100000},
+	{0xf550a21c, 0x1010},
+	{0xffffffff, 100000},
+	{0xf550a218, 0x53},
+	{0xffffffff, 100000},
+	{0xf550a04c, 0x3},
+	{0, 0}
+};
+
+serdes_cfg_t mode_2_pon_serdes_cfg[] = {
+	/* change speed */
+	{0xf550A04C, 0x00000002},
+	/* init config */
+	{0xf4320010, 0x40000000},
+	{0xf43201b4, 0x1},
+	{0xf4320024, 0x0},
+	{0xf432000c, 0x300},
+	{0xf4320024, 0x4},
+	{0xf550a000, 0x00008000},
+	{0xf550a004, 0x0000046d},
+	{0xf550a008, 0x00001804},
+	{0xf550a00c, 0x00001000},
+	{0xf550a010, 0x0000004c},
+	{0xf550a014, 0x0000328d},
+	{0xf550a018, 0x0000c921},
+	{0xf550a01c, 0x00002000},
+	{0xf550a020, 0x00000000},
+	{0xf550a024, 0x00000048},
+	{0xf550a028, 0x00007aa1},
+	{0xf550a02c, 0x00000000},
+	{0xf550a030, 0x00000002},
+	{0xf550a034, 0x0000610A},
+	{0xf550a038, 0x0000AA62},
+	{0xf550a03c, 0x0000000A},
+	{0xf550a040, 0x00004252},
+	{0xf550a044, 0x00000012},
+	{0xf550a048, 0x00000220},
+	{0xf550a04c, 0x00000002},
+	{0xf550a050, 0x0000000f},
+	{0xf550a054, 0x0000003b},
+	{0xf550a058, 0x00003275},
+	{0xf550a05c, 0x00005555},
+	{0xf550a060, 0x00007e00},
+	{0xf550a064, 0x00000037},
+	{0xf550a068, 0x00000000},
+	{0xf550a06c, 0x00000000},
+	{0xf550a070, 0x00000000},
+	{0xf550a074, 0x0000C921},
+	{0xf550a078, 0x00000000},
+	{0xf550a07c, 0x00000000},
+	{0xf550a080, 0x00000000},
+	{0xf550a084, 0x00006068},
+	{0xf550a088, 0x00000000},
+	{0xf550a08c, 0x00000050},
+	{0xf550a090, 0x00000025},
+	{0xf550a094, 0x0000f777},
+	{0xf550a098, 0x00000929},
+	{0xf550a09c, 0x00000008},
+	{0xf550a0a0, 0x00005930},
+	{0xf550a0a4, 0x00004000},
+	{0xf550a0a8, 0x00000000},
+	{0xf550a0ac, 0x00001134},
+	{0xf550a0b0, 0x00000282},
+	{0xf550a0b4, 0x00000200},
+	{0xf550a0b8, 0x0000fe43},
+	{0xf550a0bc, 0x0000003f},
+	{0xf550a0c0, 0x00002000},
+	{0xf550a0c4, 0x00001003},
+	{0xf550a0c8, 0x00000000},
+	{0xf550a0cc, 0x00000000},
+	{0xf550a0d0, 0x00000000},
+	{0xf550a0d4, 0x00000000},
+	{0xf550a0d8, 0x00007fff},
+	{0xf550a0dc, 0x00005027},
+	{0xf550a0e0, 0x00000031},
+	{0xf550a0e4, 0x00000000},
+	{0xf550a0e8, 0x0000ffff},
+	{0xf550a0ec, 0x00000300},
+	{0xf550a0f0, 0x00000000},
+	{0xf550a0f4, 0x00000000},
+	{0xf550a0f8, 0x00000000},
+	{0xf550a0fc, 0x00007fbe},
+	{0xf550a100, 0x00003ff0},
+	{0xf550a104, 0x00000f00},
+	{0xf550a108, 0x00008000},
+	{0xf550a10c, 0x00008440},
+	{0xf550a110, 0x00000000},
+	{0xf550a114, 0x00000fff},
+	{0xf550a118, 0x0000ffff},
+	{0xf550a11c, 0x00002020},
+	{0xf550a120, 0x00002020},
+	{0xf550a124, 0x00002020},
+	{0xf550a128, 0x00002080},
+	{0xf550a12c, 0x00000000},
+	{0xf550a130, 0x00000000},
+	{0xf550a134, 0x00000000},
+	{0xf550a138, 0x00000070},
+	{0xf550a13c, 0x00003fff},
+	{0xf550a140, 0x00000000},
+	{0xf550a144, 0x00000020},
+	{0xf550a148, 0x00000000},
+	{0xf550a14c, 0x00001000},
+	{0xf550a150, 0x00000087},
+	{0xf550a154, 0x0000f077},
+	{0xf550a158, 0x0000018f},
+	{0xf550a15c, 0x00003030},
+	{0xf550a160, 0x00000000},
+	{0xf550a164, 0x0000001f},
+	{0xf550a168, 0x00003f00},
+	{0xf550a16c, 0x00001f1f},
+	{0xf550a170, 0x00000008},
+	{0xf550a174, 0x0000003f},
+	{0xf550a178, 0x00000000},
+	{0xf550a17c, 0x00000000},
+	{0xf550a180, 0x00000000},
+	{0xf550a184, 0x00000000},
+	{0xf550a188, 0x00001f3f},
+	{0xf550a18c, 0x00001f1f},
+	{0xf550a190, 0x00001f1f},
+	{0xf550a194, 0x00001f1f},
+	{0xf550a198, 0x00000404},
+	{0xf550a19c, 0x00000404},
+	{0xf550a1a0, 0x00000004},
+	{0xf550a1a4, 0x0000007f},
+	{0xf550a1a8, 0x00000018},
+	{0xf550a1ac, 0x00000000},
+	{0xf550a1b0, 0x00000018},
+	{0xf550a1b4, 0x00000000},
+	{0xf550a1b8, 0x00000000},
+	{0xf550a1bc, 0x00000003},
+	{0xf550a1c0, 0x00001280},
+	{0xf550a1c4, 0x0000c560},
+	{0xf550a1c8, 0x00000219},
+	{0xf550a1cc, 0x0000413e},
+	{0xf550a1d0, 0x0000053e},
+	{0xf550a1d4, 0x0000199b},
+	{0xf550a1d8, 0x0000300b},
+	{0xf550a1dc, 0x00004f51},
+	{0xf550a1e0, 0x00002000},
+	{0xf550a1e4, 0x0000532a},
+	{0xf550a1e8, 0x0000072a},
+	{0xf550a1ec, 0x000019c0},
+	{0xf550a1f0, 0x0000003b},
+	{0xf550a1f4, 0x00004c00},
+	{0xf550a1f8, 0x00000400},
+	{0xf550a1fc, 0x00000ec1},
+	{0xf550a200, 0x00000033},
+	{0xf550a204, 0x00000000},
+	{0xf550a208, 0x0000d755},
+	{0xf550a20c, 0x00000006},
+	{0xf550a210, 0x00000100},
+	{0xf550a214, 0x00005c01},
+	{0xf550a218, 0x00000454},
+	{0xf550a21c, 0x00000000},
+	{0xf550a220, 0x00000001},
+	{0xf550a224, 0x00000000},
+	{0xf550a228, 0x00000000},
+	{0xf550a22c, 0x00000000},
+	{0xf550a230, 0x00000000},
+	{0xf550a234, 0x00000000},
+	{0xf550a238, 0x00000000},
+	{0xf550a23c, 0x00000012},
+	{0xf550a240, 0x0000c000},
+	{0xf550a244, 0x00000001},
+	{0xf550a248, 0x00005d03},
+	{0xf550a24c, 0x0000c020},
+	{0xf550a250, 0x00000000},
+	{0xf550a254, 0x00000000},
+	{0xf550a258, 0x00000ffc},
+	{0xf550a25c, 0x0000ffff},
+	{0xf550a260, 0x00000000},
+	{0xf550a264, 0x00000000},
+	{0xf550a268, 0x00000000},
+	{0xf550a26c, 0x00000000},
+	{0xf550a270, 0x00000000},
+	{0xf550a274, 0x00001010},
+	{0xf550a278, 0x00000003},
+	{0xf550a27c, 0x00000000},
+	/* delay 100 msec */
+	{0xffffffff, 100000},
+	{0xf550A20c, 0x0},
+	{0xffffffff, 100000},
+	{0xf550A208, 0x5755},
+	{0xffffffff, 100000},
+	{0xf43201b4, 0x21},
+	{0xffffffff, 100000},
+	{0xf550A20c, 0x6},
+	{0xffffffff, 100000},
+	{0xf550A208, 0xd755},
+	{0xffffffff, 100000},
+	{0xf4320024, 0x6},
+	{0xffffffff, 100000},
+	{0xf4320024, 0x30e},
+	{0xffffffff, 100000},
+	{0xf432000c, 0x305},
+	{0xffffffff, 100000},
+	{0xf5504a00, 0x7e},
+	{0xffffffff, 100000},
+	{0xf5504a10, 0x434f5254},
+	{0xffffffff, 100000},
+	{0xf5504a14, 0x12345679},
+	{0xffffffff, 100000},
+	{0xf5504a30, 0x79563412},
+	{0xffffffff, 100000},
+	{0xf5504004, 0xe2},
+	{0xffffffff, 100000},
+	{0xf5509024, 0x0},
+	{0xffffffff, 100000},
+	{0xf5509028, 0x8e10},
+	{0xffffffff, 100000},
+	{0xf5509020, 0xc0000000},
+	{0xffffffff, 100000},
+	{0xf5509000, 0x2},
+	{0xffffffff, 100000},
+	{0xf5508014, 0x1c0a0300},
+	{0xffffffff, 100000},
+	{0xf5508010, 0xc1a0b048},
+	{0xffffffff, 100000},
+	{0xf550800c, 0x1083},
+	{0xffffffff, 100000},
+	{0xf5508008, 0x0},
+	{0xffffffff, 100000},
+	{0xf5508004, 0x0},
+	{0xffffffff, 100000},
+	{0xf5508000, 0xc0000000},
+	{0xffffffff, 100000},
+	{0xf43201b4, 0x31},
+	{0xffffffff, 100000},
+	{0xf550a21c, 0x1010},
+	{0xffffffff, 100000},
+	{0xf550a218, 0x53},
+	{0xffffffff, 100000},
+	{0xf550a04c, 0x3},
+	{0xffffffff, 100000},
+	{0, 0}
+};
+
+serdes_cfg_t mode_1_xfi_serdes_cfg[] = {
+	/* change speed */
+	/* init config */
+	/* while set below 2 registers, pon prbs will fail */
+#if 0
+	{0xf4320024, 0x5},
+	{0xf43201b4, 0x21},
+#endif
+	{0xF550C000, 0x00006390},
+	{0xF550C004, 0x00004000},
+	{0xF550C008, 0x00000047},
+	{0xF550C00C, 0x0000C72A},
+	{0xF550C010, 0x0000FFF8},
+	{0xF550C014, 0x0000FF43},
+	{0xF550C018, 0x00002403},
+	{0xF550C01C, 0x0000FFFF},
+	{0xF550C020, 0x0000242A},
+	{0xF550C024, 0x00000200},
+	{0xF550C028, 0x00000180},
+	{0xF550C02C, 0x00002001},
+	{0xF550C030, 0x000000FF},
+	{0xF550C034, 0x00000044},
+	{0xF550C038, 0x00008786},
+	{0xF550C03C, 0x000003ED},
+	{0xF550C040, 0x0000401C},
+	{0xF550C044, 0x00000400},
+	{0xF550C048, 0x00007D10},
+	{0xF550C04C, 0x000000FF},
+	{0xF550C050, 0x00000000},
+	{0xF550C054, 0x00000111},
+	{0xF550C058, 0x0000FFFF},
+	{0xF550C05C, 0x0000820F},
+	{0xF550C060, 0x0000820F},
+	{0xF550C064, 0x0000820F},
+	{0xF550C068, 0x000083D0},
+	{0xF550C06C, 0x000000C0},
+	{0xF550C070, 0x00000062},
+	{0xF550C074, 0x00000430},
+	{0xF550C078, 0x00008000},
+	{0xF550C07C, 0x00000000},
+	{0xF550C080, 0x0000001F},
+	{0xF550C084, 0x00001F04},
+	{0xF550C088, 0x0000F920},
+	{0xF550C08C, 0x0000000F},
+	{0xF550C090, 0x00001F93},
+	{0xF550C094, 0x0000F000},
+	{0xF550C098, 0x000003FF},
+	{0xF550C09C, 0x000027C0},
+	{0xF550C0A0, 0x0000000F},
+	{0xF550C0A4, 0x0000FC9F},
+	{0xF550C0A8, 0x00000000},
+	{0xF550C0AC, 0x00003FF2},
+	{0xF550C0B0, 0x00007D80},
+	{0xF550C0B4, 0x0000401E},
+	{0xF550C0B8, 0x0000E3FE},
+	{0xF550C0BC, 0x00000000},
+	{0xF550C0C0, 0x00008024},
+	{0xF550C0C4, 0x0000C110},
+	{0xF550C0C8, 0x0000820A},
+	{0xF550C0CC, 0x0000A36A},
+	{0xF550C0D0, 0x000008BA},
+	{0xF550C0D4, 0x00000001},
+	{0xF550C0D8, 0x00000002},
+	{0xF550C0DC, 0x00004299},
+	{0xF550C0E0, 0x00005290},
+	{0xF550C0E4, 0x00005290},
+	{0xF550C0E8, 0x0000000D},
+	{0xF550C0EC, 0x0C001180},
+	{0xF550C0F0, 0x09FFFFC1},
+	{0xF550C0F4, 0x00000000},
+	{0xF550C0F8, 0x00000005},
+	{0xF550C0FC, 0x000057DF},
+	{0xF550C100, 0x000010C0},
+	{0xF550C108, 0x0360078E},
+	{0xF550C10C, 0x00037800},
+	{0xF550C110, 0x00000160},
+	{0xF550C114, 0x00000000},
+	{0xF550C118, 0x00005054},
+	{0xF550C11C, 0x00000005},
+	{0xF550C120, 0x00000000},
+	{0xF550C124, 0x00000001},
+	{0xF550C128, 0x02022D00},
+	{0xF550C12C, 0x00008000},
+	{0xF550C130, 0x00000066},
+	{0xF550C134, 0x0000F777},
+	{0xf550c138, 0x00000598},
+	/* delay 100 msec */
+	{0xffffffff, 100000},
+	{0xf550c104, 0x06878842},
+	{0xffffffff, 100000},
+	{0xf550c104, 0x06f78842},
+	{0xffffffff, 100000},
+	{0xf550c104, 0x06ff0842},
+	{0xffffffff, 100000},
+	{0xf4305a00, 0x0000a040},
+	{0xffffffff, 100000},
+	{0xf4305ae0, 0x6002},
+	{0xffffffff, 100000},
+	{0xf4305aa8, 0x3c},
+	{0xffffffff, 100000},
+	{0, 0}
+};
+
+/*******************************************************************************
+ * TAROKO image
+ ******************************************************************************/
+char taroko_firmware[] = {
+0x21, 0x40, 0x00, 0x00, 0x00, 0x90, 0x01, 0x3C, 0x25, 0x40, 0x01, 0x01, 0x00, 0x60, 0x88, 0x40,
+0x00, 0x68, 0x80, 0x40, 0x00, 0x78, 0x08, 0x40, 0x80, 0x41, 0x08, 0x00, 0x83, 0x45, 0x08, 0x00,
+0x08, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x08, 0x25,
+0xC0, 0xBF, 0x09, 0x3C, 0x00, 0x10, 0x29, 0x35, 0xFC, 0xFF, 0x00, 0x10, 0x00, 0x00, 0x28, 0xAD,
+0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x08, 0x25, 0xC0, 0xBF, 0x09, 0x3C, 0x04, 0x10, 0x29, 0x35,
+0xFC, 0xFF, 0x00, 0x10, 0x00, 0x00, 0x28, 0xAD, 0x00, 0x00, 0x00, 0x00
+} ;
+
+/*******************************************************************************
+ * USB
+ ******************************************************************************/
+
+#define USB2PHY_REG    0xf432b028
+
+#define U2_PHY_DATA_SIZE       8;
+u8 u2_phy_data_addr[] = ///bits/ 8
+			{0xF4 , 0xE0 , 0xE0 , 0xF4 , 0xE4 , 0xF5 , 0xF4 , 0xE3};
+
+
+u8 u2_phy_data_array[] = ///bits/ 8
+			{0xBB , 0x21 , 0x25 , 0x9B , 0x8B , 0x01 , 0xBB , 0x44};
+
+
+#define S2USBPHY_U3PORT0    0xf4337000
+#define S3USBPHY_U3PORT1    0xf4338000
+
+#define PHY_DATA_SIZE       17;
+u8 phy_data_addr[] = ///bits/ 8
+			{0x01 , 0x26 , 0x2f , 0x0a , 0x06 , 0x23 , 0x20 , 0x21 , 0x22 , 0x27 , 0x08 , 0x0b , 0x0e , 0x0c , 0x09 , 0x09 ,
+			 0x09};
+
+
+
+u16 phy_data_array[] = ///bits/ 16
+			{0xAC46 , 0x840E , 0x8648 , 0xC608 , 0x000c , 0xCB66 , 0x7069 , 0x68AA , 0x0013 , 0x0266 , 0x3011 , 0xB905 , 0x1000 , 0xC008 , 0x524C , 0x504C ,
+			 0x524C};
+
+#define USB_S2S3_FORCE_RESET 1
+

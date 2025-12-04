@@ -1,0 +1,21 @@
+
+; sample macro of Tera Term
+;
+; File: MACInit.tll
+; Description: MAC Init for uboot
+; Environment: 97G FPGA
+; Update: 2018/7/23
+; Author: Eric
+
+sendln  'socTest WLCTRL 1 1'
+mpause 100
+sendln  'socTest WL2MAC 1'
+mpause 100
+sendln  'socTest WLPKTOPT1 0 0 0 80 0'
+mpause 100
+sendln  'socTest WLPKTOPT1 1 0 0 80 0'
+
+
+
+
+	

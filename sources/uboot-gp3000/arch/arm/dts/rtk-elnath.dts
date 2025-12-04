@@ -1,0 +1,66 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Copyright (C) 2022, Realtek Semiconductor Corp.
+ */
+
+/dts-v1/;
+
+/ {
+	#address-cells = <2>;
+	#size-cells = <1>;
+	compatible = "realtek,9607f";
+	signature {
+		key-dev {
+			required = "conf";
+			algo = "sha1,rsa2048";
+			key-name-hint = "rtk_key";
+		};
+	};
+
+	gpio0: gpio-controller@0xf43292c0	{
+		 compatible = "cortina,ca-gpio";
+			 reg = <0x0 0xf43292c0 0x24>,
+				   <0x0 0xf4320100 0x04>;
+			 gpio-controller;
+			 #gpio-cells = <2>;
+			 status = "okay";
+	};
+
+	gpio1: gpio-controller@0xf43292e4	{
+			 compatible = "cortina,ca-gpio";
+			 reg = <0x0 0xf43292e4 0x24>,
+				   <0x0 0xf4320104 0x04>;
+			 gpio-controller;
+			 #gpio-cells = <2>;
+			 status = "okay";
+	};
+	gpio2: gpio-controller@0xf4329308	{
+			 compatible = "cortina,ca-gpio";
+			 reg = <0x0 0xf4329308 0x24>,
+				   <0x0 0xf4320108 0x04>;
+			 gpio-controller;
+			 #gpio-cells = <2>;
+			 status = "okay";
+	};
+
+	i2c: i2c@f4329120 {
+		compatible = "cortina,ca-i2c";
+		reg = <0x0 0xf4329160 0x28>;
+		clock-frequency = <400000>;
+	};
+
+	watchdog: watchdog@0xf432901c {
+			compatible = "cortina,ca-wdt";
+			reg = <0x0 0xf432901c 0x34>,
+				   <0x0 0xf43200c0 0x04>;
+			status = "okay";
+	};
+
+        eth: ethnet@0xf4300000 {
+	     compatible = "eth_cortina";
+	     reg = <0x0 0xf4320000 0x34>,
+		   <0x0 0xf4329118 0x04>,
+		   <0x0 0xf4304000 0x04>;
+        };
+};
+

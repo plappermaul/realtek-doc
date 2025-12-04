@@ -1,0 +1,68 @@
+if TARGET_VD2
+
+config SYS_BOARD
+    default "vd2_nor_demo" if OTTO_SNOF
+    default "vd2_spi_nand_demo" if OTTO_SNAF
+
+config SYS_VENDOR
+	default "realtek"
+
+config SYS_CONFIG_NAME
+	default "vd2"
+
+config SYS_TEXT_BASE
+	default 0x83C00000
+
+config SYS_DCACHE_SIZE
+	default 32768
+
+config SYS_ICACHE_SIZE
+	default 32768
+
+config SYS_DCACHE_LINE_SIZE
+	default 32
+
+config SYS_ICACHE_LINE_SIZE
+	default 32
+
+config OTTO_SNAF_GEN
+	depends on OTTO_SNAF
+	default 3
+	int "SPI-NAND driver generation"
+
+config OTTO_ECC_GEN
+	depends on OTTO_SNAF
+	default 2
+	int "ECC driver generation"
+
+config SPI_NAND_FLASH_INIT_FIRST
+	depends on CMD_SF && CMD_NAND
+	default y
+	select ECC_INIT
+	bool
+
+config ECC_INIT
+	bool
+
+
+config RTK_USE_ONE_UBI_DEVICE
+    bool "CONFIG_RTK_USE_ONE_UBI_DEVICE"
+    #default y
+
+config USE_BBT_SKIP
+	bool "Use bad block skip table"
+
+config LUNA_MULTI_BOOT
+	bool "CONFIG_LUNA_MULTI_BOOT"
+
+config MULTICAST_UPGRADE
+	bool "CONFIG_MULTICAST_UPGRADE"
+
+config CMD_BOOT_B2
+   bool "Add command b2_uboot to bring up second uboot.in"
+   default n
+   help
+    This provides command boot_b2 to bring up second bootloader.
+    Like u-boot.in
+
+endif

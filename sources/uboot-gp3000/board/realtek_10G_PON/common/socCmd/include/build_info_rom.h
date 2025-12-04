@@ -1,0 +1,6 @@
+#define UTS_ROM_VERSION "# Wed Dec 4 22:34:06 CST 2013"
+#define RTL8195AFW_ROM_COMPILE_TIME "22:34:06"
+#define RTL8195AFW_ROM_COMPILE_BY "chris"
+#define RTL8195AFW_ROM_COMPILE_HOST "chris-laptop"
+#define RTL8195AFW_ROM_COMPILE_DOMAIN ""
+#define RTL195AFW_ROM_COMPILER "gcc version 4.4.7 (Realtek ASDK-4.4.7 Build 1211) "

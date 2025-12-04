@@ -1,0 +1,59 @@
+
+/*
+ *  Routines to access hardware
+ *
+ *  Copyright (c) 2013 Realtek Semiconductor Corp.
+ *
+ *  This module is a confidential and proprietary property of RealTek and
+ *  possession or use of this module requires written permission of RealTek.
+ */
+
+
+#ifndef _DW_I2C_BASE_REG_H_
+#define _DW_I2C_BASE_REG_H_
+
+#define REG_DW_I2C_IC_CON 0x0000
+#define REG_DW_I2C_IC_TAR 0x0004
+#define REG_DW_I2C_IC_SAR 0x0008
+#define REG_DW_I2C_IC_HS_MADDR 0x000C
+#define REG_DW_I2C_IC_DATA_CMD 0x0010
+#define REG_DW_I2C_IC_SS_SCL_HCNT 0x0014
+#define REG_DW_I2C_IC_SS_SCL_LCNT 0x0018
+#define REG_DW_I2C_IC_FS_SCL_HCNT 0x001C
+#define REG_DW_I2C_IC_FS_SCL_LCNT 0x0020
+#define REG_DW_I2C_IC_HS_SCL_HCNT 0x0024
+#define REG_DW_I2C_IC_HS_SCL_LCNT 0x0028
+#define REG_DW_I2C_IC_INTR_STAT 0x002C
+#define REG_DW_I2C_IC_INTR_MASK 0x0030
+#define REG_DW_I2C_IC_RAW_INTR_STAT 0x0034
+#define REG_DW_I2C_IC_RX_TL 0x0038
+#define REG_DW_I2C_IC_TX_TL 0x003C
+#define REG_DW_I2C_IC_CLR_INTR 0x0040
+#define REG_DW_I2C_IC_CLR_RX_UNDER 0x0044
+#define REG_DW_I2C_IC_CLR_RX_OVER 0x0048
+#define REG_DW_I2C_IC_CLR_TX_OVER 0x004C
+#define REG_DW_I2C_IC_CLR_RD_REQ 0x0050
+#define REG_DW_I2C_IC_CLR_TX_ABRT 0x0054
+#define REG_DW_I2C_IC_CLR_RX_DONE 0x0058
+#define REG_DW_I2C_IC_CLR_ACTIVITY 0x005C
+#define REG_DW_I2C_IC_CLR_STOP_DET 0x0060
+#define REG_DW_I2C_IC_CLR_START_DET 0x0064
+#define REG_DW_I2C_IC_CLR_GEN_CALL 0x0068
+#define REG_DW_I2C_IC_ENABLE 0x006C
+#define REG_DW_I2C_IC_STATUS 0x0070
+#define REG_DW_I2C_IC_TXFLR 0x0074
+#define REG_DW_I2C_IC_RXFLR 0x0078
+#define REG_DW_I2C_IC_SDA_HOLD 0x007C
+#define REG_DW_I2C_IC_TX_ABRT_SOURCE 0x0080
+#define REG_DW_I2C_IC_SLV_DATA_NACK_ONLY 0x0084
+#define REG_DW_I2C_IC_DMA_CR 0x0088
+#define REG_DW_I2C_IC_DMA_TDLR 0x008C
+#define REG_DW_I2C_IC_DMA_RDLR 0x0090
+#define REG_DW_I2C_IC_SDA_SETUP 0x0094
+#define REG_DW_I2C_IC_ACK_GENERAL_CALL 0x0098
+#define REG_DW_I2C_IC_ENABLE_STATUS 0x009C
+#define REG_DW_I2C_IC_COMP_PARAM_1 0x00F4
+#define REG_DW_I2C_IC_COMP_VERSION 0x00F8
+#define REG_DW_I2C_IC_COMP_TYPE 0x00FC
+
+#endif //#ifndef _I2C_BASE_REG_H_

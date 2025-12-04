@@ -1,0 +1,30 @@
+if TARGET_PRESIDIO_ASIC
+
+source "board/realtek_10G_PON/common/Kconfig"
+
+config SYS_SOC
+	default "presidio"
+
+config CA77XX
+	bool
+	default y
+
+config SYS_BOARD
+	default "presidio-asic"
+
+config SYS_CONFIG_NAME
+	default "presidio_asic"
+
+config SYS_TEXT_BASE
+	default "0x04000000"
+
+config IDENT_STRING
+	default "Presidio-SoC"
+
+config BOOTP_VCI_STRING
+	default "U-boot.armv8.presidio"
+
+config SYS_PROMPT
+	default "G3# "
+
+endif
