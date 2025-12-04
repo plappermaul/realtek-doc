@@ -1,0 +1,32 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 69362 $
+// $Date: 2016-06-30 14:00:54 +0800 (Thu, 30 Jun 2016) $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) OAM commands.
+//
+
+//rt_oam configuration
+//get configuration
+//state configuration
+rt_oam get state
+
+//rt_oam configuration
+//set configuration
+//state configuration
+//disable oam function
+//enable oam function
+rt_oam set state ( disable | enable )
+

@@ -1,0 +1,135 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 85849 $
+// $Date: 2018-01-30 10:05:23 +0800 (Tue, 30 Jan 2018) $
+//
+// Purpose : Define diag shell commands for security.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) security commands.
+//
+
+//rt_security configuration
+//init security
+rt_security init
+
+//rt_security configuration
+//get configuration
+//attack prevent
+//port configuration
+//port list, <0-6>
+//all
+//state configuration
+rt_security get attack-prevent port ( <PORT_LIST:port> | all ) state
+
+//rt_security configuration
+//set configuration
+//attack prevent
+//port configuration
+//port list, <0-6>
+//all
+//state configuration
+//disable function
+//enable function
+rt_security set attack-prevent port ( <PORT_LIST:port> | all ) state ( disable | enable )
+
+//rt_security configuration
+//get configuration
+//attack prevent
+//damc = smac
+//sip = dip (land attach)
+//sport = dport (blat attacks)
+//SYN and FIN bits set in the packet
+//Xmascan
+//NULL Scan Attacks
+//check minimum TCP header
+//SYN packets with sport less than 1024
+//fragmented ICMP packets
+//action configuration
+rt_security get attack-prevent ( daeqsa-deny | land-deny | blat-deny | synfin-deny | xma-deny | nullscan-deny | tcphdr-min-check | syn-sportl1024-deny | icmp-frag-pkts-deny ) action
+
+//rt_security configuration
+//set configuration
+//attack prevent
+//damc = smac
+//sip = dip (land attach)
+//sport = dport (blat attacks)
+//SYN and FIN bits set in the packet
+//Xmascan
+//NULL Scan Attacks
+//check minimum TCP header
+//SYN packets with sport less than 1024
+//fragmented ICMP packets
+//action
+//forward
+//drop
+//trap-to-cpu
+rt_security set attack-prevent ( daeqsa-deny | land-deny | blat-deny | synfin-deny | xma-deny | nullscan-deny | tcphdr-min-check | syn-sportl1024-deny | icmp-frag-pkts-deny ) action ( forward | drop | trap-to-cpu )
+
+//rt_security configuration
+//get configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//action configuration
+rt_security get attack-prevent ( syn-flood | fin-flood | icmp-flood ) action
+
+//rt_security configuration
+//set configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//action
+//forward
+//drop
+//trap-to-cpu
+rt_security set attack-prevent ( syn-flood | fin-flood | icmp-flood ) action ( forward | drop | trap-to-cpu )
+
+//rt_security configuration
+//get configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold configuration
+rt_security get attack-prevent ( syn-flood | fin-flood | icmp-flood ) threshold
+
+//rt_security configuration
+//set configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold configuration
+//packets per unit, <0~255>
+rt_security set attack-prevent ( syn-flood | fin-flood | icmp-flood ) threshold <UINT:threshold>
+
+//rt_security configuration
+//get configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold time unit configuration, milliseconds
+rt_security get attack-prevent ( syn-flood | fin-flood | icmp-flood ) unit
+
+//rt_security configuration
+//set configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold time unit configuration, milliseconds
+//unit, milliseconds
+rt_security set attack-prevent ( syn-flood | fin-flood | icmp-flood ) unit <UINT:unit>

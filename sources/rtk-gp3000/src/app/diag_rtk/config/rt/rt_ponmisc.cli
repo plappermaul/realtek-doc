@@ -1,0 +1,189 @@
+//
+// Copyright (C) 2019 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: $
+// $Date: $
+//
+// Purpose : Define diag shell commands for pon misc.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) pon misc commands.
+//
+
+//rt_ponmisc table configuration
+//init configuration
+rt_ponmisc init
+
+//rt_ponmisc table configuration
+//get configuration
+//mode configuration
+rt_ponmisc get mode
+
+//rt_ponmisc table configuration
+//set configuration
+//mode configuration
+//mode, 0~255
+//speed configuration
+//speed, 0~255
+rt_ponmisc set mode <UINT:mode> speed <UINT:speed>
+
+//rt_ponmisc table configuration
+//get configuration
+//sid configuration
+//sid index
+rt_ponmisc get sid <INT:sid>
+
+//rt_ponmisc table configuration
+//set configuration
+//sid configuration
+//sid index
+//state configuration
+//disable
+//enable
+//destination port configuration
+//destination port number
+//priroity configuration
+//priroity number
+//flowid configuration
+//flowid index
+//deep queue flag
+//disable
+//enable
+rt_ponmisc set sid <INT:sid> state ( disable | enable ) dpn <INT:dpn> pri <INT:pri> flowid <INT:flowid> dq ( disable | enable )
+
+//rt_ponmisc configuration
+//get configuration
+//transceiver configuration
+//vendor-name
+//sn
+//part-number
+//temperature
+//voltage
+//bias-current
+//tx-power
+//rx-power
+rt_ponmisc get transceiver ( vendor-name | sn | part-number | temperature | voltage | bias-current | tx-power | rx-power )
+
+//rt_ponmisc configuration
+//set configuration
+//transceiver configuration
+//tx-power configuration
+//scale, configuration
+//scale, uint 0.1uW
+rt_ponmisc set transceiver tx-power scale <UINT:scale>
+
+//rt_ponmisc configuration
+//get configuration
+//burstPolarityReverse configuration
+//state configuration
+rt_ponmisc get burstPolarityReverse state
+
+//rt_ponmisc configuration
+//set configuration
+//burstPolarityReverse configuration
+//state configuration
+//disable function
+//enable function
+rt_ponmisc set burstPolarityReverse state ( disable | enable )
+
+//rt_ponmisc configuration
+//get configuration
+//rxlosPolarityReverse configuration
+//state configuration
+rt_ponmisc get rxlosPolarityReverse state
+
+//rt_ponmisc configuration
+//set configuration
+//rxlosPolarityReverse configuration
+//state configuration
+//disable function
+//enable function
+rt_ponmisc set rxlosPolarityReverse state ( disable | enable )
+
+//rt_ponmisc configuration
+//get configuration
+//force laser-on setting
+//state configuration
+rt_ponmisc get force-laser-on state
+
+//rt_ponmisc configuration
+//set configuration
+//force laser-on setting
+//state configuration
+//disable function
+//enable function
+rt_ponmisc set force-laser-on state ( disable | enable )
+
+//rt_ponmisc configuration
+//get configuration
+//PRBS transmit setting
+rt_ponmisc get force-prbs
+
+//rt_ponmisc configuration
+//set configuration
+//force PRBS transmit
+//force off
+//force on prbs31
+//force on prbs23
+//force on prbs15
+//force on prbs11
+//force on prbs09
+//force on prbs07
+//force on prbs03
+rt_ponmisc set force-prbs ( off | prbs31 | prbs23 | prbs15 | prbs11 | prbs09 | prbs07 | prbs03 )
+
+//rt_ponmisc configuration
+//get configuration
+//PRBS receive setting
+rt_ponmisc get force-prbs-rx
+
+//rt_ponmisc configuration
+//set configuration
+//force PRBS receive
+//force off
+//force on prbs31
+//force on prbs23
+//force on prbs15
+//force on prbs11
+//force on prbs09
+//force on prbs07
+//force on prbs03
+rt_ponmisc set force-prbs-rx ( off | prbs31 | prbs23 | prbs15 | prbs11 | prbs09 | prbs07 | prbs03 )
+
+//rt_ponmisc configuration
+//get configuration
+//PRBS receive status
+rt_ponmisc get prbs-rx-status
+
+//rt_ponmisc configuration
+//get configuration
+//timeout configuration
+//PRBS receive bit-error-rate per PON mode
+rt_ponmisc get prbs-rx-ber <UINT:timeout>
+
+//rt_ponmisc configuration
+//get configuration
+//self rogue configuration and information
+rt_ponmisc get self-rogue
+
+//rt_ponmisc configuration
+//set configuration
+//self rogue configuration
+//configuration
+//disable function
+//enable function
+rt_ponmisc set self-rogue state ( disable | enable )
+
+//rt_ponmisc configuration
+//set configuration
+//self rogue configuration
+//clear counter
+rt_ponmisc set self-rogue clear-cnt

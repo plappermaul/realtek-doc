@@ -1,0 +1,56 @@
+DAL_OBJ:= dal_rtl8277c_ca_rtk.o \
+          dal_rtl8277c_switch.o \
+          dal_rtl8277c_l2.o \
+          dal_rtl8277c_vlan.o \
+          dal_rtl8277c_port.o \
+          dal_rtl8277c_qos.o \
+          dal_rtl8277c_stat.o \
+          dal_rtl8277c_rate.o \
+          dal_rtl8277c_sec.o \
+          dal_rtl8277c_intr.o \
+          dal_rtl8277c_trap.o \
+          dal_rtl8277c_i2c.o \
+          dal_rtl8277c_led.o \
+          dal_rtl8277c_mirror.o \
+          dal_rtl8277c_gpio.o \
+          dal_rtl8277c_mdio.o \
+          dal_rtl8277c_time.o
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+DAL_OBJ+= dal_rtl8277c_ponmac.o
+else
+ifeq ($(CONFIG_EPON_FEATURE),y)
+DAL_OBJ+= dal_rtl8277c_ponmac.o
+else
+ifeq ($(CONFIG_COMMON_RT_PONMISC),y)
+DAL_OBJ+= dal_rtl8277c_ponmac.o
+endif
+endif
+endif
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+DAL_OBJ+= dal_rtl8277c_gpon.o
+endif
+
+ifeq ($(CONFIG_EPON_FEATURE),y)
+DAL_OBJ+= dal_rtl8277c_epon.o
+endif
+
+
+ifeq ($(CONFIG_COMMON_RT_API),y)
+DAL_OBJ+= dal_rt_rtl8277c_l2.o
+DAL_OBJ+= dal_rt_rtl8277c_cls.o
+
+ifeq ($(CONFIG_COMMON_RT_PONMISC),y)
+DAL_OBJ+= dal_rt_rtl8277c_ponmisc.o
+endif
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+DAL_OBJ+= dal_rt_rtl8277c_gpon.o
+endif
+
+ifeq ($(CONFIG_EPON_FEATURE),y)
+DAL_OBJ+= dal_rt_rtl8277c_epon.o
+endif
+
+endif

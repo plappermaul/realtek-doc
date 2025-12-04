@@ -1,0 +1,56 @@
+DAL_OBJ:= dal_rtl9607f_ca_rtk.o \
+          dal_rtl9607f_switch.o \
+          dal_rtl9607f_l2.o \
+          dal_rtl9607f_vlan.o \
+          dal_rtl9607f_port.o \
+          dal_rtl9607f_qos.o \
+          dal_rtl9607f_stat.o \
+          dal_rtl9607f_rate.o \
+          dal_rtl9607f_sec.o \
+          dal_rtl9607f_intr.o \
+          dal_rtl9607f_trap.o \
+          dal_rtl9607f_i2c.o \
+          dal_rtl9607f_led.o \
+          dal_rtl9607f_mirror.o \
+          dal_rtl9607f_gpio.o \
+          dal_rtl9607f_mdio.o \
+          dal_rtl9607f_time.o
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+DAL_OBJ+= dal_rtl9607f_ponmac.o
+else
+ifeq ($(CONFIG_EPON_FEATURE),y)
+DAL_OBJ+= dal_rtl9607f_ponmac.o
+else
+ifeq ($(CONFIG_COMMON_RT_PONMISC),y)
+DAL_OBJ+= dal_rtl9607f_ponmac.o
+endif
+endif
+endif
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+DAL_OBJ+= dal_rtl9607f_gpon.o
+endif
+
+ifeq ($(CONFIG_EPON_FEATURE),y)
+DAL_OBJ+= dal_rtl9607f_epon.o
+endif
+
+
+ifeq ($(CONFIG_COMMON_RT_API),y)
+DAL_OBJ+= dal_rt_rtl9607f_l2.o
+DAL_OBJ+= dal_rt_rtl9607f_cls.o
+
+ifeq ($(CONFIG_COMMON_RT_PONMISC),y)
+DAL_OBJ+= dal_rt_rtl9607f_ponmisc.o
+endif
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+DAL_OBJ+= dal_rt_rtl9607f_gpon.o
+endif
+
+ifeq ($(CONFIG_EPON_FEATURE),y)
+DAL_OBJ+= dal_rt_rtl9607f_epon.o
+endif
+
+endif

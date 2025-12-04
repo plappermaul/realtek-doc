@@ -1,0 +1,116 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) CPU commands.
+//
+
+//cpu configuration
+//initialization
+cpu init
+
+//cpu configuration
+//set configuration
+//CPU aware port configurtion
+//port list, <0-6>
+//all port without port 6
+//none port
+cpu set aware-port ( <PORT_LIST:ports> | all | none )
+
+//cpu configuration
+//get configuration
+//CPU aware port configurtion
+cpu get aware-port
+
+//cpu configuration
+//set configuration
+//tag format configurtion
+//Apollo format
+//normal format
+cpu set tag-format ( apollo | normal )
+
+//cpu configuration
+//get configuration
+//tag format configurtion
+cpu get tag-format
+
+//cpu configuration
+//set configuration
+//trap target insert state configurtion
+//state configuration
+//disable
+//enable
+cpu set trap-insert-tag state ( disable | enable )
+
+//cpu configuration
+//get configuration
+//trap target insert state configurtion
+//state configuration
+cpu get trap-insert-tag state
+
+//cpu configuration
+//set configuration
+//tag-aware state configurtion
+//state configuration
+//disable
+//enable
+cpu set tag-aware state ( disable | enable )
+
+//cpu configuration
+//get configuration
+//tag-aware state configuration
+//state configuration
+cpu get tag-aware state
+
+//cpu configuration
+//set configuration
+//trap target insert state configurtion
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable
+//enable
+cpu set trap-insert-tag port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//cpu configuration
+//get configuration
+//trap target insert state configurtion
+//port configuration
+//port list
+//all ports
+//state configuration
+cpu get trap-insert-tag port ( <PORT_LIST:ports> | all ) state
+
+//cpu configuration
+//set configuration
+//tag-aware state configurtion
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable
+//enable
+cpu set tag-aware port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//cpu configuration
+//get configuration
+//tag-aware state configuration
+//port configuration
+//port list
+//all ports
+//state configuration
+cpu get tag-aware port ( <PORT_LIST:ports> | all ) state

@@ -1,0 +1,24 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp. 
+#
+# Makefile for SDK Linux Rtnic Kernel Module
+#
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)
+
+ifeq ($(CONFIG_SDK_DRIVER_RTNIC),m)
+CFLAGS += -mlong-calls -fno-pic -mno-abicalls
+CFLAGS += -D__RTNIC_MODULE__
+endif
+
+TARGET = rtnic
+
+obj-$(CONFIG_SDK_DRIVER_RTNIC) += $(TARGET).o
+$(TARGET)-objs := rtnic_drv.o
+
+clean:
+	@$(RM) $(ALL_OBJ)
+	@find \( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' \
+		-o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' \) \
+		-type f -print | xargs rm -f
+

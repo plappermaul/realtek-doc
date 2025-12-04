@@ -1,0 +1,18399 @@
+#ifndef __RTK_RTL9602C_REG_STRUCT_H__
+#define __RTK_RTL9602C_REG_STRUCT_H__
+
+/*
+ * Include Files
+ */
+#include <common/rt_autoconf.h>
+#include <hal/chipdef/allreg.h>
+
+/* Superset Register Enum */
+typedef enum rtk_rtl9602c_reg_list_e
+{
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIGITAL_INTERFACE_SELECTr = 0,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_CONFIGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPHY_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPHY_IND_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPHY_IND_RDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_CHK_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_CHK_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_CHK_STATUSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_IND_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_IND_RDr = 10,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SC_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SC_IND_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SC_IND_RDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REGCTRL_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IOPAD_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_LED_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_MODE_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_GPIO_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PCSXFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PHY_CTRLr = 20,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PHY_INIr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GDAC_IB_1000Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GDAC_IB_100Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GDAC_IB_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_GETPWRCTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_GETPWRCTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_HOTCMD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_HOTCMD2_ADr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_HOTCMD2_CTRLr = 30,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_ADR_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_ADR_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_INV_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_INV_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_WD_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_WD_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_RD_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_GE_POLL_RD_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHIP_DEBUG_OUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_BOND_CONTENTr = 40,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EFUSE_BOND_RSLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_IND_ADRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_IND_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_IND_RDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_HOTCMD1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_HOTCMD2_ADr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_HOTCMD2_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_ADR_0r = 50,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_ADR_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_INV_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_INV_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_WD_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_WD_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_RD_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FE_POLL_RD_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_HOTCMD2_TRGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_CTRLr = 60,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_DBGO_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_DBGO_NEGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_IMRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_IMSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_POSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_NEGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_3r = 70,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_13r = 80,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_23r = 90,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_32r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_33r = 100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_34r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_35r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_36r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_37r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_38r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_39r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_40r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_41r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_42r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_43r = 110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_44r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_45r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_46r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_RSLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_6r = 120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_CFG_14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_RSLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_1r = 130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_CFG_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_RSLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_LEDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA_LED_CFGr = 140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_ACTIVE_LOW_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SERI_LED_ACTIVE_LOW_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_FORCE_VALUE_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_BLINK_RATE_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOW_RATE_BLINK_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SERI_LED_CLK_PERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SERI_LED_REFRESH_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_BUZZERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LED_CFGr = 150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_FLT_MPCPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_P_DMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_FORCE_P_DMPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GLB_MAC_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRAP_GPHY_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_CTRL_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_CTRL_4r = 160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_CTRL_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_THERMAL_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_THERMAL_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_THERMAL_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_THERMAL_STS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_THERMAL_STS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWR_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWR_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWR_STS_0r = 170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWR_STS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DDRSWR_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DDRSWR_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DDRSWR_STS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DDRSWR_STS_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRASH_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRASH_CONFIG_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRASH_CONFIG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRASH_CONFIG_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRASH_CONFIG_3r = 180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRASH_CONFIG_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEL_NAME_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHIP_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOND_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISCELLANEOUS_CONFIGURE0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_P_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MDX_PHY_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ROUTER_UPS_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RTL_OUI_CFGr = 190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REVISON_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEL_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ABLTY_FORCE_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DEBUG_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DEBUG_SEL_TOPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_SYNC_FIFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_ACT_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_ABLTY_LOCKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIFO_ERR_STSr = 200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_AN_RX_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_FIB_STATUSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HWPKT_GEN_STAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPHY_AFE_DBG_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYNGASP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOND_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STRAP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISCELLANEOUS_BONDINGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISCELLANEOUS_STRAPPING0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_DLYLNKr = 210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONCTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_CPU_TAG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACCEPT_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_LENGTH_CFG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_LENGTH_CFG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_MAC_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BACKPRESSUREr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_UNHIOLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_CTRLr = 220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INBW_HBOUNDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INBW_LBOUNDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_TX_ERR_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_CUR_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_FIBER_AUTODETr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHANGE_DUPLEX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_00r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_02r = 230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_03r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_04r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_05r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_06r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_07r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_08r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_09r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_0Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_ANA_0Br,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_00r = 240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_02r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_03r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_04r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_05r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_06r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_07r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_08r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_09r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_0Ar = 250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_0Br,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_0Cr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_0Dr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_0Er,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_0Fr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_14r = 260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_1Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_1Br,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_1Cr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_1Dr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_1Er = 270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_1Fr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_28r = 280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_2Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_2Br,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_DIG_2Cr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_BENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG4r = 290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG14r = 300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG24r = 310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG2r = 320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG12r = 330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG22r = 340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_EXT_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG0r = 350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG14r = 360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG26r = 370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG5r = 380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG19r = 390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG29r = 400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EXT_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG0X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG1X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG2X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG3X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG4X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG5X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG6X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG7X_CENr = 410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG8X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG9X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG10X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG11X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG12X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG13X_CENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG0X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG1X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG2X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG3X_PLLr = 420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG4X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG5X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG6X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG7X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG8X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_RG9X_PLLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_00r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_02r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_03r = 430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_04r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_05r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_06r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_07r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_08r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_09r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_0Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_ANA_0Br,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_DIG_00r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WSDS_HSG_DIG_01r = 440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG9r = 450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG19r = 460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG29r = 470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG7r = 480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG17r = 490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG27r = 500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_EXT_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG5r = 510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG19r = 520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG0r = 530,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG14r = 540,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG24r = 550,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EXT_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_PWRSAV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOW_QUEUE_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HIGH_QUEUE_MSKr = 560,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PS_LINKID_GATCLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_EEEP_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_MISC_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_MINIFG_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_MINIFG_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_WAIT_RX_INACTIVE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_TIMER_GELITE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_TIMER_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_SLV_EN_CTRLr = 570,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TIMER_UNIT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_WAKE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_SLEEP_STEP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_IDLE_TIMER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_TIMER_500M_CTRL0r = 580,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_TIMER_500M_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_TIMER_GIGA_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_TIMER_GIGA_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HIGH_QUEUE_LSKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_UNMATCHED_SA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_UNKN_SA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_UNKN_UC_DA_CTRLr = 590,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_LEARN_OVER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_AGEOUT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_LRN_LIMITNOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_LRN_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_LRN_OVER_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_SYS_LRN_LIMITNOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_SYS_LRN_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_L2_MCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_IP4_MCr = 600,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_IP6_MCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_MC_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_BC_FLOODr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_UNKN_MC_FLOODr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_UNKN_UC_FLOODr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_SYS_LRN_OVER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_SYS_LRN_LIMITr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_TBL_FLUSH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_TBL_FLUSH_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_IPMC_VLAN_LEAKYr = 610,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_IPMC_ISO_LEAKYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_PORT_ACCEPT_FRAME_TYPEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_INGRESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_EGRESS_TAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_PB_VIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP4MC_EGRESS_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP6MC_EGRESS_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_EXT_VIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_UPLINK_PMSKr = 620,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_SP2Cr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_EP_DMAC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_P_SVIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_PPB_VLAN_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_PORT_PPB_VLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MSTI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PISO_PORTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PISO_EXTr = 630,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL00r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL02r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL03r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL04r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL08r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL0Dr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL0Er,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL11r = 640,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL1Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL_CDPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CTRL_SSTPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_CFGr = 650,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_SRC_PORT_PERMITr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_SRC_EXT_PERMITr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_UM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_UC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_MC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_BC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_UM_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_UC_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_MC_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_BC_METER_IDXr = 660,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_ARP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_DHCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_IGMPMLD_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_ARP_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_DHCP_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STORM_CTRL_IGMPMLD_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGR_BWCTRL_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGR_BWCTRL_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_METER_TB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_METER_GLB_CTRLr = 670,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_METER_LB_EXCEED_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_METER_PKT_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1X_CFG_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1X_CFG_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1X_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNFLOOD_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_FINFLOOD_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_ICMPFLOOD_THr = 680,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_PRIVATE_REASONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_ACL_REASONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_CF_REASONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_CF_PTN0_REASONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_PORT_TX_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_PORT_RX_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_PORT_OAM_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_ACL_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDSr = 690,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_ACL_CNT_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_ACL_CNT_TYPEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_ACL_CNT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_PORT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_RST_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_Q_TX_FRAMESr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_MPCP_RX_DISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_EPON_FEC_CORRECTED_BLOCKSr = 700,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_EPON_FEC_UNCORRECTED_BLOCKSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_EPON_FEC_CODING_VIOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_NOT_BROADCAST_BIT_NOT_ONU_LLIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_BROADCAST_BIT_PLUS_ONU_LLIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_BROADCAST_NOT_ONUIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_CRC8_ERRORSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_NOT_BROADCAST_LLID_7FFFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_LLID_RX_BROADCAST_DROP_FRAMESr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_MPCP_TX_REG_ACKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_MPCP_TX_REPORTr = 710,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_MPCP_RX_GATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_FEC_CORRECTED_BLOCKSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_FEC_UNCORRECTED_BLOCKSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_ONUID_NOT_BROADCASTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_DOT3_LLIDRXFRAMESDROPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3_MPCP_TX_REG_REQr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_DROP_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_TX_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_RX_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_TX_BYTE_CNTr = 720,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_RX_BYTE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_CRC_ERROR_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_L34_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_HOST_TX_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_HOST_RX_MIBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_L34_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STAT_HOST_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_DROP_ALL_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PAUSE_ALL_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_GLB_FCOFF_HI_THr = 730,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_GLB_FCOFF_LO_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_GLB_HI_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_GLB_LO_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_HI_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_LO_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_FCOFF_HI_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_FCOFF_LO_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_Q_EGR_DROP_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_EGR_DROP_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_Q_EGR_FC_ENr = 740,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_DBG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_MAX_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_TOTAL_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PE_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_Q_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_TL_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PUB_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PUB_FCOFF_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_P_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PON_GLB_HI_THr = 750,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PON_GLB_LO_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PON_P_HI_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PON_P_LO_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_PON_Q_EGR_FC_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TH_TX_PREFETr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SPG_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SC_P_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SC_P_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_INTPRI_TO_QIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_PORT_QMAP_CTRLr = 760,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_PRI_REMAP_IN_CPUr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_LLID_SIDMAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_UNI_TRAP_PRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_1Q_PRI_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_DSCP_REMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QOS_PB_PRIr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRI_SEL_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRI_SEL_TBL_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_DOT1Q_RMK_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_1Q_CTRLr = 770,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_DSCP_RMK_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_DSCP_INT_PRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_P_DSCP_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMK_P_1P_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EGR_BWCTRL_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINE_RATE_1Gr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINE_RATE_500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINE_RATE_100Mr = 780,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINE_RATE_10Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUTPUT_DROP_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUTPUT_DROP_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_PORT_CFG0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_PORT_CFG1_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_TYPE_PORT_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_APR_EN_PORT_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_APR_METER_PORT_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_QUEUE_EMPTYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_BPTr = 790,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYTE_TOKEN_METERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCH_DUMMY0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HYS_GAP_OUTQr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCH_WFQ_TKN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCH_WFQ_OPTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_TEMPLATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_TEMPLATE_SELr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_PATTERN0_TEMPLATE_CFGr = 800,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_ACTIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_PERMITr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_ACTIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RNG_CHK_VID_RNGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RNG_CHK_IP_RNGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RNG_CHK_L4PORT_RNGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RNG_CHK_PKTLEN_RNGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_P_CTRL_0r = 810,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_P_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_CHK_STS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_LP_STS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_RNDM_NUMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_MAGIC_NUMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_PORT_TX_ENr = 820,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_PORT_LP_ENTER_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_PORT_LP_LEAVE_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_PORT_LP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLDP_PORT_LP_PNUMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RLPP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DATA_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_PARSERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSA_DATAr = 830,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSD_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSARAM_5_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSD_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PAUSE_ALL_LW_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HYS_PUSAL_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_RXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_TXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGMP_SIP_FILTER_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGMP_GLB_CTRLr = 840,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGMP_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L34_GLB_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L34_IPMC_TRAN_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L34_PORT_TO_WANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L34_WAN_TO_PORTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSLITE_INF_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSLITE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSLITE_MC_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L3MCR_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TBL_ACCESS_CTRLr = 850,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TBL_ACCESS_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TBL_ACCESS_WR_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TBL_ACCESS_RD_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_SECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_NSECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_OFFSET_SECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_OFFSET_8NSECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_FREQr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TRANSPARENT_CFGr = 860,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_IGR_MSG_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_EGR_MSG_ACTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_MEANPATH_DELAYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_RX_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_P_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_PON_TOD_SECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_PON_TOD_NSECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_P_TX_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PARSER_FIELD_SELTOR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_TRAP_CFGr = 870,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SID_GOOD_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ERR_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SID_BAD_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_SID_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_SID_FRAG_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_EMPTY_EOB_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SID_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_MASK_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SID_GOOD_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SID_BAD_CNT_DSr = 880,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SID_FRAG_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_DROP_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ERR_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_SID_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_MASK_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_SAMPLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_PERIODr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STSCTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_1r = 890,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_11r = 900,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_LX_MON_STS_21r = 910,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DBGO_TOPSELr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARB_TIMEOUT_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_CTL_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARB_TIMEOUT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSCRUNOUT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRN_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MSTBASE_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSC_USAGE_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_US_FIFO_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_IPSTS_USr = 920,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SID2QIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SIDVALIDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSCCTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_BW_THRESr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_OMCI_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSC_STS_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSC_CFG_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DBGO_CFG_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_EMPTY_EOB_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DBA_IFGr = 930,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_FRC_MDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_FRC_VALr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RPT_QSET_NUMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RPT_LVLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_TH_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_TH_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_OLT_BW_MTR_FULLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_TB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SCH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_QID_CIR_RATEr = 940,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_QID_PIR_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SCH_QMAPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_TCONT_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_TYPEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_LEAKY_BUCKETr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_WEIGHTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SID_STOP_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SID_GLB_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SID_RPV_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_DBG_CTRL_USr = 950,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_TOTAL_PAGE_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_SID_USED_PAGE_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_DPRU_RPT_PRDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_SID_OVER_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_SID_OVER_LATCH_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SCH_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_EGR_RATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REPORT_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DYGSP_RPTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_SCH_EGR_IFGr = 960,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SCH_OPTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_OK_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_ERR_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_MISS_CNT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_REG_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTERRUPT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_CFG_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_CFG_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MEDIA_STS_USr = 970,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_INTERRUPT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXCD01_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXFDP1_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXCDO1_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PROBE_SELECT_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CONFIG_CLK_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_CMD_0_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_CMD_1_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_CTL_DSr = 980,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARB_TIMEOUT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSCRUNOUT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MSTBASE_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSC_USAGE_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_IPSTS_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSCCTRL_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSC_STS_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DSC_CFG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DBGO_CFG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_DBG_CTRL_DSr = 990,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_TOTAL_PAGE_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIP_SID_USED_PAGE_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_OK_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_ERR_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_MISS_CNT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_REG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTERRUPT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_CFG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_CFG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DSr = 1000,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MEDIA_STS_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_INTERRUPT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXCD01_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXFDP1_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXCDO1_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PROBE_SELECT_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CONFIG_CLK_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_CMD_0_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_CMD_1_DSr = 1010,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_INT_DLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_RESETr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_VERSIONr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_TESTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_BYPASSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_MAC_BIST_RSLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_INTR_MASKr = 1020,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_ONU_ID_STATUSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PLOAM_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_LOS_CFG_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_SUPERFRAME_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_TOD_SUPERFRAME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PLOAM_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PLOAM_MSGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_ALLOC_INDr = 1030,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_ALLOC_WRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_ALLOC_RDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PORT_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PORT_WRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PORT_RDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PORT_CNTR_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PORT_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BLKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BITr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BITr = 1040,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BYTEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_CWr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_UNCOR_CWr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_LOMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_PLOAM_ACPTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_PLOAM_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_BWM_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_BWM_INVr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_ACTIVEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_BWM_ACPTr = 1050,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_LOSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_HEC_CORRECTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_IDLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_FAILr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_NON_IDLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_MISC_CNTR_PLEN_CORRECTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_TDM_PTIr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_OMCI_PTIr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_ETH_PTIr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_BPOS_SUBr = 1060,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_BPOS_ADDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_DUMMY_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_DUMMY_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PPSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_PPS_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_FECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLOAMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_TOKEN_Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWMAP_CAPr = 1070,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWMAP_BUFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCONTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_Lr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_Hr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_DS_TRAFFIC_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_BWMAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_BWMAP_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_BWMAP_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_INTR_MASKr = 1080,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_KEY_SWITCH_REQr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_KEY_SWITCH_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_KEY_WORD_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_AES_WORD_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CTL_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CTL_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CIPHER_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CIPHER_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_EXPNr = 1090,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_RX_CNTR_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_RX_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_FWD_CNTR_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_FWD_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MISC_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MISC_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MC_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MC_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MC_WRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MC_RDr = 1100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_FRM_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MC_ADDR_PTN_IPV4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_DS_MC_ADDR_PTN_IPV6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLASSIFY_BUFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLASSIFY_CNTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ASSEMBLYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_FILTERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_INTR_STSr = 1110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_ONU_IDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_WRITE_PROTECTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_TX_PATTERN_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_TX_PATTERN_BGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_TX_PATTERN_FGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_MIN_DELAYr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_EQDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_LASERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_BOH_CFGr = 1120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_BOH_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_PLOAM_INDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_PLOAM_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_PLOAM_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_MISC_CNTR_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_MISC_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_RDIr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_DGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_OPTIC_SD_THr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_PROC_MODEr = 1130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_G_DMY_XX_01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_G_DMY_XX_02r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_G_DMY_XX_03r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_PWR_SAV_MODEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GTC_US_TX_PTN_BEN_OFFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWM_TBLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWM_MEM0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWM_MEM1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLOAM_Ar,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BISTXXXr = 1140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_PTI_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_PWR_SAV_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_ETH_GEM_RX_CNTR_IDXr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_ETH_GEM_RX_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_PTN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_EOB_MERGEr = 1150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PCFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_BCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIFO_BANK0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIFO_BANK1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IDLE_BCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_PCNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_PORT_MAPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_GEM_US_BYTE_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCONT_IDLE_BYTE_STATr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_FEC_CONFIGr = 1160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_ASIC_TIMING_ADJUST1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_ASIC_TIMING_ADJUST2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RGSTR1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RGSTR2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DEBUG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DEBUG2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TIMER_CONFIG1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SYNC_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LASER_ON_OFF_TIMEr = 1170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIN_GRANT_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_GRANT_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TIME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EP_MISCr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LLID_TABLEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_MPCP_CTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DECRYP_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DECRYP_KEY0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DECRYP_KEY1r = 1180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_SCB_DECRYP_KEY0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_SCB_DECRYP_KEY1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_MISC_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_LOCAL_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_ACKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GRANT_SHIFT_STARTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GATE_ANAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GATE_ANA_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TBL_ACCESS_STSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TBL_ACCESS_RD_DATAr = 1190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RPT_QSET_NUM1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RPT_LVL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_SCH_TIMINGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_FEC_RSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DET_BEN_OFF_CONDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_LCTM_DRFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_INVLD_LID_GNr = 1200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_PRS_LC_FECr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_ERR_INTR2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DET_OFF1_OFSTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_MSK_NXT_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GRANT_INDACS_CMDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GRANT_INDACS_DATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GRANT_INDACS_DATA1r = 1210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_GRANT_INDACS_DATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_MPCP_DROP_CNTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TOD_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TOD_LOCAL_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_MSK_NXT_CNT2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TOD_TIMEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RDM_SEEDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_ASIC_OPTI2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_ASIC_OPTI1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_REQ_ACKr = 1220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_REQ_PAD_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_ACK_PAD_DATAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TX_OPTr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_US_INF_DBGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_CLRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_RDDATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_RDDATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_RDDATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_RDDATA3r = 1230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_RDDATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_WRDATA0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_WRDATA1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_WRDATA2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_WRDATA3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NAT_TBL_ACCESS_WRDATA4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWTCR0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PP_AGEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NB_TRF0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NB_TRF1r = 1240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NB_TRF2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NB_TRF3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_V6_BD_CTLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BD_CFGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF5r = 1250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FT_TRF7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARP_TRF0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARP_TRF1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARP_TRF2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARP_TRF3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W2r = 1260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W8r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W9r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W12r = 1270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_DESC_W13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSA_DESC_W0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSA_DESC_W1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSA_DESC_W2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSA_DESC_W3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSA_DESC_W4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L4_TRFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_ACLr = 1280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_CVLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_DPMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_L2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_MLTVLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_SVLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_RLDPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_EAV_AFBKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_LEDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_PER_PORT_MACr = 1290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_SWCOREr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_RMA_ATTACKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_BIST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_EGR_OUTQr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_EGR_SCHr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_HSAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_METERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_MIB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_PISOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_CHIP_INFOr = 1300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_ALE_CFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_PHY_IPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_PONIP_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_PONIP_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_PONIP_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_HSG_SDSREGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_SDSREGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RGF_VER_EPON_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_FRAME_CONFIGr = 1310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HARDWARE_DEFINE_FRAME_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HARDWARE_DEFINE_FRAME_0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_7r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_6r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_5r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_4r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTWARE_DEFINE_FRAME_0r = 1320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_BAUDRATEr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_RAM_INT_WR_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_RAM_EXT_WR_FLAGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_IND_ACCESSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_CTRL4r = 1330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_USB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_ACLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_CVLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_UNMATCHED_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HOST_POLICE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_FC_P_Q_EGR_FC_ENr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_DPMr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_L2r = 1340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_MLTVLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_SVLANr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_RLDPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_EAV_AFBKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_INTRr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_LEDr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_PER_PORT_MACr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_SDSREGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_HSG_SDSREGr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_SWCOREr = 1350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_EPON_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_RMA_ATTACKr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_CFG_47r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_BIST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_EGR_OUTQr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_EGR_SCHr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_HSAr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_METERr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_MIB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_PISOr = 1360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_CHIP_INFOr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_ALE_CFr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_PHY_IPr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_PONIP_GLBr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_PONIP_USr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SID_Q_MAP_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_Q_CONFIG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_FC_CONFIG_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DS_PBO_PAGE_Q0r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DS_PBO_PAGE_Q1r = 1370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_DS_PBO_PAGE_Q2r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_PONIP_DSr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINE_RATE_2500Mr,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG00r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG02r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG03r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG04r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG05r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG06r = 1380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG07r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG08r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG09r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG14r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG16r = 1390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG24r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG26r = 1400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG00r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG01r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG02r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG03r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG04r = 1410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG05r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG06r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG07r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG08r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG09r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG10r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG11r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG12r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG13r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG14r = 1420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG15r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG16r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG17r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG18r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG19r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG20r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG21r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG22r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG23r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG24r = 1430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG25r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG26r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG27r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG28r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG29r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG30r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_COM_REG31r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG32r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG33r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG34r = 1440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG35r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG36r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG37r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG38r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG39r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG40r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG41r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG42r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG43r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG44r = 1450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG45r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG46r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG47r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG48r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG49r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG50r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG51r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG52r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG53r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_SPD_REG54r = 1460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG32r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG33r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG34r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG35r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG36r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG37r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG38r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG39r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG40r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG41r = 1470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG42r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG43r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG44r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG45r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG46r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG47r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG48r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG49r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG50r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG51r = 1480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG52r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG53r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_1P25G_REG54r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG32r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG33r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG34r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG35r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG36r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG37r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG38r = 1490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG39r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG40r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG41r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG42r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG43r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG44r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG45r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG46r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG47r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG48r = 1500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG49r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG50r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG51r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG52r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG53r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_GPON_REG54r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG32r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG33r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG34r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG35r = 1510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG36r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG37r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG38r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG39r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG40r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG41r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG42r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG43r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG44r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG45r = 1520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG46r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG47r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG48r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG49r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG50r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG51r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG52r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG53r,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_EPON_REG54r,
+#endif
+
+    RTL9602C_REG_LIST_END = 1530,
+} rtk_rtl9602c_reg_list_t;
+
+
+/* Internal Register Enum */
+typedef enum rtk_int_rtl9602c_reg_list_e
+{
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DIGITAL_INTERFACE_SELECT_RTL9602C = 0,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_I2C_CONFIG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPHY_IND_WD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPHY_IND_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPHY_IND_RD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_CHK_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_CHK_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_CHK_STATUS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_IND_WD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_IND_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_IND_RD_RTL9602C = 10,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SC_IND_WD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SC_IND_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SC_IND_RD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_REGCTRL_GLB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IOPAD_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_LED_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_MODE_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_GPIO_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_PCSXF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_PHY_CTRL_RTL9602C = 20,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_PHY_INI_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GDAC_IB_1000M_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GDAC_IB_100M_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GDAC_IB_10M_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_GETPWRCTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_GETPWRCTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_HOTCMD1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_HOTCMD2_AD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_HOTCMD2_CTRL_RTL9602C = 30,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_ADR_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_ADR_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_INV_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_INV_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_WD_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_WD_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_RD_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_GE_POLL_RD_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CHIP_DEBUG_OUT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_BOND_CONTENT_RTL9602C = 40,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EFUSE_BOND_RSLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_I2C_IND_WD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_I2C_IND_ADR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_I2C_IND_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_I2C_IND_RD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_HOTCMD1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_HOTCMD2_AD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_HOTCMD2_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_ADR_0_RTL9602C = 50,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_ADR_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_INV_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_INV_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_WD_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_WD_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_RD_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_FE_POLL_RD_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_HOTCMD2_TRG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_CTRL_RTL9602C = 60,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_DBGO_POS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_DBGO_NEG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_IMR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_IMS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_STAT_POS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTR_STAT_NEG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_3_RTL9602C = 70,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_13_RTL9602C = 80,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_23_RTL9602C = 90,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_32_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_33_RTL9602C = 100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_34_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_35_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_36_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_37_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_38_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_39_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_40_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_41_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_42_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_43_RTL9602C = 110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_44_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_45_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_46_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_RSLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_6_RTL9602C = 120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_CFG_14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_BIST_RSLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_1_RTL9602C = 130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_CFG_8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_BIST_RSLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LED_LED_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DATA_LED_CFG_RTL9602C = 140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LED_ACTIVE_LOW_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SERI_LED_ACTIVE_LOW_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LED_FORCE_VALUE_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LED_BLINK_RATE_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LOW_RATE_BLINK_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LED_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SERI_LED_CLK_PER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SERI_LED_REFRESH_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_BUZZER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LED_CFG_RTL9602C = 150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LED_FLT_MPCP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FORCE_P_DMP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EN_FORCE_P_DMP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GLB_MAC_MISC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WRAP_GPHY_MISC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_CTRL_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_CTRL_3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_CTRL_4_RTL9602C = 160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_CTRL_5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SSC_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_THERMAL_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_THERMAL_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_THERMAL_CTRL_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_THERMAL_STS_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_THERMAL_STS_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWR_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWR_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWR_STS_0_RTL9602C = 170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWR_STS_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DDRSWR_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DDRSWR_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DDRSWR_STS_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DDRSWR_STS_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CRASH_INTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CRASH_CONFIG_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CRASH_CONFIG_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CRASH_CONFIG_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CRASH_CONFIG_3_RTL9602C = 180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CRASH_CONFIG_4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MODEL_NAME_INFO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CHIP_INFO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BOND_INFO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MISCELLANEOUS_CONFIGURE0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FORCE_P_ABLTY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MDX_PHY_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ROUTER_UPS_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_P_ABLTY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RTL_OUI_CFG_RTL9602C = 190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_REVISON_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MODEL_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ABLTY_FORCE_MODE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DEBUG_SEL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DEBUG_SEL_TOP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RST_SYNC_FIFO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MAC_ACT_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BYPS_ABLTY_LOCK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIFO_ERR_STS_RTL9602C = 200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_AN_RX_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_FIB_STATUS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HWPKT_GEN_STA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPHY_AFE_DBG_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DYNGASP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BOND_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STRAP_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MISCELLANEOUS_BONDING_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MISCELLANEOUS_STRAPPING0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MAC_DLYLNK_RTL9602C = 210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONCTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MAC_CPU_TAG_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ACCEPT_MAX_LEN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MAX_LENGTH_CFG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MAX_LENGTH_CFG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_MAC_MISC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_BACKPRESSURE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_UNHIOL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWITCH_MAC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWITCH_CTRL_RTL9602C = 220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INBW_HBOUND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INBW_LBOUND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_P_TX_ERR_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_P_MISC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_P_CUR_RATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_UTP_FIBER_AUTODET_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CHANGE_DUPLEX_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_00_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_02_RTL9602C = 230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_03_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_04_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_05_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_06_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_07_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_08_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_09_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_0A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_ANA_0B_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_00_RTL9602C = 240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_02_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_03_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_04_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_05_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_06_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_07_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_08_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_09_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_0A_RTL9602C = 250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_0B_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_0C_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_0D_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_0E_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_0F_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_14_RTL9602C = 260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_1A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_1B_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_1C_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_1D_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_1E_RTL9602C = 270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_1F_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_28_RTL9602C = 280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_2A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_2B_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_DIG_2C_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FORCE_BEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG4_RTL9602C = 290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG14_RTL9602C = 300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG24_RTL9602C = 310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG2_RTL9602C = 320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG12_RTL9602C = 330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG22_RTL9602C = 340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_EXT_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG0_RTL9602C = 350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG14_RTL9602C = 360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG26_RTL9602C = 370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG5_RTL9602C = 380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG19_RTL9602C = 390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG29_RTL9602C = 400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIB_EXT_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG0X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG1X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG2X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG3X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG4X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG5X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG6X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG7X_CEN_RTL9602C = 410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG8X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG9X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG10X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG11X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG12X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG13X_CEN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG0X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG1X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG2X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG3X_PLL_RTL9602C = 420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG4X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG5X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG6X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG7X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG8X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PHY_RG9X_PLL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_00_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_02_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_03_RTL9602C = 430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_04_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_05_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_06_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_07_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_08_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_09_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_0A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_ANA_0B_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_DIG_00_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WSDS_HSG_DIG_01_RTL9602C = 440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG9_RTL9602C = 450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG19_RTL9602C = 460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG29_RTL9602C = 470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG7_RTL9602C = 480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG17_RTL9602C = 490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG27_RTL9602C = 500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_EXT_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG5_RTL9602C = 510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG19_RTL9602C = 520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG0_RTL9602C = 530,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG14_RTL9602C = 540,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG24_RTL9602C = 550,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_FIB_EXT_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_PWRSAV_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LOW_QUEUE_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HIGH_QUEUE_MSK_RTL9602C = 560,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PS_LINKID_GATCLK_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_EEEP_PORT_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_MISC_CTRL0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_TX_MINIFG_CTRL0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_TX_MINIFG_CTRL1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_WAIT_RX_INACTIVE_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_TX_TIMER_100M_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_TX_TIMER_GELITE_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEE_TX_TIMER_GIGA_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_SLV_EN_CTRL_RTL9602C = 570,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_TIMER_UNIT_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_TX_WAKE_TIMER_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_TX_IDLE_TIMER_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_TX_RATE_100M_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_TX_RATE_500M_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_TX_RATE_GIGA_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_SLEEP_STEP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_IDLE_TIMER_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_TIMER_100M_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_TIMER_500M_CTRL0_RTL9602C = 580,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_TIMER_500M_CTRL1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_TIMER_GIGA_CTRL0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_TIMER_GIGA_CTRL1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_RATE_100M_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_RATE_500M_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EEEP_RX_RATE_GIGA_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HIGH_QUEUE_LSK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_UNMATCHED_SA_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_UNKN_SA_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_UNKN_UC_DA_CTRL_RTL9602C = 590,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_LEARN_OVER_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_AGEOUT_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_LRN_LIMITNO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_LRN_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_LRN_OVER_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_SYS_LRN_LIMITNO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_SYS_LRN_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_UNKN_L2_MC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_UNKN_IP4_MC_RTL9602C = 600,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_UNKN_IP6_MC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_UNKN_MC_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_BC_FLOOD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_UNKN_MC_FLOOD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_UNKN_UC_FLOOD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_SYS_LRN_OVER_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_SYS_LRN_LIMIT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_TBL_FLUSH_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_TBL_FLUSH_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_IPMC_VLAN_LEAKY_RTL9602C = 610,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_IPMC_ISO_LEAKY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_PORT_ACCEPT_FRAME_TYPE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_INGRESS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_EGRESS_TAG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_PB_VID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IP4MC_EGRESS_MODE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IP6MC_EGRESS_MODE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_EXT_VID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SVLAN_UPLINK_PMSK_RTL9602C = 620,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SVLAN_SP2C_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SVLAN_EP_DMAC_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SVLAN_P_SVID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SVLAN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SVLAN_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_PPB_VLAN_VAL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_VLAN_PORT_PPB_VLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MSTI_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PISO_PORT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PISO_EXT_RTL9602C = 630,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL00_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL02_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL03_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL04_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL08_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL0D_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL0E_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL11_RTL9602C = 640,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL1A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL_CDP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CTRL_SSTP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMA_CFG_RTL9602C = 650,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_SRC_PORT_PERMIT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L2_SRC_EXT_PERMIT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_UM_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_UC_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_MC_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_BC_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_UM_METER_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_UC_METER_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_MC_METER_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_BC_METER_IDX_RTL9602C = 660,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_ARP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_DHCP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_IGMPMLD_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_ARP_METER_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_DHCP_METER_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STORM_CTRL_IGMPMLD_METER_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IGR_BWCTRL_P_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IGR_BWCTRL_GLB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_METER_TB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_METER_GLB_CTRL_RTL9602C = 670,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_METER_LB_EXCEED_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_METER_PKT_RATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT1X_CFG_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT1X_CFG_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT1X_P_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOS_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOS_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOS_SYNFLOOD_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOS_FINFLOOD_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOS_ICMPFLOOD_TH_RTL9602C = 680,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MIR_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_PRIVATE_REASON_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_ACL_REASON_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_CF_REASON_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_CF_PTN0_REASON_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_PORT_TX_MIB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_PORT_RX_MIB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_PORT_OAM_MIB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_ACL_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDS_RTL9602C = 690,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_ACL_CNT_MODE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_ACL_CNT_TYPE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_ACL_CNT_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_PORT_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_RST_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_Q_TX_FRAMES_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_MPCP_RX_DISC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_EPON_FEC_CORRECTED_BLOCKS_RTL9602C = 700,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_EPON_FEC_UNCORRECTED_BLOCKS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_EPON_FEC_CODING_VIO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_NOT_BROADCAST_BIT_NOT_ONU_LLID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_BROADCAST_BIT_PLUS_ONU_LLID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_BROADCAST_NOT_ONUID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_CRC8_ERRORS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_NOT_BROADCAST_LLID_7FFF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_LLID_RX_BROADCAST_DROP_FRAMES_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_MPCP_TX_REG_ACK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_MPCP_TX_REPORT_RTL9602C = 710,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_MPCP_RX_GATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_FEC_CORRECTED_BLOCKS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_FEC_UNCORRECTED_BLOCKS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_ONUID_NOT_BROADCAST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_DOT3_LLIDRXFRAMESDROP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DOT3_MPCP_TX_REG_REQ_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OMCI_DROP_PKT_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OMCI_TX_PKT_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OMCI_RX_PKT_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OMCI_TX_BYTE_CNT_RTL9602C = 720,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OMCI_RX_BYTE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OMCI_CRC_ERROR_PKT_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_L34_MIB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_HOST_TX_MIB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_HOST_RX_MIB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_L34_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_STAT_HOST_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_DROP_ALL_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PAUSE_ALL_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_GLB_FCOFF_HI_TH_RTL9602C = 730,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_GLB_FCOFF_LO_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_GLB_HI_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_GLB_LO_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_HI_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_LO_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_FCOFF_HI_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_FCOFF_LO_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_Q_EGR_DROP_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_EGR_DROP_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_Q_EGR_FC_EN_RTL9602C = 740,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_DBG_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CLR_MAX_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_TOTAL_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PE_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_Q_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_TL_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PUB_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PUB_FCOFF_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_P_USED_PAGE_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PON_GLB_HI_TH_RTL9602C = 750,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PON_GLB_LO_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PON_P_HI_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PON_P_LO_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FC_PON_Q_EGR_FC_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TH_TX_PREFET_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SPG_GLB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SC_P_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SC_P_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_INTPRI_TO_QID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_PORT_QMAP_CTRL_RTL9602C = 760,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_PRI_REMAP_IN_CPU_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_LLID_SIDMAP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_UNI_TRAP_PRI_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_1Q_PRI_REMAP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_DSCP_REMAP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_QOS_PB_PRI_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PRI_SEL_TBL_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PRI_SEL_TBL_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_DOT1Q_RMK_EN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_1Q_CTRL_RTL9602C = 770,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_DSCP_RMK_EN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_DSCP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_DSCP_INT_PRI_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_P_DSCP_SEL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RMK_P_1P_SEL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WFQ_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EGR_BWCTRL_P_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LINE_RATE_1G_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LINE_RATE_500M_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LINE_RATE_100M_RTL9602C = 780,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LINE_RATE_10M_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OUTPUT_DROP_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OUTPUT_DROP_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WFQ_PORT_CFG0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WFQ_PORT_CFG1_7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_WFQ_TYPE_PORT_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_APR_EN_PORT_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_APR_METER_PORT_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_P_QUEUE_EMPTY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MOCIR_BPT_RTL9602C = 790,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BYTE_TOKEN_METER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SCH_DUMMY0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HYS_GAP_OUTQ_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GATE_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SCH_WFQ_TKN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SCH_WFQ_OPT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ACL_TEMPLATE_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CF_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CF_TEMPLATE_SEL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CF_PATTERN0_TEMPLATE_CFG_RTL9602C = 800,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CF_ACTION_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ACL_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ACL_PERMIT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ACL_ACTION_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ACL_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RNG_CHK_VID_RNG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RNG_CHK_IP_RNG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RNG_CHK_L4PORT_RNG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RNG_CHK_PKTLEN_RNG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OAM_P_CTRL_0_RTL9602C = 810,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OAM_P_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OAM_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_OAM_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_CTRL_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_CTRL_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_CHK_STS_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_LP_STS_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_RNDM_NUM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_MAGIC_NUM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_PORT_TX_EN_RTL9602C = 820,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_PORT_LP_ENTER_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_PORT_LP_LEAVE_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_PORT_LP_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLDP_PORT_LP_PNUM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RLPP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DATA_DBG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_PARSER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSA_DATA_RTL9602C = 830,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSD_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSARAM_5_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSD_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PAUSE_ALL_LW_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HYS_PUSAL_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PORT_VM_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PORT_VM_RX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PORT_VM_TX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IGMP_SIP_FILTER_TBL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IGMP_GLB_CTRL_RTL9602C = 840,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IGMP_P_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L34_GLB_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L34_IPMC_TRAN_TBL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L34_PORT_TO_WAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L34_WAN_TO_PORT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DSLITE_INF_TBL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DSLITE_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DSLITE_MC_TBL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L3MCR_TBL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TBL_ACCESS_CTRL_RTL9602C = 850,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TBL_ACCESS_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TBL_ACCESS_WR_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TBL_ACCESS_RD_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TIME_SEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TIME_NSEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TIME_OFFSET_SEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TIME_OFFSET_8NSEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TIME_FREQ_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TIME_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_TRANSPARENT_CFG_RTL9602C = 860,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_IGR_MSG_ACT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_EGR_MSG_ACT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_MEANPATH_DELAY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_RX_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_P_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_PON_TOD_SEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_PON_TOD_NSEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PTP_P_TX_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PARSER_FIELD_SELTOR_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_TRAP_CFG_RTL9602C = 870,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_SID_GOOD_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_ERR_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_SID_BAD_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TX_SID_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TX_SID_FRAG_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TX_EMPTY_EOB_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_SID_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CNT_MASK_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_SID_GOOD_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_SID_BAD_CNT_DS_RTL9602C = 880,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_SID_FRAG_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_DROP_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_ERR_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TX_SID_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CNT_MASK_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_SAMPLE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_PERIOD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STSCTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_1_RTL9602C = 890,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_11_RTL9602C = 900,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_LX_MON_STS_21_RTL9602C = 910,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DBGO_TOPSEL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARB_TIMEOUT_GLB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_CTL_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARB_TIMEOUT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DSCRUNOUT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DRN_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IP_MSTBASE_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSC_USAGE_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_US_FIFO_CTL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_IPSTS_US_RTL9602C = 920,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SID2QID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SIDVALID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSCCTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_BW_THRES_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_OMCI_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSC_STS_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSC_CFG_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DBGO_CFG_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_EMPTY_EOB_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DBA_IFG_RTL9602C = 930,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MOCIR_FRC_MD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MOCIR_FRC_VAL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RPT_QSET_NUM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RPT_LVL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MOCIR_TH_H_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MOCIR_TH_L_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_OLT_BW_MTR_FULL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_TB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SCH_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_QID_CIR_RATE_RTL9602C = 940,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_QID_PIR_RATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SCH_QMAP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_TCONT_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_WFQ_TYPE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_WFQ_LEAKY_BUCKET_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_WFQ_WEIGHT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SID_STOP_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SID_GLB_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SID_RPV_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_DBG_CTRL_US_RTL9602C = 950,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_TOTAL_PAGE_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_SID_USED_PAGE_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_DPRU_RPT_PRD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_SID_OVER_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_SID_OVER_LATCH_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SCH_RATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_EGR_RATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REPORT_MODE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_DYGSP_RPT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_US_SCH_EGR_IFG_RTL9602C = 960,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SCH_OPT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PKT_OK_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PKT_ERR_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PKT_MISS_CNT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CMD_REG_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTERRUPT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TX_CFG_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_CFG_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MEDIA_STS_US_RTL9602C = 970,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_INTERRUPT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BIST_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TXCD01_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RXFDP1_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RXCDO1_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PROBE_SELECT_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CONFIG_CLK_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_CMD_0_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_CMD_1_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_CTL_DS_RTL9602C = 980,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARB_TIMEOUT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DSCRUNOUT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IP_MSTBASE_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSC_USAGE_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_IPSTS_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSCCTRL_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSC_STS_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DSC_CFG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DBGO_CFG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_DBG_CTRL_DS_RTL9602C = 990,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_TOTAL_PAGE_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PONIP_SID_USED_PAGE_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PKT_OK_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PKT_ERR_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PKT_MISS_CNT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CMD_REG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_INTERRUPT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TX_CFG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RX_CFG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CFG_DS_RTL9602C = 1000,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MEDIA_STS_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_INTERRUPT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BIST_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TXCD01_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RXFDP1_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RXCDO1_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PROBE_SELECT_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CONFIG_CLK_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_CMD_0_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IO_CMD_1_DS_RTL9602C = 1010,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_INT_DLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_RESET_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_VERSION_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_TEST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_BYPASS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_INTR_MASK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_INTR_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_MAC_BIST_RSLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_INTR_DLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_INTR_MASK_RTL9602C = 1020,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_INTR_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_ONU_ID_STATUS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PLOAM_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_LOS_CFG_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_SUPERFRAME_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_TOD_SUPERFRAME_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PLOAM_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PLOAM_MSG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_ALLOC_IND_RTL9602C = 1030,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_ALLOC_WR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_ALLOC_RD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PORT_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PORT_WR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PORT_RD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PORT_CNTR_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PORT_CNTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BLK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BIT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BIT_RTL9602C = 1040,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BYTE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_CW_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_FEC_UNCOR_CW_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_LOM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_PLOAM_ACPT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_PLOAM_FAIL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_BWM_FAIL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_BWM_INV_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_ACTIVE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_BWM_ACPT_RTL9602C = 1050,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_LOS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_HEC_CORRECT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_IDLE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_FAIL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_GEM_NON_IDLE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_MISC_CNTR_PLEN_CORRECT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_TDM_PTI_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_OMCI_PTI_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_ETH_PTI_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_BPOS_SUB_RTL9602C = 1060,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_BPOS_ADD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_DUMMY_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_DUMMY_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PPS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_PPS_INTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_FEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PLOAM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GEM_CNTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GEM_TOKEN_A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BWMAP_CAP_RTL9602C = 1070,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BWMAP_BUF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TCONT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GEM_L_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GEM_H_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_DS_TRAFFIC_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_BWMAP_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_BWMAP_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_BWMAP_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_INTR_DLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_INTR_MASK_RTL9602C = 1080,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_INTR_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_KEY_SWITCH_REQ_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_KEY_SWITCH_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_KEY_WORD_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_AES_WORD_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CTL_INFO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CTL_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CIPHER_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CIPHER_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_KEY_EXPN_RTL9602C = 1090,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_RX_CNTR_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_RX_CNTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_FWD_CNTR_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_FWD_CNTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MISC_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MISC_CNTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MC_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MC_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MC_WR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MC_RD_RTL9602C = 1100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_FRM_TIMEOUT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MC_ADDR_PTN_IPV4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_DS_MC_ADDR_PTN_IPV6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CLASSIFY_BUF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CLASSIFY_CNTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ASSEMBLY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MC_FILTER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_INTR_DLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_INTR_MASK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_INTR_STS_RTL9602C = 1110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_ONU_ID_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_WRITE_PROTECT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_TX_PATTERN_CTL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_TX_PATTERN_BG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_TX_PATTERN_FG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_MIN_DELAY_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_EQD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_LASER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_BOH_CFG_RTL9602C = 1120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_BOH_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_PLOAM_IND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_PLOAM_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_PLOAM_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_MISC_CNTR_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_MISC_CNTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_RDI_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_DG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_OPTIC_SD_TH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_PROC_MODE_RTL9602C = 1130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_G_DMY_XX_01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_G_DMY_XX_02_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_G_DMY_XX_03_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_PWR_SAV_MODE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GTC_US_TX_PTN_BEN_OFF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BWM_TBL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BWM_MEM0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BWM_MEM1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PLOAM_A_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BISTXXX_RTL9602C = 1140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DBR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_INTR_DLT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_INTR_MASK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_INTR_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_PTI_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_PWR_SAV_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_ETH_GEM_RX_CNTR_IDX_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_ETH_GEM_RX_CNTR_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_PTN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_EOB_MERGE_RTL9602C = 1150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PCFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GEM_BCNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIFO_BANK0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FIFO_BANK1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_IDLE_BCNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GEM_PCNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_PORT_MAP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_GPON_GEM_US_BYTE_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TCONT_IDLE_BYTE_STAT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_FEC_CONFIG_RTL9602C = 1160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_ASIC_TIMING_ADJUST1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_ASIC_TIMING_ADJUST2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RGSTR1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RGSTR2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_DEBUG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_DEBUG2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TIMER_CONFIG1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_INTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SYNC_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LASER_ON_OFF_TIME_RTL9602C = 1170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MIN_GRANT_START_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_MAX_GRANT_START_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TIME_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EP_MISC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LLID_TABLE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_MPCP_CTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TX_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_DECRYP_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_DECRYP_KEY0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_DECRYP_KEY1_RTL9602C = 1180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_SCB_DECRYP_KEY0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_SCB_DECRYP_KEY1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_MISC_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_LOCAL_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_ACK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GRANT_SHIFT_START_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GATE_ANA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GATE_ANA_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TBL_ACCESS_STS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TBL_ACCESS_RD_DATA_RTL9602C = 1190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RPT_QSET_NUM1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RPT_LVL1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_SCH_TIMING_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_FEC_RST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DET_BEN_OFF_COND_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PRG_EPON_GN0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PRG_EPON_GN1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PRG_EPON_GN2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DBG_LCTM_DRF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_CLR_INVLD_LID_GN_RTL9602C = 1200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DS_PRS_LC_FEC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_ERR_INTR2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_DET_OFF1_OFST_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_BAK0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_BAK1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_BAK2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_MSK_NXT_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GRANT_INDACS_CMD_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GRANT_INDACS_DATA0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GRANT_INDACS_DATA1_RTL9602C = 1210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_GRANT_INDACS_DATA2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_MPCP_DROP_CNT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TOD_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TOD_LOCAL_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_MSK_NXT_CNT2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TOD_TIME_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_RDM_SEED_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_ASIC_OPTI2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_ASIC_OPTI1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_REQ_ACK_RTL9602C = 1220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_REQ_PAD_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_REG_ACK_PAD_DATA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_TX_OPT_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_EPON_US_INF_DBG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_CLR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_RDDATA0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_RDDATA1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_RDDATA2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_RDDATA3_RTL9602C = 1230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_RDDATA4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_WRDATA0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_WRDATA1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_WRDATA2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_WRDATA3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NAT_TBL_ACCESS_WRDATA4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SWTCR0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PP_AGE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NB_TRF0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NB_TRF1_RTL9602C = 1240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NB_TRF2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_NB_TRF3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_V6_BD_CTL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_BD_CFG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF5_RTL9602C = 1250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_FT_TRF7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARP_TRF0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARP_TRF1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARP_TRF2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_ARP_TRF3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSBA_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W2_RTL9602C = 1260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W8_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W9_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W12_RTL9602C = 1270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSB_DESC_W13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSA_DESC_W0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSA_DESC_W1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSA_DESC_W2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSA_DESC_W3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSA_DESC_W4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_L4_TRF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_GLB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_GLB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_ACL_RTL9602C = 1280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_CVLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_DPM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_L2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_MLTVLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_SVLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_RLDP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_EAV_AFBK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_INTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_LED_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_PER_PORT_MAC_RTL9602C = 1290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_SWCORE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_RMA_ATTACK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_BIST_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_EGR_OUTQ_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_EGR_SCH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_HSA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_METER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_MIB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_PISO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_CHIP_INFO_RTL9602C = 1300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_ALE_CF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_PHY_IP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_PONIP_GLB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_PONIP_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_PONIP_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_HSG_SDSREG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_SDSREG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RGF_VER_EPON_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PPS_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TOD_FRAME_CONFIG_RTL9602C = 1310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HARDWARE_DEFINE_FRAME_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HARDWARE_DEFINE_FRAME_0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_7_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_6_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_5_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_4_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SOFTWARE_DEFINE_FRAME_0_RTL9602C = 1320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_TOD_BAUDRATE_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HSG_SDS_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_REG_CTRL0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_REG_CTRL1_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_REG_CTRL2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_REG_CTRL3_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_RAM_INT_WR_FLAG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_RAM_EXT_WR_FLAG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_IND_ACCESS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SFP_REG_CTRL4_RTL9602C = 1330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_USB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_GLB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_GLB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_ACL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_CVLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LUT_UNMATCHED_VLAN_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_HOST_POLICE_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_FC_P_Q_EGR_FC_EN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_DPM_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_L2_RTL9602C = 1340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_MLTVLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_SVLAN_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_RLDP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_EAV_AFBK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_INTR_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_LED_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_PER_PORT_MAC_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_SDSREG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_HSG_SDSREG_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_SWCORE_RTL9602C = 1350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_EPON_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_RMA_ATTACK_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SW_BIST_CFG_47_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_BIST_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_EGR_OUTQ_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_EGR_SCH_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_HSA_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_METER_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_MIB_CTRL_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_PISO_RTL9602C = 1360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_CHIP_INFO_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_ALE_CF_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_PHY_IP_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_PONIP_GLB_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_PONIP_US_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_SID_Q_MAP_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_Q_CONFIG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_FC_CONFIG_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DS_PBO_PAGE_Q0_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DS_PBO_PAGE_Q1_RTL9602C = 1370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_PON_DS_PBO_PAGE_Q2_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_RSVD_PONIP_DS_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_LINE_RATE_2500M_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG00_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG02_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG03_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG04_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG05_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG06_RTL9602C = 1380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG07_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG08_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG09_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG14_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG16_RTL9602C = 1390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG24_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG26_RTL9602C = 1400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_MISC_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG00_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG01_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG02_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG03_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG04_RTL9602C = 1410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG05_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG06_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG07_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG08_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG09_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG10_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG11_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG12_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG13_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG14_RTL9602C = 1420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG15_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG16_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG17_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG18_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG19_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG20_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG21_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG22_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG23_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG24_RTL9602C = 1430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG25_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG26_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG27_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG28_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG29_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG30_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_COM_REG31_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG32_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG33_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG34_RTL9602C = 1440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG35_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG36_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG37_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG38_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG39_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG40_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG41_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG42_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG43_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG44_RTL9602C = 1450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG45_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG46_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG47_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG48_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG49_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG50_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG51_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG52_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG53_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_SPD_REG54_RTL9602C = 1460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG32_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG33_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG34_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG35_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG36_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG37_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG38_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG39_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG40_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG41_RTL9602C = 1470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG42_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG43_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG44_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG45_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG46_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG47_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG48_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG49_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG50_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG51_RTL9602C = 1480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG52_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG53_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_1P25G_REG54_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG32_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG33_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG34_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG35_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG36_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG37_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG38_RTL9602C = 1490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG39_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG40_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG41_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG42_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG43_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG44_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG45_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG46_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG47_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG48_RTL9602C = 1500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG49_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG50_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG51_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG52_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG53_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_GPON_REG54_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG32_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG33_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG34_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG35_RTL9602C = 1510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG36_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG37_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG38_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG39_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG40_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG41_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG42_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG43_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG44_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG45_RTL9602C = 1520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG46_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG47_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG48_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG49_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG50_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG51_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG52_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG53_RTL9602C,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    INT_RTL9602C_SDS_ANA_EPON_REG54_RTL9602C,
+#endif
+
+    INT_RTL9602C_REG_LIST_END = 1530,
+} rtk_int_rtl9602c_reg_list_t;
+
+
+typedef enum rtk_rtl9602c_regField_list_e
+{
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RESERVEDf = 0,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ORG_COLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_5MS_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAIT_SCK_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_OPEN_DRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_AWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_DWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_CLOCK_DIVf = 10,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WR_DATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RD_DATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_ENDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_BGNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_DATAf = 20,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_STOP_ADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_OCP_TO_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_OCP_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_ACK_TOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_IFCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_IFDTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_SLIC_CKf = 30,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_SLIC_DTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_SPI_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_SPI_DTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRI_OTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_IFCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_IFDTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_SLIC_CKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_SLIC_DTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_LEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_SPI_CKf = 40,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_SPI_DTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SR_OTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SERI_LED_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED15_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED14_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED13_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED12_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED11_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED10_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED9_ENf = 50,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED8_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED7_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED6_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED5_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED4_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED3_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED2_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED1_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED0_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_MODE_DMYf = 60,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CK25M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UART0B2_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_SLV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SC_CD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OEM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYING_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SLIC_PCM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SLIC_ZSI_ENf = 70,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SLIC_ISI_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_I2C_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MDX_M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MDX_S_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SPI_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UART0_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IO_GPIO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_MIIRX_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PCSXFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_RXFIFOf = 80,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_COL_10Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MSK_MDIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BASE_PHYADf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_PRDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PWRUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_LANONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_EXTINIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CHKf = 90,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HOTCMD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_WRMSK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_RD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_WR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GDAC_IBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRMSK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RD_ENf = 100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BITS_INV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD0_ADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD1_ADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD2_ADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD3_ADRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD0_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD1_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD2_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD3_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD0_WDATf = 110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD1_WDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD2_WDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD3_WDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD0_RDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD1_RDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD2_RDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD3_RDATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EF_BOND_CONTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EF_BOND_RSLTf = 120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NO_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HOTCMD2_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HOTCMD2_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYING_RST_POLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYING_RST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_NRESET_LOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_HSG_CFG_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_HSG_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_SDS_CFG_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONMAC_RSTf = 130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_SWSYS_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_CFG_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_CHIP_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_GPHY_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_SDS_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_POLARITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_INT_DBGO_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_INT_DBGO_NEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_TODf = 140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_SFPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_CRASHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_SCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_THERMAL_ALARMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_DYING_GASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_PTP_1_SECf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_EPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_GPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_SERDESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_GPHYf = 150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_ACLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_LOOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_SPE_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_SPE_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_L2_LRN_OVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_METER_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMR_LINK_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_TODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_SFPf = 160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_CRASHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_SCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_THERMAL_ALARMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_DYING_GASPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_PTP_1_SECf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_EPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_GPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_SERDESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_ACLf = 170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_DBGOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_LOOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_SPE_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_SPE_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_L2_LRN_OVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_METER_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IMS_LINK_CHGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_PORT_LINKDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_PORT_LINKUPf = 180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_PORT_CHANGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_DBGO_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTR_STAT_DBGO_NEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BCAM_LUT_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BCAM_LUT_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BCAM_ALE34_BS7_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BCAM_ALE34_BS7_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCAM_ACL_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCAM_ACL_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCAM_CF48_0_BIST_RSLTf = 190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCAM_CF48_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCAM_CF48_1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCAM_CF48_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ACT_ACL_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ACT_ACL_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ACT_CF_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ACT_CF_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_1_BIST_RSLTf = 200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_3_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS1_3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS3_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS4_BIST_RSLTf = 210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS4_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS5_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS5_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS6_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_ALE34_BS6_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_LUT0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_LUT0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_LUT1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_LUT1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_VLAN_BIST_RSLTf = 220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_VLAN_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_HT_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_HT_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_3_BIST_RSLTf = 230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_4_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_4_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_5_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_5_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_6_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_6_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_7_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PB_7_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_MIB_0_BIST_RSLTf = 240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_MIB_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_MIB_1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_MIB_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_HSA_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_HSA_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_HSA_1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_HSA_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_1_BIST_RSLTf = 250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_3_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_OQ_3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_SCBUF_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_SCBUF_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_GATRAM_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_GATRAM_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FECDS_BIST_RSLTf = 260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FECDS_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FECDAT_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FECDAT_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FECPAR_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FECPAR_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FENC_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_FENC_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_1_BIST_RSLTf = 270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_3_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_EPGN_3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_RSLT_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_RSLT_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_RSLT_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_RSLT_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_BIST_RSLT_DONEf = 280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_3_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_4_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_4_BIST_CTRLf = 290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_5_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_5_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_6_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_6_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_7_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_7_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_8_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_8_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_9_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_9_BIST_CTRLf = 300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_10_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_10_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_11_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_11_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_12_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_12_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_13_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBOUS_13_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_RSLT_DRF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_RSLT_FAILf = 310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_RSLT_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_RSLT_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BIST_RSLT_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_0_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_0_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_1_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_1_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_2_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_2_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_3_BIST_RSLTf = 320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_3_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_4_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_4_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_5_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_5_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_6_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_6_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_7_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_PBODS_7_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_RSLT_DRF_FAILf = 330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_RSLT_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_RSLT_DRF_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_RSLT_DRF_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_BIST_RSLT_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CPU_FORCE_MODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD1000f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD100f = 340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD10f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_DUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD1000_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD500_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD100_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_SPD10_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_RX_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_TX_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UTP_COLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_POLARITY_INVf = 350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SERI_LED_POLARITY_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_LED_FORCE_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_LED_FORCE_RATE1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_PON_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_LED_FORCE_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_MAC_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_USB_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_SATA_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_PCIE_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_LOW_RATE_BLINKf = 360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_SERI_DATA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_SERI_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED16_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED15_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED14_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED13_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED12_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED11_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED10_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED9_PARA_ENf = 370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED8_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED7_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED6_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED5_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED4_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED3_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED2_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED1_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED0_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SERI_LED_CLK_PERf = 380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SERI_LED_REGRESH_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_LOOP_DET_BUZZER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWLED_PONN_ALARMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWLED_PON_WARNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LED_FLT_MPCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_PROT_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_DMA_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_NEW_DMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PATCH_PHY_DONEf = 390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHASE_LIM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHASE_LIM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DLL_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_RDM_SEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_PN_POLY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PH_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHSFT_CNTf = 400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHSFT_Af,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHSFT_Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHSFT_UPDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHSFT_PRDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PN_POLY_DEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_UP1DN0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PH_OFS_TOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PH_OFSf = 410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_STEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_TESTMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_PH_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SSC_OREGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OFS_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OFS_TOTAL_Rf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_GRY0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OFS_GRY0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_LOWCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_LOW_THRf = 420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_HIGHCMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_HIGH_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PWRON_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SAMPLE_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_COMPARE_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_INT_TM_NEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_HIGH2CMP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_HIGH2_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REVERSE_CMP_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TM_ENABLEf = 430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SBGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SINLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_CHOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW2_SW3_REVERSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHOP_SWCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA_SAMPLEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TEMP_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TEMP_OUT_PORf = 440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TEMP_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TEMP_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANARG_RDY_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANARG_VALID_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FPWM_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REF_SAW_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REF_SAW_VALID_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIIDA_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRBUS_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANAWRCODE_SWRf = 450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANAWRPS_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANARDBUS_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBGO_SWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANARG_RDY_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANARG_VALID_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FPWM_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REF_SAW_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REF_SAW_VALID_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIIDA_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRBUS_DDRSWRf = 460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANAWRCODE_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANAWRPS_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ANARDBUS_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBGO_DDRSWRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_RXDSC_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXDSC_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_GPHY_FATAL_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPHY_FATAL_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_TXESD_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_BUFFRST_SYSOVERf = 470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_BUFFRST_QOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_BUFFRST_DSCOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EN_BUFFRST_INDSCOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXESD_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUFFRST_SYSOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUFFRST_QOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUFFRST_DSCOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUFFRST_INDSCOVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_INDSC_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BUFFRST_INDSCOVER_THRf = 480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DSC_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BUFFRST_DSCOVER_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BUFFRST_QOVER_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BUFFRST_SYSOVER_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TX_ESD_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TX_ESD_LVLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RTL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEL_CHAR_1STf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEL_CHAR_2NDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEL_CHAR_3RDf = 490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHIP_INFO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHIP_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RL_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOND_INFO_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOND_CHIP_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GE_ADCCKI_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FE_ADCCKI_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LPI_1000_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LPI_100_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MST_FAULT_ABLTYf = 500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MST_MOD_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NWAY_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXPAUSE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXPAUSE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINK_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB1G_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DUPLEX_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SPEED_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PHY_BRD_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BRD_PHYADf = 510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFTSTARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LPI_1000f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LPI_100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_NWAY_FAULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_MSTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_NWAY_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_TX_FCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_RX_FCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_LINK_FIB1Gf = 520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_DUPLEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_LINK_SPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUI_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REVISOIN_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEL_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_LPI_1000_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_LPI_100_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_MST_FAULT_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_MST_MOD_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_NWAY_ABLTYf = 530,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_TXPAUSE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_RXPAUSE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_LINK_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_FIB1G_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_DUPLEX_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_SPEED1_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_SPEED0_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBGO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_BY_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_BY_LEDf = 540,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_BY_SPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_BY_OEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_BY_SLICf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_BY_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DBGO_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBGO_SEL_TOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBGO_SEL_BLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_STOP_GLI_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_STOP_CLK_PORT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SDS_MODEf = 550,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_MAC_ACTIVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LINK_DOWN_TIME_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LINK_DOWN_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_ABLTY_LOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STS_SYNC_FIFO_RX_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_CFG_REG_SDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_EEE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_SDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIBER_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_LINK_OKf = 560,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_INTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB100_SDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIB100_DETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HWPKT_GEN_SUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HWPKT_GEN_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_RTT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_RTT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GASP_DGC_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GASP_FORCEf = 570,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYNGASP_CMP_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYNGASP_OUT_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYNGASP_OUT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DYNGASP_OUT_PULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOND_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STRAP_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CLK_LXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CLK_M90f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CLK_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CLK_OCP2f = 580,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CLK_OCP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPS_CLK_SWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_JTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LNKDN_FRC_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_IDEL_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MACRX_DUPDET_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_LNKUP_DELAY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GE_100M_LNKUP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LNKUP_10M_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_NOT_WAIT_EFUSE_RDYf = 590,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_NOT_WAIT_PHY_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HT_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALE_INIT_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIB_INIT_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_RDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONCTRL_CSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TAG_AWAREf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TRAP_TAGET_INSERT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_LENGTH_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_LENGTH_10_100f = 600,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACCEPT_MAX_LENTH_CFG1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACCEPT_MAX_LENTH_CFG0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TX_FIFO_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RX_FIFO_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVPG_BEFORE_FCDROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHECK_MIN_IPG_RXDVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LIMIT_IPG_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_IOL_MAX_LENGTH_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_IOL_ERROR_LENGTH_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_DV_CNT_CFGf = 610,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DROP_48_PASS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LONGTXEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_BACKPRESSUREf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_48_PASS_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_ITFSP_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_SKIP_FPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ITFSP_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IOL_16DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IOL_BACKOFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BACKOFF_RANDOM_TIMEf = 620,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DISABLE_BACK_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPG_COMPENSATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MAC5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MAC4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MAC3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MAC2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MAC1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_MAC0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEEP_CGST_PAT_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BKPR_DEF_PATf = 630,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BKPR_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LDNDRN_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKTDRN_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRCRECALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SHORT_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PAUSE_MAX128f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HBOUNDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LBOUNDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_IPG_LENf = 640,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ENBKPRESSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TXENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GETTFRD_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXCOM_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PADDING_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PAD_PATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_FIRSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACCEPT_RX_ERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATE_COLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SMALL_TAG_IPGf = 650,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ITFSP_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SPCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRC_SKIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_LOOPBACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_CURENT_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CKPCIE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_LOAD_SYS_PARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_UNIDIR_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_PWR_GATINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_RX_DISABLEf = 660,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_TX_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CKGPHY_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_CHG_DUP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_CHG_DUP_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_CHG_DUP_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_CHG_DUP_REFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_DISABLE_OPTICf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CKRDY_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BER_NOTIFYf = 670,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ_FILTER_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_OFFSET_CODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DMY0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DMY1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ANA_RSV_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ANA_RSV_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ANA_RSV_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ANA_RSV_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ANA_RSV_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ANA_RSV_5f = 680,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ANA_DMYRD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ANA_DMYRD_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ANA_DMYRD_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSB_ANAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSTB_GPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSTB_EPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRCV_155M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_155M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRCV_125M_ENf = 690,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_125M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRCV_GMIICK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_GMIICK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TXDIS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_STOP_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BEN_SYNC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_EN_PDOWN_BENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_PDOWN_BEN_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SILENT_EN_INIf = 700,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SDS_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_REG4_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LPI_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_CMD_STOP_GLI_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TXDIS_SEL_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_D2ANLOG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_AFE_LPK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DIG_LPK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RMT_LPK_ENf = 710,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DBG_TRAN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_IND_ADDR_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_IND_ADDR_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_IND_REG_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_IND_REG_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_IND_TMOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DEBOUNCE_CTRLf = 720,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RXIDLEDET_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY6f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY7f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY8f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY9f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY10f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY11f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_SDS_DBG_SELf = 730,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_BYP_EPMCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_OPTIC_LOS_SEL_EPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_OPTIC_LOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRCV_OPTIC_LOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BEN_OEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_DISABLE_OPTIC_OEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_OPTIC_LOS_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_CDR_LOS_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_TX_DISABLE_OPTIC_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_TX_DISABLE_OPTICf = 740,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_TX_OPTIC_SD_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_TX_OPTIC_SDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_BEN_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_BENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PRBS_TYPE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PRBS_ERR_SIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PRBS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PRBS_ERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PRBS_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSTB_INF_TXf = 750,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSTB_INF_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SFT_RSTB_INFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRC_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FRCV_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TX_WRPT_DN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RX_WRPT_DN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BEN_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_HAM_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ERRHAM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FREE_CNT_SELf = 760,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_A2D16_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_D2A16_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RSTB_BITERR_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ANALOG2D_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_D2ANLOG_INF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_622_START_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T1_FULL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T0_FULL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T1_FULL_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T0_FULL_CLRf = 770,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T1_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T1_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_T0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_R0_FULL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_R0_FULL_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_R0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_R0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_T1_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_T0_FULLf = 780,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_T1_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_T1_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_T0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_T0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R0_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SDSINF_DMYRD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMYRD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMYRD_1f = 790,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMYRD_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMYRD_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMYRD_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMY_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_WRAP_DMY_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BEN_FORCE_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BEN_FORCE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_DIS_RENWAYf = 800,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_BYP_8B10Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_DIS_TMR_CMAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_DIS_APXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_INV_HSIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_INV_HSOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_SDET_DEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_AFE_FEC_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_DIG_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_REM_LPKf = 810,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_TX_DOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_EN_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_EN_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_PTR_ERR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_AUTO_10BITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FULL_ACK2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_NXP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_FRC_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_HSG_RTIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_XSGf = 820,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FRC_DWSPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_DIS_8B10B_PWR_OPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_FRC_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_FRC_PREAMBLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_FRC_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_FRC_CGGOODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_FRC_ANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INS_IPG_MDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_RDS_CMA_DETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SEL_TMR_LIMf = 830,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_RESTART_ANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_WR_SOFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_USE_25M_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_MARK_CARR_EXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SEL_DEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_CALIB_OK_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_EXT_PWR_CTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SOFT_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CLR_SOFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CMA_RQf = 840,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FRC_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FRC_SDS_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_UPD_RXDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_UPD_TXDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_UPD_RXD_DYNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_EN_LINK_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_EN_LINK_SGMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SGM_CK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_LPI_TRANSMIT_STYLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_PWRSV_INB_PERIODf = 850,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_PWRSV_WAKEUP_C2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_PWRSV_WAKEUP_C1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_MARK_CARR_EXT_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_PCSREQ_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INBTOUT_LEVELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SUDINBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_PCSRDABT_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_AN_UZf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INBAND_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_NO_GIGA_SCMf = 860,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_RE_SYNC_STYLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SYNC_GATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_BYPSCR_XSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_RX_BYPSCRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SLP_RQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_TX_BYPSCRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_8B10B_NO_CREXTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_NEG_CLKWR_A2Df,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_MIIXF_TS1Kf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_DLY_PRE8f = 870,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_GRXD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_LPI_CMD_MIIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_MARK_RXSCR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_MARK_TXSCR_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_BYP_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_BYP_ENDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_EEE_PWRSAV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_EEE_SDS_ANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_C3_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_C2_TIMERf = 880,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_C1_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_REG_C0_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_MAC_C1_CHG_RESTC3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_PHY_GO_C1_COND_SPCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_EEE_PROGRAM_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_EEE_NEWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_ICG_GTCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_ICG_GRCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SEL2_CALIBOKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_QSGMII_NO_DILE2f = 890,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_QSGMII_EEE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_QSGMII_LPI_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_QSGMII_LPI_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_QSGMII_INB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_QSGMII_RXER_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FAST_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_EEE_LINK_FASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_EEE_DBG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INB_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_ABILITYf = 900,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_AFE_40Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SD_DET_ALGORf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_AUTO_DET_ALGORf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SEND_NP_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_LK_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_F100_LKON_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_APXT_TMP32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_REDET_F100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_APXT_TMP0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SPDUPf = 910,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SPDUP_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_RXSLEEP_TMROUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SEL_CALIBOKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SEL_SDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SEL_ANOKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SEL_ODD_BITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FRC_LD_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SGMI_CK1MS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_LINK_TMR_SGMII_SELf = 920,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_LINK_TMR_NORM_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INBAND_MASTER_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INBAND_MASTER_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_MACRDVLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_MACRDABTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_INBAND_MASTER_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_RSGP_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_RSGP_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SGM_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SGM_TXCFG_MACf = 930,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FIB2G_TXCFG_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FIB2G_TXCFG_P1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FIB2G_TXCFG_NP_P0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_FIB2G_TXCFG_NP_P1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_IP_VERSIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_DBG_OUT_ECO1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_PHY_GO_C2_COND_SPCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_ERRMSK_NOSIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_RM_LPK_EVEN_BITSf = 940,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_QSGMII_PARITY_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_DBG_S0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SDS_DBG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SDS_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SDS_DBG_OUT_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_CFG_SDS_DBG_OUT_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SP_SDS_RG_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_ALL_SYMBOLERR_CNT_NEW_1500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_ALL_SYMBOLERR_CNT_NEW_2316f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_TXC_TOG_CH3f = 950,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_TXC_TOG_CH2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_TXC_TOG_CH1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_TXC_TOG_CH0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_RXC_TOG_CH3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_RXC_TOG_CH2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_RXC_TOG_CH1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_GLI_RXC_TOG_CH0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_MUX_SYMBOLERR_CNT_NEW_1500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_MUX_SYMBOLERR_CNT_NEW_2316f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_SDS_AFE_RG03_0700f = 960,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_PRBS_ERR_CNT_1500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_PRBS_ERR_CNT_3116f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FEC_MK_OPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FRC_HSO_INV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FRC_HSO_INV_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_BERCHK_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_LCH_RDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_BCHK_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_BCHK_PMSK_FRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FEC_MD_ONf = 970,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_KEEP_IPG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_EPON_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_AFE_RG8X_1514f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FEC_BAD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FEC_GOOD_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FEC_BAD_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SYNC_LOSS_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_CODE_REVERSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_ALIGN_FRC_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_ALIGN_FRC_ENf = 980,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_SDS_AFE_RG10Xf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_STS_UPD_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_PSEQ_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_PRBS_REVERSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BEN_OE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BEN_OEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BEN_POLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_PRBS_SEL_1_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BEN_MSK_DISTXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_XMIT_ORGf = 990,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DIS_RXIDLE_MSK_EEEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DIS_RXIDLE_MSK_BCHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FRC_SRC_RXIDLE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FRC_SRC_RXIDLE_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_HSG_MAC_FIFO_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_D2A_ERR_BIT_TOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_PRBS_SEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FEC_PRBS_MDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_PRBS_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FIFO_RESTOREf = 1000,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_ASDS_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_NEG_CLKRD_D2Af,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FIFO_ORGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FRXNRZI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SCR_SEED_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_XSG257_NO_CLKGATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_XSG_OFF_AFE1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_IPG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_NEG_GTXCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_LP_CNT_2f = 1010,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_EPON_SYNC_SMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BERCHK_FUNC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_AUTO_BCHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_AUTO_BCHK_LNK_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SIGDET_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BERCHK_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_BERCHK_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_EPON_PWRCTLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_LP_CNT_1f = 1020,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DIS_FECK_SPUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DY_8Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DX_8Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_MR_NP_TX_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_MR_NP_TX_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_MR_NP_TX_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_RX_INTR_POLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_TX_INTR_POLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_TR_ENf = 1030,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_LINK_BCHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_DIS_GATE_RXCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_FIB_PDOWN_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_RSTB_BITERR_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_HSG_LCTANKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_HSG_RXC_ALIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FRC_2P5Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_FCRR_CLR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_ORG_RXCFGREGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DIS_CMA_CHGPOSf = 1040,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_MODE_3Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_STMALI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_PRBS_SEL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_AFE_RG21X_RD_MXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_AFE_RG22X_RD_MXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SDS_AFE_RG23X_RD_MXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SD_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_XSG_DAT40f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_HYSDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_D2A_LPKf = 1050,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_HAM_PTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_ENTXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_CMALI_SIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_TMR_ALIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_SYMBOLERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_TR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_P3LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_P2LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_P1LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_P0LNKDOWNCNTf = 1060,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_DEC_CRCT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_DEC_FAIL_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_DBG_STATUS_ECO_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_LECSYNC_REALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_SIGNOK_REALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_LINKOK_REALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_SYNCOK_REALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_AFE_SDS_RG30_1514f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_STS_UPD_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_LECSYNC_LATCHf = 1070,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_SIGNOK_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_LINKOK_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_SYNCOK_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_CFG_AFE_SDS_RG30_1501f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEP_RXIDLE_LCH_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_SPD_RD_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_ANENf = 1080,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_RESTARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_FULLDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG00_07f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_SPD_RD_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_FRCTXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_00_0400f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_AN_COMPLETEf = 1090,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_R_FAULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_NWAY_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_JABBER_DETECTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_EXTENDED_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_REALTEK_OUI_2106f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_REALTEK_OUI_0500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_MODEL_NO_0500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_REVISION_NO_0300f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_TX_CFG_REGf = 1100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_RX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_06_1503f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_FIB_NP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_RXPAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_06_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_MR_NP_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_MR_NP_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_INDR_FUNCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_13_1305f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_INDR_DEVADf = 1110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB_MMDRDBUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_GIGA_BASEX_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_GIGA_BASEX_HALFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_GIGA_BASET_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_GIGA_BASE_HALFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_15_1100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_ENLONGERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_ENPMEERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_IPG_BYTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FLINKOKf = 1120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FRC_SDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FRC_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_DIS_CLKWR_GATINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_DFULLDUO100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_16_06f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_REMO100LBKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_DIS_RX_FEFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_DIS_TX_FEFIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_SEL_RX_SDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_SEL_TX_SDf = 1130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_SEL_SDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FRC_TXDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_SEL_PRE_LONGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FIB100_PRB_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_ERR_RESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_SDS_LPBKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_F100_INV_If,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_F100_INV_Of,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FL100MCONDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_ENTXCRSf = 1140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_4B5Bf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_FTXNRZI_EGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_ENCODEERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_ENLINKERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FB_HSG_SPD_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_18_1501f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_SDS_SDET_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_21f = 1150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_QSGM_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_QSGM_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_26_1508f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_P3_QSGMII_CHK_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_P2_QSGMII_CHK_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_P1_QSGMII_CHK_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_P0_QSGMII_CHK_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_PKTERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_CONS1_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_CONS0_MAXf = 1160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_CNT_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_AUTO_DET_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_TOUT_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_STATE_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_TEST_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_30_1513f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB100_DETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_STATMR_LEVELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_CNTENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_CONSENf = 1170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_STATMR_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_CFG_LNK_ON_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_REG_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FP_FIB_LP_NWAY_ABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_LPKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_SPD_RD_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_ANENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_ISOf = 1180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_RESTARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_FULLDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_00_07f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_SPD_RD_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_FRCTXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_00_0400f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_AN_COMPLETEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_R_FAULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_NWAY_ABILITYf = 1190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_JABBER_DETECTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_EXTENDED_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_REALTEK_OUI_2106f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_REALTEK_OUI_0500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_MODEL_NO_0500f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_REVISION_NO_0300f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_TX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_RX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_06_1503f = 1200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_FIB_NP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_RXPAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_06_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_MR_NP_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_MR_NP_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_INDR_FUNCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_13_1305f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_INDR_DEVADf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_MMDRDBUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_15f = 1210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_16_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_RSG_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_STD_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C1_PWRSAV_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C2_PWRSAV_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_QUIET_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_RSG_QSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_STD_QSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C1_PWRSAV_EN_QSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C2_PWRSAV_EN_QSGf = 1220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_QUIET_QSGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_RSG_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_STD_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C1_PWRSAV_EN_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C2_PWRSAV_EN_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_QUIET_RSGPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_17_1506f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FIB_EXT_CFG_EEE_PWRSAV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_RSG_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_STD_FIB100f = 1230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C1_PWRSAV_EN_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_C2_PWRSAV_EN_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEE_QUIET_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_18_1509f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_TX_TR_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_TX_TQ_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_TX_TS_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_TX_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DET_IDLE32_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DET_CG_DISf = 1240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_19_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_RX_TS_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_RX_WF_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_RX_TW_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_RX_TQ_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_SFD_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_IDLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_IDLE32_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_IDLE_CNTf = 1250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CG_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_TX_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_TX_DATA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_V2ANALOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_21_1204f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_DET_EPONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_DET_IDLE32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_DET_IDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_DET_CGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EPON_INTENf = 1260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_LINK_ON_INTENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_LINK_DN_INTENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_22_1203f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_SDS_LINK_DN_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_DET_EPON_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_SDS_LINK_ON_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_23_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FRC_CLEAR_ALLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DIS_AN_OK_NEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DIS_AN_OK_POSf = 1270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DIS_SYNC_OK_NEGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DIS_SYNC_OK_POSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_LINK_OK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_SILENT_PROB_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_LINK_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEEP_ENBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_EEEP_LINK_ENBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_23_00f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_AN_STf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_24_1109f = 1280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CMPLY_NXPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_24_07f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_NP_RX_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_24_03f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_NP_TX_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_INVLD_CNT_DN_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_INVLD_CNT_4RD_BIT16f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_MD_FIB100_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_RPS_EN_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_DBG_FIB100_SELf = 1290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CLR_INVLD_CNT_DN_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CLR_INVLD_CNT_4RDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CLR_INVLD_CNT_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CLR_INVLD_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_CLR_INVLD_ALLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_INVLD_LDN_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_RPS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_INVDL_CNT_DNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_27_1504f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FRC_RPS_SELf = 1300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_CFG_FRC_FPS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_INVLD_CNT_4RDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_INVLD_CNT_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_REG_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEP_FIB_EXT_LP_NWAY_ABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG0X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG1X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG2X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG3X_CENf = 1310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG4X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG5X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG6X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG7X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG8X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG9X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG10X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG11X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG12X_CENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG13X_CENf = 1320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG0X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG1X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG2X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG3X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG4X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG5X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG6X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG7X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG8X_PLLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RG9X_PLLf = 1330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RCV_DETECTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TXBEACONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY_RD_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DMY_RW_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SLOW_DOWN_PLL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SLOW_DOWN_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_MAC_ACTIVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SLOW_CLK_TGL_RATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPHY_MDX_MDC_DIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAIT_FOR_AGREEMENTf = 1340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AGREE_SLEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOW_QUEUE_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HIGH_QUEUE_MSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINKID_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_EEEP_TX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_EEEP_RX_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_PORT_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_PORT_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_PORT_1000M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_PORT_500M_ENf = 1350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_PORT_100M_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_PORT_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_PORT_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_EN_FC_EFCTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_REF_RXLPIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_LINK_UP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_WAKE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_LPI_MINIPG_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_LPI_MINIPG_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_LPI_MINIPG_GEf = 1360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_WAIT_RX_INACTIVE_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_WAIT_RX_INACTIVE_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_WAIT_RX_INACTIVE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_WAIT_RX_INACTIVE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_LOW_Q_TX_DELAY_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_WAKE_TIMER_FEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_PAUSE_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_LOW_Q_TX_DELAY_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_WAKE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_PAUSE_WAKE_TIMER_GEf = 1370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_LOW_Q_TX_DELAY_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEE_TX_WAKE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_SLAVE_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TIMER_UNIT_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TIMER_UNIT_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TIMER_UNIT_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_WAKE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_WAKE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_IDLE_TIMER_GIGAf = 1380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_EN_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_EN_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_TIMER_GIGAf = 1390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_TX_RATE_EN_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_SLEEP_STEP_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_MIN_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_PAUSE_ON_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_WAKE_TIMER_500M_MASTERf = 1400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_MIN_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_PAUSE_ON_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_WAKE_TIMER_500M_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_WAKE_TIMER_GIGA_MASTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_MIN_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_PAUSE_ON_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_WAKE_TIMER_GIGA_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_THR_100Mf = 1410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EEEP_RX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HIGH_QUEUE_LSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_ENTRY_FULL_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_L34_ARP_USAGE_AS_KNOWNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_IP6MC_HASHf = 1420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_IPMC_HASHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINKDOWN_AGEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BCAM_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AGE_SPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AGEOUT_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L2_LRN_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LRN_OVER_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SYS_LRN_LIMITNOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SYS_L2_LRN_CNTf = 1430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_MC_DHCP6_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_MC_ICMP6_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_MC_IP6_RSV_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_RSV_IP6_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_RSV_IP4_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNKN_MC_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_FLUSH_FIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_FLUSH_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_FLUSH_DYNAMICf = 1440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_FLUSH_STATICf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LUT_FLUSH_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FLUSH_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INGRESSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EGRESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VID_4095_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VID_0_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFI_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_FILTERINGf = 1450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_IP4MC_EGRESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_IP6MC_EGRESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EGRVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DST_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGRVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_FILTERINGf = 1460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_DEI_KEEPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_SPRISELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_TPID2_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_TPID2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VS_TPIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETHER_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPB_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPB_VIDf = 1470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTMASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPERATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DISCARD_STORM_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEEP_FORMATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VLAN_LEAKYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTISO_LEAKYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RMA_TRAP_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RATEf = 1480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPASS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_METER_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TICK_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TKNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUCKET_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LB_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SHMTR_PKT_RATEf = 1490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1X_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1X_MAC_OPDIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PB_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PB_AUTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PB_DIRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNAUTH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_ICMPFLOOD_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_FINFLOOD_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNFLOOD_ACTf = 1500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNWITHDATA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_UDPBOMB_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_PINGOFDEATH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_ICMPFRAGMENT_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_TCPFRAGERROR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_TCPSHORTHDR_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYN1024_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_NULLSCAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_XMASCAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNFINSCAN_ACTf = 1510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_BLATATTACKS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_LANDATTACKS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_DAEQSA_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_ICMPFLOODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_FINFLOODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNFLOODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNWITHDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_UDPBOMBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_PINGOFDEATHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_ICMPFRAGMENTf = 1520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_TCPFRAGERRORf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_TCPSHORTHDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYN1024f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_NULLSCANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_XMASCANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_SYNFINSCANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_BLATATTACKSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_LANDATTACKSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOS_DAEQSAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_THf = 1530,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIR_SRC_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIR_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIR_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIR_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIR_MONITOR_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKT_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_HIT_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_HIT_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_PTN0_HIT_INFOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSMULTICASTPKTSf = 1540,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFOUTOCTETS_Lf = 1550,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFOUTOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3STATSSINGLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3STATSMULTIPLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3STATSDEFERREDTRANSMISSIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3STATSLATECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETHERSTATSCOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3STATSEXCESSIVECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3OUTPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFOUTDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_ETHERSTATSPKTS1519TOMAXOCTETSf = 1560,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1DTPPORTINDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFOUTUCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFOUTMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFOUTBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFINOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFINOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETHERSTATSCRCALIGNERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3STATSSYMBOLERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3INPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3CONTROLINUNKNOWNOPCODESf = 1570,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETHERSTATSFRAGMENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETHERSTATSJABBERSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFINUCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETHERSTATSDROPEVENTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFINMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IFINBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS1519TOMAXOCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS64OCTETSf = 1580,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUTOAMPDUPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INOAMPDUPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOGGINGCOUNTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1DTPLEARNEDENTRYDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SYNC_STATUSf = 1590,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SYNC_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTING_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_PORT_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_STATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_MIB_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_QM_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUSY_STATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_LLID_IDXf = 1600,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_LLIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_EPON_MIBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3EXTPKGSTATTXFRAMESQUEUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3MPCPRXDISCOVERYGATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3EPONFECCORRECTEDBLOCKSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3EPONFECUNCORRECTABLEBLOCKSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FECPCSCODINGVIOLATIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NOTBROADCASTBITNOTONULLIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BROADCASTBITPLUSONULLIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BROADCASTBITNOTONULLIDf = 1610,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CRC8ERRORSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LLIDNOTBROADCAST_LID7FFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3LLIDRXBROADCASTFRAMESDROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MPCPTXREGACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3MPCPTXREPORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3MPCPRXGATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_COUNTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONULLIDNOTBROADCASTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3LLIDRXFRAMESDROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT3MPCPTXREGREQUESTf = 1620,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCIDROPPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCITXPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCIRXPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCITXBYTECNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCIRXBYTECNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCICRCERRORPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INL34IFOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INL34IFOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INL34IFPKTSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUTL34IFPKTSf = 1630,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUTL34IFOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OUTL34IFOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ON_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OFF_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_NOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_TOTAL_PKTCNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_PE_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_Q_MAX_PAGE_CNTf = 1640,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTAL_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PE_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PE_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TL_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TL_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PUB_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PUB_USED_PAGE_CNTf = 1650,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PUB_FCOFF_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PUB_FCOFF_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TH_TX_PREFETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PAUSE_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CGST_TMR_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CGST_SUST_TMR_LMT_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CGST_TMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CGST_SUST_TMR_LMTf = 1660,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CGST_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRI_TO_QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNI_TRAP_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ASSIGN_UNI_TRAPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTPRI_1Qf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTPRI_DSCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INTPRI_PBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLAN_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L4_WEIGHTf = 1670,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACL_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSCP_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DOT1Q_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_BURSTSIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OD_BC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OD_MC_SELf = 1680,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OD_UC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WEIGHT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WEIGHT1_7f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QUEUE_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_BPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYTES_PERTKN_BWMTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCH_DUMMY0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GAP_EP_OVERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GAP_OQ_OVERf = 1690,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GATE_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_TKN_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_WTSCLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCH_EN_WFQ_2ND_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WFQ_BURSTSIZE_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIELDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WANIF_DEFAULT_L2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WANIF_DEFAULT_MULTICASTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_PATTERN1_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_SEL_PON_ENf = 1700,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_DS_PERMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_US_PERMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_PRI_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_VID_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_PRI_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_VID_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SID_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FWD_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSCP_REMARKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFPRI_ACTf = 1710,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CSACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PERMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NOTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ROUTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INT_CFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_POLICINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SVLANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CVLANf = 1720,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFHITLATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VID_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VID_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_UPPER_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_UPPER_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_LOWER_63_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_LOWER_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L4PORT_UPPERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L4PORT_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKTLEN_UPPERf = 1730,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PKTLEN_LOWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_PARSERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_MULTIPLEXERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OAM_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACT_RUNOUTDSCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NUM_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NUM_31_0f = 1740,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_P_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TRAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_HSA_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_EGR_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_IGR_PMSKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRITE_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSARAM_5_DVSEf = 1750,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSARAM_5_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_HSD_REASONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_IGR_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_EGR_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PAUSE_ALL_LWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HYS_PUSALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_RXDVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_RXDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_TXENf = 1760,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_VM_TXDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SIPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TRAP_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PISO_LEAKYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DISC_STORM_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOW_MC_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MLDV2_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MLDV1_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGMPV3_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGMPV2_OPf = 1770,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGMPV1_OPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MCST_TTL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L34_L2_LOOKUP_MISS_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L34_GLOBAL_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNTAGMBRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NETIF_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_SIP_TRANSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EXT_IP_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPPOE_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPPOE_IDXf = 1780,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_TO_WAN_PERMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_TO_PORT_PERMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_HOPLIMITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_FLOWLABELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_TC_OPTIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_TCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_AFTR_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_AFTR_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_AFTR_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_AFTR_0f = 1790,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_B4_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_B4_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_B4_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_B4_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_PREFIX_UNMATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSLITE_UNMATCH_ACTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP6_NH_ACTIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_UPREFIX64_MASK_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_UPREFIX64_MASK_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_UPREFIX64_1f = 1800,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_UPREFIX64_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MPREFIX64_MASK_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MPREFIX64_MASK_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MPREFIX64_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IP_MPREFIX64_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INDEXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACS_CMD_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SPAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACCESS_METHODf = 1810,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TBL_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BUSY_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HIT_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEC_47_32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEC_31_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NSEC_UNITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEC_TRANSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_ENf = 1820,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_TIME_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TRANSPARENT_PORTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DELAYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEC_2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FMTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_MPCP_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SID_CNTf = 1830,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SID_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SAMPLE_SRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_OP_RDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_OP_WRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SAMPLE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SAMPLE_TGTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DIV_POWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_MUL_POWERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TRDY_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_CLR_STSf = 1840,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LAT_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AVGT_LT_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXT_LT_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXC_PA_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AVGC_PA_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXC_PA_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AVGC_PA_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AVGT_PA_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXC_PA_IDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AVGC_PA_IDNf = 1850,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AVGT_PA_IDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTT_ST_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTC_ST_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXC_ST_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MINC_ST_ACCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTT_ST_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTC_ST_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXC_ST_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MINC_ST_TDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTT_ST_IDNf = 1860,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOTC_ST_IDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAXC_ST_IDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MINC_ST_IDNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_TOPSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LXSLV_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_PONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EPON_DYINGGASP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_FEC_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EPON_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_STOP_RXC_ENf = 1870,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PBUF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DRAM_RUNOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SRAM_RUNOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DRN_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DRN_QUEUE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRN_PSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRN_FLGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_MSTBASEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DSC_PIPE_VLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONNIC_DRAM_USEDf = 1880,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONNIC_SRAM_USEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EPON_DEFERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_USFIFO_SPACEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_USFIFO_STARTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PONIC_INITRDYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SID2QIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SID2VALIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_EXRXSPCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BW_LAST_THRESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BW_RUNT_THRESf = 1890,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_OMCI_SIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_RAM_USED_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRAM_USED_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_USED_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RAM_NOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PAGE_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_SRAM_NOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_SHIFT_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_SHIFT_Lf = 1900,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_TOPSEL_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_TOPSEL_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_MODSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_DBG_TKNSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_PON_DBGO_GRPSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EMPTY_EOB_BCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBA_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_FRC_MDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_FRC_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LLID_QSET_NUMf = 1910,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_LLID_RPT_LVLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_TH_Hf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MOCIR_TH_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OLT_BW_MTR_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_GEN_PIR_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_BURSTSIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAPPING_TBLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TCONT_ENf = 1920,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYTES_TKN_PONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WEIGHT_PONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_IGNORE_TAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_US_EP_IPGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UNTAG_IFG_MODIFYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SIDCNT_ACC_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_SID_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RD_SID_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SID_NOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_PONIP_TOTAL_MAX_PAGECNTf = 1930,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBA_BLKSIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RPT_PRDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OVER_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REPORT_CNT_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FIX_MPCP_SCH_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REPORT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DYGSP_RPT_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DYGSP_RPTf = 1940,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LVL_ADD_STORE_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_EGR_IFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_DBRU_LATCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_WTSCLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SCH_MPCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_SCH_EN_WFQ_2ND_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PON_WFQ_BURSTSIZE_Lf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_OK_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_OK_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_ERR_CNTf = 1950,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISS_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_JUMBLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_INT_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TDU_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TER_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDU_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REF_OVF_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_WRAP_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_INT_IMSf = 1960,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TDU_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TER_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDU_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REF_OVF_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_WRAP_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R_TX_HPRIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R_PREAMBLE_LENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R_TX_PADDINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AFLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AERf = 1970,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ABf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_APMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RFF_SIZE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_E_EN_RFF_AFULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_TX_STOPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_TXE_EXTRAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_SIDf = 1980,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_TRXFCEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXFCEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXFCEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SPEED_1000f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SPEED_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LINKBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FULLDUPREGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCEDFULLDUPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCELINKf = 1990,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_SPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_SPD_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_RFF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_TFF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RFF_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TFF_FAILf = 2000,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CSR_RFF_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CSR_TFF_SETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXCDO1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXFDP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXCDO1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R_DBG_FUNC_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_DLY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SET_D_TXCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RXC_DLY_SELf = 2010,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_DMA_SEL_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAX_DMA_SEL_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EARLY_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_FIFO_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_FIFO_THRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RX_MAX_DMA_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GMII_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GMII_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRECISE_DMA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GB_ENf = 2020,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R_RPAGE_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_R_TPAGE_SIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_TX_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_DS_DATA_BACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BYPASS_BUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_DS_BLK_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GPON_IRQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOFT_RSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_VER_IDf = 2030,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TEST_REGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_M_BYPASS_AES_MODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_US_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_US_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_DS_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AES_DECRYPT_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_DS_CAP_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_DS_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DUMMY_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_US_INTRf = 2040,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_US_INTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_DS_INTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AES_DECRYPT_INTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_DS_CAP_INTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_DS_INTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_RSLT_DRF_FAIL_GPON_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_RSLT_FAIL_GPON_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_RSLT_DRF_PAUSE_GPON_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_RSLT_DRF_DONE_GPON_MACf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_RSLT_DONE_GPON_MACf = 2050,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_BUF_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RNG_REQ_HISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SN_REQ_HISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOM_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_FEC_STA_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOF_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOS_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_BUF_Mf = 2060,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RNG_REQ_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SN_REQ_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOM_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_FEC_STA_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOF_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOS_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_FEC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOSf = 2070,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_STATEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWM_NO_FLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BWM_FILT_ONUIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHK_BWM_CRCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLEND_STRICT_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EXTRA_SN_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_NORMALIZEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_CORRECT_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_DET_THRSHf = 2080,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DESCRAM_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_DROP_CRCEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_BC_ACC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_DS_ONUID_FLT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_DS_NOMSG_IDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CDR_LOS_SIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_LOS_SIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOS_FILTER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CDR_LOS_POLARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CDR_LOS_ENf = 2090,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_LOS_POLARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_LOS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SF_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_WR_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_TIRGGERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_SF_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_BUF_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_BUF_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_DEQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLOAM_RDATAf = 2100,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_COMPLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALLOCID_OP_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_COMPLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_HITf = 2110,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORTID_OP_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_CNTR_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_CNTR_RSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_CNTR_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_DS_BIP_ERR_BLOCKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_DS_BIP_ERR_BITSf = 2120,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_FEC_CORRECTED_BITSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_FEC_CORRECTED_BYTESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_FEC_CORRETED_CWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_FEC_UNCORRETABLE_CWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PLEND_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_SUPERFRAME_LOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PLOAMD_ACCEPTEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PLOAMD_OVERFLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PLOAMD_CRC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_BWMAP_OVERFLOWf = 2130,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_BWMAP_CRC_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_BWMAP_INV1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_BWMAP_INV0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_RANGING_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_SN_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_BWMAP_ACCPTEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_GEM_LOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_HEC_CORRECTEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_GEM_IDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PORTID_MMATCHf = 2140,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_GEM_LEN_MISMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_RX_GEM_NON_IDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_BLEN_TOOLONGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PLEND_UNCORRECTABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_PLEND_CORRECTIONSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TDM_PTI_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TDM_END_PTIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_PTI_MASKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_END_PTIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PTI_MASKf = 2150,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_END_PTIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BPOS_WPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BPOS_SUBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BPOS_ADDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_DMY_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_LOSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_DMY_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SF_TOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_DMY_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_CLR_IF_OFFSETf = 2160,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_INTR_IF_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_INTR_SF_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPS_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_DS_ALL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BIST_MODEf = 2170,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVSEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TRAFFIC_TYPE_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CAP_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CAP_CLRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CAP_FRAME_NUMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CAP_OVERFLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CAP_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INFO_FIFO_OVERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA_FIFO_OVERFL_DLTf = 2180,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INFO_FIFO_OVERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA_FIFO_OVERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INFO_FIFO_OVERFLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA_FIFO_OVERFLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_CFG_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_ACTIVE_KEYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SWITCH_SUPERFRAMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_WR_REQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_WR_COMPLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_USE_INDf = 2190,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_WORD_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_KEY_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AES_ALL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PKT_RX_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PKT_RX_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PKT_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PKT_FWD_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PKT_FWD_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_PKT_FWDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISC_CNTR_IDXf = 2200,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISC_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPV6_MC_FORCE_PASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPV6_MC_FORCE_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BROADCAST_PASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NON_MULTICAST_PASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FCS_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPV4_MC_FORCE_PASSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPV4_MC_FORCE_DROPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_EXCL_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_REQf = 2210,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_COMPLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_HITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MC_ITEM_OP_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DEBUG_BUS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OMCI_TR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ASSM_TIMEOUT_FRMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPV4_MC_MAC_PREFIXf = 2220,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IPV6_MC_MAC_PREFIXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_DS_ALL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALL_QUEUE_EMPTY_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_SD_MISM_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_SD_TOOLONG_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_NRM_EMPTY_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_URG_EMPTY_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_FEC_STS_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DG_MSG_TX_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALL_QUEUE_EMPTY_Mf = 2230,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_SD_MISM_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_SD_TOOLONG_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_NRM_EMPTY_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_URG_EMPTY_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_FEC_STS_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DG_MSG_TX_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_NRM_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_URG_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_FEC_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FS_LONf = 2240,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FS_LOFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LESS_RANDOMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IND_NRM_PLMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DBRU_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ENA_AUTO_DGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_US_BEN_POLARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCRM_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSV_REG_WRITE_PROTECTIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_PATTERN_MODE_NO_FGf = 2250,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_PATTERN_MODE_BGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_PATTERN_MODE_FGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_PATTERN_BGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_PATTERN_FGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIN_DELAY1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MIN_DELAY2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EQD1_MULTFRAMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EQD1_INFRAMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LON_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOFF_TIMEf = 2260,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOH_REPEATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOH_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BOH_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_NRM_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_URG_FULLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_ENQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_FLUSH_BUFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_US_CRC_GEN_ENf = 2270,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PLM_US_ONUID_OVRD_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MISC_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_RDIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DG_STATUSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DG_MSG_TX_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DG_MSG_TX_CNT_THRESHOLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_SD_MISM_THREHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_SD_TOOLONG_THRESHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPTIC_AUTO_SUPRESS_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_AUTO_PROC_SSTARTf = 2280,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DMY_XX_01f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DMY_XX_02f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DMY_XX_03f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DMY_XX_04f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PWR_SAV_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TX_PTNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GTC_US_ALL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SD_VALID_LONG_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SD_DIFF_HUGE_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REQUEST_DELAY_DLTf = 2290,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BC_LESS6_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ERR_PLI_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BURST_TM_LARGER_GTC_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_TOO_MUCH_AT_END_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_REMAIN_AFRD_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_OVERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_UNDERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SD_VALID_LONG_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SD_DIFF_HUGE_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REQUEST_DELAY_Mf = 2300,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BC_LESS6_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ERR_PLI_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BURST_TM_LARGER_GTC_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_TOO_MUCH_AT_END_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_REMAIN_AFRD_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_OVERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_UNDERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SD_VALID_LONG_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SD_DIFF_HUGE_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REQUEST_DELAY_INDf = 2310,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BC_LESS6_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ERR_PLI_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BURST_TM_LARGER_GTC_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_TOO_INDUCH_AT_END_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_REMAIN_AFRD_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_OVERFL_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BANK_UNDERFL_INDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FS_GEM_IDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTI_VECTOR3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTI_VECTOR2f = 2320,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTI_VECTOR1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PTI_VECTOR0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_USE_TX_OPT_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPT_BEHIND_CYCLESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OPT_AHEAD_CYCLESf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_GEM_RX_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_GEM_RX_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETH_GEM_RX_CNTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EOB_MERGE_DISf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_PTN_MODEf = 2330,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_PTN_BYTEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EOB_RSV_CFGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EOB_MERGE_THRESHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GEM_US_ALL_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PORT_CFG_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_LOW32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNTR_HIGH32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_OVER_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYPASS_FECf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVSE_TPARf = 2340,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVS_TPARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVSE_DATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVS_DATf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVSE_RPARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DVS_RPARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_US_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_DS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RPT_TMGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TMGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QU_TMGf = 2350,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DY_ADJ_BCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LSR_OFF_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LSR_ON_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ADJ_BCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LLID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_PENDDING_GRANTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REGISTER_REQUESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODE0_7FFF_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CHURN_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IGNORE_MPCP_CRCf = 2360,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_RANDOM_DELAY_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODE0_INVALID_HDLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MODE1_INVALID_HDLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRB_GNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRB_EPMCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MPCP_TIMEOUT_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_1PPS_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_1PPS_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RCOV_RXFEC_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RCOV_RXFEC_IMSf = 2370,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MPCP_TIMEOUT_LLIDIDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RESULTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOS_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_COMPLETE_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TIME_DRIFT_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MPCP_TIMEOUT_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOS_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_COMPLETE_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TIME_DRIFT_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MPCP_TIMEOUT_IMSf = 2380,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NORMAL_SYNC_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DISC_SYNC_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LASER_ON_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LASER_OFF_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GRANT_STRAT_MINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GRANT_STRAT_MAXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_QUARD_THRESHOLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RTT_ADJf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OE_TX_RECOVER_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_POWER_SAVING_MODEf = 2390,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRT_GNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STOP_LOCAL_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALWAYS_SVYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_POWER_SAVING_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MONITOR_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_MAC5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_MAC4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_MAC3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_MAC2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_MAC1f = 2400,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ONU_MAC0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REPORT_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REPORT_TIMERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LLIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GATE_TRAP_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_OTHER_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GATE_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INVALID_LEN_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_ASIC_RPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FORCE_LASER_ONf = 2410,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LLID_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DECRYPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DECRYP_KEY0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DECRYP_KEY1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_SCB_DECRYP_KEY1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PREAMBLE_4THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GMII_RXER_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRB_LST_GNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LOCAL_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ACK_FLAGf = 2420,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GRANT_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GRANT_LATCH_TRIGGERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GRANT_LATCH_LLIDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LATCH_FILTERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NOT_FORCE_RPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HIDDEN_GNT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BTB_GNT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DATA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_EPON_SCH_LATENCYf = 2430,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_BYP_AUTO_RCOV_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CFG_RCOV_RSTBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DET_BEN_OFF2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DET_BEN_OFF1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DET_BEN_OFF0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN_DATA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN_DATA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN_TGLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN_DATA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PRG_EPON_GN_IDXf = 2440,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_UPD_LCL_TYPEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LID0_DRFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LID1_DRFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_INVLD_LID_GNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_RCH_ENDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIS_MSKRXDVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TMSP_FIXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_PRS_EVT_FECf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BYT_IDX_UPDMPCPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSTB_TMSP_SYNCf = 2450,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TIME_DRIFT_RX_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TIME_DRIFT_RX_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TMSP_SYNC_ERR_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TMSP_SYNC_ERR_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_MSK_RXDV_ERR_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FEC_MSK_RXDV_ERR_IMSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_BEN_END_CHK_OFSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK2_1f = 2460,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_REG_BAK2_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MSK_NXT_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN_INDACS_BUSYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN_INDACS_CMDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN_INDACS_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN_INDACS_DATA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN_INDACS_DATA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN_INDACS_DATA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_OSSPDU_TRAPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TOD_SYNC_ENf = 2470,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TOD_LOCAL_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_MY_MPCP2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_SYNC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_MPCP_DROP_CNTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MSK_NXT_CNT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_TOD_TIMEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_RDM_SEEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SCH_LATENCY2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_HDR_CHKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_DS_TRAPf = 2480,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EMPBURSTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_GN128f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MSK_RX_GMIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_B2B_HLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_STOP_SYNCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DS_PRS_EVTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SEL_MY_MPCP3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FNDCG_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_ETY_RCHEDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ACK_PADDING_OPTIONf = 2490,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_REQ_PADDING_OPTIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REQ_REQ_FLAG_OPTIONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REQ_REQ_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_REQ_PAD_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ACK_PAD_DATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EPON_UPD_EMPTY_RPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDM_REQ_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SOF_OV_LLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RD_EXEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WR_EXEf = 2500,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TBL_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ETRY_IDXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_ARPCAMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_FTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_V6RTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_NBf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_BDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_WTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_L3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_PPf = 2510,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_NHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_IFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_IPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_NAPTRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_NAPTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDDATA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDDATA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDDATA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDDATA3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RDDATA4f = 2520,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRDATA0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRDATA1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRDATA2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRDATA3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WRDATA4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_SIP_ARP_TRF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_V4FLRT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_V6FLRT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FW_CFI_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRAGMENT2CPUf = 2530,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RST_L4TRFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L4CHKSERRALLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_L3CHKSERRALLOWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TTL_1ENABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NATMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_LIMDBCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WANROUTEMODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CF_DIP_ARP_TRF_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ENNATT2LOGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PPPOE_TRF_BMPf = 2540,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NBT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NBT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NBT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_NBT3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L2L3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L2L34f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L3L2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L3L34f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L34L2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L34L3f = 2550,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_UNMATCHED_L3L3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_CUSTOMIZED_L2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_CUSTOMIZED_L3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_WAN_BINDING_CUSTOMIZED_L34f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT5f = 2560,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT6f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FTT7f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARPT0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARPT1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARPT2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ARPT3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TST_LOG_MDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSB_ATVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_ALE34_BZf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW0f = 2570,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW6f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW7f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW8f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW9f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW10f = 2580,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW11f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSBW12f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSAW0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSAW1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSAW2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSAW3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSAW4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TRFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REGFILE_VERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_DELAYf = 2590,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PULSE_WIDTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PACKET_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TOD_FRAME_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SARP_GPS_WEEKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SARP_UTC_SECf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_29f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_28f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_27f = 2600,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_26f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_25f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_24f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_22f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_18f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_17f = 2610,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_16f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_9f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_8f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_7f = 2620,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_6f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SW_TOD_FRAME_0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_DIVISOR_LATCH_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_RX_SYM_ERRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_EEE_ABLTYf = 2630,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FIB_ISOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_SDET_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_LINK_OKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_PHY_SDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_PCIE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_LPI_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_CMD_STOP_GLI_CLKf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FRC_REG4_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_LOAD_SYS_PARf = 2640,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_UNIDIR_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_RX_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_TX_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_HSG_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_ADDRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_WDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_RDATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_RAM_IMRf = 2650,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_IMRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_RAM_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_REG_STSf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_RAM_INT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SFP_RAM_EXT_FLAGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXDIS_CTRL_INVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_TXDIS_CTRL_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_SDA_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_BYTE_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_BURST_RDf = 2660,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_OPDRNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_ENDIANf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_STAND_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_IICSLV_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_USB_BY_PASS_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RSVD_MEMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CNT_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_POLICE_METERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_POLICE_SA_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_POLICE_DA_ENf = 2670,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_MAC0f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_SFP_BIST_RSLTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SRAM_SFP_BIST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SID_MAPf = 2680,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q_SCHEDULINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_ON_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FC_OFF_THf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CLR_MAX_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q0_MAX_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q0_CUR_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q1_MAX_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q1_CUR_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q2_MAX_PAGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_Q2_CUR_PAGEf = 2690,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EN_RATE_2500Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_PWR_ISO_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_PWR_ISO_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_NO_SDS_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_NO_SDS_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CMU_EN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CMU_EN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CLKREQB_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CLKREQB_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_PDOWN_VALf = 2700,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_PDOWN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RX_EN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RX_EN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RSTB_BITERR_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RSTB_BITERR_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_V2ANALOG_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_V2ANALOG_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_REG_RXPLL_SEL_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_REG_RXPLL_SEL_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CMU_EN_RING_VALf = 2710,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CMU_EN_RING_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CMU_EN_LC_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CMU_EN_LC_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_01_0908f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_REG_SPDSEL_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_REG_SPDSEL_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_125M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_125M_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_HSG_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_HSG_ONf = 2720,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RXIDLE_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RXIDLE_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_BER_NOTIFY_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_BER_NOTIFY_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CKRDY_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CKRDY_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_OOBS_EN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_OOBS_EN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RX_DATA_EN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RX_DATA_EN_ONf = 2730,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RX_CLKWR_EN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RX_CLKWR_EN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CLK156_EN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CLK156_EN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RXAUI_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RXAUI_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_03f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_04f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_05f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_06f = 2740,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_07f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_08f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_09f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_10f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_11f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_12f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_13f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_14f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_15f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_16f = 2750,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_TXBEACON_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_RCV_DETECT_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_BEN_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_BEN_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_BEN_OE_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_BEN_OE_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CKRDY_PCM_VALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_FRC_CKRDY_PCM_ONf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_17f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_18f = 2760,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_19f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_20f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_21f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_22f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_23f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_24f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_25f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_26f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_27f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_28f = 2770,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_29f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_30f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_SDS_ANA_MISC_31f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BG_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BG_POWf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_ISELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_SEL_IBLPFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_SEL_IBNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY0f = 2780,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_CKXTAL_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BEN_SEL_CMLf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BEN_TTL_OUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TTL_DRI_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BEN_SWINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BEN_ZTESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BENLA_LDOENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY3f = 2790,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_BENLA_LDOVREFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_CP_I_RX_25Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_CP_I_RX_40Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LCVCO_RGVCO_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_RG_CCO_KVCOf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_SD_DEBOUNCE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY25f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_ISTANK_SEL_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_PREDIV_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LDO_SEL_RXf = 2800,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LCBIAS_LPF_EN_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_FLD_VREF_SEL_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY4f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RXCMU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY26f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_AUTO_MODE_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_ADP_TIME_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CALIB_TIME_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CP_TIME_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CALIB_MANUAL_RXLCf = 2810,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CP_EN_MANUAL_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_INIT_TIME_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY5f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_EN_CENTER_IN_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_DIVIDE_NUM_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_LOCK_UP_LIMIT_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_LOCK_DN_LIMIT_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_PI_IBSEL_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_EN_SSC_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_ORDER_RXLCf = 2820,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_F390K_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_STEP_IN_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_TIME0_CK_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_R1_RX_25Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_R1_RX_40Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ICP_SEL_LBW_RXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_TIME2_RST_WIDTH_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_TIME_RDY_CKOUT_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_ENABLE_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_DSEL_RXLCf = 2830,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_AUTO_K_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY7f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_TBASE_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY27f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_CKSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_FORCECALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_NSQDLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_RXIDLE_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_FREQSELf = 2840,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_SENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_SEN_VARf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CKOOBS_AUXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_CALSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_OOBS_CALIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY8f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_FILT_CONFIGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_SD_POR_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_SEL_CDR_AFENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_KP_DIVf = 2850,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY28f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_SEL_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_DCVS_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_FORCERUNf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_IDLE_SPDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_IQDSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_PIENSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_PSAVE_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_PS_AFEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_DBG_SELf = 2860,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EN_SELFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY9f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EN_KOFFSETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_OFFSET_AUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_OFFSET_RANGEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_OFFSET_ADJRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY10f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_RFEG_RX_OFFSET_CODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY11f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ_SELREGf = 2870,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ_EN_SLICERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ_HOLDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY12f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ_GAINf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ_INf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EN_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_TIMER_BERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_TIMER_EQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_TIMER_LPFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_Z0_NAUTO_Kf = 2880,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_Z0_NADJRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY13f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_COMINITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_COMWAKEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_EN_CLKREQf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY14f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_PI_M_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ST_M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_EN_M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_SQU_TRIf = 2890,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ACC2_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ACC2_PERIODf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_RESET_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_RESET_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_SEL_TESTOUTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_BYPASS_SDM_INTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_EN_LPF_MANUALf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_ACC2_PERIOD_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CKDEGLITCHf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX50_LINKf = 2900,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_INT_INITf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_SQU_TRI_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_ACC2_MANUAL_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_INT_INIT_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY15f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_EN_SATAf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RXDSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_SEL_CKRD_DUTYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_SEL_VCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_EN_VCM_RESf = 2910,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_EN_EMPHASf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_AMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_EMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_BEAENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_BAMPf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_FORCE_RCVDETf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_FREFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_DLYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_Z0_TUNEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_Z0_TESTf = 2920,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_Z0_PAUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_Z0_PADJRf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_50_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_DBG_SEL1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_DBG_SEL2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_DBG_SEL3f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TXLA_LDOENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY16f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_EG_SERDES_MODEf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LOOPBACK_ENf = 2930,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EN_I_SAMPLERf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_SWINGf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY17f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_IBTXSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY18f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TXLA_LDOVREFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_IBHX_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_SR_CTRL_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY19f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_FLD_VREF_SEL_GPHYf = 2940,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_CP_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_R_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_ISTANK_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY29f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ICP_SEL_LBW_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LC_BUF_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_VSEL_LREG_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LCBIAS_LPF_EN_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_EN_TESTf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_EN_GPHYf = 2950,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY30f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_EN1P6GCK_TEST_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY31f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_ADP_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_CALIB_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_AUTO_MODE_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_CALIB_MANUAL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_CP_EN_MANUAL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_CP_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_DIVIDE_NUM_GPHYf = 2960,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_INIT_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_ENABLE_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_F390K_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_TIME0_CK_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_DSEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LCVCO_RGVCO_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RGVCO_CCO_KVCO_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RGVCO_CCO_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY32f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY33f = 2970,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_TIME2_RST_WIDTH_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_TIME_RDY_CKOUT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_AUTO_K_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY34f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY35f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY21f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_ICP_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SEL_CP_I_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_ISTANK_SEL_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_PREDIV_TXf = 2980,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LDO_SEL_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_TX_OFFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LCBIAS_LPF_EN_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_TIME0_CK_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_TIME2_RST_WIDTH_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TXCMU_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TXCMU_EN_DSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_ADP_TIME_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_AUTO_MODE_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CALIB_MANUAL_TXLCf = 2990,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CALIB_TIME_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CP_EN_MANUAL_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_CP_TIME_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_DIVIDE_NUM_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_ENABLE_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_F390K_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_ICP_SEL_LBW_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR2_TXFREF_SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_DSEL_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_WD_TIME_RDY_CKOUT_TXLCf = 3000,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_AUTO_K_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_LOCK_DN_LIMIT_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_LOCK_UP_LIMIT_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_FLD_VREF_SEL_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LPF_SR_TXf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY24f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_FLD_INIT_TIME_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_PDIV_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CP_NEW_EN_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CP_SEL_PCMf = 3010,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LPF_CP_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LPF_RS_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CCO_LKVCO_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CCO_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_EN_CKOOBS_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LDO_EN_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_VC_DLY_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_LDO_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_F390K_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TIME0_CK_PCMf = 3020,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TIME2_RST_WIDTH_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TIME_RDY_CKOUT_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_WD_ENABLE_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_PCM_CMU_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DUMMY6f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_BAND_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_NCODE_IN_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_PI_BYPASS_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_FCODE_IN_RXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_TX_CLK_SELf = 3030,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_SEL_FX100f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_OOBS_ENf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_SEL_SDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_NSQ_LOGICf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_IBRXSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_EQ2SELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_SPDSELf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_FREF_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_KP1_2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_RX_KP2_2f = 3040,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_KIf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_KP1f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_KP2f,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR_KDf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_POSTDIV_GPHY_40Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_POSTDIV_GPHY_25Mf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_PREDIV_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_BAND_GPHYLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_N_PLL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LOCK_UP_LIMIT_GPHYf = 3050,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_LOCK_DN_LIMIT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_BAND_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CDR2_TXFREF_PREDIVf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DIVN_GPHY_REFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_SSCD_NCODE_IN_TXLCf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_POST_DIVN_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DIVN_PCMf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_CMU_PCM_SEL_FREFf,
+#endif
+#if defined(CONFIG_SDK_RTL9602C)
+    RTL9602C_REG_DIVN_RX_PCMf,
+#endif
+
+    RTL9602C_REGFIELD_LIST_END = 3060,
+} rtk_rtl9602c_regField_list_t;
+
+extern rtk_reg_t rtk_rtl9602c_reg_list[];
+#if defined(CONFIG_SDK_DUMP_REG_WITH_NAME)
+extern rtk_regName_t rtk_rtl9602c_regName_list[];
+#endif  /* CONFIG_SDK_DUMP_REG_WITH_NAME */
+
+
+
+#endif    /* __RTK_RTL9602C_REG_STRUCT_H__ */

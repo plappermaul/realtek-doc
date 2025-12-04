@@ -1,0 +1,470 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 79393 $
+// $Date: 2017-06-05 13:37:38 +0800 (Mon, 05 Jun 2017) $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) trap commands.
+//
+
+//rt_trap configuration
+//init configuration
+rt_trap init
+
+//rt_trap configuration
+//get configuration
+//oam configuration
+//state configuration
+rt_trap get oam state
+
+//rt_trap configuration
+//set configuration
+//oam configuration
+//stateconfiguration
+//disable function
+//enable function
+rt_trap set oam state ( disable | enable )
+
+//rt_trap configuration
+//get configuration
+//omci configuration
+//state configuration
+rt_trap get omci state
+
+//rt_trap configuration
+//set configuration
+//omci configuration
+//stateconfiguration
+//disable function
+//enable function
+rt_trap set omci state ( disable | enable )
+
+//rt_trap configuration
+//set configuration
+//igmp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set igmp port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//igmp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get igmp port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//igmp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set igmp port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//igmp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get igmp port ( <PORT_LIST:ports> | all ) priority
+
+
+//rt_trap configuration
+//set configuration
+//dhcp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set dhcp port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//dhcp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get dhcp port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//dhcp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set dhcp port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//dhcp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get dhcp port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//pppoe configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set pppoe port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//pppoe configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get pppoe port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//pppoe configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set pppoe port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//pppoe configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get pppoe port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//stp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set stp port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//stp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get stp port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//stp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set stp port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//stp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get stp port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//host configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set host port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//host configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get host port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//host configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set host port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//host configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get host port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//ethertype configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set ethertype port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//ethertype configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get ethertype port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//ethertype configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set ethertype port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//ethertype configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get ethertype port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//arp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set arp port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//arp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get arp port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//arp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set arp port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//arp configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get arp port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//loop-detect configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set loop-detect port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//loop-detect configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get loop-detect port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//loop-detect configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set loop-detect port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//loop-detect configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get loop-detect port ( <PORT_LIST:ports> | all ) priority
+
+//rt_trap configuration
+//set configuration
+//dot1x configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+rt_trap set dot1x port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//rt_trap configuration
+//get configuration
+//dot1x configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+rt_trap get dot1x port ( <PORT_LIST:ports> | all ) state
+
+//rt_trap configuration
+//set configuration
+//dot1x configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+//priority <0~7>
+rt_trap set dot1x port ( <PORT_LIST:ports> | all ) priority <UINT:pri>
+
+
+//rt_trap configuration
+//get configuration
+//dot1x configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//priority configuration
+rt_trap get dot1x port ( <PORT_LIST:ports> | all ) priority
+
+
+
+//rt_trap configuration
+//get configuration
+//pattern configuration
+//ethertype configuration
+rt_trap get pattern ethertype
+
+//rt_trap configuration
+//get configuration
+//pattern configuration
+//host-mac configuration
+rt_trap get pattern host-mac
+
+//rt_trap configuration
+//get configuration
+//pattern configuration
+//arp-tip configuration
+rt_trap get pattern arp-tip
+
+
+//rt_trap configuration
+//set configuration
+//pattern configuration
+//ethertype configuration
+//ethertype configuration 
+rt_trap set pattern ethertype <UINT:ethertype>
+
+//rt_trap configuration
+//set configuration
+//pattern configuration
+//host mac configuration
+//host MAC address, A:B:C:D:E:F
+rt_trap set pattern host-mac <MACADDR:mac>
+
+
+//rt_trap configuration
+//set configuration
+//pattern configuration
+//arp-tip configuration
+//state configuration
+//disable function
+//enable function
+//ip configuration
+//ip configuration
+//mask configuration
+//mask configuration
+rt_trap set pattern arp-tip state ( disable | enable ) ip <IPV4ADDR:ip> mask <IPV4ADDR:mask>

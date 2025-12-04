@@ -1,0 +1,209 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: $
+// $Date: $
+//
+// Purpose : Define diag shell commands for EPON.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) epon commands.
+//
+
+//rt_epon configuration
+//init epon
+rt_epon init
+
+//rt_epon configuration
+//get configuration
+//LLID table
+//table index, <0~7>
+rt_epon get llid-table <UINT:index>
+
+//rt_epon configuration
+//get configuration
+//LLID table
+//table index, <0~7>
+rt_epon get llid-table
+
+//rt_epon configuration
+//set configuration
+//LLID table
+//table index, <0~7>
+//state configuration
+//disable function
+//enable function
+rt_epon set llid-table <UINT:index> state ( disable | enable )
+
+//rt_epon configuration
+//set configuration
+//LLID table
+//table index, <0~7>
+//LLID value
+//LLID, <0~7FFF>
+rt_epon set llid-table <UINT:index> llid <UINT:llid>
+
+//rt_epon configuration
+//set configuration
+//LLID table
+//table index, <0~7>
+//report timer
+//report timer, <0~64>
+rt_epon set llid-table <UINT:index> report-timer <UINT:timer>
+
+//rt_epon configuration
+//get configuration
+//registration seting
+//llid table index to for register
+rt_epon get register llid-idx
+
+//rt_epon configuration
+//set configuration
+//registration seting
+//llid table index to for register
+//llid table index, <0~7>
+rt_epon set register llid-idx <UINT:index> 
+
+//rt_epon configuration
+//get configuration
+//registration seting
+//state configuration
+rt_epon get register state
+
+//rt_epon configuration
+//set configuration
+//registration seting
+//state configuration
+//disable function
+//enable function
+rt_epon set register state ( disable | enable )
+
+//rt_epon configuration
+//get configuration
+//registration seting
+//MAC address for this registration
+rt_epon get register mac-address
+
+//rt_epon configuration
+//set configuration
+//registration seting
+//MAC address for this registration
+//MAC address, A:B:C:D:E:F
+rt_epon set register mac-address <MACADDR:mac> 
+
+//rt_epon configuration
+//get configuration
+//churning configuration
+//llid-idx
+//llid index, <0-7>
+//key-idx
+//key index, <0-2>
+rt_epon get churning llid-idx <UINT:index> key-idx <UINT:kidx>
+
+//rt_epon configuration
+//set configuration
+//churning configuration
+//llid-idx
+//llid index, <0-7>
+//key-idx
+//key index, <0-2>
+//key0-2
+//key data 0-2
+//key3-5
+//key data 3-5
+//key7-8
+//key data 7-8
+rt_epon set churning llid-idx <UINT:index> key-idx <UINT:kidx> key0-2 <UINT:data0> key3-5 <UINT:data1> key6-8 <UINT:data2>
+
+//rt_epon configuration
+//get configuration
+//upstream FEC
+//state configuration
+rt_epon get us-fec state
+
+//rt_epon configuration
+//set configuration
+//upstream FEC
+//state configuration
+//disable function
+//enable function
+rt_epon set us-fec state ( disable | enable )
+
+//rt_epon configuration
+//get configuration
+//downstream FEC
+//state configuration
+rt_epon get ds-fec state
+
+//rt_epon configuration
+//set configuration
+//downstream FEC
+//state configuration
+//disable function
+//enable function
+rt_epon set ds-fec state ( disable | enable )
+
+//rt_epon configuration
+//get configuration
+//los configuration
+//state configuration
+rt_epon get los state
+
+//rt_epon configuration
+//add configuration
+//queue configuration
+//llid configuration
+//llid
+//queue configuration
+//queue ID, 0~7
+//cir configuration
+//cir rate (unit 1Kbps), <8~10485680>
+//pir configuration
+//pir rate (unit 1Kbps), <8~10485680>
+//weight configuration
+//weight, 0~15
+//schedule type
+//SP schedule type
+//WRR schedule type
+//SP-WRR schedule type
+rt_epon add queue llid <UINT:llid> queue-id <UINT:queueId> cir <UINT:cir> pir <UINT:pir> weight <UINT:weight> schedule-type ( sp | wrr )
+
+//rt_epon configuration
+//delete configuration
+//queue configuration
+//llid configuration
+//llid
+//queue ID configuration
+//queue ID, 0~7
+rt_epon del queue llid <UINT:llid> queue-id <UINT:queueId>
+
+//rt_epon configuration
+//show configuration
+//llid queue configuration
+rt_epon show llid-queue
+
+//rt_epon configuration
+//get configuration
+//rate configuration
+rt_epon get egress rate
+
+//rt_epon configuration
+//set configuration
+//rate configuration
+//rate, unit Kbps
+rt_epon set egress rate <UINT:rate>
+
+//epon configuration
+//dump 
+//mib counter
+//llid index 
+rt_epon dump mib-counter { <UINT:llididx> }
+

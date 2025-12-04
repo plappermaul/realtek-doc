@@ -1,0 +1,26 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp. 
+#
+# Makefile for SDK Linux Driver Switch Directory
+#
+
+ifeq ($(SDK_CONFIG), $(wildcard $(SDK_CONFIG)))
+include $(SDK_CONFIG)
+endif
+
+CFLAGS += -Wall -Werror -Wuninitialized -Wstrict-prototypes
+
+obj-$(CONFIG_SDK_DRIVER_RTCORE) += rtcore/
+obj-$(CONFIG_SDK_DRIVER_RTNIC)	+= rtnic/
+
+ifeq ($(CONFIG_SDK_KERNEL_LINUX_KERNEL_MODE),y)
+obj-$(CONFIG_SDK_DRIVER_RTK)    += rtk/
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+obj-$(CONFIG_SDK_DRIVER_TEST)   += unittest/
+endif
+endif
+
+obj-$(CONFIG_SYS_PLAT_LXSKI) += ski/
+
+obj-$(CONFIG_SYS_PLAT_LXBOARD) += board/
+

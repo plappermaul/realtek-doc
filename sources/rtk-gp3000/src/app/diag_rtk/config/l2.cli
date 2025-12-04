@@ -1,0 +1,2210 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for layer2.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) layer2 commands.
+//
+
+//l2 table configuration
+//init configuration
+l2-table init
+
+//l2 table configuration
+//delete configuration
+//all unicast MAC entries
+//include static entries
+l2-table del all { include-static }
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+l2-table del ip-mcast dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+l2-table get ip-mcast dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add ip-mcast dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//delete configuration
+//multicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+l2-table del mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//get configuration
+//multicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//multicast l2 address, A:B:C:D:E:F
+l2-table get mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac>
+
+
+#ifndef CONFIG_REDUCED_DIAG
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+//l3 interface configuration
+//l3 interface index, <0~15>
+l2-table add ip-mcast dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none ) l3-interface <UINT:index>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//priority configuration
+//priority, <0~7>
+l2-table add ip-mcast dip <IPV4ADDR:dip> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast dip <IPV4ADDR:dip> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast dip <IPV4ADDR:dip> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//l3 interface configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast dip <IPV4ADDR:dip> l3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//forced extension port multicast routing
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast dip <IPV4ADDR:dip> forcedl3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//destination IP configuration
+//destination IP
+//ext port index configuration
+//index
+l2-table add ip-mcast dip <IPV4ADDR:dip> ext-port-idx <UINT:index>
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+l2-table del ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+//priority configuration
+//priority, <0~7>
+l2-table add ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+//ext port index configuration
+//index
+l2-table add ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip> ext-port-idx <UINT:index>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//port configuration
+//port list
+//all
+//none
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//l3 interface configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> l3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//port configuration
+//port list, <0-6>
+//all
+//none
+//l3 interface configuration
+//l3 interface index, <0~15>
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> port ( <PORT_LIST:ports> | all | none ) l3-interface <UINT:l3index>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//port configuration
+//port list
+//all
+//none
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//ext port index configuration
+//index
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> ext-port-idx <UINT:index>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//l3 interface configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> l3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+//l3 interface configuration
+//l3 interface index, <0~15>
+l2-table add ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none ) l3-interface <UINT:l3index>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//port configuration
+//port list
+//all
+//none
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//l3 interface configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> l3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+//port configuration
+//port list, <0-6>
+//all
+//none
+//l3 interface configuration
+//l3 interface index, <0~15>
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index> port ( <PORT_LIST:ports> | all | none ) l3-interface <UINT:l3index>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//l3 interface configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> l3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+//l3 interface configuration
+//l3 interface index, <0~15>
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none ) l3-interface <UINT:l3index>
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast entry
+//source IP configuration
+//source IP
+//destination IP configuration
+//destination IP
+l2-table get ip-mcast sip <IPV4ADDR:sip> dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+l2-table get ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index>
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+l2-table get ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast entry
+//vid configuarion
+//vid value, <0-4095>
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+l2-table get ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index>
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+l2-table del ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index>
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//filter-id configuration
+//fid
+//destination IP configuration
+//destination IP
+l2-table del ip-mcast filter-id <UINT:fid> dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+//use sip-filter
+//sip filter index configuration
+//sip filter index
+l2-table del ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> sip-filter sip-index <UINT:index>
+
+//l2 table configuration
+//add configuration
+//ip multicast entry
+//destination IPv6 configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add ip-mcast dip6 <IPV6ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//add configuration
+//ip multicast entry
+//destination IPv6 configuration
+//destination IP
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast dip6 <IPV6ADDR:dip> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ip multicast entry
+//destination IPv6 configuration
+//destination IP
+//l3 interface configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast dip6 <IPV6ADDR:dip> l3routing state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ip multicast entry
+//destination IPv6 configuration
+//destination IP
+//l3 translation table index
+//8 table index, <0~7>
+l2-table add ip-mcast dip6 <IPV6ADDR:dip> l3table <UINT:index>
+
+//l2 table configuration
+//get configuration
+//ip multicast entry
+//destination IPv6 configuration
+//destination IP
+l2-table get ip-mcast dip6 <IPV6ADDR:dip>
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//destination IPv6 configuration
+//destination IP
+l2-table del ip-mcast dip6 <IPV6ADDR:dip>
+#endif
+
+
+//l2 table configuration
+//delete configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+l2-table del ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+l2-table get ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip>
+
+#ifndef CONFIG_REDUCED_DIAG
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+//priority configuration
+//priority, <0~7>
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//ipv4 multicast entry
+//vlan id configuration
+//vid, <0~4095>
+//destination IP configuration
+//destination IP
+//ext port index configuration
+//index
+l2-table add ip-mcast vid <UINT:vid> dip <IPV4ADDR:dip> ext-port-idx <UINT:index>
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+//priority configuration
+//priority, <0~7>
+l2-table add mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+//ext port index configuration
+//index
+l2-table add mac-mcast filter-id <UINT:fid> mac-address <MACADDR:mac> ext-port-idx <UINT:index>
+
+#endif
+//l2 table configuration
+//delete configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+l2-table del mac-mcast vid <UINT:vid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add mac-mcast vid <UINT:vid> mac-address <MACADDR:mac> port ( <PORT_LIST:ports> | all | none )
+
+#ifndef CONFIG_REDUCED_DIAG
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add mac-mcast vid <UINT:vid> mac-address <MACADDR:mac> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//priority configuration
+//priority, <0~7>
+l2-table add mac-mcast vid <UINT:vid> mac-address <MACADDR:mac> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//ext configuration
+//ext port list, <0-5>
+//all
+//none
+l2-table add mac-mcast vid <UINT:vid> mac-address <MACADDR:mac> ext ( <PORT_LIST:ext> | all | none )
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//ext port index configuration
+//index
+l2-table add mac-mcast vid <UINT:vid> mac-address <MACADDR:mac> ext-port-idx <UINT:index>
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//port configuration
+//port list, <0-6>
+//all
+//none
+l2-table add mac-mcast mac-address <MACADDR:mac> port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//add configuration
+//multicast l2 entry
+//mac address configuration
+//multicast MAC address, A:B:C:D:E:F
+//ext port index configuration
+//index
+l2-table add mac-mcast mac-address <MACADDR:mac> ext-port-idx <UINT:index>
+
+//l2 table configuration
+//get configuration
+//multicast l2 entry
+//mac addresss configuration
+//multicast l2 address, A:B:C:D:E:F
+l2-table get mac-mcast mac-address <MACADDR:mac>
+
+//l2 table configuration
+//delete configuration
+//multicast l2 entry
+//mac addresss configuration
+//multicast MAC address, A:B:C:D:E:F
+l2-table del mac-mcast mac-address <MACADDR:mac>
+
+#endif
+
+//l2 table configuration
+//get configuration
+//multicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//multicast l2 address, A:B:C:D:E:F
+l2-table get mac-mcast vid <UINT:vid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//delete configuration
+//unicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+l2-table del mac-ucast vid <UINT:vid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//source port configuration
+//port, <0~6>
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> spn <UINT:port>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//age configuration
+//age, <0~7>
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> age <UINT:age>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//static entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> static state ( disable | enable )
+
+#ifndef CONFIG_REDUCED_DIAG
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//filter-id configuration
+//fid, <0~15>
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> filter-id <UINT:fid>
+
+
+//l2 table configuration
+//set configuration
+//unicast l2 entry
+//efid configuarion
+//enhanced fid, <0~7>
+l2-table set mac-ucast enhanced-filter-id <UINT:efid>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//sa priority configuration
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> sa-priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//priority configuration
+//priority, <0~7>
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//arp entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> arp-usage state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//dot1x authed entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> auth state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//destination mac blocking entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> da-block state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//source mac blocking entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> sa-block state ( disable | enable )
+
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//ext port configuration
+//extension port, <0~15>
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> ext-spn <UINT:port>
+#endif
+//l2 table configuration
+//delete configuration
+//unicast l2 entry
+//filter id configuration
+//fid value, <0-15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+l2-table del mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//source port configuration
+//port, <0~6>
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> spn <UINT:port>
+
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//vid configuarion
+//vid value, <0-4095>
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> vid <UINT:vid>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//age configuration
+//age, <0~7>
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> age <UINT:age>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//static entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> static state ( disable | enable )
+
+#ifndef CONFIG_REDUCED_DIAG
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//priority configuration
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//sa priority configuration
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> sa-priority state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//priority configuration
+//priority, <0~7>
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> priority <UINT:priority>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//arp entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> arp-usage state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//dot1x authed entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> auth state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//destination mac blocking entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> da-block state ( disable | enable )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//source mac blocking entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> sa-block state ( disable | enable )
+
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//ext port configuration
+//extension port, <0~15>
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> ext-spn <UINT:port>
+
+//l2 table configuration
+//get configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//efid configuarion
+//enhanced fid, <0~7>
+l2-table get mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> enhanced-filter-id <UINT:efid>
+
+
+//l2 table configuration
+//get configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//efid configuarion
+//enhanced fid, <0~7>
+l2-table get mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> enhanced-filter-id <UINT:efid>
+#endif
+
+//l2 table configuration
+//get configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+l2-table get mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//get configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+l2-table get mac-ucast vid <UINT:vid> mac-address <MACADDR:mac>
+
+//l2 table configuration
+//get configuration
+//l2 table entry aging out configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+l2-table get aging-out port ( <PORT_LIST:ports> | all ) state
+
+//l2 table configuration
+//set configuration
+//l2 table entry aging out configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable
+//enable
+l2-table set aging-out port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//l2 table configuration
+//get configuration
+//l2 table aging time configuration
+l2-table get aging-time
+
+//l2 table configuration
+//set configuration
+//l2 table aging time configuration
+//time value(unit 0.1 second), <0 ~ 2097151>
+l2-table set aging-time <UINT:time>
+
+//l2 table configuration
+//set configuration
+//cam 64 entries configuration
+//state configuration
+l2-table get cam state
+
+//l2 table configuration
+//set configuration
+//cam 64 entries configuration
+//state configuration
+//disable
+//enable
+l2-table set cam state ( disable | enable )
+
+//l2 table configuration
+//set configuration
+//cam 64 entries configuration
+//full action
+l2-table get cam full-act
+
+//l2 table configuration
+//set configuration
+//cam 64 entries configuration
+//full action
+//forward
+//trap to cpu
+l2-table set cam full-act ( forward | trap-to-cpu )
+
+//l2 table configuration
+//get configuration
+//limit learning configuration
+//limit learning action
+l2-table get limit-learning action
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//limit learning action
+//copy to cpu
+//drop
+//forward
+//trap to cpu
+l2-table set limit-learning action ( copy-to-cpu | drop | forward | trap-to-cpu )
+
+//l2 table configuration
+//get configuration
+//limit learning configuration
+//limited no. configuration
+l2-table get limit-learning count
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//limited no. configuration
+//max count can be learned, <0~2112>
+l2-table set limit-learning count <UINT:count>
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//limited no. configuration
+//unlimited
+l2-table set limit-learning count unlimited
+
+//l2 table configuration
+//get configuration
+//limit learning configuration
+//limit learning entry configuration
+//limit learning action
+l2-table get limit-learning entry action
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//limit learning entry configuration
+//limit learning action
+//forward
+//trap to cpu
+l2-table set limit-learning entry action ( forward | trap-to-cpu )
+
+//l2 table configuration
+//get configuration
+//limit learning configuration
+//limit learning include
+l2-table get limit-learning include
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//limit learning include
+//port list, <0-6>
+//all
+//none
+l2-table set limit-learning include ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//get configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limit learning action
+l2-table get limit-learning port ( <PORT_LIST:ports> | all ) action
+
+//l2 table configuration
+//get configuration
+//learning counter
+l2-table get learning-count
+
+//l2 table configuration
+//get configuration
+//learning counter
+//port configuration
+//port list, <0-6>
+//all
+l2-table get learning-count port ( <PORT_LIST:ports> | all )
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limit learning action
+//copy to cpu
+//drop
+//forward
+//trap to cpu
+l2-table set limit-learning port ( <PORT_LIST:ports> | all ) action ( copy-to-cpu | drop | forward | trap-to-cpu )
+
+//l2 table configuration
+//get configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limited no. configuration
+l2-table get limit-learning port ( <PORT_LIST:ports> | all ) count
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limited no. configuration
+//max count can be learned, <0~2112>
+l2-table set limit-learning port ( <PORT_LIST:ports> | all ) count <UINT:count>
+
+//l2 table configuration
+//set configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limited no. configuration
+//unlimited
+l2-table set limit-learning port ( <PORT_LIST:ports> | all ) count unlimited
+
+//l2 table configuration
+//get configuration
+//link down auto flush MAC table configuration
+//state configuration
+l2-table get link-down-flush state
+
+//l2 table configuration
+//set configuration
+//link down auto flush MAC table configuration
+//state configuration
+//disable
+//enable
+l2-table set link-down-flush state ( disable | enable )
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//trap priority
+l2-table get lookup-miss multicast trap-priority
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//trap priority
+//priority
+l2-table set lookup-miss multicast trap-priority <UINT:priority>
+
+//l2 table configuration
+//get configuration
+//lookup miss configuration
+//multicast lookup
+//reserved IP multicast flooding configuration
+l2-table get lookup-miss multicast reserved-flooding
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//reserved IP multicast flooding configuration
+//disable
+//enable
+l2-table set lookup-miss multicast reserved-flooding ( disable | enable )
+
+//l2 table configuration
+//get configuration
+//lookup miss configuration
+//multicast lookup
+//reserved IP multicast action configuration
+//ipv4
+//ipv6
+//action
+l2-table get lookup-miss multicast reserved-action ( ipv4 | ipv6 ) action
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//reserved IP multicast action configuration
+//ipv4
+//ipv6
+//action
+//treat as normal unknown multicast
+//always flooding in vlan
+//trap to cpu
+l2-table set lookup-miss multicast reserved-action ( ipv4 | ipv6 ) action ( normal-uknown-mc | flood-in-vlan | trap-to-cpu )
+
+//l2 table configuration
+//get configuration
+//lookup miss configuration
+//multicast lookup
+//reserved IP multicast action configuration
+//ipv6
+l2-table get lookup-miss multicast reserved-addr ipv6
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//reserved IP multicast address configuration
+//ipv6
+//ff01::0/112 or ff01::db8:0:0/96
+//ff02::0/112 or ff02::db8:0:0/96
+//ff05::0/112 or ff05::db8:0:0/96
+//ff08::0/112 or ff08::db8:0:0/96
+//ff0e::0/112 or ff0e::db8:0:0/96
+//solicited-node multicast address ff02::1:ff00:0/104
+//state
+//treat as reserved multicast address
+//not treat as reserved multicast address
+l2-table set lookup-miss multicast reserved-addr ipv6 ( 1 | 2 | 5 | 8 | e | solicited-node ) state ( enable | disable )
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//trap to cpu
+//icmpv6
+//dhcpv6
+//state
+l2-table get lookup-miss multicast trap ( icmpv6 | dhcpv6 ) state
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//multicast lookup
+//trap to cpu
+//icmpv6
+//dhcpv6
+//state
+//enable
+//disable
+l2-table set lookup-miss multicast trap ( icmpv6 | dhcpv6 ) state ( enable | disable )
+
+//l2 table configuration
+//get configuration
+//lookup miss configuration
+//broadcast lookup
+//unicast lookup
+//multicast lookup
+//flooding port configuration
+l2-table get lookup-miss ( broadcast | unicast | multicast ) flood-ports
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//broadcast lookup
+//unicast lookup
+//multicast lookup
+//flooding port configuration
+//flood port list, <0-6>
+//all ports
+//empty ports
+l2-table set lookup-miss ( broadcast | unicast | multicast ) flood-ports ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//get configuration
+//lookup miss configuration
+//port configuration
+//port list, <0-6>
+//all
+//l2 multicast
+//ipv4 muticast
+//ipv6 muticast
+//unicast l2
+//broadcast
+//action configuration
+l2-table get lookup-miss port ( <PORT_LIST:ports> | all ) ( multicast | ip-mcast | ip6-mcast | unicast | broadcast ) action
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//port configuration
+//port list, <0-6>
+//all
+//ipv4 muticast
+//ipv6 muticast
+//action configuration
+//drop
+//flood in VLAN
+//trap to cpu
+l2-table set lookup-miss port ( <PORT_LIST:ports> | all ) ( ip-mcast | ip6-mcast ) action ( drop | flood-in-vlan | trap-to-cpu )
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//port configuration
+//port list, <0-6>
+//all
+//l2 multicast
+//action configuration
+//drop
+//drop exclude rma
+//normal flooding
+//trap to cpu
+l2-table set lookup-miss port ( <PORT_LIST:ports> | all ) multicast action ( drop | drop-exclude-rma | flood-in-vlan | trap-to-cpu )
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//port configuration
+//port list, <0-6>
+//all
+//unicast l2
+//action configuration
+//drop exclude IGMP/MLD
+//forward
+//trap to cpu exlcude IGMP/MLD
+l2-table set lookup-miss port ( <PORT_LIST:ports> | all ) unicast action ( drop | flood-in-vlan | trap-to-cpu )
+
+//l2 table configuration
+//set configuration
+//lookup miss configuration
+//port configuration
+//port list
+//all
+//unicast l2
+//action configuration
+//forward
+//trap to cpu
+//follow fb
+l2-table set lookup-miss port ( <PORT_LIST:ports> | all ) broadcast action ( flood-in-vlan | trap-to-cpu | follow-fb )
+
+//l2 table configuration
+//get configuration
+//lookup hit configuration
+//unicast lookup
+//forwarding decision
+l2-table get lookup-hit unicast forwarding
+
+//l2 table configuration
+//set configuration
+//lookup hit configuration
+//unicast lookup
+//forwarding decision
+//follow lut
+//follow fb
+//follow fb if spa from/dst to wan ports otherwise lut
+l2-table set lookup-hit unicast forwarding ( lut | fb | fb-lut )
+
+//l2 table configuration
+//get configuration
+//lookup hit configuration
+//wan-ports
+l2-table get lookup-hit wan-ports
+
+//l2 table configuration
+//set configuration
+//lookup hit configuration
+//wan-ports
+//port list
+//all
+//none
+l2-table set lookup-hit wan-port ( <PORT_LIST:ports> | all | none )
+
+//l2 table configuration
+//set configuration
+//ipv4 multicast hash mode
+//hash by dip only
+//hash by dip and sip
+//hash by dip and vid
+//hash by vid and mac
+//hash by dip and cvid
+//hash by dip with fid or vi
+l2-table set ip-mcast-mode ( dip | dip-and-sip | dip-and-vid | vid-and-mac | dip-and-cvid | dip-and-fid-vid )
+
+//l2 table configuration
+//get configuration
+//ipv4 multicast hash mode
+l2-table get ip-mcast-mode
+
+//l2 table configuration
+//set configuration
+//ipv4/ipv6 multicast vlan hash mode
+//hash with/without vlan according to ivl/svl
+//hash without vlan
+//hash with vlan
+l2-table set ip-mcast-vlan-mode ( ivl-svl | no-vlan | always-vlan )
+
+//l2 table configuration
+//get configuration
+//ipv4/ipv6 multicast vlan hash mode
+l2-table get ip-mcast-vlan-mode
+
+//l2 table configuration
+//set configuration
+//ipv6 multicast hash mode
+//hash by mac and fid/vid
+//hash by dip [119:104,43:0]
+l2-table set ipv6-mcast-mode ( mac-and-fid-vid | dip )
+
+//l2 table configuration
+//get configuration
+//ipv6 multicast hash mode
+l2-table get ipv6-mcast-mode
+
+//l2 table configuration
+//set configuration
+//extension member configure
+//index configuration
+//configure index
+//ext port configuration
+//ext port list
+//all
+//none
+l2-table set ext-mbr-cfg ext-port-idx <UINT:index> ext ( <PORT_LIST:exts> | all | none )
+
+//l2 table configuration
+//get configuration
+//extension member configure
+//index configuration
+//configure index
+l2-table get ext-mbr-cfg ext-port-idx <UINT:index>
+
+//l2 table configuration
+//get configuration
+//vid un-match configuration
+//port configuration
+//port list
+//all
+//action configuration
+l2-table get vid-unmatch port ( <PORT_LIST:ports> | all ) action
+
+//l2 table configuration
+//set configuration
+//vid un-match configuration
+//port configuration
+//port list
+//all
+//action configuration
+//forward
+//trap to cpu
+l2-table set vid-unmatch port ( <PORT_LIST:ports> | all ) action ( forward | trap-to-cpu )
+
+//l2 table configuration
+//get configuration
+//port moving configuration
+//unknown sa configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+l2-table get ( port-move | unknown-sa ) port ( <PORT_LIST:ports> | all ) action
+
+
+//l2 table configuration
+//set configuration
+//port moving configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//forward & disable learning
+l2-table set port-move port ( <PORT_LIST:ports> | all ) action forward-disable-learn
+
+
+//l2 table configuration
+//set configuration
+//port moving configuration
+//unknown sa configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//copy to cpu
+//drop & disable learning
+//forward
+//trap to cpu & disable learning
+l2-table set ( port-move | unknown-sa ) port ( <PORT_LIST:ports> | all ) action ( copy-to-cpu | drop | forward | trap-to-cpu )
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+l2-table set flush mac-ucast
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//include static entries
+l2-table set flush mac-ucast include-static
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//only static
+l2-table set flush mac-ucast static-only
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//filter id configuration
+//filter id, <0~15>
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) filter-id <UINT:fid>
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//filter id configuration
+//filter id, <0~15>
+//include static entries
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) filter-id <UINT:fid> include-static
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//filter id configuration
+//filter id, <0~15>
+//static entries only
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) filter-id <UINT:fid> static-only
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//vlan id configuration
+//vlan id, <0~4095>
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) vid <UINT:vid>
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//vlan id configuration
+//vlan id, <0~4095>
+//include static entries
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) vid <UINT:vid> include-static
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//vlan id configuration
+//vlan id, <0~4095>
+//static entries only
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) vid <UINT:vid> static-only
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all )
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//include static entries
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) include-static
+
+//l2 table configuration
+//set configuration
+//mac flush configuration
+//unicast l2 entry
+//port configuration
+//port list, <0-6>
+//all
+//static entries only
+l2-table set flush mac-ucast port ( <PORT_LIST:ports> | all ) static-only
+
+//l2 table configuration
+//set configuration
+//IP Multicast data configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//allow to forward
+//drop
+l2-table set ip-mcast-data port ( <PORT_LIST:ports> | all ) action ( forward | drop )
+
+//l2 table configuration
+//get configuration
+//IP Multicast data configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+l2-table get ip-mcast-data port ( <PORT_LIST:ports> | all ) action
+
+//l2 table configuration
+//get configuration
+//entry configuration
+//address
+//address, < 0~2047>
+l2-table get entry address <UINT:address>
+
+//l2 table configuration
+//get configuration
+//next entry configuration
+//address
+//address, < 0~2047>
+l2-table get next-entry address <UINT:address>
+
+//l2 table configuration
+//get configuration
+//next entry configuration
+//l2 unicast entry
+//address
+//address, < 0~2047>
+l2-table get next-entry mac-ucast address <UINT:address>
+
+//l2 table configuration
+//get configuration
+//next entry configuration
+//l2 unicast entry
+//address
+//address, < 0~2047>
+//source port
+//port, <0~6>
+l2-table get next-entry mac-ucast address <UINT:address> spn <UINT:port>
+
+//l2 table configuration
+//get configuration
+//next entry configuration
+//l2 multicast entry
+//address
+//address, < 0~2047>
+l2-table get next-entry l2-mcast address <UINT:address>
+
+//l2 table configuration
+//get configuration
+//next entry configuration
+//next ip multicast entry
+//address
+//address, < 0~2047>
+l2-table get next-entry ip-mcast address <UINT:address>
+
+//l2 table configuration
+//get configuration
+//next entry configuration
+//next l2 or ip multicast entry
+//address
+//address, < 0~2047>
+l2-table get next-entry l2-ip-mcast address <UINT:address>
+
+//l2 table configuration
+//get configuration
+//source port egress filter configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+l2-table get src-port-egress-filter port ( <PORT_LIST:ports> | all ) state
+
+//l2 table configuration
+//set configuration
+//source port egress filter configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable
+//enable
+l2-table set src-port-egress-filter port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//l2 table configuration
+//get configuration
+//source port egress filter configuration
+//ext port configuration
+//ext port list, <0-5>
+//state configuration
+l2-table get src-port-egress-filter ext <PORT_LIST:exts> state
+
+//l2 table configuration
+//set configuration
+//source port egress filter configuration
+//ext port configuration
+//ext port list, <0-5>
+//state configuration
+//disable
+//enable
+l2-table set src-port-egress-filter ext <PORT_LIST:exts> state ( disable | enable )
+
+
+//l2 table configuration
+//get configuration
+//learning exceed state
+l2-table get learning-exceed
+
+
+//l2 table configuration
+//get configuration
+//learning exceed state
+//port configuration
+//port list, <0-6>
+//all port
+l2-table get learning-exceed port ( <PORT_LIST:ports> | all )
+
+
+//l2 table configuration
+//clear configuration
+//learning exceed state
+l2-table clear learning-exceed
+
+//l2 table configuration
+//clear configuration
+//entire l2 table
+l2-table clear l2-table
+
+//l2 table configuration
+//clear configuration
+//learning exceed state
+//port configuration
+//port list, <0-6>
+//all port
+l2-table clear learning-exceed port ( <PORT_LIST:ports> | all )
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//ingress ctag learning entry
+//state configuration
+//disable
+//enable
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> ctag-if state ( disable | enable )
+
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//ingress ctag learning entry
+//vlan id configuration
+//vlan id, <0~4095>
+l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> ctag-if vid <UINT:cvid>
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//ingress ctag learning entry
+//state
+//disable
+//enable
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> ctag-if state ( disable | enable )
+
+
+//l2 table configuration
+//add configuration
+//unicast l2 entry
+//filter-id configuration
+//fid, <0~15>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//ingress ctag learning entry
+//vlan id configuration
+//vlan id, <0~4095>
+l2-table add mac-ucast filter-id <UINT:fid> mac-address <MACADDR:mac> ctag-if vid <UINT:cvid>
+
+//l2 table configuration
+//get configuration
+//l2 table aging update type while no learning 
+//state configuration
+l2-table get nolearn-aging state 
+
+//l2 table configuration
+//set configuration
+//l2 table aging update type while no learning 
+//state configuration
+//disable
+//enable
+l2-table set nolearn-aging state ( disable | enable )
+
+//l2 table configuration
+//get configuration
+//l2 table svl untag vid learning 
+l2-table get svl-untag-vid-learn
+
+//l2 table configuration
+//set configuration
+//l2 table svl untag vid learning 
+//ingress-vid
+//vid0
+l2-table set svl-untag-vid-learn ( ingress-vid | vid0 ) 
+
+//l2 table configuration
+//get configuration
+//entry configuration
+//address configuration
+//valid configuration
+l2-table get entry address valid
+
+//l2 table configuration
+//set configuration
+//arp usage as known
+//follow age field in lut
+//always tread as known
+l2-table set arp-usage-as-known ( follow-age | always-known ) 
+
+//l2 table configuration
+//get configuration
+//arp usage as known
+l2-table get arp-usage-as-known
+
+//l2 configuration
+//set configuration
+//trap priority
+//priority value, <0~7>
+l2-table set trap-priority <UINT:priority>
+
+//l2 configuration
+//get configuration
+//trap priority
+l2-table get trap-priority
+
+//l2 configuration
+//clear configuration
+//hash calculation data
+l2-table clear hash
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//destination mac
+//mac address
+l2-table set hash dmac-address <MACADDR:dmac>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//filter id
+//fid value
+l2-table set hash filter-id <UINT:fid>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//enhanced filter id
+//efid value
+l2-table set hash enhanced-filter-id <UINT:efid>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//vlan id
+//vlan id
+l2-table set hash vid <UINT:vid>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//group ip
+//ip address
+l2-table set hash gip <IPV4ADDR:gip>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//source ip
+//ip address
+l2-table set hash sip <IPV4ADDR:sip>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//destination ipv6
+//ipv6 address
+l2-table set hash dip6 <IPV6ADDR:dip>
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//sip filter enable
+//enable
+//disable
+l2-table set hash sip-filter ( enable | disable )
+
+//l2 configuration
+//set configuration
+//hash calculation data
+//sip filter index
+//index
+l2-table set hash sip-index <UINT:index>
+
+//l2 configuration
+//get configuration
+//hash calculation data
+//unicast svl
+//unicast ivl
+//multicast svl
+//multicast ivl
+//multicast only
+//sip + gip
+//gip svl
+//gip ivl
+//gip only
+//gip svl + sip filter
+//gip ivl + sip filter
+//destination ipv6
+l2-table get hash ( uc-svl | uc-ivl | mc-svl | mc-ivl | mc-only | sip-gip | gip-fid | gip-vid | gip-only | gip-fid-sipfilter | gip-vid-sipfilter | dip6 )
+
+//l2 configuration
+//show configuration
+//hash calculation data
+l2-table show hash

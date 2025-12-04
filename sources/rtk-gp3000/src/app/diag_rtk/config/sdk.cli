@@ -1,0 +1,32 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for sdk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) sdk commands.
+//
+
+//SDK configuration
+//test
+//group configuration
+//test group item
+sdk test group <STRING:item>
+
+//SDK configuration
+//test
+//case id
+//start case id
+//end case id
+sdk test case-id <UINT:start> { <UINT:end> }

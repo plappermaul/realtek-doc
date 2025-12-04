@@ -1,0 +1,731 @@
+
+# RTL86900 SDK configuration
+#
+
+config  MODULE_BUILD_IN
+        tristate "Realtek RTL86900 SDK"
+        default y
+        help
+
+           To compile it as a module, choose M here.  If unsure, say N.
+
+config SDK_MODULES
+        bool "Support RTK Apollo Modules"
+        help
+           Say Y if you want to enable RTK Apollo modules.
+
+if LUNA_G3_SERIES=y
+config GPON_FEATURE
+        bool "Support RTK GPON"
+        depends on SDK_MODULES
+        help
+          Say Y if your machine has pon phy port.
+
+config RTK_OMCI_V1
+        bool "Support RTK OMCI V1"
+        depends on GPON_FEATURE
+        help
+          Choice for enable RTK OMCI V1.
+
+config 10G_GPON_FEATURE
+        bool "Support 10G RTK GPON"
+        depends on GPON_FEATURE
+        help
+          Say Y if your machine has 10G GPON phy ports.
+
+config CA_RTK_GPON_FEATURE
+        bool "Support CA RTK GPON"
+        depends on GPON_FEATURE
+        help
+          Say Y if your machine has pon phy port.
+
+endif
+
+if LUNA_G3_SERIES!=y
+config GPON_FEATURE
+        bool "Support RTK GPON"
+        depends on SDK_MODULES
+        help
+          Say Y if your machine has pon phy port.
+
+config RTK_OMCI_V1
+        bool "Support RTK OMCI V1"
+        depends on GPON_FEATURE
+        help
+          Choice for enable RTK OMCI V1.
+
+config TX_SD_GPIO_PIN
+        int "gpio pin for tx_sd"
+        range 0 159
+        depends on SDK_MODULES
+        default "3"
+        help
+            the GPIO pin for tx_sd
+
+config PONMISC_ROGUE_SELF_DETECT
+        bool "Support PONMAC rogue ONU self detect"
+        depends on SDK_MODULES
+	default n
+        help
+          Choice for enable PONMAC rogue self detection.
+
+
+
+endif
+
+config REDUCED_OMCI_BIN
+        bool "Support REDUCED OMCI BIN"
+        depends on RTK_OMCI_V1
+        help
+          Choice for enable REDUCED OMCI BIN.
+
+config GPON_ROGUE_SELF_DETECT
+        bool "Support GPON rogue ONU self detect"
+        depends on GPON_FEATURE
+	default n
+        help
+          Choice for enable GPON rogue self detection.
+
+config RTK_GPON_EXCEP_LOG
+        bool "Support GPON exception log"
+        depends on GPON_FEATURE
+	default n
+        help
+          Choice for enable GPON exception log.
+
+config RTK_IGMP
+                bool "Support RTK IGMP"
+                depends on SDK_MODULES
+        help
+          Say Y if you want to enable RTK IGMP.
+
+config RLDP_FEATURE
+        bool "Support RTK RLDP"
+        depends on SDK_MODULES
+        help
+          Say Y if you want to enable RTK RLDP.
+
+config OE_RESET_AFTER_TX_DIS_OFF
+        bool "Reset OE module"
+        depends on GPON_FEATURE
+        default n
+        help
+          Choice for enable mechanism for reset OE module after turn off tx_disable.
+
+if LUNA_G3_SERIES=y
+config EPON_FEATURE
+        bool "Support RTK EPON"
+        depends on SDK_MODULES
+        help
+          Say Y if your machine has EPON phy ports.
+
+config 10G_EPON_FEATURE
+        bool "Support 10G RTK EPON"
+        depends on EPON_FEATURE
+        help
+          Say Y if your machine has 10G EPON phy ports.
+
+config CA_RTK_EPON_FEATURE
+        bool "Support CA RTK EPON"
+        depends on EPON_FEATURE
+        help
+          Say Y if your machine has EPON phy ports.
+
+config CA_RTK_EPON_TEST_FEATURE
+        bool "Support CA RTK EPON Test"
+        depends on CA_RTK_EPON_FEATURE
+        help
+          Say Y if your machine has EPON phy ports.
+
+config RTK_OAM_V1
+        bool "Support RTK OAM V1"
+        depends on CA_RTK_EPON_FEATURE
+        help
+          Choice for enable RTK OAM V1
+
+config RTK_OAM_BY_BUFFER
+        bool "Support Sending OAM message by OAM Buffer"
+        depends on CA_RTK_EPON_FEATURE
+        default n
+        help
+          Choice OAM sending path by OAM Buffer
+
+config PON_DETECT_FEATURE
+        bool "Support GPON/EPON detect"
+        depends on GPON_FEATURE && EPON_FEATURE
+        default y
+        help
+          Say Y if your machine has GPON/EPON detect function.
+
+config PON_AUTO_SELECT_FEATURE
+        bool "Support GPON/EPON auto selection"
+        depends on PON_DETECT_FEATURE
+        default n
+        help
+          Say Y if your machine has GPON/EPON auto selection function.
+
+config L3FE_FLOW_CONTROL_CONFIG_FOR_SINGLE_WAN
+        bool "Support Flow Control configuration for single WAN port"
+        default n
+        help
+          Say Y if your machine has GPON/EPON auto selection function.
+
+endif
+
+if LUNA_G3_SERIES!=y
+config EPON_FEATURE
+        bool "Support RTK EPON"
+        depends on SDK_MODULES
+        help
+          Say Y if your machine has EPON phy ports.
+
+config RTK_OAM_V1
+        bool "Support RTK OAM V1"
+        depends on EPON_FEATURE
+        default y
+        help
+          Choice for enable RTK OAM V1
+
+config RTK_OAM_BY_BUFFER
+        bool "Support Sending OAM message by OAM buffer"
+        depends on RTK_OAM_V1
+        default n
+        help
+          Choice OAM sending path by OAM Buffer
+
+config EPON_LOS_RECOVER
+                bool "Support EPON LOS recover"
+                depends on RTK_OAM_V1
+                default n
+
+config EPON_OAM_DUMMY_MODE
+                bool "Support EPON OAM dummy mode"
+                depends on RTK_OAM_V1
+                default n
+
+config PON_DETECT_FEATURE
+        bool "Support GPON/EPON detect"
+        depends on GPON_FEATURE && EPON_FEATURE
+        default y
+        help
+          Say Y if your machine has GPON/EPON detect function.
+
+config PON_AUTO_SELECT_FEATURE
+        bool "Support GPON/EPON auto selection"
+        depends on PON_DETECT_FEATURE
+        default n
+        help
+          Say Y if your machine has GPON/EPON auto selection function.
+endif
+
+config COMMON_RT_API
+        bool "Support Common RT API"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has Common RT API.
+
+config COMMON_RT_API_NO_BOA
+        bool "Support Common RT API without BOA"
+        depends on COMMON_RT_API
+        default n
+        help
+          Say Y if your machine has Common RT API without using BOA flash command.
+
+config COMMON_RT_PONMISC
+        bool "Support Common Pon Misc feature of RT API"
+        depends on COMMON_RT_API
+        default n
+        help
+          Say Y if your machine has Common Pon Misc feature of RT API.
+
+config RT_DIAGSHELL_ONLY
+        bool "Support Diagshell only support Common RT API"
+        depends on COMMON_RT_API && LUNA_G3_SERIES
+        default n
+        help
+          Say Y if your machine has RT Diagshell function.
+
+config PON_MONITOR_FEATURE
+        bool "Support PON monitor function"
+        depends on GPON_FEATURE
+        default n
+        help
+          Say Y if your machine has PON monitoring function.
+
+config RTK_PTP_MASTER
+        bool "Support RTK PTP Master Time Synchronous"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has PTP Master Time Synchronous function.
+          
+config RTK_PTP_SLAVE
+        bool "Support RTK PTP Slave Time Synchronous"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has PTP Slave Time Synchronous function.
+          
+config RTK_PPSTOD
+        bool "Support RTK Software 1PPS+ToD"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has PPSTOD function.
+		  
+config RTK_TIME_SYNC
+        bool "Support RTK Time Synchronous"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has Time Synchronous function.
+          
+config RTK_SWITCH_ISSUE_LOG
+        bool "Support RTK Switch Issue Log"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has Switch Issue Log function.
+		  
+config RTK_PON_TOD_TIME_FREQ
+        bool "Support RTK PON ToD tune Time Frequency"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y if your machine has PON ToD tune Time Frequency function.
+
+config FIBER_FEATURE
+        bool "Support RTK FIBER"
+        depends on SDK_MODULES
+        help
+          Say Y if using PON port as Fiber or Serdes port.
+
+choice
+        prompt "Select PON port Fiber configuration or other Serdes mode"
+        depends on FIBER_FEATURE
+        default FIBER_SPEED_AUTO
+
+config FIBER_SPEED_1G
+        bool "AN 1G only"
+
+config FIBER_SPEED_100M
+        bool "AN 100M only"
+
+config FIBER_SPEED_AUTO
+        bool "Auto 100M/1G"
+
+config FIBER_SPEED_FORCE_1G
+        bool "Force 1G"
+
+config FIBER_SPEED_FORCE_100M
+        bool "Force 100M"
+
+config SDS_SGMII_1G
+        bool "SDS SGMII 1G"
+
+endchoice
+
+choice
+        prompt "Fiber module detection method, SD output level or fiber signal"
+        depends on FIBER_FEATURE
+        default FIBER_DETECT_SD
+
+config FIBER_DETECT_OOBS
+        bool "OOBS"
+
+config FIBER_DETECT_SD
+        bool "SD"
+endchoice
+
+choice
+        prompt "Fiber module output signal detect(SD) or loss"
+        depends on FIBER_FEATURE && FIBER_DETECT_SD
+        default FIBER_MODULE_LOSS
+
+config FIBER_MODULE_LOSS
+        bool "Loss"
+
+config FIBER_MODULE_SD
+        bool "SD"
+endchoice
+
+config DYING_GASP_FEATURE
+        bool "Support RTK DYING GASP of ETHER or FIBER"
+        depends on SDK_MODULES && !(GPON_FEATURE || EPON_FEATURE)
+        help
+          Say Y if your machine want dying gasp in fiber or ether WAN.
+
+config PBO_MEM_USAGE
+        int "DRAM size in MB for PBO usage"
+        range 0 8
+        depends on RTL9601B_SERIES
+        default "8"
+        help
+          Causion! this value will correlate with the memory size and the kernel memory in CONFIG_CMDLINE
+
+choice
+        prompt "PON PBO upstream page size"
+        depends on RTL9607C_SERIES || RTL9603CVD_SERIES
+        default PON_PBO_US_PAGE_SIZE_128
+
+config PON_PBO_US_PAGE_SIZE_128
+        bool "128"
+
+config PON_PBO_US_PAGE_SIZE_256
+        bool "256"
+
+config PON_PBO_US_PAGE_SIZE_512
+        bool "512"
+
+endchoice
+
+choice
+        prompt "PON PBO downstream page size"
+        depends on RTL9607C_SERIES || RTL9603CVD_SERIES
+        default PON_PBO_DS_PAGE_SIZE_128
+
+config PON_PBO_DS_PAGE_SIZE_128
+        bool "128"
+
+config PON_PBO_DS_PAGE_SIZE_256
+        bool "256"
+
+config PON_PBO_DS_PAGE_SIZE_512
+        bool "512"
+
+endchoice
+
+choice
+        prompt "Switch PBO page size"
+        depends on RTL9607C_SERIES || RTL9603CVD_SERIES
+        default SWITCH_PBO_PAGE_SIZE_128
+
+config SWITCH_PBO_PAGE_SIZE_128
+        bool "128"
+
+config SWITCH_PBO_PAGE_SIZE_256
+        bool "256"
+
+config SWITCH_PBO_PAGE_SIZE_512
+        bool "512"
+
+config SWITCH_PBO_PAGE_SIZE_1024
+	depends on RTL9603CVD_SERIES
+	bool "1024"
+
+endchoice
+
+choice
+        prompt "Switch PBO page count"
+        depends on RTL9603CVD_SERIES
+        default SWITCH_PBO_PAGE_COUNT_2048 
+
+config SWITCH_PBO_PAGE_COUNT_512
+        bool "512"
+
+config SWITCH_PBO_PAGE_COUNT_1024
+        bool "1024"
+
+config SWITCH_PBO_PAGE_COUNT_2048
+        bool "2048"
+
+endchoice
+
+
+config TX_DISABLE_GPIO_PIN
+        int "gpio pin for disable tx"
+        range 0 159
+        depends on SDK_MODULES
+        default "34"
+        help
+              the GPIO pin for disable tx
+
+config TX_DISABLE_POLARITY_REVERSE
+        bool "Reverse the polarity of TX_DISABLE PIN"
+        depends on LUNA_G3_SERIES
+        default n
+        help
+          Say Y if TX_DISABLE of transeiver is low-active.
+
+config TX_POWER_TURN_ON_FEATURE
+        bool "Support GPON/EPON/Fiber Turn On TX Power"
+        depends on GPON_FEATURE || EPON_FEATURE || FIBER_FEATURE
+        default n
+        help
+          Say Y if your board is default turn off TX power and want GPON/EPON turn on TX power in intial state.
+
+config TX_POWER_GPO_PIN
+        int "gpio pin for TX power"
+        range 0 159
+        depends on TX_POWER_TURN_ON_FEATURE
+        default "0"
+        help
+              the GPIO pin for TX power
+
+config TRX_SWITCH_GPIO_PIN
+        int "gpio pin for switching transceiver module"
+        range 0 255
+        depends on SDK_MODULES
+        default "255"
+        help
+              the GPIO pin for switching transceiver module, 255 for disable
+
+config TRX_SWITCH_GPIO_POLARITY_REVERSE
+        bool "Reverse the polarity of TRX_SWITCH PIN"
+        depends on SDK_MODULES
+        default n
+        help
+          Say Y to swap the polarity of TRX_SWITCH PIN, default low for GPON/EPON/1G module.
+
+config RTK_L34_DEMO
+        tristate "Support RTK L34 Lite Auto Learning"
+        depends on SDK_MODULES && !RTK_L34_ENABLE && RTL9607_SERIES
+        default n
+        help
+          Choice for enable L34 Lite Auto Learning mechanism.
+
+config RTK_FT2_MODULE
+        bool "Support RTK FT2 module"
+        depends on SDK_MODULES
+        help
+          Choice for enable Factory Test module.
+
+config EUROPA
+        tristate "Support Europa module"
+        depends on SDK_MODULES
+        default n
+        help
+          Choice for enable Europa module.
+ 
+config EUROPA_FEATURE
+        bool "Support RTL8290B Feature"
+        depends on EUROPA
+        default n
+        help
+          Choice for enable 8290B feature.
+
+config EUROPA_INTERRUPT
+        bool "Support EUROPA interrupt"
+        depends on EUROPA_FEATURE
+        default n
+        help
+          Choice for enable EUROPA interrupt.
+
+config EUROPA_INTERRUPT_GPIO_PIN
+        int "gpio pin for Europa interrupt"
+        range 0 71
+        depends on EUROPA_INTERRUPT
+        default "13"
+        help
+          GPIO pinf for interrup.
+
+config RTL8290C_FEATURE
+        bool "Support RTL8290C Feature"
+        depends on EUROPA
+        default n
+        help
+          Choice for enable 8290C feature.
+
+config RTL8291_FEATURE
+        bool "Support RTL8291 10G LDD Feature"
+        depends on EUROPA
+        default n
+        help
+          Choice for enable RTL8291 feature.
+
+config EXTERNAL_SWITCH
+        bool "Support External Switch "
+        default n
+        help
+          Choice for enable external switch.
+
+config EXTERNAL_SWITCH_PORT_OFFSET
+        int "external switch port offset"
+        range 0 31
+        depends on EXTERNAL_SWITCH
+        default "24"
+        help
+          external switch port offset.
+		  
+config EXTERNAL_PHY_POLLING
+        bool "Support Switch External PHY Polling using asic mdc/mdio"
+        default n
+        help
+          Choice for enable external phy polling with asic mdc/mdio.
+
+
+config MDC_MDIO_HW_SET
+        int "assign using which hw mdc/mdio group"
+        range 0 1
+        depends on RTL9607C_SERIES && EXTERNAL_PHY_POLLING 
+        default 0
+        help
+          Choice for select which mdc/mdio will be used.
+
+config MDC_MDIO_EXT_PORT
+        int "assign which mac port using external phy"
+        range 5 8
+        depends on RTL9607C_SERIES && EXTERNAL_PHY_POLLING
+        default 6
+        help
+          Choice which mac port using external phy.
+
+
+
+config EXTERNAL_PHY_POLLING_USING_GPIO
+        bool "Support Switch External PHY Polling using GPIO"
+        default n
+        depends on !EXTERNAL_PHY_POLLING
+        default n
+        help
+          Choice for enable external phy polling with GPIO emulation mdc/mdio.
+
+config EXTERNAL_PHY_MII_CLOCK_GPIO_PIN
+        int "gpio pin for MII clock"
+        range 0 71
+        depends on EXTERNAL_PHY_POLLING_USING_GPIO
+        default "60"
+        help
+              the GPIO pin for external phy MII clock pin
+
+config EXTERNAL_PHY_MII_DATA_GPIO_PIN
+        int "gpio pin for MII data"
+        range 0 71
+        depends on EXTERNAL_PHY_POLLING_USING_GPIO
+        default "61"
+        help
+              the GPIO pin for external phy MII data pin
+
+choice
+        prompt "Select the target board profile for LED display"
+        depends on FIBER_FEATURE || GPON_FEATURE || EPON_FEATURE || RTL8198X_SERIES
+        default PON_LED_PROFILE_DEMO_RTL9607
+
+config PON_LED_PROFILE_DEMO_RTL9607
+        bool "RTL9607 demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9607_IAD_V00
+        bool "RTL9607 demo board for IAD v0.0"
+
+config PON_LED_PROFILE_DEMO_RTL9601
+        bool "RTL9601 demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9601B
+        bool "RTL9601B demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9602B
+        bool "RTL9602B demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9602C
+        bool "RTL9602C demo board"
+
+config PON_LED_PROFILE_DEOM_RTL9601C
+        bool "RTL9601C demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9607P
+        bool "RTL9607P demo board"
+
+config PON_LED_PROFILE_001
+        bool "Board profile #001"
+
+config PON_LED_PROFILE_DEMO_RTL9607C
+	bool "RTL9607C demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9607C_TBL_B
+	bool "RTL9607C demo board GPIO table B"
+
+config PON_LDE_PROFILE_DEMO_CA8277_REVB
+	bool "CA8277 demo board"
+
+config PON_LED_PROFILE_DEMO_RTL9601D_SFU_HGU
+	bool "RTL9601D SFU/HGU demo board"
+
+endchoice
+
+config SWITCH_INIT_LINKDOWN
+    bool "switch init default link down"
+        default n
+    help
+        Say Y if switch driver will linkdown switch port by default.
+
+config REDUCED_DIAG
+        bool "Reduce some diag shell command for specific condition"
+        default n
+        depends on SDK_MODULES
+        help
+          Say Y if you would like to use reduced diag shell, most of the case this SHOULD NOT be selected
+
+config LAN_SDS_FEATURE
+        bool "Support LAN serdes feature"
+        default n
+        help
+          Say Y if you would like to use LAN serdes feature 
+
+config SFP_APPLICATION
+        bool "Support SFP application"
+        default n
+        depends on LAN_SDS_FEATURE && (RTL9601B_SERIES || RTL9602C_SERIES)
+        help
+          Say Y if you would like to run the SFP demo application
+
+config LAN_SDS1_FEATURE
+        bool "Support LAN serdes 1 feature"
+        default n
+        help
+          Say Y if you would like to use LAN serdes 1 feature 
+
+choice
+        prompt "Support OE module access using I2C port 0 or port 1"
+        default OE_MODULE_I2C_PORT_0
+
+config OE_MODULE_I2C_PORT_0
+        bool "I2C port 0"     
+
+config OE_MODULE_I2C_PORT_1
+        bool "I2C port 1"
+endchoice
+
+config I2C_SLAVE_ACCESS
+	bool "Support I2C slave register access from external device"
+	default n
+	depends on RTL9602C_SERIES
+	help
+	  Say Y if you would like to access switch/SoC register through I2C interface
+
+config FORCE_SDK_RTL9602B
+        bool "Force chip subtype to RTL9602B"
+        default n
+        depends on RTL9600_SERIES
+        help
+          Say Y if you would like to force asic to RTL9602B
+
+config SWITCH_CLOCK_TUNING
+        bool "Tune switch clock for RTL9603C"
+        default n
+        depends on RTL9607C_SERIES
+        select SWITCH_SYS_CLOCK_TUNE
+        select PBO_CLOCK_TUNE
+        help
+	  Say Y if you would like to tune clock for RTL9603C
+
+config SWITCH_SYS_CLOCK_TUNE
+       bool
+
+config PBO_CLOCK_TUNE
+       bool
+
+config EPON_WAIT_OLT_DBA_READY_DELAY
+        bool "epon upstream normal tx enable must wait OLT DBA ready"
+        default n
+        depends on EPON_FEATURE
+        help
+          Say Y if olt need onu to wait oam complete.
+          
+
+config EPON_WAIT_OLT_DBA_READY_DELAY_MSEC
+        int "delay time for wait olt dba ready(msec)"
+        depends on EPON_WAIT_OLT_DBA_READY_DELAY
+        default "5000"
+        help
+          wait olt dba ready delay value msec.          

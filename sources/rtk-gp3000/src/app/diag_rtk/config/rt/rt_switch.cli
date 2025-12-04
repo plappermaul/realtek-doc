@@ -1,0 +1,63 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision:  $
+// $Date:  $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) switch commands.
+//
+
+//rt_switch configuration
+//init rt_switch
+rt_switch init
+
+//rt_switch configuration
+//port name
+//port name num
+rt_switch get phy-port-id portName <UINT:name>
+
+//rt_switch configuration
+rt_switch get version
+
+//rt_switch configuration
+//get configuration
+//max packet length
+//port
+//port list
+//all ports
+rt_switch get max-pkt-len port ( <PORT_LIST:ports> | all )
+
+//rt_switch configuration
+//set configuration
+//max packet length
+//port
+//port list
+//all ports
+//length configuration
+//packet length
+rt_switch set max-pkt-len port ( <PORT_LIST:ports> | all ) length <UINT:len>
+
+
+//rt_switch configuration
+//set configuration
+//mode configuration
+//sfu configuration
+//hgu configuration
+//hybird configuration
+rt_switch set mode ( sfu | hgu | hybrid )
+
+//rt_switch configuration
+//get configuration
+//mode configuration
+rt_switch get mode

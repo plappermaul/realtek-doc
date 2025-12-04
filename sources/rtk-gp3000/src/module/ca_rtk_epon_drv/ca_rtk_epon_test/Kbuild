@@ -1,0 +1,19 @@
+include $(APOLLODIR)/Compiler_Flag
+
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+ccflags-y := -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             -I$(SDKDIR)/src/module/ca_rtk_epon_drv-$(CA_TARGET) \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+
+obj-m += ca-rtk-epon-$(CA_TARGET)-test.o
+ca-rtk-epon-$(CA_TARGET)-test-objs := ca_rtk_epon_test.o
+else
+ccflags-y := -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             -I$(SDKDIR)/src/module/ca_rtk_epon_drv \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+
+obj-m += ca-rtk-epon-test.o
+ca-rtk-epon-test-objs := ca_rtk_epon_test.o
+endif

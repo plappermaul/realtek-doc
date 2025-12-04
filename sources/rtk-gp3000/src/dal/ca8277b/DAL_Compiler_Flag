@@ -1,0 +1,25 @@
+DAL_OBJ:= dal_ca8277b_ca_rtk.o \
+          dal_ca8277b_switch.o \
+          dal_ca8277b_l2.o \
+          dal_ca8277b_vlan.o \
+          dal_ca8277b_port.o \
+          dal_ca8277b_qos.o \
+          dal_ca8277b_stat.o \
+          dal_ca8277b_rate.o \
+          dal_ca8277b_sec.o \
+          dal_ca8277b_intr.o \
+          dal_ca8277b_epon.o \
+          dal_ca8277b_trap.o \
+          dal_ca8277b_i2c.o \
+          dal_ca8277b_led.o \
+          dal_ca8277b_ponmac.o \
+          dal_ca8277b_gpon.o \
+          dal_ca8277b_mirror.o \
+          dal_ca8277b_gpio.o
+
+ifeq ($(CONFIG_COMMON_RT_API),y)
+DAL_OBJ+= dal_rt_ca8277b_gpon.o \
+          dal_rt_ca8277b_ponmisc.o \
+          dal_rt_ca8277b_l2.o \
+          dal_rt_ca8277b_epon.o
+endif

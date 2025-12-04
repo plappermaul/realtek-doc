@@ -1,0 +1,182 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) igmp commands.
+//
+
+//igmp configuration
+//get configuration
+//ipv4 multicast lookup mode
+igmp get ip-mcast-lookup-mode
+
+//igmp configuration
+//set configuration
+//ipv4 multicast lookup mode
+//hash by dip and sip while hit
+//hash by dip while hit
+igmp set ip-mcast-lookup-mode ( dip-and-sip | dip-only )
+
+//igmp configuration
+//set configuration
+//IGMPv1
+//IGMPv2
+//IGMPv3
+//MLDv1
+//MLDv2
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//drop
+//forward
+//trap
+igmp set ( igmpv1 | igmpv2 | igmpv3 | mldv1 | mldv2 ) port ( <PORT_LIST:ports> | all ) action ( drop | forward | trap-to-cpu )
+
+//igmp configuration
+//get configuration
+//IGMPv1
+//IGMPv2
+//IGMPv3
+//MLDv1
+//MLDv2
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+igmp get ( igmpv1 | igmpv2 | igmpv3 | mldv1 | mldv2 ) port ( <PORT_LIST:ports> | all ) action
+
+#ifndef CONFIG_REDUCED_DIAG
+
+//igmp configuration
+//set configuration
+//ipv4 multicast lookup table
+//index configuration
+//index, <0~63>
+//group ip configuration
+//gip
+//port configuration
+//port list, <0-6>
+//all
+//none
+igmp set ip-mcast-table index <UINT:index> group-ip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//igmp configuration
+//get configuration
+//ipv4 multicast lookup table
+//index configuration
+//index, <0~63>
+igmp get ip-mcast-table index <UINT:index>
+
+//igmp configuration
+//set configuration
+//ipv4 multicast lookup table
+//group ip configuration
+//gip
+//port configuration
+//port list
+//all
+//none
+igmp set ip-mcast-table group-ip <IPV4ADDR:dip> port ( <PORT_LIST:ports> | all | none )
+
+//igmp configuration
+//set configuration
+//ipv4 multicast lookup table
+//group ip configuration
+//gip
+//ext port index configuration
+//index
+igmp set ip-mcast-table group-ip <IPV4ADDR:dip> ext-port-idx <UINT:index>
+
+//igmp configuration
+//get configuration
+//ipv4 multicast lookup table
+//group ip configuration
+//gip
+igmp get ip-mcast-table group-ip <IPV4ADDR:dip>
+
+//igmp configuration
+//del configuration
+//ipv4 multicast lookup table
+//group ip configuration
+//gip
+igmp del ip-mcast-table group-ip <IPV4ADDR:dip>
+
+//igmp configuration
+//set configuration
+//ipv4 multicast sip filter table
+//index configuration
+//index, <0~15>
+//source ip configuration
+//gip
+igmp set ip-mcast-sip-table index <UINT:index> sip <IPV4ADDR:dip>
+
+//igmp configuration
+//get configuration
+//ipv4 multicast sip filter table
+//index configuration
+//index, <0~15>
+igmp get ip-mcast-sip-table index <UINT:index>
+
+//igmp configuration
+//set configuration
+//igmp mld configuration
+//VLAN leaky configuration
+//port isolation leaky configuration
+//state configuration
+//disable
+//enable
+igmp set igmp-mld ( vlan-leaky | isolation-leaky ) state ( disable | enable )
+
+//igmp configuration
+//get configuration
+//igmp mld configuration
+//VLAN leaky configuration
+//port isolation leaky configuration
+//state configuration
+igmp get igmp-mld ( vlan-leaky | isolation-leaky ) state
+
+//igmp configuration
+//set configuration
+//igmp mld configuration
+//checksum Error configuration
+//action configuration
+//Drop
+//Trap to CPU
+//Forward (Ignore checksum error)
+igmp set igmp-mld checksum-error action ( drop | trap-to-cpu | forward )
+
+//igmp configuration
+//get configuration
+//igmp mld configuration
+//checksum Error configuration
+//action configuration
+igmp get igmp-mld checksum-error action
+
+//igmp configuration
+//set configuration
+//igmp mld configuration
+//trap priority
+//priority
+igmp set igmp-mld priority <UINT:priority>
+
+//igmp configuration
+//set configuration
+//igmp mld configuration
+//trap priority
+igmp get igmp-mld priority
+#endif
+

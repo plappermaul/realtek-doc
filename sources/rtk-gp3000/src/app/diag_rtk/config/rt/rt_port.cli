@@ -1,0 +1,299 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for Port.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) port commands.
+//
+
+//rt_port configuration
+//init configuration
+rt_port init
+
+//rt_port configuration
+//get configuration
+//link status
+//port configuration
+//port list, <0-6>
+//all port
+rt_port get status port ( <PORT_LIST:ports> | all )
+
+//rt_port configuration
+//get configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state
+rt_port get auto-nego port ( <PORT_LIST:ports> | all ) state
+
+//rt_port configuration
+//set configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable function
+//enable function
+rt_port set auto-nego port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//rt_port configuration
+//get configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+rt_port get auto-nego port ( <PORT_LIST:ports> | all ) ability
+
+//rt_port configuration
+//set configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//2500M full
+//5000M full
+//10000M full
+//flow control
+//asynchronism flow control
+rt_port set auto-nego port ( <PORT_LIST:ports> | all ) ability { 10h } { 10f } { 100h } { 100f } { 1000f } { 2500f } { 5000f } { 10000f } { flow-control } { asy-flow-control }
+
+//rt_port configuration
+//get configuration
+//forced phy configuration
+//port configuration
+//port list, <0-6>
+//all port
+rt_port get phy-force port ( <PORT_LIST:ports> | all )
+
+//rt_port configuration
+//set configuration
+//forced phy configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//10000M full
+//flow control
+//disable function
+//enable function
+rt_port set phy-force port ( <PORT_LIST:ports> | all ) ability ( 10h | 10f | 100h | 100f | 1000f | 10000f ) flow-control ( disable | enable )
+
+//rt_port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list, <0-6>
+//all
+//page configuration
+//page
+//register configuration
+//register address, <0~31>
+rt_port get phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register>
+
+//rt_port configuration
+//set configuration
+//phy register configuration
+//port configuration
+//port list, <0-6>
+//all
+//page configuration
+//page
+//register configuration
+//register address, <0~31>
+//data configuration
+//data value(example 0x1234)
+rt_port set phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> data <UINT:data>
+
+//rt_port configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all port
+//admin state
+rt_port get port ( <PORT_LIST:ports> | all ) state
+
+//rt_port configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all port
+//admin state
+//disable
+//enable
+rt_port set port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//rt_port configuration
+//get configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//mode 0 configuration
+//mode 1 configuration
+rt_port get isolation port ( <PORT_LIST:ports> | all ) ( mode0 | mode1 )
+
+//rt_port configuration
+//set configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//mode 0 configuration
+//mode 1 configuration
+//egress-port configuration
+//egress port configuration <0-6>
+//nono of the ports
+rt_port set isolation port ( <PORT_LIST:ports> | all ) ( mode0 | mode1 ) egress-port ( <PORT_LIST:egressports> | none )
+
+//rt_port configuration
+//get configuration
+//uni type configuration
+//port configuration
+//port list, <0-6>
+//all ports
+rt_port get unitype port ( <PORT_LIST:ports> | all )
+
+//rt_port configuration
+//set configuration
+//uni type configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//type configuration
+//veip configuration
+//pptp configuration
+rt_port set unitype port ( <PORT_LIST:ports> | all ) type ( veip | pptp )
+
+//rt_port configuration
+//get configuration
+//forced mac configuration
+//port configuration
+//port list, <0-6>
+//all port
+rt_port get mac-force port ( <PORT_LIST:ports> | all )
+
+//rt_port configuration
+//set configuration
+//forced mac configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//10000f
+//500M full
+//2.5G
+//2.5G lite
+//5G
+//5G lite
+//10G
+//flow control
+//disable function
+//enable function
+rt_port set mac-force port ( <PORT_LIST:ports> | all ) ability ( 10h | 10f | 100h | 100f | 1000f | 10000f | | 500f | 2g5 | 2g5l | 5g | 5gl | 10g ) flow-control ( disable | enable )
+
+//rt_port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//100M lpi
+//Giaga lpi
+//state configuration
+//disable
+//enable
+rt_port set mac-force port ( <PORT_LIST:ports> | all ) ( lpi-100M | lpi-giga ) state ( disable | enable )
+
+//rt_port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//link state
+//link down
+//link up
+rt_port set mac-force port ( <PORT_LIST:ports> | all ) link-state ( link-down | link-up )
+
+//rt_port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable
+//enable
+rt_port set mac-force port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//rt_port configuration
+//set configuration
+//eee setting
+//port configuration
+//port list
+//all
+//eee enable state
+//disable
+//enable
+rt_port set eee port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//rt_port configuration
+//set configuration
+//eee setting
+//port configuration
+//port list
+//all
+//eee enable state
+rt_port get eee port ( <PORT_LIST:ports> | all ) state
+
+//rt_port configuration
+//set configuration
+//mac-loopback setting
+//port configuration
+//port list
+//all
+//mac-loopback enable state
+rt_port get mac-loopback port ( <PORT_LIST:ports> | all ) state
+
+//rt_port configuration
+//set configuration
+//mac-loopback setting
+//port configuration
+//port list
+//all
+//mac-loopback enable state
+//disable
+//enable
+//MAC DA/SA swap state 
+//disable
+//enable
+rt_port set mac-loopback port ( <PORT_LIST:ports> | all ) state ( disable | enable ) mac-swap ( disable | enable )
+

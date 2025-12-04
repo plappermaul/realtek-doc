@@ -1,0 +1,48 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 69502 $
+// $Date: 2016-07-04 19:13:07 +0800 (Mon, 04 Jul 2016) $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) igmp commands.
+//
+
+//rt_igmp configuration
+//set configuration
+//IGMPv1
+//IGMPv2
+//IGMPv3
+//MLDv1
+//MLDv2
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//drop
+//forward
+//trap
+rt_igmp set ( igmpv1 | igmpv2 | igmpv3 | mldv1 | mldv2 ) port ( <PORT_LIST:ports> | all ) action ( drop | forward | trap-to-cpu )
+
+//rt_igmp configuration
+//get configuration
+//IGMPv1
+//IGMPv2
+//IGMPv3
+//MLDv1
+//MLDv2
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+rt_igmp get ( igmpv1 | igmpv2 | igmpv3 | mldv1 | mldv2 ) port ( <PORT_LIST:ports> | all ) action

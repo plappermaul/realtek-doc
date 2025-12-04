@@ -1,0 +1,23 @@
+include $(APOLLODIR)/Compiler_Flag
+include $(SDKDIR)/src/dal/rtl8198f/DAL_Compiler_Flag
+
+ifeq ($(CONFIG_OPENWRT_SDK), y)
+ccflags-y := -I$(ROOTDIR)/ca_packages-1.0/ca-network-engine/1.0-r0/ca-network-engine-1.0 \
+             -I$(ROOTDIR)/ca_packages-1.0/ca-plat/1.0-r0/ca-plat-1.0/inc \
+             -I$(ROOTDIR)/ca_packages-1.0/ca-plat/1.0-r0/ca-plat-1.0/event \
+             -I$(ROOTDIR)/ca_packages-1.0/ca-scfg/1.0-r0/ca-scfg-1.0/scfg/include \
+             -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+else
+ccflags-y := -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0 \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0/inc \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0/event \
+             -I$(ROOTDIR)/ca_packages/ca-scfg/1.0-r0/ca-scfg-1.0/scfg/include \
+             -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+endif
+			 
+obj-m += ca-rtk.o
+ca-rtk-objs := $(DAL_OBJ)

@@ -1,0 +1,39 @@
+//
+// Copyright (C) 2019 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision:  $
+// $Date:  $
+//
+// Purpose : Define diag shell commands for mirror.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) port mirror commands.
+//
+
+//mirror configuration
+//init
+rt_mirror init
+
+//mirror configuration
+//dump
+rt_mirror dump
+
+//mirror configuration
+//set configuration
+//mirroring port
+//port, <0~6>
+//mirrored ports
+//port list, <0-6>
+//none
+//rx mirroring function
+//tx mirroring function
+rt_mirror set mirroring-port <UINT:port> mirrored-port ( <PORT_LIST:ports> | none ) { rx-mirror } { tx-mirror }
+

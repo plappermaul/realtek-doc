@@ -1,0 +1,13175 @@
+#ifndef __RTK_APOLLOMP_REG_STRUCT_H__
+#define __RTK_APOLLOMP_REG_STRUCT_H__
+
+/*
+ * Include Files
+ */
+#include <common/rt_autoconf.h>
+#include <hal/chipdef/allreg.h>
+
+/* Superset Register Enum */
+typedef enum rtk_apollomp_reg_list_e
+{
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIGITAL_INTERFACE_SELECTr = 0,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SKIP_MII_RXERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RGMXFr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_CLOCK_DIVr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_TXC_DLYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_IND_CMDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_IND_RDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_IND_CMDr = 10,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_IND_RDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_IND_WDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_IND_CMDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_IND_RDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REGCTRL_GLBr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IOPAD_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IO_LED_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IO_MODE_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PCSXFr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_CTRLr = 20,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_CMDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_ADR_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_ADR_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_INV_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_INV_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_WD_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_POLL_WD_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHIP_DEBUG_OUTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_SMI_WDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_SMI_CMDr = 30,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_SMI_RDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_BOND_FRC_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_FRC_BONDINGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_BOND_CONTENTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_BOND_RSLTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_1ST_ETYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SOFTWARE_RSTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_IMRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_IMSr = 40,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG19r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG17r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG16r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG9r = 50,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG8r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG7r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIAG_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DFR_TEST_RESUMEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_CFGr = 60,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RAM_DVS_CFG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RAM_DVS_CFG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RAM_DVS_CFG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RAM_DVS_CFG3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RAM_DVS_CFG4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RAM_DVS_CFG5r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_INTEGRATIONr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_LEDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA_LED_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_ACTIVE_LOW_CFGr = 70,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SERI_LED_ACTIVE_LOW_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_FORCE_VALUE_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_BLINK_RATE_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOW_RATE_BLINK_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SERI_LED_CLK_PERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SERI_LED_REFRESH_TIMEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_BUZZERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_LED_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_P_DMPr = 80,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_FORCE_P_DMPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GLB_MAC_MISCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRAP_GPHY_MISCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_NAME_INFOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHIP_INFOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_INFOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISCELLANEOUS_CONFIGURE0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_P_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MDX_PHY_REG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UPS_CTRL2r = 90,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATING_CLK_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ROUTER_UPS_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_ABLTYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPIO_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPIO_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPIO_CTRL_2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPIO_CTRL_4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RTL_OUI_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REVISON_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_CFGr = 100,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAKELPI_SLOT_PRDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAKELPI_SLOTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGM_EEEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ABLTY_FORCE_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DEBUG_SELr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_SYNC_FIFOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_ACT_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYPS_ABLTY_LOCKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIFO_ERR_STSr = 110,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_AN_RX_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_FIB_STATUSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_MODE_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HTRAM_DVS_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HWPKT_GEN_STAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_EXTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_AFE_DBG_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AD5_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TM_DLYr = 120,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TM_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AD5_ALARMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AD5_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TM_ALARMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHIP_INF_SELr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLIC_INSEL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYS_PKT_BUF_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_STRAP_STS0r = 130,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_STRAP_STS1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_STRAP_STS2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISCELLANEOUS_BONDINGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISCELLANEOUS_STRAPPING1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISCELLANEOUS_STRAPPING0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_DLYLNKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FPGA_VER_MACr = 140,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_CPU_TAG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_CPU_TAG_AWARE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACCEPT_MAX_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_LENGTH_CFG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_LENGTH_CFG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_LENGTH_LIMINT_IPGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IOL_RXDROP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_BACKPRESSUREr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_UNHIOLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MACr = 150,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INBW_BOUNDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_TX_ERR_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_CGSTTIMERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_MISCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_CFG_FRC_RATEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_CUR_RATEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_FIBER_AUTODETr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHANGE_DUPLEX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_00r = 160,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_01r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_02r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_03r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_04r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_05r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_06r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_07r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_08r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_09r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_0Ar = 170,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_0Br,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_0Cr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_0Dr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_0Er,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_0Fr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_10r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_11r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_14r = 180,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_16r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_17r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_19r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_1Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_1Br,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_1Cr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_1Dr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_1Er = 190,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_1Fr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_20r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_23r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_24r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_25r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_00r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_01r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_02r = 200,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_03r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_04r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_05r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_06r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_07r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_08r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_09r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_0Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_0Br,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_0Cr = 210,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_0Dr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_0Er,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_0Fr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_10r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_11r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_16r = 220,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_17r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_19r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_1Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_1Br,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_1Cr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_1Dr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_1Er,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_1Fr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_20r = 230,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_23r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_24r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_25r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_26r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_27r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_28r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_29r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_2Ar = 240,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_2Br,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_DIG_2Cr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG5r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG6r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG7r = 250,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG8r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG9r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG10r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG11r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG16r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG17r = 260,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG19r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG20r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG23r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG24r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG25r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG26r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG27r = 270,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG28r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG29r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_REG30r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG6r = 280,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG9r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG10r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG11r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG16r = 290,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG25r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG26r = 300,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG27r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG28r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG29r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EXT_REG30r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG5r = 310,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG6r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG7r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG8r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG16r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG17r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG19r = 320,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG20r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG23r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG26r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG28r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG29r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_REG30r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG1r = 330,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG5r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG6r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG7r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG8r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG15r = 340,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG16r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG17r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG19r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG20r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG23r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_EXT_REG24r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_EEEP_PORT_CFGr = 350,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEECFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEETXMTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEERXMTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TX_THR_GIGAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TX_THR_FEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RX_FC_REGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_MISCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_GIGA_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_GIGA_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_100M_CTRL0r = 360,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_100M_CTRL1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_BURSTSIZEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_IFG_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RXIDLEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_DECISION_WINDOWr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PS_LINKID_GATCLK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEEP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TIMER_UNIT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_TIMER_GIGA_CTRLr = 370,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_TIMER_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_RATE_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_RATE_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_RATE_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_SLEEP_STEP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_WAKE_TIMER_GIGA_CTRLr = 380,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_TIMER_GIGA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_WAKE_TIMER_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_TIMER_500M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_WAKE_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_TIMER_100M_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEEPTXMTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEEPRXMTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SW_PWRSAV_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_PORT_CFGr = 390,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_PORT_ERR_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_PORT_MONITOR_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_GPHY_ADDR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_PKT_INFO_DBGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_UNMATCHED_SA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_UNKN_SA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_UNKN_UC_DA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_LEARN_OVER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_AGEOUT_CTRLr = 400,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_LRN_LIMITNOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_LRN_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_LRN_OVER_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_SYS_LRN_LIMITNOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_SYS_LRN_OVER_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_SYS_LRN_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNKN_L2_MCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNKN_IP4_MCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNKN_IP6_MCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNKN_MC_CFGr = 410,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_BC_FLOODr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_UNKN_MC_FLOODr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_UNKN_UC_FLOODr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_EFIDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_SYS_LRN_OVER_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_TBL_FLUSH_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_TBL_FLUSH_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_IPMC_VLAN_LEAKYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_IPMC_ISO_LEAKYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_PORT_ACCEPT_FRAME_TYPEr = 420,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_INGRESSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_EGRESS_TAGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_MBR_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_PB_FIDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_PB_FIDENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_PB_VIDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_EGRESS_KEEPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_EXT_VIDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_UPLINK_PMSKr = 430,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_MC2Sr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_C2Sr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_SP2Cr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_EP_DMAC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_P_SVIDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_MBRCFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_PPB_VLAN_VALr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_PORT_PPB_VLANr = 440,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_TRUNK_GROUP_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_TRUNK_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_TRUNK_HASH_MAPPINGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRUNK_DROP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MSTI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PISO_P_MODE0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PISO_P_MODE1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PISO_EXT_MODE0_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PISO_EXT_MODE1_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PISO_CTRLr = 450,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL00r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL01r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL02r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL03r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL04r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL08r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL0Dr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL0Er,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL10r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL11r = 460,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL18r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL1Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL20r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL21r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL22r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL_CDPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CTRL_SSTPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_CFGr = 470,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEELLDP_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEELLDP_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_SRC_PORT_PERMITr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_SRC_EXT_PERMITr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_UM_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_UC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_MC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_BC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_UM_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_UC_METER_IDXr = 480,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_MC_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_BC_METER_IDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STORM_CTRL_ALT_TYPE_SELr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGR_BWCTRL_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGR_BWCTRL_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_METER_TB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_METER_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_METER_LB_EXCEED_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_TB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_METER_PKT_RATEr = 490,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_CFG_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_CFG_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNFLOOD_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_FINFLOOD_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_ICMPFLOOD_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIR_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_PRIVATE_REASONr = 500,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_ACL_REASONr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_CF_REASONr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_PORT_TX_MIBr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_PORT_RX_MIBr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_PORT_OAM_MIBr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_ACL_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_ACL_CNT_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_ACL_CNT_TYPEr = 510,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_ACL_CNT_RSTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_PORT_RSTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_RSTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_STAT_RSTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_Q_TX_FRAMESr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_MPCP_RX_DISCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_EPON_FEC_CORRECTED_BLOCKSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_EPON_FEC_UNCORRECTED_BLOCKSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_EPON_FEC_CODING_VIOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_NOT_BROADCAST_BIT_NOT_ONU_LLIDr = 520,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_BROADCAST_BIT_PLUS_ONU_LLIDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_BROADCAST_NOT_ONUIDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_CRC8_ERRORSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_LLID_RX_BROADCAST_DROP_FRAMESr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_MPCP_TX_REPORTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_MPCP_EX_GATEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_ONUID_NOT_BROADCASTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STAT_DOT3_LLIDRXFRAMESDROPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3_MPCP_TX_REG_REQr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_DROP_PKT_CNTr = 530,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_TX_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_RX_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_TX_BYTE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_RX_BYTE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_CRC_ERROR_PKT_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_DROP_ALL_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PAUSE_ALL_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_GLB_FCOFF_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_GLB_FCOFF_LO_THr = 540,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_GLB_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_GLB_LO_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_LO_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_FCOFF_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_FCOFF_LO_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_JUMBO_GLB_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_JUMBO_GLB_LO_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_JUMBO_P_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_JUMBO_P_LO_THr = 550,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_Q_EGR_DROP_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_EGR_DROP_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_Q_EGR_GAP_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_EGR_GAP_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_Q_EGR_DROP_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_DBG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_MAX_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_TOTAL_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PE_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_Q_USED_PAGE_CNTr = 560,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_TL_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PUB_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PUB_FCOFF_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PUB_JUMBO_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_P_DBG_PKT_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_GLB_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_GLB_LO_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_P_HI_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_P_LO_THr = 570,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_Q_EGR_DROP_IDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_Q_EGR_DROP_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_Q_EGR_GAP_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_Q_USED_PAGE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_Q_USED_PAGE_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TH_TX_PREFETr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOW_QUEUE_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HIGH_QUEUE_MSKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SC_P_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SC_P_CTRL_1r = 580,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QOS_INTPRI_TO_QIDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QOS_PORT_QMAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QOS_PRI_REMAP_IN_CPUr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QOS_1Q_PRI_REMAPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QOS_DSCP_REMAPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QOS_PB_PRIr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRI_SEL_TBL_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRI_SEL_TBL_CTRL2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_DOT1Q_RMK_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_1Q_CTRLr = 590,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_DSCP_RMK_EN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_DSCP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_DSCP_INT_PRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_P_DSCP_SELr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WFQ_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EGR_BWCTRL_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINE_RATE_1Gr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINE_RATE_500Mr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINE_RATE_100Mr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINE_RATE_10Mr = 600,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OUTPUT_DROP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OUTPUT_DROP_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WFQ_PORT_CFG0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WFQ_PORT_CFG1_7r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WFQ_TYPE_PORT_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_APR_EN_PORT_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CPU_PORT_RATE_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_APR_METER_PORT_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_QUEUE_EMPTYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_TH_Hr = 610,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_TH_Lr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_BPTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_FRC_MDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_FRC_VALr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYTE_TOKEN_METERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_HSA_EPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_TEMPLATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_OP_DSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_OP_USr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_VALIDr = 620,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMK_DSCP_CF_PRI_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_PERMITr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_ACTIONr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_CHK_VID_RNGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_CHK_IP_RNGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_CHK_L4PORT_RNGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_CHK_PKTLEN_RNGr = 630,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_CHK_IP_RNG_CFr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_CHK_L4PORT_RNG_CFr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_P_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_P_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_CTRL_0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_CTRL_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_CHK_STS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_LP_STS_CTRLr = 640,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_RNDM_NUMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_MAGIC_NUMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_PORT_TX_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_PORT_LP_ENTER_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_PORT_LP_LEAVE_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_PORT_LP_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_PORT_CPU_LP_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLDP_PORT_LP_PNUMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RLPP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_CTRLr = 650,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_TX_DBGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSARAM_5_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_EP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAUSE_ALL_LW_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HYS_PUSAL_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_BLK_SELr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_RXr = 660,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_TXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_PORT_TX_GRP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_PORT_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_P_TX_GRP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_P_LEN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_P_TX_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_P_SAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_P_DAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_PAYLOADr = 670,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPG_PORT_USER_PKTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGMP_MC_GROUPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGMP_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGMP_P_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_GLB_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_IPMC_TRAN_TBLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_IPMC_TTL_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_PORT_TO_WANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_EXTPORT_TO_WANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_WAN_TO_PORTr = 680,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_WAN_TO_EXTPORTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TBL_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TBL_ACCESS_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TBL_ACCESS_WR_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TBL_ACCESS_RD_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AVB_PORT_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AVB_PRI_REMAPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_SECr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_NSECr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_OFFSET_SECr = 690,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_OFFSET_8NSECr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_FREQr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TRANSPARENT_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_IGR_MSG_ACTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_EGR_MSG_ACTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_MEANPATH_DELAYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_RX_TIMEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_P_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PARSER_FIELD_SELTOR_CTRLr = 700,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_SID_TO_QIDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_QID_CIR_RATEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_QID_PIR_RATEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_SCH_QMAPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_WFQ_WEIGHTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_WFQ_TYPEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_PON_Q_EGR_DROP_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_TCONT_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QUEUE_SEL_INDr = 710,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QUEUE_SEL_IND_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_DPRU_RPT_PRDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_PIR_CIR_IFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_PORT_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PONMAC_DRN_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_OLT_BW_MTR_FULLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_WFQ_IFG_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_INT_DLTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_RESETr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_VERSIONr = 720,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_TESTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_BYPASSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_ONU_ID_STATUSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PLOAM_CFGr = 730,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_LOS_CFG_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_SUPERFRAME_CNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PLOAM_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PLOAM_MSGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_ALLOC_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_ALLOC_WRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_ALLOC_RDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PORT_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PORT_WRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PORT_RDr = 740,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PORT_CNTR_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_PORT_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BLKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BITr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BITr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BYTEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_CWr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_UNCOR_CWr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_LOMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_PLOAM_ACPTr = 750,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_PLOAM_FAILr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_BWM_FAILr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_BWM_INVr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_ACTIVEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_BWM_ACPTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_LOSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_HEC_CORRECTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_IDLEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_FAILr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_NON_IDLEr = 760,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_MISC_CNTR_PLEN_CORRECTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_OMCI_PTIr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_ETH_PTIr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DS_FECr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLOAMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_CNTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_TOKEN_Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BWMAP_CAPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BWMAP_BUFr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TCONTr = 770,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_Lr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_Hr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_DS_TRAFFIC_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_BWMAP_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_BWMAP_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_BWMAP_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_KEY_SWITCH_REQr = 780,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_KEY_SWITCH_TIMEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_KEY_WORD_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_AES_WORD_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CTL_INFOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CTL_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CIPHER_1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CIPHER_2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_EXPNr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_RX_CNTR_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_RX_CNTR_STATr = 790,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_FWD_CNTR_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_FWD_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MISC_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MISC_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MC_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MC_INDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MC_WRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MC_RDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_FRM_TIMEOUTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MC_ADDR_PTN_IPV4r = 800,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_DS_MC_ADDR_PTN_IPV6r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLASSIFY_BUFr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLASSIFY_CNTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ASSEMBLYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_FILTERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_ONU_IDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_CFGr = 810,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_WRITE_PROTECTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_TX_PATTERN_CTLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_TX_PATTERN_BGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_TX_PATTERN_FGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_MIN_DELAYr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_EQDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_LASERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_BOH_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_BOH_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_PLOAM_INDr = 820,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_PLOAM_DATAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_PLOAM_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_MISC_CNTR_IDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_MISC_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_RDIr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_DGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_OPTIC_SD_THr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GTC_US_PROC_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BWM_TBLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BWM_MEM0r = 830,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BWM_MEM1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLOAM_Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_INTR_DLTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_INTR_MASKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_INTR_STSr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_PTI_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_ETH_GEM_RX_CNTR_IDXr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_ETH_GEM_RX_CNTR_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_PTN_CTRLr = 840,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PCFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_BCNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIFO_BANK0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIFO_BANK1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IDLE_BCNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_PCNTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_PORT_MAPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_GEM_US_BYTE_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TCONT_IDLE_BYTE_STATr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_FEC_CONFIGr = 850,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_ASIC_TIMING_ADJUST1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_ASIC_TIMING_ADJUST2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_RGSTR1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_RGSTR2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_RGSTR3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DEBUG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DEBUG2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_TIMER_CONFIG1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_INTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYNC_TIMEr = 860,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LASER_ON_OFF_TIMEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIN_GRANT_STARTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_GRANT_STARTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_TIME_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EP_MISCr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LLID_TABLEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_MPCP_CTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_GRANT_LIST0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_GRANT_LIST1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_GRANT_LIST2r = 870,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_TX_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DECRYP_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DECRYP_KEY0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DECRYP_KEY1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_MISC_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_LOCAL_TIMEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_GRANT_SHIFTr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_REG_ACKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_CLRr = 880,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_RDDATA0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_RDDATA1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_RDDATA2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_RDDATA3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_RDDATA4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_WRDATA0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_WRDATA1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_WRDATA2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_WRDATA3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAT_TBL_ACCESS_WRDATA4r = 890,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NIFPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NIFEPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NIFVCHr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NIFVCLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWTCR0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PP_AGEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NB_TRF0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NB_TRF1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NB_TRF2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NB_TRF3r = 900,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_V6_BD_CTLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BD_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBA_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W5r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W6r = 910,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W7r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W8r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_DESC_W9r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_DESC_W0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_DESC_W1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_DESC_W2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_DESC_W3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSA_DESC_W4r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4_TRF0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4_TRF1r = 920,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ARP_TRF0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ARP_TRF1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_GLBr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_ACLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_CVLANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_DPMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_L2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_MLTVLANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_SVLANr = 930,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_RLDPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_EAV_AFBKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_INTRr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_LEDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_PER_PORT_MACr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_SDSREGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_SWCOREr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_EPON_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_RMA_ATTACKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_BIST_CTRLr = 940,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_EGR_OUTQr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_EGR_SCHr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_HSAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_METERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_MIB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGF_VER_ALE_PISOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_GLB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_GLBr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_POLICING_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_ACLr = 950,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_CVLANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DSCP_WEIGHT_2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DSCP_WEIGHT_SELr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_DPMr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_L2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_MLTVLANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_SVLANr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_RLDPr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_EAV_AFBKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_INTRr = 960,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_LEDr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_PER_PORT_MACr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_SDSREG_X0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_BENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_SDSREG_X1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_SDSREG_X2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_SDSREG_X3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_SWCOREr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EPON_CTRL0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EPON_CTRLr = 970,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EPON_CTRL3r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_RMA_ATTACKr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_BIST_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_MISC_CFGr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_EGR_RATE_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EGR_OUTQr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EGR_SCH0r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EGR_SCH1r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EGR_SCH2r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_EGR_SCH3r = 980,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_US_1P_REMARK_ENr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IP4MC_EGRESS_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IP6MC_EGRESS_MODEr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_HSAr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_METERr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_MIB_CTRLr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_ALE_PISOr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_00r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_01r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_02r = 990,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_03r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_04r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_05r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_06r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_07r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_08r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_09r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_0Ar,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_0Br,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_0Cr = 1000,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_0Dr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_0Er,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_0Fr,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_10r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_11r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_12r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_13r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_14r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WSDS_ANA_EXT_15r,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_PORT_TXr = 1010,
+#endif
+
+    APOLLOMP_REG_LIST_END = 1011,
+} rtk_apollomp_reg_list_t;
+
+
+/* Internal Register Enum */
+typedef enum rtk_int_apollomp_reg_list_e
+{
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DIGITAL_INTERFACE_SELECT_APOLLOMP = 0,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SKIP_MII_RXER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EXT_RGMXF_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_I2C_CLOCK_DIV_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EXT_TXC_DLY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_IND_WD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_IND_CMD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_IND_RD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_IND_WD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_IND_CMD_APOLLOMP = 10,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_IND_RD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_I2C_IND_WD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_I2C_IND_CMD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_I2C_IND_RD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_REGCTRL_GLB_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IOPAD_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IO_LED_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IO_MODE_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PCSXF_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_CTRL_APOLLOMP = 20,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_CMD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_ADR_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_ADR_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_INV_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_INV_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_WD_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_PHY_POLL_WD_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CHIP_DEBUG_OUT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_SMI_WD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_SMI_CMD_APOLLOMP = 30,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_SMI_RD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_BOND_FRC_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_FRC_BONDING_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_BOND_CONTENT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_BOND_RSLT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EFUSE_1ST_ETY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SOFTWARE_RST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_INTR_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_INTR_IMR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_INTR_IMS_APOLLOMP = 40,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_INTR_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG19_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG17_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG16_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG9_APOLLOMP = 50,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG8_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG7_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DIAG_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DFR_TEST_RESUME_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BIST_CFG_APOLLOMP = 60,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RAM_DVS_CFG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RAM_DVS_CFG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RAM_DVS_CFG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RAM_DVS_CFG3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RAM_DVS_CFG4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RAM_DVS_CFG5_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_INTEGRATION_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LED_LED_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DATA_LED_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LED_ACTIVE_LOW_CFG_APOLLOMP = 70,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SERI_LED_ACTIVE_LOW_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LED_FORCE_VALUE_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LED_BLINK_RATE_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LOW_RATE_BLINK_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LED_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SERI_LED_CLK_PER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SERI_LED_REFRESH_TIME_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_BUZZER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_LED_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FORCE_P_DMP_APOLLOMP = 80,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EN_FORCE_P_DMP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GLB_MAC_MISC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WRAP_GPHY_MISC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MODEL_NAME_INFO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CHIP_INFO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BOND_INFO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MISCELLANEOUS_CONFIGURE0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FORCE_P_ABLTY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MDX_PHY_REG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_UPS_CTRL2_APOLLOMP = 90,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GATING_CLK_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ROUTER_UPS_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_ABLTY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPIO_CTRL_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPIO_CTRL_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPIO_CTRL_2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPIO_CTRL_4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RTL_OUI_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_REVISON_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MODEL_CFG_APOLLOMP = 100,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WAKELPI_SLOT_PRD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WAKELPI_SLOT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGM_EEE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ABLTY_FORCE_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DEBUG_SEL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RST_SYNC_FIFO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAC_ACT_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BYPS_ABLTY_LOCK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIFO_ERR_STS_APOLLOMP = 110,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_AN_RX_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_FIB_STATUS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EXT_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_MODE_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HTRAM_DVS_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HWPKT_GEN_STA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MODE_EXT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPHY_AFE_DBG_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_AD5_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TM_DLY_APOLLOMP = 120,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TM_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TM_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_AD5_ALARM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_AD5_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TM_ALARM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CHIP_INF_SEL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SLIC_INSEL_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SYS_PKT_BUF_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DYNGASP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BOND_STRAP_STS0_APOLLOMP = 130,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BOND_STRAP_STS1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BOND_STRAP_STS2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MISCELLANEOUS_BONDING_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MISCELLANEOUS_STRAPPING1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MISCELLANEOUS_STRAPPING0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAC_DLYLNK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PLL_RGM_CTRL1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PLL_RGM_CTRL2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PLL_RGM_CTRL3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FPGA_VER_MAC_APOLLOMP = 140,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAC_CPU_TAG_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAC_CPU_TAG_AWARE_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACCEPT_MAX_LEN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAX_LENGTH_CFG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAX_LENGTH_CFG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAX_LENGTH_LIMINT_IPG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IOL_RXDROP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_BACKPRESSURE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CFG_UNHIOL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SWITCH_MAC_APOLLOMP = 150,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SWITCH_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_INBW_BOUND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_TX_ERR_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_CGSTTIMER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_MISC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_CFG_FRC_RATE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_CUR_RATE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_UTP_FIBER_AUTODET_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CHANGE_DUPLEX_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_00_APOLLOMP = 160,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_01_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_02_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_03_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_04_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_05_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_06_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_07_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_08_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_09_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_0A_APOLLOMP = 170,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_0B_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_0C_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_0D_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_0E_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_0F_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_10_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_11_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_14_APOLLOMP = 180,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_16_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_17_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_19_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_1A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_1B_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_1C_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_1D_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_1E_APOLLOMP = 190,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_1F_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_20_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_23_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_24_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_25_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_00_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_01_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_02_APOLLOMP = 200,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_03_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_04_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_05_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_06_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_07_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_08_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_09_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_0A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_0B_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_0C_APOLLOMP = 210,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_0D_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_0E_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_0F_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_10_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_11_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_16_APOLLOMP = 220,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_17_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_19_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_1A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_1B_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_1C_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_1D_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_1E_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_1F_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_20_APOLLOMP = 230,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_23_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_24_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_25_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_26_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_27_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_28_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_29_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_2A_APOLLOMP = 240,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_2B_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_DIG_2C_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG5_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG6_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG7_APOLLOMP = 250,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG8_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG9_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG10_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG11_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG16_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG17_APOLLOMP = 260,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG19_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG20_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG23_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG24_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG25_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG26_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG27_APOLLOMP = 270,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG28_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG29_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_REG30_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG5_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG6_APOLLOMP = 280,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG7_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG8_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG9_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG10_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG11_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG16_APOLLOMP = 290,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG17_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG19_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG20_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG23_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG24_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG25_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG26_APOLLOMP = 300,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG27_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG28_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG29_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SDS_EXT_REG30_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG5_APOLLOMP = 310,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG6_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG7_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG8_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG16_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG17_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG19_APOLLOMP = 320,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG20_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG23_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG26_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG28_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG29_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_REG30_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG1_APOLLOMP = 330,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG5_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG6_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG7_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG8_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG15_APOLLOMP = 340,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG16_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG17_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG19_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG20_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG23_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIB_EXT_REG24_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_EEEP_PORT_CFG_APOLLOMP = 350,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_EEECFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_EEETXMTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_EEERXMTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_TX_THR_GIGA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_TX_THR_FE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_RX_FC_REG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_MISC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_GIGA_CTRL0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_GIGA_CTRL1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_100M_CTRL0_APOLLOMP = 360,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_100M_CTRL1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_BURSTSIZE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_IFG_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_RXIDLE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEE_DECISION_WINDOW_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PS_LINKID_GATCLK_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_EEEP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TIMER_UNIT_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TX_TIMER_GIGA_CTRL_APOLLOMP = 370,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TX_TIMER_500M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TX_TIMER_100M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TX_GIGA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TX_500M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_TX_100M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_RATE_GIGA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_RATE_500M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_RATE_100M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_SLEEP_STEP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_WAKE_TIMER_GIGA_CTRL_APOLLOMP = 380,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_TIMER_GIGA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_WAKE_TIMER_500M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_TIMER_500M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_WAKE_TIMER_100M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEEP_RX_TIMER_100M_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_EEEPTXMTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_EEEPRXMTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SW_PWRSAV_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FB_PORT_CFG_APOLLOMP = 390,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FB_PORT_ERR_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FB_PORT_MONITOR_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FB_GPHY_ADDR_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FB_PKT_INFO_DBG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_UNMATCHED_SA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_UNKN_SA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_UNKN_UC_DA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_LEARN_OVER_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_AGEOUT_CTRL_APOLLOMP = 400,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_LRN_LIMITNO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_LRN_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_LRN_OVER_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_SYS_LRN_LIMITNO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_SYS_LRN_OVER_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_SYS_LRN_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_UNKN_L2_MC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_UNKN_IP4_MC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_UNKN_IP6_MC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_UNKN_MC_CFG_APOLLOMP = 410,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_BC_FLOOD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_UNKN_MC_FLOOD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_UNKN_UC_FLOOD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_EFID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LUT_SYS_LRN_OVER_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_TBL_FLUSH_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_TBL_FLUSH_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_IPMC_VLAN_LEAKY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_IPMC_ISO_LEAKY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_PORT_ACCEPT_FRAME_TYPE_APOLLOMP = 420,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_INGRESS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_EGRESS_TAG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_MBR_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_PB_FID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_PB_FIDEN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_PB_VIDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_EGRESS_KEEP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_EXT_VIDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_UPLINK_PMSK_APOLLOMP = 430,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_MC2S_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_C2S_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_SP2C_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_EP_DMAC_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_P_SVIDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SVLAN_MBRCFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_PPB_VLAN_VAL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_VLAN_PORT_PPB_VLAN_APOLLOMP = 440,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PORT_TRUNK_GROUP_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PORT_TRUNK_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PORT_TRUNK_HASH_MAPPING_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TRUNK_DROP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MSTI_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PISO_P_MODE0_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PISO_P_MODE1_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PISO_EXT_MODE0_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PISO_EXT_MODE1_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PISO_CTRL_APOLLOMP = 450,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL00_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL01_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL02_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL03_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL04_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL08_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL0D_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL0E_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL10_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL11_APOLLOMP = 460,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL18_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL1A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL20_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL21_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL22_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL_CDP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CTRL_SSTP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMA_CFG_APOLLOMP = 470,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEELLDP_CTRL_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EEELLDP_CTRL_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_SRC_PORT_PERMIT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L2_SRC_EXT_PERMIT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_UM_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_UC_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_MC_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_BC_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_UM_METER_IDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_UC_METER_IDX_APOLLOMP = 480,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_MC_METER_IDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_BC_METER_IDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STORM_CTRL_ALT_TYPE_SEL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IGR_BWCTRL_P_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IGR_BWCTRL_GLB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_METER_TB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_METER_GLB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_METER_LB_EXCEED_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_TB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_METER_PKT_RATE_APOLLOMP = 490,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT1X_CFG_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT1X_CFG_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT1X_P_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOS_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOS_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOS_SYNFLOOD_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOS_FINFLOOD_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOS_ICMPFLOOD_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MIR_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_PRIVATE_REASON_APOLLOMP = 500,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_ACL_REASON_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_CF_REASON_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_PORT_TX_MIB_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_PORT_RX_MIB_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_PORT_OAM_MIB_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_BRIDGE_DOT1DTPLEARNEDENTRYDISCARDS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_ACL_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_ACL_CNT_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_ACL_CNT_TYPE_APOLLOMP = 510,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_ACL_CNT_RST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_PORT_RST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_RST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_STAT_RST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_Q_TX_FRAMES_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_MPCP_RX_DISC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_EPON_FEC_CORRECTED_BLOCKS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_EPON_FEC_UNCORRECTED_BLOCKS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_EPON_FEC_CODING_VIO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_NOT_BROADCAST_BIT_NOT_ONU_LLID_APOLLOMP = 520,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_BROADCAST_BIT_PLUS_ONU_LLID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_BROADCAST_NOT_ONUID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_CRC8_ERRORS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_LLID_RX_BROADCAST_DROP_FRAMES_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_MPCP_TX_REPORT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_MPCP_EX_GATE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_ONUID_NOT_BROADCAST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_STAT_DOT3_LLIDRXFRAMESDROP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DOT3_MPCP_TX_REG_REQ_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OMCI_DROP_PKT_CNT_APOLLOMP = 530,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OMCI_TX_PKT_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OMCI_RX_PKT_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OMCI_TX_BYTE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OMCI_RX_BYTE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OMCI_CRC_ERROR_PKT_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_DROP_ALL_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PAUSE_ALL_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_GLB_FCOFF_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_GLB_FCOFF_LO_TH_APOLLOMP = 540,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_GLB_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_GLB_LO_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_LO_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_FCOFF_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_FCOFF_LO_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_JUMBO_GLB_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_JUMBO_GLB_LO_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_JUMBO_P_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_JUMBO_P_LO_TH_APOLLOMP = 550,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_Q_EGR_DROP_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_EGR_DROP_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_Q_EGR_GAP_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_EGR_GAP_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_Q_EGR_DROP_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_DBG_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CLR_MAX_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_TOTAL_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PE_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_Q_USED_PAGE_CNT_APOLLOMP = 560,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_TL_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PUB_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PUB_FCOFF_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PUB_JUMBO_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_P_DBG_PKT_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_GLB_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_GLB_LO_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_P_HI_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_P_LO_TH_APOLLOMP = 570,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_Q_EGR_DROP_IDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_Q_EGR_DROP_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_Q_EGR_GAP_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_Q_USED_PAGE_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_Q_USED_PAGE_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TH_TX_PREFET_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LOW_QUEUE_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HIGH_QUEUE_MSK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SC_P_CTRL_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SC_P_CTRL_1_APOLLOMP = 580,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QOS_INTPRI_TO_QID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QOS_PORT_QMAP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QOS_PRI_REMAP_IN_CPU_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QOS_1Q_PRI_REMAP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QOS_DSCP_REMAP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QOS_PB_PRI_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PRI_SEL_TBL_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PRI_SEL_TBL_CTRL2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_DOT1Q_RMK_EN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_1Q_CTRL_APOLLOMP = 590,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_DSCP_RMK_EN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_DSCP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_DSCP_INT_PRI_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_P_DSCP_SEL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WFQ_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EGR_BWCTRL_P_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LINE_RATE_1G_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LINE_RATE_500M_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LINE_RATE_100M_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LINE_RATE_10M_APOLLOMP = 600,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OUTPUT_DROP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OUTPUT_DROP_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WFQ_PORT_CFG0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WFQ_PORT_CFG1_7_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WFQ_TYPE_PORT_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_APR_EN_PORT_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CPU_PORT_RATE_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_APR_METER_PORT_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_P_QUEUE_EMPTY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MOCIR_TH_H_APOLLOMP = 610,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MOCIR_TH_L_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MOCIR_BPT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MOCIR_FRC_MD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MOCIR_FRC_VAL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BYTE_TOKEN_METER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DBG_HSA_EP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACL_TEMPLATE_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CF_OP_DS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CF_OP_US_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CF_VALID_APOLLOMP = 620,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CF_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RMK_DSCP_CF_PRI_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACL_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACL_PERMIT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACL_ACTION_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACL_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RNG_CHK_VID_RNG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RNG_CHK_IP_RNG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RNG_CHK_L4PORT_RNG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RNG_CHK_PKTLEN_RNG_APOLLOMP = 630,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RNG_CHK_IP_RNG_CF_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RNG_CHK_L4PORT_RNG_CF_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OAM_P_CTRL_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OAM_P_CTRL_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OAM_CTRL_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_OAM_CTRL_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_CTRL_0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_CTRL_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_CHK_STS_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_LP_STS_CTRL_APOLLOMP = 640,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_RNDM_NUM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_MAGIC_NUM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_PORT_TX_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_PORT_LP_ENTER_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_PORT_LP_LEAVE_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_PORT_LP_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_PORT_CPU_LP_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLDP_PORT_LP_PNUM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RLPP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_CTRL_APOLLOMP = 650,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_TX_DBG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSARAM_5_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DBG_EP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PAUSE_ALL_LW_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HYS_PUSAL_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DBG_BLK_SEL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PORT_VM_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PORT_VM_RX_APOLLOMP = 660,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PORT_VM_TX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_GLB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_PORT_TX_GRP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_PORT_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_P_TX_GRP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_P_LEN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_P_TX_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_P_SA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_P_DA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_PAYLOAD_APOLLOMP = 670,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SPG_PORT_USER_PKT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IGMP_MC_GROUP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IGMP_GLB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IGMP_P_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_GLB_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_IPMC_TRAN_TBL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_IPMC_TTL_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_PORT_TO_WAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_EXTPORT_TO_WAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_WAN_TO_PORT_APOLLOMP = 680,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L34_WAN_TO_EXTPORT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TBL_ACCESS_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TBL_ACCESS_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TBL_ACCESS_WR_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TBL_ACCESS_RD_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_AVB_PORT_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_AVB_PRI_REMAP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TIME_SEC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TIME_NSEC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TIME_OFFSET_SEC_APOLLOMP = 690,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TIME_OFFSET_8NSEC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TIME_FREQ_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TIME_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_TRANSPARENT_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_IGR_MSG_ACT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_EGR_MSG_ACT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_MEANPATH_DELAY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_RX_TIME_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PTP_P_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PARSER_FIELD_SELTOR_CTRL_APOLLOMP = 700,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_SID_TO_QID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_QID_CIR_RATE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_QID_PIR_RATE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_SCH_QMAP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_WFQ_WEIGHT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_WFQ_TYPE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FC_PON_Q_EGR_DROP_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_TCONT_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QUEUE_SEL_IND_APOLLOMP = 710,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_QUEUE_SEL_IND_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_DPRU_RPT_PRD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_PIR_CIR_IFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_PORT_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PONMAC_DRN_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_OLT_BW_MTR_FULL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_WFQ_IFG_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_INT_DLT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_RESET_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_VERSION_APOLLOMP = 720,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_TEST_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_BYPASS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_INTR_MASK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_INTR_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_INTR_DLT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_INTR_MASK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_INTR_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_ONU_ID_STATUS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PLOAM_CFG_APOLLOMP = 730,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_LOS_CFG_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_SUPERFRAME_CNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PLOAM_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PLOAM_MSG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_ALLOC_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_ALLOC_WR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_ALLOC_RD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PORT_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PORT_WR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PORT_RD_APOLLOMP = 740,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PORT_CNTR_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_PORT_CNTR_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BLK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_BIP_ERR_BIT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BIT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_BYTE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_CORRECT_CW_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_FEC_UNCOR_CW_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_LOM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_PLOAM_ACPT_APOLLOMP = 750,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_PLOAM_FAIL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_BWM_FAIL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_BWM_INV_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_ACTIVE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_BWM_ACPT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_LOS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_HEC_CORRECT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_IDLE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_FAIL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_GEM_NON_IDLE_APOLLOMP = 760,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_MISC_CNTR_PLEN_CORRECT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_OMCI_PTI_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_ETH_PTI_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DS_FEC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PLOAM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GEM_CNTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GEM_TOKEN_A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BWMAP_CAP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BWMAP_BUF_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TCONT_APOLLOMP = 770,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GEM_L_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GEM_H_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_DS_TRAFFIC_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_BWMAP_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_BWMAP_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_BWMAP_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_INTR_DLT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_INTR_MASK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_INTR_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_KEY_SWITCH_REQ_APOLLOMP = 780,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_KEY_SWITCH_TIME_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_KEY_WORD_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_AES_WORD_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CTL_INFO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CTL_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CIPHER_1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CIPHER_2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_KEY_EXPN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_RX_CNTR_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_RX_CNTR_STAT_APOLLOMP = 790,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_FWD_CNTR_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_FWD_CNTR_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MISC_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MISC_CNTR_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MC_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MC_IND_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MC_WR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MC_RD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_FRM_TIMEOUT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MC_ADDR_PTN_IPV4_APOLLOMP = 800,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_DS_MC_ADDR_PTN_IPV6_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CLASSIFY_BUF_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CLASSIFY_CNTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ASSEMBLY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MC_FILTER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_INTR_DLT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_INTR_MASK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_INTR_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_ONU_ID_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_CFG_APOLLOMP = 810,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_WRITE_PROTECT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_TX_PATTERN_CTL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_TX_PATTERN_BG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_TX_PATTERN_FG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_MIN_DELAY_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_EQD_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_LASER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_BOH_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_BOH_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_PLOAM_IND_APOLLOMP = 820,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_PLOAM_DATA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_PLOAM_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_MISC_CNTR_IDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_MISC_CNTR_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_RDI_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_DG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_OPTIC_SD_TH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GTC_US_PROC_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BWM_TBL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BWM_MEM0_APOLLOMP = 830,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BWM_MEM1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PLOAM_A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DBR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_INTR_DLT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_INTR_MASK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_INTR_STS_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_PTI_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_ETH_GEM_RX_CNTR_IDX_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_ETH_GEM_RX_CNTR_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_PTN_CTRL_APOLLOMP = 840,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PCFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GEM_BCNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIFO_BANK0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FIFO_BANK1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IDLE_BCNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GEM_PCNT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_PORT_MAP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_GPON_GEM_US_BYTE_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_TCONT_IDLE_BYTE_STAT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_FEC_CONFIG_APOLLOMP = 850,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_ASIC_TIMING_ADJUST1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_ASIC_TIMING_ADJUST2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_RGSTR1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_RGSTR2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_RGSTR3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_DEBUG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_DEBUG2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_TIMER_CONFIG1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_INTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SYNC_TIME_APOLLOMP = 860,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LASER_ON_OFF_TIME_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MIN_GRANT_START_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_MAX_GRANT_START_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_TIME_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EP_MISC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_LLID_TABLE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_MPCP_CTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_GRANT_LIST0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_GRANT_LIST1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_GRANT_LIST2_APOLLOMP = 870,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_TX_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_DECRYP_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_DECRYP_KEY0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_DECRYP_KEY1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_MISC_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_LOCAL_TIME_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_GRANT_SHIFT_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_EPON_REG_ACK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_CLR_APOLLOMP = 880,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_RDDATA0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_RDDATA1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_RDDATA2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_RDDATA3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_RDDATA4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_WRDATA0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_WRDATA1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_WRDATA2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_WRDATA3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NAT_TBL_ACCESS_WRDATA4_APOLLOMP = 890,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NIFP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NIFEP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NIFVCH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NIFVCL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_SWTCR0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PP_AGE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NB_TRF0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NB_TRF1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NB_TRF2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_NB_TRF3_APOLLOMP = 900,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_V6_BD_CTL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_BD_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSBA_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W5_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W6_APOLLOMP = 910,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W7_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W8_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSB_DESC_W9_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_DESC_W0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_DESC_W1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_DESC_W2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_DESC_W3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_HSA_DESC_W4_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L4_TRF0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_L4_TRF1_APOLLOMP = 920,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ARP_TRF0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ARP_TRF1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_GLB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_GLB_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_ACL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_CVLAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_DPM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_L2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_MLTVLAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_SVLAN_APOLLOMP = 930,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_RLDP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_EAV_AFBK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_INTR_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_LED_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_PER_PORT_MAC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_SDSREG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_SWCORE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_EPON_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_RMA_ATTACK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_BIST_CTRL_APOLLOMP = 940,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_EGR_OUTQ_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_EGR_SCH_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_HSA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_METER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_MIB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RGF_VER_ALE_PISO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_GLB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_GLB_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_ACL_POLICING_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_ACL_APOLLOMP = 950,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_CVLAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DSCP_WEIGHT_2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DSCP_WEIGHT_SEL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_DPM_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_L2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_MLTVLAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_SVLAN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_RLDP_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_EAV_AFBK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_INTR_APOLLOMP = 960,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_LED_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_PER_PORT_MAC_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_SDSREG_X0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_FORCE_BEN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_SDSREG_X1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_SDSREG_X2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_SDSREG_X3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_SWCORE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EPON_CTRL0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EPON_CTRL_APOLLOMP = 970,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EPON_CTRL3_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_RMA_ATTACK_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_BIST_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_MISC_CFG_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_PON_EGR_RATE_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EGR_OUTQ_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EGR_SCH0_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EGR_SCH1_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EGR_SCH2_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_EGR_SCH3_APOLLOMP = 980,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_CF_US_1P_REMARK_EN_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IP4MC_EGRESS_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_IP6MC_EGRESS_MODE_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_HSA_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_METER_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_MIB_CTRL_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_RSVD_ALE_PISO_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_00_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_01_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_02_APOLLOMP = 990,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_03_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_04_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_05_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_06_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_07_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_08_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_09_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_0A_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_0B_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_0C_APOLLOMP = 1000,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_0D_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_0E_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_0F_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_10_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_11_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_12_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_13_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_14_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_WSDS_ANA_EXT_15_APOLLOMP,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    INT_APOLLOMP_DBG_PORT_TX_APOLLOMP = 1010,
+#endif
+
+    INT_APOLLOMP_REG_LIST_END = 1011,
+} rtk_int_apollomp_reg_list_t;
+
+
+typedef enum rtk_apollomp_regField_list_e
+{
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RESERVEDf = 0,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ORG_COLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ORG_CRSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SKIP_MII_RXERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RGMXF_SELPLLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RGMXF_PLLDLYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_GMIXF_TX_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_GMIXF_RX_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RGMXFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_DEV_IDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_AWf = 10,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_DWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_CLOCK_DIVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_GMII_TX_DELAYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RGMII_TX_DELAYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WR_DATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ADRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BUSYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RD_DATf = 20,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_TMRFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY_OCP_TOFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY_OCP_TOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY_ACK_TOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGM_DPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGM_DNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RGM_SEL33f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_LEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_EXCKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_EXDTf = 30,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_IFCKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_IFDTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_SLIC_CKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_SLIC_DTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_SPI_CKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_SPI_DTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRI_OTHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_EXCKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_EXDTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_IFCKf = 40,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_IFDTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_SLIC_CKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_SLIC_DTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_LEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_SPI_CKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_SPI_DTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SR_OTHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SATA_USBLED_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_USBLED_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SERI_LED_ENf = 50,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED16_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED15_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED14_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED13_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED12_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED11_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED10_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED9_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED8_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED7_ENf = 60,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED6_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED5_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED4_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED3_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED2_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED1_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED0_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IO_TEMPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UART_EXT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SATA_ENf = 70,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UART_DECT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_IO_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NFBI_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_INTRPT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OEM_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLIC_PCM_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLIC_SPI_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLIC_ZSI_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLIC_ISI_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_I2C_ENf = 80,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTRPT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MDX_M_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SATA_MDC_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UART_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PCSXFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_RXFIFOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COL_10Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MSK_MDIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BASE_PHYADf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDET_SELf = 90,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HOTCMD_PRD_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HOTCMD_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_PRDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_RD_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_WR_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD0_ADRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD1_ADRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD2_ADRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD3_ADRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD0_INVf = 100,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD1_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD2_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD3_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD0_WDATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD1_WDATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD2_WDATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD3_WDATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBGOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EF_BOND_FRC_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EF_FRC_BONDINGf = 110,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EF_BOND_CONTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EF_BOND_RSLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EF_1ST_ETYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PONMAC_RSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SW_RSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_SWSYS_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_CFG_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_CHIP_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_GPHY_RST_PSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_SDS_RST_PSf = 120,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPIO_INTR_POLARITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_POLARITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_ADC_ALARMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_THERMAL_ALARMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_DYING_GASPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_EPONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_GPONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_SERDESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_ACLf = 130,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_LOOPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_SPE_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_SPE_CHGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_L2_LRN_OVERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_METER_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMR_LINK_CHGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_ADC_ALARMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_THERMAL_ALARMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_DYING_GASPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_EPONf = 140,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_GPONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_SERDESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_ACLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_LOOPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_SPE_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_SPE_CHGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_L2_LRN_OVERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_METER_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IMS_LINK_CHGf = 150,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_STAT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_STAT_PORT_LINKDOWNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_STAT_PORT_LINKUPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTR_STAT_PORT_CHANGEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND0_BISR_OUT_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND0_BISR_OUT_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND0_BISR_OUT_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND1_BISR_OUT_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND1_BISR_OUT_1f = 160,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_BIST_NOFAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND1_BISR_OUT_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_DRF_BIST_NOFAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_DRF_BIST_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_DRF_BIST_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_BIST_FAIL_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_BIST_FAIL_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_TCAMSELf = 170,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_BISR_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND1_DRF_BIST_NOFAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND0_DRF_BIST_NOFAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND1_BIST_NOFAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND0_BIST_NOFAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND1_BISR_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_COND0_BISR_REPAIREDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIAGNOSIS_MODEf = 180,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_TEST_RESUMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_DONE_ALLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_PASSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_BIST_DONE_ALLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_START_PAUSE_ALLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BISR_COND_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PBRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PBRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_OUTQRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_OUTQRAM_DVSf = 190,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MIBRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MIBRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_L2RAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_L2RAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INQRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INQRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HSARAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HSARAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CVLANRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CVLANRAM_DVSf = 200,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ACTRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ACTRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PIRRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PIRRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBARAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBARAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QCNTRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QCNTRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTRRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTRRAM_DVSf = 210,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_FRAGRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_FRAGRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_DATARAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_DATARAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LBRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LBRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CIRRAM_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CIRRAM_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFARP1_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFARP1_DVSf = 220,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFARP0_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFARP0_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS2_L4T_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS2_L4T_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS2_ARP_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS2_ARP_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS1_1_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS1_1_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS1_0_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS1_0_DVSf = 230,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS4_NB_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS4_NB_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFL41_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFL41_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFL40_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BS3_TFL40_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_EPON_BISTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_GPON_BISTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_CFGf = 240,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CPU_FORCE_MODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD1000f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD500f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD10f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_DUPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD1000_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD500_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD100_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_SPD10_ACTf = 250,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_RX_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_TX_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UTP_COLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_POLARITY_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SERI_LED_POLARITY_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_LED_FORCE_VALUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_LED_FORCE_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_MAC_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_USB_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_SATA_LED_RATEf = 260,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_PCIE_LED_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_LOW_RATE_BLINKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LPI_TAG3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LPI_TAG2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LPI_TAG1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_SERI_DATA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_SERI_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED16_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED15_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED14_PARA_ENf = 270,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED13_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED12_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED11_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED10_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED9_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED8_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED7_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED6_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED5_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED4_PARA_ENf = 280,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED3_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED2_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED1_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED0_PARA_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SERI_LED_CLK_PERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SERI_LED_REGRESH_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LED_LOOP_DET_BUZZER_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWLED_PONN_ALARMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWLED_PON_WARNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_PROT_MASKf = 290,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_DEFER_TXLPIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_DMA_SRCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_NEW_DMAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PATCH_PHY_DONEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RTL_IDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_CHAR_1STf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_CHAR_2NDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_CHAR_3RDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHIP_INFO_ENf = 300,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHIP_VERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RL_IDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_INFO_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHIP_VER_EXTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_CHIP_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ADCCKI_FROM_PADf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ADCCKI_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_PWRON_TABLE_INITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_PWRON_BISTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFUSE_ENf = 310,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LPI_1000_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LPI_100_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MST_FAULT_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MST_MOD_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NWAY_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TXPAUSE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RXPAUSE_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINK_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB1G_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUPLEX_ABLTYf = 320,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPEED_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY_BRD_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BRD_PHYADf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGNOE_MAC5_LINKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGNOE_MAC6_LINKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SOFTSTARTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LPI_1000f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LPI_100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_NWAY_FAULTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_MSTRf = 330,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_NWAY_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_TX_FCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_RX_FCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_LINK_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_DUPLEXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_LINK_SPDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CTRL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_GPIOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_GPIOf = 340,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_GPIOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OUI_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REVISOIN_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAKE_LPI_SLOT_PRDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAKELPI_SLOT_PORTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_PAD_STOP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CYCLE_PADf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ABLTY_FORCE_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBGEN_BY_REGf = 350,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_BY_SPIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_BY_OEMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_BY_SLICf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_BY_EXTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBGO_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBGO_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SYNC_FIFO_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SYNC_FIFO_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STOP_GLI_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STOP_CLK_PORT_ENf = 360,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MAC_ACTIVEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_DOWN_TIME_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_DOWN_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYPS_ABLTY_LOCKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_SYNC_FIFO_TX_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STS_SYNC_FIFO_RX_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_CFG_REG_SDSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIBER_ABLTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_LINK_OKf = 370,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_INTBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_ISOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB100_DETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_STS_EXTXFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVSE_3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVS_3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVSE_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVS_2f = 380,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVSE_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVS_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVSE_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HTRAM_DVS_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HWPKT_GEN_SUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HWPKT_GEN_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_EXTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_RTT2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_RTT1f = 390,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ISET_AD5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AVSET_AD5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VICM_AD5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VINSEL_AD5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMPDLY_TMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PONDLY_TMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ENABLE_TMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REVERSE_TMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SMPDLY_TMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATAVLD_TMf = 400,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATAOUT_TMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AD5_ALARM_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AD5_DATAOUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TM_ALARM_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY4_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLIC_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PB_3Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_CMP_INVf = 410,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_OUT_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_OUT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DYNGASP_OUT_PULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_STRAP_STS0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_STRAP_STS1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_STRAP_STS2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IN_EXT_CLK_CLK_LXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IN_EXT_CLK_CLK_M90f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IN_EXT_CLK_CLK_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IN_EXT_CLK_OCP2f = 420,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IN_EXT_CLK_OCP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IN_EXT_CLK_SWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_PHY_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_DUMMY2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_DUMMY1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_DUMMY0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_CKSELBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_CKSEL_ENBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_DDR_FREQ_DIVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_DDR_PLL_FREQf = 430,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_VOIP_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_AFE_POR_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CLK_LXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CLK_M90f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CLK_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CLK_OCP2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CLK_OCP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CLK_SWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAD_BOND_BISR_REMAP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAD_BOND_NFBI_ENBf = 440,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAD_BOND_NF_MUX_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAD_BOND_TEST_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAD_DBG_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_PON_BIST_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_EFUSE_ENBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_NAT_ENBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_PON_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOND_PON_TAB_INIT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_SMI_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYS_CLK_SELf = 450,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_JTAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPIF4BENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAFC_RCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAF_AC1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NAF_AC0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BTUP_TYP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BTUP_TYP0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRAM_TYP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRAM_TYP0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_CPUf = 460,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MACRX_DUPDET_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_LNKUP_DELAY_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GE_100M_LNKUP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LNKUP_10M_DELAYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PSENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_OEBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_FUPDNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PWRDNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_SSC_TMODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_SSC_OFFSf = 470,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_SSC_STEPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_SSC_PERIODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_SSC_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI_COMP_DLY_Lf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI_BIASf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI_RSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI_RLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PSTSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_C3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_R3f = 480,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_CPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_CSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_RSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_IPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_DIVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_LDOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_RSVDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_WDMODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_EN_PI16f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI16_BIASf = 490,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI16_RSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI16_RLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_REG_CK0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PHS_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLL_RGM_PI_COMP_DLY_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FPGA_VER_MACf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRAP_TAGET_INSERT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TAG_FORMATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_LENGTH_GIGAf = 500,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_LENGTH_10_100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACCEPT_MAX_LENTH_CFG1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACCEPT_MAX_LENTH_CFG0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAGES_BEFORE_FCDROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHECK_MIN_IPG_RXDVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LIMIT_IPG_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_IOL_MAX_LENGTH_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_IOL_ERROR_LENGTH_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_NODROP_PAUSE_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_DV_CNT_CFGf = 510,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DROP_48_PASS_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LONGTXEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_BYPASS_ERRORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_BACKPRESSUREf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_48_PASS_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_ITFSP_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_SKIP_FPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ITFSP_REGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IOL_16DROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IOL_BACKOFFf = 520,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BACKOFF_RANDOM_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DISABLE_BACK_OFFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPG_COMPENSATIONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MAC5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MAC4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MAC3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MAC2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MAC1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_MAC0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SHORT_IPGf = 530,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAUSE_MAX128f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HBOUNDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LBOUNDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_DMA_ERR_FLAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAD_PATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACCEPT_RX_ERRORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LATE_COLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SMALL_TAG_IPGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ITFSP_MODEf = 540,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_SPCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CRC_SKIPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_LOOPBACKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_FORCE_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_CURENT_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_FIBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY4_SDETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_SDETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY4_DIS_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PHY4_FRC_LKDNf = 550,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_PWR_GATINGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_RX_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_TX_DISABLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_FRC_LDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CKGPHY_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CHG_DUP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CHG_DUP_THRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CHG_DUP_CONGESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CHG_DUP_REFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BGf = 560,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_SPDSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_SD_POR_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_BYPASS_SDM_INTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_EN_LPF_MANUALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_LOOPBACK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_EMPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_RESET_MANUALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_RESET_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_SEL_CDR_AFENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BIG_KVCO_RXf = 570,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BYPASS_PI_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_INT_INITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BYPASS_R2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_KDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_KIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_EN_M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ST_M_VALUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_KP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_PI_M_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_SQU_TRIf = 580,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_SEL_TESTOUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CDR_KP2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_CKOOBS_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BG_OFFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BG_POWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CKDEGLITCHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CKOOBS_AUXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_NEW_CP_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LDO_EN_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VC_DLY_RXf = 590,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ACC2_MANUALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ACC2_PERIODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PI_I_SEL_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_I_RX_40Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_I_RX_25Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_R1_RX_40Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_R1_RX_25Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_DIV4_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_FREFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_PREDIV_RXf = 600,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_VCO_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_SWINGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VSEL_LDO_A_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VSEL_LDO_Df,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_COMINITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_COMWAKEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_EN_CLKREQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_EN_SATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_FORCE_RCVDETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_IBRXSELf = 610,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_IBTXSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_CALIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_CALSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_CKSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_FORCECALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_FREQSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_ISELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_NSQDLYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_RXIDLE_MANUALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_SELf = 620,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_SENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_DCVS_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EN_KOFFSETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EN_SELFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EN_TESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ_EN_SLICERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ_GAINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ_HOLDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ_SELREGf = 630,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ2SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_FORCERUNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_IDLE_SPDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_IQDSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ_INf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_OFFSET_ADJRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_OFFSET_AUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_OFFSET_RANGEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_PIENSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_PS_AFEf = 640,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_PSAVE_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_SEL_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_TIMER_BERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_TIMER_EQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RXDSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_SERDES_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_TIMER_LPFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_AMPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_BAMPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_BEAENf = 650,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_DLYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_EN_EMPHASf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_EN_TESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_EN_VCM_RESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_SEL_CKRD_DUTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_SEL_VCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_Z0_NADJRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_Z0_NAUTO_Kf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_Z0_PADJRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_Z0_PAUTO_Kf = 660,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_Z0_TESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_Z0_TUNEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_OOBS_SEN_VARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_SEL_IBLPFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX50_LINKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_50_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DMY0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DMY1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_NEW_EN_TXf = 670,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_I_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_RS_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BIG_KVCO_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_VCO_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LDO_EN_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VC_DLY_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BYPASS_PI_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PI_I_SEL_TXf = 680,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_PREDIV_BYPASS_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LDO_VREFSEL_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PREDIV_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PREDIV_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_POSTDIV_GPHY_40Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_POSTDIV_GPHY_25Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BEN_SWINGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BEN_SEL_CMLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BEN_V20_SELf = 690,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EN_I_SAMPLERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TX_OFFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_KP1_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_KP_DIVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_DISABLE_OPTICf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CKRDY_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BER_NOTIFYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_EQ_FILTER_OUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_OFFSET_CODEf = 700,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_SEL_SDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_V20_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_DIVN_GPHY_REFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_ACC2_MANUAL_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_SQU_TRI_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_KP2_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_ACC2_PERIOD_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_FILT_CONFIGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_INT_INIT_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ADP_TIME_GPHYf = 710,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_AUTO_K_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CALIB_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_DIVIDE_NUM_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_FLD_DSEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ICP_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_INIT_TIME_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ISTANK_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LCBIAS_LPF_EN_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LCVCO_TR_GPHYf = 720,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LOCK_DN_LIMIT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LOCK_UP_LIMIT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_N_PLL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_N_PLL_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_SDS_ANA_RSVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_R_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VSEL_LREG_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_SEL_IBNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_FREF_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TTL_DRI_SELf = 730,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_BEN_TTL_OUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_AUTO_MODE_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CALIB_LATE_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CALIB_MANUAL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_ADJ_EN_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_EN_MANUAL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_START_EN_GPHY_MANUALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_WD_ENABLE_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TX_DBG_SELf = 740,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_F390K_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LC_BUF_SEL_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TIME0_CK_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TIME2_RST_WIDTH_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TIME_RDY_CKOUT_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VCO_COARSE_GPHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SFT_RSB_ANAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SFT_RSTB_GPONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SFT_RSTB_EPONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SFT_RSTBf = 750,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_155M_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_155M_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_125M_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_125M_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_GMIICK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_GMIICK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TXDIS_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STOP_CLKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CMUENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CMUEN_TXf = 760,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_RX_OOBS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_V2ANALOGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_NOTIFYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_RXIDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_SEL_FX100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_SEL_FX100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDS_PHY_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRC_REG4_ENf = 770,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRC_REG4_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LPI_GMII_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CMD_STOP_GLI_CLKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TXDIS_SEL_DLYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_D2ANLOG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_AFE_LPK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DIG_LPK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RMT_LPK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DMY0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DMY1f = 780,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_TRAN_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_BYPASS_PI_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EN_CENTER_IN_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EN_SSC_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ORDER_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SEL_MODE_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WTG_SEL_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_POW_SSCD_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_N_PLL_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_PH_SEL_RXf = 790,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_POW_SSCD_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_F_CODE_RX_25Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_F_CODE_RX_40Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_N_CODE_RX_25Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_N_CODE_RX_40Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STEP_IN_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TBASE_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_N_PLL_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_PH_SEL_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WD_ENABLE_RXf = 800,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WD_ENABLE_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_F390K_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_F390K_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TIME0_CK_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TIME0_CK_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T_RDY_CKOUT_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T_RDY_CKOUT_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T2_RST_WIDTH_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T2_RST_WIDTH_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CKRDY_RXf = 810,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CKRDY_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_CKRDY_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_CKRDY_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_N911_B_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_N911_B_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_N911_B_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_N911_B_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CLKREQBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RCV_DETECTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RXIDLE_Df = 820,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TXBEACONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_SDS_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_BYP_EPMCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BEN_OEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_DISABLE_OPTIC_OEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_OPTIC_LOS_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CDR_LOS_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_TX_DISABLE_OPTIC_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_TX_DISABLE_OPTICf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_TX_OPTIC_SD_INVf = 830,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_TX_OPTIC_SDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_BEN_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_BENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PRBS_TYPE_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PRBS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PRBS_ERRORSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PRBS_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SFT_RSTB_INFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_CLK_ENf = 840,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TX_WRPT_DN_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RX_WRPT_DN_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_BEN_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HAM_PTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ERRHAM_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FREE_CNT_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_A2D16_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_D2A16_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RSTB_BITERR_INVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRCV_RSTB_BITERRf = 850,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_RSTB_BITERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ANALOG2D_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_D2ANLOG_INF_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_622_START_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T1_FULL_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T0_FULL_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T1_FULL_CLRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T0_FULL_CLRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T1_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T1_DIF_MAXf = 860,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_T0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_R0_FULL_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_R0_FULL_CLRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_R0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_R0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_T1_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_T0_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_T1_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_T1_DIF_MAXf = 870,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_T0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_T0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_R0_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_R0_DIF_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_R0_DIF_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDSINF_DMYRD_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMYRD_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMYRD_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMYRD_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMYRD_3f = 880,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMYRD_4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMY_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMY_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMY_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_WRAP_DMY_3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_RENWAYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYP_8B10Bf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CDETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_TMR_CMAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_APXf = 890,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INV_HSIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INV_HSOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_SDET_DEGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CODEC_LPKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AFE_LPKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REMOTE_LPKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_TX_DOWNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EN_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_EN_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PTR_ERR_ENf = 900,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_AUTO_10BITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FULL_ACK2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_NXP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_FRC_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HSG_RTIGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_XSGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RG1X54f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_FRC_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRC_PREAMBLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRC_IPGf = 910,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRC_CGGOODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_FRC_ANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INS_IPG_MDYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RDS_CMA_DETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SEL_TMR_LIMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_RESTART_ANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WR_SOFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_USE_25M_CLKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MARK_CARR_EXTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_DEGf = 920,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CALIB_OK_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_PWR_CTLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SOFT_RSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_SOFT_RSTBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMA_RQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_SDS_MODE_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_UPD_RXDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_UPD_TXDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_UPD_RXD_DYNf = 930,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EN_LINK_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EN_LINK_SGMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SGM_CK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LPI_TRANSMIT_STYLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PWRSV_INB_PERIODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PWRSV_WAKEUP_C2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PWRSV_WAKEUP_C1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MARK_CARR_EXT_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_PCSREQ_POSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INBTOUT_LEVELf = 940,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SUDINBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PCSRDABT_LDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_AN_UZf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INBAND_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_NO_GIGA_SCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RE_SYNC_STYLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SYNC_GATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_BYPSCR_XSGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_BYPSCRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SLP_RQf = 950,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_BYPSCRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_8B10B_NO_CREXTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_NEG_CLKWR_A2Df,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MIIXF_TS1Kf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DLY_PRE8f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_GRXD_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LPI_CMD_MIIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MARK_RXSCR_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MARK_TXSCR_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYP_STARTf = 960,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYP_ENDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EEE_PWRSAV_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_EEE_SDS_ANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_C3_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_C2_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_C1_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_C0_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_MAC_C1_CHG_RESTC3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_GO_C1_COND_SPCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EEE_PROGRAM_0f = 970,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RG10X1512f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_NO_DILE2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_EEE_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_LPI_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_LPI_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_INB_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_RXER_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FAST_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_LINK_FASTERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EEE_DBG_CNTf = 980,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INB_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RDM_ALGORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_DET_ALGORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AUTO_DET_ALGORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEND_NP_ONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_LK_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_F100_LKON_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_APXT_TMP32f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_REDET_F100f = 990,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_APXT_TMP0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SPDUPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SPDUP_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RXSLEEP_TMROUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_CALIBOKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_SDETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEL_ANOKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SEL_ODD_BITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_LD_VALUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_LDf = 1000,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SGMI_CK1MS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_TMR_SGMII_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_TMR_NORM_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INBAND_MASTER_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INBAND_MASTER_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MACRDVLDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MACRDABTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_INBAND_MASTER_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RSGP_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RSGP_TXCFG_MACf = 1010,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SGM_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SGM_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB2G_TXCFG_P0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB2G_TXCFG_P1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB2G_TXCFG_NP_P0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB2G_TXCFG_NP_P1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IP_VERSIONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_OUT_ECO1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_PHY_GO_C2_COND_SPCf = 1020,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ERRMSK_NOSIGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RM_LPK_EVEN_BITSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_QSGMII_PARITY_CHKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_S0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDS_DBG_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDS_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDS_DBG_OUT_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SDS_DBG_OUT_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG0Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG1Xf = 1030,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG2Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG3Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG4Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG5Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG6Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG7Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG8Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG9Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG10Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG11Xf = 1040,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG12_1503f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_IPG_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_NEG_GTXCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LP_CNT_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EPON_SYNC_SMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_BITERR_CHKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG15_15f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LP_CNT_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EPONf = 1050,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DY_8Bf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DX_8Bf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG17Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG18Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG19Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG20Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG21Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG22Xf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ANA_RG23Xf = 1060,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SD_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RG24X14f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_HYSDETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_D2A_LPKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ENTXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CMALI_SIGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TMR_ALIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SYMBOLERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALL_SYMBOLERR_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MUX_SYMBOLERR_CNTf = 1070,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P3LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P2LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P1LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P0LNKDOWNCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_STATUS_ECO_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_STATUS_ECO_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_STATUS_ECO_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SIGNOK_LATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINKOK_LATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYNCOK_LATf = 1080,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_DBG_STATUS_ECO_3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SIGNOKSTATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINKOKSTATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYNCOKSTATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_RSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_LPKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_SPD_RD_00f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_ANENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_ISOf = 1090,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_RESTARTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_FULLDUPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_SPD_RD_01f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB_FRCTXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AN_COMPLETEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_R_FAULTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NWAY_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_JABBER_DETECTf = 1100,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXTENDED_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REALTEK_OUI_2106f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REALTEK_OUI_0500f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEL_NO_0500f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REVISION_NO_0300f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CFG_REG15f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CFG_REG14f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CFG_REG1312f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CFG_REG1109f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CFG_REG0805f = 1110,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CFG_REG0400f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIB_NP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RXPAGEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MR_NP_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MR_NP_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INDR_FUNCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG13_1305f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INDR_DEVADf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MMDRDBUSf = 1120,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXTEND_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB100_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB100_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB100_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB100_3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB100_4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FIB100_5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGM_TXCFG_PHYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGM_TXCFG_MACf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QSGMII_DEBUGf = 1130,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CONS1_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CONS0_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CNT_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_AUTO_DET_ONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TOUT_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STATE_TMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TEST_TMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_RG30X1513f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STATMR_LEVELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CNTENf = 1140,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CONSENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_STATMR_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LNK_ON_TMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_RSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_LPKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_SPD_RD_00f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_ANENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_PDOWNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_ISOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_RESTARTf = 1150,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_FULLDUPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_SPD_RD_01f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EXT_FIB_FRCTXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_CAPBILITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_AN_COMPLETEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_R_FAULTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_NWAY_ABILITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_LINK_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_JABBER_DETECTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_EXTENDED_CAPBILITYf = 1160,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_REALTEK_OUI_2106f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_REALTEK_OUI_0500f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_MODEL_NO_0500f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_REVISION_NO_0300f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_TX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RX_CFG_REGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_FIB_NP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_RXPAGEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_MR_NP_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_MR_NP_RXf = 1170,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_INDR_FUNCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_DUMMY_REG13_1305f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_INDR_DEVADf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_MMDRDBUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG16_15f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RSG_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_STD_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C1_PWRSAV_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C2_PWRSAV_EN_FIB1Gf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_QUIET_FIB1Gf = 1180,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RSG_QSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_STD_QSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C1_PWRSAV_EN_QSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C2_PWRSAV_EN_QSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_QUIET_QSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RSG_RSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_STD_RSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C1_PWRSAV_EN_RSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C2_PWRSAV_EN_RSGPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_QUIET_RSGPf = 1190,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG17_1505f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RSG_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_STD_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C1_PWRSAV_EN_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C2_PWRSAV_EN_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_QUIET_FIB100f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG18_1509f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_TR_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_TQ_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_TS_TIMERf = 1200,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TX_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DET_IDLE32_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DET_CG_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_OK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_TS_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_WF_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_TW_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_TQ_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SFD_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_IDLE_SELf = 1210,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_IDLE32_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_IDLE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CG_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG21_1513f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG21_1204f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG21_0300f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EPON_INTENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_INTENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG22_1302f = 1220,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DET_EPON_INTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SDS_LINK_INTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG23_1508f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_SILENT_PROB_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_LINK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EEEP_ENBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_EEEP_LINK_ENBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY_REG23_00f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_NXPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_EEEP_TX_STSf = 1230,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_EEEP_RX_STSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_FORCEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_DSP_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_LPIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_PAUSE_INDICATORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_WAKE_REQf = 1240,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_SLEEP_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEETXMTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEERXMTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_EEE_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_EEE_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_HALF_DUP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_PGCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_REQ_SET1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_REQ_SET0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_WAKE_SET1f = 1250,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_WAKE_SET0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TU_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TU_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TW_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TW_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TD_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TP_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TW_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TR_100Mf = 1260,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TD_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_TP_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_BURSTSIZEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_INC_IFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAIT_RX_IDLE_GELITEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAIT_RX_IDLE_GEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAIT_RX_IDLE_TIMER_GELITEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAIT_RX_IDLE_TIMER_GEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_DECISION_WINDOW_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_DECISION_WINDOW_500Mf = 1270,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEE_DECISION_WINDOW_GEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINKID_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_TX_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_RX_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_SLAVE_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EEEP_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TIMER_UNIT_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TIMER_UNIT_500Mf = 1280,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TIMER_UNIT_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_WAKE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_WAKE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_EN_GIGAf = 1290,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_EN_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_RATE_EN_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_RATE_THR_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_RATE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_RATE_THR_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_RATE_TIMER_500Mf = 1300,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_RATE_THR_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_RATE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_SLEEP_STEP_CURRENTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_SLEEP_STEP_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_WAKE_TIMER_GIGA_MASTERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_WAKE_TIMER_GIGA_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_IDLE_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_MIN_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_SLEEP_TIMER_GIGAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_PAUSE_ON_TIMER_GIGAf = 1310,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_WAKE_TIMER_500M_MASTERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_WAKE_TIMER_500M_SLAVEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_IDLE_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_MIN_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_SLEEP_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_PAUSE_ON_TIMER_500Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_WAKE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_IDLE_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_MIN_SLEEP_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_SLEEP_TIMER_100Mf = 1320,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_PAUSE_ON_TIMER_100Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEEPTXMTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_EEEPRXMTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLOW_DOWN_PLL_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLOW_DOWN_CLK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRC_MAC_ACTIVEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SLOW_CLK_TGL_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_MDX_MDC_DIVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAIT_FOR_AGREEMENTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AGREE_SLEEPf = 1330,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STOP_TMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ERR_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TO_IGNOREf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TO_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CPLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VALID_FLOWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_PLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_REG_ADDRf = 1340,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPHY_REG_PAGEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FB_PKT_INFOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_AGE_UPDATE_NOLRNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_CVID_LEARNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_IPMC_LOOKUP_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_IPMC_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LINKDOWN_AGEOUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BCAM_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AGE_SPDf = 1350,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AGEOUT_OUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NUMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L2_LRN_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LRN_OVER_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYS_LRN_LIMITNOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYS_L2_LRN_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNKN_MC_RES_FLOODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNKN_MC_PRIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_FLUSH_FIDf = 1360,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_FLUSH_VIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_FLUSH_DYNAMICf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_FLUSH_STATICf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUT_FLUSH_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FLUSH_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRAME_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INGRESSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EGRESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EVIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_METERIDXf = 1370,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ENVLANPOLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VBPRIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VBPENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FID_MSTIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_MBRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MBRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VID_4095_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VID_0_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFI_KEEPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRANSPARENT_ENf = 1380,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_FILTERINGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PBFIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PBFIDENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VIDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVIDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORMATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VALIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MASKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_C2SENPMSKf = 1390,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DST_PORTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_DS_IGRCVIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DMAC_CVID_CTRLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCED_DMACVIDSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_SP2C_UNMATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_DEI_KEEPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_PRIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_UNTAG_SVIDXf = 1400,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_UNMAT_SVIDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_UNMATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_UNTAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_SPRISELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VS_TPIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EFIDENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIDENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNTAGSETf = 1410,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETHER_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PPB_PRIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PPB_VIDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_FLOWCTRL_TG0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_TRUNK_DUMBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_TRUNK_FLOODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DPORT_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPORT_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIP_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SIP_HASHf = 1420,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DMAC_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SMAC_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPA_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HASHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRUNK_DROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTMASKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CTAG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPERATIONf = 1430,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DISCARD_STORM_FILTERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEEP_FORMATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_LEAKYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTISO_LEAKYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RMA_TRAP_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRAP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SUBTYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRAP_PRIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNMC_TYPEf = 1440,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNDA_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYPASS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_METER_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TICK_PERIODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TKNf = 1450,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BUCKET_SIZEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LB_EXCEEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SHMTR_PKT_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_PRIORTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_GVOPDIRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_MAC_OPDIRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1X_GVIDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PB_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PB_AUTHf = 1460,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PB_DIRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_UNAUTH_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_ICMPFLOOD_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_FINFLOOD_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNFLOOD_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNWITHDATA_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_UDPBOMB_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_PINGOFDEATH_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_ICMPFRAGMENT_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_TCPFRAGERROR_ACTf = 1470,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_TCPSHORTHDR_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYN1024_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_NULLSCAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_XMASCAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNFINSCAN_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_BLATATTACKS_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_LANDATTACKS_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_DAEQSA_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_ICMPFLOODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_FINFLOODf = 1480,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNFLOODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNWITHDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_UDPBOMBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_PINGOFDEATHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_ICMPFRAGMENTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_TCPFRAGERRORf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_TCPSHORTHDRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYN1024f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_NULLSCANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_XMASCANf = 1490,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_SYNFINSCANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_BLATATTACKSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_LANDATTACKSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOS_DAEQSAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIR_SRC_PMSKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIR_ISOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIR_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIR_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIR_MONITOR_PORTf = 1500,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PKT_INFOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_HIT_INFOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_HIT_INFOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS128TO255OCTETSf = 1510,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS1024TO1518OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFOUTOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFOUTOCTETS_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3STATSSINGLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3STATSMULTIPLECOLLISIONFRAMESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3STATSDEFERREDTRANSMISSIONSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3STATSLATECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETHERSTATSCOLLISIONSf = 1520,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3STATSEXCESSIVECOLLISIONSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3OUTPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFOUTDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_ETHERSTATSPKTS1519TOMAXOCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1DTPPORTINDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFOUTUCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFOUTMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFOUTBROADCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFINOCTETS_Lf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFINOCTETS_Hf = 1530,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETHERSTATSCRCALIGNERRORSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3STATSSYMBOLERRORSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3INPAUSEFRAMESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3CONTROLINUNKNOWNOPCODESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETHERSTATSFRAGMENTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETHERSTATSJABBERSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFINUCASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETHERSTATSDROPEVENTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFINMULTICASTPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IFINBROADCASTPKTSf = 1540,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS1519TOMAXOCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSUNDERSIZEDROPPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSUNDERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSOVERSIZEPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS64OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS65TO127OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS128TO255OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS256TO511OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS512TO1023OCTETSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_ETHERSTATSPKTS1024TO1518OCTETSf = 1550,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OUTOAMPDUPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INOAMPDUPKTSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1DTPLEARNEDENTRYDISCARDSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOGGINGCOUNTERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYNC_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LATCH_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_CNT_CTAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RX_CNT_CTAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SYNC_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTING_MODEf = 1560,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_PORT_MIBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_STATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_MIB_VALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_QM_MIBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BUSY_STATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_CMDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_LLID_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_LLIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_EPON_MIBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3EXTPKGSTATTXFRAMESQUEUEf = 1570,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3MPCPRXDISCOVERYGATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3EPONFECCORRECTEDBLOCKSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3EPONFECUNCORRECTABLEBLOCKSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FECPCSCODINGVIOLATIONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NOTBROADCASTBITNOTONULLIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BROADCASTBITPLUSONULLIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BROADCASTBITNOTONULLIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CRC8ERRORSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3LLIDRXBROADCASTFRAMESDROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3MPCPTXREPORTf = 1580,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3MPCPRXGATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ONULLIDNOTBROADCASTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3LLIDRXFRAMESDROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT3MPCPTXREGREQUESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCIDROPPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCITXPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCIRXPKTCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCITXBYTECNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCIRXBYTECNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCICRCERRORPKTCNTf = 1590,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_JUMBO_SIZEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_JUMBO_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FC_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ON_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OFF_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_NOf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_TOTAL_PKTCNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_PE_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_Q_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_MAX_USED_PAGE_CNTf = 1600,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TOTAL_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PE_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PE_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_Q_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_Q_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TL_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TL_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PUB_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PUB_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PUB_FCOFF_MAX_USED_PAGE_CNTf = 1610,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PUB_FCOFF_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PUB_JUMBO_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PUB_JUMBO_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_MAX_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_USED_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PKT_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_MAX_PAGE_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_TH_TX_PREFETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOW_QUEUE_THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HIGH_QUEUE_MSKf = 1620,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CGST_TMR_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CGST_SUST_TMR_LMT_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CGST_TMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CGST_SUST_TMR_LMTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CGST_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRI_TO_QIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTPRI_1Qf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTPRI_DSCPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTPRI_PBf = 1630,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLAN_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SA_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LUTFWD_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CVLAN_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACL_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DSCP_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DOT1Q_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SELf = 1640,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WFQ_IFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WFQ_BURSTSIZEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OD_BC_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OD_MC_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OD_UC_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WEIGHT0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WEIGHT1_7f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QUEUE_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYPASS_LINE_RATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EMPTYf = 1650,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_TH_Hf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_TH_Lf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_BPTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_FRC_MDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MOCIR_FRC_VALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYTES_PERTKN_BWMTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_HSA_EPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FIELDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NOT_DSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NOT_USf = 1660,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_PERMIT_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_SEL_RGMII_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_SEL_PON_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_US_PERMITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFPRI_DSCPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PERMITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NOTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INT_CFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FWDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_POLICINGf = 1670,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SVLANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CVLANf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFHITLATCHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VID_UPPERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VID_LOWERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IP_UPPERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IP_LOWERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4PORT_UPPERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4PORT_LOWERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PKTLEN_UPPERf = 1680,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PKTLEN_LOWERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_PARSERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_MULTIPLEXERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_PRIOIRTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OAM_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACT_RUNOUTDSCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRIG_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEN_RNDMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMP_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CPU_HANDLEf = 1690,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PERIODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NUM_47_32f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NUM_31_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_P_NUMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LATCH_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_HSA_BUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSARAM_5_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSARAM_5_DVSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_EPf = 1700,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAUSE_ALL_LWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HYS_PUSALf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_BLK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_RXDVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_RXDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_TXENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_VM_TXDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAUSE_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYPASS_FC_MODEf = 1710,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_STOPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_STARTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GRP_TX_PORTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_DONE_PORTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_FIRSTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_SUSPENDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_LEN_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_RANDOM_LENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_BCINCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_SAINCf = 1720,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_DAINCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_RANDOMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_CRCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_CONTINUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAX_LENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYTE_LENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_47_32f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAC_31_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PAYLOADf = 1730,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PMSKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GIPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRAP_PRIORITYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PISO_LEAKYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DISC_STORM_FILTERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CKS_ERR_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOW_MC_DATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MLDV2_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MLDV1_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGMPV3_OPf = 1740,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGMPV2_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGMPV1_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_L2_LOOKUP_MISS_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_CPU_ORG_OPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L34_GLOBAL_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NETIF_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_SIP_TRANSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXT_IP_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PPPOE_ACTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PPPOE_IDXf = 1750,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IP_MCST_TTL_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_TO_WAN_PERMITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXTPORT_TO_WAN_PERMITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_TO_PORT_PERMITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_TO_EXTPORT_PERMITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ADDRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SPAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACCESS_METHODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMD_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TBL_TYPEf = 1760,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BUSY_FLAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HIT_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEC_47_32f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEC_31_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NSEC_UNITf = 1770,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEC_TRANSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FREQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_TIME_LATCHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CMDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRANSPARENT_PORTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DELAYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SEC_2_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OFFSETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FMTf = 1780,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_REVf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PIR_EXCEED_DROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MAPPING_TBLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TCONT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CIR_SEL_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PIR_SEL_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QCNT_SEL_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CIR_QINf = 1790,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PIR_QINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RPT_PRDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBA_IFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PIR_CIR_IFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_DS_WRAP_BANK1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CLR_DS_WRAP_BANK0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REQ_BW_THRESHOLDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BW_THRESHOLDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_DRN_BUSYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_DRN_SELf = 1800,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_DRN_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_DRN_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OLT_BW_MTR_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_WFQ_IFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_IRQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_DONEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VER_IDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TEST_REGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_M_BYPASS_AES_MODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_US_Mf = 1810,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GTC_US_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_DS_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AES_DECRYPT_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GTC_DS_CAP_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GTC_DS_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_US_INTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GTC_US_INTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_DS_INTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AES_DECRYPT_INTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GTC_DS_CAP_INTRf = 1820,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GTC_DS_INTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_BUF_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_REQ_HISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SN_REQ_HISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOM_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DS_FEC_STA_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOF_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOS_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_BUF_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RNG_REQ_Mf = 1830,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SN_REQ_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOM_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DS_FEC_STA_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOF_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOS_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DS_FEC_STSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ONU_IDf = 1840,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ONU_STATEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BWM_FILT_ONUIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHK_BWM_CRCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLEND_STRICT_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EXTRA_SN_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_CORRECT_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_DET_THRSHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DESCRAM_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_DROP_CRCEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_BC_ACC_ENf = 1850,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_DS_ONUID_FLT_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_DS_NOMSG_IDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CDR_LOS_SIGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_LOS_SIGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOS_FILTER_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CDR_LOS_POLARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CDR_LOS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_LOS_POLARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_LOS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SF_CNTRf = 1860,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_BUF_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_BUF_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_DEQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLOAM_RDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_COMPLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_HITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_WDATAf = 1870,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALLOCID_OP_RDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_COMPLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_HITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_WDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORTID_OP_RDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_CNTR_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_CNTR_RSELf = 1880,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_CNTR_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_CNTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_DS_BIP_ERR_BLOCKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_DS_BIP_ERR_BITSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_FEC_CORRECTED_BITSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_FEC_CORRECTED_BYTESf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_FEC_CORRETED_CWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_FEC_UNCORRETABLE_CWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_PLEND_FAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_SUPERFRAME_LOSf = 1890,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_PLOAMD_ACCEPTEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_PLOAMD_OVERFLOWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_PLOAMD_CRC_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_BWMAP_OVERFLOWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_BWMAP_CRC_ERRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_BWMAP_INV1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_BWMAP_INV0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_RANGING_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_SN_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_BWMAP_ACCPTEDf = 1900,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_GEM_LOSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_HEC_CORRECTEDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_GEM_IDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_PORTID_MMATCHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_GEM_LEN_MISMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_RX_GEM_NON_IDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_PLEND_CORRECTIONSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_PTI_MASKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_END_PTIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PTI_MASKf = 1910,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_END_PTIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_START_PAUSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DRF_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_FAILf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_DONEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BIST_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVSEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVSf = 1920,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRAFFIC_TYPE_CFGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CAP_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CAP_CLRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CAP_FRAME_NUMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CAP_OVERFLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CAP_DATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INFO_FIFO_OVERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA_FIFO_OVERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INFO_FIFO_OVERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA_FIFO_OVERFL_Mf = 1930,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INFO_FIFO_OVERFLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DATA_FIFO_OVERFLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_CFG_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_ACTIVE_KEYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SWITCH_SUPERFRAMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_WR_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_WR_COMPLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_USE_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_WORD_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEY_DATAf = 1940,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PKT_RX_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PKT_RX_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PKT_RXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PKT_FWD_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PKT_FWD_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_PKT_FWDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISC_CNTR_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISC_CNTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPV6_MC_FORCE_PASSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPV6_MC_FORCE_DROPf = 1950,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BROADCAST_PASSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NON_MULTICAST_PASSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FCS_CHK_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPV4_MC_FORCE_PASSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPV4_MC_FORCE_DROPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_EXCL_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_REQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_COMPLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_HITf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_MODEf = 1960,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_WDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MC_ITEM_OP_RDATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OMCI_TR_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ASSM_TIMEOUT_FRMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPV4_MC_MAC_PREFIXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPV6_MC_MAC_PREFIXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_SD_MISM_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_SD_TOOLONG_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_NRM_EMPTY_DLTf = 1970,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_URG_EMPTY_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_FEC_STS_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DG_MSG_TX_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_SD_MISM_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_SD_TOOLONG_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_NRM_EMPTY_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_URG_EMPTY_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_FEC_STS_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DG_MSG_TX_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_FEC_STSf = 1980,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FS_LONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FS_LOFFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IND_NRM_PLMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBRU_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ENA_AUTO_DGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_US_BEN_POLARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SCRM_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSV_REG_WRITE_PROTECTIONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_PATTERN_MODE_NO_FGf = 1990,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_PATTERN_MODE_BGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_PATTERN_MODE_FGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_PATTERN_BGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TX_PATTERN_FGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIN_DELAY1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MIN_DELAY2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EQD1_MULTFRAMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EQD1_INFRAMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LON_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOFF_TIMEf = 2000,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOH_REPEATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOH_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BOH_DATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_TYPEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_NRM_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_NRM_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_URG_EMPTYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_URG_FULLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_ENQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_DATAf = 2010,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_FLUSH_BUFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_US_CRC_GEN_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PLM_US_ONUID_OVRD_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MISC_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ONU_RDIf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DG_STATUSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DG_MSG_TX_CNTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DG_MSG_TX_CNT_THRESHOLDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_SD_MISM_THREHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_SD_TOOLONG_THRESHf = 2020,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OPTIC_AUTO_SUPRESS_DISf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AUTO_PROC_SSTARTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_VALID_LONG_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_DIFF_HUGE_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REQUEST_DELAY_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BC_LESS6_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ERR_PLI_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BURST_TM_LARGER_GTC_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_TOO_MUCH_AT_END_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_REMAIN_AFRD_DLTf = 2030,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_OVERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_UNDERFL_DLTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_VALID_LONG_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_DIFF_HUGE_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REQUEST_DELAY_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BC_LESS6_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ERR_PLI_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BURST_TM_LARGER_GTC_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_TOO_MUCH_AT_END_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_REMAIN_AFRD_Mf = 2040,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_OVERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_UNDERFL_Mf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_VALID_LONG_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SD_DIFF_HUGE_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REQUEST_DELAY_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BC_LESS6_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ERR_PLI_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BURST_TM_LARGER_GTC_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_TOO_INDUCH_AT_END_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_REMAIN_AFRD_INDf = 2050,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_OVERFL_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BANK_UNDERFL_INDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FS_GEM_IDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTI_VECTOR3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTI_VECTOR2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTI_VECTOR1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PTI_VECTOR0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_GEM_RX_R_ACKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_GEM_RX_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETH_GEM_RX_CNTRf = 2060,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DEBUG_BUS_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_PTN_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GEM_PTN_BYTEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PORT_CFG_DATAf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_LOW32f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CNTR_HIGH32f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BYPASS_FECf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVSE_TPARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVS_TPARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVSE_DATf = 2070,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVS_DATf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVSE_RPARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DVS_RPARf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_RECOVERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_US_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_DS_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RPT_TMGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_TMGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QU_TMGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LSR_OFF_SHIFTf = 2080,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LSR_ON_SHIFTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ADJ_BCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HW_REGISTRATIONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_LLID_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REGISTER_MAC1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REGISTER_MAC0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_PENDDING_GRANTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REGISTER_REQUESTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_RANDOM_DELAY_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE0_INVALID_HDLf = 2090,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MODE1_INVALID_HDLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INV_OE_CONTROLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRB_GNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRB_EPMCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MPCP_TIMEOUT_VALUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_LLID_TX_IMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TIME_DRIFT_IMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MPCP_TIMEOUT_IMRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_LLID_TX_IMSf = 2100,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TIME_DRIFT_IMSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MPCP_TIMEOUT_IMSf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NORMAL_SYNC_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DISC_SYNC_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LASER_ON_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LASER_OFF_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GRANT_STRAT_MINf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GRANT_STRAT_MAXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_QUARD_THRESHOLDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RTT_ADJf = 2110,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SRT_GNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_STOP_LOCAL_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_ENABLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALWAYS_SVYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_POWER_SAVING_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_POWER_SAVING_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REPORT_TIMEOUTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REPORT_TIMERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LLIDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATE_TRAP_TYPEf = 2120,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_OTHER_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATE_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INVALID_LEN_HANDLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GRANT_STARTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GRANT_ENDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_REPORTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DISCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LLID_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FORCE_LASER_ONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DECRYPf = 2130,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DECRYP_KEY0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_DECRYP_KEY1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PREAMBLE_4THf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GMII_RXER_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PRB_LST_GNf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LOCAL_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_SHIFT_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DIS_SHIFT_TIMEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_AWY_ACKf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACK_TRIGGERf = 2140,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ACK_FLAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RD_EXEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WR_EXEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TBL_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ETRY_IDXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_V6RTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_NBf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_BDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_WTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_L3f = 2150,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_PPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_NHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_IFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_IPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_ARPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_NAPTRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RST_NAPTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RDDATA0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RDDATA1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RDDATA2f = 2160,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RDDATA3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RDDATA4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRDATA0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRDATA1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRDATA2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRDATA3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WRDATA4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTP5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTP4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTP3f = 2170,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTP2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTP0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTEXTP4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTEXTP3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTEXTP2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTEXTP1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_INTEXTP0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC15f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC14f = 2180,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC13f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC12f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC11f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC10f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC9f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC8f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC7f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC6f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC4f = 2190,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VC0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EN_NEW_PP_MTUf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_KEEP_PPPOE_TAGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FW_CFI_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IPMST_CTRLf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FRAGMENT2CPUf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4_TRF_HWWRK_SELf = 2200,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4_TRF_CHGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4_TRF_EXEC_CLRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ARP_TRF_HWWRK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ARP_TRF_CHGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ARP_TRF_EXEC_CLRf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L4CHKSERRALLOWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_L3CHKSERRALLOWf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TTL_1ENABLEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NATMODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_LIMDBCf = 2210,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WANROUTEMODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ENNATT2LOGf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_MONSELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PPPOE_TRF_BMPf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NBT0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NBT1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NBT2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_NBT3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L2L3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L2L34f = 2220,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L3L2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L3L34f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L34L2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L34L3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_UNMATCHED_L3L3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_CUSTOMIZED_L2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_CUSTOMIZED_L3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_WAN_BINDING_CUSTOMIZED_L34f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TST_LOG_MDf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSB_ATVf = 2230,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_ALE34_BZf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW6f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW7f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW8f = 2240,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSBW9f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSAW0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSAW1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSAW2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSAW3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_HSAW4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_TRFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REGFILE_VERf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_MEMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_POLICING_CNTING_MODEf = 2250,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DSCP_WEIGHT_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DSCP_WEIGHT_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BEN_FORCE_VALUEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_BEN_FORCE_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_IGNORE_MPCP_CRCf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_FEC_OVER_TXf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMY0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REPORT_CONTENTf = 2260,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CHURN_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DUMMYf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATE_ENDTIME_1TQ_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATE_ENDTIME_120TQf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATE_ENDTIME_1TQ_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GPON_DBRU_REPORT_METHODf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_MEM_6f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_RPT_LENGTH_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_MEM_4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_STATIC_RPT_MODEf = 2270,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_MEM_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_LATCH_MAX_USEDPAGEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_RSVD_MEM_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_EGR_RATE_CTRL_ENf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_GATE_LENGTHf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_Q0_WEIGHTf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_PON_WFQ_LEAKY_BUCKETf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_EPON_US_FECf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_US_CPU_ACTIONf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CF_US_1P_REMARK_ENf = 2280,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_IP4MC_EGRESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_VLAN_IP6MC_EGRESS_MODEf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ADP_TIME_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_AUTO_K_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_AUTO_MODE_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BIG_KVCO_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BYPASS_PI_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_BYPASS_PI_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CALIB_MANUAL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CALIB_TIME_TX2f = 2290,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CCO_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CLKRDY_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_EN_MANUAL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_NEW_EN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CP_TIME_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_DIVIDE_NUM_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_DIVN2_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_DIVN2_SELB_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_DIVN3_PCMf = 2300,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_DUM_MOMCAP_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_CENTER_IN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_CKOOBS_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_SSC_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_EN_WD_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_FCODE_IN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_FCODE_IN_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_FLD_DSEL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ICP_SEL_LBW_TX2f = 2310,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ICP_SEL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_INIT_TIME_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ISTANK_SEL_HS_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_ISTANK_SEL_LS_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LCBIAS_LPF_EN_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LCBIAS_SEL_IBX_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LCVCO_TR_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LDO_EN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LDO_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LOCK_DN_LIMIT_TX2f = 2320,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LOCK_UP_LIMIT_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LPF_CP_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LPF_EN_LOWR_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_LPF_RS_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_NCODE_IN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_NCODE_IN_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PFD_SEL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PI_I_SEL_LS_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_PI_I_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SELPREDIV_TX2f = 2330,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_CP_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_D4_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_PREDIV_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SEL_R_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SSC_ORDER_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_SSC_ORDER_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TESTEN_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TEST_EN_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TIME0_CK_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_TIME2_RST_WIDTH_PCMf = 2340,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VCO_COARSE_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VCP_SEL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VC_DLY_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_VSEL_LREG_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_CMU_CMLPI_SEL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_DIVN_PCM_REFf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_FREF_SEL_PCMf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_IQDIV_D2S_SEL_TX2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_RX_CLK_SELf,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_CFG_FRC_CKRDY_PCMf = 2350,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANA_RSV_0f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANA_RSV_1f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANA_RSV_2f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANA_RSV_3f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANA_RSV_4f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_REG_ANA_RSV_5f,
+#endif
+#if defined(CONFIG_SDK_APOLLOMP)
+    APOLLOMP_DBG_PORT_TXf,
+#endif
+
+    APOLLOMP_REGFIELD_LIST_END = 2358,
+} rtk_apollomp_regField_list_t;
+
+extern rtk_reg_t rtk_apollomp_reg_list[];
+
+
+#endif    /* __RTK_APOLLOMP_REG_STRUCT_H__ */

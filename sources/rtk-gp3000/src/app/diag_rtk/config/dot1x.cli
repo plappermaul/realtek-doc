@@ -1,0 +1,149 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for dot1x.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) dot1x commands.
+//
+
+//dot1x configuration
+//init dot1x
+dot1x init
+
+//dot1x configuration
+//get configuration
+//guest VLAN configuration
+dot1x get guest-vlan
+
+//dot1x configuration
+//set configuration
+//guest VLAN configuration
+//to authorized DA
+//allow
+//not allow
+dot1x set guest-vlan to-auth-da ( allow | disallow )
+
+//dot1x configuration
+//set configuration
+//guest VLAN configuration
+//vid configuration
+//vid, <0~4095>
+dot1x set guest-vlan vid <UINT:vid>
+
+//dot1x configuration
+//get configuration
+//mac-based configuration
+//direction configuration
+dot1x get mac-based direction
+
+//dot1x configuration
+//set configuration
+//mac-based configuration
+//direction configuration
+//both direction
+//ingress direction
+dot1x set mac-based direction ( both | in )
+
+//dot1x configuration
+//get configuration
+//mac-based configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+dot1x get mac-based port ( <PORT_LIST:ports> | all ) state
+
+
+//dot1x configuration
+//set configuration
+//mac-based configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+dot1x set mac-based port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//dot1x configuration
+//get configuration
+//port-based configuration
+//port configuration
+//port list, <0-6>
+//all ports
+dot1x get port-based port ( <PORT_LIST:ports> | all ) 
+
+//dot1x configuration
+//set configuration
+//port-based configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable function
+//enable function
+dot1x set port-based port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//dot1x configuration
+//set configuration
+//port-based configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//authentication
+//un-authentication
+dot1x set port-based port ( <PORT_LIST:ports> | all ) ( auth | unauth )
+
+//dot1x configuration
+//set configuration
+//port-based configuration
+//port configuration
+//port list
+//all ports, <0-6>
+//direction configuration
+//both direction
+//ingress direction
+dot1x set port-based port ( <PORT_LIST:ports> | all ) direction ( both | in )
+
+//dot1x configuration
+//get configuration
+//trap priority
+dot1x get trap-priority
+
+//dot1x configuration
+//set configuration
+//trap priority configuration
+//priority value, <0~7>
+dot1x set trap-priority <UINT:priority>
+
+//dot1x configuration
+//set configuration
+//action of unauthorized packet
+//port configuration
+//port list, <0-6>
+//all ports
+//action configuration
+//drop packet
+//forward to guest VLAN
+//trap packet to CPU
+dot1x set unauth-packet port ( <PORT_LIST:ports> | all ) action ( drop | guest-vlan | trap-to-cpu )
+
+//dot1x configuration
+//get configuration
+//action of unauthorized packet
+//port configuration
+//port list, <0-6>
+//all ports
+//action configuration
+dot1x get unauth-packet port ( <PORT_LIST:ports> | all ) action
+
+

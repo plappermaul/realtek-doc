@@ -1,0 +1,12 @@
+DAL_OBJ:= dal_luna_g3_ca_rtk.o \
+          dal_luna_g3_switch.o \
+          dal_luna_g3_l2.o \
+          dal_luna_g3_vlan.o \
+          dal_luna_g3_port.o \
+          dal_luna_g3_qos.o \
+          dal_luna_g3_stat.o \
+          dal_luna_g3_rate.o \
+          dal_luna_g3_sec.o \
+          dal_luna_g3_intr.o \
+          dal_luna_g3_trap.o \
+          dal_luna_g3_ponmac.o

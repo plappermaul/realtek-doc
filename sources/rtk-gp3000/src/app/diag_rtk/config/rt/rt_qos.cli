@@ -1,0 +1,121 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for QoS.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) QoS commands.
+//
+
+
+//rt_qos configuration
+//initialization
+rt_qos init
+
+//rt_qos configuration
+//get configuration
+//queue scheduling
+//scheduling algorithm
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//qid, <0~7>
+rt_qos get scheduling algorithm port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid>
+
+//rt_qos configuration
+//set configuration
+//queue scheduling
+//scheduling algorithm
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//qid, <0~7>
+//strict
+//wfq
+rt_qos set scheduling algorithm port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> ( strict | wfq )
+
+//rt_qos configuration
+//get configuration
+//queue scheduling
+//queue weight
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//queue id, <0~7>
+rt_qos get scheduling queue-weight port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid>
+
+//rt_qos configuration
+//set configuration
+//queue scheduling
+//queue weight
+//port configuration
+//port list
+//all ports
+//queue id configuration
+//queue id, <0~7>
+//queue weight configuration
+//queue weight
+rt_qos set scheduling queue-weight port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> weight <UINT:weight>
+
+//rt_qos configuration
+//get configuration
+//dscp2pbit
+rt_qos get dscp2pbit
+
+//rt_qos configuration
+//set configuration
+//dscp2pbit mapping
+//dscp value configuration
+//dscp value, <0-63>
+//pbit confiquration
+//pbit, <0~7>
+rt_qos set dscp2pbit dscp <UINT:dscp> pbit <UINT:pbit>
+
+
+//rt_qos configuration
+//set configuration
+//ingress configuration
+//qos configuration
+//index configuration
+//index, <0~15>
+//flow-id configuration
+//flowid, <0~127> 0xffff mean disable
+//vid configuration
+//vid, <0~4095> 0xffff mean disable
+//priority configuration
+//pri, <0~7>
+rt_qos set ingress qos index <UINT:index> flow-id <UINT:flowid> vid <UINT:vid> priority <UINT:pri>
+
+//rt_qos configuration
+//del configuration
+//ingress configuration
+//qos configuration
+//index configuration
+//index, <0~15>
+rt_qos del ingress qos index <UINT:index>
+
+//rt_qos configuration
+//get configuration
+//ingress configuration
+//qos configuration
+//index, <0~15>
+rt_qos get ingress qos <UINT:index>
+
+//rt_qos configuration
+//get configuration
+//ingress configuration
+//qos configuration
+//valid
+rt_qos get ingress qos valid
+

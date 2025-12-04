@@ -1,0 +1,24 @@
+//
+// Copyright (C) 2023 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 91599 $
+// $Date: 2018-08-20 18:01:12 +0800 (Mon, 20 Aug 2018) $
+//
+// Purpose : Define RT diag shell commands.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) All RT diag shell commands.
+//
+
+//exit diag shell
+exit
+
+#include "./rt/rt_diag_shell.cli"

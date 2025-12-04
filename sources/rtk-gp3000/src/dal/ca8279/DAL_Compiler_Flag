@@ -1,0 +1,24 @@
+DAL_OBJ:= dal_ca8279_ca_rtk.o \
+          dal_ca8279_switch.o \
+          dal_ca8279_l2.o \
+          dal_ca8279_vlan.o \
+          dal_ca8279_port.o \
+          dal_ca8279_qos.o \
+          dal_ca8279_stat.o \
+          dal_ca8279_rate.o \
+          dal_ca8279_sec.o \
+          dal_ca8279_intr.o \
+          dal_ca8279_epon.o \
+          dal_ca8279_trap.o \
+          dal_ca8279_i2c.o \
+          dal_ca8279_led.o \
+          dal_ca8279_ponmac.o \
+          dal_ca8279_gpon.o \
+          dal_ca8279_mirror.o \
+          dal_ca8279_gpio.o
+
+ifeq ($(CONFIG_COMMON_RT_API),y)
+DAL_OBJ+= dal_rt_ca8279_gpon.o \
+          dal_rt_ca8279_ponmisc.o \
+          dal_rt_ca8279_epon.o
+endif

@@ -1,0 +1,231 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) I2C commands.
+//
+
+//I2C configuration
+//initialization
+//I2C port specify
+//port number
+i2c init port <UINT:port>
+
+//I2C configuration
+//set configuration
+//state configuration
+//I2C port specify
+//port number
+//disable
+//enable
+i2c set state port <UINT:port> ( enable | disable )
+
+//I2C configuration
+//get configuration
+//state configuration
+//I2C port specify
+//port number
+i2c get state port <UINT:port>
+
+//I2C configuration
+//set configuration
+//width configuration
+//I2C port specify
+//port number
+//8-bit mode
+//16-bit mode
+//24-bit mode
+//32-bit mode
+i2c set width port <UINT:port> ( 8-bit | 16-bit | 24-bit | 32-bit )
+
+//I2C configuration
+//get configuration
+//width configuration
+//I2C port specify
+//port number
+i2c get width port <UINT:port>
+
+//I2C configuration
+//set configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//specify data
+//data
+i2c set port <UINT:port> dev <UINT:dev_id> reg <UINT:register> data <UINT:data>
+
+//I2C configuration
+//set configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//data from write-buffer
+//write count
+//count
+i2c set port <UINT:port> dev <UINT:dev_id> reg <UINT:register> write-buffer count <UINT:count>
+
+//I2C configuration
+//set configuration
+//write-buffer operation
+//buffer position
+//position
+//specifiy data
+//data
+i2c set write-buffer pos <UINT:pos> data <STRING:data>
+
+//I2C configuration
+//clear operation
+//write-buffer operation
+i2c clear write-buffer
+
+//I2C configuration
+//show operation
+//write-buffer operation
+i2c show write-buffer
+
+//I2C configuration
+//get configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+i2c get port <UINT:port> dev <UINT:dev_id> reg <UINT:register>
+
+//I2C configuration
+//get configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//repeat count
+//count
+i2c get port <UINT:port> dev <UINT:dev_id> reg <UINT:register> count <UINT:count>
+
+//I2C configuration
+//get configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+i2c get port <UINT:port> dev <UINT:dev_id>
+
+//I2C configuration
+//get configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//repeat count
+//count
+i2c get port <UINT:port> dev <UINT:dev_id> count <UINT:count>
+
+//I2C configuration
+//set configuration
+//clock specify
+//I2C port specify
+//port number
+//clock KHz
+i2c set clock port <UINT:port> <UINT:khz>
+
+//I2C configuration
+//get configuration
+//clock specify
+//I2C port specify
+//port number
+i2c get clock port <UINT:port>
+
+//I2C configuration
+//set configuration
+//EEPROM mirror specify
+//device ID specify
+//device ID
+//address width specify
+//8 bit mode
+//16 bit mode
+//24 bit mode
+//32 bit mode
+//address extension mode
+//mode0, not used as addr extension bit
+//mode1, A0 used as addr extension bit
+//mode2, A1A0 used as addr extension bit
+//mode3, A2A1A0 used as addr extension bit
+i2c set eeprom-mirror dev <UINT:dev_id> addr-width ( 8-bit | 16-bit | 24-bit | 32-bit ) addr-ext-mode ( mode0 | mode1 | mode2 | mode3 )
+
+//I2C configuration
+//get configuration
+//EEPROM mirror specify
+i2c get eeprom-mirror
+
+//I2C configuration
+//set configuration
+//EEPROM mirror register specify
+//register
+//specify data
+//data
+i2c set eeprom-mirror-reg <UINT:register> data <UINT:data>
+
+//I2C configuration
+//get configuration
+//EEPROM mirror register specify
+//register
+i2c get eeprom-mirror-reg <UINT:register>
+
+
+//I2C configuration
+//set configuration
+//width configuration
+//I2C port specify
+//port number
+//8-bit mode
+//16-bit mode
+//24-bit mode
+//32-bit mode
+i2c set data-width port <UINT:port> ( 8-bit | 16-bit | 24-bit | 32-bit )
+
+//I2C configuration
+//get configuration
+//width configuration
+//I2C port specify
+//port number
+i2c get data-width port <UINT:port>
+
+//I2C configuration
+//set configuration
+//width configuration
+//I2C port specify
+//port number
+//8-bit mode
+//16-bit mode
+//24-bit mode
+//32-bit mode
+i2c set addr-width port <UINT:port> ( 8-bit | 16-bit | 24-bit | 32-bit )
+
+//I2C configuration
+//get configuration
+//width configuration
+//I2C port specify
+//port number
+i2c get addr-width port <UINT:port>

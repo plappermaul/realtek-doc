@@ -1,0 +1,142 @@
+//Auto-Fallback configuration
+//get configuration
+//Ignore Timeout configuration
+//state configuration
+auto-fallback get ignore-timeout state
+
+//Auto-Fallback configuration
+//set configuration
+//Ignore Timeout configuration
+//state configuration
+//disable configuration
+//enable configuration
+auto-fallback set ignore-timeout state ( disable | enable )
+
+//Auto-Fallback configuration
+//set configuration
+//Error count configuration
+//1
+//2
+//4
+//8
+//16
+//32
+//64
+//128
+auto-fallback set error-count ( 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 )
+
+//Auto-Fallback configuration
+//get configuration
+//Error count configuration
+auto-fallback get error-count
+
+//Auto-Fallback configuration
+//get configuration
+//Monitor count configuration
+auto-fallback get monitor-count
+
+//Auto-Fallback configuration
+//set configuration
+//Monitor count configuration
+//8K
+//16K
+//32K
+//64K
+//128K
+//256K
+//512K
+//1M
+auto-fallback set monitor-count ( 8K | 16K | 32K | 64K | 128K | 256K | 512K | 1M )
+
+//Auto-Fallback configuration
+//get configuration
+//Port configuration
+//Port list
+//Error Counter
+auto-fallback get port <PORT_LIST:ports> error-counter
+
+//Auto-Fallback configuration
+//get configuration
+//Port configuration
+//Port list
+//Monitor Counter
+auto-fallback get port <PORT_LIST:ports> monitor-counter
+
+//Auto-Fallback configuration
+//get configuration
+//Port configuration
+//Port list
+//Restore Power Level status
+auto-fallback get port <PORT_LIST:ports> restore
+
+//Auto-Fallback configuration
+//get configuration
+//Port configuration
+//Port list
+//Valid Flow status
+auto-fallback get port <PORT_LIST:ports> valid-flow
+
+
+
+//Auto-Fallback configuration
+//get configuration
+//Port configuration
+//Port list
+//State configuration
+auto-fallback get port <PORT_LIST:ports> state
+
+//Auto-Fallback configuration
+//get configuration
+//Port configuration
+//Port list
+//Current power level
+auto-fallback get port <PORT_LIST:ports> current-power-level
+
+//Auto-Fallback configuration
+//set configuration
+//Port configuration
+//Port list
+//State configuration
+//disable configuration
+//enable configuration
+auto-fallback set port <PORT_LIST:ports> state ( disable | enable )
+
+//Auto-Fallback configuration
+//set configuration
+//Reduce Power Level configuration
+//state configuration
+//disable configuration
+//enable configuration
+auto-fallback set reduce-power-level state ( disable | enable )
+
+//Auto-Fallback configuration
+//set configuration
+//Reduce Power Level configuration
+//state configuration
+auto-fallback get reduce-power-level state
+
+//Auto-Fallback configuration
+//set configuration
+//Timeout timer configuration
+//State configuration
+//disable configuration
+//enable configuration
+auto-fallback set timer state ( disable | enable )
+
+//Auto-Fallback configuration
+//get configuration
+//Timeout timer configuration
+//State configuration
+auto-fallback get timer state
+
+//Auto-Fallback configuration
+//set configuration
+//Timeout timer configuration
+//Timer (4ms ~ 1020ms)
+auto-fallback set timer <UINT:timer>
+
+//Auto-Fallback configuration
+//get configuration
+//Timeout timer configuration
+auto-fallback get timer
+

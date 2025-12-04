@@ -1,0 +1,840 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for layer2.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) svlan commands.
+//
+
+//svlan configuration
+//init SVLAN
+svlan init
+
+//svlan configuration
+//create SVLAN
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+svlan create svlan-table svid <UINT:svid>
+
+//svlan configuration
+//destroy SVLAN
+//svlan configuration
+//all svlan
+svlan destroy svlan-table all
+
+//svlan configuration
+//destroy SVLAN
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+svlan destroy svlan-table svid <UINT:svid>
+
+//svlan configuration
+//get configuration
+//egress priority source
+svlan get priority-source 
+
+//svlan configuration
+//set configuration
+//egress priority source
+//internal priority
+//1q tag priority
+//svlan member configuration
+//port based priority
+//outer tag priority
+svlan set priority-source ( internal-priority | dot1q-priority | svlan-member-config | port-based-priority | outer-tag-priority ) 
+
+//svlan configuration
+//get configuration
+//service port
+svlan get service-port
+
+//svlan configuration
+//set configuration
+//service port
+//port list, <0-6>
+//all
+//none
+svlan set service-port ( <PORT_LIST:ports> | all | none )
+
+
+//svlan configuration
+//get configuration
+//port configuration
+//port list, <0-6>
+//all
+//svlan configuration
+svlan get port ( <PORT_LIST:ports> | all ) svid
+
+//svlan configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all
+//svlan configuration
+//svid, <1~4095>
+svlan set port ( <PORT_LIST:ports> | all ) svid <UINT:svid>
+
+#ifndef CONFIG_REDUCED_DIAG
+//svlan configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all
+//svlan member configuration index assign
+//svidx, <0~63>
+svlan set port ( <PORT_LIST:ports> | all ) svlan-index <UINT:svidx>
+
+//svlan configuration
+//get configuration
+//port configuration
+//port list, <0-6>
+//all
+//svlan member configuration index assign
+svlan get port ( <PORT_LIST:ports> | all ) svlan-index
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//svlan configuration
+//svid, <0~4095> 
+svlan set entry <UINT:index> svid <UINT:svid>
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//member port
+//port list, <0-6>
+//all
+//none
+svlan set entry <UINT:index> member ( <PORT_LIST:ports> | all | none ) 
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//tag ports configuration
+//untag ports configuration
+//port list, <0-6>
+//all
+//none
+svlan set entry <UINT:index> ( tag-member | untag-member ) ( <PORT_LIST:ports> | all | none )
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//svlan priority configuration
+//priority, <0~7>
+svlan set entry <UINT:index> priority <UINT:priority>
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//forced fid-msti function
+//state
+//disable 
+//enable
+svlan set entry <UINT:index> fid-msti state ( disable | enable )
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//fid-msti configuration
+//fid-msti, <0~15>
+svlan set entry <UINT:index> fid-msti <UINT:fid_msti>
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//enhanced fid function
+//state
+//disable
+//enable
+svlan set entry <UINT:index> enhanced-fid state ( disable | enable )
+
+//svlan configuration
+//set configuration
+//entry index
+//index, <0~63>
+//efid configuration
+//efid, <0~7>
+svlan set entry <UINT:index> enhanced-fid <UINT:efid>
+
+//svlan configuration
+//get configuration
+//entry index
+//index, <0~63>
+svlan get entry <UINT:index>
+
+//svlan configuration
+//get configuration
+//entry index
+//all
+svlan get entry all
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//c2s configuration
+//entry index
+//index, <0~127>
+svlan get vlan-conversion c2s entry <UINT:index> 
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//c2s configuration
+//entry index
+//all 
+svlan get vlan-conversion c2s entry all
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//c2s configuration
+//entry index
+//index, <0~127>
+//enhanced vlan id configuration
+//evid, <0~8191>
+svlan set vlan-conversion c2s entry <UINT:index> enhanced-vid <UINT:evid>
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//c2s configuration
+//entry index
+//index, <0~127>
+//enhanced vlan id configuration
+//ports, <0-6>
+//all
+//none
+svlan set vlan-conversion c2s entry <UINT:index> member ( <PORT_LIST:ports> | all | none )
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//c2s configuration
+//entry index
+//index, <0~127>
+//svlan member configuation index
+//svidx, <0~63>
+svlan set vlan-conversion c2s entry <UINT:index> svlan-index <UINT:svidx>
+
+//svlan configuration
+//delelet configuration
+//vlan conversion 
+//c2s configuration
+//vid configuration
+//vid, <0~4095> 
+//port
+//ports, <0-6>
+//all
+//svid configuration
+//svid, <0~4095> 
+svlan del vlan-conversion c2s vid <UINT:vid> port ( <PORT_LIST:ports> | all ) svid <UINT:svid>
+
+//svlan configuration
+//add configuration
+//vlan conversion 
+//c2s configuration
+//vid configuration
+//vid, <0~4095> 
+//port
+//ports, <0-6>
+//all
+//svid configuration
+//svid, <0~4095> 
+svlan add vlan-conversion c2s vid <UINT:vid> port ( <PORT_LIST:ports> | all ) svid <UINT:svid>
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//c2s configuration
+//vid configuration
+//vid, <0~4095> 
+//port
+//ports, <0-6>
+//all
+svlan get vlan-conversion c2s vid <UINT:vid> port ( <PORT_LIST:ports> | all ) 
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//index, <0~7>
+svlan get vlan-conversion mc2s entry <UINT:index>
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//all
+svlan get vlan-conversion mc2s entry all
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//index, <0~7>
+//entry state
+//invalid
+//valid
+svlan set vlan-conversion mc2s entry <UINT:index> state ( invalid | valid )
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//index, <0~7>
+//entry format configuation
+//dip format
+//dmac format
+svlan set vlan-conversion mc2s entry <UINT:index> format ( dip | dmac )
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//index, <0~7>
+//ip configuation
+//ip
+//ip mask configuation
+//ip mask
+svlan set vlan-conversion mc2s entry <UINT:index> ip <IPV4ADDR:ip> ip-mask <IPV4ADDR:ip_mask>
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//index, <0~7>
+//MAC address, bits [31:0] valid only
+//MAC address, x:x:A:B:C:D
+//MAC mask ,bits [31:0] valid only
+//MAC mask, x:x:A:B:C:D
+svlan set vlan-conversion mc2s entry <UINT:index> mac-address <MACADDR:mac> mac-mask <MACADDR:mac_mask>
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//mc2s configuration
+//entry index
+//index, <0~7>
+//svlan member configuation index
+//svidx, <0~63>
+svlan set vlan-conversion mc2s entry <UINT:index> svlan-index <UINT:svidx>
+
+//svlan configuration
+//add configuration
+//vlan conversion 
+//mc2s configuration
+//ip configuation
+//ip
+//ip mask configuation
+//ip mask
+//svid configuration
+//svid, <0~4095> 
+svlan add vlan-conversion mc2s ip <IPV4ADDR:ip> ip-mask <IPV4ADDR:ip_mask> svid <UINT:svid>
+
+//svlan configuration
+//delete configuration
+//vlan conversion 
+//mc2s configuration
+//ip configuation
+//ip
+//ip mask configuation
+//ip mask
+svlan del vlan-conversion mc2s ip <IPV4ADDR:ip> ip-mask <IPV4ADDR:ip_mask>
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//mc2s configuration
+//ip configuation
+//ip
+//ip mask configuation
+//ip mask
+svlan get vlan-conversion mc2s ip <IPV4ADDR:ip> ip-mask <IPV4ADDR:ip_mask>
+
+//svlan configuration
+//add configuration
+//vlan conversion 
+//mc2s configuration
+//MAC address, bits [31:0] valid only
+//MAC address, x:x:A:B:C:D
+//MAC mask ,bits [31:0] valid only
+//MAC mask, x:x:A:B:C:D
+//svid configuration
+//svid, <0~4095> 
+svlan add vlan-conversion mc2s mac-address <MACADDR:mac> mac-mask <MACADDR:mac_mask> svid <UINT:svid>
+
+//svlan configuration
+//delete configuration
+//vlan conversion 
+//mc2s configuration
+//MAC address, bits [31:0] valid only
+//MAC address, x:x:A:B:C:D
+//MAC mask ,bits [31:0] valid only
+//MAC mask, x:x:A:B:C:D
+svlan del vlan-conversion mc2s mac-address <MACADDR:mac> mac-mask <MACADDR:mac_mask>
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//mc2s configuration
+//MAC address, bits [31:0] valid only
+//MAC address, x:x:A:B:C:D
+//MAC mask ,bits [31:0] valid only
+//MAC mask, x:x:A:B:C:D
+svlan get vlan-conversion mc2s mac-address <MACADDR:mac> mac-mask <MACADDR:mac_mask>
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//sp2c configuration
+//entry index
+//index, <0~127>
+svlan get vlan-conversion sp2c entry <UINT:index> 
+
+//svlan configuration
+//get configuration
+////vlan conversion 
+//sp2c configuration
+//entry index
+//all
+svlan get vlan-conversion sp2c entry all
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//sp2c configuration
+//entry index
+//index, <0~127>
+//entry valid state
+//invalid
+//valid
+svlan set vlan-conversion sp2c entry <UINT:index> state ( invalid | valid )
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//sp2c configuration
+//entry index
+//index, <0~127>
+//svlan member configuation index
+//svidx, <0~63>
+svlan set vlan-conversion sp2c entry <UINT:index> svlan-index <UINT:svidx>
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//sp2c configuration
+//entry index
+//index, <0~127>
+//egress port configuraiton
+//port, <0~6>
+svlan set vlan-conversion sp2c entry <UINT:index> port <UINT:port>
+
+//svlan configuration
+//set configuration
+//vlan conversion 
+//sp2c configuration
+//entry index
+//index, <0~127>
+//egress vid configuration
+//vid, <0~4095>
+svlan set vlan-conversion sp2c entry <UINT:index> vid <UINT:vid>
+
+//svlan configuration
+//add configuration
+//vlan conversion 
+//sp2c configuration
+//svid configuration
+//svid, <0~4095> 
+//egress port configuraiton
+//port, <0~6>
+//egress vid configuration
+//vid, <0~4095>
+svlan add vlan-conversion sp2c svid <UINT:svid> port <UINT:port> vid <UINT:vid>
+
+//svlan configuration
+//delete configuration
+//vlan conversion 
+//sp2c configuration
+//svid configuration
+//svid, <0~4095> 
+//egress port configuraiton
+//port, <0~6>
+svlan del vlan-conversion sp2c svid <UINT:svid> port <UINT:port>
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//sp2c configuration
+//svid configuration
+//svid, <0~4095> 
+//egress port configuraiton
+//port, <0~6>
+svlan get vlan-conversion sp2c svid <UINT:svid> port <UINT:port>
+
+//svlan configuration
+//add configuration
+//vlan conversion 
+//sp2c configuration
+//svid configuration
+//svid, <0~4095> 
+//egress port configuraiton
+//port, <0~6>
+//egress priority configuration
+//priority, <0~7>
+svlan add vlan-conversion sp2c svid <UINT:svid> port <UINT:port> priority <UINT:priority>
+
+#endif
+//svlan configuration
+//get configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095>  
+svlan get svlan-table svid <UINT:svid>
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid
+//member port
+//port list, <0-6>
+//all
+//none
+svlan set svlan-table svid <UINT:svid> member ( <PORT_LIST:ports> | all | none )
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//set tag ports
+//port list, <0-6>
+//all
+//none
+svlan set svlan-table svid <UINT:svid> tag-member ( <PORT_LIST:ports> | all | none )
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//set un-tag ports
+//port list, <0-6>
+//all
+//none
+svlan set svlan-table svid <UINT:svid> untag-member ( <PORT_LIST:ports> | all | none )
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//svlan priority configuration
+//priority, <0~7>
+svlan set svlan-table svid <UINT:svid> priority <UINT:priority>
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//forced fid-msti function
+//state
+//disable 
+//enable
+svlan set svlan-table svid <UINT:svid> fid-msti state ( disable | enable )
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//fid-msti configuration
+//fid-msti, <0~15>
+svlan set svlan-table svid <UINT:svid> fid-msti <UINT:fid_msti>
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//enhanced fid function
+//state
+//disable
+//enable
+svlan set svlan-table svid <UINT:svid> enhanced-fid state ( disable | enable )
+
+//svlan configuration
+//set configuration
+//svlan configuration
+//svid configuration
+//svid, <0~4095> 
+//efid configuration
+//efid, <0~7>
+svlan set svlan-table svid <UINT:svid> enhanced-fid <UINT:efid>
+
+
+//svlan configuration
+//get configuration
+//tag protocol identifier of svlan
+svlan get tpid
+
+//svlan configuration
+//get configuration
+//tag protocol identifier of svlan
+//entry
+//index, <0~1>
+//tpid
+svlan get tpid entry <UINT:index> tpid
+
+//svlan configuration
+//get configuration
+//tag protocol identifier of svlan
+//entry
+//index, <0~1>
+//state
+svlan get tpid entry <UINT:index> state
+
+//svlan configuration
+//set configuration
+//tag protocol identifier of STAG
+//tpid value (example 0x88a8)
+svlan set tpid <UINT:tpid>
+
+//svlan configuration
+//set configuration
+//tag protocol identifier of STAG
+//entry
+//index, <0~1>
+//tpid 
+//tpid value (example 0x88a8)
+svlan set tpid entry <UINT:index> tpid <UINT:tpid>
+
+//svlan configuration
+//set configuration
+//tag protocol identifier of STAG
+//entry
+//index, <0~1>
+//state 
+//disable
+//enable
+svlan set tpid entry <UINT:index> state ( disable | enable )
+
+//svlan configuration
+//get configuration
+//trap priority configuration
+svlan get trap-priority
+
+//svlan configuration
+//set configuration
+//trap priority configuration
+//priority, <0~7>
+svlan set trap-priority <UINT:priority>
+
+//svlan configuration
+//get configuration
+//svlan function state
+svlan get state
+
+//svlan configuration
+//set configuration
+//svlan function state
+//enable function
+//disable function
+svlan set state ( enable | disable )
+
+//svlan configuration
+//set configuration
+//ingress dei keep function
+//cfi keep function state
+//disable 1:N vlan function
+//enable 1:N vlan function
+svlan set dei-keep state ( disable | enable ) 
+
+//svlan configuration
+//get configuration
+//ingress dei keep function
+//cfi keep function state
+svlan get dei-keep state 
+
+//svlan configuration
+//get configuration
+//downstream SVLAN untag action
+svlan get untag
+
+//svlan configuration
+//set configuration
+//downstream SVLAN untag action
+//drop
+//trap
+//port-based svid
+svlan set untag ( drop | trap-to-cpu | port-based-svid ) 
+
+//svlan configuration
+//set configuration
+//downstream svlan untag action
+//assign ingress svlan
+//svid configuration
+//svid, <0~4095> 
+svlan set untag assign-svlan svid <UINT:svid>
+
+#ifndef CONFIG_REDUCED_DIAG
+//svlan configuration
+//get configuration
+//downstream SVLAN unmatch svid action
+svlan get unmatch
+
+//svlan configuration
+//set configuration
+//downstream svlan unmatch svid action
+//drop
+//trap
+svlan set unmatch ( drop | trap-to-cpu ) 
+
+//svlan configuration
+//set configuration
+//downstream svlan unmatch svid action
+//assign ingress svlan 
+//svid configuration
+//svid, <0~4095> 
+svlan set unmatch assign-svlan svid <UINT:svid> 
+
+//svlan configuration
+//get configuration
+//n:1 dmac select function
+//port configuration
+//port list, <0-6>
+//all
+//1:n vlan function state
+svlan get vlan-aggregation port ( <PORT_LIST:ports> | all ) state 
+
+//svlan configuration
+//set configuration
+//n:1 dmac select function
+//port configuration
+//port list, <0-6>
+//all
+//1:n vlan function state
+//disable 1:N vlan function
+//enable 1:N vlan function
+svlan set vlan-aggregation port ( <PORT_LIST:ports> | all ) state ( disable | enable ) 
+
+
+//svlan configuration
+//set configuration
+//lookup type configuration
+//from 64 slvan member configuration
+//from 4k cvlan table
+svlan set lookup-type ( svlan-table | vlan-4k-table ) 
+
+//svlan configuration
+//get configuration
+//lookup type configuration
+svlan get lookup-type 
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//sp2c configuration
+//unmatch action configuration
+svlan get vlan-conversion sp2c unmatch-action
+
+//svlan configuration
+//get configuration
+//vlan conversion 
+//sp2c configuration
+//unmatch action configuration
+//cvlan untag
+//ctagging
+svlan set vlan-conversion sp2c unmatch-action ( untag | ctag ) 
+
+//svlan configuration
+//get configuration
+//n:1 dmac select function
+//forced 1:n vlan function state
+svlan get vlan-aggregation forced-state 
+
+//svlan configuration
+//set configuration
+//n:1 dmac select function
+//forced 1:n vlan function state
+//disable 1:N vlan function
+//enable 1:N vlan function
+svlan set vlan-aggregation forced-state ( disable | enable ) 
+
+
+//svlan configuration
+//get configuration
+//n:1 dmac select function
+//vlan type
+svlan get vlan-aggregation vlan-type
+
+//svlan configuration
+//set configuration
+//n:1 dmac select function
+//vlan type
+//svl
+//both svl and ivl
+svlan set vlan-aggregation vlan-type ( svl-only | ivl-and-svl ) 
+
+//svlan configuration
+//get configuration
+//downstream untag cvlan assign
+svlan get ds-unctag-cvid 
+
+//svlan configuration
+//set configuration
+//downstream untag cvlan assign
+//no ctag assign for untag packet
+//assign ingress vlan to untag packet
+svlan set ds-unctag-cvid ( no-cvlan | ingress-cvid ) 
+
+//svlan configuration
+//get configuration
+//config extention port based vid
+//extention port configuration
+//ports 
+//all ports
+svlan get ext-pvid port ( <PORT_LIST:ports> | all )
+
+//svlan configuration
+//set configuration
+//config extention port based vid
+//extention port configuration
+//ports
+//all
+//svid configuration
+//svid, <0~4095> 
+svlan set ext-pvid port ( <PORT_LIST:ports> | all ) svid <UINT:svid>
+
+#endif

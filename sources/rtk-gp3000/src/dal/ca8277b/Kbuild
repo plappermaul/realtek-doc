@@ -1,0 +1,43 @@
+include $(APOLLODIR)/Compiler_Flag
+include $(SDKDIR)/src/dal/ca8277b/DAL_Compiler_Flag
+
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+ccflags-y := -DCONFIG_ARCH_CORTINA_VENUS -DONE_IMAGE_VENUS \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-venus \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-venus/ca-ne-rtk \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-venus/ni-drv-gen2 \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-venus/aal-gen2/include \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-venus/cortina-api/include \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0-venus/inc \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0-venus/event \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0-venus/log \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0-venus \
+             -I$(ROOTDIR)/ca_packages/ca-scfg/1.0-r0/ca-scfg-1.0-venus/scfg/include \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/venus/module/ca-ne/ \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/venus/module/ca-plat/ \
+             -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+
+obj-m += ca-rtk-venus.o
+ca-rtk-venus-objs := $(DAL_OBJ)
+else
+ccflags-y := -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0 \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0/ca-ne-rtk \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0/ni-drv-gen2 \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0/aal-gen2/include \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0/cortina-api/include \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0/inc \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0/event \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0/log \
+             -I$(ROOTDIR)/ca_packages/ca-plat/1.0-r0/ca-plat-1.0 \
+             -I$(ROOTDIR)/ca_packages/ca-scfg/1.0-r0/ca-scfg-1.0/scfg/include \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/module/ca-ne/ \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/module/ca-plat/ \
+             -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+
+obj-m += ca-rtk.o
+ca-rtk-objs := $(DAL_OBJ)
+endif

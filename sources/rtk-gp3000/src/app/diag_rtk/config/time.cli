@@ -1,0 +1,256 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for PTP.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) PTP commands.
+
+//time configuration
+//init time
+time init
+
+//time configuration
+//get configuration
+//precision time protocol
+//port list
+//all ports
+//state configuration
+time get ptp ( <PORT_LIST:ports> | all ) state
+
+//time configuration
+//set configuration
+//precision time protocol
+//port list
+//all ports
+//state configuration
+//enable function
+//disable function
+time set ptp ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//time configuration
+//get configuration
+//current time
+time get cur-time
+
+//time configuration
+//latch configuration
+//current time
+time latch cur-time
+
+//time configuration
+//get configuration
+//reference time
+time get ref-time
+
+//time configuration
+//set configuration
+//reference time
+//adjust (increase time)
+//adjust (decrease time)
+//secound
+//nanosecond
+time set ref-time ( increase | decrease ) <UINT64:second> <UINT:nanosecond>
+
+//time configuration
+//get configuration
+//system frequency
+time get frequency
+
+//time configuration
+//set configuration
+//system frequency
+//frequency value <0 ~ 2^27>
+time set frequency <UINT:frequency>
+
+//time configuration
+//get configuration
+//precision time protocol
+//port list
+//all ports
+//state of ptp transparent
+//state configuration
+time get ptp ( <PORT_LIST:ports> | all ) transparent state
+
+//time configuration
+//set configuration
+//precision time protocol
+//port list
+//all ports
+//state of ptp transparent
+//state configuration
+//enable function
+//disable function
+time set ptp ( <PORT_LIST:ports> | all ) transparent state ( enable | disable )
+
+//time configuration
+//set configuration
+//ingress configuration
+//type
+//sync
+//delay request
+//pdelay request
+//pdelay response
+//follow up
+//delay response
+//pdelay response follow up
+//announce signaling
+//sync(one-step)
+//pdelay request(one-step)
+//action
+//specify to no operation
+//trap PTP packets to CPU
+//forward PTP packets to transparent port
+//forward PTP packets to transparent port and mirror to CPU
+time set ingress type ( sync | delay-req | pdelay-req | pdelay-resp | follow-up | delay-resp | pdelay-resp-follow-up | announce-signaling | sync-one-step | pdelay-req-one-step ) action ( nop | trap-to-cpu | forward-to-trans | forward-to-trans-and-mirror-to-cpu )
+
+//time configuration
+//get configuration
+//ingress configuration
+//type
+//sync
+//delay request
+//pdelay request
+//pdelay response
+//follow up
+//delay response
+//pdelay response follow up
+//announce signaling
+//sync(one-step)
+//pdelay request(one-step)
+//action
+time get ingress type ( sync | delay-req | pdelay-req | pdelay-resp | follow-up | delay-resp | pdelay-resp-follow-up | announce-signaling | sync-one-step | pdelay-req-one-step ) action 
+
+//time configuration
+//set configuration
+//egress configuration
+//type
+//sync
+//delay request
+//pdelay request
+//pdelay response
+//follow up
+//delay response
+//pdelay response follow up
+//announce signaling
+//sync(one-step)
+//pdelay request(one-step)
+//action
+//specify to no operation
+//latch egress timestamp
+//latch egress timestamp and mirror to cpu
+//modify correction field
+time set egress type ( sync | delay-req | pdelay-req | pdelay-resp | follow-up | delay-resp | pdelay-resp-follow-up | announce-signaling | sync-one-step | pdelay-req-one-step ) action ( nop | latch-time | latch-time-and-mirror-to-cpu | modify-correction )
+
+//time configuration
+//get configuration
+//egress configuration
+//type
+//sync
+//delay request
+//pdelay request
+//pdelay response
+//follow up
+//delay response
+//pdelay response follow up
+//announce signaling
+//sync(one-step)
+//pdelay request(one-step)
+//action
+time get egress type ( sync | delay-req | pdelay-req | pdelay-resp | follow-up | delay-resp | pdelay-resp-follow-up | announce-signaling | sync-one-step | pdelay-req-one-step ) action
+
+//time configuration
+//get configuration
+//mean path delay time
+time get mean-path-delay
+
+//time configuration
+//set configuration
+//mean-path-delay
+//nanosecond
+time set mean-path-delay <UINT:nanosecond>
+
+//time configuration
+//get configuration
+//packet rx time
+time get rxtime
+
+//time configuration
+//set configuration
+//packet rx time
+//secound
+//nanosecond
+time set rxtime <UINT64:second> <UINT:nanosecond>
+
+//time configuration
+//get configuration
+//precision time protocol
+//port list
+//all ports
+//tx indicator
+time get ptp ( <PORT_LIST:ports> | all ) tx-indicator
+
+//time configuration
+//get configuration
+//pon tod
+//state configuration
+time get tod state
+
+//time configuration
+//set configuration
+//PTP pps
+//state configuration
+//disable function
+//enable function
+time set pps state ( disable | enable )
+
+//time configuration
+//get configuration
+//PTP pps
+//state configuration
+time get pps state
+
+//time configuration
+//set configuration
+//pps
+//mode configuration
+//pon mode
+//ptp mode
+time set pps mode ( pon | ptp )
+
+//time configuration
+//get configuration
+//pps
+//pps mode
+time get pps mode
+
+//time configuration
+//set configuration
+//ponmode configuration
+//gpon mode
+//epon mode
+//startpoint configuration
+//counter
+//pon tod time
+//secound
+//nanosecond
+//state configuration
+//disable function
+//enable function
+time set ponmode ( gpon | epon ) startpoint <UINT:cnt> pon-tod-time <UINT64:second> <UINT:nanosecond> state ( disable | enable )
+
+//time configuration
+//get configuration
+//freerun time
+time get free-time

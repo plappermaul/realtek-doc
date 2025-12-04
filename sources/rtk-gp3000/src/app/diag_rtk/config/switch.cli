@@ -1,0 +1,407 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) switch commands.
+//
+
+//switch configuration
+//init switch
+switch init
+
+//switch configuration
+//get configuration
+//48 pass 1 configuration
+//state configuration
+switch get 48-pass-1 state
+
+//switch configuration
+//set configuration
+//48 pass 1 configuration
+//state configuration
+//disable function
+//enable function
+switch set 48-pass-1 state ( disable | enable )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//state configuration
+//disable function
+//enable function
+switch set ipg-compensation state ( disable | enable )
+
+//switch configuration
+//set configuration
+//IPG compensation configuration
+//65ppm
+//90ppm
+switch set ipg-compensation ( 65ppm | 90ppm )
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+//state configuration
+switch get ipg-compensation state
+
+//switch configuration
+//get configuration
+//IPG compensation configuration
+switch get ipg-compensation
+
+//switch configuration
+//set configuration
+//bypass tx crc configuration
+//system base state configuration
+//disable function
+//enable function
+switch set bypass-tx-crc state ( disable | enable )
+
+//switch configuration
+//get configuration
+//bypass tx crc configuration
+//system base state configuration
+switch get bypass-tx-crc state
+
+//switch configuration
+//set configuration
+//tx crc configuration
+//packet was change
+//disable crc re-calculate
+//always re-calculate
+switch set tx-crc ( pkt-changed | disable | always )
+
+//switch configuration
+//get configuration
+//tx crc configuration
+switch get tx-crc
+
+//switch configuration
+//set configuration
+//RX check CRC configuration
+//port
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set rx-check-crc port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//get configuration
+//RX check CRC configuration
+//port
+//port list
+//all ports
+//state configuration
+switch get rx-check-crc port ( <PORT_LIST:ports> | all ) state
+
+
+//switch configuration
+//set configuration
+//system MAC address configuration
+//MAC address
+switch set mac-address <MACADDR:mac>
+
+//switch configuration
+//get configuration
+//system MAC address configuration
+switch get mac-address
+
+//switch configuration
+//set configuration
+//max packet length
+//fast ethernet speed
+//giga speed
+//port
+//port list
+//all ports
+//rx
+//tx
+//length configuration
+//packet length, < 0~16383 >
+switch set max-pkt-len ( fe | ge ) port ( <PORT_LIST:ports> | all ) ( rx | tx ) length <UINT:len>
+
+//switch configuration
+//set configuration
+//max packet length
+//port
+//port list
+//all ports
+//length configuration
+//packet length, < 0~16383 >
+switch set max-pkt-len port ( <PORT_LIST:ports> | all ) length <UINT:len>
+
+//switch configuration
+//get configuration
+//max packet length
+//port
+//port list
+//all ports
+switch get max-pkt-len port ( <PORT_LIST:ports> | all )
+
+//switch configuration
+//set configuration
+//max packet length
+//rx maximum length count tag
+//port
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set max-pkt-len rx-inc-tag port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//switch configuration
+//get configuration
+//max packet length
+//rx maximum length count tag
+//port
+//port list
+//all ports
+//state configuration
+switch get max-pkt-len rx-inc-tag port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//set configuration
+//max packet length
+//fast ethernet speed
+//giga speed
+//port
+//port list
+//all ports
+//index configuration
+//index, <0~1>
+switch set max-pkt-len ( fe | ge ) port ( <PORT_LIST:ports> | all ) index <UINT:index>
+
+//switch configuration
+//get configuration
+//max packet length
+//fast ethernet speed
+//giga speed
+//port
+//port list
+//all ports
+switch get max-pkt-len ( fe | ge ) port ( <PORT_LIST:ports> | all )
+
+//switch configuration
+//set configuration
+//max packet length
+//index configuration
+//index, <0~1>
+//length configuration
+//packet length, < 0~16383 >
+switch set max-pkt-len index <UINT:index> length <UINT:len>
+
+//switch configuration
+//get configuration
+//max packet length
+//index configuration
+//index, <0~1>
+switch get max-pkt-len index <UINT:index>
+
+//switch configuration
+//set configuration
+//limit pause configuration
+//state configuration
+//disable function
+//enable function
+switch set limit-pause state ( disable | enable )
+
+//switch configuration
+//get configuration
+//limit pause configuration
+//state
+switch get limit-pause state
+
+//switch configuration
+//set configuration
+//small ipg for tag configuration
+//port
+//port list
+//all ports
+//state configuration
+//enable 
+//disable
+switch set small-ipg-tag port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//switch configuration
+//get configuration
+//small ipg for tag configuration
+//port
+//port list
+//all ports
+//state configuration
+switch get small-ipg-tag port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//get configuration
+//backpressure configuration
+switch get back-pressure
+
+//switch configuration
+//set configuration
+//backpressure configuration
+//Collision-based backpressure (Jam mode)
+//Carrier-based backpressure (Defer mode)
+switch set back-pressure ( jam | defer )
+
+//switch configuration
+//set configuration
+//accept small packet configuration
+//port
+//port list
+//all ports
+//state configuration
+//enable 
+//disable
+switch set small-pkt port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//switch configuration
+//get configuration
+//accept small packet configuration
+//port
+//port list
+//all ports
+//state configuration
+switch get small-pkt port ( <PORT_LIST:ports> | all ) state
+
+//switch configuration
+//reset configuration
+//global software reset
+//chip reset
+//config reset
+//queue reset
+//pon mac
+//serdes
+//switch-core
+//gphy
+switch reset ( global | chip | config | queue | pon-mac | serdes | switch-core | gphy ) 
+
+//switch configuration
+//set configuration
+//output drop configuration
+//port
+//port list
+//all ports
+//state configuration
+//disable function
+//enable function
+switch set output-drop port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//switch configuration
+//get configuration
+//output drop configuration
+//port
+//port list
+//all ports
+//state configuration
+switch get output-drop port ( <PORT_LIST:ports> | all ) state 
+
+//switch configuration
+//set configuration
+//output drop configuration
+//broadcast
+//unknown unicast
+//multicast
+//state configuration
+//disable function
+//enable function
+switch set output-drop ( broadcast | unknown-unicast | multicast ) state ( disable | enable )
+
+//switch configuration
+//get configuration
+//output drop configuration
+//broadcast
+//unknown unicast
+//multicast
+//state configuration
+switch get output-drop ( broadcast | unknown-unicast | multicast ) state
+
+//switch configuration
+//set configuration
+//change duplex
+//state configuration
+//disable function
+//enable function
+switch set change-duplex state ( disable | enable )
+
+//switch configuration
+//get configuration
+//change duplex
+//state configuration
+switch get change-duplex state
+
+//switch configuration
+//set configuration
+//change duplex
+//threshold configuration
+//threshold, < 0~31 >
+switch set change-duplex threshold <UINT:threshold>
+
+//switch configuration
+//get configuration
+//change duplex
+//threshold configuration
+switch get change-duplex threshold
+
+//switch configuration
+//set configuration
+//change duplex
+//frccol configuration
+//include function
+//exclude function
+switch set change-duplex frccol ( include | exclude )
+
+//switch configuration
+//get configuration
+//change duplex
+//frccol configuration
+switch get change-duplex frccol
+
+//switch configuration
+//set configuration
+//system initial
+//default configuration
+//igmp configuration
+//storm configuration
+//8696 inter-control configuration
+switch set system-init ( default | igmp | storm | 8696 )
+
+//switch configuration
+//set configuration
+//system initial
+//lan configuration
+//wan configuration
+//mac configuration
+//mac address data, A:B:C:D:E:F
+//ip configuration
+//ip address, X.Y.Z.W
+switch set system-init ( lan | wan ) mac <MACADDR:mac> ip <IPV4ADDR:ip>
+
+//switch configuration
+//set configuration
+//system initial
+//rldp configuration
+//mac configuration
+//mac address data, A:B:C:D:E:F
+switch set system-init rldp mac <MACADDR:mac>
+
+//switch configuration
+//get configuration
+//SoC thermal value 
+switch get thermal 
+

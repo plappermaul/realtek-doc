@@ -1,0 +1,120 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: $
+// $Date: $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) counter commands.
+//
+
+//rt_mib configuration
+//intial
+rt_mib init
+
+//rt_mib configuration
+//reset configuration
+//counter configuration
+//port configuration
+//port list, <0-6>
+//all ports
+rt_mib reset counter port ( <PORT_LIST:ports> | all )
+
+//rt_mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//nonZero configuration
+rt_mib dump counter port ( <PORT_LIST:ports> | all ) { nonZero }
+
+
+//rt_mib configuration
+//set configuration
+//vlan-counter configuration
+//filter configuration
+//index
+//index, <0-31>
+//state configuration
+//enable
+//disable
+//type configuration
+//port filter configuration
+//flow filter configuration
+//id configuration
+//port or flow id
+//dir configuration
+//rx
+//tx
+rt_mib set vlan-counter filter index <UINT:index> state ( disable | enable ) type ( port | flow ) id <UINT:id> dir ( rx | tx )
+
+//rt_mib configuration
+//set configuration
+//vlan-counter configuration
+//filter configuration
+//index
+//index, <0-31>
+//state configuration
+//enable
+//disable
+//type configuration
+//port filter configuration
+//flow filter configuration
+//id configuration
+//port or flow id
+//dir configuration
+//rx
+//tx
+//vid configuration
+//vid <0~4095>, 0xffff as disable
+//pri configuration
+//pri <0~7>, 0xff as disable
+//pkt-type configuration
+//All packet
+//Unicast packet
+//Multicast packet
+//Broadcast packet
+rt_mib set vlan-counter filter index <UINT:index> state ( disable | enable ) type ( port | flow ) id <UINT:id> dir ( rx | tx ) vid <UINT:vid> pri <UINT:pri> pkt-type ( all | uc | mc | bc )
+
+
+//rt_mib configuration
+//set configuration
+//vlan-counter configuration
+//filter configuration
+//index
+//index, <0-31>
+rt_mib get vlan-counter filter index <UINT:index> 
+
+//rt_mib configuration
+//set configuration
+//vlan-counter configuration
+//filter configuration
+//index
+//valid index
+rt_mib get vlan-counter filter index valid
+
+//rt_mib configuration
+//dump configuration
+//counter configuration
+//index configuration
+//index, <0-31>
+//nonZero configuration
+rt_mib dump vlan-counter index <PORT_LIST:index> { nonZero }
+
+//rt_mib configuration
+//reset configuration
+//counter configuration
+//index configuration
+//index, <0-31>
+rt_mib reset vlan-counter index <PORT_LIST:index>
