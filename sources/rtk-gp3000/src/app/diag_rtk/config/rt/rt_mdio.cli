@@ -1,0 +1,76 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) MDIO commands.
+//
+
+//MDIO configuration
+//initialization
+rt_mdio init
+
+//MDIO configuration
+//set configuration
+//IEEE clause 22 format
+//MDIO bus configuration
+//MDIO bus specify
+//PHY ID configuration
+//PHY ID specify
+//PHY register configuration
+//PHY register to be operated
+//data configuration
+//data value
+rt_mdio set c22-format bus <UINT:bus> phyid <UINT:phyid> register <UINT:register> data <UINT:data>
+
+//MDIO configuration
+//get configuration
+//IEEE clause 22 format
+//MDIO bus configuration
+//MDIO bus specify
+//PHY ID configuration
+//PHY ID specify
+//PHY register configuration
+//PHY register to be operated
+rt_mdio get c22-format bus <UINT:bus> phyid <UINT:phyid> register <UINT:register>
+
+//MDIO configuration
+//set configuration
+//IEEE clause 45 format
+//MDIO bus configuration
+//MDIO bus specify
+//PHY ID configuration
+//PHY ID specify
+//PHY device configuration
+//PHY device specify
+//PHY register configuration
+//PHY register to be operated
+//data configuration
+//data value
+rt_mdio set c45-format bus <UINT:bus> phyaddr <UINT:phyaddr> device <UINT:device> register <UINT:register> data <UINT:data>
+
+//MDIO configuration
+//get configuration
+//IEEE clause 45 format
+//MDIO bus configuration
+//MDIO bus specify
+//PHY ID configuration
+//PHY ID specify
+//PHY device configuration
+//PHY device specify
+//PHY register configuration
+//PHY register to be operated
+rt_mdio get c45-format bus <UINT:bus> phyaddr <UINT:phyaddr> device <UINT:device> register <UINT:register>
+

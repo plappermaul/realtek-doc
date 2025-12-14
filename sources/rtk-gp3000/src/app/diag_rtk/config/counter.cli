@@ -1,0 +1,317 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) counter commands.
+//
+
+//mib configuration
+//intial
+mib init
+
+//mib configuration
+//dump configuration
+//counter configuration
+//dot1dTpLearnedEntryDiscards
+mib dump counter dot1dTpLearnedEntryDiscards
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo )
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo
+//dot1dTpPortInDiscards, RFC 1493/2674
+//dot3ControlInUnknownOpcodes, RFC 3635
+//dot3InPauseFrames, RFC 3635
+//dot3OutPauseFrames, RFC 3635
+//dot3StatsDeferredTransmissions, RFC 3635
+//dot3StatsExcessiveCollisions, RFC 3635
+//dot3StatsLateCollisions, RFC 3635
+//dot3StatsMultipleCollisionFrames, RFC 3635
+//dot3StatsSingleCollisionFrames, RFC 3635
+//dot3StatsSymbolErrors, RFC 3635
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo ) ( dot1dTpPortInDiscards | dot3ControlInUnknownOpcodes | dot3InPauseFrames | dot3OutPauseFrames | dot3StatsDeferredTransmissions | dot3StatsExcessiveCollisions | dot3StatsLateCollisions | dot3StatsMultipleCollisionFrames | dot3StatsSingleCollisionFrames | dot3StatsSymbolErrors )
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo 
+//etherStatsCRCAlignErrors, RFC 2819
+//etherStatsCollisions, RFC 2819
+//etherStatsDropEvents, RFC 2819
+//etherStatsFragments, RFC 2819
+//etherStatsJabbers, RFC 2819
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo ) ( etherStatsCRCAlignErrors | etherStatsCollisions | etherStatsDropEvents | etherStatsFragments | etherStatsJabbers )
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo
+//etherStatsPkts64Octets, RFC 2819
+//etherStatsPkts65to127Octets, RFC 2819
+//etherStatsPkts128to255Octets, RFC 2819
+//etherStatsPkts256to511Octets, RFC 2819
+//etherStatsPkts512to1023Octets, RFC 2819
+//etherStatsPkts1024to1518Octets, RFC 2819
+//etherStatsPkts1519toMaxOctets, Proprietary
+//etherStatsOversizePkts, RFC 2819
+//etherStatsUndersizePkts, RFC 2819
+//etherStatsUndersizeDropPkts
+//rx counter
+//tx counter
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo ) ( etherStatsPkts64Octets | etherStatsPkts65to127Octets | etherStatsPkts128to255Octets | etherStatsPkts256to511Octets | etherStatsPkts512to1023Octets | etherStatsPkts1024to1518Octets | etherStatsPkts1519toMaxOctets | etherStatsOversizePkts | etherStatsUndersizePkts | etherStatsUndersizeDropPkts ) ( rx | tx )
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo
+//etherStatsTxBroadcastPkts, Proprietary
+//etherStatsTxMulticastPkts, Proprietary
+//inOamPduPkts, Proprietary
+//outOamPduPkts, Proprietary
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo ) ( etherStatsTxBroadcastPkts | etherStatsTxMulticastPkts | inOamPduPkts | outOamPduPkts )
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo
+//ifInOctets, RFC 1213/2863
+//ifInUcastPkts, RFC 1213/2863
+//ifInMulticastPkts, RFC 1213/2863
+//ifInBrocastPkts, RFC 1213/2863
+//ifOutOctets, RFC 1213/2863
+//ifOutUcastPkts, RFC 1213/2863
+//ifOutMulticastPkts, RFC 1213/2863
+//ifOutBroadcastPkts, RFC 1213/2863
+//ifOutDiscards, RFC 1213/2863
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo ) ( ifInOctets | ifInUcastPkts | ifInMulticastPkts | ifInBroadcastPkts | ifOutOctets | ifOutUcastPkts | ifOutMulticastPkts | ifOutBroadcastPkts | ifOutDiscards )
+
+//mib configuration
+//dump configuration
+//counter configuration
+//port configuration
+//port list
+//all ports
+//switch pbo
+//nonZero configuration
+mib dump counter port ( <PORT_LIST:ports> | all | swpbo ) nonZero
+
+//mib configuration
+//get configuration
+//counting mode configuration
+mib get count-mode
+
+//mib configuration
+//set configuration
+//counting type configuration
+//by user define timer
+//latch timer configuration
+//timer (unit 1sec), <0 ~ 255>
+mib set count-mode by-timer latch-time <UINT:timer>
+
+//mib configuration
+//set configuration
+//counting mode configuration
+//normal free run sync
+mib set count-mode freerun
+
+//mib configuration
+//get configuration
+//ctag counting configuration
+//Rx counter
+//Tx counter
+mib get ctag-length ( rx-counter | tx-counter )
+
+//mib configuration
+//set configuration
+//ctag counting configuration
+//Rx counter
+//Tx counter
+//exclude tag length
+//include tag length
+mib set ctag-length ( rx-counter | tx-counter ) ( exclude | include )
+
+//mib configuration
+//get configuration
+//reset value configuration
+mib get reset-value
+
+//mib configuration
+//set configuration
+//reset value configuration
+//reset value 0
+//reset value 1
+mib set reset-value ( 0 | 1 )
+
+//mib configuration
+//get configuration
+//synchronization mode configuration
+mib get sync-mode
+
+//mib configuration
+//set configuration
+//synchronization mode configuration
+//normal free run sync
+//stop sync
+mib set sync-mode ( freerun | stop )
+
+//mib configuration
+//get configuration
+//the newest packet trap/drop reason
+//port list <0-6>
+//port configuration
+//all ports
+mib get packet-debug-reason port ( <PORT_LIST:ports> | all )
+
+//mib configuration
+//reset configuration
+//counter configuration
+//global configuration
+mib reset counter global
+
+//mib configuration
+//reset configuration
+//counter configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//switch pbo
+mib reset counter port ( <PORT_LIST:ports> | all | swpbo )
+
+//mib configuration
+//dump configuration
+//statistic counter configuration
+//index configuration
+//index, <0~31>
+mib dump statistic index <UINT:index>
+
+//mib configuration
+//reset configuration
+//statistic counter configuration
+//index configuration
+//index, <0~31>
+mib reset statistic index <UINT:index>
+
+//mib configuration
+//set configuration
+//statistic counter configuration
+//mode configuration
+//index configuration
+//index, <0,2,4~30>
+//32-bits counter
+//64-bits counter
+mib set statistic mode index <UINT:index> ( bits-32 | bits-64 )
+
+//mib configuration
+//get configuration
+//statistic counter configuration
+//mode configuration
+//index configuration
+//index, <0,2,4~30>
+mib get statistic mode index <UINT:index> 
+
+//mib configuration
+//get configuration
+//statistic counter configuration
+//type configuration
+//index configuration
+//index, <0,2,4~30>
+mib get statistic type index <UINT:index> 
+
+//mib configuration
+//set configuration
+//statistic counter configuration
+//type configuration
+//index configuration
+//index, <0,2,4~30>
+//byte counting
+//packet counting
+mib set statistic type index <UINT:index> ( byte-count | packet-count )
+
+//mib configuration
+//dump configuration
+//host counter configuration
+//index configuration
+//index
+mib dump host index <UINT:index>
+
+//mib configuration
+//reset configuration
+//host counter configuration
+//index configuration
+//index
+mib reset host index <UINT:index>
+
+//mib configuration
+//get configuration
+//host configuration
+//host entry
+//index
+//state configuration
+mib get host entry <UINT:index> state
+
+//mib configuration
+//set configuration
+//host configuration
+//host entry
+//index
+//state configuration
+//disable function
+//enable function
+mib set host entry <UINT:index> state ( disable | enable ) 
+
+//mib configuration
+//get configuration
+//host configuration
+//host entry
+//index
+//mac addresss configuration
+mib get host entry <UINT:index> mac-address
+
+//mib configuration
+//set configuration
+//host configuration
+//host entry
+//index
+//mac addresss configuration
+//unicast MAC address, A:B:C:D:E:F
+mib set host entry <UINT:index> mac-address <MACADDR:mac>
+
+
+

@@ -1,0 +1,807 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for Port.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) port commands.
+//
+
+//port configuration
+//init configuration
+port init
+
+//port configuration
+//dump configuration
+//traffic isolation configuration
+port dump isolation
+
+//port configuration
+//get configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+port get auto-nego port ( <PORT_LIST:ports> | all ) ability
+
+//port configuration
+//get configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state
+port get auto-nego port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//get configuration
+//link status
+//port configuration
+//port list, <0-6>
+//all port
+port get status port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//get configuration
+//port based efid configuarion
+//port configuration
+//port list, <0-6>
+//all port
+port get enhanced-fid port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//port based efid configuarion
+//port configuration
+//port list, <0-6>
+//all port
+//enhance fid configuration
+//efid, <0~7>
+port set enhanced-fid port ( <PORT_LIST:ports> | all ) enhanced-fid <UINT:efid>
+
+//port configuration
+//get configuration
+//force-dmp configuration
+//port configuration
+//port list, <0-6>
+//all port
+port get force-dmp port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//get configuration
+//force-dmp configuration
+port get force-dmp
+
+//port configuration
+//set configuration
+//force-dmp configuration
+//port configuration
+//port list, <0-6>
+//all port
+//port_mask
+//port mask, <0-6>
+//all
+//none
+port set force-dmp port ( <PORT_LIST:ports> | all ) port-mask ( <PORT_LIST:port_mask> | all | none )
+
+//port configuration
+//set configuration
+//force-dmp configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable
+//enable
+port set force-dmp port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//set configuration
+//force-dmp configuration
+//state configuration
+//disable
+//enable
+port set force-dmp state ( disable | enable )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//ext configuration
+//ext port list, <0-5>
+port get isolation ext <PORT_LIST:ext>
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//ext_l34 configuration
+//ext port list, <0-5>
+port get isolation ext-l34 <PORT_LIST:ext>
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all ports
+port get isolation port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//port_l34 configuration
+//port list, <0-6>
+//all ports
+port get isolation port-l34 ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//ext configuration
+//ext port list, <0-5>
+//vidx configuration
+//vlan mbr index, <0~31>
+port set isolation ext <PORT_LIST:ext> vlan-index <UINT:vidx>
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//ext_l34 configuration
+//ext port list, <0-5>
+//vidx configuration
+//vlan mbr index, <0~31>
+port set isolation ext-l34 <PORT_LIST:ext> vlan-index <UINT:vidx>
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//vidx configuration
+//vlan mbr index, <0~31>
+port set isolation port ( <PORT_LIST:ports> | all ) vlan-index <UINT:vidx>
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//port_l34 configuration
+//port list, <0-6>
+//all port
+//vidx configuration
+//vlan mbr index, <0~31>
+port set isolation port-l34 ( <PORT_LIST:ports> | all ) vlan-index <UINT:vidx>
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//mode 0 configuration
+//mode 1 configuration
+//egress-port configuration
+//egress port configuration <0-6>
+//none
+port set isolation port ( <PORT_LIST:ports> | all ) ( mode0 | mode1 ) egress-port ( <PORT_LIST:egressports> | none )
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//mode 0 configuration
+//mode 1 configuration
+//egress ext port configuration
+//egress ext port <0-5>
+//none
+port set isolation port ( <PORT_LIST:ports> | all ) ( mode0 | mode1 ) egress-ext ( <PORT_LIST:egress_ext> | none )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//mode 0 configuration
+//mode 1 configuration
+port get isolation port ( <PORT_LIST:ports> | all ) ( mode0 | mode1 )
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//ext port configuration
+//ext port <0-5>
+//mode 0 configuration
+//mode 1 configuration
+//egress-port configuration
+//egress port configuration <0~6>
+//none
+port set isolation ext <PORT_LIST:ext> ( mode0 | mode1 ) egress-port ( <PORT_LIST:egressports> | none )
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//ext port configuration
+//ext port <0-5>
+//mode 0 configuration
+//mode 1 configuration
+//egress ext port configuration
+//egress ext port <0-5>
+//none
+port set isolation ext <PORT_LIST:ext> ( mode0 | mode1 ) egress-ext ( <PORT_LIST:egress_ext> | none )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//ext port configuration
+//ext port <0-5>
+//mode 0 configuration
+//mode 1 configuration
+port get isolation ext <PORT_LIST:ext> ( mode0 | mode1 )
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//Ctag configuration
+//mode 0 configuration
+//mode 1 configuration
+port set isolation ctag ( mode0 | mode1 )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//Ctag configuration
+port get isolation ctag
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//L34 configuration
+//mode 0 configuration
+//mode 1 configuration
+port set isolation l34 ( mode0 | mode1 )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//L34 configuration
+port get isolation l34
+
+//port configuration
+//get configuration
+//master slave mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+port get master-slave port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//master slave mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//auto
+//master mode
+//slave mode
+port set master-slave port ( <PORT_LIST:ports> | all ) ( auto | master | slave )
+
+//port configuration
+//get configuration
+//phy register configuration
+//port configuration
+//port list, <0-6>
+//all
+//page configuration
+//page
+//register configuration
+//register address, <0~31>
+port get phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register>
+
+//port configuration
+//set configuration
+//phy register configuration
+//port configuration
+//port list, <0-6>
+//all
+//page configuration
+//page
+//register configuration
+//register address, <0~31>
+//data configuration
+//data value(example 0x1234)
+port set phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> data <UINT:data>
+
+//port configuration
+//set configuration
+//phy register configuration
+//port configuration
+//port list, <0-6>
+//all
+//page configuration
+//page
+//register configuration
+//register address, <0~31>
+//bit configuration
+//msb value <0~15>
+//lsb value <0~15>, lsb must <= msb
+//data value(example 0x1234)
+port set phy-reg port ( <PORT_LIST:ports> | all ) page <UINT:page> register <UINT:register> bits <UINT:msb> <UINT:lsb> <UINT:data>
+
+//port configuration
+//set configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//2500M full
+//5000M full
+//10000M full
+//flow control
+//asynchronism flow control
+port set auto-nego port ( <PORT_LIST:ports> | all ) ability { 10h } { 10f } { 100h } { 100f } { 1000f } { 2500f } { 5000f } { 10000f } { flow-control } { asy-flow-control }
+
+//port configuration
+//set configuration
+//auto negotiation configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable function
+//enable function
+port set auto-nego port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//get configuration
+//forced mac configuration
+//port configuration
+//port list, <0-6>
+//all port
+port get mac-force port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//forced mac configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//10000f
+//500M full
+//2.5G
+//2.5G lite
+//5G
+//5G lite
+//10G
+//flow control
+//disable function
+//enable function
+port set mac-force port ( <PORT_LIST:ports> | all ) ability ( 10h | 10f | 100h | 100f | 1000f | 10000f | | 500f | 2g5 | 2g5l | 5g | 5gl | 10g ) flow-control ( disable | enable )
+
+//port configuration
+//set configuration
+//forced mac configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//speed
+//duplex
+//tx pause
+//rx pause
+//nway
+//link state
+//100M lpi
+//Giaga lpi
+//state
+//disable function
+//enable function
+port set mac-force port ( <PORT_LIST:ports> | all ) ability ( speed | duplex | tx-pause | rx-pause | nway | link-state | lpi-100M | lpi-giga ) state ( disable | enable )
+
+
+//port configuration
+//get configuration
+//RTCT configuration
+//port list
+//all ports
+port get rtct ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//RTCT configuration
+//port list
+//all ports
+//start test
+port set rtct ( <PORT_LIST:ports> | all ) start
+
+//port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//100M lpi
+//Giaga lpi
+//state configuration
+//disable
+//enable
+port set mac-force port ( <PORT_LIST:ports> | all ) ( lpi-100M | lpi-giga ) state ( disable | enable )
+
+//port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//link state
+//link down
+//link up
+port set mac-force port ( <PORT_LIST:ports> | all ) link-state ( link-down | link-up )
+
+//port configuration
+//set configuration
+//force mode configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable
+//enable
+port set mac-force port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//leaky configuration
+//ip multicast
+//port configuration
+//ports, <0-6>
+//all ports
+//state configuration
+//enable
+//disablen
+port set isolation leaky ip-mcast port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//leaky configuration
+//ip multicast
+//port configuration
+//ports, <0-6>
+//all ports
+//state configuration
+port get isolation leaky ip-mcast port ( <PORT_LIST:ports> | all ) state
+
+
+
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//leaky configuration
+//rma configuration
+//tail of rma mac address, <0x00~0x2F>
+//state configuration
+//enable
+//disable
+port set isolation leaky rma <UINT:rma_tail> state ( enable | disable )
+
+//port configuration
+//get configuration
+//traffic isolation configuration
+//leaky configuration
+//rma configuration
+//tail of rma mac address, <0x00~0x2F>
+//state configuration
+port get isolation leaky rma <UINT:rma_tail> state
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//leaky configuration
+//igmp
+//cdp
+//csstp
+//state configuration
+port get isolation leaky ( igmp | cdp | csstp ) state
+
+//port configuration
+//set configuration
+//traffic isolation configuration
+//leaky configuration
+//igmp
+//cdp
+//csstp
+//state configuration
+//disable
+//enable
+port set isolation leaky ( igmp | cdp | csstp ) state ( disable | enable )
+
+
+//port configuration
+//get configuration
+//special-congest
+//port list, <0-6>
+//all port
+port get special-congest ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//special-congest
+//port list, <0-6>
+//all port
+//sustain-timer
+//second, <0~15>
+port set special-congest ( <PORT_LIST:ports> | all ) sustain-timer <UINT:second>
+
+//port configuration
+//get configuration
+//special-congest
+//port list, <0-6>
+//all port
+//indicator
+port get special-congest ( <PORT_LIST:ports> | all ) indicator
+
+//port configuration
+//clear configuration
+//special-congest
+//port list, <0-6>
+//all port
+//indicator
+port clear special-congest ( <PORT_LIST:ports> | all ) indicator
+
+//port configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all port
+//admin state
+//disable
+//enable
+port set port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all port
+//admin state
+port get port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//set configuration
+//phy test mode configuration
+//port configuration
+//port list, <0-6>
+//all
+//test mode configuration
+//normal mode
+//test mode 1
+//test mode 2
+//test mode 3
+//test mode 4
+port set phy-testmode port ( <PORT_LIST:ports> | all ) test-mode ( normal | 1 | 2 | 3 | 4 )
+
+//port configuration
+//get configuration
+//phy test mode configuration
+//port configuration
+//port list, <0-6>
+//all
+//test mode configuration
+port get phy-testmode port ( <PORT_LIST:ports> | all ) test-mode
+
+
+
+//port configuration
+//set configuration
+//giga-lite setting
+//port configuration
+//port list
+//all
+//giga-lite stae
+//disable
+//enable
+port set giga-lite port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+
+//port configuration
+//set configuration
+//giga-lite setting
+//port configuration
+//port list
+//all
+//giga-lite stae
+port get giga-lite port ( <PORT_LIST:ports> | all ) state
+
+
+//port configuration
+//get configuration
+//forced phy configuration
+//port configuration
+//port list, <0-6>
+//all port
+port get phy-force port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//forced phy configuration
+//port configuration
+//port list, <0-6>
+//all port
+//ability
+//10M half
+//10M full
+//100M half
+//100M full
+//1000M full
+//10000f
+//flow control
+//disable function
+//enable function
+port set phy-force port ( <PORT_LIST:ports> | all ) ability ( 10h | 10f | 100h | 100f | 1000f | 10000f ) flow-control ( disable | enable )
+
+//port configuration
+//set configuration
+//mac loopback configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+//disable
+//enable
+port set mac-loopback port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//get configuration
+//mac loopback configuration
+//port configuration
+//port list, <0-6>
+//all port
+//state configuration
+port get mac-loopback port ( <PORT_LIST:ports> | all ) state
+
+
+//port configuration
+//set configuration
+//phy force power down setting
+//port configuration
+//port list, <0-6>
+//all port only with internal phy
+//state configuration
+//disable
+//enable
+port set phy-force-power-down port ( <PORT_LIST:ports> | all ) state  ( disable | enable )
+
+
+//port configuration
+//get configuration
+//phy force power down setting
+//port configuration
+//port list, <0-6>
+//all port only with internal phy
+//state configuration
+port get phy-force-power-down port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//set configuration
+//eee setting
+//port configuration
+//port list
+//all
+//eee enable state
+//disable
+//enable
+port set eee port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//set configuration
+//eee setting
+//port configuration
+//port list
+//all
+//eee enable stae
+port get eee port ( <PORT_LIST:ports> | all ) state
+
+//port configuration
+//set configuration
+//serdes setting
+//port configuration
+//port list, <0-10>
+//all port
+//fiber-1g
+//sgmii-mac
+//hsgmii-mac 
+//2500basex
+//xfi
+//usxgmii
+//rxaui
+//qxgmii
+//n-way setting
+//force
+//auto
+port set serdes port ( <PORT_LIST:ports> | all )  ( fiber-1g | sgmii-mac | hsgmii-mac | 2500basex | xfi | usxgmii | rxaui | qxgmii | usxgmii-5g ) n-way ( force | auto )
+
+//port configuration
+//set configuration
+//serdes setting
+//port configuration
+//port list, <0-10>
+//all port
+port get serdes port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//serdes setting
+//port configuration
+//port list, <0-10>
+//all port
+//tx polarity
+//normal
+//inverse
+//rx polarity
+//normal
+//inverse
+port set serdes port ( <PORT_LIST:ports> | all )  tx-polarity ( normal | inverse ) rx-polarity ( normal | inverse )
+
+//port configuration
+//get configuration
+//serdes setting
+//port configuration
+//port list, <0-10>
+//all port
+//polarity
+port get serdes port ( <PORT_LIST:ports> | all ) polarity
+
+//port configuration
+//dump configuration
+//serdes setting
+//port configuration
+//port list, <0-10>
+//all port
+port dump serdes port ( <PORT_LIST:ports> | all )
+
+//port configuration
+//set configuration
+//eee setting
+//port configuration
+//port list
+//all
+//green enable stae
+//disable
+//enable
+port set green port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//port configuration
+//set configuration
+//green setting
+//port configuration
+//port list
+//all
+//green enable state
+port get green port ( <PORT_LIST:ports> | all ) state
+

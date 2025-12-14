@@ -1,0 +1,229 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision:  $
+// $Date:  $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) GPON commands.
+//
+
+//GPON configuration
+//intial configuration
+rt_gpon init
+
+//GPON configuration
+//set configuration
+//serial number configuration
+//4 ASCII and 8 hex
+rt_gpon set serialnumber <STRING:sn>
+
+//GPON configuration
+//set configuration
+//serial number configuration
+//vendor ID, string, 4 bytes
+//serail number, hex number, 4 bytes
+rt_gpon set serial-number <STRING:vendor_id> <UINT:serial_number>
+
+//GPON configuration
+//set configuration
+//serial number configuration
+//vendor ID, hex string , 8 char
+//serail number, hex string, 8 char
+rt_gpon set serial-number-hex <STRING:vendor_id> <STRING:serial_number>
+
+//GPON configuration
+//set configuration
+//registrationId configuration
+//registrationId, string, 10 bytes for GPON password, 36 Bytes for XG-PON1/XGS-PON/NG-PON2 registration ID
+rt_gpon set registrationId <STRING:registrationId>
+
+//GPON configuration
+//set configuration
+//registrationId configuration
+//registrationId, string, 10 bytes for GPON password, 36 Bytes for XG-PON1/XGS-PON/NG-PON2 registration ID
+rt_gpon set registrationId-hex <STRING:registrationId>
+
+//GPON configuration
+//activation configuration
+//initial state when ONU activation
+//specify to O1
+//specify to O7
+rt_gpon activate init-state ( o1 | o7 )
+
+//GPON configuration
+//de-activation configuration
+rt_gpon deactivate
+
+//GPON configuration
+//get configuration
+//ONU state, O1-O7
+rt_gpon get onu-state
+
+//GPON configuration
+//add configuration
+//TCONT configuration
+//Alloc-ID configuration
+//Alloc-ID, 0~4095
+rt_gpon add tcont alloc-id <UINT:allocId>
+
+//GPON configuration
+//delete configuration
+//TCONT configuration
+//TCONT-ID configuration
+//TCONT-ID, 0~31
+rt_gpon del tcont tcont-id <UINT:tcontId>
+
+//GPON configuration
+//add configuration
+//downstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+//GEM port configuration
+//GEM port, 0~4095
+//AES encryption service type
+rt_gpon add ds-flow flow-id <UINT:flowId> gem-port <UINT:gemPort> { aes }
+
+//GPON configuration
+//delete configuration
+//downstream flow configuration
+//flow ID configuration
+//all flows
+//flow ID, 0~127
+rt_gpon del ds-flow ( flow-id | all ) { <UINT:flowId> }
+
+//GPON configuration
+//add configuration
+//upstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+//GEM port configuration
+//GEM port, 0~4095
+//TCONT-ID configuration
+//TCONT-ID, 0~31
+//Queue configuration
+//Queue-ID, 0~127
+//AES encryption service type
+rt_gpon add us-flow flow-id <UINT:flowId> gem-port <UINT:gemPort> tcont <UINT:tcontId> queue <UINT:queueId> { aes }
+
+//GPON configuration
+//delete configuration
+//upstream flow configuration
+//flow ID configuration
+//all flows
+//flow ID, 0~127
+rt_gpon del us-flow ( flow-id | all ) { <UINT:flowId> }
+
+//GPON configuration
+//add configuration
+//queue configuration
+//TCONT ID configuration
+//TCONT ID, 0~31
+//queue configuration
+//queue ID, 0~7
+//cir configuration
+//cir rate (unit 8Kbps)
+//pir configuration
+//pir rate (unit 8Kbps)
+//weight configuration
+//weight, 0~15
+//schedule type
+//SP schedule type
+//WRR schedule type
+//SP-WRR schedule type
+rt_gpon add queue tcont-id <UINT:tcontId> queue-id <UINT:queueId> cir <UINT:cir> pir <UINT:pir> weight <UINT:weight> schedule-type ( sp | wrr | sp-wrr )
+
+//GPON configuration
+//delete configuration
+//queue configuration
+//TCONT ID configuration
+//TCONT ID, 0~31
+//queue ID configuration
+//queue ID, 0~7
+rt_gpon del queue tcont-id <UINT:tcontId> queue-id <UINT:queueId>
+
+//GPON configuration
+//show configuration
+//TCONT configuration
+//TCONT Queue configuration
+//downstream flow configuration
+//upstream flow configuration
+//OMCC configuration
+rt_gpon show ( tcont | tcont-queue | ds-flow | us-flow | omcc )
+
+//GPON configuration
+//show configuration
+//counter informaiton
+//global counter informaiton
+//PHY counter
+//PLOAM counter
+//OMCI counter
+//GEM counter
+rt_gpon show counter global ( phy | plm | omci | gem )
+
+//GPON configuration
+//show configuration
+//counter informaiton
+//flow counter informaiton
+//flow ID, 0~127
+rt_gpon show counter flow <UINT:flowId>
+
+//rt_gpon configuration
+//get configuration
+//rate configuration
+rt_gpon get egress rate
+
+//rt_gpon configuration
+//set configuration
+//rate configuration
+//rate, unit Kbps
+rt_gpon set egress rate <UINT:rate>
+
+//rt_gpon configuration
+//get configuration
+//dbru-status configuration
+rt_gpon get dbru-status
+
+//rt_gpon configuration
+//set configuration
+//dbru-status configuration
+//disable function
+//enable function
+rt_gpon set dbru-status ( disable | enable )
+
+//rt_gpon configuration
+//get configuration
+//gem-block-size configuration
+rt_gpon get gem-block-size
+
+//rt_gpon configuration
+//get configuration
+//gem-block-size configuration
+//size, unit bytes
+rt_gpon set gem-block-size <UINT:size>
+
+//rt_gpon configuration
+//set configuration
+//loop-gemport configuration
+//gemport, GEM port configuration
+//gemport , 0~4095
+//disable function
+//enable function
+rt_gpon set loop-gemport gemport <UINT:gemport> ( disable | enable )
+
+//rt_gpon configuration
+//get configuration
+//loop-gemport configuration
+//gemport, GEM port configuration
+//gemport , 0~4095
+rt_gpon get loop-gemport gemport <UINT:gemport>

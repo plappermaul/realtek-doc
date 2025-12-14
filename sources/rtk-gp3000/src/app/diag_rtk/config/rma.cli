@@ -1,0 +1,54 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) rma commands.
+//
+
+//rma configuration
+//dump
+rma dump
+
+//rma configuration
+//set configuration
+//priority
+//priority value, <0~7>
+rma set priority <UINT:priority>
+
+//rma configuration
+//get configuration
+//priority
+rma get priority
+
+//rma configuration
+//set configuration
+//address configuration
+//tail of RMA MAC address, <0x00~0x2f>
+//action
+//drop RMA packets
+//forward RMA packets
+//forward RMA packets exclude CPU port
+//trap RMA packets to CPU
+rma set address <UINT:rma_tail> action ( drop | forward | forward-exclude-cpu | trap-to-cpu )
+
+//rma configuration
+//get configuration
+//address configuration
+//tail of RMA MAC address, <0x00~0x2f>
+//action
+rma get address <UINT:rma_tail> action
+
+

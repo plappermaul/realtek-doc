@@ -1,0 +1,536 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for L34.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) L34 commands.
+//
+
+
+//L34 configuration
+//L34 lite configuration
+//initial l34 lite module
+l34 lite init
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//list network device
+l34 ip link list
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//list network device
+//table index, <0~7>
+l34 ip link list <UINT:index>
+
+
+//L34 configuration
+//ip configuration
+//network device configuration
+//add configuration
+//interface configuration
+//table index, <0~7>
+//Hardware address configuration
+//MAC address
+//type configuration
+//WAN interface
+//LAN interface
+l34 ip link add netif <UINT:index> address <MACADDR:macaddr> type ( wan | lan )
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//vid configuration
+//vid
+//default priority
+//priority, 0~7, 8 means disable priority
+l34 ip link set netif <UINT:index> vid <UINT:vid> default-pri <UINT:pri>
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//pppoe configuration
+//state configuration
+//disabe
+l34 ip link set netif <UINT:index> pppoe state disable
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//pppoe configuration
+//state configuration
+//enable
+//sessionId configuration
+//sessionId
+//pass-through configuration
+//enable
+//disable
+l34 ip link set netif <UINT:index> pppoe state enable sessionId <UINT:id> pass-through ( enable | disable )
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//routing configuration
+//state configuration
+//disabe
+//enable
+l34 ip link set netif <UINT:index> routing state ( disable | enable )
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//MTU configuration
+//MTU size
+l34 ip link set netif <UINT:index> mtu <UINT:mtu>
+
+
+//L34  configuration
+//IP configuration
+//IPv4 address configuration
+//set configuration
+//ip address
+//prefix length configuration
+//prefix length value
+//device configuration
+//table index, <0~7>
+l34 ip addr set <IPV4ADDR:ipaddr>  prefix-len <UINT:len> dev <UINT:netifId>
+
+
+//L34  configuration
+//IP configuration
+//IPv4 address configuration
+//set configuration
+//ip address
+//prefix length configuration
+//prefix length value
+//Gateway configuration
+//Gateway MAC address
+//device configuration
+//table index, <0~7>
+l34 ip addr set <IPV4ADDR:ipaddr>  prefix-len <UINT:len> via <MACADDR:macaddr> dev <UINT:netifId>
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//nat-type configuration
+//nat configuration
+//internal-ip configuration
+//ip address
+l34 ip link set netif <UINT:index> nat-type nat internal-ip <IPV4ADDR:ipaddr>
+
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//nat-type configuration
+//local public ip
+//full cone napt
+//restricted cone napt
+//port restricted cone napt
+l34 ip link set netif <UINT:index> nat-type ( local-public | full-cone-napt | restricted-napt | port-restricted-napt )
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//set configuration
+//interface configuration
+//table index, <0~7>
+//down state
+//up state
+l34 ip link set netif <UINT:index> ( down | up )
+
+
+
+//L34  configuration
+//ip configuration
+//network device configuration
+//delete configuration
+//interface configuration
+//table index, <0~7>
+l34 ip link del netif <UINT:index>
+
+
+//L34 configuration
+//ip configuration
+//neighbor configuration
+//add configuration
+//ip address
+//mac address
+l34 ip neigh add <IPV4ADDR:ipaddr>  <MACADDR:macaddr>
+
+
+//L34 configuration
+//ip configuration
+//neighbor configuration
+//list configuration
+//ip address
+l34 ip neigh list { <IPV4ADDR:ipaddr> }
+
+
+//L34  configuration
+//ip configuration
+//neighbor configuration
+//delete configuration
+//ip address
+l34 ip neigh del <IPV4ADDR:ipaddr>
+
+
+//L34  configuration
+//ip configuration
+//route configuration
+//add configuration
+//default route configuration
+//gateway mac address
+//device configuration
+//network interface index, <0~7>
+l34 ip route add default <MACADDR:macaddr> dev <UINT:netifId>
+
+
+//L34  configuration
+//ip configuration
+//route configuration
+//add configuration
+//ip address
+//prefix length configuration
+//prefix length value
+//gateway  configuration
+//gateway MAC address
+//device configuration
+//network interface index, <0~7>
+l34 ip route add <IPV4ADDR:ipaddr> prefix-len <UINT:len> via  <MACADDR:macaddr>  dev <UINT:netifId>
+
+
+//L34  configuration
+//ip configuration
+//route configuration
+//add configuration
+//ip address
+//prefix length configuration
+//prefix length value
+//trap route
+//drop route
+//device configuration
+//network interface index, <0~7>
+l34 ip route add <IPV4ADDR:ipaddr> prefix-len <UINT:len> ( trap | drop ) dev <UINT:netifId>
+
+
+
+//L34 configuration
+//ip configuration
+//routing table
+//list configuration
+//table index, <0~7>
+l34 ip route list { <UINT:index> }
+
+
+//L34 configuration
+//ip configuration
+//route table
+//delete configuration
+//ip address
+//prefix length configuration
+//prefix length value
+l34 ip route del <IPV4ADDR:ipaddr> prefix-len <UINT:len>
+
+
+//L34 configuration
+//ip configuration
+//route table
+//delete configuration
+//default route
+l34 ip route del default
+
+
+//L34 configuration
+//connection tracking configuration
+//add configuration
+//direction configuration
+//LAN to WAN direction
+//WAN to LAN direction
+//source ip configuration
+//source ip address
+//source port configuration
+//source port
+//destination ip configuration
+//destination ip address
+//destionation port configuration
+//destionation port
+//protocol configuration
+//tcp
+//udp
+//nat ip configuration
+//nat ip address
+//nat port configuration
+//nat port
+//priority configuration
+//priority value
+l34 conntrack add dir ( upsteram | downstream ) srcip <IPV4ADDR:sip> srcport <UINT:sport> dstip <IPV4ADDR:dip> dstport <UINT:dport> proto ( tcp | udp ) natip <IPV4ADDR:nip> natport <UINT:nport> priority <UINT:pri>
+
+//L34 configuration
+//connection tracking configuration
+//add configuration
+//direction configuration
+//LAN to WAN direction
+//WAN to LAN direction
+//source ip configuration
+//source ip address
+//source port configuration
+//source port
+//destination ip configuration
+//destination ip address
+//destionation port configuration
+//destionation port
+//protocol configuration
+//tcp
+//udp
+//nat ip configuration
+//nat ip address
+//nat port configuration
+//nat port
+l34 conntrack add dir ( upsteram | downstream ) srcip <IPV4ADDR:sip> srcport <UINT:sport> dstip <IPV4ADDR:dip> dstport <UINT:dport> proto ( tcp | udp ) natip <IPV4ADDR:nip> natport <UINT:nport>
+
+
+//L34 configuration
+//connection tracking configuration
+//get  configuration
+//source ip configuration
+//source ip address
+//source port configuration
+//source port
+//destination ip configuration
+//destination ip address
+//destionation port configuration
+//destionation port
+//protocol configuration
+//tcp
+//udp
+l34 conntrack get srcip <IPV4ADDR:sip> srcport <UINT:sport> dstip <IPV4ADDR:dip> dstport <UINT:dport> proto ( tcp | udp )
+
+
+//L34 configuration
+//connection tracking configuration
+//delete  configuration
+//source ip configuration
+//source ip address
+//source port configuration
+//source port
+//destination ip configuration
+//destination ip address
+//destionation port configuration
+//destionation port
+//protocol configuration
+//tcp
+//udp
+l34 conntrack del  srcip <IPV4ADDR:sip> srcport <UINT:sport> dstip <IPV4ADDR:dip> dstport <UINT:dport> proto ( tcp | udp )
+
+
+//L34  configuration
+//system configuration
+//l34 routing process
+//l3 nat process
+//l4 nat process
+//l3 checksum error allow
+//l4 checksum error allow
+//nat trap log
+//ttl reduce process
+//trap fragement to cpu
+//binding
+//state configuration
+//enable
+//disable
+l34 sys ( l34-route | l3-nat | l4-nat | l3-checksum-error-allow | l4-checksum-error-allow | nat-attack-log | ttl-minus | fragement-to-cpu | binding ) state ( enable | disable )
+
+
+//L34  configuration
+//system configuration
+//interface decision mode configuration
+//mode configuration
+//VLAN based
+//Port based
+//MAC based
+l34 sys interface-decision-mode mode ( vlan-based | port-based | mac-based )
+
+
+//L34 configuration
+//system configuration
+//port map configuration
+//mac port
+//extension port
+//dsl vc port
+//port list, mac-port: <0-5>, ext-port: <0-4>, dslvc-port: <0-15>
+//all
+//device configuration
+//network interface index, <0~7>
+l34 sys  port-map  ( mac-port | ext-port | dslvc-port ) ( <PORT_LIST:ports> | all ) dev <UINT:index>
+
+
+//L34 configuration
+//system configuration
+//WAN route packet configuration
+//action configuration
+//drop packet
+//trap to CPU
+//normal forward
+l34 sys wan-route action ( drop | trap-to-cpu | forward )
+
+//L34 configuration
+//system configuration
+//list configuration
+l34 sys list
+
+
+//L34  configuration
+//IPv6 configuration
+//route configuration
+//add configuration
+//default route configuration
+//gateway mac address
+//device configuration
+//network interface index, <0~7>
+l34 ip6 route add default <MACADDR:macaddr> dev <UINT:netifId>
+
+
+//L34  configuration
+//IPv6 configuration
+//route configuration
+//add configuration
+//IPv6 address
+//prefix length configuration
+//IPv6 prefix length
+//gateway configuration
+//gateway mac address
+//device configuration
+//network interface index, <0~7>
+l34 ip6 route add <IPV6ADDR:ip6addr> prefix-len <UINT:prefixlen> via  <MACADDR:macaddr>  dev <UINT:netifId>
+
+
+//L34  configuration
+//IPv6 configuration
+//route configuration
+//add configuration
+//IPv6 address
+//prefix length configuration
+//IPv6 prefix length
+//trap route
+//drop route
+//device configuration
+//network interface index, <0~7>
+l34 ip6 route add <IPV6ADDR:ip6addr> prefix-len <UINT:prefixlen> ( trap | drop ) dev <UINT:netifId>
+
+
+
+//L34 configuration
+//IPv6 configuration
+//routing table
+//list configuration
+//table index, <0~7>
+l34 ip6 route list { <UINT:index> }
+
+
+//L34 configuration
+//IPv6 configuration
+//route table
+//delete configuration
+//IPv6 address
+//prefix length configuration
+//IPv6 prefix length
+l34 ip6 route del  <IPV6ADDR:ip6addr> prefix-len <UINT:prefixlen>
+
+
+//L34 configuration
+//IPv6 configuration
+//route table
+//delete configuration
+//default route
+l34 ip6 route del default
+
+//L34  configuration
+//IPv6 configuration
+//neighbor configuration
+//add configuration
+//IPv6 address
+//link-layer address configuration
+//link-layer address
+l34 ip6 neigh add <IPV6ADDR:ip6addr> lladdr <MACADDR:macaddr>
+
+
+//L34  configuration
+//IPv6 configuration
+//neighbor configuration
+//delete configuration
+//IPv6 address
+l34 ip6 neigh del <IPV6ADDR:ip6addr>
+
+
+//L34  configuration
+//IPv6 configuration
+//neighbor configuration
+//list  configuration
+//IPv6 address
+l34 ip6 neigh list { <IPV6ADDR:ip6addr> }
+
+
+//L34  configuration
+//IPv6 configuration
+//address configuration
+//add configuration
+//IPv6 address
+//prefix length configuration
+//IPv6 prefix length
+//device configuration
+//network interface index, <0~7>
+l34 ip6 addr add <IPV6ADDR:ip6addr> prefix-len <UINT:prefixlen> dev <UINT:netifId>
+
+
+//L34  configuration
+//IPv6 configuration
+//address configuration
+//delete configuration
+//IPv6 address
+//prefix length configuration
+//IPv6 prefix length
+//device configuration
+//network interface index, <0~7>
+l34 ip6 addr del <IPV6ADDR:ip6addr> prefix-len <UINT:prefixlen> dev <UINT:netifId>
+
+

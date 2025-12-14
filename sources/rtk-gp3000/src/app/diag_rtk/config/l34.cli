@@ -1,0 +1,1791 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for L34.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) L34 commands.
+//
+
+
+//L34 configuration
+//initial l34  module
+l34 init
+
+//L34 configuration
+//asic reset 
+//table
+//L3 routing table
+//PPPoE table
+//nexthop table
+//interface table
+//external IP table
+//arp table
+//NAPTR table
+//NAPT table
+//WAN Type table
+//Binding table
+//IPv6 neighbor table
+//IPv6 L3 routing table
+//Flow Routing table
+l34 reset table ( l3 | pppoe | nexthop | interface | external-ip | arp | naptr | napt | wan-type | binding | neighbor | l3v6 | flow )
+
+//L34 configuration
+//get configuration
+//arp table
+l34 get arp
+
+//L34 configuration
+//get configuration
+//arp table
+//table index, <0~511>
+l34 get arp <UINT:index>
+
+//L34 configuration
+//set configuration
+//arp table
+//arp table index
+//next hop index
+//next hop index
+l34 set arp <UINT:index> next-hop-table <UINT:nh_index>
+
+//L34 configuration
+//set configuration
+//arp table
+//arp table index
+//ip addr configuration
+//ip addr
+l34 set arp <UINT:index> ip <IPV4ADDR:ip>
+
+//L34 configuration
+//delete configuration
+//arp table
+//arp table index, <0~511>
+l34 del arp <UINT:index>
+
+//L34 configuration
+//get configuration
+//external IP table
+l34 get external-ip 
+
+//L34 configuration
+//get configuration
+//external IP table
+//table index
+l34 get external-ip <UINT:index>
+
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index, <0~15>
+//table entry type
+//NAT entry
+//NAPT entry
+//Local public entry
+l34 set external-ip <UINT:index> type ( nat | napt | lp )
+
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index
+//externla IP
+//ip address
+l34 set external-ip <UINT:index> external-ip <IPV4ADDR:ip>
+
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index
+//internal IP
+//ip address, must set to 0.0.0.0 for NAT
+l34 set external-ip <UINT:index> internal-ip <IPV4ADDR:ip>
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index
+//next hop index
+//next hop index, <0~15>
+l34 set external-ip <UINT:index> next-hop-table <UINT:nh_index>
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index
+//NAT priority assign configuration
+//state configuration
+//disable
+//enable
+l34 set external-ip <UINT:index> nat-priority state ( disable | enable )
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index
+//NAT priority configuration
+//priority value, <0~7>
+l34 set external-ip <UINT:index> nat-priority <UINT:priority>
+
+//L34 configuration
+//set configuration
+//external IP table
+//external IP table index
+//status of this entry
+//disable this entry
+//enable this entry
+l34 set external-ip <UINT:index> state ( disable | enable )
+
+//L34 configuration
+//delete configuration
+//external IP table
+//external IP table index
+l34 del external-ip <UINT:index>
+
+//L34 configuration
+//get configuration
+//routing table
+l34 get routing 
+
+//L34 configuration
+//get configuration
+//routing table
+//table index, <0~7>
+l34 get routing <UINT:index>
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//routing table IP address configuraion
+//IP address
+//IP mask configuration
+//IP mask, <0-31> 
+l34 set routing <UINT:index> ip <IPV4ADDR:ip> ip-mask <UINT:mask>
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//interface type
+//internal interface
+//external interface
+l34 set routing <UINT:index> interface-type ( internal | external )
+
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//drap packet
+//trap to CPU
+l34 set routing <UINT:index> type ( drop | trap )
+
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//local routing entry
+//destination network interface index
+//index, <0~7>
+l34 set routing <UINT:index> type local-route destination-netif <UINT:netif_index>
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//local routing entry
+//arp entry start configuration
+//arp entry start value , <0~127>
+//arp entry end configuration
+//arp entry end value , <0~127>
+l34 set routing <UINT:index> type local-route arp-start-address <UINT:start_addr> arp-end-address <UINT:end_addr>
+
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//global routing entry
+//next hop index configuration
+//next hop table index, <0~15>
+l34 set routing <UINT:index> type global-route next-hop-table <UINT:nh_index>
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//global routing entry
+//next hop start address configuration
+//next hop address
+//next hop number configuration
+//next hop number <0~4> 0:1,1:2,2:4,3:8,4:16
+l34 set routing <UINT:index> type global-route next-hop-start <UINT:address> next-hop-number <UINT:nh_number>
+
+
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//global routing entry
+//load balance algorithm configuration
+//per packet load balance
+//per session load balance
+//per source IP load balance
+l34 set routing <UINT:index> type global-route next-hop-algo ( per-packet | per-session | per-source_ip )
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//entry type
+//global routing entry
+//IP domain range configuraion
+//domain range for external IP table, <0~7> 
+l34 set routing <UINT:index> type global-route ip-domain-range <UINT:range>
+
+//L34 configuration
+//set configuration
+//routing table
+//routing table index, <0~15>
+//state configuration
+//disable
+//enable
+l34 set routing <UINT:index> state ( disable | enable )
+
+
+//L34 configuration
+//delete configuration
+//routing table
+//routing table index, <0~15>
+l34 del routing <UINT:index>
+
+//L34 configuration
+//get configuration
+//network interface table
+l34 get netif 
+
+//L34 configuration
+//get configuration
+//network interface table
+//table index
+l34 get netif <UINT:index>
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//gateway MAC address
+//mac address
+//mac mask
+//no mask
+//1bit mask, 2 mac for this entry
+//2bit mask, 4 mac for this entry
+//3bit mask, 8 mac for this entry
+l34 set netif <UINT:index> gateway-mac <MACADDR:mac> mac-mask ( no-mask | 1bit-mask | 2bit-mask | 3bit-mask )
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//vlan configuration
+//vid
+l34 set netif <UINT:index> vid <UINT:vid>
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//MTU configuration
+//MTU size
+l34 set netif <UINT:index> mtu <UINT:mtu>
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//state configuration
+//disable
+//enable
+l34 set netif <UINT:index> state ( disable | enable )
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//l3 routing figuration
+//state configuration
+//disable
+//enable
+l34 set netif <UINT:index> l3-route state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//DS-Lite figuration
+//state configuration
+//disable
+//enable
+//ds-lite index
+l34 set netif <UINT:index> dslite state ( enable | disable ) { <UINT:dslite_idx> }
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//l34 figuration
+//state configuration
+//disable
+//enable
+l34 set netif <UINT:index> l34 state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//IP figuration
+//IP addr
+l34 set netif <UINT:index> ip <IPV4ADDR:ip>
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//CTAG interface or not figuration
+//state configuration
+//disable
+//enable
+l34 set netif <UINT:index> ctag-if state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//network interface table
+//table index
+//ipv6 configuration
+//state configuration
+//disable
+//enable
+l34 set netif <UINT:index> ipv6 state ( enable | disable )
+
+//L34 configuration
+//delete configuration
+//network interface table
+//table index, <0~7>
+l34 del netif <UINT:index>
+
+//L34 configuration
+//get configuration
+//next hop table
+l34 get nexthop 
+
+//L34 configuration
+//get configuration
+//next hop table
+//table index
+l34 get nexthop <UINT:index>
+
+//L34 configuration
+//set configuration
+//next hop table
+//table index
+//destination network interface table index
+//table index
+l34 set nexthop <UINT:index> netif <UINT:netif_index>
+
+
+//L34 configuration
+//set configuration
+//next hop table
+//table index
+//L2 table index
+//index
+l34 set nexthop <UINT:index> l2 <UINT:l2_index>
+
+//L34 configuration
+//set configuration
+//next hop table
+//table index
+//next hop interface type
+//PPPoE interface
+//Ethernet interface
+l34 set nexthop <UINT:index> type ( ethernet | pppoe )
+
+//L34 configuration
+//set configuration
+//next hop table
+//table index
+//PPPoE table index 
+//Pindex
+l34 set nexthop <UINT:index> pppoe <UINT:pppoe_index>
+
+//L34 configuration
+//set configuration
+//next hop table
+//table index
+//Keep PPPoE tag option
+//replace by pppIdx
+//original tag
+//If original tagged, keep. Otherwise add tag with PPPIDX session id
+l34 set nexthop <UINT:index> keepPppoe ( replace-by-pppIdx | original | original-tag-or-add-by-pppIdx )
+
+//L34 configuration
+//get configuration
+//pppoe table
+l34 get pppoe 
+
+//L34 configuration
+//get configuration
+//pppoe table
+//table index
+l34 get pppoe <UINT:index>
+
+//L34 configuration
+//set configuration
+//pppoe table
+//index
+//PPPoE session id
+//session id
+l34 set pppoe <UINT:index> session-id <UINT:session_id>
+
+//L34 configuration
+//get configuration
+//NAPT table
+l34 get napt 
+
+//L34 configuration
+//get configuration
+//NAPT table
+//table index, <0~2047>
+l34 get napt <UINT:index>
+
+//L34 configuration
+//set configuration
+//NAPT table
+//table index, <0~2047>
+//hash index to NAPTR table
+//index, <0~1023>
+l34 set napt <UINT:index> hash-index <UINT:hash_index>
+
+//L34 configuration
+//set configuration
+//NAPT table
+//table index, <0~2047>
+//NAPT priority assign configuration
+//state configuration
+//disable
+//enable
+l34 set napt <UINT:index> napt-priority state ( disable | enable )  
+
+//L34 configuration
+//set configuration
+//NAPT table
+//table index, <0~2047>
+//NAPT priority configuration
+//priority value, <0~7>
+l34 set napt <UINT:index> napt-priority <UINT:priority>
+
+//L34 configuration
+//set configuration
+//NAPT table
+//table index, <0~2047>
+//state configuration
+//disable
+//enable
+l34 set napt <UINT:index> state ( disable | enable )
+
+
+//L34 configuration
+//delete configuration
+//NAPT table
+//napt table index, <0~2047>
+l34 del napt <UINT:index>
+
+//L34 configuration
+//get configuration
+//NAPTR table
+l34 get naptr 
+
+//L34 configuration
+//get configuration
+//NAPTR table
+//table index, <0~1023>
+l34 get naptr <UINT:index>
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//internal IP address configuration
+//IP address
+//internal port configuration
+//internal port number
+l34 set naptr <UINT:index> internal-ip <IPV4ADDR:ip> internal-port <UINT:port> 
+
+
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//protocal type configuration
+//TCP
+//UDP
+l34 set naptr <UINT:index> protocol ( tcp | udp )
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//external IP table index configuraion
+//external IP table index
+//external port LSB configuraion
+//external port configuraion
+//external port
+l34 set naptr <UINT:index> external-ip <UINT:extip_index> ( external-port-lsb | external-port ) <UINT:export>
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//NAPT priority configuration
+//state configuration
+//disable
+//enable
+l34 set naptr <UINT:index> naptr-priority state ( disable | enable )  
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//NAPT priority configuration
+//priority value, <0~7>
+l34 set naptr <UINT:index> naptr-priority <UINT:priority>
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//remote hash type configration
+//no remote hash
+//remote hash use remote IP
+//remote hash use remote IP and remote port
+l34 set naptr <UINT:index> remote-hash-type ( none | remote_ip | remote_ip_remote_port )
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//remote hash value configuration
+//remote hash value
+l34 set naptr <UINT:index> hash-value <UINT:value>
+
+
+//L34 configuration
+//set configuration
+//NAPTR table
+//table index, <0~1023>
+//configuration entry state
+//disable this entry
+l34 set naptr <UINT:index> state disable
+
+
+//L34 configuration
+//delete configuration
+//NAPTR table
+//routing table index, <0~1023>
+l34 del naptr <UINT:index>
+
+//L34 configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all
+//network interface table configurtion
+//table index, <0~7>
+l34 set port ( <PORT_LIST:ports> | all ) netif <UINT:index>
+
+//L34 configuration
+//get configuration
+//port configuration
+//port list, <0-6>
+//all
+l34 get port ( <PORT_LIST:ports> | all )
+ 
+//L34 configuration
+//set configuration
+//extension port configuration
+//extension port list, <0~5>
+//all
+//network interface table configurtion
+//table index, <0~7>
+l34 set ext ( <PORT_LIST:ext> | all ) netif <UINT:index>
+
+//L34 configuration
+//get configuration
+//extension port configuration
+//extension port list, <0~5>
+//all extention port
+l34 get ext ( <PORT_LIST:ext> | all )
+
+//L34 configuration
+//set configuration
+//L4 framment packet configuration
+//action configuration
+//Trap to CPU
+//normal forward
+l34 set l4-fragment action ( trap-to-cpu | forward )
+
+//L34 configuration
+//get configuration
+//L4 framment packet configuration
+l34 get l4-fragment
+
+//L34 configuration
+//set configuration
+//L3 checksum error configuration
+//action configuration
+//normal forward
+//drop
+l34 set l3-checksum-error action ( forward | drop )
+
+//L34 configuration
+//get configuration
+//L3 checksum error configuration
+l34 get l3-checksum-error
+
+//L34 configuration
+//set configuration
+//L4 checksum error configuration
+//action configuration
+//normal forward
+//drop
+l34 set l4-checksum-error action ( forward | drop )
+
+//L34 configuration
+//set configuration
+//L4 checksum error configuration
+l34 get l4-checksum-error
+
+//L34 configuration
+//set configuration
+//TTL -1 operation configuration
+//state configuration
+//disable
+//enable
+l34 set ttl-minus state ( enable | disable )
+
+//L34 configuration
+//get configuration
+//TTL-1 operation configuration
+//state
+l34 get ttl-minus state
+
+//L34 configuration
+//set configuration
+//interface decision mode configuration
+//VLAN based
+//port based
+//MAC based
+l34 set interface-decision-mode ( vlan-based | port-based | mac-based )
+
+//L34 configuration
+//get configuration
+//interface decision mode configuration
+l34 get interface-decision-mode
+
+//L34 configuration
+//set configuration
+//NAT attack packet configuration
+//action configuration
+//drop packet
+//trap to CPU
+l34 set nat-attack action ( drop | trap-to-cpu )
+
+//L34 configuration
+//get configuration
+//NAT attack packet configuration
+l34 get nat-attack
+
+//L34 configuration
+//set configuration
+//WAN route packet configuration
+//action configuration
+//drop packet
+//trap to CPU
+//normal forward
+l34 set wan-route action ( drop | trap-to-cpu | forward )
+
+//L34 configuration
+//set configuration
+//WAN route packet configuration
+l34 get wan-route
+
+//L34 configuration
+//set configuration
+//L34 routing mode configuration
+//pure L3 routing mode
+//L3 and L4 routing mode
+//disable routing
+l34 set route-mode ( l3 | l3-l4 | disable )
+
+//L34 configuration
+//get configuration
+//L34 routing mode configuration
+l34 get route-mode
+
+//L34 configuration
+//get configuration
+//PPPoE table traffic indicator
+//PPPoE table traffic indicator index
+//index
+l34 get pppoe-traffic-indicator index <UINT:index>
+
+//L34 configuration
+//get configuration
+//PPPoE table traffic indicator
+l34 get pppoe-traffic-indicator
+
+//L34 configuration
+//get configuration
+//ARP table traffic indicator
+//table index
+//table index
+l34 get arp-traffic-indicator index <UINT:index>
+
+//L34 configuration
+//get configuration
+//ARP table traffic indicator
+l34 get arp-traffic-indicator
+
+//L34 configuration
+//reset configuration
+//ARP table traffic indicator
+//indicator table 0
+//indicator table 1
+l34 reset arp-traffic-indicator ( table0 | table1 )
+
+//L34 configuration
+//select configuration
+//ARP table traffic indicator
+//indicator table 0
+//indicator table 1
+l34 select arp-traffic-indicator ( table0 | table1 )
+
+//L34 configuration
+//get configuration
+//L4 NAPTR table traffic indicator
+//table index
+//table index, <0~2047>
+l34 get l4-traffic-indicator index <UINT:index>
+
+//L34 configuration
+//get configuration
+//L4 NAPTR table traffic indicator
+l34 get l4-traffic-indicator
+
+//L34 configuration
+//reset configuration
+//L4 NAPTR table traffic indicator
+//indicator table 0
+//indicator table 1
+l34 reset l4-traffic-indicator ( table0 | table1 )
+
+//L34 configuration
+//select configuration
+//L4 NAPTR table traffic indicator
+//indicator table 0
+//indicator table 1
+l34 select l4-traffic-indicator ( table0 | table1 )
+
+//L34 configuration
+//get configuration
+//Flow routing table traffic indicator
+//table index
+//table index
+l34 get flow-traffic-indicator index <UINT:index>
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//l2bridge
+//l2bridbe value <0~1>
+debug l34 set hsb l2-bridge <UINT:l2bridge> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//IP fragmment offset status
+//ipfrags value <0~1>
+debug l34 set hsb ip-fragments <UINT:is_fragments> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//ipmf
+//ipmf value <0~1>
+debug l34 set hsb ip-more-fragments <UINT:is_more> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//l4chk_ok
+//l4chk_ok value <0~1>
+debug l34 set hsb l4-checksum-ok <UINT:is_ok> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//l3chk_ok
+//l3chk_ok value <0~1>
+debug l34 set hsb l3-checksum-ok <UINT:is_ok> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//cpu direct_tx
+//cpu direct_tx value <0~1>
+debug l34 set hsb direct-tx <UINT:is_direct_tx> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//udp no checksum
+//udp no checksum <0~1>
+debug l34 set hsb udp-no-chksum <UINT:udp_no_chk> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//parse_fail
+//parse_fail value <0~1>
+debug l34 set hsb parse-fail <UINT:parse_fail> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//pppoe_if
+//pppoe_if value <0~1>
+debug l34 set hsb pppoe-if <UINT:pppoe_if> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//svlan_if
+//svlan_if value <0~1>
+debug l34 set hsb svlan-if <UINT:svlan_if> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//ttl status
+//ttl status value <0~2>
+debug l34 set hsb ttls <UINT:ttls> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//packet type
+//packet value <0~7>
+debug l34 set hsb pkt-type <UINT:pkt_type> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//tcp_flag
+//tcp_flag value,3bits
+debug l34 set hsb tcp-flag <UINT:tcp_flag> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//cvlan_if
+//cvlan_if value <0~1>
+debug l34 set hsb cvlan-if <UINT:cvlan_if> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//rx source port 
+//source port number
+debug l34 set hsb source-port <UINT:spa> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//cvid
+//cvid value <0~4095>
+debug l34 set hsb cvid <UINT:cvid> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//packet len
+//len value
+debug l34 set hsb packet-length <UINT:length> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//dport or l4 checksum
+//dport or l4 checksum value
+debug l34 set hsb dport <UINT:dport> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//pppoe session id
+//pppoe session id value
+debug l34 set hsb pppoe-id <UINT:pppoe> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//DIP
+//dip address
+debug l34 set hsb dip <IPV4ADDR:ip> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//SIP
+//sip address
+debug l34 set hsb sip <IPV4ADDR:ip> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//protocol source port
+//source port value
+debug l34 set hsb sport <UINT:sport> 
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+//DMAC
+//DMAC value
+debug l34 set hsb dmac <MACADDR:mac>
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsb data buffer
+debug l34 get hsb
+ 
+//debug configuration
+//L34 configuration
+//get configuration
+//hsa data buffer
+debug l34 get hsa
+
+//debug configuration
+//L34 configuration
+//set configuration
+//hsba
+//hsba log mode
+//hsba log mode <0~5>
+debug l34 set hsba log-mode <UINT:mode>
+
+//debug configuration
+//L34 configuration
+//get configuration
+//hsba
+//log mode
+debug l34 get hsba log-mode
+
+//L34 configuration
+//get configuration
+//routing v6 table
+l34 get routing6  
+
+//L34 configuration
+//get configuration
+//routing v6 table
+//table index
+l34 get routing6 <UINT:index>
+
+//L34 configuration
+//get configuration
+//neighbor table
+l34 get neighbor  
+
+//L34 configuration
+//get configuration
+//neighbor table
+//table index, <0~127>
+l34 get neighbor <UINT:index>
+
+//L34 configuration
+//get configuration
+//binding table
+l34 get binding  
+
+//L34 configuration
+//get configuration
+//binding table
+//table index, <0~31>
+l34 get binding <UINT:index>
+
+//L34 configuration
+//get configuration
+//wan type table
+l34 get wan-type  
+
+//L34 configuration
+//get configuration
+//wan type table
+//table index
+l34 get wan-type <UINT:index>
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//state configuration
+//disable
+//enable
+l34 set routing6 <UINT:index> state ( disable | enable )
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//ipv6 addr configuration
+//ipv6 addr
+//prefix configuration
+//prefix
+l34 set routing6 <UINT:index> ip6 <IPV6ADDR:ip6> prefix <UINT:prefix>
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//nexthop configuration
+//nexthop index
+l34 set routing6 <UINT:index> nexthop <UINT:nexthop>
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//type configuration
+//local-route configuration
+//destination netif configuration
+//netif index
+l34 set routing6 <UINT:index> type local-route destination-netif <UINT:netif_index>
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//type configuration
+//global-route configuration
+//nexthop table configuration
+//nexthop index
+l34 set routing6 <UINT:index> type global-route next-hop-table <UINT:nh_index>
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//type configuration
+//drop
+//trap
+l34 set routing6 <UINT:index> type ( drop | trap )
+
+//L34 configuration
+//set configuration
+//routing v6 table
+//table index
+//route to wan inf configuration
+//state
+//enable
+//disable
+l34 set routing6 <UINT:index> rt2wan state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//neighbor table
+//table index, <0~127>
+//IPv6 Interface ID configuration
+//IPv6 Interface ID Value
+l34 set neighbor <UINT:index> ifId <UINT:ifIdValue>
+
+
+//L34 configuration
+//set configuration
+//binding table
+//table index, <0~31>
+//wan type index configuration
+//wan type table index <0~7>
+l34 set binding <UINT:index>  wan-type <UINT:wanTypeId>
+
+//L34 configuration
+//set configuration
+//binding table
+//table index, <0~31>
+//protocol configuration
+//binding for all protocol type
+//binding for ipv4 and other protocol type (not include ipv6)
+//binding for ipv6 and other protocol type (not include ipv4)
+//binding for other protocol type (not include ipv4 & ipv6)
+l34 set binding <UINT:index> protocol ( all | ipv4-other | ipv6-other | other-only  )
+
+//L34 configuration
+//set configuration
+//binding table
+//table index, <0~31>
+//vid configuration
+//vid value, 0 for port based binding, others for port & vlan binding <0~4095>
+l34 set binding <UINT:index> vid <UINT:vlanId>
+
+//L34 configuration
+//set configuration
+//binding table
+//table index, <0~31>
+//port configuration
+//port mask for binding
+//all ports
+l34 set binding <UINT:index> port ( <PORT_LIST:ports> | all )
+
+
+//L34 configuration
+//set configuration
+//binding table
+//table index, <0~31>
+//extension port configuration
+//port mask for binding
+//all ports
+l34 set binding <UINT:index> ext-port ( <PORT_LIST:ports> | all )
+
+
+//L34 configuration
+//set configuration
+//wan-type table
+//table index, <0~15>
+//wan type configuration
+//l2 bridged interface
+//l3 routed interface
+//l34 nat routed interface
+//l34 customized interface
+l34 set wan-type <UINT:index> type ( l2-bridge | l3-routing | l34-nat-route | l34-customize )
+
+
+//L34 configuration
+//set configuration
+//wan-type table
+//table index, <0~15>
+//next hop configuration
+//next hop index, <0~15>
+l34 set wan-type <UINT:index> next-hop <UINT:nexthopId>
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//unmatch type configuration
+//L2 bridge interface bind L3 routing interface
+//L2 bridge interface bind L34 routing interface
+//action configuration
+//drop action
+//trap action
+//force L2 bridge to bindign WAN
+l34 set binding unmatch-type ( l2tol3 | l2tol34 ) act ( drop | trap | force-l2-bridge ) 
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//unmatch type configuration
+//L3 routing interface bind L2 bridge interface
+//L34 routing interface bind L2 bridge interface
+//action configuration
+//drop action
+//trap action
+//premit and  L2 bridge
+l34 set binding unmatch-type ( l3tol2 | l34tol2 ) act ( drop | trap | permit-l2-bridge ) 
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//unmatch type configuration
+//L3 routing interface bind L34 routing interface
+//action configuration
+//trap action
+//force lookup L4 table for ipv4, ipv6 trap
+l34 set binding unmatch-type  l3tol34 act ( trap | force-l4-lookup ) 
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//unmatch type configuration
+//L34 routing interface bind L3 routing interface
+//L3 routing interface bind L3 routing interface
+//action configuration
+//trap action
+//force L3 binding and skip l3 table lookup
+l34 set binding unmatch-type  ( l34tol3 | l3tol3 ) act ( trap | force-l3 ) 
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//customized configuration
+//L2 bridge interface bind to customized interface
+//action configuration
+//trap action
+//drop action
+//permit and L2 bridge
+l34 set binding customized  l2 act ( trap | drop | permit-l2-bridge ) 
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//customized configuration
+//L3 routing interface bind to customized interface
+//action configuration
+//trap action
+//drop action
+//force binding L3
+//force lookup L4 table for ipv4, ipv6 trap
+l34 set binding customized  l3 act ( trap | drop | force-l3 | force-L4-lookup ) 
+
+
+//L34 configuration
+//set configuration
+//binding  configuration
+//customized configuration
+//L34 routing interface bind to customized interface
+//action configuration
+//trap action
+//drop action
+//force binding L3
+//normal L34 lookup
+l34 set binding customized  l34 act ( trap | drop | force-l3 | normal ) 
+
+
+//L34 configuration
+//get configuration
+//binding  configuration
+//unmatch type configuration
+//L2 bridge interface bind L3 routing interface
+//L2 bridge interface bind L34 routing interface
+//L3 routing interface bind L2 bridge interface
+//L3 routing interface bind L34 routing interface
+//L34 routing interface bind L2 bridge interface
+//L34 routing interface bind L3 routing interface
+//L3 routing interface bind L3 routing interface
+l34 get binding unmatch-type (  l2tol3 | l2tol34 | l3tol2 | l3tol34 | l34tol2 | l34tol3 | l3tol3 )
+
+//L34 configuration
+//get configuration
+//binding  configuration
+//customized configuration
+//L2 bridge interface bind to customized interface
+//L3 bridge interface bind to customized interface
+//L34 bridge interface bind to customized interface
+l34 get binding customized (  l2 | l3 | l34 )
+
+
+//L34 configuration
+//set configuration
+//mapping  configuration
+//port configuration
+//port index, <0~6>
+//wan configuration
+//wan index, <0~7>
+//state configuration
+//enable configuration
+//disable configuration
+l34 set map port <UINT:portId> wan <UINT:wanId> state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//mapping  configuration
+//ext-port configuration
+//ext-port index, <0~5>
+//wan configuration
+//wan index, <0~7>
+//state configuration
+//enable configuration
+//disable configuration
+l34 set map ext <UINT:extId> wan <UINT:wanId> state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//mapping  configuration
+//wan configuration
+//wan index, <0~7>
+//port configuration
+//port index, <0~6>
+//state configuration
+//enable configuration
+//disable configuration
+l34 set map wan <UINT:wanId> port <UINT:portId> state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//mapping  configuration
+//wan configuration
+//wan index, <0~7>
+//ext-port configuration
+//ext-port index, <0~5>
+//state configuration
+//enable configuration
+//disable configuration
+l34 set map wan <UINT:wanId> ext <UINT:extId> state ( enable | disable )
+
+//L34 configuration
+//get configuration
+//mapping  configuration
+//port to wan configuration
+//ext-port to wan configuration
+//wan to port configuration
+//wan to ext-port configuration
+//table index
+//tableId
+l34 get map ( port-to-wan | ext-to-wan | wan-to-port | wan-to-ext ) index <UINT:tableId>
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//state configuration
+//enable
+//disable
+l34 set flow-route <UINT:index> state ( enable | disable )  
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//ipv4 configuration
+//source ip configuration
+//ipv4 addr
+//destination ip configuration
+//ipv4 addr
+l34 set flow-route <UINT:index> ipv4 sip <IPV4ADDR:sip> dip <IPV4ADDR:dip>
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//ipv6 configuration
+//source ip configuration
+//ipv6 addr
+//destination ip configuration
+//ipv6 addr
+l34 set flow-route <UINT:index> ipv6 sip <IPV6ADDR:sip> dip <IPV6ADDR:dip>
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//source port configuration
+//source port number
+//destination port configuration
+//destination port number
+l34 set flow-route <UINT:index> sport <UINT:sport> dport <UINT:dport>
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//is TCP configuration
+//state configuration
+//enable
+//disable
+l34 set flow-route <UINT:index> tcp state ( enable | disable )
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//nexthop table index configuration
+//nexthop table index or netif table index
+l34 set flow-route <UINT:index> nexthop <UINT:nhIdx>
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//type configuration
+//drop
+//trap to cpu
+//local route
+//global route
+l34 set flow-route <UINT:index> type ( drop | trap | local-route | global-route )
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//priority configuration
+//priority <0~7>
+l34 set flow-route <UINT:index> priority <UINT:priority> 
+
+//L34 configuration
+//set configuration
+//flow route table configuration
+//table index configuration
+//priority valid configuration
+//enable
+//disable
+l34 set flow-route <UINT:index> pri-valid ( enable | disable ) 
+
+//L34 configuration
+//get configuration
+//flow route table configuration
+//table index configuration
+l34 get flow-route <UINT:index>
+
+//L34 configuration
+//get configuration
+//flow route table configuration
+//valid entry
+//ipv4
+//ipv6
+l34 get flow-route valid ( ipv4 | ipv6 )
+
+//L34 configuration
+//set configuration
+//flow route configuration
+//state
+//ipv4 configuration
+//ipv6 configuration
+//enable
+//disable
+l34 set flow-route state ( ipv4 | ipv6 ) ( enable | disable )
+
+//L34 configuration
+//get configuration
+//flow route configuration
+//state
+l34 get flow-route state
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//interface configuration
+//interface index, <0~3>
+//AFTR IPv6 addr configuration
+//AFTR IPv6 addr 
+//B4 IPv6 addr configuration
+//B4 IPv6 addr
+l34 set ds-lite interface <UINT:index> aftr-ip6 <IPV6ADDR:aftr_ip6> b4-ip6 <IPV6ADDR:b4_ip6> 
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//interface configuration
+//interface index, <0~3>
+//flow label configuration
+//flow label, 20bit, <0~0xfffff>
+//hop limit configuration
+//hop limit, <0~255>
+//traffic class option configuration
+//assign by TC configuration
+//copy from egress IPv4 TOS configuration 
+//traffic class value, <0~255>
+l34 set ds-lite interface <UINT:index> flow-label <UINT:flow_label> hop-limit <UINT:hop_limit> tc-opt ( assign | copy-egress-tos ) { <UINT:tc_value> } 
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//interface configuration
+//interface index, <0~3>
+//state configuration
+//enable configuration
+//disable configuration
+l34 set ds-lite interface <UINT:index> state ( enable | disable )
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//interface configuration
+l34 get ds-lite interface
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//interface configuration
+//interface index, <0~3>
+l34 get ds-lite interface <UINT:index>
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//mcast-table configuration
+//mcast-table index, <0~3>
+//Prefix 64 of IPv6 mcast src address for tunneling IPv4 mcast packets
+//Prefix 64 of IPv6 mcast src address
+//Prefix mask of IPv6 mcast src address for tunneling IPv4 mcast packets
+//Prefix mask of IPv6 mcast src address
+//Prefix 64 of IPv6 mcast dst address for tunneling IPv4 mcast packets
+//Prefix 64 of IPv6 mcast dst address
+//Prefix mask of IPv6 mcast dst address for tunneling IPv4 mcast packets
+//Prefix mask of IPv6 mcast dst address
+l34 set ds-lite mcast-table <UINT:index> src-ip6 <IPV6ADDR:src_ip6> mask <IPV6ADDR:src_mask> dst-ip6 <IPV6ADDR:dst_ip6> mask <IPV6ADDR:dst_mask> 
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//mcast-table configuration
+l34 get ds-lite mcast-table
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//mcast-table configuration
+//mcast-table index, <0~3>
+l34 get ds-lite mcast-table <UINT:index>
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//enable DS-Lite function state configuration
+//enable configuration
+//disable configuration
+l34 set ds-lite state ( enable | disable )
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//enable DS-Lite function state configuration
+l34 get ds-lite state
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//multicast prefix unmatch action configuration
+//drop configuration
+//trap configuration
+l34 set ds-lite mcast-unmatch-act ( drop | trap )
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//multicast prefix unmatch action configuration
+l34 get ds-lite mcast-unmatch-act
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//downstream unicast unmatch action configuration
+//drop configuration
+//trap configuration
+l34 set ds-lite ds-unmatch-act ( drop | trap )
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//downstream unicast unmatch action configuration
+l34 get ds-lite ds-unmatch-act
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//IP6 rx from B4 contain extension headers action configuration
+//trap while total length of extension headers > 0
+//trap while total length of extension headers > 240
+l34 set ds-lite ipv6-next-header-act ( trap-extheader-over-0 | trap-extheader-over-240 )
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//IP6 rx from B4 contain extension headers action configuration
+l34 get ds-lite ipv6-next-header-act
+
+//L34 configuration
+//set configuration
+//ds-lite configuration
+//ipv6 rx from B4 fragment action configuration
+//trap configuration 
+//drop configuration
+l34 set ds-lite ipv6-frag-act ( trap | drop )
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//ipv6 rx from B4 fragment action configuration
+l34 get ds-lite ipv6-frag-act
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//ipv4 tx to AFTR fragment action configuration
+//trap configuration 
+//drop configuration
+//forward configuration
+l34 set ds-lite ipv4-frag-act ( trap | drop | forward )
+
+//L34 configuration
+//get configuration
+//ds-lite configuration
+//ipv4 tx to AFTR fragment action configuration
+l34 get ds-lite ipv4-frag-act
+
+//L34 configuration
+//reset configuration
+//mib counter configuration
+//network interface table
+//table index
+l34 get counter netif <UINT:index>
+
+//L34 configuration
+//reset configuration
+//mib counter configuration
+//network interface table
+//table index
+l34 reset counter netif <UINT:index>
+
+//L34 configuration
+//set configuration
+//L34 MAC table lookup miss configuration
+//action configuration
+//Drop
+//Trap to CPU
+l34 set lut-miss action ( drop | trap-to-cpu )
+
+//L34 configuration
+//get configuration
+//L34 MAC table lookup miss configuration
+//action configuration
+l34 get lut-miss action
+
+//L34 configuration
+//set configuration
+//L34 ip multicast translation table configuration
+//table index, <0~15>
+//netif index configuration
+//table index
+l34 set ip-mcast-trans <UINT:index> netif <UINT:netIfIdx>
+
+//L34 configuration
+//set configuration
+//L34 ip multicast translation table configuration
+//table index, <0~15>
+//SIP translation configuration
+//Enable
+//Disable
+l34 set ip-mcast-trans <UINT:index> sip-trans ( enable | disable )
+
+//L34 configuration
+//set configuration
+//L34 ip multicast translation table configuration
+//table index, <0~15>
+//External IP table index configuration
+//table index
+l34 set ip-mcast-trans <UINT:index> ext-ip <UINT:extIpIdx>
+
+//L34 configuration
+//set configuration
+//L34 ip multicast translation table configuration
+//table index, <0~15>
+//PPPoE table index configuration
+//table index
+l34 set ip-mcast-trans <UINT:index> pppoe <UINT:pppIdx>
+
+//L34 configuration
+//set configuration
+//L34 ip multicast translation table configuration
+//table index, <0~15>
+//PPPoE Action configuration
+//No Action
+//Keep/Add PPPoE Header
+//Remove PPPoE Header
+//Modify/Add PPPoE Header
+l34 set ip-mcast-trans <UINT:index> pppoe-act ( no-act | keep | remove | modify )
+
+//L34 configuration
+//set configuration
+//L34 ip multicast translation table configuration
+//table index, <0~15>
+//untag member configuration
+//member ports, <0-6>
+//all
+//none
+l34 set ip-mcast-trans <UINT:index> untag-member ( <PORT_LIST:ports> | all | none )
+
+//L34 configuration
+//get configuration
+//L34 ip multicast translation table configuration
+l34 get ip-mcast-trans 
+
+//L34 configuration
+//get configuration
+//L34 ip multicast translation table configuration
+//table index
+l34 get ip-mcast-trans <UINT:index>
+
+//L34 configuration
+//set configuration
+//ARP table traffic indicator
+//Update arp traffic table by SIP/SMAC configuration
+//enable
+//diable
+l34 set arp-traffic-indicator sip ( enable | disable )
+
+//L34 configuration
+//get configuration
+//ARP table traffic indicator
+//Update arp traffic table by SIP/SMAC configuration
+l34 get arp-traffic-indicator sip
+
+//L34 configuration
+//set configuration
+//ARP table traffic indicator
+//Update arp traffic table by DIP configuration
+//enable
+//diable
+l34 set arp-traffic-indicator dip ( enable | disable )
+
+//L34 configuration
+//get configuration
+//ARP table traffic indicator
+//Update arp traffic table by DIP configuration
+l34 get arp-traffic-indicator dip

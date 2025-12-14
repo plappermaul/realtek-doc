@@ -1,0 +1,175 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: $
+// $Date: $
+//
+// Purpose : Define diag shell commands for rate.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) egress bandwidth commands.
+//           2) ingress bandwidth commands.
+//           3) storm control commands.
+//           4) share meter
+//
+
+//rt_rate configuration
+//init
+rt_rate init
+
+//rt_rate configuration
+//get configuration
+//ingress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+rt_rate get ingress port ( <PORT_LIST:ports> | all ) rate
+
+//rt_rate configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+//rate value (unit 1Kbps)
+rt_rate set ingress port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+
+//rt_rate configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+rt_rate get egress port ( <PORT_LIST:ports> | all ) rate
+
+///rt_rate configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+//rate vlaue (unit 1Kbps)
+rt_rate set egress port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+
+//rt_rate configuration
+//get configuration
+//storm-control configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//ethertype
+//loop-detect
+//dot1x
+//port configuration
+//port list
+//all ports
+rt_rate get storm-control ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm | ethertype-storm | loop-detect-storm | dot1x-storm ) port ( <PORT_LIST:ports> | all )
+
+//rt_rate configuration
+//set configuration
+//storm-control configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//ethertype
+//loop-detect
+//dot1x
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable
+//enable
+rt_rate set storm-control ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm | ethertype-storm  | loop-detect-storm | dot1x-storm ) port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//rt_rate configuration
+//set configuration
+//storm-control configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//ethertype
+//loop-detect
+//dot1x
+//port configuration
+//port list, <0-6>
+//all ports
+//meter configuration
+//meter index, <0~31>
+rt_rate set storm-control ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm | ethertype-storm  | loop-detect-storm | dot1x-storm ) port ( <PORT_LIST:ports> | all ) meter <UINT:index>
+
+//rt_rate configuration
+//rate configuration
+//shared meter configuration
+//type configuration
+rt_rate add meter type ( storm | host | flow | acl | sw )
+
+//rt_rate configuration
+//del configuration
+//shared meter configuration
+//index, <0-256>
+rt_rate del meter <UINT:index>
+
+//rt_rate configuration
+//get configuration
+//shared meter configuration
+//index, <0-256>
+rt_rate get meter <UINT:index>
+
+//rt_rate configuration
+//set configuration
+//shared meter configuration
+//index, <0-256>
+//rate configuration
+//rate (unit Kbps)
+rt_rate set meter <UINT:index> rate <UINT:rate>
+
+//rt_rate configuration
+//set configuration
+//shared meter configuration
+//index, <0-256>
+//burst size
+//bucket size(unit byte), <0~65535>
+rt_rate set meter <UINT:index> burst-size <UINT:size>
+
+//rt_rate configuration
+//set configuration
+//shared meter configuration
+//index, <0-256>
+//interframe gap
+//exclude
+//include
+rt_rate set meter <UINT:index> ifg ( exclude | include )
+
+//rt_rate configuration
+//set configuration
+//shared meter configuration
+//index, <0-256>
+//mode
+//bit per second
+//packet per second
+rt_rate set meter <UINT:index> mode ( bps | pps )

@@ -1,0 +1,160 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for security.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) security commands.
+//
+
+//security configuration
+//init security
+security init
+
+//security configuration
+//set configuration
+//attack prevent
+//port configuration
+//port list, <0-6>
+//all
+//state configuration
+//disable function
+//enable function
+security set attack-prevent port ( <PORT_LIST:port> | all ) state ( disable | enable )
+
+//security configuration
+//get configuration
+//attack prevent
+//port configuration
+//port list, <0-6>
+//all
+//state configuration
+security get attack-prevent port ( <PORT_LIST:port> | all ) state
+
+
+//security configuration
+//get configuration
+//attack prevent
+//damc = smac
+//sip = dip (land attach)
+//sport = dport (blat attacks)
+//SYN and FIN bits set in the packet
+//Xmascan
+//NULL Scan Attacks
+//SYN packets with sport less than 1024
+//check minimum TCP header
+//action configuration
+security get attack-prevent ( daeqsa-deny | land-deny | blat-deny | synfin-deny | xma-deny | nullscan-deny | tcphdr-min-check | syn-sportl1024-deny ) action
+
+//security configuration
+//set configuration
+//attack prevent
+//damc = smac
+//sip = dip (land attach)
+//sport = dport (blat attacks)
+//SYN and FIN bits set in the packet
+//Xmascan
+//NULL Scan Attacks
+//SYN packets with sport less than 1024
+//check minimum TCP header
+//action
+//forward
+//drop
+//trap-to-cpu
+security set attack-prevent ( daeqsa-deny | land-deny | blat-deny | synfin-deny | xma-deny | nullscan-deny | tcphdr-min-check | syn-sportl1024-deny ) action ( forward | drop | trap-to-cpu )
+
+//security configuration
+//get configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//action configuration
+security get attack-prevent ( syn-flood | fin-flood | icmp-flood ) action
+
+//security configuration
+//set configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//action
+//forward
+//drop
+//trap-to-cpu
+security set attack-prevent ( syn-flood | fin-flood | icmp-flood ) action ( forward | drop | trap-to-cpu )
+
+//security configuration
+//get configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold configuration
+security get attack-prevent ( syn-flood | fin-flood | icmp-flood ) threshold
+
+//security configuration
+//set configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold configuration
+//packets per unit, <0~255>
+security set attack-prevent ( syn-flood | fin-flood | icmp-flood ) threshold <UINT:threshold>
+
+//security configuration
+//get configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold time unit configuration, milliseconds
+security get attack-prevent ( syn-flood | fin-flood | icmp-flood ) unit
+
+//security configuration
+//set configuration
+//attack prevent
+//syn flood
+//fin flood
+//icmp flood
+//threshold time unit configuration, milliseconds
+//unit, [1,2,4,8,16,32,64,128,256,512] milliseconds
+security set attack-prevent ( syn-flood | fin-flood | icmp-flood ) unit <UINT:unit>
+
+//security configuration
+//get configuration
+//attack prevent
+//TCP fragment packet with offset=1
+//fragmented ICMP packets
+//Ping of Death Attacks
+//UDP bomb
+//SYN with data
+//action configuration
+security get attack-prevent ( tcp-frag-off-min-check | icmp-frag-pkts-deny | pod-deny | udp-bomb | syn-with-data ) action
+
+//security configuration
+//set configuration
+//attack prevent
+//TCP fragment packet with offset=1
+//fragmented ICMP packets
+//Ping of Death Attacks
+//UDP bomb
+//SYN with data
+//action
+//forward
+//drop
+//trap-to-cpu
+security set attack-prevent ( tcp-frag-off-min-check | icmp-frag-pkts-deny | pod-deny | udp-bomb | syn-with-data ) action ( forward | drop | trap-to-cpu )
+

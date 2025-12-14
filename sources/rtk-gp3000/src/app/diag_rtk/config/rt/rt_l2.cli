@@ -1,0 +1,279 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: $
+// $Date: $
+//
+// Purpose : Define diag shell commands for layer2.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) layer2 commands.
+//
+
+//rt_l2 table configuration
+//init configuration
+rt_l2-table init
+
+//rt_l2 table configuration
+//get configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limited no. configuration
+rt_l2-table get limit-learning port ( <PORT_LIST:ports> | all ) count
+
+//rt_l2 table configuration
+//set configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//limited no. configuration
+//max count can be learned
+rt_l2-table set limit-learning port ( <PORT_LIST:ports> | all ) count <INT:count>
+
+//rt_l2 table configuration
+//get configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+rt_l2-table get limit-learning port ( <PORT_LIST:ports> | all ) action
+
+//rt_l2 table configuration
+//set configuration
+//limit learning configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//drop
+//normal forward
+//trap to cpu
+rt_l2-table set limit-learning port ( <PORT_LIST:ports> | all ) action ( drop | forward | trap )
+
+
+//rt_l2 table configuration
+//get configuration
+//unknown sa configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+rt_l2-table get unknown-sa port ( <PORT_LIST:ports> | all ) action
+
+//rt_l2 table configuration
+//set configuration
+//unknown sa configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//drop & disable learning
+//forward
+rt_l2-table set unknown-sa port ( <PORT_LIST:ports> | all ) action ( drop | forward )
+
+//rt_l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//source port configuration
+//port, <0~6>
+rt_l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> spn <UINT:port>
+
+//rt_l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//filter flag
+//flag configuration
+//disable
+//enable
+rt_l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> filter flag ( disable | enable )
+
+//rt_l2 table configuration
+//add configuration
+//unicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+//static entry
+//state configuration
+//disable
+//enable
+rt_l2-table add mac-ucast vid <UINT:vid> mac-address <MACADDR:mac> static state ( disable | enable )
+
+//rt_l2 table configuration
+//delete configuration
+//unicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+rt_l2-table del mac-ucast vid <UINT:vid> mac-address <MACADDR:mac>
+
+
+//rt_l2 table configuration
+//get configuration
+//unicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac addresss configuration
+//unicast l2 address, A:B:C:D:E:F
+rt_l2-table get mac-ucast vid <UINT:vid> mac-address <MACADDR:mac>
+
+//rt_l2 table configuration
+//add configuration
+//multicast l2 entry
+//vid configuarion
+//vid value, <0-4095>
+//mac addresss configuration
+//multicast l2 address, A:B:C:D:E:F
+//group configuration
+//group <0-255>
+rt_l2-table add mac-mcast vid <UINT:vid> mac-address <MACADDR:mac> group <UINT:group>
+
+
+//rt_l2 table configuration
+//delete configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac addresss configuration
+//multicast l2 address, A:B:C:D:E:F
+rt_l2-table del mac-mcast vid <UINT:vid> mac-address <MACADDR:mac>
+
+
+//rt_l2 table configuration
+//get configuration
+//multicast l2 entry
+//vid configuation
+//vid value, <0-4095>
+//mac addresss configuration
+//multicast l2 address, A:B:C:D:E:F
+rt_l2-table get mac-mcast vid <UINT:vid> mac-address <MACADDR:mac>
+
+
+
+//rt_l2 table configuration
+//get configuration
+//next entry configuration
+//l2 unicast entry
+//address
+//address
+rt_l2-table get next-entry mac-ucast address <UINT:address>
+
+//rt_l2 table configuration
+//get configuration
+//next entry configuration
+//l2 unicast entry
+//address
+//address
+//source port configuration
+//port
+rt_l2-table get next-entry mac-ucast address <UINT:address> spn <UINT:port>
+
+//rt_l2 table configuration
+//get configuration
+//port moving configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+rt_l2-table get port-move port ( <PORT_LIST:ports> | all ) action
+
+//rt_l2 table configuration
+//set configuration
+//port moving configuration
+//port configuration
+//port list, <0-6>
+//all
+//action configuration
+//copy to cpu
+//drop & disable learning
+//forward
+//trap to cpu & disable learning
+rt_l2-table set port-move port ( <PORT_LIST:ports> | all ) action ( copy-to-cpu | drop | forward | trap-to-cpu )
+
+//rt_l2 table configuration
+//get configuration
+//l2 table age time configuration
+rt_l2-table get age-time 
+
+//rt_l2 table configuration
+//set configuration
+//l2 table age time configuration
+//time value(unit 1 second), <0 ~ 2097151>
+rt_l2-table set age-time <UINT:time> 
+
+//rt_l2 table configuration
+//get configuration
+//l2 table IVL/SVL configuration
+rt_l2-table get ivl-svl 
+
+//rt_l2 table configuration
+//set configuration
+//l2 table IVL/SVL configuration
+//enable IVL
+//disable IVL
+rt_l2-table set ivl-svl ( enable | disable ) 
+
+//rt_l2 table configuration
+//set configuration
+//l2 table forward group configuration
+//index configuration
+//index, 0-255
+//mask configuration
+//mask, 64 bits
+rt_l2-table set fwdGroup index <UINT:index> mask <UINT64:mask>
+
+//rt_l2 table configuration
+//get configuration
+//l2 table forward group configuration
+//index configuration
+//index, 0-255
+rt_l2-table get fwdGroup index <UINT:index>
+
+//rt_l2 table configuration
+//set configuration
+//l2 table forward group configuration
+//action configuration
+//index configuration
+//index, 0-63
+//port configuration
+//port
+//vid configuration
+//specify to nop
+//specify to assign
+//specify to delete
+//vid, 0-4095
+//pri configuration
+//specify to nop
+//specify to assign
+//pri, 0-7
+rt_l2-table set fwdGroup action index <UINT:index> port <UINT:port> vid ( nop | assign | delete ) <UINT:vid> pri ( nop | assign ) <UINT:pri>
+
+//rt_l2 table configuration
+//get configuration
+//l2 table forward group configuration
+//action configuration
+//index configuration
+//index, 0-63
+rt_l2-table get fwdGroup action index <UINT:index>

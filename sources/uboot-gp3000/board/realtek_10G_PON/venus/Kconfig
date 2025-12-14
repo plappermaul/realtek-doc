@@ -1,0 +1,54 @@
+if TARGET_VENUS
+
+config SYS_SOC
+	default "venus"
+
+config CA8277B
+	bool
+	default y
+
+config SYS_BOARD
+	default "venus"
+
+config SYS_CONFIG_NAME
+	default "venus"
+
+config SYS_TEXT_BASE
+	default "0x04000000"
+
+config IDENT_STRING
+	default "Venus-SoC" if ARM64
+	default "Venus-SoC-AARCH32" if !ARM64
+
+config BOOTP_VCI_STRING
+	default "U-boot.armv8.venus" if ARM64
+	default "U-boot.armv7.venus" if !ARM64
+
+config SYS_PROMPT
+	default "VENUS# "
+
+config SYS_BOOTM_LEN
+	hex "bootm size"
+	default 0x1800000
+
+config ARCH_CORTINA_SMC
+    bool "SMC for Cortina AARCH64"
+    default n
+    help
+        This enables support for Cortina private SMC call
+
+
+config RTK_VENUS_CPUFREQ_CMD
+    bool "VENUS CPU Frequency Command"
+    default n
+    help
+        This enables support for CPU Frequency Command
+
+config PARALLEL_LED_EXTENSION
+    bool "Control PWR_LED by VENUS parallel LED"
+    default n
+    depends on RTK_LED_STYLE_GPIO
+    help
+	    Use parallel LED to take over PWR_LED blinking
+
+endif

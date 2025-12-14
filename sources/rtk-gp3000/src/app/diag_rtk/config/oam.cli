@@ -1,0 +1,109 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) OAM commands.
+//
+
+//oam  configuration
+//init oam
+oam init
+
+//oam configuration
+//dump configuration
+oam dump
+
+//oam configuration
+//get configuration
+//state configuration
+oam get state
+
+//oam configuration
+//set configuration
+//state configuration
+//disable oam function
+//enable oam function
+oam set state ( disable | enable ) 
+
+//oam configuration
+//get configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+oam get port ( <PORT_LIST:ports> | all ) state
+
+//oam configuration
+//set configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable oam function
+//enable oam function
+oam set port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//oam configuration
+//get configuration
+//multiplexer configuration
+//port configuration
+//port list, <0-6>
+//all ports
+oam get multiplexer port ( <PORT_LIST:ports> | all )
+
+//oam configuration
+//set configuration
+//multiplexer configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//action configuration
+//forwarding packets
+//discarding packets
+//transmitting packets from cpu only
+oam set multiplexer port ( <PORT_LIST:ports> | all ) action ( forward | discard | from-cpu-only )
+
+//oam configuration
+//get configuration
+//parser configuration
+//port configuration
+//port list, <0-6>
+//all ports
+oam get parser port ( <PORT_LIST:port> | all )
+
+//oam configuration
+//set configuration
+//parser configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//action configuration
+//forwarding packets
+//loopback packets and drop crc/failed packets
+//discarding packets
+oam set parser port ( <PORT_LIST:port> | all ) action ( forward | loopback | discard )
+
+//oam configuration
+//set configuration
+//trap priority configuration
+//priority value, <0~7>
+oam set trap-priority <UINT:priority>
+
+//oam configuration
+//get configuration
+//trap priority configuration
+oam get trap-priority
+

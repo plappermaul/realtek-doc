@@ -1,0 +1,97 @@
+if TARGET_RTL9603CVD
+
+config SYS_BOARD
+	default "rtl9603cvd_spi_nor_demo" if OTTO_SNOF
+	default "rtl9603cvd_spi_nand_demo" if OTTO_SNAF
+
+config SYS_VENDOR
+	default "realtek"
+
+config SYS_CONFIG_NAME
+	default "rtl9603cvd"
+
+config SYS_SOC
+	default "mach-rtl9603cvd"
+
+config SYS_TEXT_BASE
+	default 0x83C00000
+
+config SYS_DCACHE_SIZE
+	default 32768
+
+config SYS_ICACHE_SIZE
+	default 65536
+
+config SYS_DCACHE_LINE_SIZE
+	default 32
+
+config SYS_ICACHE_LINE_SIZE
+	default 32
+
+config OTTO_SNAF_GEN
+	depends on OTTO_SNAF
+	default 3
+	int "SPI-NAND driver generation"
+
+config OTTO_ECC_GEN
+	depends on OTTO_SNAF
+	default 2
+	int "ECC driver generation"
+
+config SPI_NAND_FLASH_INIT_FIRST
+	depends on OTTO_SNOF && OTTO_SNAF
+	default y
+	select ECC_INIT
+	bool
+
+config ECC_INIT
+	bool
+
+config USE_EXT_TIMER
+	default n
+	bool "Use External Timer"
+
+config EXT_TIMER_ID
+	depends on USE_EXT_TIMER
+	default 1
+	int "External Timer ID"
+
+config OTTO_FLASH_LAYOUT
+    bool "CONFIG_OTTO_FLASH_LAYOUT"
+    default y
+
+config OTTO_FL_TO_MTDPARTS
+    bool "CONFIG_OTTO_FL_TO_MTDPARTS"
+    default y
+
+config RTK_USE_ONE_UBI_DEVICE
+    bool "CONFIG_RTK_USE_ONE_UBI_DEVICE"
+    #default y
+
+config RTK_ROOTFS_DM_VERITY
+    bool  "CONFIG_RTK_ROOTFS_DM_VERITY - RTK use rootfs dm-verity check"
+    help
+	Make kernel dm-verity check rootfs by boot option
+
+config USE_BBT_SKIP
+	bool "Use bad block skip table"
+
+config LUNA_MULTI_BOOT
+    bool "CONFIG_LUNA_MULTI_BOOT"
+    default y
+
+config MULTICAST_UPGRADE
+    bool "CONFIG_MULTICAST_UPGRADE"
+    default y
+
+config STATIC_CONFIG
+   bool "add static config MTD partition"
+
+config CMD_BOOT_B2
+   bool "Add command boot_b2 to bring up second uboot.in"
+   default n
+   help
+    This provides command boot_b2 to bring up second bootloader.
+    Like u-boot.in
+
+endif

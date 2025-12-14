@@ -1,0 +1,172 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) trap commands.
+//
+
+//trap configuration
+//init configuration
+trap init
+
+//trap configuration
+//set configuration
+//cisco discovery protocol configuration
+//cisco shared STP configuration
+//action
+//drop RMA packets
+//forward RMA packets
+//forward RMA packets exclude CPU port
+//trap RMA packets to CPU
+trap set ( cdp | csstp ) action ( drop | forward | forward-exclude-cpu | trap-to-cpu )
+
+//trap configuration
+//get configuration
+//cisco discovery protocol configuration
+//cisco shared STP configuration
+//action
+trap get ( cdp | csstp ) action
+
+//trap configuration
+//set configuration
+//uni trap priority
+//state configuration
+//disable function
+//enable function
+trap set uni-trap-priority state ( disable | enable )
+
+//trap configuration
+//get configuration
+//uni trap priority
+//state configuration
+trap get uni-trap-priority state
+
+//trap configuration
+//set configuration
+//uni-trap-priority configuration
+//priority
+//priority value, <0~7>
+trap set uni-trap-priority priority <UINT:priority>
+
+//trap configuration
+//get configuration
+//uni trap priority
+//priority
+trap get uni-trap-priority priority
+
+//trap configuration
+//set configuration
+//hash configuration
+//select configuration
+//source port
+//source mac
+//destination mac
+//source ip
+//destination ip
+//source tcp/udp port
+//destination tcp/udp port
+//state configuration
+//disable function
+//enable function
+trap set hash select ( spa | smac | dmac | sip | dip | sport | dport ) state ( disable | enable )
+
+//trap configuration
+//get configuration
+//hash configuration
+//select configuration
+//source port
+//source mac
+//destination mac
+//source ip
+//destination ip
+//source tcp/udp port
+//destination tcp/udp port
+//state configuration
+trap get hash select ( spa | smac | dmac | sip | dip | sport | dport ) state
+
+//trap configuration
+//dump configuration
+//hash configuration
+//select configuration
+trap dump hash select
+
+//trap configuration
+//set configuration
+//hash configuration
+//result configuration
+//result value, <0~15>
+//port configuration
+//port, <9/10>
+trap set hash result <UINT:value> port <UINT:port>
+
+//trap configuration
+//get configuration
+//hash configuration
+//result configuration
+//result value, <0~15>
+//port
+trap get hash result <UINT:value> port
+
+//trap configuration
+//dump configuration
+//hash configuration
+//result configuration
+trap dump hash result
+
+//trap configuration
+//set configuration
+//hash configuration
+//state configuration
+//disable function
+//enable function
+trap set hash state ( disable | enable )
+
+//trap configuration
+//get configuration
+//hash configuration
+//state configuration
+trap get hash state
+
+//trap configuration
+//set configuration
+//hash configuration
+//inic configuration
+//state configuration
+//disable function
+//enable function
+trap set hash inic state ( disable | enable )
+
+//trap configuration
+//get configuration
+//hash configuration
+//inic configuration
+//state configuration
+trap get hash inic state
+
+//trap configuration
+//set configuration
+//hash configuration
+//inic configuration
+//select configuration
+//select value, <0~1>
+trap set hash inic select <UINT:value>
+
+//trap configuration
+//get configuration
+//hash configuration
+//inic configuration
+//select configuration
+trap get hash inic select

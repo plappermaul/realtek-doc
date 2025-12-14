@@ -1,4 +1,4 @@
-This repository serves as a well selected collection of Realtek SOC/PHY/NIC documentation and source. Focus is on the Otto platform with the RTL838x (maple), RTL839x (cypress), RTL930x (longan) and RTL931x (mango) chips. 
+This repository serves as a well selected collection of Realtek SOC/PHY/NIC documentation and source. Focus is on the Otto platform with the RTL838x (maple), RTL839x (cypress), RTL930x (longan), RTL931x (mango) and RTL960x chips. 
 
 - [SOC Roadmap](/datasheets/_SOC_Roadmap.pdf) for the Realtek switch platform
 - [NIC Roadmap](/datasheets/_NIC_Roadmap.pdf) for the Realtek PHYs & NICs
@@ -9,6 +9,7 @@ What RTK (development kit) we have
 - Some fragments from the TP-Link BE550 GPL. It has several drivers for Realtek PHYs that are mainly used on non-Realtek platforms. Download from https://www.tp-link.com/en/support/download/
 - The most recent SDK from 2022 is based on the D-Link DMS-1250 GPL source. It contains a lot of modern PHY code for RTL8218E, RTL8224, RTL8261 and RTL8264. Download from https://tsd.dlink.com.tw/GPL.asp
 - An older SDK from 2016 is based on the Zyxel XGS1210-12 GPL source. It contains code for a totally unknown RTL8284 PHY. Download can be requested from https://www.zyxel.com/global/en/form/gpl-oss-software-notice
+- The very recent SDK from 2023 is based on the Cudy GP3000 GPL source. It contains code for RTL960x and Cortina chips. Download from https://www.cudy.com/pages/download-center/gp3000-1-0 
 
 PHY Direct Links
 

@@ -1,0 +1,100 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//  
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) All diag shell commands.
+//
+
+//exit diag shell
+exit
+
+#ifndef CONFIG_OPENWRT_DIAG
+#include "./classf.cli"
+#include "./acl.cli"
+#include "./svlan.cli"
+#include "./vlan.cli"
+#include "./l2.cli"
+#include "./classf.cli"
+#include "./igmp.cli"
+#include "./port.cli"
+#include "./qos.cli"
+#include "./bandwidth.cli"
+#include "./meter.cli"
+#include "./storm_control.cli"
+#include "./switch.cli"
+#include "./stp.cli"
+#include "./counter.cli"
+#include "./rma.cli"
+#include "./trap.cli"
+#include "./oam.cli"
+#include "./cpu.cli"
+#include "./iol.cli"
+#include "./debug.cli"
+#include "./reg.cli"
+#include "./intr.cli"
+#include "./ponmac.cli"
+#include "./flowctrl.cli"
+#include "./i2c.cli"
+#include "./led.cli"
+#include "./ppstod.cli"
+#endif
+
+#ifdef CONFIG_SDK_DRIVER_UNITTEST
+#include "./sdk.cli"
+#endif
+
+#ifdef CONFIG_EPON_FEATURE
+#include "./epon.cli"
+#endif
+
+#ifdef CONFIG_GPON_FEATURE
+#include "./gpon.cli"
+#endif
+
+#ifndef CONFIG_REDUCED_DIAG
+#include "./time.cli"
+#include "./rldp.cli"
+#include "./trunk.cli"
+#include "./dot1x.cli"
+#include "./mirror.cli"
+#include "./sec.cli"
+
+#ifdef CONFIG_L34_TABLE_BASE_DIAG
+#include "./l34lite.cli"
+#include "./l34.cli"
+#endif
+#endif
+
+
+
+
+#ifdef CONFIG_RTK_L34_ENABLE 
+#include "./rg.cli"
+#include "./rg_acl.cli"
+#endif
+
+#ifdef CONFIG_XDSL_RG_DIAGSHELL
+#include "./rg.cli"
+#include "./rg_acl.cli"
+#endif
+
+#ifndef CONFIG_OPENWRT_DIAG
+#include "./pbo.cli"
+#endif
+
+#ifdef CONFIG_COMMON_RT_API
+#include "./rt/rt_diag_shell.cli"
+#endif

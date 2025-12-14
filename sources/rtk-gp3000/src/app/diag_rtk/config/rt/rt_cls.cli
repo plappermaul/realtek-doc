@@ -1,0 +1,864 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: $
+// $Date:  $
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) RT CLS commands.
+//
+
+//cls configuration
+//clear operation
+//rule configuration
+rt_cls clear rule
+
+//cls configuration
+//set configuration
+//rule configuration
+//diretction configuration
+//specify to upstream
+//specify to downstream
+rt_cls set rule direction ( upstream | downstream )
+
+//cls configuration
+//set configuration
+//rule configuration
+//connection index configuration
+//type index
+rt_cls set rule connection-index <UINT:index>
+
+//cls configuration
+//set configuration
+//rule configuration
+//flow-id configuration
+//type flow-id
+rt_cls set rule flow-id <UINT:flowId>
+
+//cls configuration
+//set configuration
+//rule configuration
+//ingress port configuration
+//ingress port configuration <0-6>
+rt_cls set rule ingress-port-mask ( <PORT_LIST:ingressports> | none )
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//flow-id configuration
+//type flow-id
+rt_cls set rule filter flow-id <UINT:flowId>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//outer-tag configuration
+//type outer-tag
+//type tpid
+rt_cls set rule filter outer-tag <UINT:outerTag> { <UINT:tpid> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//inner-tag configuration
+//type inner-tag
+//type tpid
+rt_cls set rule filter inner-tag <UINT:innerTag> { <UINT:tpid> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//outer-vid configuration
+//type outer-vid
+rt_cls set rule filter outer-vid <UINT:outerVid>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//outer-pri configuration
+//type outer-pri
+rt_cls set rule filter outer-pri <UINT:outerPri>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//outer-dei configuration
+//type outer-dei
+rt_cls set rule filter outer-dei <UINT:outerDei>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//inner-vid configuration
+//type inner-vid
+rt_cls set rule filter inner-vid <UINT:innerVid>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//inner-pri configuration
+//type inner-pri
+rt_cls set rule filter inner-pri <UINT:innerPri>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//inner-dei configuration
+//type inner-dei
+rt_cls set rule filter inner-dei <UINT:innerDei>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//ethertype configuration
+//type ethertype
+rt_cls set rule filter ethertype <UINT:ethertype>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//dscp configuration
+//type dscp
+rt_cls set rule filter dscp <UINT:dscp>
+
+//cls configuration
+//set configuration
+//rule configuration
+//filter configuration
+//egress-port configuration
+//type egress-port
+rt_cls set rule filter egress-port <UINT:egressPort>
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//outer-tag configuration
+//specify to transparent
+//specify to tagging
+//specify to modify
+//specify to remove
+rt_cls set rule action outer-tag ( transparent | tagging | modify | remove )
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//outer-tpid configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//type tpid
+rt_cls set rule action outer-tpid ( assign | copy-outer | copy-inner ) { <UINT:tpid> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//outer-vid configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to transparent
+//type vid
+rt_cls set rule action outer-vid ( assign | copy-outer | copy-inner | transparent ) { <UINT:vid> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//outer-pri configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to transparent
+//type pri
+rt_cls set rule action outer-pri ( assign | copy-outer | copy-inner | dscp-remapping | transparent ) { <UINT:pri> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//outer-dei configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//type dei
+rt_cls set rule action outer-dei ( assign | copy-outer | copy-inner ) { <UINT:dei> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//inner-tag configuration
+//specify to transparent
+//specify to tagging
+//specify to modify
+//specify to remove
+rt_cls set rule action inner-tag ( transparent | tagging | modify | remove )
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//inner-tpid configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//type tpid
+rt_cls set rule action inner-tpid ( assign | copy-outer | copy-inner ) { <UINT:tpid> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//inner-vid configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to transparent
+//type vid
+rt_cls set rule action inner-vid ( assign | copy-outer | copy-inner | transparent ) { <UINT:vid> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//inner-pri configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to transparent
+//type pri
+rt_cls set rule action inner-pri ( assign | copy-outer | copy-inner | dscp-remapping | transparent ) { <UINT:pri> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//inner-dei configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//type dei
+rt_cls set rule action inner-dei ( assign | copy-outer | copy-inner ) { <UINT:dei> }
+
+//cls configuration
+//set configuration
+//rule configuration
+//action configuration
+//downstream-pri-act configuration
+//specify to assign
+//specify to no operation
+//type pri
+rt_cls set rule action downstream-pri-act ( assign | nop ) { <UINT:pri> }
+
+//cls configuration
+//intial configuration
+rt_cls init
+
+//cls configuration
+//add configuration
+//rule add operation
+rt_cls add rule
+
+//cls configuration
+//delete configuration
+//rule delete operation
+//connection index configuration
+//type connection-index
+rt_cls delete rule connection-index <UINT:index>
+
+//cls configuration
+//show configuration
+//rule show operation
+rt_cls show rule
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//fwdPort configuration
+//fwdPort value
+rt_cls set port ( <PORT_LIST:ports> | all ) fwdPort <UINT:fwdPort>
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//stag-match configuration
+//s-tag match value, 4 bit
+rt_cls set port ( <PORT_LIST:ports> | all ) stag-match <UINT:sMatch>
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//ctag-match configuration
+//c-tag match value, 4 bit
+rt_cls set port ( <PORT_LIST:ports> | all ) ctag-match <UINT:cMatch>
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//outer-stag configuration
+//specify to enable
+//specify to disable
+rt_cls set port ( <PORT_LIST:ports> | all ) outer-stag ( enable | disable )
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//inner-stag configuration
+//specify to enable
+//specify to disable
+rt_cls set port ( <PORT_LIST:ports> | all ) inner-stag ( enable | disable )
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//outer-ctag configuration
+//specify to enable
+//specify to disable
+rt_cls set port ( <PORT_LIST:ports> | all ) outer-ctag ( enable | disable )
+
+//cls configuration
+//set configuration
+//port configuration
+//port list
+//all port
+//inner-ctag configuration
+//specify to enable
+//specify to disable
+rt_cls set port ( <PORT_LIST:ports> | all ) inner-ctag ( enable | disable )
+
+//cls configuration
+//set configuration
+//tpid configuration
+//s-tpid-a configuration
+//s-tpid-a value, 16 bit
+rt_cls set tpid s-tpid-a <UINT:sTpid>
+
+//cls configuration
+//set configuration
+//tpid configuration
+//s-tpid-b configuration
+//s-tpid-b value, 16 bit
+rt_cls set tpid s-tpid-b <UINT:sTpid>
+
+//cls configuration
+//set configuration
+//tpid configuration
+//user-stpid configuration
+//user-stpid value, 16 bit
+rt_cls set tpid user-stpid <UINT:sTpid>
+
+//cls configuration
+//set configuration
+//tpid configuration
+//user-stpid configuration
+//user-stpid value, 16 bit
+rt_cls set tpid user-ctpid <UINT:cTpid>
+
+//cls configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//stag-match configuration
+rt_cls get port ( <PORT_LIST:ports> | all ) stag-match
+
+//cls configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//ctag-match configuration
+rt_cls get port ( <PORT_LIST:ports> | all ) ctag-match
+
+//cls configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//outer-stag configuration
+rt_cls get port ( <PORT_LIST:ports> | all ) outer-stag
+
+//cls configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//inner-stag configuration
+rt_cls get port ( <PORT_LIST:ports> | all ) inner-stag
+
+//cls configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//outer-ctag configuration
+rt_cls get port ( <PORT_LIST:ports> | all ) outer-ctag
+
+//cls configuration
+//get configuration
+//port configuration
+//port list
+//all port
+//inner-ctag configuration
+rt_cls get port ( <PORT_LIST:ports> | all ) inner-ctag
+
+
+//cls configuration
+//get configuration
+//tpid configuration
+//s-tpid-a configuration
+rt_cls get tpid s-tpid-a
+
+//cls configuration
+//get configuration
+//tpid configuration
+//s-tpid-b configuration
+rt_cls get tpid s-tpid-b
+
+//cls configuration
+//get configuration
+//tpid configuration
+//user-stpid configuration
+rt_cls get tpid user-stpid
+
+//cls configuration
+//get configuration
+//tpid configuration
+//user-stpid configuration
+rt_cls get tpid user-ctpid
+
+//cls configuration
+//get configuation
+//entry configuration
+//index, <UINT32>
+rt_cls get entry <UINT:index>
+
+//cls configuration
+//get configuration
+//entry configuration
+//valid
+rt_cls get entry valid
+
+//cls configuration
+//clear operation
+//ext-rule configuration
+rt_cls clear ext-rule
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//tos-tc configuration
+//data configuration
+//data, 8 bits
+//mask configuration
+//mask, 8 bits
+rt_cls set ext-rule filter tos-tc data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//egressPort configuration
+//data configuration
+//data, 6 bits
+//mask configuration
+//mask, 6 bits
+rt_cls set ext-rule filter egrPort data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//ingressPort configuration
+//data configuration
+//data, 6 bits
+//mask configuration
+//mask, 6 bits
+rt_cls set ext-rule filter igrPort data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//sbit configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter sbit data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//cbit configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter cbit data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//s-tpid configuration
+//data configuration
+//data, 2 bits
+//mask configuration
+//mask, 2 bits
+rt_cls set ext-rule filter s-tpid data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//packet-type configuration
+//data configuration
+//data, 3 bits
+//mask configuration
+//mask, 3 bits
+rt_cls set ext-rule filter pkt-type data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//ipv4 configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter ipv4 data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//ipv6 configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter ipv6 data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//igmp/mld configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter igmp-mld data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//flowId configuration
+//data configuration
+//data, 9 bits
+//mask configuration
+//mask, 9 bits
+rt_cls set ext-rule filter flowId data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//direction configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter direction data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//c-vid configuration
+//data configuration
+//data, 12 bits
+//mask configuration
+//mask, 12 bits
+rt_cls set ext-rule filter c-vid data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//c-pri configuration
+//data configuration
+//data, 3 bits
+//mask configuration
+//mask, 3 bits
+rt_cls set ext-rule filter c-pri data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//c-dei configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter c-dei data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//outer-vid configuration
+//data configuration
+//data, 12 bits
+//mask configuration
+//mask, 12 bits
+rt_cls set ext-rule filter outer-vid data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//outer-pri configuration
+//data configuration
+//data, 3 bits
+//mask configuration
+//mask, 3 bits
+rt_cls set ext-rule filter outer-pri data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//outer-dei configuration
+//data configuration
+//data, 1 bits
+//mask configuration
+//mask, 1 bits
+rt_cls set ext-rule filter outer-dei data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//tos-tc configuration
+//data configuration
+//data, 8 bits
+//mask configuration
+//mask, 8 bits
+rt_cls set ext-rule filter tos-tc data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//filter configuration
+//ethertype configuration
+//data configuration
+//data, 16 bits
+//mask configuration
+//mask, 16 bits
+rt_cls set ext-rule filter ethertype data <UINT:data> mask <UINT:mask>
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//svlan-act configuration
+//transparent
+//delete
+//use original s-tag tpid
+//use tpid A
+//use tpid B
+rt_cls set ext-rule action svlan-act ( transparent | delete | tpid_ori | tpid_a | tpid_b )
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//s-vid configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//type vid
+rt_cls set ext-rule action s-vid ( assign | copy-outer | copy-inner ) { <UINT:vid> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//s-pri configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to mapping from DSCP
+//type pri
+rt_cls set ext-rule action s-pri ( assign | copy-outer | copy-inner | from-dscp ) { <UINT:pri> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//s-dei configuration
+//specify to assign 0
+//specify to keep original s-tag dei
+rt_cls set ext-rule action s-dei ( assign-0 | keep )
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//cvlan-act configuration
+//transparent
+//delete
+//tagging
+rt_cls set ext-rule action cvlan-act ( transparent | delete | tagging )
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//c-vid configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to copy from FDB
+//type vid
+rt_cls set ext-rule action c-vid ( assign | copy-outer | copy-inner | from-FDB ) { <UINT:vid> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//c-pri configuration
+//specify to assign
+//specify to copy from 1st tag
+//specify to copy from 2nd tag
+//specify to mapping from DSCP
+//type pri
+rt_cls set ext-rule action c-pri ( assign | copy-outer | copy-inner | from-dscp ) { <UINT:pri> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//c-dei configuration
+//specify to assign 0
+//specify to keep original c-tag dei
+rt_cls set ext-rule action c-dei ( assign-0 | keep )
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//group-policer configuration
+//specify to no operation
+//specify to assign
+//type group policer id
+rt_cls set ext-rule action grp-pol ( nop | assign ) { <UINT:grpPol> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//flow-id configuration
+//specify to no operation
+//specify to assign
+//type flowId
+rt_cls set ext-rule action flow-id ( nop | assign ) { <UINT:flowId> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//forward configuration
+//specify to no operation
+//specify to drop
+//specify to trap to cpu
+//specify to forward to LDPID
+//specify to forward to MCGID
+//type fwdId
+rt_cls set ext-rule action fwd ( nop | drop | trap | ldpid | mcgid ) { <UINT:fwdId> }
+
+//cls configuration
+//set configuration
+//ext-rule configuration
+//action configuration
+//cos configuration
+//specify to no operation
+//specify to assign
+//type cos
+rt_cls set ext-rule action cos ( nop | assign ) { <UINT:cos> }
+
+//cls configuration
+//add configuration
+//ext-rule add operation
+//index configuration
+//type index
+rt_cls add ext-rule index <UINT:index>
+
+//cls configuration
+//delete configuration
+//ext-rule operation
+//index configuration
+//type index
+rt_cls delete ext-rule index <UINT:index>
+
+//cls configuration
+//show configuration
+//ext-rule show operation
+rt_cls show ext-rule
+
+//cls configuration
+//get configuation
+//ext-rule configuration
+//index configuration
+//index, <UINT32>
+rt_cls get ext-rule index <UINT:index>
+
+//cls configuration
+//get configuration
+//ext-rule configuration
+//index configuration
+//valid
+rt_cls get ext-rule index valid

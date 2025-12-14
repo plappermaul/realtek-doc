@@ -1,0 +1,8008 @@
+/******************************************************************************
+ *
+ * Copyright(c) 2019 Realtek Corporation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of version 2 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ ******************************************************************************/
+
+#ifndef _MAC_AX_REG_H_
+#define _MAC_AX_REG_H_
+//
+// WL_AX_REG_DMAC.xls
+//
+
+//
+// TOP_OFF
+//
+
+#define R_AX_GT0_CTRL 0x8000
+#define B_AX_GT0_COUNT_EN BIT(31)
+#define B_AX_GT0_MODE BIT(30)
+#define B_AX_GT0_EN BIT(29)
+#define B_AX_GT0_DATA_SH 0
+#define B_AX_GT0_DATA_MSK 0x1fffffff
+
+#define R_AX_GT0_CNT 0x8004
+#define B_AX_GT0_CNT_SH 0
+#define B_AX_GT0_CNT_MSK 0x1fffffff
+
+#define R_AX_GT1_CTRL 0x8008
+#define B_AX_GT1_COUNT_EN BIT(31)
+#define B_AX_GT1_MODE BIT(30)
+#define B_AX_GT1_EN BIT(29)
+#define B_AX_GT1_DATA_SH 0
+#define B_AX_GT1_DATA_MSK 0x1fffffff
+
+#define R_AX_GT1_CNT 0x800C
+#define B_AX_GT1_CNT_SH 0
+#define B_AX_GT1_CNT_MSK 0x1fffffff
+
+#define R_AX_GT2_CTRL 0x8010
+#define B_AX_GT2_COUNT_EN BIT(31)
+#define B_AX_GT2_MODE BIT(30)
+#define B_AX_GT2_EN BIT(29)
+#define B_AX_GT2_DATA_SH 0
+#define B_AX_GT2_DATA_MSK 0x1fffffff
+
+#define R_AX_GT2_CNT 0x8014
+#define B_AX_GT2_CNT_SH 0
+#define B_AX_GT2_CNT_MSK 0x1fffffff
+
+#define R_AX_GT3_CTRL 0x8018
+#define B_AX_GT3_COUNT_EN BIT(31)
+#define B_AX_GT3_MODE BIT(30)
+#define B_AX_GT3_EN BIT(29)
+#define B_AX_GT3_DATA_SH 0
+#define B_AX_GT3_DATA_MSK 0x1fffffff
+
+#define R_AX_GT3_CNT 0x801C
+#define B_AX_GT3_CNT_SH 0
+#define B_AX_GT3_CNT_MSK 0x1fffffff
+
+#define R_AX_FWD0IMR 0x8100
+#define B_AX_FS_H2C_INT_EN BIT(8)
+#define B_AX_FS_HIOE_ERR_INT_EN BIT(7)
+#define B_AX_FS_SW_PLL_LEAVE_32K_INT_EN BIT(6)
+#define B_AX_FS_MAILBOX_OUT_EMPTY_INT_EN BIT(5)
+#define B_AX_FS_LTE_COEX_INT_EN BIT(4)
+#define B_AX_FS_GT3_INT_EN BIT(3)
+#define B_AX_FS_GT2_INT_EN BIT(2)
+#define B_AX_FS_GT1_INT_EN BIT(1)
+#define B_AX_FS_GT0_INT_EN BIT(0)
+
+#define R_AX_FWD0ISR 0x8104
+#define B_AX_FS_H2C_INT BIT(8)
+#define B_AX_FS_HIOE_ERR_INT BIT(7)
+#define B_AX_FS_SW_PLL_LEAVE_32K_INT BIT(6)
+#define B_AX_FS_MAILBOX_OUT_EMPTY_INT BIT(5)
+#define B_AX_FS_LTE_COEX_INT BIT(4)
+#define B_AX_FS_GT3_INT BIT(3)
+#define B_AX_FS_GT2_INT BIT(2)
+#define B_AX_FS_GT1_INT BIT(1)
+#define B_AX_FS_GT0_INT BIT(0)
+
+#define R_AX_HD0IMR 0x8110
+#define B_AX_GT3_INT_EN BIT(1)
+#define B_AX_GT3_INT BIT(1)
+
+#define R_AX_CPWM 0x8170
+#define B_AX_CPWM_TOGGLE BIT(15)
+#define B_AX_CPWM_VAL_SH 0
+#define B_AX_CPWM_VAL_MSK 0x7fff
+
+//
+// WL_PON
+//
+
+#define R_AX_FWD1IMR 0x8300
+#define B_AX_FS_BT_MAILBOX_INT_EN BIT(1)
+#define B_AX_FS_RPWM_INT_EN BIT(0)
+
+#define R_AX_FWD1ISR 0x8304
+#define B_AX_FS_BT_MAILBOX_INT BIT(1)
+#define B_AX_FS_RPWM_INT BIT(0)
+
+#define R_AX_FSMIMR 0x8308
+#define B_AX_FSM_RP_END_EVENT_IMR BIT(6)
+#define B_AX_FSM_RX_BCN_TO_CNT_EVENT_IMR BIT(5)
+#define B_AX_FSM_RX_MATCH_EVENT_IMR BIT(4)
+#define B_AX_FSM_HIOE_ERR_EVENT_IMR BIT(3)
+#define B_AX_FSM_OTHERS_WAKE_EVENT_IMR BIT(2)
+#define B_AX_FSM_TIMER_TO_EVENT_IMR BIT(1)
+#define B_AX_FSM_BCNERLY_EVENT_IMR BIT(0)
+
+#define R_AX_FSMISR 0x830C
+#define B_AX_FSM_RP_END_EVENT_ISR BIT(6)
+#define B_AX_FSM_RX_BCN_TO_CNT_EVENT_ISR BIT(5)
+#define B_AX_FSM_RX_MATCH_EVENT_ISR BIT(4)
+#define B_AX_FSM_HIOE_ERR_EVENT_ISR BIT(3)
+#define B_AX_FSM_OTHERS_WAKE_EVENT_ISR BIT(2)
+#define B_AX_FSM_TIMER_TO_EVENT_ISR BIT(1)
+#define B_AX_FSM_BCNERLY_EVENT_ISR BIT(0)
+
+#define R_AX_HIOE_BKP_STR_ADDR 0x8340
+#define B_AX_HIOE_BKP_STR_ADDR_SH 0
+#define B_AX_HIOE_BKP_STR_ADDR_MSK 0xffffffffL
+
+#define R_AX_HIOE_BKP_END_ADDR 0x8344
+#define B_AX_HIOE_BKP_END_ADDR_SH 0
+#define B_AX_HIOE_BKP_END_ADDR_MSK 0xffffffffL
+
+#define R_AX_HIOE_RES_STR_ADDR 0x8348
+#define B_AX_HIOE_RES_STR_ADDR_SH 0
+#define B_AX_HIOE_RES_STR_ADDR_MSK 0xffffffffL
+
+#define R_AX_HIOE_RES_END_ADDR 0x834C
+#define B_AX_HIOE_RES_END_ADDR_SH 0
+#define B_AX_HIOE_RES_END_ADDR_MSK 0xffffffffL
+
+//
+// COMMON
+//
+
+#define R_AX_DMAC_FUNC_EN 0x8400
+#define B_AX_DMAC_CRPRT BIT(31)
+#define B_AX_MAC_FUNC_EN BIT(30)
+#define B_AX_DMAC_FUNC_EN BIT(29)
+#define B_AX_MPDU_PROC_EN BIT(28)
+#define B_AX_WD_RLS_EN BIT(27)
+#define B_AX_DLE_WDE_EN BIT(26)
+#define B_AX_TXPKT_CTRL_EN BIT(25)
+#define B_AX_STA_SCH_EN BIT(24)
+#define B_AX_DLE_PLE_EN BIT(23)
+#define B_AX_PKT_BUF_EN BIT(22)
+#define B_AX_DMAC_TBL_EN BIT(21)
+#define B_AX_PKT_IN_EN BIT(20)
+#define B_AX_DLE_CPUIO_EN BIT(19)
+#define B_AX_DISPATCHER_EN BIT(18)
+#define B_AX_BBRPT_EN BIT(17)
+#define B_AX_MAC_SEC_EN BIT(16)
+#define B_AX_32K_CAL_TMR_EN BIT(2)
+#define B_AX_HCI_RXDMA_EN BIT(1)
+#define B_AX_HCI_TXDMA_EN BIT(0)
+
+#define R_AX_DMAC_CLK_EN 0x8404
+#define B_AX_WD_RLS_CLK_EN BIT(27)
+#define B_AX_DLE_WDE_CLK_EN BIT(26)
+#define B_AX_TXPKT_CTRL_CLK_EN BIT(25)
+#define B_AX_STA_SCH_CLK_EN BIT(24)
+#define B_AX_DLE_PLE_CLK_EN BIT(23)
+#define B_AX_PKT_IN_CLK_EN BIT(20)
+#define B_AX_DLE_CPUIO_CLK_EN BIT(19)
+#define B_AX_DISPATCHER_CLK_EN BIT(18)
+#define B_AX_BBRPT_CLK_EN BIT(17)
+#define B_AX_MAC_SEC_CLK_EN BIT(16)
+
+#define R_AX_LTR_CTRL_0 0x8410
+#define B_AX_LTR_CTRL_0_SH 0
+#define B_AX_LTR_CTRL_0_MSK 0xffffffffL
+
+#define R_AX_LTR_CTRL_1 0x8414
+#define B_AX_LTR_CTRL_1_SH 0
+#define B_AX_LTR_CTRL_1_MSK 0xffffffffL
+
+#define R_AX_LTR_IDLE_LATENCY 0x8418
+#define B_AX_LTR_IDLE_LATENCY_SH 0
+#define B_AX_LTR_IDLE_LATENCY_MSK 0xffffffffL
+
+#define R_AX_LTR_ACTIVE_LATENCY 0x841C
+#define B_AX_LTR_ACTIVE_LATENCY_SH 0
+#define B_AX_LTR_ACTIVE_LATENCY_MSK 0xffffffffL
+
+#define R_AX_FWD2IMR 0x8500
+#define B_AX_FS_WWLAN_INT_EN BIT(4)
+#define B_AX_FS_PLD_CPU_IO_PORT_Q1_INT_EN BIT(3)
+#define B_AX_FS_PLD_CPU_IO_PORT_Q0_INT_EN BIT(2)
+#define B_AX_FS_WD_CPU_IO_PORT_Q1_INT_EN BIT(1)
+#define B_AX_FS_WD_CPU_IO_PORT_Q0_INT_EN BIT(0)
+
+#define R_AX_FWD2ISR 0x8504
+#define B_AX_FS_WWLAN_INT BIT(4)
+#define B_AX_FS_PLD_CPU_IO_PORT_Q1_INT BIT(3)
+#define B_AX_FS_PLD_CPU_IO_PORT_Q0_INT BIT(2)
+#define B_AX_FS_WD_CPU_IO_PORT_Q1_INT BIT(1)
+#define B_AX_FS_WD_CPU_IO_PORT_Q0_INT BIT(0)
+
+#define R_AX_BIST_CTRL 0x8600
+#define B_AX_BIST_DYN_READ_EN BIT(14)
+#define B_AX_BIST_LOOP_MODE BIT(13)
+#define B_AX_BIST_LVDRF_CLKDIS BIT(12)
+#define B_AX_BIST_DRF_RESUME BIT(3)
+#define B_AX_BIST_DRF_MODE BIT(2)
+#define B_AX_BIST_MODE BIT(1)
+#define B_AX_BIST_RSTN_ALL BIT(0)
+
+#define R_AX_SYS_CTRL 0x8604
+#define B_AX_SYM_MEM_RMV_FABDBG_SH 30
+#define B_AX_SYM_MEM_RMV_FABDBG_MSK 0x3
+#define B_AX_SYM_MEM_RMV_SIGN BIT(29)
+#define B_AX_SYM_MEM_RMV_2PRF BIT(27)
+#define B_AX_SYM_MEM_RMV_1PRF BIT(26)
+#define B_AX_SYM_MEM_RMV_1PSR BIT(25)
+#define B_AX_SYM_MEM_RMV_ROM BIT(24)
+#define B_AX_SYM_MEM_RMV_WL_SH 4
+#define B_AX_SYM_MEM_RMV_WL_MSK 0xf
+
+#define R_AX_BIST_CTRL_1 0x8610
+#define B_AX_BIST_RSTN_N_DMAC_SH 0
+#define B_AX_BIST_RSTN_N_DMAC_MSK 0xffffffffL
+
+#define R_AX_BIST_CTRL_2 0x8614
+#define B_AX_BIST_DONE_DMAC_SH 0
+#define B_AX_BIST_DONE_DMAC_MSK 0xffffffffL
+
+#define R_AX_BIST_CTRL_3 0x8618
+#define B_AX_BIST_FAIL_DMAC_SH 0
+#define B_AX_BIST_FAIL_DMAC_MSK 0xffffffffL
+
+#define R_AX_BIST_CTRL_4 0x861C
+#define B_AX_BIST_DRF_PAUSE_DMAC_SH 0
+#define B_AX_BIST_DRF_PAUSE_DMAC_MSK 0xffffffffL
+
+//
+// Dispatcher
+//
+
+#define R_AX_RX_AGG_0 0x8800
+#define B_AX_RXAGG_EN BIT(31)
+#define B_AX_RXAGG_DMA_STORE BIT(30)
+#define B_AX_RXAGG_SW_EN BIT(29)
+#define B_AX_RXAGG_SW_TRIG BIT(28)
+#define B_AX_RXAGG_PKTNUM_TH_SH 16
+#define B_AX_RXAGG_PKTNUM_TH_MSK 0xff
+#define B_AX_RXAGG_TIMEOUT_TH_SH 8
+#define B_AX_RXAGG_TIMEOUT_TH_MSK 0xff
+#define B_AX_RXAGG_LEN_TH_SH 0
+#define B_AX_RXAGG_LEN_TH_MSK 0xff
+
+#define R_AX_RX_AGG_1 0x8804
+#define B_AX_RXAGG_SML_PKT_SIZE_SH 5
+#define B_AX_RXAGG_SML_PKT_SIZE_MSK 0x7
+#define B_AX_RXAGG_SML_PKTNUM_TH_SH 0
+#define B_AX_RXAGG_SML_PKTNUM_TH_MSK 0x1f
+
+#define R_AX_RXDMA_SETTING 0x8808
+
+#define R_AX_FWDL_CHECKSUM 0x8810
+#define B_AX_FWDL_CHKSUM_SH 16
+#define B_AX_FWDL_CHKSUM_MSK 0xffff
+#define B_AX_FWDL_CHKSUM_RESULT BIT(1)
+#define B_AX_FWDL_CHKSUM_EN BIT(0)
+
+#define R_AX_DMAC_MACID_DROP_0 0x8820
+#define B_AX_DMAC_MACID31_0_DROP_SH 0
+#define B_AX_DMAC_MACID31_0_DROP_MSK 0xffffffffL
+
+#define R_AX_DMAC_MACID_DROP_1 0x8824
+#define B_AX_DMAC_MACID63_32_DROP_SH 0
+#define B_AX_DMAC_MACID63_32_DROP_MSK 0xffffffffL
+
+#define R_AX_DMAC_MACID_DROP_2 0x8828
+#define B_AX_DMAC_MACID95_64_DROP_SH 0
+#define B_AX_DMAC_MACID95_64_DROP_MSK 0xffffffffL
+
+#define R_AX_DMAC_MACID_DROP_3 0x882C
+#define B_AX_DMAC_MACID127_96_DROP_SH 0
+#define B_AX_DMAC_MACID127_96_DROP_MSK 0xffffffffL
+
+#define R_AX_HCI_FC_CTRL 0x8A00
+#define B_AX_HCI_FC_MODE_SH 1
+#define B_AX_HCI_FC_MODE_MSK 0x3
+#define B_AX_HCI_FC_EN BIT(0)
+
+#define R_AX_CH_PAGE_CTRL 0x8A04
+#define B_AX_PREC_PAGE_CH12_SH 16
+#define B_AX_PREC_PAGE_CH12_MSK 0xff
+#define B_AX_PREC_PAGE_CH011_SH 0
+#define B_AX_PREC_PAGE_CH011_MSK 0xff
+
+#define R_AX_ACH011_INTRPT_STAT 0x8A08
+#define B_AX_ACH11_INTRPT_STAT BIT(11)
+#define B_AX_ACH10_INTRPT_STAT BIT(10)
+#define B_AX_ACH9_INTRPT_STAT BIT(9)
+#define B_AX_ACH8_INTRPT_STAT BIT(8)
+#define B_AX_ACH7_INTRPT_STAT BIT(7)
+#define B_AX_ACH6_INTRPT_STAT BIT(6)
+#define B_AX_ACH5_INTRPT_STAT BIT(5)
+#define B_AX_ACH4_INTRPT_STAT BIT(4)
+#define B_AX_ACH3_INTRPT_STAT BIT(3)
+#define B_AX_ACH2_INTRPT_STAT BIT(2)
+#define B_AX_ACH1_INTRPT_STAT BIT(1)
+#define B_AX_ACH0_INTRPT_STAT BIT(0)
+
+#define R_AX_HCI_FC_ERR_FLAG 0x8A0C
+#define B_AX_WP_REQ_PG_ERR BIT(2)
+#define B_AX_CH12_REQ_PG_ERR BIT(1)
+#define B_AX_CH011_REQ_PG_ERR BIT(0)
+
+#define R_AX_ACH0_PAGE_CTRL 0x8A10
+#define B_AX_ACH0_GRP BIT(31)
+#define B_AX_ACH0_MAX_PG_SH 16
+#define B_AX_ACH0_MAX_PG_MSK 0xfff
+#define B_AX_ACH0_MIN_PG_SH 0
+#define B_AX_ACH0_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH1_PAGE_CTRL 0x8A14
+#define B_AX_ACH1_GRP BIT(31)
+#define B_AX_ACH1_MAX_PG_SH 16
+#define B_AX_ACH1_MAX_PG_MSK 0xfff
+#define B_AX_ACH1_MIN_PG_SH 0
+#define B_AX_ACH1_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH2_PAGE_CTRL 0x8A18
+#define B_AX_ACH2_GRP BIT(31)
+#define B_AX_ACH2_MAX_PG_SH 16
+#define B_AX_ACH2_MAX_PG_MSK 0xfff
+#define B_AX_ACH2_MIN_PG_SH 0
+#define B_AX_ACH2_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH3_PAGE_CTRL 0x8A1C
+#define B_AX_ACH3_GRP BIT(31)
+#define B_AX_ACH3_MAX_PG_SH 16
+#define B_AX_ACH3_MAX_PG_MSK 0xfff
+#define B_AX_ACH3_MIN_PG_SH 0
+#define B_AX_ACH3_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH4_PAGE_CTRL 0x8A20
+#define B_AX_ACH4_GRP BIT(31)
+#define B_AX_ACH4_MAX_PG_SH 16
+#define B_AX_ACH4_MAX_PG_MSK 0xfff
+#define B_AX_ACH4_MIN_PG_SH 0
+#define B_AX_ACH4_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH5_PAGE_CTRL 0x8A24
+#define B_AX_ACH5_GRP BIT(31)
+#define B_AX_ACH5_MAX_PG_SH 16
+#define B_AX_ACH5_MAX_PG_MSK 0xfff
+#define B_AX_ACH5_MIN_PG_SH 0
+#define B_AX_ACH5_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH6_PAGE_CTRL 0x8A28
+#define B_AX_ACH6_GRP BIT(31)
+#define B_AX_ACH6_MAX_PG_SH 16
+#define B_AX_ACH6_MAX_PG_MSK 0xfff
+#define B_AX_ACH6_MIN_PG_SH 0
+#define B_AX_ACH6_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH7_PAGE_CTRL 0x8A2C
+#define B_AX_ACH7_GRP BIT(31)
+#define B_AX_ACH7_MAX_PG_SH 16
+#define B_AX_ACH7_MAX_PG_MSK 0xfff
+#define B_AX_ACH7_MIN_PG_SH 0
+#define B_AX_ACH7_MIN_PG_MSK 0xfff
+
+#define R_AX_CH8_PAGE_CTRL 0x8A30
+#define B_AX_CH8_GRP BIT(31)
+#define B_AX_CH8_MAX_PG_SH 16
+#define B_AX_CH8_MAX_PG_MSK 0xfff
+#define B_AX_CH8_MIN_PG_SH 0
+#define B_AX_CH8_MIN_PG_MSK 0xfff
+
+#define R_AX_CH9_PAGE_CTRL 0x8A34
+#define B_AX_CH9_GRP BIT(31)
+#define B_AX_CH9_MAX_PG_SH 16
+#define B_AX_CH9_MAX_PG_MSK 0xfff
+#define B_AX_CH9_MIN_PG_SH 0
+#define B_AX_CH9_MIN_PG_MSK 0xfff
+
+#define R_AX_CH10_PAGE_CTRL 0x8A38
+#define B_AX_CH10_GRP BIT(31)
+#define B_AX_CH10_MAX_PG_SH 16
+#define B_AX_CH10_MAX_PG_MSK 0xfff
+#define B_AX_CH10_MIN_PG_SH 0
+#define B_AX_CH10_MIN_PG_MSK 0xfff
+
+#define R_AX_CH11_PAGE_CTRL 0x8A3C
+#define B_AX_CH11_GRP BIT(31)
+#define B_AX_CH11_MAX_PG_SH 16
+#define B_AX_CH11_MAX_PG_MSK 0xfff
+#define B_AX_CH11_MIN_PG_SH 0
+#define B_AX_CH11_MIN_PG_MSK 0xfff
+
+#define R_AX_CH12_PAGE_CTRL 0x8A40
+#define B_AX_CH12_MIN_PG_SH 0
+#define B_AX_CH12_MIN_PG_MSK 0xfff
+
+#define R_AX_ACH0_PAGE_INFO 0x8A50
+#define B_AX_ACH0_AVAL_PG_SH 16
+#define B_AX_ACH0_AVAL_PG_MSK 0xfff
+#define B_AX_ACH0_USE_PG_SH 0
+#define B_AX_ACH0_USE_PG_MSK 0xfff
+
+#define R_AX_ACH1_PAGE_INFO 0x8A54
+#define B_AX_ACH1_AVAL_PG_SH 16
+#define B_AX_ACH1_AVAL_PG_MSK 0xfff
+#define B_AX_ACH1_USE_PG_SH 0
+#define B_AX_ACH1_USE_PG_MSK 0xfff
+
+#define R_AX_ACH2_PAGE_INFO 0x8A58
+#define B_AX_ACH2_AVAL_PG_SH 16
+#define B_AX_ACH2_AVAL_PG_MSK 0xfff
+#define B_AX_ACH2_USE_PG_SH 0
+#define B_AX_ACH2_USE_PG_MSK 0xfff
+
+#define R_AX_ACH3_PAGE_INFO 0x8A5C
+#define B_AX_ACH3_AVAL_PG_SH 16
+#define B_AX_ACH3_AVAL_PG_MSK 0xfff
+#define B_AX_ACH3_USE_PG_SH 0
+#define B_AX_ACH3_USE_PG_MSK 0xfff
+
+#define R_AX_ACH4_PAGE_INFO 0x8A60
+#define B_AX_ACH4_AVAL_PG_SH 16
+#define B_AX_ACH4_AVAL_PG_MSK 0xfff
+#define B_AX_ACH4_USE_PG_SH 0
+#define B_AX_ACH4_USE_PG_MSK 0xfff
+
+#define R_AX_ACH5_PAGE_INFO 0x8A64
+#define B_AX_ACH5_AVAL_PG_SH 16
+#define B_AX_ACH5_AVAL_PG_MSK 0xfff
+#define B_AX_ACH5_USE_PG_SH 0
+#define B_AX_ACH5_USE_PG_MSK 0xfff
+
+#define R_AX_ACH6_PAGE_INFO 0x8A68
+#define B_AX_ACH6_AVAL_PG_SH 16
+#define B_AX_ACH6_AVAL_PG_MSK 0xfff
+#define B_AX_ACH6_USE_PG_SH 0
+#define B_AX_ACH6_USE_PG_MSK 0xfff
+
+#define R_AX_ACH7_PAGE_INFO 0x8A6C
+#define B_AX_ACH7_AVAL_PG_SH 16
+#define B_AX_ACH7_AVAL_PG_MSK 0xfff
+#define B_AX_ACH7_USE_PG_SH 0
+#define B_AX_ACH7_USE_PG_MSK 0xfff
+
+#define R_AX_CH8_PAGE_INFO 0x8A70
+#define B_AX_CH8_AVAL_PG_SH 16
+#define B_AX_CH8_AVAL_PG_MSK 0xfff
+#define B_AX_CH8_USE_PG_SH 0
+#define B_AX_CH8_USE_PG_MSK 0xfff
+
+#define R_AX_CH9_PAGE_INFO 0x8A74
+#define B_AX_CH9_AVAL_PG_SH 16
+#define B_AX_CH9_AVAL_PG_MSK 0xfff
+#define B_AX_CH9_USE_PG_SH 0
+#define B_AX_CH9_USE_PG_MSK 0xfff
+
+#define R_AX_CH10_PAGE_INFO 0x8A78
+#define B_AX_CH10_AVAL_PG_SH 16
+#define B_AX_CH10_AVAL_PG_MSK 0xfff
+#define B_AX_CH10_USE_PG_SH 0
+#define B_AX_CH10_USE_PG_MSK 0xfff
+
+#define R_AX_CH11_PAGE_INFO 0x8A7C
+#define B_AX_CH11_AVAL_PG_SH 16
+#define B_AX_CH11_AVAL_PG_MSK 0xfff
+#define B_AX_CH11_USE_PG_SH 0
+#define B_AX_CH11_USE_PG_MSK 0xfff
+
+#define R_AX_CH12_PAGE_INFO 0x8A80
+#define B_AX_CH12_AVAL_PG_SH 16
+#define B_AX_CH12_AVAL_PG_MSK 0xfff
+#define B_AX_CH12_USE_PG_SH 0
+#define B_AX_CH12_USE_PG_MSK 0xfff
+
+#define R_AX_PUB_PAGE_CTRL1 0x8A90
+#define B_AX_PUBPG_G1_SH 16
+#define B_AX_PUBPG_G1_MSK 0xfff
+#define B_AX_PUBPG_G0_SH 0
+#define B_AX_PUBPG_G0_MSK 0xfff
+
+#define R_AX_PUB_PAGE_CTRL2 0x8A94
+#define B_AX_PUBPG_ALL_SH 0
+#define B_AX_PUBPG_ALL_MSK 0xfff
+
+#define R_AX_PUB_PAGE_INFO1 0x8A98
+#define B_AX_G1_USE_PG_SH 16
+#define B_AX_G1_USE_PG_MSK 0xfff
+#define B_AX_G0_USE_PG_SH 0
+#define B_AX_G0_USE_PG_MSK 0xfff
+
+#define R_AX_PUB_PAGE_INFO2 0x8A9C
+#define B_AX_PUB_AVAL_PG_SH 0
+#define B_AX_PUB_AVAL_PG_MSK 0xfff
+
+#define R_AX_WP_PAGE_CTRL1 0x8AA0
+#define B_AX_PREC_PAGE_WP_SH 16
+#define B_AX_PREC_PAGE_WP_MSK 0xff
+#define B_AX_WP_MAX_PG_SH 0
+#define B_AX_WP_MAX_PG_MSK 0xfff
+
+#define R_AX_WP_PAGE_CTRL2 0x8AA4
+#define B_AX_WP_THRD_SH 0
+#define B_AX_WP_THRD_MSK 0xfff
+
+#define R_AX_WP_PAGE_INFO1 0x8AA8
+#define B_AX_WP_AVAL_PG_SH 16
+#define B_AX_WP_AVAL_PG_MSK 0xfff
+#define B_AX_WP_USE_PG_SH 0
+#define B_AX_WP_USE_PG_MSK 0xfff
+
+#define R_AX_ACH0_THR 0x8AB0
+#define B_AX_ACH0_INTRPT_EN BIT(31)
+#define B_AX_ACH0_THR_WP_SH 16
+#define B_AX_ACH0_THR_WP_MSK 0xfff
+#define B_AX_ACH0_THR_WD_SH 0
+#define B_AX_ACH0_THR_WD_MSK 0xfff
+
+#define R_AX_ACH1_THR 0x8AB4
+#define B_AX_ACH1_INTRPT_EN BIT(31)
+#define B_AX_ACH1_THR_WP_SH 16
+#define B_AX_ACH1_THR_WP_MSK 0xfff
+#define B_AX_ACH1_THR_WD_SH 0
+#define B_AX_ACH1_THR_WD_MSK 0xfff
+
+#define R_AX_ACH2_THR 0x8AB8
+#define B_AX_ACH2_INTRPT_EN BIT(31)
+#define B_AX_ACH2_THR_WP_SH 16
+#define B_AX_ACH2_THR_WP_MSK 0xfff
+#define B_AX_ACH2_THR_WD_SH 0
+#define B_AX_ACH2_THR_WD_MSK 0xfff
+
+#define R_AX_ACH3_THR 0x8ABC
+#define B_AX_ACH3_INTRPT_EN BIT(31)
+#define B_AX_ACH3_THR_WP_SH 16
+#define B_AX_ACH3_THR_WP_MSK 0xfff
+#define B_AX_ACH3_THR_WD_SH 0
+#define B_AX_ACH3_THR_WD_MSK 0xfff
+
+#define R_AX_ACH4_THR 0x8AC0
+#define B_AX_ACH4_INTRPT_EN BIT(31)
+#define B_AX_ACH4_THR_WP_SH 16
+#define B_AX_ACH4_THR_WP_MSK 0xfff
+#define B_AX_ACH4_THR_WD_SH 0
+#define B_AX_ACH4_THR_WD_MSK 0xfff
+
+#define R_AX_ACH5_THR 0x8AC4
+#define B_AX_ACH5_INTRPT_EN BIT(31)
+#define B_AX_ACH5_THR_WP_SH 16
+#define B_AX_ACH5_THR_WP_MSK 0xfff
+#define B_AX_ACH5_THR_WD_SH 0
+#define B_AX_ACH5_THR_WD_MSK 0xfff
+
+#define R_AX_ACH6_THR 0x8AC8
+#define B_AX_ACH6_INTRPT_EN BIT(31)
+#define B_AX_ACH6_THR_WP_SH 16
+#define B_AX_ACH6_THR_WP_MSK 0xfff
+#define B_AX_ACH6_THR_WD_SH 0
+#define B_AX_ACH6_THR_WD_MSK 0xfff
+
+#define R_AX_ACH7_THR 0x8ACC
+#define B_AX_ACH7_INTRPT_EN BIT(31)
+#define B_AX_ACH7_THR_WP_SH 16
+#define B_AX_ACH7_THR_WP_MSK 0xfff
+#define B_AX_ACH7_THR_WD_SH 0
+#define B_AX_ACH7_THR_WD_MSK 0xfff
+
+#define R_AX_CH8_THR 0x8AD0
+#define B_AX_CH8_INTRPT_EN BIT(31)
+#define B_AX_CH8_THR_WP_SH 16
+#define B_AX_CH8_THR_WP_MSK 0xfff
+#define B_AX_CH8_THR_WD_SH 0
+#define B_AX_CH8_THR_WD_MSK 0xfff
+
+#define R_AX_CH9_THR 0x8AD4
+#define B_AX_CH9_INTRPT_EN BIT(31)
+#define B_AX_CH9_THR_WP_SH 16
+#define B_AX_CH9_THR_WP_MSK 0xfff
+#define B_AX_CH9_THR_WD_SH 0
+#define B_AX_CH9_THR_WD_MSK 0xfff
+
+#define R_AX_CH10_THR 0x8AD8
+#define B_AX_CH10_INTRPT_EN BIT(31)
+#define B_AX_CH10_THR_WP_SH 16
+#define B_AX_CH10_THR_WP_MSK 0xfff
+#define B_AX_CH10_THR_WD_SH 0
+#define B_AX_CH10_THR_WD_MSK 0xfff
+
+#define R_AX_CH11_THR 0x8ADC
+#define B_AX_CH11_INTRPT_EN BIT(31)
+#define B_AX_CH11_THR_WP_SH 16
+#define B_AX_CH11_THR_WP_MSK 0xfff
+#define B_AX_CH11_THR_WD_SH 0
+#define B_AX_CH11_THR_WD_MSK 0xfff
+
+//
+// WDE_DLE
+//
+
+#define R_AX_WDE_PKTBUF_CFG 0x8C08
+#define B_AX_WDE_FREE_PAGE_NUM_SH 16
+#define B_AX_WDE_FREE_PAGE_NUM_MSK 0x1fff
+#define B_AX_WDE_START_BOUND_SH 8
+#define B_AX_WDE_START_BOUND_MSK 0x3f
+#define B_AX_WDE_PAGE_SEL_SH 0
+#define B_AX_WDE_PAGE_SEL_MSK 0x3
+#define S_AX_WDE_PAGE_SEL_64		0
+#define S_AX_WDE_PAGE_SEL_128		1
+#define S_AX_WDE_PAGE_SEL_256		2
+
+#define R_AX_WDE_QTA0_CFG 0x8C40
+#define B_AX_WDE_Q0_MAX_SIZE_SH 16
+#define B_AX_WDE_Q0_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q0_MIN_SIZE_SH 0
+#define B_AX_WDE_Q0_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA1_CFG 0x8C44
+#define B_AX_WDE_Q1_MAX_SIZE_SH 16
+#define B_AX_WDE_Q1_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q1_MIN_SIZE_SH 0
+#define B_AX_WDE_Q1_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA2_CFG 0x8C48
+#define B_AX_WDE_Q2_MAX_SIZE_SH 16
+#define B_AX_WDE_Q2_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q2_MIN_SIZE_SH 0
+#define B_AX_WDE_Q2_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA3_CFG 0x8C4C
+#define B_AX_WDE_Q3_MAX_SIZE_SH 16
+#define B_AX_WDE_Q3_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q3_MIN_SIZE_SH 0
+#define B_AX_WDE_Q3_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA4_CFG 0x8C50
+#define B_AX_WDE_Q4_MAX_SIZE_SH 16
+#define B_AX_WDE_Q4_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q4_MIN_SIZE_SH 0
+#define B_AX_WDE_Q4_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA5_CFG 0x8C54
+#define B_AX_WDE_Q5_MAX_SIZE_SH 16
+#define B_AX_WDE_Q5_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q5_MIN_SIZE_SH 0
+#define B_AX_WDE_Q5_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA6_CFG 0x8C58
+#define B_AX_WDE_Q6_MAX_SIZE_SH 16
+#define B_AX_WDE_Q6_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q6_MIN_SIZE_SH 0
+#define B_AX_WDE_Q6_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA7_CFG 0x8C5C
+#define B_AX_WDE_Q7_MAX_SIZE_SH 16
+#define B_AX_WDE_Q7_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q7_MIN_SIZE_SH 0
+#define B_AX_WDE_Q7_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA8_CFG 0x8C60
+#define B_AX_WDE_Q8_MAX_SIZE_SH 16
+#define B_AX_WDE_Q8_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q8_MIN_SIZE_SH 0
+#define B_AX_WDE_Q8_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA9_CFG 0x8C64
+#define B_AX_WDE_Q9_MAX_SIZE_SH 16
+#define B_AX_WDE_Q9_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q9_MIN_SIZE_SH 0
+#define B_AX_WDE_Q9_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA10_CFG 0x8C68
+#define B_AX_WDE_Q10_MAX_SIZE_SH 16
+#define B_AX_WDE_Q10_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q10_MIN_SIZE_SH 0
+#define B_AX_WDE_Q10_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA11_CFG 0x8C6C
+#define B_AX_WDE_Q11_MAX_SIZE_SH 16
+#define B_AX_WDE_Q11_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q11_MIN_SIZE_SH 0
+#define B_AX_WDE_Q11_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA12_CFG 0x8C70
+#define B_AX_WDE_Q12_MAX_SIZE_SH 16
+#define B_AX_WDE_Q12_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q12_MIN_SIZE_SH 0
+#define B_AX_WDE_Q12_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA13_CFG 0x8C74
+#define B_AX_WDE_Q13_MAX_SIZE_SH 16
+#define B_AX_WDE_Q13_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q13_MIN_SIZE_SH 0
+#define B_AX_WDE_Q13_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA14_CFG 0x8C78
+#define B_AX_WDE_Q14_MAX_SIZE_SH 16
+#define B_AX_WDE_Q14_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q14_MIN_SIZE_SH 0
+#define B_AX_WDE_Q14_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_QTA15_CFG 0x8C7C
+#define B_AX_WDE_Q15_MAX_SIZE_SH 16
+#define B_AX_WDE_Q15_MAX_SIZE_MSK 0xfff
+#define B_AX_WDE_Q15_MIN_SIZE_SH 0
+#define B_AX_WDE_Q15_MIN_SIZE_MSK 0xfff
+
+#define R_AX_WDE_INI_STATUS 0x8D00
+#define B_AX_WDE_Q_MGN_INI_RDY BIT(1)
+#define B_AX_WDE_BUF_MGN_INI_RDY BIT(0)
+
+#define R_AX_WDE_Q_STATUS_CFG 0x8D80
+#define B_AX_WDE_Q_STATUS_SEL_SH 0
+#define B_AX_WDE_Q_STATUS_SEL_MSK 0x7
+
+#define R_AX_WDE_Q_STATUS_VAL 0x8D84
+#define B_AX_WDE_Q_STATUS_VAL_SH 0
+#define B_AX_WDE_Q_STATUS_VAL_MSK 0xffffffffL
+
+//
+// WDE_PLE
+//
+
+#define R_AX_PLE_PKTBUF_CFG 0x9008
+#define B_AX_PLE_FREE_PAGE_NUM_SH 16
+#define B_AX_PLE_FREE_PAGE_NUM_MSK 0x1fff
+#define B_AX_PLE_START_BOUND_SH 8
+#define B_AX_PLE_START_BOUND_MSK 0x3f
+#define B_AX_PLE_PAGE_SEL_SH 0
+#define B_AX_PLE_PAGE_SEL_MSK 0x3
+#define S_AX_PLE_PAGE_SEL_64		0
+#define S_AX_PLE_PAGE_SEL_128		1
+#define S_AX_PLE_PAGE_SEL_256		2
+
+#define R_AX_PLE_QTA0_CFG 0x9040
+#define B_AX_PLE_Q0_MAX_SIZE_SH 16
+#define B_AX_PLE_Q0_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q0_MIN_SIZE_SH 0
+#define B_AX_PLE_Q0_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA1_CFG 0x9044
+#define B_AX_PLE_Q1_MAX_SIZE_SH 16
+#define B_AX_PLE_Q1_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q1_MIN_SIZE_SH 0
+#define B_AX_PLE_Q1_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA2_CFG 0x9048
+#define B_AX_PLE_Q2_MAX_SIZE_SH 16
+#define B_AX_PLE_Q2_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q2_MIN_SIZE_SH 0
+#define B_AX_PLE_Q2_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA3_CFG 0x904C
+#define B_AX_PLE_Q3_MAX_SIZE_SH 16
+#define B_AX_PLE_Q3_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q3_MIN_SIZE_SH 0
+#define B_AX_PLE_Q3_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA4_CFG 0x9050
+#define B_AX_PLE_Q4_MAX_SIZE_SH 16
+#define B_AX_PLE_Q4_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q4_MIN_SIZE_SH 0
+#define B_AX_PLE_Q4_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA5_CFG 0x9054
+#define B_AX_PLE_Q5_MAX_SIZE_SH 16
+#define B_AX_PLE_Q5_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q5_MIN_SIZE_SH 0
+#define B_AX_PLE_Q5_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA6_CFG 0x9058
+#define B_AX_PLE_Q6_MAX_SIZE_SH 16
+#define B_AX_PLE_Q6_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q6_MIN_SIZE_SH 0
+#define B_AX_PLE_Q6_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA7_CFG 0x905C
+#define B_AX_PLE_Q7_MAX_SIZE_SH 16
+#define B_AX_PLE_Q7_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q7_MIN_SIZE_SH 0
+#define B_AX_PLE_Q7_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA8_CFG 0x9060
+#define B_AX_PLE_Q8_MAX_SIZE_SH 16
+#define B_AX_PLE_Q8_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q8_MIN_SIZE_SH 0
+#define B_AX_PLE_Q8_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA9_CFG 0x9064
+#define B_AX_PLE_Q9_MAX_SIZE_SH 16
+#define B_AX_PLE_Q9_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q9_MIN_SIZE_SH 0
+#define B_AX_PLE_Q9_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA10_CFG 0x9068
+#define B_AX_PLE_Q10_MAX_SIZE_SH 16
+#define B_AX_PLE_Q10_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q10_MIN_SIZE_SH 0
+#define B_AX_PLE_Q10_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA11_CFG 0x906C
+#define B_AX_PLE_Q11_MAX_SIZE_SH 16
+#define B_AX_PLE_Q11_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q11_MIN_SIZE_SH 0
+#define B_AX_PLE_Q11_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA12_CFG 0x9070
+#define B_AX_PLE_Q12_MAX_SIZE_SH 16
+#define B_AX_PLE_Q12_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q12_MIN_SIZE_SH 0
+#define B_AX_PLE_Q12_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA13_CFG 0x9074
+#define B_AX_PLE_Q13_MAX_SIZE_SH 16
+#define B_AX_PLE_Q13_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q13_MIN_SIZE_SH 0
+#define B_AX_PLE_Q13_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA14_CFG 0x9078
+#define B_AX_PLE_Q14_MAX_SIZE_SH 16
+#define B_AX_PLE_Q14_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q14_MIN_SIZE_SH 0
+#define B_AX_PLE_Q14_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_QTA15_CFG 0x907C
+#define B_AX_PLE_Q15_MAX_SIZE_SH 16
+#define B_AX_PLE_Q15_MAX_SIZE_MSK 0xfff
+#define B_AX_PLE_Q15_MIN_SIZE_SH 0
+#define B_AX_PLE_Q15_MIN_SIZE_MSK 0xfff
+
+#define R_AX_PLE_INI_STATUS 0x9100
+#define B_AX_PLE_Q_MGN_INI_RDY BIT(1)
+#define B_AX_PLE_BUF_MGN_INI_RDY BIT(0)
+
+//
+// WDRLS
+//
+
+//
+// BBRPT
+//
+
+//
+// CPUIO
+//
+
+//
+// PKTIN
+//
+
+#define R_AX_HW_SEQ_0_1 0x9A0C
+#define B_AX_HW_SEQ1_SH 16
+#define B_AX_HW_SEQ1_MSK 0xfff
+#define B_AX_HW_SEQ0_SH 0
+#define B_AX_HW_SEQ0_MSK 0xfff
+
+#define R_AX_HW_SEQ_2_3 0x9A10
+#define B_AX_HW_SEQ3_SH 16
+#define B_AX_HW_SEQ3_MSK 0xfff
+#define B_AX_HW_SEQ2_SH 0
+#define B_AX_HW_SEQ2_MSK 0xfff
+
+#define R_AX_WMM_TRI_FRAME 0x9A14
+
+//
+// MPDU_Processor_1
+//
+
+#define R_AX_HDR_SHCUT_SETTING 0x9B00
+#define B_AX_MAC_HDR_CONVERT_EN BIT(2)
+#define B_AX_SHCUT_LLC_WR_LOCK BIT(1)
+#define B_AX_SHCUT_PARSE_DASA BIT(0)
+
+#define R_AX_SHCUT_LLC_ETH_TYPE0 0x9B04
+#define B_AX_SHUT_ETH_TYPE1_SH 16
+#define B_AX_SHUT_ETH_TYPE1_MSK 0xffff
+#define B_AX_SHUT_ETH_TYPE0_SH 0
+#define B_AX_SHUT_ETH_TYPE0_MSK 0xffff
+
+#define R_AX_SHCUT_LLC_ETH_TYPE1 0x9B08
+#define B_AX_SHUT_ETH_TYPE2_SH 0
+#define B_AX_SHUT_ETH_TYPE2_MSK 0xffff
+
+#define R_AX_SHCUT_LLC_OUI0 0x9B0C
+#define B_AX_SHUT_ENABLE_OUI0 BIT(24)
+#define B_AX_SHUT_ETH_OUI0_SH 0
+#define B_AX_SHUT_ETH_OUI0_MSK 0xffffff
+
+#define R_AX_SHCUT_LLC_OUI1 0x9B10
+#define B_AX_SHUT_ENABLE_OUI1 BIT(24)
+#define B_AX_SHUT_ETH_OUI1_SH 0
+#define B_AX_SHUT_ETH_OUI1_MSK 0xffffff
+
+#define R_AX_SHCUT_LLC_OUI2 0x9B14
+#define B_AX_SHUT_ENABLE_OUI2 BIT(24)
+#define B_AX_SHUT_ETH_OUI2_SH 0
+#define B_AX_SHUT_ETH_OUI2_MSK 0xffffff
+
+#define R_AX_SHCUT_LLC_OUI3 0x9B18
+#define B_AX_SHUT_ENABLE_OUI3 BIT(24)
+#define B_AX_SHUT_ETH_OUI3_SH 0
+#define B_AX_SHUT_ETH_OUI3_MSK 0xffffff
+
+#define R_AX_MPDU_TX_ERRFLAG 0x9BF0
+#define B_AX_TX_OFFSET_ERR BIT(4)
+#define B_AX_TX_MPDU_SIZE_ZERO BIT(3)
+#define B_AX_TX_NXT_ERRPKTID BIT(2)
+#define B_AX_TX_GET_ERRPKTID BIT(1)
+
+#define R_AX_MPDU_TX_DBG 0x9BFC
+#define B_AX_MPDU_TX_DBGEN BIT(8)
+#define B_AX_MPDU_TX_DLAST BIT(0)
+
+//
+// MPDU_Processor_2
+//
+
+#define R_AX_MPDU_PROC 0x9C00
+#define B_AX_A_ICV_ERR BIT(1)
+#define B_AX_APPEND_FCS BIT(0)
+
+#define R_AX_ACTION_FWD0 0x9C04
+#define B_AX_FWD_VHT_CBFM_SH 24
+#define B_AX_FWD_VHT_CBFM_MSK 0x3
+#define B_AX_FWD_HT_CBFM_SH 22
+#define B_AX_FWD_HT_CBFM_MSK 0x3
+#define B_AX_FWD_CSI_SH 20
+#define B_AX_FWD_CSI_MSK 0x3
+#define B_AX_FWD_OP_MODE_SH 18
+#define B_AX_FWD_OP_MODE_MSK 0x3
+#define B_AX_FWD_GID_MGNT_SH 16
+#define B_AX_FWD_GID_MGNT_MSK 0x3
+#define B_AX_FWD_NCW_SH 14
+#define B_AX_FWD_NCW_MSK 0x3
+#define B_AX_FWD_DELBA_SH 12
+#define B_AX_FWD_DELBA_MSK 0x3
+#define B_AX_FWD_ADDBA_RES_SH 10
+#define B_AX_FWD_ADDBA_RES_MSK 0x3
+#define B_AX_FWD_ADDBA_REQ_SH 8
+#define B_AX_FWD_ADDBA_REQ_MSK 0x3
+#define B_AX_FWD_DELTS_SH 6
+#define B_AX_FWD_DELTS_MSK 0x3
+#define B_AX_FWD_ADDTS_RES_SH 4
+#define B_AX_FWD_ADDTS_RES_MSK 0x3
+#define B_AX_FWD_ADDTS_REQ_SH 2
+#define B_AX_FWD_ADDTS_REQ_MSK 0x3
+#define B_AX_FWD_CSA_SH 0
+#define B_AX_FWD_CSA_MSK 0x3
+
+#define R_AX_ACTION_FWD1 0x9C08
+#define B_AX_FWD_ACTN_CTRL3_SH 6
+#define B_AX_FWD_ACTN_CTRL3_MSK 0x3
+#define B_AX_FWD_ACTN_CTRL2_SH 4
+#define B_AX_FWD_ACTN_CTRL2_MSK 0x3
+#define B_AX_FWD_ACTN_CTRL1_SH 2
+#define B_AX_FWD_ACTN_CTRL1_MSK 0x3
+#define B_AX_FWD_ACTN_CTRL0_SH 0
+#define B_AX_FWD_ACTN_CTRL0_MSK 0x3
+
+#define R_AX_ACTION_FWD_CTRL0 0x9C0C
+#define B_AX_FWD_ACTN_ACTN0_SH 8
+#define B_AX_FWD_ACTN_ACTN0_MSK 0xff
+#define B_AX_FWD_ACTN_CAT0_SH 0
+#define B_AX_FWD_ACTN_CAT0_MSK 0xff
+
+#define R_AX_ACTION_FWD_CTRL1 0x9C0E
+#define B_AX_FWD_ACTN_ACTN1_SH 8
+#define B_AX_FWD_ACTN_ACTN1_MSK 0xff
+#define B_AX_FWD_ACTN_CAT1_SH 0
+#define B_AX_FWD_ACTN_CAT1_MSK 0xff
+
+#define R_AX_ACTION_FWD_CTRL2 0x9C10
+#define B_AX_FWD_ACTN_ACTN2_SH 8
+#define B_AX_FWD_ACTN_ACTN2_MSK 0xff
+#define B_AX_FWD_ACTN_CAT2_SH 0
+#define B_AX_FWD_ACTN_CAT2_MSK 0xff
+
+#define R_AX_ACTION_FWD_CTRL3 0x9C12
+#define B_AX_FWD_ACTN_ACTN3_SH 8
+#define B_AX_FWD_ACTN_ACTN3_MSK 0xff
+#define B_AX_FWD_ACTN_CAT3_SH 0
+#define B_AX_FWD_ACTN_CAT3_MSK 0xff
+
+#define R_AX_TF_FWD 0x9C14
+#define B_AX_FWD_TF15_SH 30
+#define B_AX_FWD_TF15_MSK 0x3
+#define B_AX_FWD_TF14_SH 28
+#define B_AX_FWD_TF14_MSK 0x3
+#define B_AX_FWD_TF13_SH 26
+#define B_AX_FWD_TF13_MSK 0x3
+#define B_AX_FWD_TF12_SH 24
+#define B_AX_FWD_TF12_MSK 0x3
+#define B_AX_FWD_TF11_SH 22
+#define B_AX_FWD_TF11_MSK 0x3
+#define B_AX_FWD_TF10_SH 20
+#define B_AX_FWD_TF10_MSK 0x3
+#define B_AX_FWD_TF9_SH 18
+#define B_AX_FWD_TF9_MSK 0x3
+#define B_AX_FWD_TF8_SH 16
+#define B_AX_FWD_TF8_MSK 0x3
+#define B_AX_FWD_TF7_SH 14
+#define B_AX_FWD_TF7_MSK 0x3
+#define B_AX_FWD_TF6_SH 12
+#define B_AX_FWD_TF6_MSK 0x3
+#define B_AX_FWD_TF5_SH 10
+#define B_AX_FWD_TF5_MSK 0x3
+#define B_AX_FWD_TF4_SH 8
+#define B_AX_FWD_TF4_MSK 0x3
+#define B_AX_FWD_TF3_SH 6
+#define B_AX_FWD_TF3_MSK 0x3
+#define B_AX_FWD_TF2_SH 4
+#define B_AX_FWD_TF2_MSK 0x3
+#define B_AX_FWD_TF1_SH 2
+#define B_AX_FWD_TF1_MSK 0x3
+#define B_AX_FWD_TF0_SH 0
+#define B_AX_FWD_TF0_MSK 0x3
+
+#define R_AX_ 0x9C18
+
+#define R_AX_PLD_CAM_CTRL 0x9C1C
+#define B_AX_PLD_CAM_EN BIT(7)
+#define B_AX_PLD_CAM_RANGE_SH 0
+#define B_AX_PLD_CAM_RANGE_MSK 0xf
+
+#define R_AX_PLD_CAM_ACCESS 0x9C20
+#define B_AX_PLD_CAM_POLL BIT(31)
+#define B_AX_PLD_CAM_RW BIT(30)
+#define B_AX_PLD_CAM_CLR BIT(29)
+#define B_AX_PLD_CAM_OFFSET_SH 0
+#define B_AX_PLD_CAM_OFFSET_MSK 0xffff
+
+#define R_AX_PLD_CAM_RDATA 0x9C24
+#define B_AX_PLD_CAM_RDATA_SH 0
+#define B_AX_PLD_CAM_RDATA_MSK 0xffffffffL
+
+#define R_AX_PLD_CAM_WDATA 0x9C28
+#define B_PLD_CAM_WDATA_SH 0
+#define B_PLD_CAM_WDATA_MSK 0xffffffffL
+
+#define R_AX_CUT_AMSDU_CTRL 0x9C40
+
+#define R_AX_CUT_AMSDU_CTRL_2 0x9C44
+
+#define R_AX_WOW_CTRL 0x9C50
+
+//
+// SEC_ENG
+//
+
+#define R_AX_SEC_ENG_CTRL 0x9D00
+#define B_AX_SEC_ENG_EN BIT(31)
+#define B_AX_CCMP_SPP_MIC BIT(30)
+#define B_AX_CCMP_SPP_CTR BIT(29)
+#define B_AX_SEC_CAM_ACC BIT(28)
+#define B_AX_CLK_EN_CGCMP BIT(10)
+#define B_AX_CLK_EN_WAPI BIT(9)
+#define B_AX_CLK_EN_WEP_TKIP BIT(8)
+#define B_AX_BMC_MGNT_DEC BIT(5)
+#define B_AX_UC_MGNT_DEC BIT(4)
+#define B_AX_MC_DEC BIT(3)
+#define B_AX_BC_DEC BIT(2)
+#define B_AX_SEC_RX_DEC BIT(1)
+#define B_AX_SEC_TX_ENC BIT(0)
+
+#define R_AX_SEC_MPDU_PROC 0x9D04
+#define B_AX_APPEND_ICV BIT(1)
+#define B_AX_APPEND_MIC BIT(0)
+
+#define R_AX_SEC_CAM_ACCESS 0x9D10
+#define B_AX_SEC_CAM_POLL BIT(15)
+#define B_AX_SEC_CAM_RW BIT(14)
+#define B_AX_SEC_CAM_ACC_FAIL BIT(13)
+#define B_AX_SEC_CAM_OFFSET_SH 0
+#define B_AX_SEC_CAM_OFFSET_MSK 0x3ff
+
+#define R_AX_SEC_CAM_RDATA 0x9D14
+#define B_AX_SEC_CAM_RDATA_SH 0
+#define B_AX_SEC_CAM_RDATA_MSK 0xffffffffL
+
+#define R_AX_SEC_CAM_WDATA 0x9D18
+#define B_AX_SEC_CAM_WDATA_SH 0
+#define B_AX_SEC_CAM_WDATA_MSK 0xffffffffL
+
+//
+// STA scheduler
+//
+
+#define R_AX_SS_DBG_0 0x9E00
+#define B_AX_SS_INIT_DONE BIT(7)
+
+#define R_AX_SS_DBG_1 0x9E04
+
+#define R_AX_SS_DBG_2 0x9E08
+
+#define R_AX_SS_DBG_3 0x9E0C
+
+#define R_AX_SS_CTRL 0x9E10
+#define B_AX_SS_TXLENGTH_ERR BIT(31)
+#define B_AX_SS_HW_STA_DIS BIT(30)
+#define B_AX_SS_WARM_INIT BIT(29)
+#define B_AX_SS_NONEMPTY_SS2FINFO_EN BIT(28)
+#define B_AX_SS_DELAY_TX_BAND_SEL_SH 24
+#define B_AX_SS_DELAY_TX_BAND_SEL_MSK 0x3
+#define B_AX_SS_WMM_SEL_3_SH 22
+#define B_AX_SS_WMM_SEL_3_MSK 0x3
+#define B_AX_SS_WMM_SEL_2_SH 20
+#define B_AX_SS_WMM_SEL_2_MSK 0x3
+#define B_AX_SS_WMM_SEL_1_SH 18
+#define B_AX_SS_WMM_SEL_1_MSK 0x3
+#define B_AX_SS_WMM_SEL_0_SH 16
+#define B_AX_SS_WMM_SEL_0_MSK 0x3
+#define B_AX_SS_HW_LEN_EN BIT(2)
+#define B_AX_SS_HW_PARAM_EN BIT(1)
+#define B_AX_SS_EN BIT(0)
+
+#define R_AX_SS_DL_QUOTA_CTRL 0x9E14
+#define B_AX_SS_QUOTA_MODE_3 BIT(31)
+#define B_AX_SS_QUOTA_MODE_2 BIT(30)
+#define B_AX_SS_QUOTA_MODE_1 BIT(29)
+#define B_AX_SS_QUOTA_MODE_0 BIT(28)
+#define B_AX_SS_DL_QUOTA_LOWER_LIMIT_SH 8
+#define B_AX_SS_DL_QUOTA_LOWER_LIMIT_MSK 0xff
+#define B_AX_SS_DL_QUOTA_INIT_SH 0
+#define B_AX_SS_DL_QUOTA_INIT_MSK 0xf
+
+#define R_AX_SS_UL_QUOTA_CTRL 0x9E18
+#define B_AX_SS_QUOTA_MODE_UL BIT(31)
+#define B_AX_SS_UL_QUOTA_LOWER_LIMIT_SH 8
+#define B_AX_SS_UL_QUOTA_LOWER_LIMIT_MSK 0xff
+#define B_AX_SS_UL_QUOTA_INIT_SH 0
+#define B_AX_SS_UL_QUOTA_INIT_MSK 0xf
+
+#define R_AX_SS_BSR_CTRL 0x9E1C
+#define B_AX_SS_BSR_THR_1_SH 16
+#define B_AX_SS_BSR_THR_1_MSK 0x3fff
+#define B_AX_SS_BSR_THR_0_SH 0
+#define B_AX_SS_BSR_THR_0_MSK 0x3fff
+
+#define R_AX_SS_DL_RPT_CRTL 0x9E20
+#define B_AX_SS_TXOP_MODE_3 BIT(30)
+#define B_AX_SS_TXOP_MODE_2 BIT(22)
+#define B_AX_SS_TXOP_MODE_1 BIT(14)
+#define B_AX_SS_TWT_MAX_SU_NUM_1_SH 11
+#define B_AX_SS_TWT_MAX_SU_NUM_1_MSK 0x7
+#define B_AX_SS_MAX_SU_NUM_1_SH 8
+#define B_AX_SS_MAX_SU_NUM_1_MSK 0x7
+#define B_AX_SS_TXOP_MODE_0 BIT(6)
+#define B_AX_SS_TWT_MAX_SU_NUM_0_SH 3
+#define B_AX_SS_TWT_MAX_SU_NUM_0_MSK 0x7
+#define B_AX_SS_MAX_SU_NUM_0_SH 0
+#define B_AX_SS_MAX_SU_NUM_0_MSK 0x7
+
+#define R_AX_SS_UL_RPT_CRTL 0x9E24
+#define B_AX_SS_MAX_RU_NUM_UL_SH 16
+#define B_AX_SS_MAX_RU_NUM_UL_MSK 0x3
+#define B_AX_SS_UL_WMM_SH 8
+#define B_AX_SS_UL_WMM_MSK 0x3
+#define B_AX_SS_TWT_MAX_SU_NUM_UL_SH 3
+#define B_AX_SS_TWT_MAX_SU_NUM_UL_MSK 0x7
+#define B_AX_SS_MAX_SU_NUM_UL_SH 0
+#define B_AX_SS_MAX_SU_NUM_UL_MSK 0x7
+
+#define R_AX_SS_SEARCH_TO 0x9E28
+#define B_AX_SS_SEARCH_TO_SH 0
+#define B_AX_SS_SEARCH_TO_MSK 0xff
+
+#define R_AX_SS_SEARCH_LVL 0x9E2C
+#define B_AX_SS_NEG_CNT_SH 16
+#define B_AX_SS_NEG_CNT_MSK 0xff
+#define B_AX_SS_NEG_LVL_SH 0
+#define B_AX_SS_NEG_LVL_MSK 0xff
+
+#define R_AX_SS_SRAM_DATA 0x9E30
+#define B_AX_SS_SRAM_DATA_SH 0
+#define B_AX_SS_SRAM_DATA_MSK 0xffffffffL
+
+#define R_AX_SS_SRAM_W_EN 0x9E34
+#define B_AX_SS_SRAM_W_EN_SH 0
+#define B_AX_SS_SRAM_W_EN_MSK 0xffffffffL
+
+#define R_AX_SS_SRAM_CTRL_0 0x9E38
+#define B_AX_SS_OWN BIT(31)
+#define B_AX_SS_RW BIT(23)
+#define B_AX_SS_CMD_SH 20
+#define B_AX_SS_CMD_MSK 0x7
+#define B_AX_SS_OFFSET_SH 8
+#define B_AX_SS_OFFSET_MSK 0x3
+#define B_AX_SS_PARAM_SEL_SH 0
+#define B_AX_SS_PARAM_SEL_MSK 0xff
+
+#define R_AX_SS_LINK_INFO 0x9E3C
+#define B_AX_SS_OWN BIT(31)
+#define B_AX_SS_STATUS_SH 29
+#define B_AX_SS_STATUS_MSK 0x3
+#define B_AX_SS_UL BIT(28)
+#define B_AX_SS_WMM_SH 26
+#define B_AX_SS_WMM_MSK 0x3
+#define B_AX_SS_AC_SH 24
+#define B_AX_SS_AC_MSK 0x3
+#define B_AX_SS_LINK_LEN_SH 16
+#define B_AX_SS_LINK_LEN_MSK 0xff
+#define B_AX_SS_LINK_TAIL_SH 8
+#define B_AX_SS_LINK_TAIL_MSK 0xff
+#define B_AX_SS_LINK_HEAD_SH 0
+#define B_AX_SS_LINK_HEAD_MSK 0xff
+
+#define R_AX_SS_LINK_ADD 0x9E40
+#define B_AX_SS_OWN BIT(31)
+#define B_AX_SS_UL BIT(28)
+#define B_AX_SS_MACID_2_SH 16
+#define B_AX_SS_MACID_2_MSK 0xff
+#define B_AX_SS_MACID_1_SH 8
+#define B_AX_SS_MACID_1_MSK 0xff
+#define B_AX_SS_MACID_0_SH 0
+#define B_AX_SS_MACID_0_MSK 0xff
+
+#define R_AX_SS_LINK_DEL 0x9E44
+#define B_AX_SS_OWN BIT(31)
+#define B_AX_SS_UL BIT(28)
+
+#define R_AX_SS_LINK_SEARCH 0x9E48
+#define B_AX_SS_OWN BIT(31)
+#define B_AX_SS_UL BIT(28)
+#define B_AX_SS_TWT_GROUP_SH 20
+#define B_AX_SS_TWT_GROUP_MSK 0xf
+#define B_AX_SS_MODE_SEL_SH 16
+#define B_AX_SS_MODE_SEL_MSK 0x3
+
+#define R_AX_SS_SRAM_CTRL_1 0x9E4C
+#define B_AX_SS_OWN BIT(31)
+#define B_AX_SS_CMD_SEL_SH 26
+#define B_AX_SS_CMD_SEL_MSK 0x1f
+#define B_AX_SS_VALUE_SH 8
+#define B_AX_SS_VALUE_MSK 0xffff
+
+#define R_AX_SS2FINFO_PATH 0x9E50
+#define B_AX_SS_UL_REL BIT(31)
+#define B_AX_SS_REL_QUEUE_SH 24
+#define B_AX_SS_REL_QUEUE_MSK 0x3f
+#define B_AX_SS_REL_PORT_SH 16
+#define B_AX_SS_REL_PORT_MSK 0x7
+#define B_AX_SS_DEST_QUEUE_SH 8
+#define B_AX_SS_DEST_QUEUE_MSK 0x3f
+#define B_AX_SS_DEST_PORT_SH 0
+#define B_AX_SS_DEST_PORT_MSK 0x7
+
+#define R_AX_SS_DELAYTX_TO 0x9E60
+#define B_AX_SS_BEBK_TO_1_SH 24
+#define B_AX_SS_BEBK_TO_1_MSK 0xff
+#define B_AX_SS_VOVI_TO_1_SH 16
+#define B_AX_SS_VOVI_TO_1_MSK 0xff
+#define B_AX_SS_BEBK_TO_0_SH 8
+#define B_AX_SS_BEBK_TO_0_MSK 0xff
+#define B_AX_SS_VOVI_TO_0_SH 0
+#define B_AX_SS_VOVI_TO_0_MSK 0xff
+
+#define R_AX_SS_DELAYTX_LEN_THR 0x9E70
+#define B_AX_SS_BEBK_LEN_THR_1_SH 24
+#define B_AX_SS_BEBK_LEN_THR_1_MSK 0xff
+#define B_AX_SS_VOVI_LEN_THR_1_SH 16
+#define B_AX_SS_VOVI_LEN_THR_1_MSK 0xff
+#define B_AX_SS_BEBK_LEN_THR_0_SH 8
+#define B_AX_SS_BEBK_LEN_THR_0_MSK 0xff
+#define B_AX_SS_VOVI_LEN_THR_0_SH 0
+#define B_AX_SS_VOVI_LEN_THR_0_MSK 0xff
+
+#define R_AX_SS_MU_CTRL 0x9E80
+#define B_AX_SS_MU_OPT BIT(2)
+#define B_AX_SS_SCORE_THR_SH 0
+#define B_AX_SS_SCORE_THR_MSK 0x3
+
+#define R_AX_SS_MU_TBL_0 0x9E84
+#define B_AX_SS_MU_MACID_SH 11
+#define B_AX_SS_MU_MACID_MSK 0x7f
+#define B_AX_SS_TBL_VLD BIT(10)
+#define B_AX_SS_SCORE_0_SH 8
+#define B_AX_SS_SCORE_0_MSK 0x3
+#define B_AX_SS_SCORE_1_SH 6
+#define B_AX_SS_SCORE_1_MSK 0x3
+#define B_AX_SS_SCORE_2_SH 4
+#define B_AX_SS_SCORE_2_MSK 0x3
+#define B_AX_SS_SCORE_3_SH 2
+#define B_AX_SS_SCORE_3_MSK 0x3
+#define B_AX_SS_SCORE_4_SH 0
+#define B_AX_SS_SCORE_4_MSK 0x3
+
+#define R_AX_SS_MU_TBL_1 0x9E88
+#define B_AX_SS_TBL_VLD BIT(10)
+
+#define R_AX_SS_MU_TBL_2 0x9E8C
+#define B_AX_SS_TBL_VLD BIT(10)
+
+#define R_AX_SS_MU_TBL_3 0x9E90
+#define B_AX_SS_TBL_VLD BIT(10)
+
+#define R_AX_SS_MU_TBL_4 0x9E94
+#define B_AX_SS_TBL_VLD BIT(10)
+
+#define R_AX_SS_MU_TBL_5 0x9E98
+#define B_AX_SS_TBL_VLD BIT(10)
+
+#define R_AX_SS_DL_MU_RPT_CRTL 0x9E9C
+#define B_AX_SS_TWT_MAX_MU_NUM_1_SH 12
+#define B_AX_SS_TWT_MAX_MU_NUM_1_MSK 0xf
+#define B_AX_SS_MAX_MU_NUM_1_SH 8
+#define B_AX_SS_MAX_MU_NUM_1_MSK 0xf
+#define B_AX_SS_TWT_MAX_MU_NUM_0_SH 4
+#define B_AX_SS_TWT_MAX_MU_NUM_0_MSK 0xf
+#define B_AX_SS_MAX_MU_NUM_0_SH 0
+#define B_AX_SS_MAX_MU_NUM_0_MSK 0xf
+
+#define R_AX_SS_RU_CTRL 0x9EA0
+#define B_AX_SS_GROUP_VLD_SH 16
+#define B_AX_SS_GROUP_VLD_MSK 0xffff
+#define B_AX_SS_RU_SEARCH_MODE_SH 0
+#define B_AX_SS_RU_SEARCH_MODE_MSK 0xf
+
+#define R_AX_SS_DL_RU_RPT_CRTL 0x9EA4
+#define B_AX_SS_TWT_MAX_RU_NUM_1_SH 12
+#define B_AX_SS_TWT_MAX_RU_NUM_1_MSK 0xf
+#define B_AX_SS_MAX_RU_NUM_1_SH 8
+#define B_AX_SS_MAX_RU_NUM_1_MSK 0xf
+#define B_AX_SS_TWT_MAX_RU_NUM_0_SH 4
+#define B_AX_SS_TWT_MAX_RU_NUM_0_MSK 0xf
+#define B_AX_SS_MAX_RU_NUM_0_SH 0
+#define B_AX_SS_MAX_RU_NUM_0_MSK 0xf
+
+//
+// Tx Packet Controller
+//
+
+//
+// WL_AX_Reg_AON.xls
+//
+
+//
+// AON
+//
+
+#define R_AX_SYS_ISO_CTRL 0x0000
+#define B_AX_PWC_EV2EF_SH 14
+#define B_AX_PWC_EV2EF_MSK 0x3
+#define B_AX_PA33V_EN BIT(13)
+#define B_AX_PA12V_EN BIT(12)
+#define B_AX_UA33V_EN BIT(11)
+#define B_AX_UA12V_EN BIT(10)
+#define B_AX_ISO_RFDIO BIT(9)
+#define B_AX_ISO_EB2CORE BIT(8)
+#define B_AX_ISO_DIOE BIT(7)
+#define B_AX_ISO_WLPON2PP BIT(6)
+#define B_AX_ISO_IP2MAC_WA2PP BIT(5)
+#define B_AX_ISO_PD2CORE BIT(4)
+#define B_AX_ISO_PA2PCIE BIT(3)
+#define B_AX_ISO_UD2CORE BIT(2)
+#define B_AX_ISO_UA2USB BIT(1)
+#define B_AX_ISO_WD2PP BIT(0)
+
+#define R_AX_SYS_FUNC_EN 0x0002
+#define B_AX_FEN_MREGEN BIT(15)
+#define B_AX_FEN_HWPDN BIT(14)
+#define B_AX_FEN_ELDR BIT(12)
+#define B_AX_FEN_DCORE BIT(11)
+#define B_AX_FEN_CPUEN BIT(10)
+#define B_AX_FEN_DIOE BIT(9)
+#define B_AX_FEN_PCIED BIT(8)
+#define B_AX_FEN_PPLL BIT(7)
+#define B_AX_FEN_PCIEA BIT(6)
+#define B_AX_FEN_USBD BIT(4)
+#define B_AX_FEN_UPLL BIT(3)
+#define B_AX_FEN_USBA BIT(2)
+#define B_AX_FEN_BB_GLB_RSTN BIT(1)
+#define B_AX_FEN_BBRSTB BIT(0)
+
+#define R_AX_SYS_PW_CTRL 0x0004
+#define B_AX_SOP_EABM BIT(31)
+#define B_AX_SOP_ACKF BIT(30)
+#define B_AX_SOP_ERCK BIT(29)
+#define B_AX_SOP_ESWR BIT(28)
+#define B_AX_SOP_PWMM BIT(27)
+#define B_AX_SOP_EECK BIT(26)
+#define B_AX_SOP_ANA_CLK_DIVISION_2 BIT(25)
+#define B_AX_SOP_EXTL BIT(24)
+#define B_AX_SYM_OP_RING_12M BIT(22)
+#define B_AX_ROP_SWPR BIT(21)
+#define B_AX_DIS_HW_LPLDM BIT(20)
+#define B_AX_OPT_SWRST_WLMCU BIT(19)
+#define B_AX_RDY_SYSPWR BIT(17)
+#define B_AX_EN_WLON BIT(16)
+#define B_AX_APDM_HPDN BIT(15)
+#define B_AX_AFSM_PCIE_SUS_EN BIT(12)
+#define B_AX_AFSM_WLSUS_EN BIT(11)
+#define B_AX_APFM_SWLPS BIT(10)
+#define B_AX_APFM_OFFMAC BIT(9)
+#define B_AX_APFN_ONMAC BIT(8)
+#define B_AX_CHIP_PDN_EN BIT(7)
+#define B_AX_RDY_MACDIS BIT(6)
+#define B_AX_PFM_WOWL BIT(3)
+#define B_AX_PFM_LDKP BIT(2)
+#define B_AX_WL_HCI_ALD BIT(1)
+#define B_AX_PFM_LDALL BIT(0)
+
+#define R_AX_SYS_CLK_CTRL 0x0008
+#define B_AX_CPU_CLK_EN BIT(14)
+#define B_AX_SYMR_AX_CLK_EN BIT(13)
+#define B_AX_HCI_CLK_EN BIT(12)
+#define B_AX_MAC_CLK_EN BIT(11)
+#define B_AX_SEC_CLK_EN BIT(10)
+#define B_AX_PHY_SSC_RSTB BIT(9)
+#define B_AX_EXT_32K_EN BIT(8)
+#define B_AX_WL_CLK_TEST BIT(7)
+#define B_AX_OP_SPS_PWM_EN BIT(6)
+#define B_AX_LOADER_CLK_EN BIT(5)
+#define B_AX_MACSLP BIT(4)
+#define B_AX_WAKEPAD_EN BIT(3)
+#define B_AX_ROMD16V_EN BIT(2)
+#define B_AX_ANA_CLK_DIVISION_2 BIT(1)
+#define B_AX_CNTD16V_EN BIT(0)
+
+#define R_AX_SYS_EEPROM_CTRL 0x000A
+#define B_AX_VPDIDX_SH 8
+#define B_AX_VPDIDX_MSK 0xff
+#define B_AX_EEM1_0_SH 6
+#define B_AX_EEM1_0_MSK 0x3
+#define B_AX_AUTOLOAD_SUS BIT(5)
+#define B_AX_EERPOMSEL BIT(4)
+#define B_AX_EECS_V1 BIT(3)
+#define B_AX_EESK_V1 BIT(2)
+#define B_AX_EEDI_V1 BIT(1)
+#define B_AX_EEDO_V1 BIT(0)
+
+#define R_AX_EE_VPD 0x000C
+#define B_AX_VPD_DATA_SH 0
+#define B_AX_VPD_DATA_MSK 0xffffffffL
+
+#define R_AX_SYS_SWR_CTRL1 0x0010
+#define B_AX_SYM_CTRL_SPS_PWMFREQ BIT(10)
+#define B_AX_HW_AUTO_CTRL_EXT_SWR BIT(9)
+#define B_AX_USE_INTERNAL_SWR_AND_LDO BIT(8)
+#define B_AX_MAC_ID_EN BIT(7)
+#define B_AX_OPTION_DIS_XTAL_BG BIT(2)
+
+#define R_AX_ANAPARSW_POW_MAC 0x0014
+#define B_AX_POW_LDO15 BIT(2)
+#define B_AX_POW_SW BIT(1)
+#define B_AX_POW_LDO14 BIT(0)
+
+#define R_AX_ANAPARLDO_POW_MAC 0x0015
+#define B_AX_LDOE25_POW_L BIT(0)
+
+#define R_AX_ANAPAR_POW_MAC 0x0016
+#define B_AX_POW_PC_LDO_PORT1 BIT(3)
+#define B_AX_POW_PC_LDO_PORT0 BIT(2)
+#define B_AX_POW_PLL_V1 BIT(1)
+#define B_AX_POW_POWER_CUT_POW_LDO BIT(0)
+
+#define R_AX_ANAPAR_POW_XTAL 0x0017
+#define B_AX_POW_XTAL BIT(1)
+#define B_AX_POW_BG BIT(0)
+
+#define R_AX_SYS_SWR_CTRL3 0x0018
+#define B_AX_SPS18_OCP_DIS BIT(31)
+#define B_AX_SPS18_OCP_TH_SH 16
+#define B_AX_SPS18_OCP_TH_MSK 0x7fff
+#define B_AX_OCP_WINDOW_SH 0
+#define B_AX_OCP_WINDOW_MSK 0xffff
+
+#define R_AX_RSV_CTRL 0x001C
+#define B_AX_HR_AX_DBG BIT(23)
+#define B_AX_WLMCUIOIF BIT(8)
+#define B_AX_LOCK_ALL_EN BIT(7)
+#define B_AX_R_DIS_PRST BIT(6)
+#define B_AX_WLOCK_1C_B6 BIT(5)
+#define B_AX_WLOCK_40 BIT(4)
+#define B_AX_WLOCK_08 BIT(3)
+#define B_AX_WLOCK_04 BIT(2)
+#define B_AX_WLOCK_00 BIT(1)
+#define B_AX_WLOCK_ALL BIT(0)
+
+#define R_AX_RF_CTRL 0x001F
+#define B_AX_S0_RFC_WO_0 BIT(7)
+#define B_AX_S0_RFC_WT_0 BIT(6)
+#define B_AX_S0_RFC_RSTB BIT(1)
+
+#define R_AX_AFE_LDO_CTRL 0x0020
+#define B_AX_R_SYM_WLPON_EMEM1_EN BIT(31)
+#define B_AX_R_SYM_WLPON_EMEM0_EN BIT(30)
+#define B_AX_R_SYM_WLPOFF_P4EN BIT(28)
+#define B_AX_R_SYM_WLPOFF_P3EN BIT(27)
+#define B_AX_R_SYM_WLPOFF_P2EN BIT(26)
+#define B_AX_R_SYM_WLPOFF_P1EN BIT(25)
+#define B_AX_R_SYM_WLPOFF_EN BIT(24)
+#define B_AX_R_SYM_WLPON_P3EN BIT(21)
+#define B_AX_R_SYM_WLPON_P2EN BIT(20)
+#define B_AX_R_SYM_WLPON_P1EN BIT(19)
+#define B_AX_R_SYM_WLPON_EN BIT(18)
+#define B_AX_R_SYM_LDOV12D_STBY BIT(16)
+#define B_AX_R_SYM_DIS_WPHYBBOFF_PC BIT(10)
+#define B_AX_R_SYM_WLBBOFF1_P4_EN BIT(9)
+#define B_AX_R_SYM_WLBBOFF1_P3_EN BIT(8)
+#define B_AX_R_SYM_WLBBOFF1_P2_EN BIT(7)
+#define B_AX_R_SYM_WLBBOFF1_P1_EN BIT(6)
+#define B_AX_R_SYM_WLBBOFF_P4_EN BIT(4)
+#define B_AX_R_SYM_WLBBOFF_P3_EN BIT(3)
+#define B_AX_R_SYM_WLBBOFF_P2_EN BIT(2)
+#define B_AX_R_SYM_WLBBOFF_P1_EN BIT(1)
+#define B_AX_R_SYM_WLBBOFF_EN BIT(0)
+
+#define R_AX_AFE_CTRL1 0x0024
+#define B_AX_MAC_CLK_SEL BIT(20)
+
+#define R_AX_ANAPARLDO_MAC 0x002C
+#define B_AX_R_AX_STANDBY_L BIT(19)
+#define B_AX_PD_REGU_L BIT(18)
+#define B_AX_EN_PC_BT_L BIT(17)
+#define B_AX_R_AX_LDOADJ_L_SH 13
+#define B_AX_R_AX_LDOADJ_L_MSK 0xf
+#define B_AX_CK12M_EN BIT(11)
+#define B_AX_CK12M_SEL BIT(10)
+#define B_AX_EN_25_L BIT(9)
+#define B_AX_EN_SLEEP BIT(8)
+#define B_AX_LDOH12_V12ADJ_L_SH 4
+#define B_AX_LDOH12_V12ADJ_L_MSK 0xf
+#define B_AX_LDOE25_V12ADJ_L_V1_SH 0
+#define B_AX_LDOE25_V12ADJ_L_V1_MSK 0xf
+
+#define R_AX_EFUSE_CTRL 0x0030
+#define B_AX_EF_MODE_SEL_SH 30
+#define B_AX_EF_MODE_SEL_MSK 0x3
+#define B_AX_EF_RDY BIT(29)
+#define B_AX_EF_COMP_RESULT BIT(28)
+#define B_AX_EF_ADDR_SH 16
+#define B_AX_EF_ADDR_MSK 0x7ff
+#define B_AX_EF_DATA_SH 0
+#define B_AX_EF_DATA_MSK 0xffff
+
+#define R_AX_EFUSE_TEST 0x0034
+#define B_AX_EF_CRES_SEL BIT(31)
+#define B_AX_EF_SCAN_SADR_SH 19
+#define B_AX_EF_SCAN_SADR_MSK 0x7ff
+#define B_AX_EF_SCAN_EADR_SH 8
+#define B_AX_EF_SCAN_EADR_MSK 0x7ff
+#define B_AX_EF_SCAN_TRPT BIT(7)
+#define B_AX_EF_SCAN_FTHR_SH 0
+#define B_AX_EF_SCAN_FTHR_MSK 0x7f
+
+#define R_AX_EFUSE_CTRL_1 0x0038
+#define B_AX_EF_PGPD_SH 28
+#define B_AX_EF_PGPD_MSK 0x7
+#define B_AX_EF_RDT BIT(27)
+#define B_AX_EF_VDDQST_SH 24
+#define B_AX_EF_VDDQST_MSK 0x7
+#define B_AX_EF_PGTS_SH 20
+#define B_AX_EF_PGTS_MSK 0xf
+#define B_AX_EF_PD_DIS BIT(11)
+#define B_AX_EF_CELL_SEL_SH 8
+#define B_AX_EF_CELL_SEL_MSK 0x3
+
+#define R_AX_GPIO_MUXCFG 0x0040
+#define B_AX_BOOT_MODE BIT(19)
+#define B_AX_SIC_LBK BIT(15)
+#define B_AX_ENHTP BIT(14)
+#define B_AX_BT_AOD_GPIO3 BIT(13)
+#define B_AX_ENSIC BIT(12)
+#define B_AX_SIC_SWRST BIT(11)
+#define B_AX_PO_WIFI_PTA_PINS BIT(10)
+#define B_AX_PO_BT_PTA_PINS BIT(9)
+#define B_AX_ENUARTTX BIT(8)
+#define B_AX_BTMODE_SH 6
+#define B_AX_BTMODE_MSK 0x3
+#define B_AX_ENBT BIT(5)
+#define B_AX_EROM_EN BIT(4)
+#define B_AX_ENUARTRX BIT(2)
+#define B_AX_GPIOSEL_SH 0
+#define B_AX_GPIOSEL_MSK 0x3
+
+#define R_AX_GPIO_PIN_CTRL 0x0044
+#define B_AX_GPIO_MOD_7_TO_0_SH 24
+#define B_AX_GPIO_MOD_7_TO_0_MSK 0xff
+#define B_AX_GPIO_IO_SEL_7_TO_0_SH 16
+#define B_AX_GPIO_IO_SEL_7_TO_0_MSK 0xff
+#define B_AX_GPIO_OUT_7_TO_0_SH 8
+#define B_AX_GPIO_OUT_7_TO_0_MSK 0xff
+#define B_AX_GPIO_IN_7_TO_0_SH 0
+#define B_AX_GPIO_IN_7_TO_0_MSK 0xff
+
+#define R_AX_GPIO_INTM 0x0048
+#define B_AX_MUXDBG_SEL_SH 30
+#define B_AX_MUXDBG_SEL_MSK 0x3
+#define B_AX_EXTWOL_SEL BIT(17)
+#define B_AX_EXTWOL_EN BIT(16)
+#define B_AX_GPIOF_INT_MD BIT(15)
+#define B_AX_GPIOE_INT_MD BIT(14)
+#define B_AX_GPIOD_INT_MD BIT(13)
+#define B_AX_GPIOF_INT_MD BIT(15)
+#define B_AX_GPIOE_INT_MD BIT(14)
+#define B_AX_GPIOD_INT_MD BIT(13)
+#define B_AX_GPIOC_INT_MD BIT(12)
+#define B_AX_GPIOB_INT_MD BIT(11)
+#define B_AX_GPIOA_INT_MD BIT(10)
+#define B_AX_GPIO9_INT_MD BIT(9)
+#define B_AX_GPIO8_INT_MD BIT(8)
+#define B_AX_GPIO7_INT_MD BIT(7)
+#define B_AX_GPIO6_INT_MD BIT(6)
+#define B_AX_GPIO5_INT_MD BIT(5)
+#define B_AX_GPIO4_INT_MD BIT(4)
+#define B_AX_GPIO3_INT_MD BIT(3)
+#define B_AX_GPIO2_INT_MD BIT(2)
+#define B_AX_GPIO1_INT_MD BIT(1)
+#define B_AX_GPIO0_INT_MD BIT(0)
+
+#define R_AX_LED_CFG 0x004C
+#define B_AX_MAILBOX_1WIRE_GPIO_CFG BIT(31)
+#define B_AX_BT_RF_GPIO_CFG BIT(30)
+#define B_AX_BT_SDIO_INT_GPIO_CFG BIT(29)
+#define B_AX_MAILBOX_3WIRE_GPIO_CFG BIT(28)
+#define B_AX_GPIO13_14_WL_CTRL_EN BIT(22)
+#define B_AX_LED2DIS BIT(21)
+#define B_AX_LED2PL BIT(20)
+#define B_AX_LED2SV BIT(19)
+#define B_AX_LED2CM_SH 16
+#define B_AX_LED2CM_MSK 0x7
+#define B_AX_LED1DIS BIT(15)
+#define B_AX_LED1PL BIT(12)
+#define B_AX_LED1SV BIT(11)
+#define B_AX_LED1CM_SH 8
+#define B_AX_LED1CM_MSK 0x7
+#define B_AX_LED0DIS BIT(7)
+#define B_AX_AFE_LDO_SWR_CHECK_SH 5
+#define B_AX_AFE_LDO_SWR_CHECK_MSK 0x3
+#define B_AX_LED0PL BIT(4)
+#define B_AX_LED0SV BIT(3)
+#define B_AX_LED0CM_SH 0
+#define B_AX_LED0CM_MSK 0x7
+
+#define R_AX_PWR_OPTION_CTRL 0x0050
+#define B_AX_DBG_SEL_V1_SH 16
+#define B_AX_DBG_SEL_V1_MSK 0xff
+#define B_AX_DBG_SEL_BYTE_SH 14
+#define B_AX_DBG_SEL_BYTE_MSK 0x3
+#define B_AX_SYSON_DBG_PAD_E2 BIT(11)
+#define B_AX_SYSON_LED_PAD_E2 BIT(10)
+#define B_AX_SYSON_GPEE_PAD_E2 BIT(9)
+#define B_AX_SYSON_PCI_PAD_E2 BIT(8)
+#define B_AX_AUTO_SW_LDO_VOL_EN BIT(7)
+#define B_AX_SYSON_HWCTL_SPS_LDVADJ BIT(6)
+#define B_AX_SYSON_SPS0WWV_WT_SH 4
+#define B_AX_SYSON_SPS0WWV_WT_MSK 0x3
+#define B_AX_SYSON_SPS0LDO_WT_SH 2
+#define B_AX_SYSON_SPS0LDO_WT_MSK 0x3
+#define B_AX_SYSON_RCLK_SCALE_SH 0
+#define B_AX_SYSON_RCLK_SCALE_MSK 0x3
+
+#define R_AX_CAL_TIMER 0x0054
+#define B_AX_MATCH_CNT_SH 8
+#define B_AX_MATCH_CNT_MSK 0xff
+#define B_AX_CAL_SCAL_SH 0
+#define B_AX_CAL_SCAL_MSK 0xff
+
+#define R_AX_ACLK_MON 0x0058
+#define B_AX_RCLK_MON_SH 5
+#define B_AX_RCLK_MON_MSK 0x7ff
+#define B_AX_CAL_EN BIT(4)
+#define B_AX_DPSTU_SH 2
+#define B_AX_DPSTU_MSK 0x3
+#define B_AX_SUS_16X BIT(1)
+
+#define R_AX_GPIO_MUXCFG_2 0x005F
+#define B_AX_SOUT_GPIO8 BIT(7)
+#define B_AX_SOUT_GPIO5 BIT(6)
+
+#define R_AX_GPIO_EXT_CTRL 0x0060
+#define B_AX_GPIO_MOD_15_TO_8_SH 24
+#define B_AX_GPIO_MOD_15_TO_8_MSK 0xff
+#define B_AX_GPIO_IO_SEL_15_TO_8_SH 16
+#define B_AX_GPIO_IO_SEL_15_TO_8_MSK 0xff
+#define B_AX_GPIO_OUT_15_TO_8_SH 8
+#define B_AX_GPIO_OUT_15_TO_8_MSK 0xff
+#define B_AX_GPIO_IN_15_TO_8_SH 0
+#define B_AX_GPIO_IN_15_TO_8_MSK 0xff
+
+#define R_AX_PAD_CTRL1 0x0064
+#define B_AX_BT_BQB_GPIO_SEL BIT(27)
+#define B_AX_BTGP_GPG3_FEN BIT(26)
+#define B_AX_BTGP_GPG2_FEN BIT(25)
+#define B_AX_BTGP_JTAG_EN BIT(24)
+#define B_AX_XTAL_CLK_EXTARNAL_EN BIT(23)
+#define B_AX_BTGP_UART0_EN BIT(22)
+#define B_AX_BTGP_UART1_EN BIT(21)
+#define B_AX_BTGP_SPI_EN BIT(20)
+#define B_AX_BTGP_GPIO_E2 BIT(19)
+#define B_AX_BTGP_GPIO_EN BIT(18)
+#define B_AX_BTGP_GPIO_SL_SH 16
+#define B_AX_BTGP_GPIO_SL_MSK 0x3
+#define B_AX_WL_JTAG_EN BIT(15)
+#define B_AX_PAD_SDIO_SR BIT(14)
+#define B_AX_GPIO14_OUTPUT_PL BIT(13)
+#define B_AX_HOST_WAKE_PAD_PULL_EN BIT(12)
+#define B_AX_HOST_WAKE_PAD_SL BIT(11)
+
+#define R_AX_WL_BT_PWR_CTRL 0x0068
+#define B_AX_ISO_BD2PP BIT(31)
+#define B_AX_LDOV12B_EN BIT(30)
+#define B_AX_CKEN_BTGPS BIT(29)
+#define B_AX_FEN_BTGPS BIT(28)
+#define B_AX_BTCPU_BOOTSEL BIT(27)
+#define B_AX_SPI_SPEEDUP BIT(26)
+#define B_AX_BT_LDO_MODE BIT(25)
+#define B_AX_DEVWAKE_PAD_TYPE_SEL BIT(24)
+#define B_AX_CLKREQ_PAD_TYPE_SEL BIT(23)
+#define B_AX_ISO_BTPON2PP BIT(22)
+#define B_AX_BT_HWROF_EN BIT(19)
+#define B_AX_BT_FUNC_EN BIT(18)
+#define B_AX_BT_HWPDN_SL BIT(17)
+#define B_AX_BT_DISN_EN BIT(16)
+#define B_AX_BT_PDN_PULL_EN BIT(15)
+#define B_AX_WL_PDN_PULL_EN BIT(14)
+#define B_AX_EXTERNAL_REQUEST_PL BIT(13)
+#define B_AX_GPIO0_2_3_PULL_LOW_EN BIT(12)
+#define B_AX_ISO_BA2PP BIT(11)
+#define B_AX_BT_AFE_LDO_EN BIT(10)
+#define B_AX_BT_AFE_PLL_EN BIT(9)
+#define B_AX_BT_DIG_CLK_EN BIT(8)
+#define B_AX_WLAN_32K_SEL BIT(6)
+#define B_AX_WL_DRV_EXIST_IDX BIT(5)
+#define B_AX_DOP_EHPAD BIT(4)
+#define B_AX_WL_HWROF_EN BIT(3)
+#define B_AX_WL_FUNC_EN BIT(2)
+#define B_AX_WL_HWPDN_SL BIT(1)
+#define B_AX_WL_HWPDN_EN BIT(0)
+
+#define R_AX_SDM_DEBUG 0x006C
+#define B_AX_GPIO_IE_V18 BIT(10)
+#define B_AX_PCIE_IE_V18 BIT(9)
+#define B_AX_UART_IE_V18 BIT(8)
+#define B_AX_WLCLK_PHASE_SH 0
+#define B_AX_WLCLK_PHASE_MSK 0x1f
+
+#define R_AX_SYS_SDIO_CTRL 0x0070
+#define B_AX_DBG_GNT_WL_BT BIT(27)
+#define B_AX_LTE_MUX_CTRL_PATH BIT(26)
+#define B_AX_LTE_COEX_UART BIT(25)
+#define B_AX_3W_LTE_WL_GPIO BIT(24)
+#define B_AX_SDIO_INT_POLARITY BIT(19)
+#define B_AX_SDIO_INT BIT(18)
+#define B_AX_SDIO_OFF_EN BIT(17)
+#define B_AX_SDIO_ON_EN BIT(16)
+#define B_AX_PCIE_FORCE_PWR_NGAT BIT(13)
+#define B_AX_PCIE_CALIB_EN_V1 BIT(12)
+#define B_AX_PAGE3_AUXCLK_GATE BIT(11)
+#define B_AX_PCIE_WAIT_TIMEOUT_EVENT BIT(10)
+#define B_AX_PCIE_WAIT_TIME BIT(9)
+#define B_AX_MPCIE_REFCLK_XTAL_SEL BIT(8)
+#define B_AX_BT_CTRL_USB_PWR_BACKDOOR BIT(5)
+#define B_AX_USB_D_STATE_HOLD BIT(4)
+#define B_AX_R_AX_FORCE_DP BIT(3)
+#define B_AX_R_AX_DP_MODE BIT(2)
+#define B_AX_RES_USB_MASS_STORAGE_DESC BIT(1)
+#define B_AX_USB_WAIT_TIME BIT(0)
+
+#define R_AX_HCI_OPT_CTRL 0x0074
+#define B_AX_TSFT_SEL_SH 29
+#define B_AX_TSFT_SEL_MSK 0x7
+#define B_AX_SDIO_PAD_E5 BIT(18)
+#define B_AX_USB_HOST_PWR_OFF_EN BIT(12)
+#define B_AX_SYM_LPS_BLOCK_EN BIT(11)
+#define B_AX_USB_LPM_ACT_EN BIT(10)
+#define B_AX_USB_LPM_NY BIT(9)
+#define B_AX_USB_SUS_DIS BIT(8)
+#define B_AX_SDIO_PAD_E_SH 5
+#define B_AX_SDIO_PAD_E_MSK 0x7
+#define B_AX_USB_LPPLL_EN BIT(4)
+#define B_AX_USB1_1_USB2_0_DECISION BIT(3)
+#define B_AX_ROP_SW15 BIT(2)
+#define B_AX_PCI_CKRDY_OPT BIT(1)
+#define B_AX_PCI_VAUX_EN BIT(0)
+
+#define R_AX_HCI_BG_CTRL 0x0078
+#define B_AX_IBX_EN_VALUE BIT(9)
+#define B_AX_IB_EN_VALUE BIT(8)
+#define B_AX_FORCED_IB_EN BIT(4)
+#define B_AX_EN_REGBG BIT(3)
+#define B_AX_R_AX_BG_LPF BIT(2)
+#define B_AX_R_AX_BG_SH 0
+#define B_AX_R_AX_BG_MSK 0x3
+
+#define R_AX_HCI_LDO_CTRL 0x007A
+#define B_AX_EN_LW_PWR BIT(6)
+#define B_AX_EN_REGU BIT(5)
+#define B_AX_EN_PC BIT(4)
+#define B_AX_R_AX_VADJ_SH 0
+#define B_AX_R_AX_VADJ_MSK 0xf
+
+#define R_AX_LDO_SWR_CTRL 0x007C
+#define B_AX_EXT_SWR_CTRL_EN BIT(31)
+#define B_AX_ZCD_HW_AUTO_EN BIT(27)
+#define B_AX_ZCD_REGSEL BIT(26)
+#define B_AX_AUTO_ZCD_IN_CODE_SH 21
+#define B_AX_AUTO_ZCD_IN_CODE_MSK 0x1f
+#define B_AX_ZCD_CODE_IN_L_SH 16
+#define B_AX_ZCD_CODE_IN_L_MSK 0x1f
+
+#define R_AX_PLATFORM_ENABLE 0x0088
+#define B_AX_WCPU_WARM_EN BIT(9)
+#define B_AX_SPIC_EN BIT(8)
+#define B_AX_UART_EN BIT(7)
+#define B_AX_IDDMA_EN BIT(6)
+#define B_AX_IPSEC_EN BIT(5)
+#define B_AX_HIOE_EN BIT(4)
+#define B_AX_AXIDMA_EN BIT(3)
+#define B_AX_APB_WRAP_EN BIT(2)
+#define B_AX_WCPU_EN BIT(1)
+#define B_AX_PLATFORM_EN BIT(0)
+
+#define R_AX_WLLPS_CTRL 0x0090
+#define B_AX_WLLPSOP_EABM BIT(31)
+#define B_AX_WLLPSOP_ACKF BIT(30)
+#define B_AX_WLLPSOP_DLDM BIT(29)
+#define B_AX_WLLPSOP_ESWR BIT(28)
+#define B_AX_WLLPSOP_PWMM BIT(27)
+#define B_AX_WLLPSOP_EECK BIT(26)
+#define B_AX_WLLPSOP_WLMACOFF BIT(25)
+#define B_AX_WLLPSOP_EXTAL BIT(24)
+#define B_AX_WL_SYNPON_VOLTSPDN BIT(23)
+#define B_AX_WLLPSOP_WLBBOFF BIT(22)
+#define B_AX_WLLPSOP_WLMEM_DS BIT(21)
+#define B_AX_WLLPSOP_LDO_WAIT_TIME BIT(20)
+#define B_AX_WLLPSOP_ANA_CLK_DIVISION_2 BIT(19)
+#define B_AX_AFE_BCN BIT(18)
+#define B_AX_LPLDH12_VADJ_STEP_DN_SH 12
+#define B_AX_LPLDH12_VADJ_STEP_DN_MSK 0xf
+#define B_AX_V15ADJ_L1_STEP_DN_V1_SH 8
+#define B_AX_V15ADJ_L1_STEP_DN_V1_MSK 0xf
+#define B_AX_FORCE_LEAVE_LPS BIT(3)
+#define B_AX_SW_AFE_MODE BIT(2)
+#define B_AX_REGU_32K_CLK_EN BIT(1)
+#define B_AX_WL_LPS_EN BIT(0)
+
+#define R_AX_GPIO_DEBOUNCE_CTRL 0x0098
+#define B_AX_WLGP_DBC1EN BIT(15)
+#define B_AX_WLGP_DBC1_SH 8
+#define B_AX_WLGP_DBC1_MSK 0xf
+#define B_AX_WLGP_DBC0EN BIT(7)
+#define B_AX_WLGP_DBC0_SH 0
+#define B_AX_WLGP_DBC0_MSK 0xf
+
+#define R_AX_SYSON_FSM_MON 0x00A0
+#define B_AX_FSM_MON_SEL_SH 24
+#define B_AX_FSM_MON_SEL_MSK 0x7
+#define B_AX_DOP_ELDO BIT(23)
+#define B_AX_FSM_MON_UPD BIT(15)
+#define B_AX_FSM_PAR_SH 0
+#define B_AX_FSM_PAR_MSK 0x7fff
+
+#define R_AX_PMC_DBG_CTRL1 0x00A8
+#define B_AX_BT_INT_EN BIT(31)
+#define B_AX_RD_WR_WIFI_BT_INFO_SH 16
+#define B_AX_RD_WR_WIFI_BT_INFO_MSK 0x7fff
+#define B_AX_PMC_WR_OVF BIT(8)
+#define B_AX_WLPMC_ERRINT_SH 0
+#define B_AX_WLPMC_ERRINT_MSK 0xff
+
+#define R_AX_DBG_PORT_SEL 0x00C0
+#define B_AX_DEBUG_ST_SH 0
+#define B_AX_DEBUG_ST_MSK 0xffffffffL
+
+#define R_AX_PAD_CTRL2 0x00C4
+#define B_AX_USB3_USB2_TRANSITION BIT(20)
+#define B_AX_USB23_SW_MODE_V1_SH 18
+#define B_AX_USB23_SW_MODE_V1_MSK 0x3
+#define B_AX_NO_PDN_CHIPOFF_V1 BIT(17)
+#define B_AX_RSM_EN_V1 BIT(16)
+#define B_AX_LD_B12V_EN BIT(7)
+#define B_AX_EECS_IOSEL_V1 BIT(6)
+#define B_AX_EECS_DATA_O_V1 BIT(5)
+#define B_AX_EECS_DATA_I_V1 BIT(4)
+#define B_AX_EESK_IOSEL_V1 BIT(2)
+#define B_AX_EESK_DATA_O_V1 BIT(1)
+#define B_AX_EESK_DATA_I_V1 BIT(0)
+
+#define R_AX_PMC_DBG_CTRL2 0x00CC
+#define B_AX_EFUSE_BURN_GNT_SH 24
+#define B_AX_EFUSE_BURN_GNT_MSK 0xff
+#define B_AX_STOP_WL_PMC BIT(9)
+#define B_AX_STOP_SYM_PMC BIT(8)
+#define B_AX_BT_ACCESS_WL_PAGE0 BIT(6)
+#define B_AX_R_AX_RST_WLPMC BIT(5)
+#define B_AX_R_AX_RST_PD12N BIT(4)
+#define B_AX_SYSON_DIS_WLR_AX_WRMSK BIT(3)
+#define B_AX_SYSON_DIS_PMCR_AX_WRMSK BIT(2)
+#define B_AX_SYSON_R_AX_ARB_SH 0
+#define B_AX_SYSON_R_AX_ARB_MSK 0x3
+#define B_AX_BIST_USB_DIS BIT(27)
+#define B_AX_BIST_PCI_DIS BIT(26)
+#define B_AX_BIST_BT_DIS BIT(25)
+#define B_AX_BIST_WL_DIS BIT(24)
+#define B_AX_BIST_RPT_SEL_SH 16
+#define B_AX_BIST_RPT_SEL_MSK 0xf
+#define B_AX_BIST_RESUME_PS BIT(4)
+#define B_AX_BIST_RESUME BIT(3)
+#define B_AX_BIST_NORMAL BIT(2)
+#define B_AX_BIST_RSTN BIT(1)
+#define B_AX_BIST_CLK_EN BIT(0)
+
+#define R_AX_BIST_RPT 0x00D4
+#define B_AX_MBIST_REPORT_SH 0
+#define B_AX_MBIST_REPORT_MSK 0xffffffffL
+
+#define R_AX_MEM_CTRL 0x00D8
+#define B_AX_UMEM_RME BIT(31)
+#define B_AX_BT_SPRAM_SH 28
+#define B_AX_BT_SPRAM_MSK 0x3
+#define B_AX_BT_ROM_SH 24
+#define B_AX_BT_ROM_MSK 0xf
+#define B_AX_PCI_DPRAM_SH 10
+#define B_AX_PCI_DPRAM_MSK 0x3
+#define B_AX_PCI_SPRAM_SH 8
+#define B_AX_PCI_SPRAM_MSK 0x3
+#define B_AX_USB_SPRAM_SH 6
+#define B_AX_USB_SPRAM_MSK 0x3
+#define B_AX_USB_SPRF_SH 4
+#define B_AX_USB_SPRF_MSK 0x3
+#define B_AX_MCU_ROM_SH 0
+#define B_AX_MCU_ROM_MSK 0xf
+
+#define R_AX_USB_SIE_INTF 0x00E0
+#define B_AX_RD_SEL BIT(31)
+#define B_AX_USB_SIE_INTF_WE_V1 BIT(30)
+#define B_AX_USB_SIE_INTF_BYIOR_AX_V1 BIT(29)
+#define B_AX_USB_SIE_SELECT BIT(28)
+#define B_AX_USB_SIE_INTF_ADDR_V1_SH 16
+#define B_AX_USB_SIE_INTF_ADDR_V1_MSK 0x1ff
+#define B_AX_USB_SIE_INTF_RD_SH 8
+#define B_AX_USB_SIE_INTF_RD_MSK 0xff
+#define B_AX_USB_SIE_INTF_WD_SH 0
+#define B_AX_USB_SIE_INTF_WD_MSK 0xff
+
+#define R_AX_PCIE_MIO_INTF 0x00E4
+#define B_AX_PCIE_MIO_ADDR_PAGE_SH 16
+#define B_AX_PCIE_MIO_ADDR_PAGE_MSK 0x3
+#define B_AX_PCIE_MIO_BYIOREG BIT(13)
+#define B_AX_PCIE_MIO_RE BIT(12)
+#define B_AX_PCIE_MIO_WE_SH 8
+#define B_AX_PCIE_MIO_WE_MSK 0xf
+#define B_AX_PCIE_MIO_ADDR_SH 0
+#define B_AX_PCIE_MIO_ADDR_MSK 0xff
+
+#define R_AX_PCIE_MIO_INTD 0x00E8
+#define B_AX_PCIE_MIO_DATA_SH 0
+#define B_AX_PCIE_MIO_DATA_MSK 0xffffffffL
+
+#define R_AX_WLRF1 0x00EC
+#define B_AX_S1_RFC_WO_0 BIT(31)
+#define B_AX_S1_RFC_WT_0 BIT(30)
+#define B_AX_S1_RFC_RSTB BIT(25)
+
+#define R_AX_SYS_CFG1 0x00F0
+#define B_AX_TRP_ICFG_SH 28
+#define B_AX_TRP_ICFG_MSK 0xf
+#define B_AX_RF_TYPE_ID BIT(27)
+#define B_AX_BD_HCI_SEL BIT(26)
+#define B_AX_BD_PKG_SEL BIT(25)
+#define B_AX_INTERNAL_EXTERNAL_SWR BIT(24)
+#define B_AX_RTL_ID BIT(23)
+#define B_AX_PAD_HWPD_IDN BIT(22)
+#define B_AX_TESTMODE BIT(20)
+#define B_AX_VENDOR_ID_SH 16
+#define B_AX_VENDOR_ID_MSK 0xf
+#define B_AX_CHIP_VER_SH 12
+#define B_AX_CHIP_VER_MSK 0xf
+#define B_AX_BD_MAC3 BIT(11)
+#define B_AX_BD_MAC1 BIT(10)
+#define B_AX_BD_MAC2 BIT(9)
+#define B_AX_SIC_IDLE BIT(8)
+#define B_AX_SW_OFFLOAD_EN BIT(7)
+#define B_AX_OCP_SHUTDN BIT(6)
+#define B_AX_V15_VLD BIT(5)
+#define B_AX_PCIRSTB BIT(4)
+#define B_AX_PCLK_VLD BIT(3)
+#define B_AX_UCLK_VLD BIT(2)
+#define B_AX_ACLK_VLD BIT(1)
+#define B_AX_XCLK_VLD BIT(0)
+
+#define R_AX_SYS_STATUS1 0x00F4
+#define B_AX_RF_RL_ID_SH 28
+#define B_AX_RF_RL_ID_MSK 0xf
+#define B_AX_HPHY_ICFG BIT(19)
+#define B_AX_SEL_0XC0_SH 16
+#define B_AX_SEL_0XC0_MSK 0x3
+#define B_AX_HCI_SEL_V4_SH 12
+#define B_AX_HCI_SEL_V4_MSK 0x3
+#define B_AX_USB_OPERATION_MODE BIT(10)
+#define B_AX_BT_PDN BIT(9)
+#define B_AX_AUTO_WLPON BIT(8)
+#define B_AX_WL_MODE BIT(7)
+#define B_AX_PKG_SEL_HCI BIT(6)
+#define B_AX_PAD_HCI_SEL_V2_SH 3
+#define B_AX_PAD_HCI_SEL_V2_MSK 0x3
+#define B_AX_EFS_HCI_SEL_V1_SH 0
+#define B_AX_EFS_HCI_SEL_V1_MSK 0x7
+
+#define R_AX_SYS_STATUS2 0x00F8
+#define B_AX_HIOE_ON_TIMEOUT BIT(23)
+#define B_AX_SIC_ON_TIMEOUT BIT(22)
+#define B_AX_CPU_ON_TIMEOUT BIT(21)
+#define B_AX_HCI_ON_TIMEOUT BIT(20)
+#define B_AX_SIO_ALDN BIT(19)
+#define B_AX_USB_ALDN BIT(18)
+#define B_AX_PCI_ALDN BIT(17)
+#define B_AX_SYS_ALDN BIT(16)
+#define B_AX_EPVID1_SH 8
+#define B_AX_EPVID1_MSK 0xff
+#define B_AX_EPVID0_SH 0
+#define B_AX_EPVID0_MSK 0xff
+
+#define R_AX_SYS_CFG2 0x00FC
+#define B_AX_HCI_SEL_EMBEDDED BIT(8)
+#define B_AX_HW_ID_SH 0
+#define B_AX_HW_ID_MSK 0xff
+
+#define R_AX_SYS_CFG3 0x0100
+
+#define R_AX_ANAPARSW_MAC_0 0x0110
+#define B_AX_OCP_L BIT(31)
+#define B_AX_POWOCP_L BIT(30)
+#define B_AX_CF_L_V2_SH 28
+#define B_AX_CF_L_V2_MSK 0x3
+#define B_AX_CFC_L_V2_SH 26
+#define B_AX_CFC_L_V2_MSK 0x3
+#define B_AX_R3_L_V2_SH 24
+#define B_AX_R3_L_V2_MSK 0x3
+#define B_AX_R2_L_SH 22
+#define B_AX_R2_L_MSK 0x3
+#define B_AX_R1_L_SH 20
+#define B_AX_R1_L_MSK 0x3
+#define B_AX_C3_L_SH 18
+#define B_AX_C3_L_MSK 0x3
+#define B_AX_C2_L_SH 16
+#define B_AX_C2_L_MSK 0x3
+#define B_AX_C1_L_V2_SH 14
+#define B_AX_C1_L_V2_MSK 0x3
+#define B_AX_R_AX_OCPS_L_V2 BIT(13)
+#define B_AX_R_AX_PWM_L BIT(12)
+#define B_AX_V15ADJ_L_SH 9
+#define B_AX_V15ADJ_L_MSK 0x7
+#define B_AX_IN_L_SH 6
+#define B_AX_IN_L_MSK 0x7
+#define B_AX_STD_L_SH 4
+#define B_AX_STD_L_MSK 0x3
+#define B_AX_VOL_L_SH 0
+#define B_AX_VOL_L_MSK 0xf
+
+#define R_AX_ANAPARSW_MAC_1 0x0114
+#define B_AX_OCP_L_PFM_SH 29
+#define B_AX_OCP_L_PFM_MSK 0x7
+#define B_AX_CFC_L_PFM_SH 27
+#define B_AX_CFC_L_PFM_MSK 0x3
+#define B_AX_R_AX_FREQ_L_V1_SH 20
+#define B_AX_R_AX_FREQ_L_V1_MSK 0x7
+#define B_AX_EN_DUTY BIT(19)
+#define B_AX_R_AX_MODE_V2_SH 17
+#define B_AX_R_AX_MODE_V2_MSK 0x3
+#define B_AX_EN_SP BIT(16)
+#define B_AX_R_AX_AUTO_L_V2 BIT(15)
+#define B_AX_R_AX_LDOF_L_V2 BIT(14)
+#define B_AX_R_AX_TYPE_L_V2 BIT(13)
+#define B_AX_VO15_V1P05_H BIT(12)
+#define B_AX_ARENB_L_V2 BIT(11)
+#define B_AX_TBOX_L1_V2_SH 9
+#define B_AX_TBOX_L1_V2_MSK 0x3
+#define B_AX_R_AX_DELAY_L_SH 7
+#define B_AX_R_AX_DELAY_L_MSK 0x3
+#define B_AX_R_AX_CLAMP_D_L BIT(6)
+#define B_AX_R_AX_BYPASS_L_V2 BIT(5)
+#define B_AX_R_AX_AUTOZCD_L BIT(4)
+#define B_AX_POW_ZCD_L_V2 BIT(3)
+#define B_AX_R_AX_HALF_L BIT(2)
+#define B_AX_OCP_L_V2_SH 0
+#define B_AX_OCP_L_V2_MSK 0x3
+
+#define R_AX_ANAPAR_MAC_0 0x0118
+#define B_AX_R_AX_LPF_R3_SH 29
+#define B_AX_R_AX_LPF_R3_MSK 0x7
+#define B_AX_R_AX_LPF_R2_SH 24
+#define B_AX_R_AX_LPF_R2_MSK 0x1f
+#define B_AX_R_AX_LPF_C3_SH 21
+#define B_AX_R_AX_LPF_C3_MSK 0x7
+#define B_AX_R_AX_LPF_C2_SH 18
+#define B_AX_R_AX_LPF_C2_MSK 0x7
+#define B_AX_R_AX_LPF_C1_SH 15
+#define B_AX_R_AX_LPF_C1_MSK 0x7
+#define B_AX_R_AX_LDO_SEL_V1_SH 13
+#define B_AX_R_AX_LDO_SEL_V1_MSK 0x3
+#define B_AX_R_AX_CP_ICPX2 BIT(12)
+#define B_AX_R_AX_CP_ICP_SEL_FAST_SH 9
+#define B_AX_R_AX_CP_ICP_SEL_FAST_MSK 0x7
+#define B_AX_R_AX_CP_ICP_SEL_SH 6
+#define B_AX_R_AX_CP_ICP_SEL_MSK 0x7
+#define B_AX_R_AX_IB_PI_SH 4
+#define B_AX_R_AX_IB_PI_MSK 0x3
+#define B_AX_LDO2PWRCUT BIT(3)
+#define B_AX_VPULSE_LDO BIT(2)
+#define B_AX_LDO_VSEL_SH 0
+#define B_AX_LDO_VSEL_MSK 0x3
+
+#define R_AX_ANAPAR_MAC_1 0x011C
+#define B_AX_R_AX_CK_MON_SEL_SH 29
+#define B_AX_R_AX_CK_MON_SEL_MSK 0x7
+#define B_AX_R_AX_CK_MON_EN BIT(28)
+#define B_AX_R_AX_XTAL_FREQ_SEL BIT(27)
+#define B_AX_R_AX_XTAL_EDGE_SEL BIT(26)
+#define B_AX_R_AX_VCO_KVCO BIT(25)
+#define B_AX_R_AX_SDM_EDGE_SEL BIT(24)
+#define B_AX_R_AX_SDM_CK_SEL BIT(23)
+#define B_AX_R_AX_SDM_CK_GATED BIT(22)
+#define B_AX_R_AX_PFD_RESET_GATED BIT(21)
+#define B_AX_R_AX_LPF_R3_FAST_SH 16
+#define B_AX_R_AX_LPF_R3_FAST_MSK 0x1f
+#define B_AX_R_AX_LPF_R2_FAST_SH 11
+#define B_AX_R_AX_LPF_R2_FAST_MSK 0x1f
+#define B_AX_R_AX_LPF_C3_FAST_SH 8
+#define B_AX_R_AX_LPF_C3_FAST_MSK 0x7
+#define B_AX_R_AX_LPF_C2_FAST_SH 5
+#define B_AX_R_AX_LPF_C2_FAST_MSK 0x7
+#define B_AX_R_AX_LPF_C1_FAST_SH 2
+#define B_AX_R_AX_LPF_C1_FAST_MSK 0x7
+#define B_AX_R_AX_LPF_R3_V1_SH 0
+#define B_AX_R_AX_LPF_R3_V1_MSK 0x3
+
+#define R_AX_ANAPAR_MAC_2 0x0120
+#define B_AX_AGPIO_DRV_V1_SH 30
+#define B_AX_AGPIO_DRV_V1_MSK 0x3
+#define B_AX_AGPIO_GPO_V1 BIT(29)
+#define B_AX_AGPIO_GPE_V1 BIT(28)
+#define B_AX_SEL_CLK BIT(27)
+#define B_AX_LS_XTAL_SEL_SH 23
+#define B_AX_LS_XTAL_SEL_MSK 0xf
+#define B_AX_LS_SDM_ORDER_V1 BIT(22)
+#define B_AX_LS_DELAY_PH BIT(21)
+#define B_AX_DIVIDER_SEL BIT(20)
+#define B_AX_PCODE_SH 15
+#define B_AX_PCODE_MSK 0x1f
+#define B_AX_NCODE_SH 7
+#define B_AX_NCODE_MSK 0xff
+#define B_AX_R_AX_BEACON BIT(6)
+#define B_AX_R_AX_MBIASE BIT(5)
+#define B_AX_R_AX_FAST_SEL_SH 3
+#define B_AX_R_AX_FAST_SEL_MSK 0x3
+#define B_AX_R_AX_CK960M_EN BIT(2)
+#define B_AX_R_AX_CK320M_EN BIT(1)
+#define B_AX_R_AX_CK_5M_EN BIT(0)
+
+#define R_AX_RFE_PINMUX_CTRL 0x0140
+#define B_AX__BANDSELN_5G_SEL BIT(31)
+#define B_AX__BANDSELN_5G_EN BIT(30)
+#define B_AX_BANDSELN_5_6G_SEL BIT(29)
+#define B_AX_BANDSELN_5_6G_EN BIT(28)
+#define B_AX_PAON_LNAON_6G_S1_SEL BIT(27)
+#define B_AX_PAON_LNAON_6G_S1_EN BIT(26)
+#define B_AX_PAON_LNAON_6G_S0_SEL BIT(25)
+#define B_AX_PAON_LNAON_6G_S0_EN BIT(24)
+#define B_AX_PAON_LNAON_5G_S1_SEL BIT(23)
+#define B_AX_PAON_LNAON_5G_S1_EN BIT(22)
+#define B_AX_PAON_LNAON_5G_S0_SEL BIT(21)
+#define B_AX_PAON_LNAON_5G_S0_EN BIT(20)
+#define B_AX_PAON_LNAON_2G_S1_SEL BIT(19)
+#define B_AX_PAON_LNAON_2G_S1_EN BIT(18)
+#define B_AX_PAON_LNAON_2G_S0_SEL BIT(17)
+#define B_AX_PAON_LNAON_2G_S0_EN BIT(16)
+
+#define R_AX_RFE_PINMUX_SEL_FUNC 0x0144
+#define B_AX_RFE_WLBT_FUNC_7_SEL_EN BIT(7)
+#define B_AX_RFE_WLBT_FUNC_6_SEL_EN BIT(6)
+#define B_AX_RFE_WLBT_FUNC_5_SEL_EN BIT(5)
+#define B_AX_RFE_WLBT_FUNC_4_SEL_EN BIT(4)
+#define B_AX_RFE_WLBT_FUNC_3_SEL_EN BIT(3)
+#define B_AX_RFE_WLBT_FUNC_2_SEL_EN BIT(2)
+#define B_AX_RFE_WLBT_FUNC_1_SEL_EN BIT(1)
+#define B_AX_RFE_WLBT_FUNC_0_SEL_EN BIT(0)
+
+#define R_AX_ANAPAR_XTAL_2 0x0148
+
+#define R_AX_RFE_CTRL 0x014C
+#define B_AX_SW_LNAON_6G_S1_SEL_DATA BIT(13)
+#define B_AX_SW_PAON_6G_S1_SEL_DATA BIT(12)
+#define B_AX_BANDSELP_5G_SEL_DATA BIT(11)
+#define B_AX_BANDSELP_5 BIT(10)
+#define B_AX_SW_LNAON_6G_S0_SEL_DATA BIT(9)
+#define B_AX_SW_PAON_6G_S0_SEL_DATA BIT(8)
+#define B_AX_SW_LNAON_5G_S1_SEL_DATA BIT(7)
+#define B_AX_SW_PAON_5G_S1_SEL_DATA BIT(6)
+#define B_AX_SW_LNAON_5G_S0_SEL_DATA BIT(5)
+#define B_AX_SW_PAON_5G_S0_SEL_DATA BIT(4)
+#define B_AX_SW_LNAON_2G_S1_SEL_DATA BIT(3)
+#define B_AX_SW_PAON_2G_S1_SEL_DATA BIT(2)
+#define B_AX_SW_LNAON_2G_S0_SEL_DATA BIT(1)
+#define B_AX_SW_PAON_2G_S0_SEL_DATA BIT(0)
+
+#define R_AX_ANAPAR_XTAL_AACK_0 0x0154
+
+#define R_AX_ANAPAR_XTAL_AACK_1 0x0158
+
+#define R_AX_XTAL_AAC_OUTPUT 0x0160
+#define B_AX_XTAL_PEAKDET_OUT BIT(9)
+#define B_AX_XAAC_BUSY BIT(8)
+#define B_AX_XAAC_READY_V1 BIT(7)
+#define B_AX_XAAC_PK_SEL_SH 5
+#define B_AX_XAAC_PK_SEL_MSK 0x3
+#define B_AX_XTAL_GM_OUT_SH 0
+#define B_AX_XTAL_GM_OUT_MSK 0x1f
+
+#define R_AX_ANAPAR_XTAL_MODE_DECODER 0x0164
+
+#define R_AX_SYS_CFG5 0x0170
+#define B_AX_LPS_STATUS BIT(3)
+#define B_AX_HCI_TXDMA_BUSY BIT(2)
+#define B_AX_HCI_TXDMA_ALLOW BIT(1)
+#define B_AX_FW_CTRL_HCI_TXDMA_EN BIT(0)
+
+#define R_AX_CPU_CTRL 0x0184
+
+#define R_AX_FWS0IMR 0x0190
+#define B_AX_FS_HCI_SUS_INT_EN BIT(29)
+#define B_AX_FS_HCI_RES_INT_EN BIT(28)
+#define B_AX_FS_HCI_RESET_INT_EN BIT(27)
+#define B_AX_FS_USB_SCSI_CMD_INT_EN BIT(26)
+#define B_AX_FS_ACT2RECOVERY_INT_EN BIT(25)
+#define B_AX_FS_GEN1GEN2_SWITCH_INT_EN BIT(24)
+#define B_AX_FS_HCI_TXDMA_REQ_INT_EN BIT(23)
+#define B_AX_FS_USB_LPMRSM_INT_EN BIT(22)
+#define B_AX_FS_USB_LPMINT_INT_EN BIT(21)
+#define B_AX_FS_PWMERR_INT_EN BIT(20)
+#define B_AX_FS_PDNINT_EN BIT(19)
+#define B_AX_FS_SPSA_OCP_INT_EN BIT(18)
+#define B_AX_FS_SPSD_OCP_INT_EN BIT(17)
+#define B_AX_FS_BTON_STS_UPDATE_INT_EN BIT(16)
+#define B_AX_FS_GPIOF_INT_EN BIT(15)
+#define B_AX_FS_GPIOE_INT_EN BIT(14)
+#define B_AX_FS_GPIOD_INT_EN BIT(13)
+#define B_AX_FS_GPIOC_INT_EN BIT(12)
+#define B_AX_FS_GPIOB_INT_EN BIT(11)
+#define B_AX_FS_GPIOA_INT_EN BIT(10)
+#define B_AX_FS_GPIO9_INT_EN BIT(9)
+#define B_AX_FS_GPIO8_INT_EN BIT(8)
+#define B_AX_FS_GPIO7_INT_EN BIT(7)
+#define B_AX_FS_GPIO6_INT_EN BIT(6)
+#define B_AX_FS_GPIO5_INT_EN BIT(5)
+#define B_AX_FS_GPIO4_INT_EN BIT(4)
+#define B_AX_FS_GPIO3_INT_EN BIT(3)
+#define B_AX_FS_GPIO2_INT_EN BIT(2)
+#define B_AX_FS_GPIO1_INT_EN BIT(1)
+#define B_AX_FS_GPIO0_INT_EN BIT(0)
+
+#define R_AX_FWS0ISR 0x0194
+#define B_AX_FS_HCI_SUS_INT BIT(29)
+#define B_AX_FS_HCI_RES_INT BIT(28)
+#define B_AX_FS_HCI_RESET_INT BIT(27)
+#define B_AX_FS_USB_SCSI_CMD_INT BIT(26)
+#define B_AX_FS_ACT2RECOVERY_INT BIT(25)
+#define B_AX_FS_GEN1GEN2_SWITCH_INT BIT(24)
+#define B_AX_FS_HCI_TXDMA_REQ_INT BIT(23)
+#define B_AX_FS_USB_LPMRSM_INT BIT(22)
+#define B_AX_FS_USB_LPMINT_INT BIT(21)
+#define B_AX_FS_PWMERR_INT BIT(20)
+#define B_AX_FS_PDNINT BIT(19)
+#define B_AX_FS_SPSA_OCP_INT BIT(18)
+#define B_AX_FS_SPSD_OCP_INT BIT(17)
+#define B_AX_FS_BTON_STS_UPDATE_INT BIT(16)
+#define B_AX_FS_GPIOF_INT BIT(15)
+#define B_AX_FS_GPIOE_INT BIT(14)
+#define B_AX_FS_GPIOD_INT BIT(13)
+#define B_AX_FS_GPIOC_INT BIT(12)
+#define B_AX_FS_GPIOB_INT BIT(11)
+#define B_AX_FS_GPIOA_INT BIT(10)
+#define B_AX_FS_GPIO9_INT BIT(9)
+#define B_AX_FS_GPIO8_INT BIT(8)
+#define B_AX_FS_GPIO7_INT BIT(7)
+#define B_AX_FS_GPIO6_INT BIT(6)
+#define B_AX_FS_GPIO5_INT BIT(5)
+#define B_AX_FS_GPIO4_INT BIT(4)
+#define B_AX_FS_GPIO3_INT BIT(3)
+#define B_AX_FS_GPIO2_INT BIT(2)
+#define B_AX_FS_GPIO1_INT BIT(1)
+#define B_AX_FS_GPIO0_INT BIT(0)
+
+#define R_AX_HSIMR 0x0198
+#define B_AX_GPIOF_INT_EN_ BIT(31)
+#define B_AX_GPIOE_INT_EN_ BIT(30)
+#define B_AX_GPIOD_INT_EN_ BIT(29)
+#define B_AX_GPIOC_INT_EN_ BIT(28)
+#define B_AX_GPIOB_INT_EN_ BIT(27)
+#define B_AX_GPIOA_INT_EN_ BIT(26)
+#define B_AX_GPIO9_INT_EN_ BIT(25)
+#define B_AX_GPIO8_INT_EN_ BIT(24)
+#define B_AX_GPIO7_INT_EN_ BIT(23)
+#define B_AX_GPIO6_INT_EN_ BIT(22)
+#define B_AX_GPIO5_INT_EN_ BIT(21)
+#define B_AX_GPIO4_INT_EN_ BIT(20)
+#define B_AX_GPIO3_INT_EN_ BIT(19)
+#define B_AX_GPIO2_INT_EN_V1_ BIT(18)
+#define B_AX_GPIO1_INT_EN_ BIT(17)
+#define B_AX_GPIO0_INT_EN_ BIT(16)
+#define B_AX_PDNINT_EN_ BIT(7)
+#define B_AX_RON_INT_EN_ BIT(6)
+#define B_AX_SPS_OCP_INT_EN BIT(5)
+#define B_AX_GPIO15_0_INT_EN BIT(0)
+
+#define R_AX_HSISR 0x019C
+#define B_AX_GPIOF_INT_ BIT(31)
+#define B_AX_GPIOE_INT_ BIT(30)
+#define B_AX_GPIOD_INT_ BIT(29)
+#define B_AX_GPIOC_INT_ BIT(28)
+#define B_AX_GPIOB_INT_ BIT(27)
+#define B_AX_GPIOA_INT_ BIT(26)
+#define B_AX_GPIO9_INT_ BIT(25)
+#define B_AX_GPIO8_INT_ BIT(24)
+#define B_AX_GPIO7_INT_ BIT(23)
+#define B_AX_GPIO6_INT_ BIT(22)
+#define B_AX_GPIO5_INT_ BIT(21)
+#define B_AX_GPIO4_INT_ BIT(20)
+#define B_AX_GPIO3_INT_ BIT(19)
+#define B_AX_GPIO2_INT_V1_ BIT(18)
+#define B_AX_GPIO1_INT_ BIT(17)
+#define B_AX_GPIO0_INT_ BIT(16)
+#define B_AX_PDNINT_ BIT(7)
+#define B_AX_RON_INT_ BIT(6)
+#define B_AX_SPS_OCP_INT_ BIT(5)
+#define B_AX_GPIO15_0_INT_ BIT(0)
+
+#define R_AX_HIMR0 0x01A0
+#define B_AX_RON_INT_EN BIT(20)
+#define B_AX_PDNINT_EN BIT(19)
+#define B_AX_SPSANA_OCP_INT_EN BIT(18)
+#define B_AX_BTON_STS_UPDATE_INT_EN BIT(16)
+#define B_AX_GPIOF_INT_EN BIT(15)
+#define B_AX_GPIOE_INT_EN BIT(14)
+#define B_AX_GPIOD_INT_EN BIT(13)
+#define B_AX_GPIOC_INT_EN BIT(12)
+#define B_AX_GPIOB_INT_EN BIT(11)
+#define B_AX_GPIOA_INT_EN BIT(10)
+#define B_AX_GPIO9_INT_EN BIT(9)
+#define B_AX_GPIO8_INT_EN BIT(8)
+#define B_AX_GPIO7_INT_EN BIT(7)
+#define B_AX_GPIO6_INT_EN BIT(6)
+#define B_AX_GPIO5_INT_EN BIT(5)
+#define B_AX_GPIO4_INT_EN BIT(4)
+#define B_AX_GPIO3_INT_EN BIT(3)
+#define B_AX_GPIO2_INT_EN BIT(2)
+#define B_AX_GPIO1_INT_EN BIT(1)
+#define B_AX_GPIO0_INT_EN BIT(0)
+
+#define R_AX_HISR0 0x01A4
+#define B_AX_RON_INT BIT(20)
+#define B_AX_PDNINT BIT(19)
+#define B_AX_SPSANA_OCP_INT BIT(18)
+#define B_AX_SPS_OCP_INT BIT(17)
+#define B_AX_BTON_STS_UPDATE_INT BIT(16)
+#define B_AX_GPIOF_INT BIT(15)
+#define B_AX_GPIOE_INT BIT(14)
+#define B_AX_GPIOD_INT BIT(13)
+#define B_AX_GPIOC_INT BIT(12)
+#define B_AX_GPIOB_INT BIT(11)
+#define B_AX_GPIOA_INT BIT(10)
+#define B_AX_GPIO9_INT BIT(9)
+#define B_AX_GPIO8_INT BIT(8)
+#define B_AX_GPIO7_INT BIT(7)
+#define B_AX_GPIO6_INT BIT(6)
+#define B_AX_GPIO5_INT BIT(5)
+#define B_AX_GPIO4_INT BIT(4)
+#define B_AX_GPIO3_INT BIT(3)
+#define B_AX_GPIO2_INT BIT(2)
+#define B_AX_GPIO1_INT BIT(1)
+#define B_AX_GPIO0_INT BIT(0)
+
+#define R_AX_HIMR1 0x01A8
+#define B_AX_TXFIFO_TH_INT BIT(30)
+#define B_AX_BTON_STS_UPDATE_MASK BIT(29)
+#define B_AX_MCU_ERR_MASK BIT(28)
+#define B_AX_BCNDMAINT7__MSK BIT(27)
+#define B_AX_BCNDMAINT6__MSK BIT(26)
+#define B_AX_BCNDMAINT5__MSK BIT(25)
+#define B_AX_BCNDMAINT4__MSK BIT(24)
+#define B_AX_BCNDMAINT3_MSK BIT(23)
+#define B_AX_BCNDMAINT2_MSK BIT(22)
+#define B_AX_BCNDMAINT1_MSK BIT(21)
+#define B_AX_BCNDERR7_MSK BIT(20)
+#define B_AX_BCNDERR6_MSK BIT(19)
+#define B_AX_BCNDERR5_MSK BIT(18)
+#define B_AX_BCNDERR4_MSK BIT(17)
+#define B_AX_BCNDERR3_MSK BIT(16)
+#define B_AX_BCNDERR2_MSK BIT(15)
+#define B_AX_BCNDERR1_MSK BIT(14)
+#define B_AX_ATIMEND_E_MSK BIT(13)
+#define B_AX_ATIMEND__MSK BIT(12)
+#define B_AX_TXERR_MSK BIT(11)
+#define B_AX_RXERR_MSK BIT(10)
+#define B_AX_TXFOVW_MSK BIT(9)
+#define B_AX_FOVW_MSK BIT(8)
+#define B_AX_CPU_MGQ_TXDONE_MSK BIT(5)
+#define B_AX_PS_TIMER_C_MSK BIT(4)
+#define B_AX_PS_TIMER_B_MSK BIT(3)
+#define B_AX_PS_TIMER_A_MSK BIT(2)
+#define B_AX_CPUMGQ_TX_TIMER_MSK BIT(1)
+
+#define R_AX_HISR1 0x01AC
+#define B_AX_TXFIFO_TH_INT_ BIT(30)
+#define B_AX_BTON_STS_UPDATE_INT_ BIT(29)
+#define B_AX_MCU_ERR_ BIT(28)
+#define B_AX_BCNDMAINT7_ BIT(27)
+#define B_AX_BCNDMAINT6_ BIT(26)
+#define B_AX_BCNDMAINT5_ BIT(25)
+#define B_AX_BCNDMAINT4_ BIT(24)
+#define B_AX_BCNDMAINT3_ BIT(23)
+#define B_AX_BCNDMAINT2 BIT(22)
+#define B_AX_BCNDMAINT1_ BIT(21)
+#define B_AX_BCNDERR7 BIT(20)
+#define B_AX_BCNDERR6 BIT(19)
+#define B_AX_BCNDERR5 BIT(18)
+#define B_AX_BCNDERR4 BIT(17)
+#define B_AX_BCNDERR3 BIT(16)
+#define B_AX_BCNDERR2 BIT(15)
+#define B_AX_BCNDERR1 BIT(14)
+#define B_AX_ATIMEND_E BIT(13)
+#define B_AX_ATIMEND BIT(12)
+#define B_AX_TXERR_INT BIT(11)
+#define B_AX_RXERR_INT BIT(10)
+#define B_AX_TXFOVW BIT(9)
+#define B_AX_FOVW BIT(8)
+#define B_AX_CPU_MGQ_TXDONE BIT(5)
+#define B_AX_PS_TIMER_C BIT(4)
+#define B_AX_PS_TIMER_B BIT(3)
+#define B_AX_PS_TIMER_A BIT(2)
+#define B_AX_CPUMGQ_TX_TIMER BIT(1)
+
+#define R_AX_HIMR2 0x01B0
+#define B_AX_BCNDMAINT_P4_MSK BIT(31)
+#define B_AX_BCNDMAINT_P3_MSK BIT(30)
+#define B_AX_BCNDMAINT_P2_MSK BIT(29)
+#define B_AX_BCNDMAINT_P1_MSK BIT(28)
+#define B_AX_ATIMEND7_MSK BIT(22)
+#define B_AX_ATIMEND6_MSK BIT(21)
+#define B_AX_ATIMEND5_MSK BIT(20)
+#define B_AX_ATIMEND4_MSK BIT(19)
+#define B_AX_ATIMEND3_MSK BIT(18)
+#define B_AX_ATIMEND2_MSK BIT(17)
+#define B_AX_ATIMEND1_MSK BIT(16)
+#define B_AX_TXBCN7OK_MSK BIT(14)
+#define B_AX_TXBCN6OK_MSK BIT(13)
+#define B_AX_TXBCN5OK_MSK BIT(12)
+#define B_AX_TXBCN4OK_MSK BIT(11)
+#define B_AX_TXBCN3OK_MSK BIT(10)
+#define B_AX_TXBCN2OK_MSK BIT(9)
+#define B_AX_TXBCN1OK_MSK_V1 BIT(8)
+#define B_AX_TXBCN7ERR_MSK BIT(6)
+#define B_AX_TXBCN6ERR_MSK BIT(5)
+#define B_AX_TXBCN5ERR_MSK BIT(4)
+#define B_AX_TXBCN4ERR_MSK BIT(3)
+#define B_AX_TXBCN3ERR_MSK BIT(2)
+#define B_AX_TXBCN2ERR_MSK BIT(1)
+#define B_AX_TXBCN1ERR_MSK_V1 BIT(0)
+
+#define R_AX_HISR2 0x01B4
+#define B_AX_BCNDMAINT_P4 BIT(31)
+#define B_AX_BCNDMAINT_P3 BIT(30)
+#define B_AX_BCNDMAINT_P2 BIT(29)
+#define B_AX_BCNDMAINT_P1 BIT(28)
+#define B_AX_ATIMEND7 BIT(22)
+#define B_AX_ATIMEND6 BIT(21)
+#define B_AX_ATIMEND5 BIT(20)
+#define B_AX_ATIMEND4 BIT(19)
+#define B_AX_ATIMEND3 BIT(18)
+#define B_AX_ATIMEND2 BIT(17)
+#define B_AX_ATIMEND1 BIT(16)
+#define B_AX_TXBCN7OK BIT(14)
+#define B_AX_TXBCN6OK BIT(13)
+#define B_AX_TXBCN5OK BIT(12)
+#define B_AX_TXBCN4OK BIT(11)
+#define B_AX_TXBCN3OK BIT(10)
+#define B_AX_TXBCN2OK BIT(9)
+#define B_AX_TXBCN1OK BIT(8)
+#define B_AX_TXBCN7ERR BIT(6)
+#define B_AX_TXBCN6ERR BIT(5)
+#define B_AX_TXBCN5ERR BIT(4)
+#define B_AX_TXBCN4ERR BIT(3)
+#define B_AX_TXBCN3ERR BIT(2)
+#define B_AX_TXBCN2ERR BIT(1)
+#define B_AX_TXBCN1ERR BIT(0)
+
+#define R_AX_HIMR3 0x01B8
+#define B_AX_WDT_PLATFORM_INT_MSK BIT(18)
+#define B_AX_WDT_CPU_INT_MSK BIT(17)
+#define B_AX_SETH2CDOK_MASK BIT(16)
+#define B_AX_H2C_CMD_FULL_MASK BIT(15)
+#define B_AX_PWR_INT_127_MASK BIT(14)
+#define B_AX_TXSHORTCUT_TXDESUPDATEOK_MASK BIT(13)
+#define B_AX_TXSHORTCUT_BKUPDATEOK_MASK BIT(12)
+#define B_AX_TXSHORTCUT_BEUPDATEOK_MASK BIT(11)
+#define B_AX_TXSHORTCUT_VIUPDATEOK_MAS BIT(10)
+#define B_AX_TXSHORTCUT_VOUPDATEOK_MASK BIT(9)
+#define B_AX_PWR_INT_127_MASK_V1 BIT(8)
+#define B_AX_PWR_INT_126TO96_MASK BIT(7)
+#define B_AX_PWR_INT_95TO64_MASK BIT(6)
+#define B_AX_PWR_INT_63TO32_MASK BIT(5)
+#define B_AX_PWR_INT_31TO0_MASK BIT(4)
+#define B_AX_RX_DMA_STUCK_MSK BIT(3)
+#define B_AX_TX_DMA_STUCK_MSK BIT(2)
+#define B_AX_DDMA0_LP_INT_MSK BIT(1)
+#define B_AX_DDMA0_HP_INT_MSK BIT(0)
+
+#define R_AX_HISR3 0x01BC
+#define B_AX_WDT_PLATFORM_INT BIT(18)
+#define B_AX_WDT_CPU_INT BIT(17)
+#define B_AX_SETH2CDOK BIT(16)
+#define B_AX_H2C_CMD_FULL BIT(15)
+#define B_AX_PWR_INT_127 BIT(14)
+#define B_AX_TXSHORTCUT_TXDESUPDATEOK BIT(13)
+#define B_AX_TXSHORTCUT_BKUPDATEOK BIT(12)
+#define B_AX_TXSHORTCUT_BEUPDATEOK BIT(11)
+#define B_AX_TXSHORTCUT_VIUPDATEOK BIT(10)
+#define B_AX_TXSHORTCUT_VOUPDATEOK BIT(9)
+#define B_AX_PWR_INT_127_V1 BIT(8)
+#define B_AX_PWR_INT_126TO96 BIT(7)
+#define B_AX_PWR_INT_95TO64 BIT(6)
+#define B_AX_PWR_INT_63TO32 BIT(5)
+#define B_AX_PWR_INT_31TO0 BIT(4)
+#define B_AX_RX_DMA_STUCK BIT(3)
+#define B_AX_TX_DMA_STUCK BIT(2)
+#define B_AX_DDMA0_LP_INT BIT(1)
+#define B_AX_DDMA0_HP_INT BIT(0)
+
+#define R_AX_SW_MDIO 0x01C0
+#define B_AX_DIS_TIMEOUT_IO BIT(24)
+
+#define R_AX_H2C_PKT_READADDR 0x01D0
+#define B_AX_H2C_PKT_READADDR_SH 0
+#define B_AX_H2C_PKT_READADDR_MSK 0x3ffff
+
+#define R_AX_H2C_PKT_WRITEADDR 0x01D4
+#define B_AX_H2C_PKT_WRITEADDR_SH 0
+#define B_AX_H2C_PKT_WRITEADDR_MSK 0x3ffff
+
+#define R_AX_MEM_PWR_CRTL 0x01D8
+#define B_AX_MEM_BB_SD BIT(17)
+#define B_AX_MEM_BB_DS BIT(16)
+#define B_AX_MEM_BT_DS BIT(10)
+#define B_AX_MEM_SDIO_LS BIT(9)
+#define B_AX_MEM_SDIO_DS BIT(8)
+#define B_AX_MEM_USB_LS BIT(7)
+#define B_AX_MEM_USB_DS BIT(6)
+#define B_AX_MEM_PCI_LS BIT(5)
+#define B_AX_MEM_PCI_DS BIT(4)
+#define B_AX_MEM_WLMAC_LS BIT(3)
+#define B_AX_MEM_WLMAC_DS BIT(2)
+#define B_AX_MEM_WLMCU_LS BIT(1)
+#define B_AX_MEM_WLMCU_DS BIT(0)
+
+#define R_AX_WCPU_FW_CTRL 0x01E0
+#define B_AX_WCPU_ROM_DLEN BIT(31)
+#define B_AX_WCPU_ROM_DL_RDY BIT(30)
+#define B_AX_WCPU_FWDL_STS_SH 5
+#define B_AX_WCPU_FWDL_STS_MSK 0x7
+#define S_AX_WCPU_FWDL_STS_INIT		0
+#define S_AX_WCPU_FWDL_STS_INIRDY	7
+#define B_AX_FWDL_PATH_RDY BIT(2)
+#define B_AX_H2C_PATH_RDY BIT(1)
+#define B_AX_WCPU_FWDL_EN BIT(0)
+
+#define R_AX_BOOT_REASON 0x01E4
+#define B_AX_BOOT_REASON_SH 16
+#define B_AX_BOOT_REASON_MSK 0x7
+#define S_AX_BOOT_REASON_PWR_ON		0
+#define S_AX_BOOT_REASON_WDT		1
+#define S_AX_BOOT_REASON_LPS		2
+#define B_AX_RPWM_TOGGLE BIT(15)
+#define B_AX_RPWM_VAL_SH 0
+#define B_AX_RPWM_VAL_MSK 0x7fff
+
+#define R_AX_UDM0 0x01F0
+#define B_AX_UDM0_SH 0
+#define B_AX_UDM0_MSK 0xffffffffL
+
+#define R_AX_UDM1 0x01F4
+#define B_AX_UDM1_SH 0
+#define B_AX_UDM1_MSK 0xffffffffL
+
+#define R_AX_UDM2 0x01F8
+#define B_AX_UDM2_SH 0
+#define B_AX_UDM2_MSK 0xffffffffL
+
+#define R_AX_UDM3 0x01FC
+#define B_AX_UDM3_SH 0
+#define B_AX_UDM3_MSK 0xffffffffL
+
+#define R_AX_SPSLDO_ON_CTRL0 0x0200
+#define B_AX_PFMCMP_IQ BIT(31)
+#define B_AX_OFF_END_SEL BIT(29)
+#define B_AX_POW_MINOFF_L BIT(28)
+#define B_AX_COT_I_L_SH 26
+#define B_AX_COT_I_L_MSK 0x3
+#define B_AX_VREFPFM_L_SH 22
+#define B_AX_VREFPFM_L_MSK 0xf
+#define B_AX_FORCE_ZCD_BIAS BIT(21)
+#define B_AX_ZCD_SDZ_L_SH 19
+#define B_AX_ZCD_SDZ_L_MSK 0x3
+#define B_AX_REG_ZCDC_H_SH 17
+#define B_AX_REG_ZCDC_H_MSK 0x3
+#define B_AX_POW_ZCD_L BIT(16)
+#define B_AX_OCP_L1_SH 13
+#define B_AX_OCP_L1_MSK 0x7
+#define B_AX_POWOCP_L1 BIT(12)
+#define B_AX_SAW_FREQ_L_SH 8
+#define B_AX_SAW_FREQ_L_MSK 0xf
+#define B_AX_REG_BYPASS_L BIT(7)
+#define B_AX_FPWM_L1 BIT(6)
+#define B_AX_STD_L1_SH 4
+#define B_AX_STD_L1_MSK 0x3
+#define B_AX_VOL_L1_SH 0
+#define B_AX_VOL_L1_MSK 0xf
+
+#define R_AX_SPSLDO_ON_CTRL1 0x0204
+#define B_AX_SN_N_L_SH 28
+#define B_AX_SN_N_L_MSK 0xf
+#define B_AX_SP_N_L_SH 24
+#define B_AX_SP_N_L_MSK 0xf
+#define B_AX_SN_P_L_SH 20
+#define B_AX_SN_P_L_MSK 0xf
+#define B_AX_SP_P_L_SH 16
+#define B_AX_SP_P_L_MSK 0xf
+#define B_AX_VO_DISCHG_PWM_H BIT(15)
+#define B_AX_REG_MODE_PREDRIVER BIT(14)
+#define B_AX_REG_ADJSLDO_L_SH 10
+#define B_AX_REG_ADJSLDO_L_MSK 0xf
+#define B_AX_REG_LDOR_L BIT(9)
+#define B_AX_PWM_FORCE BIT(8)
+#define B_AX_PFM_PD_RST BIT(7)
+#define B_AX_VC_PFM_RSTB BIT(6)
+#define B_AX_PFM_IN_SEL BIT(5)
+#define B_AX_VC_RSTB BIT(4)
+#define B_AX_FPWMDELAY BIT(3)
+#define B_AX_ENFPWMDELAY_H BIT(2)
+#define B_AX_REG_MOS_HALF_L BIT(1)
+#define B_AX_CURRENT_SENSE_MOS BIT(0)
+
+#define R_AX_SPSANA_ON_CTRL0 0x0220
+#define B_AX_PFMCMP_IQ BIT(31)
+#define B_AX_REG_EXTERNAL_CLK_SEL_L BIT(30)
+#define B_AX_OFF_END_SEL BIT(29)
+#define B_AX_POW_MINOFF_L BIT(28)
+#define B_AX_FORCE_ZCD_BIAS BIT(21)
+#define B_AX_POW_ZCD_L BIT(16)
+#define B_AX_POWOCP_L1 BIT(12)
+#define B_AX_REG_BYPASS_L BIT(7)
+#define B_AX_FPWM_L1 BIT(6)
+
+#define R_AX_SPSANA_ON_CTRL1 0x0224
+#define B_AX_VO_DISCHG_PWM_H BIT(15)
+#define B_AX_REG_MODE_PREDRIVER BIT(14)
+#define B_AX_REG_LDOR_L BIT(9)
+#define B_AX_PWM_FORCE BIT(8)
+#define B_AX_PFM_PD_RST BIT(7)
+#define B_AX_VC_PFM_RSTB BIT(6)
+#define B_AX_PFM_IN_SEL BIT(5)
+#define B_AX_VC_RSTB BIT(4)
+#define B_AX_FPWMDELAY BIT(3)
+#define B_AX_ENFPWMDELAY_H BIT(2)
+#define B_AX_REG_MOS_HALF_L BIT(1)
+#define B_AX_CURRENT_SENSE_MOS BIT(0)
+
+#define R_AX_AFE_ON_CTRL0 0x0240
+#define B_AX_REG_LPF_R3_SH 29
+#define B_AX_REG_LPF_R3_MSK 0x7
+#define B_AX_REG_LPF_R2_SH 24
+#define B_AX_REG_LPF_R2_MSK 0x1f
+#define B_AX_REG_LPF_C3_SH 21
+#define B_AX_REG_LPF_C3_MSK 0x7
+#define B_AX_REG_LPF_C2_SH 18
+#define B_AX_REG_LPF_C2_MSK 0x7
+#define B_AX_REG_LPF_C1_SH 15
+#define B_AX_REG_LPF_C1_MSK 0x7
+#define B_AX_REG_LDO_SEL_SH 13
+#define B_AX_REG_LDO_SEL_MSK 0x3
+#define B_AX_REG_CP_ICPX2 BIT(12)
+#define B_AX_REG_CP_ICP_SEL_FAST_SH 9
+#define B_AX_REG_CP_ICP_SEL_FAST_MSK 0x7
+#define B_AX_REG_CP_ICP_SEL_SH 6
+#define B_AX_REG_CP_ICP_SEL_MSK 0x7
+#define B_AX_REG_IB_PI_SH 4
+#define B_AX_REG_IB_PI_MSK 0x3
+#define B_AX_LDO2PWRCUT BIT(3)
+#define B_AX_VPULSE_LDO BIT(2)
+
+#define R_AX_AFE_ON_CTRL1 0x0244
+#define B_AX_REG_CK_MON_SEL_SH 29
+#define B_AX_REG_CK_MON_SEL_MSK 0x7
+#define B_AX_REG_CK_MON_EN BIT(28)
+#define B_AX_REG_XTAL_FREQ_SEL BIT(27)
+#define B_AX_REG_XTAL_EDGE_SEL BIT(26)
+#define B_AX_REG_VCO_KVCO BIT(25)
+#define B_AX_REG_SDM_EDGE_SEL BIT(24)
+#define B_AX_REG_SDM_CK_SEL BIT(23)
+#define B_AX_REG_SDM_CK_GATED BIT(22)
+#define B_AX_REG_PFD_RESET_GATED BIT(21)
+#define B_AX_REG_LPF_R3_FAST_SH 16
+#define B_AX_REG_LPF_R3_FAST_MSK 0x1f
+#define B_AX_REG_LPF_R2_FAST_SH 11
+#define B_AX_REG_LPF_R2_FAST_MSK 0x1f
+#define B_AX_REG_LPF_C3_FAST_SH 8
+#define B_AX_REG_LPF_C3_FAST_MSK 0x7
+#define B_AX_REG_LPF_C2_FAST_SH 5
+#define B_AX_REG_LPF_C2_FAST_MSK 0x7
+#define B_AX_REG_LPF_C1_FAST_SH 2
+#define B_AX_REG_LPF_C1_FAST_MSK 0x7
+#define B_AX_REG_LPF_R3__SH 0
+#define B_AX_REG_LPF_R3__MSK 0x3
+
+#define R_AX_AFE_ON_CTRL2 0x0248
+#define B_AX_AGPIO_DRV_SH 30
+#define B_AX_AGPIO_DRV_MSK 0x3
+#define B_AX_AGPIO_GPO BIT(29)
+#define B_AX_AGPIO_GPE BIT(28)
+#define B_AX_SEL_CLK BIT(27)
+#define B_AX_LS_SDM_ORDER BIT(22)
+#define B_AX_LS_DELAY_PH BIT(21)
+#define B_AX_DIVIDER_SEL BIT(20)
+#define B_AX_REG_BEACON BIT(6)
+#define B_AX_REG_MBIASE BIT(5)
+#define B_AX_REG_FAST_SEL_SH 3
+#define B_AX_REG_FAST_SEL_MSK 0x3
+#define B_AX_REG_CK480M_EN BIT(2)
+#define B_AX_REG_CK320M_EN BIT(1)
+#define B_AX_REG_CK_5M_EN BIT(0)
+
+#define R_AX_AFE_ON_CTRL3 0x024C
+#define B_AX_REG_CK640M_EN BIT(0)
+
+#define R_AX_XTAL_ON_CTRL0 0x0280
+#define B_AX_XTAL_SC_LPS BIT(31)
+#define B_AX_XTAL_SC_INIT_SH 24
+#define B_AX_XTAL_SC_INIT_MSK 0x7f
+#define B_AX_XTAL_SC_XO_SH 17
+#define B_AX_XTAL_SC_XO_MSK 0x7f
+#define B_AX_XTAL_SC_XI_SH 10
+#define B_AX_XTAL_SC_XI_MSK 0x7f
+#define B_AX_XTAL_GMN_SH 5
+#define B_AX_XTAL_GMN_MSK 0x1f
+#define B_AX_XTAL_GMP_SH 0
+#define B_AX_XTAL_GMP_MSK 0x1f
+
+#define R_AX_XTAL_ON_CTRL1 0x0284
+#define B_AX_XTAL_VREF_SEL_SH 29
+#define B_AX_XTAL_VREF_SEL_MSK 0x7
+#define B_AX_XTAL_LPS_DIVISOR BIT(28)
+#define B_AX_XTAL_CKDIGI_SEL BIT(27)
+#define B_AX_EN_XTAL_SCHMITT BIT(26)
+#define B_AX_XTAL_SEL_TOK_SH 23
+#define B_AX_XTAL_SEL_TOK_MSK 0x7
+#define B_AX_EN_XTAL_LPS_CLK BIT(22)
+#define B_AX_XTAL_AAC_OPCUR_SH 20
+#define B_AX_XTAL_AAC_OPCUR_MSK 0x3
+#define B_AX_XTAL_LDO_VREF_SH 17
+#define B_AX_XTAL_LDO_VREF_MSK 0x7
+#define B_AX_EN_XTAL_DRV_BT BIT(16)
+#define B_AX_EN_XTAL_DRV_BCN BIT(15)
+#define B_AX_EN_XTAL_DRV_IQK BIT(14)
+#define B_AX_EN_XTAL_DRV_LPS BIT(13)
+#define B_AX_EN_XTAL_DRV_DIGI BIT(12)
+#define B_AX_EN_XTAL_DRV_USB BIT(11)
+#define B_AX_EN_XTAL_DRV_AFE BIT(10)
+#define B_AX_XTAL_DRV_RF2N_RELAY BIT(9)
+#define B_AX_XTAL_DRV_RF2P_RELAY BIT(8)
+#define B_AX_EN_XTAL_DRV_RF2 BIT(7)
+#define B_AX_EN_XTAL_DRV_RF1 BIT(6)
+#define B_AX_XTAL_SC_LPS_SH 0
+#define B_AX_XTAL_SC_LPS_MSK 0x3f
+
+#define R_AX_XTAL_ON_CTRL2 0x0288
+#define B_AX_XTAL_VREF_SEL__SH 6
+#define B_AX_XTAL_VREF_SEL__MSK 0x3
+#define B_AX_AAC_MODE_SH 4
+#define B_AX_AAC_MODE_MSK 0x3
+#define B_AX_XTAL_CFIX_SH 0
+#define B_AX_XTAL_CFIX_MSK 0xf
+
+#define R_AX_SYM_ANAPAR_XTAL_MODE_DECODER 0x02A0
+#define B_AX_XTAL_LDO_LPS_SH 21
+#define B_AX_XTAL_LDO_LPS_MSK 0x7
+#define B_AX_XTAL_WAIT_CYC_SH 15
+#define B_AX_XTAL_WAIT_CYC_MSK 0x3f
+#define B_AX_XTAL_LDO_OK_SH 12
+#define B_AX_XTAL_LDO_OK_MSK 0x7
+#define B_AX_XTAL_MD_LPOW BIT(11)
+#define B_AX_XTAL_OV_RATIO_SH 9
+#define B_AX_XTAL_OV_RATIO_MSK 0x3
+#define B_AX_XTAL_OV_UNIT_SH 6
+#define B_AX_XTAL_OV_UNIT_MSK 0x7
+#define B_AX_XTAL_MODE_MANUAL_SH 4
+#define B_AX_XTAL_MODE_MANUAL_MSK 0x3
+#define B_AX_XTAL_MANU_SEL BIT(3)
+#define B_AX_XTAL_MODE BIT(1)
+#define B_AX_RESET_N_ BIT(0)
+
+#define R_AX_SYM_ANAPAR_XTAL_PDCK 0x02A4
+#define B_AX_RESET_N BIT(22)
+#define B_AX_EN_XTAL_PDCK_DIGI_SH 17
+#define B_AX_EN_XTAL_PDCK_DIGI_MSK 0x1f
+#define B_AX_PDCK_SEARCH_MODE_SH 15
+#define B_AX_PDCK_SEARCH_MODE_MSK 0x3
+#define B_AX_PDCK_WAIT_CYC_SH 10
+#define B_AX_PDCK_WAIT_CYC_MSK 0x1f
+#define B_AX_VREF_MANUAL_SH 5
+#define B_AX_VREF_MANUAL_MSK 0x1f
+#define B_AX_VREF_INIT_SH 3
+#define B_AX_VREF_INIT_MSK 0x3
+#define B_AX_XTAL_PDCK_UNIT BIT(2)
+#define B_AX_XPDCK_VREF_SEL BIT(1)
+#define B_AX_PDCK_LPOW BIT(0)
+
+#define R_AX_SPSLDO_OFF_CTRL0 0x0400
+#define B_AX_SDZN_L_SH 30
+#define B_AX_SDZN_L_MSK 0x3
+#define B_AX_REG_AUTOZCD_L BIT(29)
+#define B_AX_REG_VOFB_SEL BIT(28)
+#define B_AX_TBOX_L1_SH 26
+#define B_AX_TBOX_L1_MSK 0x3
+#define B_AX_ENOCPMUX_L BIT(25)
+#define B_AX_FORCE_LDOS BIT(24)
+#define B_AX_VO_DISCHG BIT(23)
+#define B_AX_LDO_OC_CLAMP BIT(22)
+#define B_AX_MINOFF_LIQ BIT(21)
+#define B_AX_MINON_LIQ BIT(20)
+#define B_AX_POW_AUTO_L BIT(19)
+#define B_AX_ARENB_H BIT(18)
+#define B_AX_NO_OFFTIME_L BIT(17)
+#define B_AX_EN_ON_END_L BIT(16)
+#define B_AX_ENCOT_L BIT(15)
+#define B_AX_REG_CLK_SEL_SH 13
+#define B_AX_REG_CLK_SEL_MSK 0x3
+#define B_AX_REG_TYPE_L BIT(12)
+#define B_AX_R3_L1_SH 10
+#define B_AX_R3_L1_MSK 0x3
+#define B_AX_R2_L1_SH 8
+#define B_AX_R2_L1_MSK 0x3
+#define B_AX_R1_L1_SH 6
+#define B_AX_R1_L1_MSK 0x3
+#define B_AX_C3_L1_SH 4
+#define B_AX_C3_L1_MSK 0x3
+#define B_AX_C2_L1_SH 2
+#define B_AX_C2_L1_MSK 0x3
+#define B_AX_C1_L1_SH 0
+#define B_AX_C1_L1_MSK 0x3
+
+#define R_AX_SPSLDO_OFF_CTRL1 0x0404
+#define B_AX_REG_NMOS_OFF_L BIT(5)
+#define B_AX_REG_MUX_PI_L BIT(4)
+#define B_AX_REG_PWM_CTRL_L BIT(3)
+#define B_AX_ENSR_L BIT(2)
+#define B_AX_SDZP_L_SH 0
+#define B_AX_SDZP_L_MSK 0x3
+
+#define R_AX_SPSANA_OFF_CTRL0 0x0420
+#define B_AX_REG_AUTOZCD_L BIT(29)
+#define B_AX_REG_VOFB_SEL BIT(28)
+#define B_AX_ENOCPMUX_L BIT(25)
+#define B_AX_FORCE_LDOS BIT(24)
+#define B_AX_VO_DISCHG BIT(23)
+#define B_AX_LDO_OC_CLAMP BIT(22)
+#define B_AX_MINOFF_LIQ BIT(21)
+#define B_AX_MINON_LIQ BIT(20)
+#define B_AX_POW_AUTO_L BIT(19)
+#define B_AX_ARENB_H BIT(18)
+#define B_AX_NO_OFFTIME_L BIT(17)
+#define B_AX_EN_ON_END_L BIT(16)
+#define B_AX_ENCOT_L BIT(15)
+#define B_AX_REG_TYPE_L BIT(12)
+
+#define R_AX_SPSANA_OFF_CTRL1 0x0424
+#define B_AX_REG_NMOS_OFF_L BIT(5)
+#define B_AX_REG_MUX_PI_L BIT(4)
+#define B_AX_REG_PWM_CTRL_L BIT(3)
+#define B_AX_ENSR_L BIT(2)
+
+#define R_AX_AFE_OFF_CTRL0 0x0440
+#define B_AX_S1_AD0_LDO2PWRCUT BIT(31)
+#define B_AX_S1_AD_SEL_Q_SH 27
+#define B_AX_S1_AD_SEL_Q_MSK 0xf
+#define B_AX_S1_AD_SEL_I_SH 23
+#define B_AX_S1_AD_SEL_I_MSK 0xf
+#define B_AX_S0_DA1_LDO_VSEL_SH 21
+#define B_AX_S0_DA1_LDO_VSEL_MSK 0x3
+#define B_AX_S0_DA1_LDO2PWRCUT BIT(20)
+#define B_AX_S0_DA0_LDO_VSEL_SH 18
+#define B_AX_S0_DA0_LDO_VSEL_MSK 0x3
+#define B_AX_S0_DA0_LDO2PWRCUT BIT(17)
+#define B_AX_S0_AD2_LDO_VSEL_SH 15
+#define B_AX_S0_AD2_LDO_VSEL_MSK 0x3
+#define B_AX_S0_AD2_LDO2PWRCUT BIT(14)
+#define B_AX_S0_AD1_LDO_VSEL_SH 12
+#define B_AX_S0_AD1_LDO_VSEL_MSK 0x3
+#define B_AX_S0_AD1_LDO2PWRCUT BIT(11)
+#define B_AX_S0_AD0_LDO_VSEL_SH 9
+#define B_AX_S0_AD0_LDO_VSEL_MSK 0x3
+#define B_AX_S0_AD0_LDO2PWRCUT BIT(8)
+#define B_AX_S0_AD_SEL_Q_SH 4
+#define B_AX_S0_AD_SEL_Q_MSK 0xf
+#define B_AX_S0_AD_SEL_I_SH 0
+#define B_AX_S0_AD_SEL_I_MSK 0xf
+
+#define R_AX_AFE_OFF_CTRL1 0x0444
+#define B_AX_S0_DAI2V_LDO2PW__LDO_VSEL_SH 24
+#define B_AX_S0_DAI2V_LDO2PW__LDO_VSEL_MSK 0x3
+#define B_AX_S1_DAI2V_LDO2PWRCUT BIT(23)
+#define B_AX_S0_DAI2V_LDO2PW__LDO_VSEL__SH 21
+#define B_AX_S0_DAI2V_LDO2PW__LDO_VSEL__MSK 0x3
+#define B_AX_S0_DAI2V_LDO2PWRCUT BIT(20)
+#define B_AX_S0_RXBB__LDO_VSEL_SH 18
+#define B_AX_S0_RXBB__LDO_VSEL_MSK 0x3
+#define B_AX_S0_RXBB__LDO2PWRCUT BIT(17)
+#define B_AX_S0_RXBB__LDO_VSEL__SH 15
+#define B_AX_S0_RXBB__LDO_VSEL__MSK 0x3
+#define B_AX_S0_RXBB_LDO2PWRCUT BIT(14)
+#define B_AX_S1_DA1_LDO_VSEL_SH 12
+#define B_AX_S1_DA1_LDO_VSEL_MSK 0x3
+#define B_AX_S1_DA1_LDO2PWRCUT BIT(11)
+#define B_AX_S1_DA0_LDO_VSEL_SH 9
+#define B_AX_S1_DA0_LDO_VSEL_MSK 0x3
+#define B_AX_S1_DA0_LDO2PWRCUT BIT(8)
+#define B_AX_S1_AD2_LDO_VSEL_SH 6
+#define B_AX_S1_AD2_LDO_VSEL_MSK 0x3
+#define B_AX_S1_AD2_LDO2PWRCUT BIT(5)
+#define B_AX_S1_AD1_LDO_VSEL_SH 3
+#define B_AX_S1_AD1_LDO_VSEL_MSK 0x3
+#define B_AX_S1_AD1_LDO2PWRCUT BIT(2)
+#define B_AX_S1_AD0_LDO_VSEL_SH 0
+#define B_AX_S1_AD0_LDO_VSEL_MSK 0x3
+
+#define R_AX_XTAL_OFF_CTRL0 0x0480
+#define B_AX_XTAL_PK_SEL_OFFSET BIT(31)
+#define B_AX_XTAL_MANU_PK_SEL_SH 29
+#define B_AX_XTAL_MANU_PK_SEL_MSK 0x3
+#define B_AX_XTAL_AACK_PK_MANU BIT(28)
+#define B_AX_EN_XTAL_AAC_PKDET BIT(27)
+#define B_AX_EN_XTAL_AAC_GM BIT(26)
+#define B_AX_XTAL_LDO_OPVB_SEL BIT(25)
+#define B_AX_XTAL_LDO_NC BIT(24)
+#define B_AX_XTAL_LPMODE BIT(23)
+#define B_AX_XTAL_DELAY_DIGI BIT(22)
+#define B_AX_XTAL_DELAY_USB BIT(21)
+#define B_AX_XTAL_DELAY_AFE BIT(20)
+#define B_AX_XTAL_DRV_BT_SH 18
+#define B_AX_XTAL_DRV_BT_MSK 0x3
+#define B_AX_XTAL_DRV_DIGI_SH 16
+#define B_AX_XTAL_DRV_DIGI_MSK 0x3
+#define B_AX_XTAL_DRV_USB_SH 14
+#define B_AX_XTAL_DRV_USB_MSK 0x3
+#define B_AX_XTAL_DRV_AFE_SH 12
+#define B_AX_XTAL_DRV_AFE_MSK 0x3
+#define B_AX_XTAL_DRV_RF2_RELAY_SH 10
+#define B_AX_XTAL_DRV_RF2_RELAY_MSK 0x3
+#define B_AX_XTAL_DRV_RF2_SH 8
+#define B_AX_XTAL_DRV_RF2_MSK 0x3
+#define B_AX_XTAL_DRV_RF1_SH 6
+#define B_AX_XTAL_DRV_RF1_MSK 0x3
+#define B_AX_XTAL_DRV_RF_LATCH BIT(5)
+#define B_AX_XTAL_GM_SEP BIT(4)
+#define B_AX_XQSEL_RF_AWAKE BIT(3)
+#define B_AX_XQSEL_RF_INITIAL BIT(2)
+#define B_AX_XQSEL BIT(1)
+#define B_AX_GATED_XTAL_OK0 BIT(0)
+
+#define R_AX_XTAL_OFF_CTRL1 0x0484
+#define B_AX_XTAL_LDO_VREF_UP_SH 14
+#define B_AX_XTAL_LDO_VREF_UP_MSK 0x7
+#define B_AX_XTAL_EN_LNBUF BIT(13)
+#define B_AX_XTAL__AAC_TIE_MID BIT(12)
+#define B_AX_XTAL_AAC_IOFFSET_SH 10
+#define B_AX_XTAL_AAC_IOFFSET_MSK 0x3
+#define B_AX_XTAL_AAC_CAP_SH 8
+#define B_AX_XTAL_AAC_CAP_MSK 0x3
+#define B_AX_XTAL_PDSW_SH 6
+#define B_AX_XTAL_PDSW_MSK 0x3
+#define B_AX_XTAL_LPS_BUF_VB_SH 4
+#define B_AX_XTAL_LPS_BUF_VB_MSK 0x3
+#define B_AX_XTAL_PDCK_MANU BIT(3)
+#define B_AX_XTAL_PDCK_OK_MANU BIT(2)
+#define B_AX_EN_XTAL_PDCK_VREF BIT(1)
+#define B_AX_XTAL_SEL_PWR BIT(0)
+
+#define R_AX_SYM_ANAPAR_XTAL_AAC_0 0x04A0
+#define B_AX_XAAC_LPOW BIT(31)
+#define B_AX_AAC_MODE__SH 29
+#define B_AX_AAC_MODE__MSK 0x3
+#define B_AX_EN_XTAL_AAC_TRIG BIT(28)
+#define B_AX_EN_XTAL_AAC BIT(27)
+#define B_AX_EN_XTAL_AAC_DIGI BIT(26)
+#define B_AX_GM_MANUAL_SH 21
+#define B_AX_GM_MANUAL_MSK 0x1f
+#define B_AX_GM_STUP_SH 16
+#define B_AX_GM_STUP_MSK 0x1f
+#define B_AX_XTAL_CK_SET_SH 13
+#define B_AX_XTAL_CK_SET_MSK 0x7
+#define B_AX_GM_INIT_SH 8
+#define B_AX_GM_INIT_MSK 0x1f
+#define B_AX_GM_STEP BIT(7)
+#define B_AX_XAAC_GM_OFFSET_SH 2
+#define B_AX_XAAC_GM_OFFSET_MSK 0x1f
+#define B_AX_OFFSET_PLUS BIT(1)
+
+#define R_AX_SYM_ANAPAR_XTAL_AAC_1 0x04A4
+#define B_AX_PK_END_AR_SH 2
+#define B_AX_PK_END_AR_MSK 0x3
+#define B_AX_PK_START_AR_SH 0
+#define B_AX_PK_START_AR_MSK 0x3
+
+//
+// AON_C
+//
+
+#define R_AX_SEC_CTRL 0x0C00
+#define B_AX_SEC_IDMEM_SIZE_CONFIG_SH 16
+#define B_AX_SEC_IDMEM_SIZE_CONFIG_MSK 0x3
+#define B_AX_SEC_UART_RX_EN BIT(4)
+#define B_AX_SEC_UART_TX_EN BIT(3)
+#define B_AX_SEC_JTAG_EN BIT(2)
+#define B_AX_SEC_SIC_EN BIT(1)
+#define B_AX_SEC_SEC_DIS BIT(0)
+
+#define R_AX_FILTER_MODEL_ADDR 0x0C04
+#define B_AX_SEC_FILTER_MODEL_ADDR_SH 0
+#define B_AX_SEC_FILTER_MODEL_ADDR_MSK 0xffffffffL
+
+//
+// WL_AX_Reg_AXIDMA.xls
+//
+
+//
+// AXIDMA_Reg_Spec
+//
+
+#define R_PL_AXIDMA_INIT_CFG 0x0000
+#define B_PL_AXIDMA_TXHCI_EN BIT(11)
+
+#define R_PL_AXIDMA_DMA_STOP 0x0004
+#define B_PL_AXIDMA_STOP_CH3_TX BIT(11)
+#define B_PL_AXIDMA_STOP_CH2_TX BIT(10)
+#define B_PL_AXIDMA_STOP_CH1_TX BIT(9)
+#define B_PL_AXIDMA_STOP_CH0_TX BIT(8)
+#define B_PL_AXIDMA_STOP_CH5_RX BIT(5)
+#define B_PL_AXIDMA_STOP_CH4_RX BIT(4)
+#define B_PL_AXIDMA_STOP_CH3_RX BIT(3)
+#define B_PL_AXIDMA_STOP_CH2_RX BIT(2)
+#define B_PL_AXIDMA_STOP_CH1_RX BIT(1)
+#define B_PL_AXIDMA_STOP_CH0_RX BIT(0)
+
+#define R_PL_AXIDMA_INFO 0x0100
+#define B_PL_AXIDMA_RX_IDLE BIT(1)
+#define B_PL_AXIDMA_TX_IDLE BIT(0)
+
+#define R_PL_AXIDMA_INT_MIT_TX 0x0200
+#define B_PL_AXIDMA_TXMIT_CH3_SEL BIT(22)
+#define B_PL_AXIDMA_TXMIT_CH2_SEL BIT(21)
+#define B_PL_AXIDMA_TXMIT_CH1_SEL BIT(20)
+#define B_PL_AXIDMA_TXMIT_CH0_SEL BIT(19)
+#define B_PL_AXIDMA_TXTIMER_UNIT_SH 16
+#define B_PL_AXIDMA_TXTIMER_UNIT_MSK 0x3
+#define B_PL_AXIDMA_TXCOUNTER_MATCH_SH 8
+#define B_PL_AXIDMA_TXCOUNTER_MATCH_MSK 0xff
+#define B_PL_AXIDMA_TXTIMER_MATCH_SH 0
+#define B_PL_AXIDMA_TXTIMER_MATCH_MSK 0xff
+
+#define R_PL_AXIDMA_INT_MIT_RX 0x0204
+#define B_PL_AXIDMA_RXMIT_CH5_SEL BIT(24)
+#define B_PL_AXIDMA_RXMIT_CH4_SEL BIT(23)
+#define B_PL_AXIDMA_RXMIT_CH3_SEL BIT(22)
+#define B_PL_AXIDMA_RXMIT_CH2_SEL BIT(21)
+#define B_PL_AXIDMA_RXMIT_CH1_SEL BIT(20)
+#define B_PL_AXIDMA_RXMIT_CH0_SEL BIT(19)
+#define B_PL_AXIDMA_RXTIMER_UNIT_SH 16
+#define B_PL_AXIDMA_RXTIMER_UNIT_MSK 0x3
+#define B_PL_AXIDMA_RXCOUNTER_MATCH_SH 8
+#define B_PL_AXIDMA_RXCOUNTER_MATCH_MSK 0xff
+#define B_PL_AXIDMA_RXTIMER_MATCH_SH 0
+#define B_PL_AXIDMA_RXTIMER_MATCH_MSK 0xff
+
+#define R_PL_AXIDMA_CH0_RXBD_NUM 0x0300
+#define B_PL_AXIDMA_CH0_RXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH0_RXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH1_RXBD_NUM 0x0302
+#define B_PL_AXIDMA_CH1_RXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH1_RXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH2_RXBD_NUM 0x0304
+#define B_PL_AXIDMA_CH2_RXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH2_RXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH3_RXBD_NUM 0x0306
+#define B_PL_AXIDMA_CH3_RXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH3_RXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH4_RXBD_NUM 0x0308
+#define B_PL_AXIDMA_CH4_RXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH4_RXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH5_RXBD_NUM 0x030A
+#define B_PL_AXIDMA_CH5_RXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH5_RXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH0_TXBD_NUM 0x0320
+#define B_PL_AXIDMA_CH0_TXBD_BAND BIT(15)
+#define B_PL_AXIDMA_CH0_TXBD_FLAG BIT(14)
+#define B_PL_AXIDMA_CH0_TXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH0_TXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH1_TXBD_NUM 0x0322
+#define B_PL_AXIDMA_CH1_TXBD_BAND BIT(15)
+#define B_PL_AXIDMA_CH1_TXBD_FLAG BIT(14)
+#define B_PL_AXIDMA_CH1_TXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH1_TXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH2_TXBD_NUM 0x0324
+#define B_PL_AXIDMA_CH2_TXBD_BAND BIT(15)
+#define B_PL_AXIDMA_CH2_TXBD_FLAG BIT(14)
+#define B_PL_AXIDMA_CH2_TXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH2_TXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH3_TXBD_NUM 0x0326
+#define B_PL_AXIDMA_CH3_TXBD_BAND BIT(15)
+#define B_PL_AXIDMA_CH3_TXBD_FLAG BIT(14)
+#define B_PL_AXIDMA_CH3_TXBD_NUM_SH 0
+#define B_PL_AXIDMA_CH3_TXBD_NUM_MSK 0xfff
+
+#define R_PL_AXIDMA_CH0_RXBD_IDX 0x0400
+#define B_PL_AXIDMA_CH0_RX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH0_RX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH0_RX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH0_RX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH1_RXBD_IDX 0x0404
+#define B_PL_AXIDMA_CH1_RX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH1_RX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH1_RX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH1_RX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH2_RXBD_IDX 0x0408
+#define B_PL_AXIDMA_CH2_RX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH2_RX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH2_RX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH2_RX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH3_RXBD_IDX 0x040C
+#define B_PL_AXIDMA_CH3_RX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH3_RX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH3_RX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH3_RX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH4_RXBD_IDX 0x0410
+#define B_PL_AXIDMA_CH4_RX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH4_RX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH4_RX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH4_RX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH5_RXBD_IDX 0x0414
+#define B_PL_AXIDMA_CH5_RX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH5_RX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH5_RX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH5_RX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH0_TXBD_IDX 0x0420
+#define B_PL_AXIDMA_CH0_TX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH0_TX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH0_TX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH0_TX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH1_TXBD_IDX 0x0424
+#define B_PL_AXIDMA_CH1_TX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH1_TX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH1_TX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH1_TX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH2_TXBD_IDX 0x0428
+#define B_PL_AXIDMA_CH2_TX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH2_TX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH2_TX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH2_TX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_CH3_TXBD_IDX 0x042C
+#define B_PL_AXIDMA_CH3_TX_HW_IDX_SH 16
+#define B_PL_AXIDMA_CH3_TX_HW_IDX_MSK 0xfff
+#define B_PL_AXIDMA_CH3_TX_HOST_IDX_SH 0
+#define B_PL_AXIDMA_CH3_TX_HOST_IDX_MSK 0xfff
+
+#define R_PL_AXIDMA_TXBD_RWPTR_CLR 0x0430
+#define B_PL_AXIDMA_CLR_CH3_TX_HW_IDX BIT(19)
+#define B_PL_AXIDMA_CLR_CH2_TX_HW_IDX BIT(18)
+#define B_PL_AXIDMA_CLR_CH1_TX_HW_IDX BIT(17)
+#define B_PL_AXIDMA_CLR_CH0_TX_HW_IDX BIT(16)
+#define B_PL_AXIDMA_CLR_CH3_TX_HOST_IDX BIT(3)
+#define B_PL_AXIDMA_CLR_CH2_TX_HOST_IDX BIT(2)
+#define B_PL_AXIDMA_CLR_CH1_TX_HOST_IDX BIT(1)
+#define B_PL_AXIDMA_CLR_CH0_TX_HOST_IDX BIT(0)
+
+#define R_PL_AXIDMA_RXBD_RWPTR_CLR 0x0434
+#define B_PL_AXIDMA_CLR_CH5_RX_HW_IDX BIT(21)
+#define B_PL_AXIDMA_CLR_CH4_RX_HW_IDX BIT(20)
+#define B_PL_AXIDMA_CLR_CH3_RX_HW_IDX BIT(19)
+#define B_PL_AXIDMA_CLR_CH2_RX_HW_IDX BIT(18)
+#define B_PL_AXIDMA_CLR_CH1_RX_HW_IDX BIT(17)
+#define B_PL_AXIDMA_CLR_CH0_RX_HW_IDX BIT(16)
+#define B_PL_AXIDMA_CLR_CH5_RX_HOST_IDX BIT(5)
+#define B_PL_AXIDMA_CLR_CH4_RX_HOST_IDX BIT(4)
+#define B_PL_AXIDMA_CLR_CH3_RX_HOST_IDX BIT(3)
+#define B_PL_AXIDMA_CLR_CH2_RX_HOST_IDX BIT(2)
+#define B_PL_AXIDMA_CLR_CH1_RX_HOST_IDX BIT(1)
+#define B_PL_AXIDMA_CLR_CH0_RX_HOST_IDX BIT(0)
+
+#define R_PL_AXIDMA_DBG_CTRL 0x0500
+#define B_PL_AXIDMA_DBG_SEL_SH 16
+#define B_PL_AXIDMA_DBG_SEL_MSK 0xff
+#define B_PL_AXIDMA_LOOPBACK_DBG_SEL_SH 13
+#define B_PL_AXIDMA_LOOPBACK_DBG_SEL_MSK 0x7
+#define B_PL_AXIDMA_EN_STUCK_DBG BIT(0)
+
+#define R_PL_AXIDMA_DBG_ERR_FLAG 0x0504
+#define B_PL_AXIDMA_CH1_RX_FULL BIT(29)
+#define B_PL_AXIDMA_CH0_RX_FULL BIT(28)
+#define B_PL_AXIDMA_CPL_STATUS_SH 25
+#define B_PL_AXIDMA_CPL_STATUS_MSK 0x7
+#define B_PL_AXIDMA_RXDMA_ERR_HANDLE_REQ BIT(24)
+#define B_PL_AXIDMA_TXDMA_ERR_HANDLE_REQ BIT(23)
+#define B_PL_AXIDMA_RX_STUCK BIT(22)
+#define B_PL_AXIDMA_TX_STUCK BIT(21)
+#define B_PL_AXIDMA_DBG_TXERR4 BIT(20)
+#define B_PL_AXIDMA_DBG_TXERR3 BIT(19)
+#define B_PL_AXIDMA_DBG_TXERR2 BIT(18)
+#define B_PL_AXIDMA_DBG_TXERR1 BIT(17)
+#define B_PL_AXIDMA_DBG_TXERR0 BIT(16)
+#define B_PL_AXIDMA_RXDMA_ERR_CNT_SH 8
+#define B_PL_AXIDMA_RXDMA_ERR_CNT_MSK 0xff
+#define B_PL_AXIDMA_RXP1_ERR0 BIT(4)
+#define B_PL_AXIDMA_CH5_RX_FULL BIT(3)
+#define B_PL_AXIDMA_CH4_RX_FULL BIT(2)
+#define B_PL_AXIDMA_CH3_RX_FULL BIT(1)
+#define B_PL_AXIDMA_CH2_RX_FULL BIT(0)
+
+#define R_PL_AXIDMA_CH0_RXBD_DESA_L 0x0600
+#define B_PL_AXIDMA_CH0_RXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH0_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH1_RXBD_DESA_L 0x0608
+#define B_PL_AXIDMA_CH1_RXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH1_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH2_RXBD_DESA_L 0x0610
+#define B_PL_AXIDMA_CH2_RXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH2_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH3_RXBD_DESA_L 0x0618
+#define B_PL_AXIDMA_CH3_RXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH3_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH4_RXBD_DESA_L 0x0620
+#define B_PL_AXIDMA_CH4_RXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH4_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH5_RXBD_DESA_L 0x0628
+#define B_PL_AXIDMA_CH5_RXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH5_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH0_TXBD_DESA_L 0x0640
+#define B_PL_AXIDMA_CH0_TXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH0_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH1_TXBD_DESA_L 0x0648
+#define B_PL_AXIDMA_CH1_TXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH1_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH2_TXBD_DESA_L 0x0650
+#define B_PL_AXIDMA_CH2_TXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH2_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH3_TXBD_DESA_L 0x0658
+#define B_PL_AXIDMA_CH3_TXBD_DESA_L_SH 0
+#define B_PL_AXIDMA_CH3_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_PL_AXIDMA_CH0_PAGE_CTRL 0x0700
+#define B_PL_AXIDMA_CH0_MAX_PG_SH 16
+#define B_PL_AXIDMA_CH0_MAX_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH0_MIN_PG_SH 0
+#define B_PL_AXIDMA_CH0_MIN_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH1_PAGE_CTRL 0x0704
+#define B_PL_AXIDMA_CH1_MAX_PG_SH 16
+#define B_PL_AXIDMA_CH1_MAX_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH1_MIN_PG_SH 0
+#define B_PL_AXIDMA_CH1_MIN_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH2_PAGE_CTRL 0x0708
+#define B_PL_AXIDMA_CH2_MAX_PG_SH 16
+#define B_PL_AXIDMA_CH2_MAX_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH2_MIN_PG_SH 0
+#define B_PL_AXIDMA_CH2_MIN_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH3_PAGE_CTRL 0x070C
+#define B_PL_AXIDMA_CH3_MAX_PG_SH 16
+#define B_PL_AXIDMA_CH3_MAX_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH3_MIN_PG_SH 0
+#define B_PL_AXIDMA_CH3_MIN_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH0_PAGE_INFO 0x0710
+#define B_PL_AXIDMA_CH0_AVAIL_PG_SH 16
+#define B_PL_AXIDMA_CH0_AVAIL_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH0_USE_PG_SH 0
+#define B_PL_AXIDMA_CH0_USE_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH1_PAGE_INFO 0x0714
+#define B_PL_AXIDMA_CH1_AVAIL_PG_SH 16
+#define B_PL_AXIDMA_CH1_AVAIL_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH1_USE_PG_SH 0
+#define B_PL_AXIDMA_CH1_USE_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH2_PAGE_INFO 0x0718
+#define B_PL_AXIDMA_CH2_AVAIL_PG_SH 16
+#define B_PL_AXIDMA_CH2_AVAIL_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH2_USE_PG_SH 0
+#define B_PL_AXIDMA_CH2_USE_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_CH3_PAGE_INFO 0x071C
+#define B_PL_AXIDMA_CH3_AVAIL_PG_SH 16
+#define B_PL_AXIDMA_CH3_AVAIL_PG_MSK 0xfff
+#define B_PL_AXIDMA_CH3_USE_PG_SH 0
+#define B_PL_AXIDMA_CH3_USE_PG_MSK 0xfff
+
+#define R_PL_AXIDMA_PUB_PAGE_CTRL1 0x0800
+#define B_PL_AXIDMA_MAX_WD_PAGE_SH 16
+#define B_PL_AXIDMA_MAX_WD_PAGE_MSK 0xff
+#define B_PL_AXIDMA_PUBPG_SUM_SH 0
+#define B_PL_AXIDMA_PUBPG_SUM_MSK 0xfff
+
+#define R_PL_AXIDMA_PUB_PAGE_CTRL2 0x0804
+#define B_PL_AXIDMA_PUBPG_B1_SH 16
+#define B_PL_AXIDMA_PUBPG_B1_MSK 0xfff
+#define B_PL_AXIDMA_PUBPG_B0_SH 0
+#define B_PL_AXIDMA_PUBPG_B0_MSK 0xfff
+
+#define R_PL_AXIDMA_PUB_PAGE_INFO1 0x0808
+#define B_PL_AXIDMA_AVAIL_PUBPG_B0_SH 16
+#define B_PL_AXIDMA_AVAIL_PUBPG_B0_MSK 0xfff
+#define B_PL_AXIDMA_USE_PUBPG_B0_SH 0
+#define B_PL_AXIDMA_USE_PUBPG_B0_MSK 0xfff
+
+#define R_PL_AXIDMA_PUB_PAGE_INFO2 0x080C
+#define B_PL_AXIDMA_AVAIL_PUBPG_B1_SH 16
+#define B_PL_AXIDMA_AVAIL_PUBPG_B1_MSK 0xfff
+#define B_PL_AXIDMA_USE_PUBPG_B1_SH 0
+#define B_PL_AXIDMA_USE_PUBPG_B1_MSK 0xfff
+
+#define R_PL_AXIDMA_FWIMR0 0x0900
+#define B_PL_AXIDMA_CH5_RX_RDU_MSK BIT(21)
+#define B_PL_AXIDMA_CH4_RX_RDU_MSK BIT(20)
+#define B_PL_AXIDMA_CH3_RX_RDU_MSK BIT(19)
+#define B_PL_AXIDMA_CH2_RX_RDU_MSK BIT(18)
+#define B_PL_AXIDMA_CH1_RX_RDU_MSK BIT(17)
+#define B_PL_AXIDMA_CH0_RX_RDU_MSK BIT(16)
+#define B_PL_AXIDMA_CH5_RX_DERR_MSK BIT(13)
+#define B_PL_AXIDMA_CH4_RX_DERR_MSK BIT(12)
+#define B_PL_AXIDMA_CH3_RX_DERR_MSK BIT(11)
+#define B_PL_AXIDMA_CH2_RX_DERR_MSK BIT(10)
+#define B_PL_AXIDMA_CH1_RX_DERR_MSK BIT(9)
+#define B_PL_AXIDMA_CH0_RX_DERR_MSK BIT(8)
+#define B_PL_AXIDMA_CH5_RX_DOK_MSK BIT(5)
+#define B_PL_AXIDMA_CH4_RX_DOK_MSK BIT(4)
+#define B_PL_AXIDMA_CH3_RX_DOK_MSK BIT(3)
+#define B_PL_AXIDMA_CH2_RX_DOK_MSK BIT(2)
+#define B_PL_AXIDMA_CH1_RX_DOK_MSK BIT(1)
+#define B_PL_AXIDMA_CH0_RX_DOK_MSK BIT(0)
+
+#define R_PL_AXIDMA_FWIMR1 0x0904
+#define B_PL_AXIDMA_CH3_TX_DERR_MSK BIT(11)
+#define B_PL_AXIDMA_CH2_TX_DERR_MSK BIT(10)
+#define B_PL_AXIDMA_CH1_TX_DERR_MSK BIT(9)
+#define B_PL_AXIDMA_CH0_TX_DERR_MSK BIT(8)
+#define B_PL_AXIDMA_CH3_TX_DOK_MSK BIT(3)
+#define B_PL_AXIDMA_CH2_TX_DOK_MSK BIT(2)
+#define B_PL_AXIDMA_CH1_TX_DOK_MSK BIT(1)
+#define B_PL_AXIDMA_CH0_TX_DOK_MSK BIT(0)
+
+#define R_PL_AXIDMA_FWISR0 0x0908
+#define B_PL_AXIDMA_CH5_RX_RDU BIT(21)
+#define B_PL_AXIDMA_CH4_RX_RDU BIT(20)
+#define B_PL_AXIDMA_CH3_RX_RDU BIT(19)
+#define B_PL_AXIDMA_CH2_RX_RDU BIT(18)
+#define B_PL_AXIDMA_CH1_RX_RDU BIT(17)
+#define B_PL_AXIDMA_CH0_RX_RDU BIT(16)
+#define B_PL_AXIDMA_CH5_RX_DERR BIT(13)
+#define B_PL_AXIDMA_CH4_RX_DERR BIT(12)
+#define B_PL_AXIDMA_CH3_RX_DERR BIT(11)
+#define B_PL_AXIDMA_CH2_RX_DERR BIT(10)
+#define B_PL_AXIDMA_CH1_RX_DERR BIT(9)
+#define B_PL_AXIDMA_CH0_RX_DERR BIT(8)
+#define B_PL_AXIDMA_CH5_RX_DOK BIT(5)
+#define B_PL_AXIDMA_CH4_RX_DOK BIT(4)
+#define B_PL_AXIDMA_CH3_RX_DOK BIT(3)
+#define B_PL_AXIDMA_CH2_RX_DOK BIT(2)
+#define B_PL_AXIDMA_CH1_RX_DOK BIT(1)
+#define B_PL_AXIDMA_CH0_RX_DOK BIT(0)
+
+#define R_PL_AXIDMA_FWISR1 0x090C
+#define B_PL_AXIDMA_CH3_TX_DERR BIT(11)
+#define B_PL_AXIDMA_CH2_TX_DERR BIT(10)
+#define B_PL_AXIDMA_CH1_TX_DERR BIT(9)
+#define B_PL_AXIDMA_CH0_TX_DERR BIT(8)
+#define B_PL_AXIDMA_CH3_TX_DOK BIT(3)
+#define B_PL_AXIDMA_CH2_TX_DOK BIT(2)
+#define B_PL_AXIDMA_CH1_TX_DOK BIT(1)
+#define B_PL_AXIDMA_CH0_TX_DOK BIT(0)
+
+//
+// WL_AX_Reg_CMAC_0.xls
+//
+
+//
+// COMMON
+//
+
+#define R_AX_CMAC_FUNC_EN 0xC000
+
+#define R_AX_CK_EN 0xC004
+
+#define R_AX_SYM_MEM_RM_CTRL 0xC044
+
+#define R_AX_PARAM_CMAC_BIST_RSTN 0xC050
+
+#define R_AX_PARAM_CMAC_BIST_DONE 0xC054
+
+#define R_AX_PARAM_CMAC_BIST_FAIL 0xC058
+
+#define R_AX_PARAM_CMAC_DRF_PAUSE 0xC05C
+
+#define R_AX_PARAM_CMAC_BIST_DONE_SHARE 0xC060
+
+#define R_AX_PARAM_CMAC_BIST_FAIL_SHARE 0xC068
+
+#define R_AX_PARAM_CMAC_DRF_PAUSE_SHARE 0xC06C
+
+#define R_AX_FWC00IMR 0xC100
+#define B_AX_FS_C0_SND_RDY_INT_EN BIT(29)
+#define B_AX_FS_C0_RP_END_INT_EN BIT(28)
+#define B_AX_FS_C0_RXBCN_TO_CNT_INT_EN BIT(27)
+#define B_AX_FS_C0_RXBCN_HIT_INT_EN BIT(26)
+#define B_AX_FS_C0_RX_MATCH_RTT_INT_EN BIT(25)
+#define B_AX_FS_C0_BCNQ_LOCK_INT_EN BIT(24)
+#define B_AX_FS_C0_P2P1_CTWEND_INT_EN BIT(23)
+#define B_AX_FS_C0_P2P1_TSF32_TOGGLE_INT_EN BIT(22)
+#define B_AX_FS_C0_P2P1_RFON_INT_EN BIT(21)
+#define B_AX_FS_C0_P2P1_RFOFF_INT_EN BIT(20)
+#define B_AX_FS_C0_P2P0_CTWEND_INT_EN BIT(19)
+#define B_AX_FS_C0_P2P0_TSF32_TOGGLE_INT_EN BIT(18)
+#define B_AX_FS_C0_P2P0_RFON_INT_EN BIT(17)
+#define B_AX_FS_C0_P2P0_RFOFF_INT_EN BIT(16)
+#define B_AX_FS_C0_MACID_PWRCHANGE3_INT_EN BIT(15)
+#define B_AX_FS_C0_MACID_PWRCHANGE2_INT_EN BIT(14)
+#define B_AX_FS_C0_MACID_PWRCHANGE1_INT_EN BIT(13)
+#define B_AX_FS_C0_MACID_PWRCHANGE0_INT_EN BIT(12)
+#define B_AX_FS_C0_RXFTMREQ_INT_EN BIT(11)
+#define B_AX_FS_C0_RXFTM_INT_EN BIT(10)
+#define B_AX_FS_C0_FTM_PTT_INT_EN BIT(9)
+#define B_AX_FS_C0_TXFTM_INT_EN BIT(8)
+#define B_AX_FS_C0_SOUND_DONE_INT_EN BIT(7)
+#define B_AX_FS_C0_RXDONE_INT_EN BIT(6)
+#define B_AX_FS_C0_PSTIMER_5_INT_EN BIT(5)
+#define B_AX_FS_C0_PSTIMER_4_INT_EN BIT(4)
+#define B_AX_FS_C0_PSTIMER_3_INT_EN BIT(3)
+#define B_AX_FS_C0_PSTIMER_2_INT_EN BIT(2)
+#define B_AX_FS_C0_PSTIMER_1_INT_EN BIT(1)
+#define B_AX_FS_C0_PSTIMER_0_INT_EN BIT(0)
+
+#define R_AX_FWC00ISR 0xC104
+#define B_AX_FS_C0_SND_RDY_INT BIT(29)
+#define B_AX_FS_C0_RP_END_INT BIT(28)
+#define B_AX_FS_C0_RXBCN_TO_CNT_INT BIT(27)
+#define B_AX_FS_C0_RXBCN_HIT_INT BIT(26)
+#define B_AX_FS_C0_RX_MATCH_RTT_INT BIT(25)
+#define B_AX_FS_C0_BCNQ_LOCK_INT BIT(24)
+#define B_AX_FS_C0_P2P1_CTWEND_INT BIT(23)
+#define B_AX_FS_C0_P2P1_TSF32_TOGGLE_INT BIT(22)
+#define B_AX_FS_C0_P2P1_RFON_INT BIT(21)
+#define B_AX_FS_C0_P2P1_RFOFF_INT BIT(20)
+#define B_AX_FS_C0_P2P0_CTWEND_INT BIT(19)
+#define B_AX_FS_C0_P2P0_TSF32_TOGGLE_INT BIT(18)
+#define B_AX_FS_C0_P2P0_RFON_INT BIT(17)
+#define B_AX_FS_C0_P2P0_RFOFF_INT BIT(16)
+#define B_AX_FS_C0_MACID_PWRCHANGE3_INT BIT(15)
+#define B_AX_FS_C0_MACID_PWRCHANGE2_INT BIT(14)
+#define B_AX_FS_C0_MACID_PWRCHANGE1_INT BIT(13)
+#define B_AX_FS_C0_MACID_PWRCHANGE0_INT BIT(12)
+#define B_AX_FS_C0_RXFTMREQ_INT BIT(11)
+#define B_AX_FS_C0_RXFTM_INT BIT(10)
+#define B_AX_FS_C0_FTM_PTT_INT BIT(9)
+#define B_AX_FS_C0_TXFTM_INT BIT(8)
+#define B_AX_FS_C0_SOUND_DONE_INT BIT(7)
+#define B_AX_FS_C0_RXDONE_INT BIT(6)
+#define B_AX_FS_C0_PSTIMER_5_INT BIT(5)
+#define B_AX_FS_C0_PSTIMER_4_INT BIT(4)
+#define B_AX_FS_C0_PSTIMER_3_INT BIT(3)
+#define B_AX_FS_C0_PSTIMER_2_INT BIT(2)
+#define B_AX_FS_C0_PSTIMER_1_INT BIT(1)
+#define B_AX_FS_C0_PSTIMER_0_INT BIT(0)
+
+#define R_AX_FWC01IMR 0xC108
+#define B_AX_FS_C0P0_RXBCN_NOHIT_INT_EN BIT(22)
+#define B_AX_FS_C0P0_RXMTF1MRR0_INT_EN BIT(21)
+#define B_AX_FS_C0P0_RXMTF0_INT_EN BIT(20)
+#define B_AX_FS_C0P0_RX_UAPSDMD1_INT_EN BIT(19)
+#define B_AX_FS_C0P0_RX_UAPSDMD0_INT_EN BIT(18)
+#define B_AX_FS_C0P0_TRIGGER_PKT_INT_EN BIT(17)
+#define B_AX_FS_C0P0_EOSP_INT_EN BIT(16)
+#define B_AX_FS_C0P0_TXPKTIN_INT_EN BIT(15)
+#define B_AX_FS_C0P0_TX_NULL1_INT_EN BIT(14)
+#define B_AX_FS_C0P0_TX_NULL0_INT_EN BIT(13)
+#define B_AX_FS_C0P0_RX_UMD0_INT_EN BIT(12)
+#define B_AX_FS_C0P0_RX_UMD1_INT_EN BIT(11)
+#define B_AX_FS_C0P0_RX_BMD0_INT_EN BIT(10)
+#define B_AX_FS_C0P0_RX_BMD1_INT_EN BIT(9)
+#define B_AX_FS_C0P0_RXBCNOK_INT_EN BIT(8)
+#define B_AX_FS_C0P0MB0_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P0MB0_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P0MB0_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P0MB0_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P0MB0_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P0MB0_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC01ISR 0xC10C
+#define B_AX_FS_C0P0_RXBCN_NOHIT_INT BIT(22)
+#define B_AX_FS_C0P0_RXMTF1MRR0_INT BIT(21)
+#define B_AX_FS_C0P0_RXMTF0_INT BIT(20)
+#define B_AX_FS_C0P0_RX_UAPSDMD1_INT BIT(19)
+#define B_AX_FS_C0P0_RX_UAPSDMD0_INT BIT(18)
+#define B_AX_FS_C0P0_TRIGGER_PKT_INT BIT(17)
+#define B_AX_FS_C0P0_EOSP_INT BIT(16)
+#define B_AX_FS_C0P0_TXPKTIN_INT BIT(15)
+#define B_AX_FS_C0P0_TX_NULL1_INT BIT(14)
+#define B_AX_FS_C0P0_TX_NULL0_INT BIT(13)
+#define B_AX_FS_C0P0_RX_UMD0_INT BIT(12)
+#define B_AX_FS_C0P0_RX_UMD1_INT BIT(11)
+#define B_AX_FS_C0P0_RX_BMD0_INT BIT(10)
+#define B_AX_FS_C0P0_RX_BMD1_INT BIT(9)
+#define B_AX_FS_C0P0_RXBCNOK_INT BIT(8)
+#define B_AX_FS_C0P0MB0_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P0MB0_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P0MB0_ATIM_INT BIT(3)
+#define B_AX_FS_C0P0MB0_TBTT_INT BIT(2)
+#define B_AX_FS_C0P0MB0_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P0MB0_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC02IMR 0xC110
+#define B_AX_FS_C0P1_RXBCN_NOHIT_INT_EN BIT(22)
+#define B_AX_FS_C0P1_RXMTF1MRR0_INT_EN BIT(21)
+#define B_AX_FS_C0P1_RXMTF0_INT_EN BIT(20)
+#define B_AX_FS_C0P1_RX_UAPSDMD1_INT_EN BIT(19)
+#define B_AX_FS_C0P1_RX_UAPSDMD0_INT_EN BIT(18)
+#define B_AX_FS_C0P1_TRIGGER_PKT_INT_EN BIT(17)
+#define B_AX_FS_C0P1_EOSP_INT_EN BIT(16)
+#define B_AX_FS_C0P1_TXPKTIN_INT_EN BIT(15)
+#define B_AX_FS_C0P1_TX_NULL1_INT_EN BIT(14)
+#define B_AX_FS_C0P1_TX_NULL0_INT_EN BIT(13)
+#define B_AX_FS_C0P1_RX_UMD0_INT_EN BIT(12)
+#define B_AX_FS_C0P1_RX_UMD1_INT_EN BIT(11)
+#define B_AX_FS_C0P1_RX_BMD0_INT_EN BIT(10)
+#define B_AX_FS_C0P1_RX_BMD1_INT_EN BIT(9)
+#define B_AX_FS_C0P1_RXBCNOK_INT_EN BIT(8)
+#define B_AX_FS_C0P1_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P1_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P1_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P1_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P1_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P1_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC02ISR 0xC114
+#define B_AX_FS_C0P1_RXBCN_NOHIT_INT BIT(22)
+#define B_AX_FS_C0P1_RXMTF1MRR0_INT BIT(21)
+#define B_AX_FS_C0P1_RXMTF0_INT BIT(20)
+#define B_AX_FS_C0P1_RX_UAPSDMD1_INT BIT(19)
+#define B_AX_FS_C0P1_RX_UAPSDMD0_INT BIT(18)
+#define B_AX_FS_C0P1_TRIGGER_PKT_INT BIT(17)
+#define B_AX_FS_C0P1_EOSP_INT BIT(16)
+#define B_AX_FS_C0P1_TXPKTIN_INT BIT(15)
+#define B_AX_FS_C0P1_TX_NULL1_INT BIT(14)
+#define B_AX_FS_C0P1_TX_NULL0_INT BIT(13)
+#define B_AX_FS_C0P1_RX_UMD0_INT BIT(12)
+#define B_AX_FS_C0P1_RX_UMD1_INT BIT(11)
+#define B_AX_FS_C0P1_RX_BMD0_INT BIT(10)
+#define B_AX_FS_C0P1_RX_BMD1_INT BIT(9)
+#define B_AX_FS_C0P1_RXBCNOK_INT BIT(8)
+#define B_AX_FS_C0P1_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P1_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P1_ATIM_INT BIT(3)
+#define B_AX_FS_C0P1_TBTT_INT BIT(2)
+#define B_AX_FS_C0P1_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P1_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC03IMR 0xC118
+#define B_AX_FS_C0P2_RXBCN_NOHIT_INT_EN BIT(22)
+#define B_AX_FS_C0P2_RXMTF1MRR0_INT_EN BIT(21)
+#define B_AX_FS_C0P2_RXMTF0_INT_EN BIT(20)
+#define B_AX_FS_C0P2_RX_UAPSDMD1_INT_EN BIT(19)
+#define B_AX_FS_C0P2_RX_UAPSDMD0_INT_EN BIT(18)
+#define B_AX_FS_C0P2_TRIGGER_PKT_INT_EN BIT(17)
+#define B_AX_FS_C0P2_EOSP_INT_EN BIT(16)
+#define B_AX_FS_C0P2_TXPKTIN_INT_EN BIT(15)
+#define B_AX_FS_C0P2_TX_NULL1_INT_EN BIT(14)
+#define B_AX_FS_C0P2_TX_NULL0_INT_EN BIT(13)
+#define B_AX_FS_C0P2_RX_UMD0_INT_EN BIT(12)
+#define B_AX_FS_C0P2_RX_UMD1_INT_EN BIT(11)
+#define B_AX_FS_C0P2_RX_BMD0_INT_EN BIT(10)
+#define B_AX_FS_C0P2_RX_BMD1_INT_EN BIT(9)
+#define B_AX_FS_C0P2_RXBCNOK_INT_EN BIT(8)
+#define B_AX_FS_C0P2_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P2_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P2_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P2_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P2_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P2_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC03ISR 0xC11C
+#define B_AX_FS_C0P2_RXBCN_NOHIT_INT BIT(22)
+#define B_AX_FS_C0P2_RXMTF1MRR0_INT BIT(21)
+#define B_AX_FS_C0P2_RXMTF0_INT BIT(20)
+#define B_AX_FS_C0P2_RX_UAPSDMD1_INT BIT(19)
+#define B_AX_FS_C0P2_RX_UAPSDMD0_INT BIT(18)
+#define B_AX_FS_C0P2_TRIGGER_PKT_INT BIT(17)
+#define B_AX_FS_C0P2_EOSP_INT BIT(16)
+#define B_AX_FS_C0P2_TXPKTIN_INT BIT(15)
+#define B_AX_FS_C0P2_TX_NULL1_INT BIT(14)
+#define B_AX_FS_C0P2_TX_NULL0_INT BIT(13)
+#define B_AX_FS_C0P2_RX_UMD0_INT BIT(12)
+#define B_AX_FS_C0P2_RX_UMD1_INT BIT(11)
+#define B_AX_FS_C0P2_RX_BMD0_INT BIT(10)
+#define B_AX_FS_C0P2_RX_BMD1_INT BIT(9)
+#define B_AX_FS_C0P2_RXBCNOK_INT BIT(8)
+#define B_AX_FS_C0P2_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P2_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P2_ATIM_INT BIT(3)
+#define B_AX_FS_C0P2_TBTT_INT BIT(2)
+#define B_AX_FS_C0P2_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P2_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC04IMR 0xC120
+#define B_AX_FS_C0P3_RXBCN_NOHIT_INT_EN BIT(22)
+#define B_AX_FS_C0P3_RXMTF1MRR0_INT_EN BIT(21)
+#define B_AX_FS_C0P3_RXMTF0_INT_EN BIT(20)
+#define B_AX_FS_C0P3_RX_UAPSDMD1_INT_EN BIT(19)
+#define B_AX_FS_C0P3_RX_UAPSDMD0_INT_EN BIT(18)
+#define B_AX_FS_C0P3_TRIGGER_PKT_INT_EN BIT(17)
+#define B_AX_FS_C0P3_EOSP_INT_EN BIT(16)
+#define B_AX_FS_C0P3_TXPKTIN_INT_EN BIT(15)
+#define B_AX_FS_C0P3_TX_NULL1_INT_EN BIT(14)
+#define B_AX_FS_C0P3_TX_NULL0_INT_EN BIT(13)
+#define B_AX_FS_C0P3_RX_UMD0_INT_EN BIT(12)
+#define B_AX_FS_C0P3_RX_UMD1_INT_EN BIT(11)
+#define B_AX_FS_C0P3_RX_BMD0_INT_EN BIT(10)
+#define B_AX_FS_C0P3_RX_BMD1_INT_EN BIT(9)
+#define B_AX_FS_C0P3_RXBCNOK_INT_EN BIT(8)
+#define B_AX_FS_C0P3_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P3_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P3_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P3_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P3_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P3_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC04ISR 0xC124
+#define B_AX_FS_C0P3_RXBCN_NOHIT_INT BIT(22)
+#define B_AX_FS_C0P3_RXMTF1MRR0_INT BIT(21)
+#define B_AX_FS_C0P3_RXMTF0_INT BIT(20)
+#define B_AX_FS_C0P3_RX_UAPSDMD1_INT BIT(19)
+#define B_AX_FS_C0P3_RX_UAPSDMD0_INT BIT(18)
+#define B_AX_FS_C0P3_TRIGGER_PKT_INT BIT(17)
+#define B_AX_FS_C0P3_EOSP_INT BIT(16)
+#define B_AX_FS_C0P3_TXPKTIN_INT BIT(15)
+#define B_AX_FS_C0P3_TX_NULL1_INT BIT(14)
+#define B_AX_FS_C0P3_TX_NULL0_INT BIT(13)
+#define B_AX_FS_C0P3_RX_UMD0_INT BIT(12)
+#define B_AX_FS_C0P3_RX_UMD1_INT BIT(11)
+#define B_AX_FS_C0P3_RX_BMD0_INT BIT(10)
+#define B_AX_FS_C0P3_RX_BMD1_INT BIT(9)
+#define B_AX_FS_C0P3_RXBCNOK_INT BIT(8)
+#define B_AX_FS_C0P3_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P3_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P3_ATIM_INT BIT(3)
+#define B_AX_FS_C0P3_TBTT_INT BIT(2)
+#define B_AX_FS_C0P3_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P3_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC05IMR 0xC128
+#define B_AX_FS_C0P4_RXBCN_NOHIT_INT_EN BIT(22)
+#define B_AX_FS_C0P4_RXMTF1MRR0_INT_EN BIT(21)
+#define B_AX_FS_C0P4_RXMTF0_INT_EN BIT(20)
+#define B_AX_FS_C0P4_RX_UAPSDMD1_INT_EN BIT(19)
+#define B_AX_FS_C0P4_RX_UAPSDMD0_INT_EN BIT(18)
+#define B_AX_FS_C0P4_TRIGGER_PKT_INT_EN BIT(17)
+#define B_AX_FS_C0P4_EOSP_INT_EN BIT(16)
+#define B_AX_FS_C0P4_TXPKTIN_INT_EN BIT(15)
+#define B_AX_FS_C0P4_TX_NULL1_INT_EN BIT(14)
+#define B_AX_FS_C0P4_TX_NULL0_INT_EN BIT(13)
+#define B_AX_FS_C0P4_RX_UMD0_INT_EN BIT(12)
+#define B_AX_FS_C0P4_RX_UMD1_INT_EN BIT(11)
+#define B_AX_FS_C0P4_RX_BMD0_INT_EN BIT(10)
+#define B_AX_FS_C0P4_RX_BMD1_INT_EN BIT(9)
+#define B_AX_FS_C0P4_RXBCNOK_INT_EN BIT(8)
+#define B_AX_FS_C0P4_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P4_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P4_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P4_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P4_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P4_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC05ISR 0xC12C
+#define B_AX_FS_C0P4_RXBCN_NOHIT_INT BIT(22)
+#define B_AX_FS_C0P4_RXMTF1MRR0_INT BIT(21)
+#define B_AX_FS_C0P4_RXMTF0_INT BIT(20)
+#define B_AX_FS_C0P4_RX_UAPSDMD1_INT BIT(19)
+#define B_AX_FS_C0P4_RX_UAPSDMD0_INT BIT(18)
+#define B_AX_FS_C0P4_TRIGGER_PKT_INT BIT(17)
+#define B_AX_FS_C0P4_EOSP_INT BIT(16)
+#define B_AX_FS_C0P4_TXPKTIN_INT BIT(15)
+#define B_AX_FS_C0P4_TX_NULL1_INT BIT(14)
+#define B_AX_FS_C0P4_TX_NULL0_INT BIT(13)
+#define B_AX_FS_C0P4_RX_UMD0_INT BIT(12)
+#define B_AX_FS_C0P4_RX_UMD1_INT BIT(11)
+#define B_AX_FS_C0P4_RX_BMD0_INT BIT(10)
+#define B_AX_FS_C0P4_RX_BMD1_INT BIT(9)
+#define B_AX_FS_C0P4_RXBCNOK_INT BIT(8)
+#define B_AX_FS_C0P4_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P4_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P4_ATIM_INT BIT(3)
+#define B_AX_FS_C0P4_TBTT_INT BIT(2)
+#define B_AX_FS_C0P4_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P4_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC06IMR 0xC130
+#define B_AX_FS_C0P0MB4_TXBCNERR_INT_EN BIT(29)
+#define B_AX_FS_C0P0MB4_TXBCNOK_INT_EN BIT(28)
+#define B_AX_FS_C0P0MB4_ATIM_INT_EN BIT(27)
+#define B_AX_FS_C0P0MB4_TBTT_INT_EN BIT(26)
+#define B_AX_FS_C0P0MB4_TBTTERLY_INT_EN BIT(25)
+#define B_AX_FS_C0P0MB4_BCNERLY_INT_EN BIT(24)
+#define B_AX_FS_C0P0MB3_TXBCNERR_INT_EN BIT(21)
+#define B_AX_FS_C0P0MB3_TXBCNOK_INT_EN BIT(20)
+#define B_AX_FS_C0P0MB3_ATIM_INT_EN BIT(19)
+#define B_AX_FS_C0P0MB3_TBTT_INT_EN BIT(18)
+#define B_AX_FS_C0P0MB3_TBTTERLY_INT_EN BIT(17)
+#define B_AX_FS_C0P0MB3_BCNERLY_INT_EN BIT(16)
+#define B_AX_FS_C0P0MB2_TXBCNERR_INT_EN BIT(13)
+#define B_AX_FS_C0P0MB2_TXBCNOK_INT_EN BIT(12)
+#define B_AX_FS_C0P0MB2_ATIM_INT_EN BIT(11)
+#define B_AX_FS_C0P0MB2_TBTT_INT_EN BIT(10)
+#define B_AX_FS_C0P0MB2_TBTTERLY_INT_EN BIT(9)
+#define B_AX_FS_C0P0MB2_BCNERLY_INT_EN BIT(8)
+#define B_AX_FS_C0P0MB1_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P0MB1_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P0MB1_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P0MB1_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P0MB1_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P0MB1_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC06ISR 0xC134
+#define B_AX_FS_C0P0MB4_TXBCNERR_INT BIT(29)
+#define B_AX_FS_C0P0MB4_TXBCNOK_INT BIT(28)
+#define B_AX_FS_C0P0MB4_ATIM_INT BIT(27)
+#define B_AX_FS_C0P0MB4_TBTT_INT BIT(26)
+#define B_AX_FS_C0P0MB4_TBTTERLY_INT BIT(25)
+#define B_AX_FS_C0P0MB4_BCNERLY_INT BIT(24)
+#define B_AX_FS_C0P0MB3_TXBCNERR_INT BIT(21)
+#define B_AX_FS_C0P0MB3_TXBCNOK_INT BIT(20)
+#define B_AX_FS_C0P0MB3_ATIM_INT BIT(19)
+#define B_AX_FS_C0P0MB3_TBTT_INT BIT(18)
+#define B_AX_FS_C0P0MB3_TBTTERLY_INT BIT(17)
+#define B_AX_FS_C0P0MB3_BCNERLY_INT BIT(16)
+#define B_AX_FS_C0P0MB2_TXBCNERR_INT BIT(13)
+#define B_AX_FS_C0P0MB2_TXBCNOK_INT BIT(12)
+#define B_AX_FS_C0P0MB2_ATIM_INT BIT(11)
+#define B_AX_FS_C0P0MB2_TBTT_INT BIT(10)
+#define B_AX_FS_C0P0MB2_TBTTERLY_INT BIT(9)
+#define B_AX_FS_C0P0MB2_BCNERLY_INT BIT(8)
+#define B_AX_FS_C0P0MB1_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P0MB1_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P0MB1_ATIM_INT BIT(3)
+#define B_AX_FS_C0P0MB1_TBTT_INT BIT(2)
+#define B_AX_FS_C0P0MB1_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P0MB1_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC07IMR 0xC138
+#define B_AX_FS_C0P0MB8_TXBCNERR_INT_EN BIT(29)
+#define B_AX_FS_C0P0MB8_TXBCNOK_INT_EN BIT(28)
+#define B_AX_FS_C0P0MB8_ATIM_INT_EN BIT(27)
+#define B_AX_FS_C0P0MB8_TBTT_INT_EN BIT(26)
+#define B_AX_FS_C0P0MB8_TBTTERLY_INT_EN BIT(25)
+#define B_AX_FS_C0P0MB8_BCNERLY_INT_EN BIT(24)
+#define B_AX_FS_C0P0MB7_TXBCNERR_INT_EN BIT(21)
+#define B_AX_FS_C0P0MB7_TXBCNOK_INT_EN BIT(20)
+#define B_AX_FS_C0P0MB7_ATIM_INT_EN BIT(19)
+#define B_AX_FS_C0P0MB7_TBTT_INT_EN BIT(18)
+#define B_AX_FS_C0P0MB7_TBTTERLY_INT_EN BIT(17)
+#define B_AX_FS_C0P0MB7_BCNERLY_INT_EN BIT(16)
+#define B_AX_FS_C0P0MB6_TXBCNERR_INT_EN BIT(13)
+#define B_AX_FS_C0P0MB6_TXBCNOK_INT_EN BIT(12)
+#define B_AX_FS_C0P0MB6_ATIM_INT_EN BIT(11)
+#define B_AX_FS_C0P0MB6_TBTT_INT_EN BIT(10)
+#define B_AX_FS_C0P0MB6_TBTTERLY_INT_EN BIT(9)
+#define B_AX_FS_C0P0MB6_BCNERLY_INT_EN BIT(8)
+#define B_AX_FS_C0P0MB5_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P0MB5_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P0MB5_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P0MB5_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P0MB5_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P0MB5_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC07ISR 0xC13C
+#define B_AX_FS_C0P0MB8_TXBCNERR_INT BIT(29)
+#define B_AX_FS_C0P0MB8_TXBCNOK_INT BIT(28)
+#define B_AX_FS_C0P0MB8_ATIM_INT BIT(27)
+#define B_AX_FS_C0P0MB8_TBTT_INT BIT(26)
+#define B_AX_FS_C0P0MB8_TBTTERLY_INT BIT(25)
+#define B_AX_FS_C0P0MB8_BCNERLY_INT BIT(24)
+#define B_AX_FS_C0P0MB7_TXBCNERR_INT BIT(21)
+#define B_AX_FS_C0P0MB7_TXBCNOK_INT BIT(20)
+#define B_AX_FS_C0P0MB7_ATIM_INT BIT(19)
+#define B_AX_FS_C0P0MB7_TBTT_INT BIT(18)
+#define B_AX_FS_C0P0MB7_TBTTERLY_INT BIT(17)
+#define B_AX_FS_C0P0MB7_BCNERLY_INT BIT(16)
+#define B_AX_FS_C0P0MB6_TXBCNERR_INT BIT(13)
+#define B_AX_FS_C0P0MB6_TXBCNOK_INT BIT(12)
+#define B_AX_FS_C0P0MB6_ATIM_INT BIT(11)
+#define B_AX_FS_C0P0MB6_TBTT_INT BIT(10)
+#define B_AX_FS_C0P0MB6_TBTTERLY_INT BIT(9)
+#define B_AX_FS_C0P0MB6_BCNERLY_INT BIT(8)
+#define B_AX_FS_C0P0MB5_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P0MB5_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P0MB5_ATIM_INT BIT(3)
+#define B_AX_FS_C0P0MB5_TBTT_INT BIT(2)
+#define B_AX_FS_C0P0MB5_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P0MB5_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC08IMR 0xC140
+#define B_AX_FS_C0P0MB12_TXBCNERR_INT_EN BIT(29)
+#define B_AX_FS_C0P0MB12_TXBCNOK_INT_EN BIT(28)
+#define B_AX_FS_C0P0MB12_ATIM_INT_EN BIT(27)
+#define B_AX_FS_C0P0MB12_TBTT_INT_EN BIT(26)
+#define B_AX_FS_C0P0MB12_TBTTERLY_INT_EN BIT(25)
+#define B_AX_FS_C0P0MB12_BCNERLY_INT_EN BIT(24)
+#define B_AX_FS_C0P0MB11_TXBCNERR_INT_EN BIT(21)
+#define B_AX_FS_C0P0MB11_TXBCNOK_INT_EN BIT(20)
+#define B_AX_FS_C0P0MB11_ATIM_INT_EN BIT(19)
+#define B_AX_FS_C0P0MB11_TBTT_INT_EN BIT(18)
+#define B_AX_FS_C0P0MB11_TBTTERLY_INT_EN BIT(17)
+#define B_AX_FS_C0P0MB11_BCNERLY_INT_EN BIT(16)
+#define B_AX_FS_C0P0MB10_TXBCNERR_INT_EN BIT(13)
+#define B_AX_FS_C0P0MB10_TXBCNOK_INT_EN BIT(12)
+#define B_AX_FS_C0P0MB10_ATIM_INT_EN BIT(11)
+#define B_AX_FS_C0P0MB10_TBTT_INT_EN BIT(10)
+#define B_AX_FS_C0P0MB10_TBTTERLY_INT_EN BIT(9)
+#define B_AX_FS_C0P0MB10_BCNERLY_INT_EN BIT(8)
+#define B_AX_FS_C0P0MB9_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P0MB9_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P0MB9_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P0MB9_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P0MB9_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P0MB9_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC08ISR 0xC144
+#define B_AX_FS_C0P0MB12_TXBCNERR_INT BIT(29)
+#define B_AX_FS_C0P0MB12_TXBCNOK_INT BIT(28)
+#define B_AX_FS_C0P0MB12_ATIM_INT BIT(27)
+#define B_AX_FS_C0P0MB12_TBTT_INT BIT(26)
+#define B_AX_FS_C0P0MB12_TBTTERLY_INT BIT(25)
+#define B_AX_FS_C0P0MB12_BCNERLY_INT BIT(24)
+#define B_AX_FS_C0P0MB11_TXBCNERR_INT BIT(21)
+#define B_AX_FS_C0P0MB11_TXBCNOK_INT BIT(20)
+#define B_AX_FS_C0P0MB11_ATIM_INT BIT(19)
+#define B_AX_FS_C0P0MB11_TBTT_INT BIT(18)
+#define B_AX_FS_C0P0MB11_TBTTERLY_INT BIT(17)
+#define B_AX_FS_C0P0MB11_BCNERLY_INT BIT(16)
+#define B_AX_FS_C0P0MB10_TXBCNERR_INT BIT(13)
+#define B_AX_FS_C0P0MB10_TXBCNOK_INT BIT(12)
+#define B_AX_FS_C0P0MB10_ATIM_INT BIT(11)
+#define B_AX_FS_C0P0MB10_TBTT_INT BIT(10)
+#define B_AX_FS_C0P0MB10_TBTTERLY_INT BIT(9)
+#define B_AX_FS_C0P0MB10_BCNERLY_INT BIT(8)
+#define B_AX_FS_C0P0MB9_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P0MB9_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P0MB9_ATIM_INT BIT(3)
+#define B_AX_FS_C0P0MB9_TBTT_INT BIT(2)
+#define B_AX_FS_C0P0MB9_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P0MB9_BCNERLY_INT BIT(0)
+
+#define R_AX_FWC09IMR 0xC148
+#define B_AX_FS_C0P0MB15_TXBCNERR_INT_EN BIT(21)
+#define B_AX_FS_C0P0MB15_TXBCNOK_INT_EN BIT(20)
+#define B_AX_FS_C0P0MB15_ATIM_INT_EN BIT(19)
+#define B_AX_FS_C0P0MB15_TBTT_INT_EN BIT(18)
+#define B_AX_FS_C0P0MB15_TBTTERLY_INT_EN BIT(17)
+#define B_AX_FS_C0P0MB15_BCNERLY_INT_EN BIT(16)
+#define B_AX_FS_C0P0MB14_TXBCNERR_INT_EN BIT(13)
+#define B_AX_FS_C0P0MB14_TXBCNOK_INT_EN BIT(12)
+#define B_AX_FS_C0P0MB14_ATIM_INT_EN BIT(11)
+#define B_AX_FS_C0P0MB14_TBTT_INT_EN BIT(10)
+#define B_AX_FS_C0P0MB14_TBTTERLY_INT_EN BIT(9)
+#define B_AX_FS_C0P0MB14_BCNERLY_INT_EN BIT(8)
+#define B_AX_FS_C0P0MB13_TXBCNERR_INT_EN BIT(5)
+#define B_AX_FS_C0P0MB13_TXBCNOK_INT_EN BIT(4)
+#define B_AX_FS_C0P0MB13_ATIM_INT_EN BIT(3)
+#define B_AX_FS_C0P0MB13_TBTT_INT_EN BIT(2)
+#define B_AX_FS_C0P0MB13_TBTTERLY_INT_EN BIT(1)
+#define B_AX_FS_C0P0MB13_BCNERLY_INT_EN BIT(0)
+
+#define R_AX_FWC09ISR 0xC14C
+#define B_AX_FS_C0P0MB15_TXBCNERR_INT BIT(21)
+#define B_AX_FS_C0P0MB15_TXBCNOK_INT BIT(20)
+#define B_AX_FS_C0P0MB15_ATIM_INT BIT(19)
+#define B_AX_FS_C0P0MB15_TBTT_INT BIT(18)
+#define B_AX_FS_C0P0MB15_TBTTERLY_INT BIT(17)
+#define B_AX_FS_C0P0MB15_BCNERLY_INT BIT(16)
+#define B_AX_FS_C0P0MB14_TXBCNERR_INT BIT(13)
+#define B_AX_FS_C0P0MB14_TXBCNOK_INT BIT(12)
+#define B_AX_FS_C0P0MB14_ATIM_INT BIT(11)
+#define B_AX_FS_C0P0MB14_TBTT_INT BIT(10)
+#define B_AX_FS_C0P0MB14_TBTTERLY_INT BIT(9)
+#define B_AX_FS_C0P0MB14_BCNERLY_INT BIT(8)
+#define B_AX_FS_C0P0MB13_TXBCNERR_INT BIT(5)
+#define B_AX_FS_C0P0MB13_TXBCNOK_INT BIT(4)
+#define B_AX_FS_C0P0MB13_ATIM_INT BIT(3)
+#define B_AX_FS_C0P0MB13_TBTT_INT BIT(2)
+#define B_AX_FS_C0P0MB13_TBTTERLY_INT BIT(1)
+#define B_AX_FS_C0P0MB13_BCNERLY_INT BIT(0)
+
+#define R_AX_ERR_IDCT_IMR 0xC160
+
+#define R_AX_ERR_IDCT 0xC164
+
+#define R_AX_HC00IMR 0xC180
+#define B_AX_TBTT_B0P4_INT_EN BIT(16)
+#define B_AX_TBTT_B0P3_INT_EN BIT(15)
+#define B_AX_TBTT_B0P2_INT_EN BIT(14)
+#define B_AX_TBTT_B0P1_INT_EN BIT(13)
+#define B_AX_TBTT_B0P0_INT_EN BIT(12)
+#define B_AX_PKT_INFO_ERR_INT_EN BIT(11)
+#define B_AX_BB_STOPRX_INT_EN BIT(10)
+#define B_AX_TXERR_INT_EN BIT(9)
+#define B_AX_RXERR_INT_EN BIT(8)
+#define B_AX_C0_P2P1_TSF32_TOGG_INT_EN BIT(7)
+#define B_AX_C0_P2P0_TSF32_TOGG_INT_EN BIT(6)
+#define B_AX_C0_PWR_127TO96_INT_EN BIT(5)
+#define B_AX_C0_PWR_95TO64_INT_EN BIT(4)
+#define B_AX_C0_PWR_63TO32_INT_EN BIT(3)
+#define B_AX_C0_PWR_31TO0_INT_EN BIT(2)
+#define B_AX_C0_PSTIMER_5_INT_EN BIT(1)
+#define B_AX_C0_PSTIMER_4_INT_EN BIT(0)
+
+#define R_AX_HC00ISR 0xC184
+#define B_AX_TBTT_B0P4_INT BIT(16)
+#define B_AX_TBTT_B0P3_INT BIT(15)
+#define B_AX_TBTT_B0P2_INT BIT(14)
+#define B_AX_TBTT_B0P1_INT BIT(13)
+#define B_AX_TBTT_B0P0_INT BIT(12)
+#define B_AX_PKT_INFO_ERR_INT BIT(11)
+#define B_AX_BB_STOPRX_INT BIT(10)
+#define B_AX_C0_P2P1_TSF32_TOGG_INT BIT(7)
+#define B_AX_C0_P2P0_TSF32_TOGG_INT BIT(6)
+#define B_AX_C0_PWR_127TO96_INT BIT(5)
+#define B_AX_C0_PWR_95TO64_INT BIT(4)
+#define B_AX_C0_PWR_63TO32_INT BIT(3)
+#define B_AX_C0_PWR_31TO0_INT BIT(2)
+#define B_AX_C0_PSTIMER_5_INT BIT(1)
+#define B_AX_C0_PSTIMER_4_INT BIT(0)
+
+//
+// SCH
+//
+
+#define R_AX_EDCA_VO_PARAM_0 0xC300
+#define B_AX__VO_0_TXOPLMT_SH 16
+#define B_AX__VO_0_TXOPLMT_MSK 0x7ff
+#define B_AX__VO_0_CW_SH 8
+#define B_AX__VO_0_CW_MSK 0xff
+#define B_AX__VO_0_AIFS_SH 0
+#define B_AX__VO_0_AIFS_MSK 0xff
+
+#define R_AX_EDCA_VI_PARAM_0 0xC304
+#define B_AX__VI_0_TXOPLMT_SH 16
+#define B_AX__VI_0_TXOPLMT_MSK 0x7ff
+#define B_AX__VI_0_CW_SH 8
+#define B_AX__VI_0_CW_MSK 0xff
+#define B_AX__VI_0_AIFS_SH 0
+#define B_AX__VI_0_AIFS_MSK 0xff
+
+#define R_AX_EDCA_BE_PARAM_0 0xC308
+#define B_AX__BE_0_TXOPLMT_SH 16
+#define B_AX__BE_0_TXOPLMT_MSK 0x7ff
+#define B_AX__BE_0_CW_SH 8
+#define B_AX__BE_0_CW_MSK 0xff
+#define B_AX__BE_0_AIFS_SH 0
+#define B_AX__BE_0_AIFS_MSK 0xff
+
+#define R_AX_EDCA_BK_PARAM_0 0xC30C
+#define B_AX__BK_0_TXOPLMT_SH 16
+#define B_AX__BK_0_TXOPLMT_MSK 0x7ff
+#define B_AX__BK_0_CW_SH 8
+#define B_AX__BK_0_CW_MSK 0xff
+#define B_AX__BK_0_AIFS_SH 0
+#define B_AX__BK_0_AIFS_MSK 0xff
+
+#define R_AX_EDCA_VO_PARAM_1 0xC310
+#define B_AX__VO_1_TXOPLMT_SH 16
+#define B_AX__VO_1_TXOPLMT_MSK 0x7ff
+#define B_AX__VO_1_CW_SH 8
+#define B_AX__VO_1_CW_MSK 0xff
+#define B_AX__VO_1_AIFS_SH 0
+#define B_AX__VO_1_AIFS_MSK 0xff
+
+#define R_AX_EDCA_VI_PARAM_1 0xC314
+#define B_AX__VI_1_TXOPLMT_SH 16
+#define B_AX__VI_1_TXOPLMT_MSK 0x7ff
+#define B_AX__VI_1_CW_SH 8
+#define B_AX__VI_1_CW_MSK 0xff
+#define B_AX__VI_1_AIFS_SH 0
+#define B_AX__VI_1_AIFS_MSK 0xff
+
+#define R_AX_EDCA_BE_PARAM_1 0xC318
+#define B_AX__BE_1_TXOPLMT_SH 16
+#define B_AX__BE_1_TXOPLMT_MSK 0x7ff
+#define B_AX__BE_1_CW_SH 8
+#define B_AX__BE_1_CW_MSK 0xff
+#define B_AX__BE_1_AIFS_SH 0
+#define B_AX__BE_1_AIFS_MSK 0xff
+
+#define R_AX_EDCA_BK_PARAM_1 0xC31C
+#define B_AX__BK_1_TXOPLMT_SH 16
+#define B_AX__BK_1_TXOPLMT_MSK 0x7ff
+#define B_AX__BK_1_CW_SH 8
+#define B_AX__BK_1_CW_MSK 0xff
+#define B_AX__BK_1_AIFS_SH 0
+#define B_AX__BK_1_AIFS_MSK 0xff
+
+#define R_AX_EDCA_MGQ_PARAM 0xC320
+#define B_AX__CPUMGQ_CW_SH 24
+#define B_AX__CPUMGQ_CW_MSK 0xff
+#define B_AX__CPUMGQ_AIFS_SH 16
+#define B_AX__CPUMGQ_AIFS_MSK 0xff
+#define B_AX__MGQ_CW_SH 8
+#define B_AX__MGQ_CW_MSK 0xff
+#define B_AX__MGQ_AIFS_SH 0
+#define B_AX__MGQ_AIFS_MSK 0xff
+
+#define R_AX_EDCA_BCNQ_PARAM 0xC324
+#define B_AX__FORCE_BCN_IFS_SH 24
+#define B_AX__FORCE_BCN_IFS_MSK 0xff
+#define B_AX__PIFS_SH 16
+#define B_AX__PIFS_MSK 0xff
+#define B_AX__BCNQ_CW_SH 8
+#define B_AX__BCNQ_CW_MSK 0xff
+#define B_AX__BCNQ_AIFS_SH 0
+#define B_AX__BCNQ_AIFS_MSK 0xff
+
+#define R_AX_EDCA_ULQ_PARAM 0xC328
+#define B_AX__ULQ_TXOPLMT_SH 16
+#define B_AX__ULQ_TXOPLMT_MSK 0x7ff
+#define B_AX__ULQ_CW_SH 8
+#define B_AX__ULQ_CW_MSK 0xff
+#define B_AX__ULQ_AIFS_SH 0
+#define B_AX__ULQ_AIFS_MSK 0xff
+
+#define R_AX_EDCA_TWT_PARAM_0 0xC32C
+#define B_AX__TWT_0_TXOPLMT_SH 16
+#define B_AX__TWT_0_TXOPLMT_MSK 0x7ff
+#define B_AX__TWT_0_CW_SH 8
+#define B_AX__TWT_0_CW_MSK 0xff
+#define B_AX__TWT_0_AIFS_SH 0
+#define B_AX__TWT_0_AIFS_MSK 0xff
+
+#define R_AX_EDCA_TWT_PARAM_1 0xC330
+#define B_AX__TWT_1_TXOPLMT_SH 16
+#define B_AX__TWT_1_TXOPLMT_MSK 0x7ff
+#define B_AX__TWT_1_CW_SH 8
+#define B_AX__TWT_1_CW_MSK 0xff
+#define B_AX__TWT_1_AIFS_SH 0
+#define B_AX__TWT_1_AIFS_MSK 0xff
+
+#define R_AX_SLOTTIME_CFG 0xC334
+#define B_AX__US_TIME_SH 8
+#define B_AX__US_TIME_MSK 0xff
+#define B_AX__SLOT_TIME_SH 0
+#define B_AX__SLOT_TIME_MSK 0xff
+
+#define R_AX_PREBKF_CFG_0 0xC338
+#define B_AX__100NS_TIME_SH 24
+#define B_AX__100NS_TIME_MSK 0x1f
+#define B_AX__RX_AIB_AX__END_TIME_SH 16
+#define B_AX__RX_AIB_AX__END_TIME_MSK 0x7f
+#define B_AX__MACTX_LATENCY_SH 8
+#define B_AX__MACTX_LATENCY_MSK 0x3f
+#define B_AX__PREBKF_TIME_SH 0
+#define B_AX__PREBKF_TIME_MSK 0xff
+
+#define R_AX_PREBKF_CFG_1 0xC33C
+#define B_AX__SIFS_PREBKF_SH 16
+#define B_AX__SIFS_PREBKF_MSK 0xff
+#define B_AX__SIFS_TIMEOUT_T2_SH 8
+#define B_AX__SIFS_TIMEOUT_T2_MSK 0x7f
+#define B_AX__SIFS_MACTXEN_T1_SH 0
+#define B_AX__SIFS_MACTXEN_T1_MSK 0x7f
+
+#define R_AX_CCA_CFG_0 0xC340
+#define B_AX__EDCCA_THRS_SH 16
+#define B_AX__EDCCA_THRS_MSK 0xff
+#define B_AX__BCN_IGNORE_EDCCA BIT(6)
+#define B_AX_BTCCA_EN BIT(5)
+#define B_AX_EDCCA_EN BIT(4)
+#define B_AX_SEC80_EN BIT(3)
+#define B_AX_SEC40_EN BIT(2)
+#define B_AX_SEC20_EN BIT(1)
+#define B_AX_CCA_EN BIT(0)
+
+#define R_AX_MISC_0 0xC344
+#define B_AX__EN_TBTT_AREA_FOB_AX__BB BIT(0)
+
+#define R_AX_CTN_TXPAUSE 0xC348
+#define B_AX_CTN_TXPAUSE_TWT_1 BIT(15)
+#define B_AX_CTN_TXPAUSE_TWT_0 BIT(14)
+#define B_AX_CTN_TXPAUSE_ULQ BIT(13)
+#define B_AX_CTN_TXPAUSE_BCNQ BIT(12)
+#define B_AX_CTN_TXPAUSE_HGQ BIT(11)
+#define B_AX_CTN_TXPAUSE_CPUMGQ BIT(10)
+#define B_AX_CTN_TXPAUSE_MGQ1 BIT(9)
+#define B_AX_CTN_TXPAUSE_MGQ BIT(8)
+#define B_AX_CTN_TXPAUSE_BK_1 BIT(7)
+#define B_AX_CTN_TXPAUSE_BE_1 BIT(6)
+#define B_AX_CTN_TXPAUSE_VI_1 BIT(5)
+#define B_AX_CTN_TXPAUSE_VO_1 BIT(4)
+#define B_AX_CTN_TXPAUSE_BK_0 BIT(3)
+#define B_AX_CTN_TXPAUSE_BE_0 BIT(2)
+#define B_AX_CTN_TXPAUSE_VI_0 BIT(1)
+#define B_AX_CTN_TXPAUSE_VO_0 BIT(0)
+
+#define R_AX_CTN_CFG_0 0xC34C
+#define B_AX_NAV_BLK_HGQ BIT(1)
+#define B_AX_NAV_BLK_MGQ BIT(0)
+
+#define R_AX_MUEDCA_VO_PARAM_0 0xC350
+#define B_AX_MUEDCA_VO_PARAM_0_TIMER_SH 16
+#define B_AX_MUEDCA_VO_PARAM_0_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_VO_PARAM_0_CW_SH 8
+#define B_AX_MUEDCA_VO_PARAM_0_CW_MSK 0xff
+#define B_AX_MUEDCA_VO_PARAM_0_AIFS_SH 0
+#define B_AX_MUEDCA_VO_PARAM_0_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_VI_PARAM_0 0xC354
+#define B_AX_MUEDCA_VI_PARAM_0_TIMER_SH 16
+#define B_AX_MUEDCA_VI_PARAM_0_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_VI_PARAM_0_CW_SH 8
+#define B_AX_MUEDCA_VI_PARAM_0_CW_MSK 0xff
+#define B_AX_MUEDCA_VI_PARAM_0_AIFS_SH 0
+#define B_AX_MUEDCA_VI_PARAM_0_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_BE_PARAM_0 0xC358
+#define B_AX_MUEDCA_BE_PARAM_0_TIMER_SH 16
+#define B_AX_MUEDCA_BE_PARAM_0_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_BE_PARAM_0_CW_SH 8
+#define B_AX_MUEDCA_BE_PARAM_0_CW_MSK 0xff
+#define B_AX_MUEDCA_BE_PARAM_0_AIFS_SH 0
+#define B_AX_MUEDCA_BE_PARAM_0_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_BK_PARAM_0 0xC35C
+#define B_AX_MUEDCA_BK_PARAM_0_TIMER_SH 16
+#define B_AX_MUEDCA_BK_PARAM_0_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_BK_PARAM_0_CW_SH 8
+#define B_AX_MUEDCA_BK_PARAM_0_CW_MSK 0xff
+#define B_AX_MUEDCA_BK_PARAM_0_AIFS_SH 0
+#define B_AX_MUEDCA_BK_PARAM_0_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_VO_PARAM_1 0xC360
+#define B_AX_MUEDCA_VO_PARAM_1_TIMER_SH 16
+#define B_AX_MUEDCA_VO_PARAM_1_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_VO_PARAM_1_CW_SH 8
+#define B_AX_MUEDCA_VO_PARAM_1_CW_MSK 0xff
+#define B_AX_MUEDCA_VO_PARAM_1_AIFS_SH 0
+#define B_AX_MUEDCA_VO_PARAM_1_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_VI_PARAM_1 0xC364
+#define B_AX_MUEDCA_VI_PARAM_1_TIMER_SH 16
+#define B_AX_MUEDCA_VI_PARAM_1_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_VI_PARAM_1_CW_SH 8
+#define B_AX_MUEDCA_VI_PARAM_1_CW_MSK 0xff
+#define B_AX_MUEDCA_VI_PARAM_1_AIFS_SH 0
+#define B_AX_MUEDCA_VI_PARAM_1_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_BE_PARAM_1 0xC368
+#define B_AX_MUEDCA_BE_PARAM_1_TIMER_SH 16
+#define B_AX_MUEDCA_BE_PARAM_1_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_BE_PARAM_1_CW_SH 8
+#define B_AX_MUEDCA_BE_PARAM_1_CW_MSK 0xff
+#define B_AX_MUEDCA_BE_PARAM_1_AIFS_SH 0
+#define B_AX_MUEDCA_BE_PARAM_1_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_BK_PARAM_1 0xC36C
+#define B_AX_MUEDCA_BK_PARAM_1_TIMER_SH 16
+#define B_AX_MUEDCA_BK_PARAM_1_TIMER_MSK 0xffff
+#define B_AX_MUEDCA_BK_PARAM_1_CW_SH 8
+#define B_AX_MUEDCA_BK_PARAM_1_CW_MSK 0xff
+#define B_AX_MUEDCA_BK_PARAM_1_AIFS_SH 0
+#define B_AX_MUEDCA_BK_PARAM_1_AIFS_MSK 0xff
+
+#define R_AX_MUEDCA_EN 0xC370
+#define B_AX_SET_MUEDCATIMEB_AX_TF_1 BIT(5)
+#define B_AX_SET_MUEDCATIMEB_AX_TF_0 BIT(4)
+#define B_AX_MUEDCA_EN_1 BIT(1)
+#define B_AX_MUEDCA_EN_0 BIT(0)
+
+#define R_AX_MUEDCA_TIMER_UPDATE 0xC374
+#define B_AX_SET_MUEDCA_TIMEB_AX_BK_1 BIT(7)
+#define B_AX_SET_MUEDCA_TIMEB_AX_BE_1 BIT(6)
+#define B_AX_SET_MUEDCA_TIMEB_AX_VI_1 BIT(5)
+#define B_AX_SET_MUEDCA_TIMEB_AX_VO_1 BIT(4)
+#define B_AX_SET_MUEDCA_TIMEB_AX_BK_0 BIT(3)
+#define B_AX_SET_MUEDCA_TIMEB_AX_BE_0 BIT(2)
+#define B_AX_SET_MUEDCA_TIMEB_AX_VI_0 BIT(1)
+#define B_AX_SET_MUEDCA_TIMEB_AX_VO_0 BIT(0)
+
+#define R_AX_MUEDCA_TIMER_STATUS 0xC375
+#define B_AX_MUEDCA_STATUS_BK_1 BIT(7)
+#define B_AX_MUEDCA_STATUS_BE_1 BIT(6)
+#define B_AX_MUEDCA_STATUS_VI_1 BIT(5)
+#define B_AX_MUEDCA_STATUS_VO_1 BIT(4)
+#define B_AX_MUEDCA_STATUS_BK_0 BIT(3)
+#define B_AX_MUEDCA_STATUS_BE_0 BIT(2)
+#define B_AX_MUEDCA_STATUS_VI_0 BIT(1)
+#define B_AX_MUEDCA_STATUS_VO_0 BIT(0)
+
+#define R_AX_RANDOM_CFG 0xC378
+#define B_AX_RAND_SET_SH 0
+#define B_AX_RAND_SET_MSK 0xffffff
+
+#define R_AX_MUEDCATIMER_0 0xC380
+#define B_AX_MUEDCATIMER_VI_0_SH 16
+#define B_AX_MUEDCATIMER_VI_0_MSK 0xffff
+#define B_AX_MUEDCATIMER_VO_0_SH 0
+#define B_AX_MUEDCATIMER_VO_0_MSK 0xffff
+
+#define R_AX_MUEDCATIMER_1 0xC384
+#define B_AX_MUEDCATIMER_BK_0_SH 16
+#define B_AX_MUEDCATIMER_BK_0_MSK 0xffff
+#define B_AX_MUEDCATIMER_BE_0_SH 0
+#define B_AX_MUEDCATIMER_BE_0_MSK 0xffff
+
+#define R_AX_MUEDCATIMER_2 0xC388
+#define B_AX_MUEDCATIMER_VI_1_SH 16
+#define B_AX_MUEDCATIMER_VI_1_MSK 0xffff
+#define B_AX_MUEDCATIMER_VO_1_SH 0
+#define B_AX_MUEDCATIMER_VO_1_MSK 0xffff
+
+#define R_AX_MUEDCATIMER_3 0xC38C
+#define B_AX_MUEDCATIMER_BK_1_SH 16
+#define B_AX_MUEDCATIMER_BK_1_MSK 0xffff
+#define B_AX_MUEDCATIMER_BE_1_SH 0
+#define B_AX_MUEDCATIMER_BE_1_MSK 0xffff
+
+#define R_AX_FTM_SETTING 0xC3F0
+#define B_AX_FTM_PTT_TSF_R2T_SEL_SH 22
+#define B_AX_FTM_PTT_TSF_R2T_SEL_MSK 0x7
+#define B_AX_FTM_PTT_TSF_T2B_AX_SEL_SH 19
+#define B_AX_FTM_PTT_TSF_T2B_AX_SEL_MSK 0x7
+#define B_AX_FTM_PTT_TSF_SEL_SH 16
+#define B_AX_FTM_PTT_TSF_SEL_MSK 0x7
+#define B_AX_FTM_PTT_SH 0
+#define B_AX_FTM_PTT_MSK 0xffff
+
+#define R_AX_SCH_DBG_SEL 0xC3F4
+#define B_AX_SCH_CFG_CMD_SEL_SH 8
+#define B_AX_SCH_CFG_CMD_SEL_MSK 0xff
+#define B_AX_SCH_DBG_SEL_SH 0
+#define B_AX_SCH_DBG_SEL_MSK 0xff
+
+#define R_AX_SCH_DBG 0xC3F8
+#define B_AX_SCHEDULER_DBG_SH 0
+#define B_AX_SCHEDULER_DBG_MSK 0xffffffffL
+
+#define R_AX_PORT_CFG_P0 0xC400
+#define B_AX_NETYPE_P0_SH 10
+#define B_AX_NETYPE_P0_MSK 0x3
+#define B_AX_BCN_FORCETX_EN_P0 BIT(9)
+#define B_AX_TXBCN_BTCCA_EN_P0 BIT(8)
+#define B_AX_BCNERB_AX_CNT_EN_P0 BIT(7)
+#define B_AX_BCN_AGRES_P0 BIT(6)
+#define B_AX_TSFT_RST_P0 BIT(5)
+#define B_AX_RX_BSSID_FIT_EN_P0 BIT(4)
+#define B_AX_TSF_UPT_EN_P0 BIT(3)
+#define B_AX_PORT_FUNC_EN_P0 BIT(2)
+#define B_AX_TXBCN_RPT_EN_P0 BIT(1)
+#define B_AX_RXBCN_RPT_EN_P0 BIT(0)
+
+#define R_AX_TBTT_PROHIBIT_P0 0xC404
+#define B_AX_BCN_CTN_AREA_P0_SH 24
+#define B_AX_BCN_CTN_AREA_P0_MSK 0xff
+#define B_AX_TBTT_PROHIB_EN_P0 BIT(23)
+#define B_AX_TBTT_HOLD_P0_SH 8
+#define B_AX_TBTT_HOLD_P0_MSK 0xfff
+#define B_AX_TBTT_SETUP_P0_SH 0
+#define B_AX_TBTT_SETUP_P0_MSK 0xf
+
+#define R_AX_BCNERLYINT_CFG_P0 0xC408
+#define B_AX_BCNERLY_P0_SH 0
+#define B_AX_BCNERLY_P0_MSK 0xfff
+
+#define R_AX_TBTTERLYINT_CFG_P0 0xC40A
+#define B_AX_TBTTERLY_P0_SH 0
+#define B_AX_TBTTERLY_P0_MSK 0xfff
+
+#define R_AX_CTWINDOW_CFG_P0 0xC40C
+#define B_AX_CTWIN_P0_SH 0
+#define B_AX_CTWIN_P0_MSK 0xfff
+
+#define R_AX_TBTT_AGG_P0 0xC40E
+#define B_AX_TBTT_AGG_NUM_P0_SH 8
+#define B_AX_TBTT_AGG_NUM_P0_MSK 0xff
+#define B_AX_TBTT_AGG_CURRCNT_P0_SH 0
+#define B_AX_TBTT_AGG_CURRCNT_P0_MSK 0xff
+
+#define R_AX_BCN_SPACE_CFG_P0 0xC410
+#define B_AX_SUB_BCN_SPACE_P0_SH 23
+#define B_AX_SUB_BCN_SPACE_P0_MSK 0xf
+#define B_AX_BCN_SPACE_P0_SH 0
+#define B_AX_BCN_SPACE_P0_MSK 0xffff
+
+#define R_AX_BCN_FORCETX_P0 0xC414
+#define B_AX_FORCE_BCN_NUM_P0_SH 8
+#define B_AX_FORCE_BCN_NUM_P0_MSK 0xff
+#define B_AX_BCN_MAX_ERR_P0_SH 0
+#define B_AX_BCN_MAX_ERR_P0_MSK 0xff
+
+#define R_AX_TBTT_SHIFT_P0 0xC416
+#define B_AX_TBTT_SHIFT_RW_FLAG_P0 BIT(15)
+#define B_AX_TBTT_SHIFT_OFST_P0_SH 0
+#define B_AX_TBTT_SHIFT_OFST_P0_MSK 0xfff
+
+#define R_AX_TBTT_TSF_INFO_P0 0xC418
+#define B_AX_TBTT_TSF_INFO_P0_SH 0
+#define B_AX_TBTT_TSF_INFO_P0_MSK 0xffffffffL
+
+#define R_AX_BCN_ERR_CNT0_P0 0xC41C
+#define B_AX_BCN_ERR_CNT_MAC_P0_SH 24
+#define B_AX_BCN_ERR_CNT_MAC_P0_MSK 0xff
+#define B_AX_BCN_ERR_CNT_EDCCA_P0_SH 16
+#define B_AX_BCN_ERR_CNT_EDCCA_P0_MSK 0xff
+#define B_AX_BCN_ERR_CNT_CCA_P0_SH 8
+#define B_AX_BCN_ERR_CNT_CCA_P0_MSK 0xff
+#define B_AX_BCN_ERR_CNT_INVALID_P0_SH 0
+#define B_AX_BCN_ERR_CNT_INVALID_P0_MSK 0xff
+#define B_AX_BCN_ERR_CNT_SUM_P0_SH 24
+#define B_AX_BCN_ERR_CNT_SUM_P0_MSK 0xff
+#define B_AXBCN_ERR_CNT_NAV_P0_SH 16
+#define B_AXBCN_ERR_CNT_NAV_P0_MSK 0xff
+#define B_AXBCN_ERR_CNT_TXON_P0_SH 8
+#define B_AXBCN_ERR_CNT_TXON_P0_MSK 0xff
+#define B_AXBCN_ERR_CNT_OTHERS_P0_SH 0
+#define B_AXBCN_ERR_CNT_OTHERS_P0_MSK 0xff
+
+#define R_AX_DTIM_CTRL_P0 0xC424
+#define B_AX_DTIM_NUM_P0_SH 8
+#define B_AX_DTIM_NUM_P0_MSK 0xff
+#define B_AX_DTIM_CURRCNT_SH 0
+#define B_AX_DTIM_CURRCNT_MSK 0xff
+
+#define R_AX_RXTSF_OFST_P0 0xC426
+#define B_AX_RXTSF_OFST_OFDM_SH 8
+#define B_AX_RXTSF_OFST_OFDM_MSK 0xff
+#define B_AX_RXTSF_OFST_CCK_SH 0
+#define B_AX_RXTSF_OFST_CCK_MSK 0xff
+
+#define R_AX_RXBCN_TIME_P0 0xC428
+#define B_AX_ERLY_RXBCN_VLD_P0 BIT(15)
+#define B_AX_ERLY_RXBCN_TIME_P0_SH 0
+#define B_AX_ERLY_RXBCN_TIME_P0_MSK 0x7fff
+
+#define R_AX_MBSSID_CTRL_P0 0xC42C
+
+#define R_AX_P0MB_DTIM_NUM_CFG_0 0xC430
+#define B_AX_DTIM_NUM_3_SH 24
+#define B_AX_DTIM_NUM_3_MSK 0xff
+#define B_AX_DTIM_NUM_2_SH 16
+#define B_AX_DTIM_NUM_2_MSK 0xff
+
+#define R_AX_P0MB_DTIM_NUM_CFG_1 0xC434
+#define B_AX_DTIM_NUM_7_SH 24
+#define B_AX_DTIM_NUM_7_MSK 0xff
+#define B_AX_DTIM_NUM_6_SH 16
+#define B_AX_DTIM_NUM_6_MSK 0xff
+#define B_AX_DTIM_NUM_5_SH 8
+#define B_AX_DTIM_NUM_5_MSK 0xff
+#define B_AX_DTIM_NUM_4_SH 0
+#define B_AX_DTIM_NUM_4_MSK 0xff
+
+#define R_AX_P0MB_DTIM_NUM_CFG_2 0xC438
+#define B_AX_DTIM_NUM_11_SH 24
+#define B_AX_DTIM_NUM_11_MSK 0xff
+#define B_AX_DTIM_NUM_10_SH 16
+#define B_AX_DTIM_NUM_10_MSK 0xff
+#define B_AX_DTIM_NUM_9_SH 8
+#define B_AX_DTIM_NUM_9_MSK 0xff
+#define B_AX_DTIM_NUM_8_SH 0
+#define B_AX_DTIM_NUM_8_MSK 0xff
+
+#define R_AX_P0MB_DTIM_NUM_CFG_3 0xC43C
+#define B_AX_DTIM_NUM_15_SH 24
+#define B_AX_DTIM_NUM_15_MSK 0xff
+#define B_AX_DTIM_NUM_14_SH 16
+#define B_AX_DTIM_NUM_14_MSK 0xff
+#define B_AX_DTIM_NUM_13_SH 8
+#define B_AX_DTIM_NUM_13_MSK 0xff
+#define B_AX_DTIM_NUM_12_SH 0
+#define B_AX_DTIM_NUM_12_MSK 0xff
+
+#define R_AX_P0MB_DTIM_CURRCNT_0 0xC440
+#define B_AX_DTIM_COUNT_3_SH 24
+#define B_AX_DTIM_COUNT_3_MSK 0xff
+#define B_AX_DTIM_COUNT_2_SH 16
+#define B_AX_DTIM_COUNT_2_MSK 0xff
+#define B_AX_DTIM_COUNT_1_SH 8
+#define B_AX_DTIM_COUNT_1_MSK 0xff
+
+#define R_AX_P0MB_DTIM_CURRCNT_1 0xC444
+#define B_AX_DTIM_COUNT_7_SH 24
+#define B_AX_DTIM_COUNT_7_MSK 0xff
+#define B_AX_DTIM_COUNT_6_SH 16
+#define B_AX_DTIM_COUNT_6_MSK 0xff
+#define B_AX_DTIM_COUNT_5_SH 8
+#define B_AX_DTIM_COUNT_5_MSK 0xff
+#define B_AX_DTIM_COUNT_4_SH 0
+#define B_AX_DTIM_COUNT_4_MSK 0xff
+
+#define R_AX_P0MB_DTIM_CURRCNT_2 0xC448
+#define B_AX_DTIM_COUNT_11_SH 24
+#define B_AX_DTIM_COUNT_11_MSK 0xff
+#define B_AX_DTIM_COUNT_10_SH 16
+#define B_AX_DTIM_COUNT_10_MSK 0xff
+#define B_AX_DTIM_COUNT_9_SH 8
+#define B_AX_DTIM_COUNT_9_MSK 0xff
+#define B_AX_DTIM_COUNT_8_SH 0
+#define B_AX_DTIM_COUNT_8_MSK 0xff
+
+#define R_AX_P0MB_DTIM_CURRCNT_3 0xC44C
+#define B_AX_DTIM_COUNT_15_SH 24
+#define B_AX_DTIM_COUNT_15_MSK 0xff
+#define B_AX_DTIM_COUNT_14_SH 16
+#define B_AX_DTIM_COUNT_14_MSK 0xff
+#define B_AX_DTIM_COUNT_13_SH 8
+#define B_AX_DTIM_COUNT_13_MSK 0xff
+#define B_AX_DTIM_COUNT_12_SH 0
+#define B_AX_DTIM_COUNT_12_MSK 0xff
+
+#define R_AX_PORT_CFG_P1 0xC450
+#define B_AX_NETYPE_P1_SH 10
+#define B_AX_NETYPE_P1_MSK 0x3
+#define B_AX_BCN_FORCETX_EN_P1 BIT(9)
+#define B_AX_TXBCN_BTCCA_EN_P1 BIT(8)
+#define B_AX_BCNERB_AX_CNT_EN_P1 BIT(7)
+#define B_AX_BCN_AGRES_P1 BIT(6)
+#define B_AX_TSFT_RST_P1 BIT(5)
+#define B_AX_RX_BSSID_FIT_EN_P1 BIT(4)
+#define B_AX_TSF_UPT_EN_P1 BIT(3)
+#define B_AX_PORT_FUNC_EN_P1 BIT(2)
+#define B_AX_TXBCN_RPT_EN_P1 BIT(1)
+#define B_AX_RXBCN_RPT_EN_P1 BIT(0)
+
+#define R_AX_TBTT_PROHIBIT_P1 0xC454
+#define B_AX_BCN_CTN_AREA_P1_SH 24
+#define B_AX_BCN_CTN_AREA_P1_MSK 0xff
+#define B_AX_TBTT_PROHIB_EN_P1 BIT(23)
+#define B_AX_TBTT_HOLD_P1_SH 8
+#define B_AX_TBTT_HOLD_P1_MSK 0xfff
+#define B_AX_TBTT_SETUP_P1_SH 0
+#define B_AX_TBTT_SETUP_P1_MSK 0xf
+
+#define R_AX_BCNERLYINT_CFG_P1 0xC458
+#define B_AX_BCNERLY_P1_SH 0
+#define B_AX_BCNERLY_P1_MSK 0xfff
+
+#define R_AX_TBTTERLYINT_CFG_P1 0xC45A
+#define B_AX_TBTTERLY_P1_SH 0
+#define B_AX_TBTTERLY_P1_MSK 0xfff
+
+#define R_AX_CTWINDOW_CFG_P1 0xC45C
+#define B_AX_CTWIN_P1_SH 0
+#define B_AX_CTWIN_P1_MSK 0xfff
+
+#define R_AX_TBTT_AGG_P1 0xC45E
+#define B_AX_TBTT_AGG_NUM_P1_SH 8
+#define B_AX_TBTT_AGG_NUM_P1_MSK 0xff
+#define B_AX_TBTT_AGG_CURRCNT_P1_SH 0
+#define B_AX_TBTT_AGG_CURRCNT_P1_MSK 0xff
+
+#define R_AX_BCN_SPACE_CFG_P1 0xC460
+#define B_AX_BCN_SPACE_P1_SH 0
+#define B_AX_BCN_SPACE_P1_MSK 0xffff
+
+#define R_AX_BCN_FORCETX_P1 0xC464
+#define B_AX_FORCE_BCN_NUM_P1_SH 8
+#define B_AX_FORCE_BCN_NUM_P1_MSK 0xff
+#define B_AX_BCN_MAX_ERR_P1_SH 0
+#define B_AX_BCN_MAX_ERR_P1_MSK 0xff
+
+#define R_AX_TBTT_SHIFT_P1 0xC466
+#define B_AX_TBTT_SHIFT_RW_FLAG_P1 BIT(15)
+#define B_AX_TBTT_SHIFT_OFST_P1_SH 0
+#define B_AX_TBTT_SHIFT_OFST_P1_MSK 0x7fff
+
+#define R_AX_TBTT_TSF_INFO_P1 0xC468
+#define B_AX_TBTT_TSF_INFO_P1_SH 0
+#define B_AX_TBTT_TSF_INFO_P1_MSK 0xffffffffL
+
+#define R_AX_BCN_ERR_CNT0_P1 0xC46C
+#define B_AX_BCN_ERR_CNT_MAC_P1_SH 24
+#define B_AX_BCN_ERR_CNT_MAC_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_EDCCA_P1_SH 16
+#define B_AX_BCN_ERR_CNT_EDCCA_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_CCA_P1_SH 8
+#define B_AX_BCN_ERR_CNT_CCA_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_INVALID_P1_SH 0
+#define B_AX_BCN_ERR_CNT_INVALID_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_SUM_P1_SH 24
+#define B_AX_BCN_ERR_CNT_SUM_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_NAV_P1_SH 16
+#define B_AX_BCN_ERR_CNT_NAV_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_TXON_P1_SH 8
+#define B_AX_BCN_ERR_CNT_TXON_P1_MSK 0xff
+#define B_AX_BCN_ERR_CNT_OTHERS_P1_SH 0
+#define B_AX_BCN_ERR_CNT_OTHERS_P1_MSK 0xff
+
+#define R_AX_DTIM_CTRL_P1 0xC474
+#define B_AX_DTIM_NUM_P1_SH 8
+#define B_AX_DTIM_NUM_P1_MSK 0xff
+#define B_AX_DTIM_CURRCNT_P1_SH 0
+#define B_AX_DTIM_CURRCNT_P1_MSK 0xff
+
+#define R_AX_RXTSF_OFST_P1 0xC476
+
+#define R_AX_RXBCN_TIME_P1 0xC478
+#define B_AX_ERLY_RXBCN_VLD_P1 BIT(15)
+#define B_AX_ERLY_RXBCN_TIME_P1_SH 0
+#define B_AX_ERLY_RXBCN_TIME_P1_MSK 0x7fff
+
+#define R_AX_PORT_CFG_P2 0xC480
+#define B_AX_NETYPE_P2_SH 10
+#define B_AX_NETYPE_P2_MSK 0x3
+#define B_AX_BCN_FORCETX_EN_P2 BIT(9)
+#define B_AX_TXBCN_BTCCA_EN_P2 BIT(8)
+#define B_AX_BCNERB_AX_CNT_EN_P2 BIT(7)
+#define B_AX_BCN_AGRES_P2 BIT(6)
+#define B_AX_TSFT_RST_P2 BIT(5)
+#define B_AX_RX_BSSID_FIT_EN_P2 BIT(4)
+#define B_AX_TSF_UPT_EN_P2 BIT(3)
+#define B_AX_PORT_FUNC_EN_P2 BIT(2)
+#define B_AX_TXBCN_RPT_EN_P2 BIT(1)
+#define B_AX_RXBCN_RPT_EN_P2 BIT(0)
+
+#define R_AX_TBTT_PROHIBIT_P2 0xC484
+#define B_AX_BCN_CTN_AREA_P2_SH 24
+#define B_AX_BCN_CTN_AREA_P2_MSK 0xff
+#define B_AX_TBTT_PROHIB_EN_P2 BIT(23)
+#define B_AX_TBTT_HOLD_P2_SH 8
+#define B_AX_TBTT_HOLD_P2_MSK 0xfff
+#define B_AX_TBTT_SETUP_P2_SH 0
+#define B_AX_TBTT_SETUP_P2_MSK 0xf
+
+#define R_AX_BCNERLYINT_CFG_P2 0xC488
+#define B_AX_BCNERLY_P2_SH 0
+#define B_AX_BCNERLY_P2_MSK 0xfff
+
+#define R_AX_TBTTERLYINT_CFG_P2 0xC48A
+#define B_AX_TBTTERLY_P2_SH 0
+#define B_AX_TBTTERLY_P2_MSK 0xfff
+
+#define R_AX_CTWINDOW_CFG_P2 0xC48C
+#define B_AX_CTWIN_P2_SH 0
+#define B_AX_CTWIN_P2_MSK 0xfff
+
+#define R_AX_TBTT_AGG_P2 0xC48E
+#define B_AX_TBTT_AGG_NUM_P2_SH 8
+#define B_AX_TBTT_AGG_NUM_P2_MSK 0xff
+#define B_AX_TBTT_AGG_CURRCNT_P2_SH 0
+#define B_AX_TBTT_AGG_CURRCNT_P2_MSK 0xff
+
+#define R_AX_BCN_SPACE_CFG_P2 0xC490
+#define B_AX_BCN_SPACE_P2_SH 0
+#define B_AX_BCN_SPACE_P2_MSK 0xffff
+
+#define R_AX_BCN_FORCETX_P2 0xC394
+#define B_AX_FORCE_BCN_NUM_P2_SH 8
+#define B_AX_FORCE_BCN_NUM_P2_MSK 0xff
+#define B_AX_BCN_MAX_ERR_P2_SH 0
+#define B_AX_BCN_MAX_ERR_P2_MSK 0xff
+
+#define R_AX_TBTT_SHIFT_P2 0xC396
+#define B_AX_TBTT_SHIFT_RW_FLAG_P2 BIT(15)
+#define B_AX_TBTT_SHIFT_OFST_P2_SH 0
+#define B_AX_TBTT_SHIFT_OFST_P2_MSK 0x7fff
+
+#define R_AX_TBTT_TSF_INFO_P2 0xC498
+#define B_AX_TBTT_TSF_INFO_P2_SH 0
+#define B_AX_TBTT_TSF_INFO_P2_MSK 0xffffffffL
+
+#define R_AX_BCN_ERR_CNT0_P2 0xC49C
+#define B_AX_BCN_ERR_CNT_MAC_P2_SH 24
+#define B_AX_BCN_ERR_CNT_MAC_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_EDCCA_P2_SH 16
+#define B_AX_BCN_ERR_CNT_EDCCA_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_CCA_P2_SH 8
+#define B_AX_BCN_ERR_CNT_CCA_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_INVALID_P2_SH 0
+#define B_AX_BCN_ERR_CNT_INVALID_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_SUM_P2_SH 24
+#define B_AX_BCN_ERR_CNT_SUM_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_NAV_P2_SH 16
+#define B_AX_BCN_ERR_CNT_NAV_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_TXON_P2_SH 8
+#define B_AX_BCN_ERR_CNT_TXON_P2_MSK 0xff
+#define B_AX_BCN_ERR_CNT_OTHERS_P2_SH 0
+#define B_AX_BCN_ERR_CNT_OTHERS_P2_MSK 0xff
+
+#define R_AX_DTIM_CTRL_P2 0xC4A4
+#define B_AX_DTIM_NUM_P2_SH 8
+#define B_AX_DTIM_NUM_P2_MSK 0xff
+#define B_AX_DTIM_CURRCNT_P2_SH 0
+#define B_AX_DTIM_CURRCNT_P2_MSK 0xff
+
+#define R_AX_RXTSF_OFST_P2 0xC4A6
+#define B_AX_RXTSF_OFST_OFDM_P2_SH 8
+#define B_AX_RXTSF_OFST_OFDM_P2_MSK 0xff
+#define B_AX_RXTSF_OFST_CCK_P2_SH 0
+#define B_AX_RXTSF_OFST_CCK_P2_MSK 0xff
+
+#define R_AX_RXBCN_TIME_P2 0xC4A8
+#define B_AX_ERLY_RXBCN_VLD_P2 BIT(15)
+#define B_AX_ERLY_RXBCN_TIME_P2_SH 0
+#define B_AX_ERLY_RXBCN_TIME_P2_MSK 0x7fff
+
+#define R_AX_PORT_CFG_P3 0xC4B0
+#define B_AX_NETYPE_P3_SH 10
+#define B_AX_NETYPE_P3_MSK 0x3
+#define B_AX_BCN_FORCETX_EN_P3 BIT(9)
+#define B_AX_TXBCN_BTCCA_EN_P3 BIT(8)
+#define B_AX_BCNERB_AX_CNT_EN_P3 BIT(7)
+#define B_AX_BCN_AGRES_P3 BIT(6)
+#define B_AX_TSFT_RST_P3 BIT(5)
+#define B_AX_RX_BSSID_FIT_EN_P3 BIT(4)
+#define B_AX_TSF_UPT_EN_P3 BIT(3)
+#define B_AX_PORT_FUNC_EN_P3 BIT(2)
+#define B_AX_TXBCN_RPT_EN_P3 BIT(1)
+#define B_AX_RXBCN_RPT_EN_P3 BIT(0)
+
+#define R_AX_TBTT_PROHIBIT_P3 0xC4B4
+#define B_AX_BCN_CTN_AREA_P3_SH 24
+#define B_AX_BCN_CTN_AREA_P3_MSK 0xff
+#define B_AX_TBTT_PROHIB_EN_P3 BIT(23)
+#define B_AX_TBTT_HOLD_P3_SH 8
+#define B_AX_TBTT_HOLD_P3_MSK 0xfff
+#define B_AX_TBTT_SETUP_P3_SH 0
+#define B_AX_TBTT_SETUP_P3_MSK 0xf
+
+#define R_AX_BCNERLYINT_CFG_P3 0xC4B8
+#define B_AX_BCNERLY_P3_SH 0
+#define B_AX_BCNERLY_P3_MSK 0xfff
+
+#define R_AX_TBTTERLYINT_CFG_P3 0xC4BA
+#define B_AX_TBTTERLY_P3_SH 0
+#define B_AX_TBTTERLY_P3_MSK 0xfff
+
+#define R_AX_CTWINDOW_CFG_P3 0xC4BC
+#define B_AX_CTWIN_P3_SH 0
+#define B_AX_CTWIN_P3_MSK 0xfff
+
+#define R_AX_TBTT_AGG_P3 0xC4BE
+#define B_AX_TBTT_AGG_NUM_P3_SH 8
+#define B_AX_TBTT_AGG_NUM_P3_MSK 0xff
+#define B_AX_TBTT_AGG_CURRCNT_P3_SH 0
+#define B_AX_TBTT_AGG_CURRCNT_P3_MSK 0xff
+
+#define R_AX_BCN_SPACE_CFG_P3 0xC4C0
+#define B_AX_BCN_SPACE_P3_SH 0
+#define B_AX_BCN_SPACE_P3_MSK 0xffff
+
+#define R_AX_BCN_FORCETX_P3 0xC4C4
+#define B_AX_FORCE_BCN_NUM_P3_SH 8
+#define B_AX_FORCE_BCN_NUM_P3_MSK 0xff
+#define B_AX_BCN_MAX_ERR_P3_SH 0
+#define B_AX_BCN_MAX_ERR_P3_MSK 0xff
+
+#define R_AX_TBTT_SHIFT_P3 0xC4C6
+#define B_AX_TBTT_SHIFT_RW_FLAG_P3 BIT(15)
+#define B_AX_TBTT_SHIFT_OFST_P3_SH 0
+#define B_AX_TBTT_SHIFT_OFST_P3_MSK 0x7fff
+
+#define R_AX_TBTT_TSF_INFO_P3 0xC4C8
+#define B_AX_TBTT_TSF_INFO_P3_SH 0
+#define B_AX_TBTT_TSF_INFO_P3_MSK 0xffffffffL
+
+#define R_AX_BCN_ERR_CNT0_P3 0xC4CC
+#define B_AX_BCN_ERR_CNT_MAC_P3_SH 24
+#define B_AX_BCN_ERR_CNT_MAC_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_EDCCA_P3_SH 16
+#define B_AX_BCN_ERR_CNT_EDCCA_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_CCA_P3_SH 8
+#define B_AX_BCN_ERR_CNT_CCA_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_INVALID_P3_SH 0
+#define B_AX_BCN_ERR_CNT_INVALID_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_SUM_P3_SH 24
+#define B_AX_BCN_ERR_CNT_SUM_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_NAV_P3_SH 16
+#define B_AX_BCN_ERR_CNT_NAV_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_TXON_P3_SH 8
+#define B_AX_BCN_ERR_CNT_TXON_P3_MSK 0xff
+#define B_AX_BCN_ERR_CNT_OTHERS_P3_SH 0
+#define B_AX_BCN_ERR_CNT_OTHERS_P3_MSK 0xff
+
+#define R_AX_DTIM_CTRL_P3 0xC4D4
+#define B_AX_DTIM_NUM_P3_SH 8
+#define B_AX_DTIM_NUM_P3_MSK 0xff
+#define B_AX_DTIM_CURRCNT_P3_SH 0
+#define B_AX_DTIM_CURRCNT_P3_MSK 0xff
+
+#define R_AX_RXTSF_OFST_P3 0xC4D6
+#define B_AX_RXTSF_OFST_OFDM_P3_SH 8
+#define B_AX_RXTSF_OFST_OFDM_P3_MSK 0xff
+#define B_AX_RXTSF_OFST_CCK_P3_SH 0
+#define B_AX_RXTSF_OFST_CCK_P3_MSK 0xff
+
+#define R_AX_RXBCN_TIME_P3 0xC4D8
+#define B_AX_ERLY_RXBCN_VLD_P3 BIT(15)
+#define B_AX_ERLY_RXBCN_TIME_P3_SH 0
+#define B_AX_ERLY_RXBCN_TIME_P3_MSK 0x7fff
+
+#define R_AX_PORT_CFG_P4 0xC4E0
+#define B_AX_NETYPE_P4_SH 10
+#define B_AX_NETYPE_P4_MSK 0x3
+#define B_AX_BCN_FORCETX_EN_P4 BIT(9)
+#define B_AX_TXBCN_BTCCA_EN_P4 BIT(8)
+#define B_AX_BCNERB_AX_CNT_EN_P4 BIT(7)
+#define B_AX_BCN_AGRES_P4 BIT(6)
+#define B_AX_TSFT_RST_P4 BIT(5)
+#define B_AX_RX_BSSID_FIT_EN_P4 BIT(4)
+#define B_AX_TSF_UPT_EN_P4 BIT(3)
+#define B_AX_PORT_FUNC_EN_P4 BIT(2)
+#define B_AX_TXBCN_RPT_EN_P4 BIT(1)
+#define B_AX_RXBCN_RPT_EN_P4 BIT(0)
+
+#define R_AX_TBTT_PROHIBIT_P4 0xC4E4
+#define B_AX_BCN_CTN_AREA_P4_SH 24
+#define B_AX_BCN_CTN_AREA_P4_MSK 0xff
+#define B_AX_TBTT_PROHIB_EN_P4 BIT(23)
+#define B_AX_TBTT_HOLD_P4_SH 8
+#define B_AX_TBTT_HOLD_P4_MSK 0xfff
+#define B_AX_TBTT_SETUP_P4_SH 0
+#define B_AX_TBTT_SETUP_P4_MSK 0xf
+
+#define R_AX_BCNERLYINT_CFG_P4 0xC4E8
+#define B_AX_BCNERLY_P4_SH 0
+#define B_AX_BCNERLY_P4_MSK 0xfff
+
+#define R_AX_TBTTERLYINT_CFG_P4 0xC4EA
+#define B_AX_TBTTERLY_P4_SH 0
+#define B_AX_TBTTERLY_P4_MSK 0xfff
+
+#define R_AX_CTWINDOW_CFG_P4 0xC4EC
+#define B_AX_CTWIN_P4_SH 0
+#define B_AX_CTWIN_P4_MSK 0xfff
+
+#define R_AX_TBTT_AGG_P4 0xC4EE
+#define B_AX_TBTT_AGG_NUM_P4_SH 8
+#define B_AX_TBTT_AGG_NUM_P4_MSK 0xff
+#define B_AX_TBTT_AGG_CURRCNT_P4_SH 0
+#define B_AX_TBTT_AGG_CURRCNT_P4_MSK 0xff
+
+#define R_AX_BCN_SPACE_CFG_P4 0xC4F0
+#define B_AX_BCN_SPACE_P4_SH 0
+#define B_AX_BCN_SPACE_P4_MSK 0xffff
+
+#define R_AX_BCN_FORCETX_P4 0xC4F4
+#define B_AX_FORCE_BCN_NUM_P4_SH 8
+#define B_AX_FORCE_BCN_NUM_P4_MSK 0xff
+#define B_AX_BCN_MAX_ERR_P4_SH 0
+#define B_AX_BCN_MAX_ERR_P4_MSK 0xff
+
+#define R_AX_TBTT_SHIFT_P4 0xC4F6
+#define B_AX_TBTT_SHIFT_RW_FLAG_P4 BIT(15)
+#define B_AX_TBTT_SHIFT_OFST_P4_SH 0
+#define B_AX_TBTT_SHIFT_OFST_P4_MSK 0x7fff
+
+#define R_AX_TBTT_TSF_INFO_P4 0xC4F8
+#define B_AX_TBTT_TSF_INFO_P4_SH 0
+#define B_AX_TBTT_TSF_INFO_P4_MSK 0xffffffffL
+
+#define R_AX_BCN_ERR_CNT0_P4 0xC4FC
+#define B_AX_BCN_ERR_CNT_MAC_P4_SH 24
+#define B_AX_BCN_ERR_CNT_MAC_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_EDCCA_P4_SH 16
+#define B_AX_BCN_ERR_CNT_EDCCA_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_CCA_P4_SH 8
+#define B_AX_BCN_ERR_CNT_CCA_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_INVALID_P4_SH 0
+#define B_AX_BCN_ERR_CNT_INVALID_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_SUM_P4_SH 24
+#define B_AX_BCN_ERR_CNT_SUM_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_NAV_P4_SH 16
+#define B_AX_BCN_ERR_CNT_NAV_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_TXON_P4_SH 8
+#define B_AX_BCN_ERR_CNT_TXON_P4_MSK 0xff
+#define B_AX_BCN_ERR_CNT_OTHERS_P4_SH 0
+#define B_AX_BCN_ERR_CNT_OTHERS_P4_MSK 0xff
+
+#define R_AX_DTIM_CTRL_P4 0xC504
+#define B_AX_DTIM_NUM_P4_SH 8
+#define B_AX_DTIM_NUM_P4_MSK 0xff
+#define B_AX_DTIM_CURRCNT_P4_SH 0
+#define B_AX_DTIM_CURRCNT_P4_MSK 0xff
+
+#define R_AX_RXTSF_OFST_P4 0xC506
+#define B_AX_RXTSF_OFST_OFDM_P4_SH 8
+#define B_AX_RXTSF_OFST_OFDM_P4_MSK 0xff
+#define B_AX_RXTSF_OFST_CCK_P4_SH 0
+#define B_AX_RXTSF_OFST_CCK_P4_MSK 0xff
+
+#define R_AX_RXBCN_TIME_P4 0xC508
+#define B_AX_ERLY_RXBCN_VLD_P4 BIT(15)
+#define B_AX_ERLY_RXBCN_TIME_P4_SH 0
+#define B_AX_ERLY_RXBCN_TIME_P4_MSK 0x7fff
+
+#define R_AX_BCN_DROP_REQ 0xC510
+#define B_AX_BCN_DROP_REQ_SH 0
+#define B_AX_BCN_DROP_REQ_MSK 0xfffff
+
+#define R_AX_BCN_PKT_NUM 0xC514
+#define B_AX_BCN_PKT_NUM_SH 0
+#define B_AX_BCN_PKT_NUM_MSK 0xfffff
+
+#define R_AX_TSFT_LOW_P0 0xC518
+#define B_AX_TSFT_LOW_P0_SH 0
+#define B_AX_TSFT_LOW_P0_MSK 0xffffffffL
+
+#define R_AX_TSFT_HIGH_P0 0xC51C
+#define B_AX_TSFT_HIGH_P0_SH 0
+#define B_AX_TSFT_HIGH_P0_MSK 0xffffffffL
+
+#define R_AX_TSFT_LOW_P1 0xC520
+#define B_AX_TSFT_LOW_P1_SH 0
+#define B_AX_TSFT_LOW_P1_MSK 0xffffffffL
+
+#define R_AX_TSFT_HIGH_P1 0xC524
+#define B_AX_TSFT_HIGH_P1_SH 0
+#define B_AX_TSFT_HIGH_P1_MSK 0xffffffffL
+
+#define R_AX_TSFT_LOW_P2 0xC528
+#define B_AX_TSFT_LOW_P2_SH 0
+#define B_AX_TSFT_LOW_P2_MSK 0xffffffffL
+
+#define R_AX_TSFT_HIGH_P2 0xC232
+#define B_AX_TSFT_HIGH_P2_SH 0
+#define B_AX_TSFT_HIGH_P2_MSK 0xffffffffL
+
+#define R_AX_TSFT_LOW_P3 0xC530
+#define B_AX_TSFT_LOW_P3_SH 0
+#define B_AX_TSFT_LOW_P3_MSK 0xffffffffL
+
+#define R_AX_TSFT_HIGH_P3 0xC534
+#define B_AX_TSFT_HIGH_P3_SH 0
+#define B_AX_TSFT_HIGH_P3_MSK 0xffffffffL
+
+#define R_AX_TSFT_LOW_P4 0xC538
+#define B_AX_TSFT_LOW_P4_SH 0
+#define B_AX_TSFT_LOW_P4_MSK 0xffffffffL
+
+#define R_AX_TSFT_HIGH_P4 0xC53C
+#define B_AX_TSFT_HIGH_P4_SH 0
+#define B_AX_TSFT_HIGH_P4_MSK 0xffffffffL
+
+#define R_AX_P0MB_HGQ_WINDOW_CFG_0 0xC540
+#define B_AX_HGQWND_3_SH 24
+#define B_AX_HGQWND_3_MSK 0xff
+#define B_AX_HGQWND_2_SH 16
+#define B_AX_HGQWND_2_MSK 0xff
+#define B_AX_HGQWND_1_SH 8
+#define B_AX_HGQWND_1_MSK 0xff
+#define B_AX_HGQWND_0_SH 0
+#define B_AX_HGQWND_0_MSK 0xff
+#define B_AX_HGQWND_7_SH 24
+#define B_AX_HGQWND_7_MSK 0xff
+#define B_AX_HGQWND_6_SH 16
+#define B_AX_HGQWND_6_MSK 0xff
+#define B_AX_HGQWND_5_SH 8
+#define B_AX_HGQWND_5_MSK 0xff
+#define B_AX_HGQWND_4_SH 0
+#define B_AX_HGQWND_4_MSK 0xff
+#define B_AX_HGQWND_11_SH 24
+#define B_AX_HGQWND_11_MSK 0xff
+#define B_AX_HGQWND_10_SH 16
+#define B_AX_HGQWND_10_MSK 0xff
+#define B_AX_HGQWND_9_SH 8
+#define B_AX_HGQWND_9_MSK 0xff
+#define B_AX_HGQWND_8_SH 0
+#define B_AX_HGQWND_8_MSK 0xff
+#define B_AX_HGQWND_15_SH 24
+#define B_AX_HGQWND_15_MSK 0xff
+#define B_AX_HGQWND_14_SH 16
+#define B_AX_HGQWND_14_MSK 0xff
+#define B_AX_HGQWND_13_SH 8
+#define B_AX_HGQWND_13_MSK 0xff
+#define B_AX_HGQWND_12_SH 0
+#define B_AX_HGQWND_12_MSK 0xff
+
+#define R_AX_P0MB_DTIM_NUM_CFG_4 0xC550
+#define B_AX_HGQWND_P4_SH 24
+#define B_AX_HGQWND_P4_MSK 0xff
+#define B_AX_HGQWND_P3_SH 16
+#define B_AX_HGQWND_P3_MSK 0xff
+#define B_AX_HGQWND_P2_SH 8
+#define B_AX_HGQWND_P2_MSK 0xff
+#define B_AX_HGQWND_P1_SH 0
+#define B_AX_HGQWND_P1_MSK 0xff
+
+#define R_AX_EN_HGQ_NOLIMIT 0xC554
+#define B_AX_HIQ_NO_LMT_EN_P4 BIT(19)
+#define B_AX_HIQ_NO_LMT_EN_P3 BIT(18)
+#define B_AX_HIQ_NO_LMT_EN_P2 BIT(17)
+#define B_AX_HIQ_NO_LMT_EN_P1 BIT(16)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP15 BIT(15)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP14 BIT(14)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP13 BIT(13)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP12 BIT(12)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP11 BIT(11)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP10 BIT(10)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP9 BIT(9)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP8 BIT(8)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP7 BIT(7)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP6 BIT(6)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP5 BIT(5)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP4 BIT(4)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP3 BIT(3)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP2 BIT(2)
+#define B_AX_HIQ_NO_LMT_EN_P0_VAP1 BIT(1)
+#define B_AX_HIQ_NO_LMT_EN_P0_ROOT BIT(0)
+
+#define R_AX_C0_LPS_RX_PERIOD_CTRL 0xC558
+#define B_AX_C0_RXBCN_PERIOD_SH 16
+#define B_AX_C0_RXBCN_PERIOD_MSK 0xff
+#define B_AX_C0_CAT_PERIOD_SH 8
+#define B_AX_C0_CAT_PERIOD_MSK 0xff
+#define B_AX_C0_LPS_RX_CTRL_EN BIT(3)
+#define B_AX_C0_LPS_PORT_SEL_SH 0
+#define B_AX_C0_LPS_PORT_SEL_MSK 0x7
+
+#define R_AX_C0_LPS_BCN_CNT 0xC55C
+#define B_AX_C0_BCN_TO_CNT_ACC_SH 24
+#define B_AX_C0_BCN_TO_CNT_ACC_MSK 0xff
+#define B_AX_C0_BCN_OK_CNT_ACC_SH 16
+#define B_AX_C0_BCN_OK_CNT_ACC_MSK 0xff
+#define B_AX_C0_BCN_TO_CNT_THD_SH 8
+#define B_AX_C0_BCN_TO_CNT_THD_MSK 0xff
+#define B_AX_C0_BCN_TO_CNT_SH 4
+#define B_AX_C0_BCN_TO_CNT_MSK 0xf
+
+#define R_AX_P2P0_CTRL 0xC560
+#define B_AX_P2P0_PWR_RST1 BIT(31)
+#define B_AX_P2P0_PWR_RST0 BIT(30)
+#define B_AX_P2P0_TSFB32_RST_EN BIT(11)
+#define B_AX_P2P0_PORT_SEL_SH 8
+#define B_AX_P2P0_PORT_SEL_MSK 0x7
+#define B_AX_P2P0_ALLSLEEP_EN BIT(7)
+#define B_AX_P2P0_OFF_DISTX_EN BIT(6)
+#define B_AX_P2P0_CTWIN_EN BIT(5)
+#define B_AX_P2P0_BCNAREA_EN BIT(4)
+#define B_AX_P2P0_WITHBCNERY BIT(3)
+#define B_AX_P2P0_NOA1_EN BIT(2)
+#define B_AX_P2P0_NOA0_EN BIT(1)
+#define B_AX_P2P0_PWR_MGT_EN BIT(0)
+
+#define R_AX_P2P0_SPEC_STATE 0xC564
+#define B_AX_P2P0_SPEC_POW_STATE BIT(7)
+#define B_AX_P2P0_SPEC_CTWIN_ON BIT(6)
+#define B_AX_P2P0_SPEC_BCNAREA_ON BIT(5)
+#define B_AX_P2P0_SPEC_BCNERLY BIT(4)
+#define B_AX_P2P0_SPEC_NOA1_OFF_PERD BIT(3)
+#define B_AX_P2P0_SPEC_FORCE_DOZE1 BIT(2)
+#define B_AX_P2P0_SPEC_NOA0_OFF_PERD BIT(1)
+#define B_AX_P2P0_SPEC_FORCE_DOZE0 BIT(0)
+
+#define R_AX_P2P0_STATE 0xC565
+#define B_AX_P2P0_POW_STATE BIT(7)
+#define B_AX_P2P0_CTWIN_ON BIT(6)
+#define B_AX_P2P0_BCNAREA_ON BIT(5)
+#define B_AX_P2P0_BCNERLY BIT(4)
+#define B_AX_P2P0_NOA1_OFF_PERD BIT(3)
+#define B_AX_P2P0_FORCE_DOZE1 BIT(2)
+#define B_AX_P2P0_NOA0_OFF_PERD BIT(1)
+#define B_AX_P2P0_FORCE_DOZE0 BIT(0)
+
+#define R_AX_P2P0_PAUSE_CTRL0 0xC566
+#define B_AX_P2P0_NOA_STOP_TX_HANG BIT(15)
+#define B_AX_P2P0_NOA1_MGQ_PAUSE_EN BIT(14)
+#define B_AX_P2P0_NOA1_HIQ_PAUSE_EN BIT(13)
+#define B_AX_P2P0_NOA1_BCNQ_PAUSE_EN BIT(12)
+#define B_AX_P2P0_NOA0_MGQ_PAUSE_EN BIT(11)
+#define B_AX_P2P0_NOA0_HIQ_PAUSE_EN BIT(10)
+#define B_AX_P2P0_NOA0_BCNQ_PAUSE_EN BIT(9)
+#define B_AX_P2P0_MACID_PAUSE_EN BIT(8)
+#define B_AX_P2P0_PAUSE_MACID_SH 0
+#define B_AX_P2P0_PAUSE_MACID_MSK 0xff
+
+#define R_AX_P2P0_PAUSE_CTRL1 0xC568
+#define B_AX_P2P0_POWON_DISTX_SH 16
+#define B_AX_P2P0_POWON_DISTX_MSK 0xffff
+#define B_AX_P2P0_POWOFF_DISTX_SH 0
+#define B_AX_P2P0_POWOFF_DISTX_MSK 0xffff
+
+#define R_AX_P2P0_PAUSE_CTRL2 0xC56C
+#define B_AX__P2P0_POWON_ERLY_SH 16
+#define B_AX__P2P0_POWON_ERLY_MSK 0xffff
+#define B_AX__P2P0_POWOFF_ERLY_SH 0
+#define B_AX__P2P0_POWOFF_ERLY_MSK 0xffff
+
+#define R_AX_P2P0_NOA0_PARAM0 0xC570
+#define B_AX_P2P0_NOA0_DUR_SH 0
+#define B_AX_P2P0_NOA0_DUR_MSK 0xffffffffL
+
+#define R_AX_P2P0_NOA0_PARAM1 0xC574
+#define B_AX_P2P0_NOA0_ITVL_SH 0
+#define B_AX_P2P0_NOA0_ITVL_MSK 0xffffffffL
+
+#define R_AX_P2P0_NOA0_PARAM2 0xC578
+#define B_AX_P2P0_NOA0_START_SH 0
+#define B_AX_P2P0_NOA0_START_MSK 0xffffffffL
+
+#define R_AX_P2P0_NOA0_PARAM3 0xC57C
+#define B_AX_P2P0_NOA0_CUR_CNT_SH 8
+#define B_AX_P2P0_NOA0_CUR_CNT_MSK 0xff
+#define B_AX_P2P0_NOA0_CNT_SH 0
+#define B_AX_P2P0_NOA0_CNT_MSK 0xff
+
+#define R_AX_P2P0_NOA1_PARAM0 0xC580
+#define B_AX_P2P0_NOA1_DUR_SH 0
+#define B_AX_P2P0_NOA1_DUR_MSK 0xffffffffL
+
+#define R_AX_P2P0_NOA1_PARAM1 0xC584
+#define B_AX_P2P0_NOA1_ITVL_SH 0
+#define B_AX_P2P0_NOA1_ITVL_MSK 0xffffffffL
+
+#define R_AX_P2P0_NOA1_PARAM2 0xC588
+#define B_AX_P2P0_NOA1_START_SH 0
+#define B_AX_P2P0_NOA1_START_MSK 0xffffffffL
+
+#define R_AX_P2P0_NOA1_PARAM3 0xC58C
+#define B_AX_P2P0_NOA1_CUR_CNT_SH 8
+#define B_AX_P2P0_NOA1_CUR_CNT_MSK 0xff
+#define B_AX_P2P0_NOA1_CNT_SH 0
+#define B_AX_P2P0_NOA1_CNT_MSK 0xff
+
+#define R_AX_P2P1_CTRL 0xC590
+#define B_AX_P2P1_PWR_RST1 BIT(31)
+#define B_AX_P2P1_PWR_RST0 BIT(30)
+#define B_AX_P2P1_TSFB32_RST_EN BIT(11)
+#define B_AX_P2P1_PORT_SEL_SH 8
+#define B_AX_P2P1_PORT_SEL_MSK 0x7
+#define B_AX_P2P1_ALLSLEEP_EN BIT(7)
+#define B_AX_P2P1_OFF_DISTX_EN BIT(6)
+#define B_AX_P2P1_CTWIN_EN BIT(5)
+#define B_AX_P2P1_BCNAREA_EN BIT(4)
+#define B_AX_P2P1_WITHBCNERY BIT(3)
+#define B_AX_P2P1_NOA1_EN BIT(2)
+#define B_AX_P2P1_NOA0_EN BIT(1)
+#define B_AX_P2P1_PWR_MGT_EN BIT(0)
+
+#define R_AX_P2P1_SPEC_STATE 0xC594
+#define B_AX_P2P1_SPEC_POW_STATE BIT(7)
+#define B_AX_P2P1_SPEC_CTWIN_ON BIT(6)
+#define B_AX_P2P1_SPEC_BCNAREA_ON BIT(5)
+#define B_AX_P2P1_SPEC_BCNERLY BIT(4)
+#define B_AX_P2P1_SPEC_NOA1_OFF_PERD BIT(3)
+#define B_AX_P2P1_SPEC_FORCE_DOZE1 BIT(2)
+#define B_AX_P2P1_SPEC_NOA0_OFF_PERD BIT(1)
+#define B_AX_P2P1_SPEC_FORCE_DOZE0 BIT(0)
+
+#define R_AX_P2P1_STATE 0xC595
+#define B_AX_P2P1_POW_STATE BIT(7)
+#define B_AX_P2P1_CTWIN_ON BIT(6)
+#define B_AX_P2P1_BCNAREA_ON BIT(5)
+#define B_AX_P2P1_BCNERLY BIT(4)
+#define B_AX_P2P1_NOA1_OFF_PERD BIT(3)
+#define B_AX_P2P1_FORCE_DOZE1 BIT(2)
+#define B_AX_P2P1_NOA0_OFF_PERD BIT(1)
+#define B_AX_P2P1_FORCE_DOZE0 BIT(0)
+
+#define R_AX_P2P1_PAUSE_CTRL0 0xC596
+#define B_AX_P2P1_NOA_STOP_TX_HANG BIT(15)
+#define B_AX_P2P1_NOA1_MGQ_PAUSE_EN BIT(14)
+#define B_AX_P2P1_NOA1_HIQ_PAUSE_EN BIT(13)
+#define B_AX_P2P1_NOA1_BCNQ_PAUSE_EN BIT(12)
+#define B_AX_P2P1_NOA0_MGQ_PAUSE_EN BIT(11)
+#define B_AX_P2P1_NOA0_HIQ_PAUSE_EN BIT(10)
+#define B_AX_P2P1_NOA0_BCNQ_PAUSE_EN BIT(9)
+#define B_AX_P2P1_MACID_PAUSE_EN BIT(8)
+#define B_AX_P2P1_PAUSE_MACID_SH 0
+#define B_AX_P2P1_PAUSE_MACID_MSK 0xff
+
+#define R_AX_P2P1_PAUSE_CTRL1 0xC598
+#define B_AX_P2P1_POWON_DISTX_SH 16
+#define B_AX_P2P1_POWON_DISTX_MSK 0xffff
+#define B_AX_P2P1_POWOFF_DISTX_SH 0
+#define B_AX_P2P1_POWOFF_DISTX_MSK 0xffff
+
+#define R_AX_P2P1_PAUSE_CTRL2 0xC59C
+#define B_AX__P2P1_POWON_ERLY_SH 16
+#define B_AX__P2P1_POWON_ERLY_MSK 0xffff
+#define B_AX__P2P1_POWOFF_ERLY_SH 0
+#define B_AX__P2P1_POWOFF_ERLY_MSK 0xffff
+
+#define R_AX_P2P1_NOA0_PARAM0 0xC5A0
+#define B_AX_P2P1_NOA0_DUR_SH 0
+#define B_AX_P2P1_NOA0_DUR_MSK 0xffffffffL
+
+#define R_AX_P2P1_NOA0_PARAM1 0xC5A4
+#define B_AX_P2P1_NOA0_ITVL_SH 0
+#define B_AX_P2P1_NOA0_ITVL_MSK 0xffffffffL
+
+#define R_AX_P2P1_NOA0_PARAM2 0xC5A8
+#define B_AX_P2P1_NOA0_START_SH 0
+#define B_AX_P2P1_NOA0_START_MSK 0xffffffffL
+
+#define R_AX_P2P1_NOA0_PARAM3 0xC5AC
+#define B_AX_P2P1_NOA0_CUR_CNT_SH 8
+#define B_AX_P2P1_NOA0_CUR_CNT_MSK 0xff
+#define B_AX_P2P1_NOA0_CNT_SH 0
+#define B_AX_P2P1_NOA0_CNT_MSK 0xff
+
+#define R_AX_P2P1_NOA1_PARAM0 0xC5B0
+#define B_AX_P2P1_NOA1_DUR_SH 0
+#define B_AX_P2P1_NOA1_DUR_MSK 0xffffffffL
+
+#define R_AX_P2P1_NOA1_PARAM1 0xC5B4
+#define B_AX_P2P1_NOA1_ITVL_SH 0
+#define B_AX_P2P1_NOA1_ITVL_MSK 0xffffffffL
+
+#define R_AX_P2P1_NOA1_PARAM2 0xC5B8
+#define B_AX_P2P1_NOA1_START_SH 0
+#define B_AX_P2P1_NOA1_START_MSK 0xffffffffL
+
+#define R_AX_P2P1_NOA1_PARAM3 0xC5BC
+#define B_AX_P2P1_NOA1_CUR_CNT_SH 8
+#define B_AX_P2P1_NOA1_CUR_CNT_MSK 0xff
+#define B_AX_P2P1_NOA1_CNT_SH 0
+#define B_AX_P2P1_NOA1_CNT_MSK 0xffffffffL
+
+#define R_AX_BCN_CNT_DOWN_SHIFT_P4 0xC5C0
+#define B_AX_BCN_CNT_DOWN_SHIFT_P4_SH 0
+#define B_AX_BCN_CNT_DOWN_SHIFT_P4_MSK 0xfff
+
+#define R_AX_FREERUN_CNT_LOW 0xC5C4
+#define B_AX_FREERUN_CNT_LOW_SH 0
+#define B_AX_FREERUN_CNT_LOW_MSK 0xffffffffL
+
+#define R_AX_FREERUN_CNT_HIGH 0xC5C8
+#define B_AX_FREERUN_CNT_HIGH_SH 0
+#define B_AX_FREERUN_CNT_HIGH_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER0 0xC5CC
+#define B_AX_C0_PSTIMER0_VAL_SH 0
+#define B_AX_C0_PSTIMER0_VAL_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER1 0xC23D
+#define B_AX_C0_PSTIMER1_VAL_SH 0
+#define B_AX_C0_PSTIMER1_VAL_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER2 0xC5D4
+#define B_AX_C0_PSTIMER2_VAL_SH 0
+#define B_AX_C0_PSTIMER2_VAL_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER3 0xC5D8
+#define B_AX_C0_PSTIMER3_VAL_SH 0
+#define B_AX_C0_PSTIMER3_VAL_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER4 0xC5DC
+#define B_AX_C0_PSTIMER4_VAL_SH 0
+#define B_AX_C0_PSTIMER4_VAL_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER5 0xC5E0
+#define B_AX_C0_PSTIMER5_VAL_SH 0
+#define B_AX_C0_PSTIMER5_VAL_MSK 0xffffffffL
+
+#define R_AX_C0_PSTIMER_CTRL 0xC5E4
+#define B_AX_C0_PSTIMER5_EN BIT(23)
+#define B_AX_C0_PSTIMER5_SEL_SH 20
+#define B_AX_C0_PSTIMER5_SEL_MSK 0x7
+#define B_AX_C0_PSTIMER4_EN BIT(19)
+#define B_AX_C0_PSTIMER4_SEL_SH 16
+#define B_AX_C0_PSTIMER4_SEL_MSK 0x7
+#define B_AX_C0_PSTIMER3_EN BIT(15)
+#define B_AX_C0_PSTIMER3_SEL_SH 12
+#define B_AX_C0_PSTIMER3_SEL_MSK 0x7
+#define B_AX_C0_PSTIMER2_EN BIT(11)
+#define B_AX_C0_PSTIMER2_SEL_SH 8
+#define B_AX_C0_PSTIMER2_SEL_MSK 0x7
+#define B_AX_C0_PSTIMER1_EN BIT(7)
+#define B_AX_C0_PSTIMER1_SEL_SH 4
+#define B_AX_C0_PSTIMER1_SEL_MSK 0x7
+#define B_AX_C0_PSTIMER0_EN BIT(3)
+#define B_AX_C0_PSTIMER0_SEL_SH 0
+#define B_AX_C0_PSTIMER0_SEL_MSK 0x7
+
+#define R_AX_TIMER_COMPARE 0xC5E8
+#define B_AX_X_COMP_Y_TSFT_P BIT(7)
+#define B_AX_Y_COMP_SEL_SH 4
+#define B_AX_Y_COMP_SEL_MSK 0x7
+#define B_AX_X_COMP_Y_OVER BIT(3)
+#define B_AX_X_COMP_SEL_SH 0
+#define B_AX_X_COMP_SEL_MSK 0x7
+
+#define R_AX_TIMER_COMPARE_VALUE_LOW 0xC5EC
+#define B_AX_X_COMP_Y_VAL_LOW_SH 0
+#define B_AX_X_COMP_Y_VAL_LOW_MSK 0xffffffffL
+
+#define R_AX_TIMER_COMPARE_VALUE_HIGH 0xC5F0
+#define B_AX_X_COMP_Y_VAL_HIGH_SH 0
+#define B_AX_X_COMP_Y_VAL_HIGH_MSK 0xffffffffL
+
+//
+// PTCL
+//
+
+#define R_AX_PTCL_COMMON_SETTING_0 0xC600
+#define B_AX_CPUMGQ_LIFETIME_EN BIT(8)
+#define B_AX_MGQ_LIFETIME_EN BIT(7)
+#define B_AX_LIFETIME_EN BIT(6)
+#define B_AX_EN_SINGLE_AMPDU BIT(5)
+#define B_AX_PTCL_TRIGGER_SS_EN_UL BIT(4)
+#define B_AX_PTCL_TRIGGER_SS_EN_1 BIT(3)
+#define B_AX_PTCL_TRIGGER_SS_EN_0 BIT(2)
+#define B_AX_CMAC_TX_MODE_1 BIT(1)
+#define B_AX_CMAC_TX_MODE_0 BIT(0)
+
+#define R_AX_AGG_BK_0 0xC604
+#define B_AX_DIS_SSN_CHK BIT(3)
+#define B_AX_WDBK_CFG BIT(2)
+#define B_AX_EN_RTY_BK BIT(1)
+#define B_AX_EN_RTY_BK_COD BIT(0)
+
+#define R_AX_TX_CTRL 0xC608
+#define B_AX_DROP_CHK_MAX_NUM_SH 24
+#define B_AX_DROP_CHK_MAX_NUM_MSK 0xff
+#define B_AX_DROP_CHK_TIMEOUT_SH 20
+#define B_AX_DROP_CHK_TIMEOUT_MSK 0xf
+#define B_AX_FWD_SRCH_TIMEOUT_SH 16
+#define B_AX_FWD_SRCH_TIMEOUT_MSK 0xf
+#define B_AX_PTCL_STOP_WMM BIT(7)
+#define B_AX_TXOP_DELAY_TX_SH 0
+#define B_AX_TXOP_DELAY_TX_MSK 0x1f
+
+#define R_AX_TB_PPDU_CTRL 0xC60C
+#define B_AX_TB_PPDU_BK_DIS BIT(15)
+#define B_AX_TB_PPDU_BE_DIS BIT(14)
+#define B_AX_TB_PPDU_VI_DIS BIT(13)
+#define B_AX_TB_PPDU_VO_DIS BIT(12)
+#define B_AX_SW_PREFER_AC_SH 0
+#define B_AX_SW_PREFER_AC_MSK 0x3
+
+#define R_AX_AMPDU_AGG_LIMIT 0xC610
+#define B_AX_AMPDU_MAX_TIME_SH 24
+#define B_AX_AMPDU_MAX_TIME_MSK 0xff
+#define B_AX_RA_TRY_RATE_AGG_LMT_SH 16
+#define B_AX_RA_TRY_RATE_AGG_LMT_MSK 0xff
+#define B_AX_RTS_MAX_AGG_NUM_SH 8
+#define B_AX_RTS_MAX_AGG_NUM_MSK 0xff
+#define B_AX_MAX_AGG_NUM_SH 5
+#define B_AX_MAX_AGG_NUM_MSK 0x7
+
+#define R_AX_AGG_LEN_HT_0 0xC614
+#define B_AX_AMPDU_MAX_LENGTH_HT_SH 16
+#define B_AX_AMPDU_MAX_LENGTH_HT_MSK 0xffff
+#define B_AX_RTS_TXTIME_TH_SH 8
+#define B_AX_RTS_TXTIME_TH_MSK 0xff
+#define B_AX_RTS_LEN_TH_SH 0
+#define B_AX_RTS_LEN_TH_MSK 0xff
+
+#define R_AX_AGG_LEN_VHT_0 0xC618
+#define B_AX_AMPDU_MAX_LENGTH_VHT_SH 0
+#define B_AX_AMPDU_MAX_LENGTH_VHT_MSK 0xfffff
+
+#define R_AX_AGG_LEN_HE_0 0xC61C
+#define B_AX_AMPDU_MAX_LENGTH_HE_SH 0
+#define B_AX_AMPDU_MAX_LENGTH_HE_MSK 0x7fffff
+
+#define R_AX_SPECIAL_TX_SETTING 0xC620
+#define B_AX_USE_DATA_BW BIT(29)
+#define B_AX_BW_SIGTA_SH 27
+#define B_AX_BW_SIGTA_MSK 0x3
+#define B_AX_BMC_NAV_PROTECT BIT(26)
+#define B_AX_STBC_CFEND_SH 18
+#define B_AX_STBC_CFEND_MSK 0x3
+#define B_AX_STBC_CFEND_RATE_SH 9
+#define B_AX_STBC_CFEND_RATE_MSK 0x1ff
+#define B_AX_BASIC_CFEND_RATE_SH 0
+#define B_AX_BASIC_CFEND_RATE_MSK 0x1ff
+
+#define R_AX_SIFS_SETTING 0xC624
+#define B_AX_SPEC_SIFS_OFDM_PTCL_SH 8
+#define B_AX_SPEC_SIFS_OFDM_PTCL_MSK 0xff
+#define B_AX_SPEC_SIFS_CCK_PTCL_SH 0
+#define B_AX_SPEC_SIFS_CCK_PTCL_MSK 0xff
+
+#define R_AX_TXRATE_CHK 0xC628
+#define B_AX_DEFT_RATE_SH 7
+#define B_AX_DEFT_RATE_MSK 0x1ff
+#define B_AX_BAND_MODE BIT(4)
+#define B_AX_MAX_TXNSS_SH 2
+#define B_AX_MAX_TXNSS_MSK 0x3
+#define B_AX_RTS_LIMIT_IN_OFDM6 BIT(1)
+#define B_AX_CHECK_CCK_EN BIT(0)
+
+#define R_AX_DATA_SC 0xC62C
+#define B_AX_S_TXCNT_LMT_SH 24
+#define B_AX_S_TXCNT_LMT_MSK 0x3f
+#define B_AX_L_TXCNT_LMT_SH 16
+#define B_AX_L_TXCNT_LMT_MSK 0x3f
+#define B_AX_TXSC_80M_SH 8
+#define B_AX_TXSC_80M_MSK 0xf
+#define B_AX_TXSC_40M_SH 4
+#define B_AX_TXSC_40M_MSK 0xf
+#define B_AX_TXSC_20M_SH 0
+#define B_AX_TXSC_20M_MSK 0xf
+
+#define R_AX_LIFETIME_0 0xC630
+#define B_AX_PKT_LIFETIME_2_SH 16
+#define B_AX_PKT_LIFETIME_2_MSK 0xffff
+#define B_AX_PKT_LIFETIME_1_SH 0
+#define B_AX_PKT_LIFETIME_1_MSK 0xffff
+
+#define R_AX_LIFETIME_1 0xC634
+#define B_AX_PKT_LIFETIME_4_SH 16
+#define B_AX_PKT_LIFETIME_4_MSK 0xffff
+#define B_AX_PKT_LIFETIME_3_SH 0
+#define B_AX_PKT_LIFETIME_3_MSK 0xffff
+
+#define R_AX_LIFETIME_2 0xC638
+#define B_AX_CPUMGQ_LIFETIME_SH 16
+#define B_AX_CPUMGQ_LIFETIME_MSK 0xffff
+#define B_AX_MGQ_LIFETIME_SH 0
+#define B_AX_MGQ_LIFETIME_MSK 0xffff
+
+#define R_AX_MBSSID_DROP_0 0xC63C
+#define B_AX_COMPL_VAL BIT(30)
+#define B_AX_GI_LTF_FB_SEL BIT(29)
+#define B_AX_RATE_SEL_SH 24
+#define B_AX_RATE_SEL_MSK 0x1f
+#define B_AX_PORT_DROP_4_0_SH 16
+#define B_AX_PORT_DROP_4_0_MSK 0x1f
+#define B_AX_MBSSID_DROP_15_0_SH 0
+#define B_AX_MBSSID_DROP_15_0_MSK 0xffff
+
+#define R_AX_ARFR_WT_0 0xC640
+#define B_AX_RATE7_WEIGHTING_SH 28
+#define B_AX_RATE7_WEIGHTING_MSK 0xf
+#define B_AX_RATE6_WEIGHTING_SH 24
+#define B_AX_RATE6_WEIGHTING_MSK 0xf
+#define B_AX_RATE5_WEIGHTING_SH 20
+#define B_AX_RATE5_WEIGHTING_MSK 0xf
+#define B_AX_RATE4_WEIGHTING_SH 16
+#define B_AX_RATE4_WEIGHTING_MSK 0xf
+#define B_AX_RATE3_WEIGHTING_SH 12
+#define B_AX_RATE3_WEIGHTING_MSK 0xf
+#define B_AX_RATE2_WEIGHTING_SH 8
+#define B_AX_RATE2_WEIGHTING_MSK 0xf
+#define B_AX_RATE1_WEIGHTING_SH 4
+#define B_AX_RATE1_WEIGHTING_MSK 0xf
+#define B_AX_RATE0_WEIGHTING_SH 0
+#define B_AX_RATE0_WEIGHTING_MSK 0xf
+
+#define R_AX_ARFR_WT_1 0xC644
+#define B_AX_RATE15_WEIGHTING_SH 28
+#define B_AX_RATE15_WEIGHTING_MSK 0xf
+#define B_AX_RATE14_WEIGHTING_SH 24
+#define B_AX_RATE14_WEIGHTING_MSK 0xf
+#define B_AX_RATE13_WEIGHTING_SH 20
+#define B_AX_RATE13_WEIGHTING_MSK 0xf
+#define B_AX_RATE12_WEIGHTING_SH 16
+#define B_AX_RATE12_WEIGHTING_MSK 0xf
+#define B_AX_RATE11_WEIGHTING_SH 12
+#define B_AX_RATE11_WEIGHTING_MSK 0xf
+#define B_AX_RATE10_WEIGHTING_SH 8
+#define B_AX_RATE10_WEIGHTING_MSK 0xf
+#define B_AX_RATE9_WEIGHTING_SH 4
+#define B_AX_RATE9_WEIGHTING_MSK 0xf
+#define B_AX_RATE8_WEIGHTING_SH 0
+#define B_AX_RATE8_WEIGHTING_MSK 0xf
+
+#define R_AX_DARF_TC 0xC648
+#define B_AX_DARF_TC9_SH 28
+#define B_AX_DARF_TC9_MSK 0xf
+#define B_AX_DARF_TC8_SH 24
+#define B_AX_DARF_TC8_MSK 0xf
+#define B_AX_DARF_TC7_SH 20
+#define B_AX_DARF_TC7_MSK 0xf
+#define B_AX_DARF_TC6_SH 16
+#define B_AX_DARF_TC6_MSK 0xf
+#define B_AX_DARF_TC5_SH 12
+#define B_AX_DARF_TC5_MSK 0xf
+#define B_AX_DARF_TC4_SH 8
+#define B_AX_DARF_TC4_MSK 0xf
+#define B_AX_DARF_TC3_SH 4
+#define B_AX_DARF_TC3_MSK 0xf
+#define B_AX_DARF_TC2_SH 0
+#define B_AX_DARF_TC2_MSK 0xf
+
+#define R_AX_DARF1_TC 0xC64C
+#define B_AX_DARF1_TC9_SH 28
+#define B_AX_DARF1_TC9_MSK 0xf
+#define B_AX_DARF1_TC8_SH 24
+#define B_AX_DARF1_TC8_MSK 0xf
+#define B_AX_DARF1_TC7_SH 20
+#define B_AX_DARF1_TC7_MSK 0xf
+#define B_AX_DARF1_TC6_SH 16
+#define B_AX_DARF1_TC6_MSK 0xf
+#define B_AX_DARF1_TC5_SH 12
+#define B_AX_DARF1_TC5_MSK 0xf
+#define B_AX_DARF1_TC4_SH 8
+#define B_AX_DARF1_TC4_MSK 0xf
+#define B_AX_DARF1_TC3_SH 4
+#define B_AX_DARF1_TC3_MSK 0xf
+#define B_AX_DARF1_TC2_SH 0
+#define B_AX_DARF1_TC2_MSK 0xf
+
+#define R_AX_RARF_TC 0xC650
+#define B_AX_RARF_TC9_SH 28
+#define B_AX_RARF_TC9_MSK 0xf
+#define B_AX_RARF_TC8_SH 24
+#define B_AX_RARF_TC8_MSK 0xf
+#define B_AX_RARF_TC7_SH 20
+#define B_AX_RARF_TC7_MSK 0xf
+#define B_AX_RARF_TC6_SH 16
+#define B_AX_RARF_TC6_MSK 0xf
+#define B_AX_RARF_TC5_SH 12
+#define B_AX_RARF_TC5_MSK 0xf
+#define B_AX_RARF_TC4_SH 8
+#define B_AX_RARF_TC4_MSK 0xf
+#define B_AX_RARF_TC3_SH 4
+#define B_AX_RARF_TC3_MSK 0xf
+#define B_AX_RARF_TC2_SH 0
+#define B_AX_RARF_TC2_MSK 0xf
+
+#define R_AX_PTCL_ATM 0xC654
+#define B_AX_CHNL_REF_RX_BASIC_NAV BIT(31)
+#define B_AX_CHNL_REF_RX_INTRA_NAV BIT(30)
+#define B_AX_CHNL_REF_DATA_ON BIT(29)
+#define B_AX_CHNL_REF_EDCCA_P20 BIT(28)
+#define B_AX_CHNL_REF_CCA_P20 BIT(27)
+#define B_AX_CHNL_REF_CCA_S20 BIT(26)
+#define B_AX_CHNL_REF_CCA_S40 BIT(25)
+#define B_AX_CHNL_REF_CCA_S80 BIT(24)
+#define B_AX_RST_CHNL_BUSY BIT(19)
+#define B_AX_RST_CHNL_IDLE BIT(18)
+#define B_AX_CHNL_INFO_EN BIT(17)
+#define B_AX_ATM_AIRTIME_EN BIT(16)
+#define B_AX_ATM_TF_UD BIT(12)
+#define B_AX_ATM_SR_UD_1_SH 10
+#define B_AX_ATM_SR_UD_1_MSK 0x3
+#define B_AX_ATM_SR_UD_0_SH 8
+#define B_AX_ATM_SR_UD_0_MSK 0x3
+#define B_AX_ATM_TB_UD_1_SH 6
+#define B_AX_ATM_TB_UD_1_MSK 0x3
+#define B_AX_ATM_TB_UD_0_SH 4
+#define B_AX_ATM_TB_UD_0_MSK 0x3
+#define B_AX_ATM_TX_UD_1_SH 2
+#define B_AX_ATM_TX_UD_1_MSK 0x3
+#define B_AX_ATM_TX_UD_0_SH 0
+#define B_AX_ATM_TX_UD_0_MSK 0x3
+
+#define R_AX_CHNL_IDLE_TIME_0 0xC658
+#define B_AX_CHNL_IDLE_TIME_SH 0
+#define B_AX_CHNL_IDLE_TIME_MSK 0xffffffffL
+
+#define R_AX_CHNL_BUSY_TIME_0 0xC65C
+#define B_AX_CHNL_BUSY_TIME_SH 0
+#define B_AX_CHNL_BUSY_TIME_MSK 0xffffffffL
+
+#define R_AX_PTCLRPT_FULL_HDL 0xC660
+#define B_AX_PTCL_RPT_EN BIT(31)
+#define B_AX_F2PCMDRPT_FULL_DROP BIT(1)
+#define B_AX_NON_F2PCMDRPT_FULL_DROP BIT(0)
+
+#define R_AX_CMAC_MACID_DROP_0 0xC6A0
+#define B_AX_CMAC_MACID31_0_DROP_SH 0
+#define B_AX_CMAC_MACID31_0_DROP_MSK 0xffffffffL
+
+#define R_AX_CMAC_MACID_DROP_1 0xC6A4
+#define B_AX_CMAC_MACID63_32_DROP_SH 0
+#define B_AX_CMAC_MACID63_32_DROP_MSK 0xffffffffL
+
+#define R_AX_CMAC_MACID_DROP_2 0xC6A8
+#define B_AX_CMAC_MACID95_64_DROP_SH 0
+#define B_AX_CMAC_MACID95_64_DROP_MSK 0xffffffffL
+
+#define R_AX_CMAC_MACID_DROP_3 0xC6AC
+#define B_AX_CMAC_MACID127_96_DROP_SH 0
+#define B_AX_CMAC_MACID127_96_DROP_MSK 0xffffffffL
+
+#define R_AX_MACID_SLEEP_0 0xC6B0
+#define B_AX_MACID31_0_SLEEP_SH 0
+#define B_AX_MACID31_0_SLEEP_MSK 0xffffffffL
+
+#define R_AX_MACID_SLEEP_1 0xC6B4
+#define B_AX_MACID63_32_SLEEP_SH 0
+#define B_AX_MACID63_32_SLEEP_MSK 0xffffffffL
+
+#define R_AX_MACID_SLEEP_2 0xC6B8
+#define B_AX_MACID95_64_SLEEP_SH 0
+#define B_AX_MACID95_64_SLEEP_MSK 0xffffffffL
+
+#define R_AX_MACID_SLEEP_3 0xC6BC
+#define B_AX_MACID127_96_SLEEP_SH 0
+#define B_AX_MACID127_96_SLEEP_MSK 0xffffffffL
+
+#define R_AX_PTCL_DBG_INFO 0xC6F0
+#define B_AX_PTCL_DBG_INFO_SH 0
+#define B_AX_PTCL_DBG_INFO_MSK 0xffffffffL
+
+#define R_AX_C0_NULL_PKT_STATUS 0xC6F4
+#define B_AX_C0P4_NULL_1_STATUS BIT(25)
+#define B_AX_C0P4_NULL_0_STATUS BIT(24)
+#define B_AX_C0P3_NULL_1_STATUS BIT(23)
+#define B_AX_C0P3_NULL_0_STATUS BIT(22)
+#define B_AX_C0P2_NULL_1_STATUS BIT(21)
+#define B_AX_C0P2_NULL_0_STATUS BIT(20)
+#define B_AX_C0P1_NULL_1_STATUS BIT(19)
+#define B_AX_C0P1_NULL_0_STATUS BIT(18)
+#define B_AX_C0P0_NULL_1_STATUS BIT(17)
+#define B_AX_C0P0_NULL_0_STATUS BIT(16)
+#define B_AX_PTCL_DBG_EN BIT(8)
+#define B_AX_PTCL_DBG_SEL_SH 0
+#define B_AX_PTCL_DBG_SEL_MSK 0xff
+
+#define R_AX_PTCL_IDLE_CHK_0 0xC6F8
+#define B_AX_PTCL_TX_QUEUE_SH 4
+#define B_AX_PTCL_TX_QUEUE_MSK 0xf
+#define B_AX_PTCL_IDLE_CHK BIT(0)
+
+#define R_AX_PTCL_TX_MACID_0 0xC6FC
+#define B_AX_TX_MACID_3_SH 24
+#define B_AX_TX_MACID_3_MSK 0xff
+#define B_AX_TX_MACID_2_SH 16
+#define B_AX_TX_MACID_2_MSK 0xff
+#define B_AX_TX_MACID_1_SH 8
+#define B_AX_TX_MACID_1_MSK 0xff
+#define B_AX_TX_MACID_0_SH 0
+#define B_AX_TX_MACID_0_MSK 0xff
+
+//
+// CMAC_DMA
+//
+
+//
+// TMAC
+//
+
+#define R_AX_C0_PWRBIT_SETTING 0xCA0C
+#define B_AX_C0P4_PWRMGT_CTRL_EN BIT(19)
+#define B_AX_C0P4_PWRMGT_DATA_EN BIT(18)
+#define B_AX_C0P4_PWRMGT_ACT_EN BIT(17)
+#define B_AX_C0P4_PWR_ST BIT(16)
+#define B_AX_C0P3_PWRMGT_CTRL_EN BIT(15)
+#define B_AX_C0P3_PWRMGT_DATA_EN BIT(14)
+#define B_AX_C0P3_PWRMGT_ACT_EN BIT(13)
+#define B_AX_C0P3_PWR_ST BIT(12)
+#define B_AX_C0P2_PWRMGT_CTRL_EN BIT(11)
+#define B_AX_C0P2_PWRMGT_DATA_EN BIT(10)
+#define B_AX_C0P2_PWRMGT_ACT_EN BIT(9)
+#define B_AX_C0P2_PWR_ST BIT(8)
+#define B_AX_C0P1_PWRMGT_CTRL_EN BIT(7)
+#define B_AX_C0P1_PWRMGT_DATA_EN BIT(6)
+#define B_AX_C0P1_PWRMGT_ACT_EN BIT(5)
+#define B_AX_C0P1_PWR_ST BIT(4)
+#define B_AX_C0P0_PWRMGT_CTRL_EN BIT(3)
+#define B_AX_C0P0_PWRMGT_DATA_EN BIT(2)
+#define B_AX_C0P0_PWRMGT_ACT_EN BIT(1)
+#define B_AX_C0P0_PWR_ST BIT(0)
+
+#define R_AX_MAC_LOOPBACK 0xCC20
+#define B_AX_MAC_LOOPBACK_EN BIT(0)
+
+//
+// TRXPTCL
+//
+
+//
+// RMAC
+//
+
+#define R_AX_RCR 0xCE00
+#define B_AX_BB_SEL BIT(8)
+#define B_AX_DRV_INFO_SIZE_SH 5
+#define B_AX_DRV_INFO_SIZE_MSK 0x7
+#define B_AX_CH_EN_SH 1
+#define B_AX_CH_EN_MSK 0xf
+#define B_AX_RCR_DIS_GCLK BIT(0)
+
+#define R_AX_PLCP_HDR_FLTR 0xCE04
+#define B_AX_RXPS_TYPE_EN_SH 5
+#define B_AX_RXPS_TYPE_EN_MSK 0x7ff
+#define B_AX_HE_SIGB_CRC_CHK BIT(4)
+#define B_AX_VHT_MU_SIGB_CRC_CHK BIT(3)
+#define B_AX_VHT_SU_SIGB_CRC_CHK BIT(2)
+#define B_AX__SIGA_CRC_CHK BIT(1)
+#define B_AX__CCK_CRC_CHK BIT(0)
+
+#define R_AX_RXGCK_CTRL 0xCE06
+#define B_AX_RXGCK_ENTRY_DELAY_SH 4
+#define B_AX_RXGCK_ENTRY_DELAY_MSK 0x7
+#define B_AX_RXGCK_GCK_CYCLE_SH 2
+#define B_AX_RXGCK_GCK_CYCLE_MSK 0x3
+#define B_AX_RXGCK_CCA_EN BIT(1)
+#define B_AX_DISGCLK BIT(0)
+
+#define R_AX_RXPSF_CTRL 0xCE08
+#define B_AX_RXPSF_PKTLENTHR_SH 16
+#define B_AX_RXPSF_PKTLENTHR_MSK 0x7
+#define B_AX_RXPSF_ERRTHR_SH 12
+#define B_AX_RXPSF_ERRTHR_MSK 0x7
+#define B_AX_INVALID_WIDTH_SH 8
+#define B_AX_INVALID_WIDTH_MSK 0x3
+#define B_AX_RXPSF_PLCP_CHKEN BIT(4)
+#define B_AX_RXPSF_BSS_CHKEN BIT(3)
+#define B_AX_RXPSF_MHCHKEN BIT(2)
+#define B_AX_RXPSF_CONT_ERRCHKEN BIT(1)
+
+#define R_AX_RXPSF_TYPE 0xCE0C
+#define B_AX_RXPSF_MGT15_PRSV BIT(31)
+#define B_AX_RXPSF_MGT14_PRSV BIT(30)
+#define B_AX_RXPSF_MGT13_PRSV BIT(29)
+#define B_AX_RXPSF_MGT12_PRSV BIT(28)
+#define B_AX_RXPSF_MGT11_PRSV BIT(27)
+#define B_AX_RXPSF_MGT10_PRSV BIT(26)
+#define B_AX_RXPSF_MGT9_PRSV BIT(25)
+#define B_AX_RXPSF_MGT8_PRSV BIT(24)
+#define B_AX_RXPSF_MGT7_PRSV BIT(23)
+#define B_AX_RXPSF_MGT6_PRSV BIT(22)
+#define B_AX_RXPSF_MGT5_PRSV BIT(21)
+#define B_AX_RXPSF_MGT4_PRSV BIT(20)
+#define B_AX_RXPSF_MGT3_PRSV BIT(19)
+#define B_AX_RXPSF_MGT2_PRSV BIT(18)
+#define B_AX_RXPSF_MGT1_PRSV BIT(17)
+#define B_AX_RXPSF_MGT0_PRSV BIT(16)
+#define B_AX_RXPSF_DATA15_PRSV BIT(15)
+#define B_AX_RXPSF_DATA14_PRSV BIT(14)
+#define B_AX_RXPSF_DATA13_PRSV BIT(13)
+#define B_AX_RXPSF_DATA12_PRSV BIT(12)
+#define B_AX_RXPSF_DATA11_PRSV BIT(11)
+#define B_AX_RXPSF_DATA10_PRSV BIT(10)
+#define B_AX_RXPSF_DATA9_PRSV BIT(9)
+#define B_AX_RXPSF_DATA8_PRSV BIT(8)
+#define B_AX_RXPSF_DATA7_PRSV BIT(7)
+#define B_AX_RXPSF_DATA6_PRSV BIT(6)
+#define B_AX_RXPSF_DATA5_PRSV BIT(5)
+#define B_AX_RXPSF_DATA4_PRSV BIT(4)
+#define B_AX_RXPSF_DATA3_PRSV BIT(3)
+#define B_AX_RXPSF_DATA2_PRSV BIT(2)
+#define B_AX_RXPSF_DATA1_PRSV BIT(1)
+#define B_AX_RXPSF_DATA0_PRSV BIT(0)
+
+#define R_AX_RXPSF_CTRLTYPE 0xCE10
+#define B_AX_RXPSF_CTRL_PRSV BIT(0)
+
+#define R_AX_RXPSF_RATE 0xCE12
+#define B_AX_RXPSF_HETB_PRSV BIT(8)
+#define B_AX_RXPSF_HEMU_PRSV BIT(7)
+#define B_AX_RXPSF_HEERSU_PRSV BIT(6)
+#define B_AX_RXPSF_HESU_PRSV BIT(5)
+#define B_AX_RXPSF_VHTMU_PRSV BIT(4)
+#define B_AX_RXPSF_VHTSU_PRSV BIT(3)
+#define B_AX_RXPSF_HT_PRSV BIT(2)
+#define B_AX_RXPSF_OFDM_PRSV BIT(1)
+#define B_AX_RXPSF_CCK_PRSV BIT(0)
+
+#define R_AX_RXAI_CTRL 0xCE14
+#define B_AX_RXAI_INFO_RST BIT(7)
+#define B_AX_RXAI_PRTCT_REL BIT(6)
+#define B_AX_RXAI_PRTCT_VIO BIT(5)
+#define B_AX_RXAI_PRTCT_SEL BIT(1)
+#define B_AX_RXAI_PRTCT_EN BIT(0)
+
+#define R_AX_RX_FIFO_CTRL 0xCE18
+#define B_AX_RXD_FIFO_FULL_TH_SH 0
+#define B_AX_RXD_FIFO_FULL_TH_MSK 0xff
+
+#define R_AX_RX_FLTR_OPT 0xCE1C
+#define B_AX_RX_MPDU_MAX_LEN_SH 16
+#define B_AX_RX_MPDU_MAX_LEN_MSK 0x3f
+#define B_AX_A_CRC32_ERR BIT(11)
+#define B_AX_A_PWR_MGNT BIT(10)
+#define B_AX_A_BCN_CHK_RULE_SH 8
+#define B_AX_A_BCN_CHK_RULE_MSK 0x3
+#define B_AX_A_BCN_CHK_EN BIT(7)
+#define B_AX_A_MC_LIST_CAM_MATCH BIT(6)
+#define B_AX_A_BC_CAM_MATCH BIT(5)
+#define B_AX_A_UC_CAM_MATCH BIT(4)
+#define B_AX_A_MC BIT(3)
+#define B_AX_A_BC BIT(2)
+#define B_AX_A_A1_MATCH BIT(1)
+#define B_AX_SNIFFER_MODE BIT(0)
+
+#define R_AX_CTRL_FLTR 0xCE20
+#define B_AX_A_CTRL15_SH 30
+#define B_AX_A_CTRL15_MSK 0x3
+#define B_AX_A_CTRL14_SH 28
+#define B_AX_A_CTRL14_MSK 0x3
+#define B_AX_A_CTRL13_SH 26
+#define B_AX_A_CTRL13_MSK 0x3
+#define B_AX_A_CTRL12_SH 24
+#define B_AX_A_CTRL12_MSK 0x3
+#define B_AX_A_CTRL11_SH 22
+#define B_AX_A_CTRL11_MSK 0x3
+#define B_AX_A_CTRL10_SH 20
+#define B_AX_A_CTRL10_MSK 0x3
+#define B_AX_A_CTRL9_SH 18
+#define B_AX_A_CTRL9_MSK 0x3
+#define B_AX_A_CTRL8_SH 16
+#define B_AX_A_CTRL8_MSK 0x3
+#define B_AX_A_CTRL7_SH 14
+#define B_AX_A_CTRL7_MSK 0x3
+#define B_AX_A_CTRL6_SH 12
+#define B_AX_A_CTRL6_MSK 0x3
+#define B_AX_A_CTRL5_SH 10
+#define B_AX_A_CTRL5_MSK 0x3
+#define B_AX_A_CTRL4_SH 8
+#define B_AX_A_CTRL4_MSK 0x3
+#define B_AX_A_CTRL3_SH 6
+#define B_AX_A_CTRL3_MSK 0x3
+#define B_AX_A_CTRL2_SH 4
+#define B_AX_A_CTRL2_MSK 0x3
+#define B_AX_A_CTRL1_SH 2
+#define B_AX_A_CTRL1_MSK 0x3
+#define B_AX_A_CTRL0_SH 0
+#define B_AX_A_CTRL0_MSK 0x3
+
+#define R_AX_MGNT_FLTR 0xCE24
+#define B_AX_A_MGNT15_SH 30
+#define B_AX_A_MGNT15_MSK 0x3
+#define B_AX_A_MGNT14_SH 28
+#define B_AX_A_MGNT14_MSK 0x3
+#define B_AX_A_MGNT13_SH 26
+#define B_AX_A_MGNT13_MSK 0x3
+#define B_AX_A_MGNT12_SH 24
+#define B_AX_A_MGNT12_MSK 0x3
+#define B_AX_A_MGNT11_SH 22
+#define B_AX_A_MGNT11_MSK 0x3
+#define B_AX_A_MGNT10_SH 20
+#define B_AX_A_MGNT10_MSK 0x3
+#define B_AX_A_MGNT9_SH 18
+#define B_AX_A_MGNT9_MSK 0x3
+#define B_AX_A_MGNT8_SH 16
+#define B_AX_A_MGNT8_MSK 0x3
+#define B_AX_A_MGNT7_SH 14
+#define B_AX_A_MGNT7_MSK 0x3
+#define B_AX_A_MGNT6_SH 12
+#define B_AX_A_MGNT6_MSK 0x3
+#define B_AX_A_MGNT5_SH 10
+#define B_AX_A_MGNT5_MSK 0x3
+#define B_AX_A_MGNT4_SH 8
+#define B_AX_A_MGNT4_MSK 0x3
+#define B_AX_A_MGNT3_SH 6
+#define B_AX_A_MGNT3_MSK 0x3
+#define B_AX_A_MGNT2_SH 4
+#define B_AX_A_MGNT2_MSK 0x3
+#define B_AX_A_MGNT1_SH 2
+#define B_AX_A_MGNT1_MSK 0x3
+#define B_AX_A_MGNT0_SH 0
+#define B_AX_A_MGNT0_MSK 0x3
+
+#define R_AX_DATA_FLTR 0xCE28
+#define B_AX_A_DATA15_SH 30
+#define B_AX_A_DATA15_MSK 0x3
+#define B_AX_A_DATA14_SH 28
+#define B_AX_A_DATA14_MSK 0x3
+#define B_AX_A_DATA13_SH 26
+#define B_AX_A_DATA13_MSK 0x3
+#define B_AX_A_DATA12_SH 24
+#define B_AX_A_DATA12_MSK 0x3
+#define B_AX_A_DATA11_SH 22
+#define B_AX_A_DATA11_MSK 0x3
+#define B_AX_A_DATA10_SH 20
+#define B_AX_A_DATA10_MSK 0x3
+#define B_AX_A_DATA9_SH 18
+#define B_AX_A_DATA9_MSK 0x3
+#define B_AX_A_DATA8_SH 16
+#define B_AX_A_DATA8_MSK 0x3
+#define B_AX_A_DATA7_SH 14
+#define B_AX_A_DATA7_MSK 0x3
+#define B_AX_A_DATA6_SH 12
+#define B_AX_A_DATA6_MSK 0x3
+#define B_AX_A_DATA5_SH 10
+#define B_AX_A_DATA5_MSK 0x3
+#define B_AX_A_DATA4_SH 8
+#define B_AX_A_DATA4_MSK 0x3
+#define B_AX_A_DATA3_SH 6
+#define B_AX_A_DATA3_MSK 0x3
+#define B_AX_A_DATA2_SH 4
+#define B_AX_A_DATA2_MSK 0x3
+#define B_AX_A_DATA1_SH 2
+#define B_AX_A_DATA1_MSK 0x3
+#define B_AX_A_DATA0_SH 0
+#define B_AX_A_DATA0_MSK 0x3
+
+#define R_AX_ADDR_CAM_CTRL 0xCE34
+#define B_AX_ADDR_CAM_EN BIT(15)
+#define B_AX_ADDR_CAM_CLR BIT(14)
+#define B_AX_ADDR_CAM_SRCH_TO_SH 8
+#define B_AX_ADDR_CAM_SRCH_TO_MSK 0xf
+#define B_AX_ADDR_CAM_RANGE_SH 0
+#define B_AX_ADDR_CAM_RANGE_MSK 0xff
+
+#define R_AX_PHY_STAT 0xCE40
+#define B_AX_PHY_STAT_ERR_3_CLR BIT(22)
+#define B_AX_PHY_STAT_ERR_2_CLR BIT(21)
+#define B_AX_PHY_STAT_ERR_1_CLR BIT(20)
+#define B_AX_PHY_STAT_ERR_3 BIT(18)
+#define B_AX_PHY_STAT_ERR_2 BIT(17)
+#define B_AX_PHY_STAT_ERR_1 BIT(16)
+#define B_AX_PHY_STAT_RPT_CRC32 BIT(5)
+#define B_AX_PHY_STAT_RPT_A1M BIT(4)
+#define B_AX_APP_PLCP_HDR_RPT BIT(3)
+#define B_AX_APP_RX_CNT_RPT BIT(2)
+#define B_AX_APP_MAC_INFO_RPT BIT(1)
+#define B_AX_PHY_STAT_RPT_EN BIT(0)
+
+#define R_AX_CH_INFO_QRY 0xCE44
+#define B_AX_CH_INFO_TIME_SH 24
+#define B_AX_CH_INFO_TIME_MSK 0xff
+#define B_AX_CH_INFO_CNT_SH 21
+#define B_AX_CH_INFO_CNT_MSK 0x7
+#define B_AX_CH_INFO_REQUSTING BIT(20)
+#define B_AX_CH_INFO_MGNT_FRM BIT(19)
+#define B_AX_CH_INFO_CTRL_FRM BIT(18)
+#define B_AX_CH_INFO_DATA_FRM BIT(17)
+#define B_AX_CH_INFO_CRC_FAIL BIT(16)
+#define B_AX_CH_INFO_MACID_SH 8
+#define B_AX_CH_INFO_MACID_MSK 0xff
+#define B_AX_CH_INFO_MODE_SH 1
+#define B_AX_CH_INFO_MODE_MSK 0x7
+#define B_AX_GET_CH_INFO_EN BIT(0)
+
+#define R_AX_MACID_MATCH 0xCE48
+#define B_AX_MACID_MATCH_SH 8
+#define B_AX_MACID_MATCH_MSK 0xff
+#define B_AX_MACID_MATCH_EN BIT(0)
+
+#define R_AX_RX_DBG_SEL 0xCE4C
+#define B_AX_RX_DBG_SEL_SH 0
+#define B_AX_RX_DBG_SEL_MSK 0xff
+
+#define R_AX_BCN_PSR_CTRL 0xCE80
+#define B_AX_BCN_HIT_INT_PORT_SH 4
+#define B_AX_BCN_HIT_INT_PORT_MSK 0xf
+#define B_AX_BCAID_HIT_INT_EN BIT(3)
+#define B_AX_UNIAID_HIT_INT_EN BIT(2)
+#define B_AX_IE_HIT_INT_EN BIT(1)
+#define B_AX_TIM_PARSER_EN BIT(0)
+
+#define R_AX_BCN_IECAM_CTRL 0xCE82
+#define B_AX_BCN_IE_NOHIT_FRWD_SH 10
+#define B_AX_BCN_IE_NOHIT_FRWD_MSK 0x3
+#define B_AX_BCN_IE_HIT_FRWD_SH 8
+#define B_AX_BCN_IE_HIT_FRWD_MSK 0x3
+#define B_AX_BCN_IECAM_PORT_SH 4
+#define B_AX_BCN_IECAM_PORT_MSK 0xf
+#define B_AX_BCN_IE_NOHIT_FRWD_EN BIT(2)
+#define B_AX_BCN_IE_HIT_FRWD_EN BIT(1)
+#define B_AX_BCN_IECAM_EN BIT(0)
+
+#define R_AX_BCN_PSR_RPT_P0 0xCE84
+#define B_AX_DTIM_CNT_P0_SH 24
+#define B_AX_DTIM_CNT_P0_MSK 0xff
+#define B_AX_DTIM_PERIOD_P0_SH 16
+#define B_AX_DTIM_PERIOD_P0_MSK 0xff
+#define B_AX_BCAID_HIT_P0 BIT(15)
+#define B_AX_UNIAID_HIT_P0 BIT(14)
+#define B_AX_IE_HIT_P0 BIT(13)
+#define B_AX_RPT_VALID_P0 BIT(12)
+#define B_AX_BCAID_P0_SH 0
+#define B_AX_BCAID_P0_MSK 0x7ff
+
+#define R_AX_BCN_PSR_RPT_P1 0xCE88
+#define B_AX_DTIM_CNT_P1_SH 24
+#define B_AX_DTIM_CNT_P1_MSK 0xff
+#define B_AX_DTIM_PERIOD_P1_SH 16
+#define B_AX_DTIM_PERIOD_P1_MSK 0xff
+#define B_AX_BCAID_HIT_P1 BIT(15)
+#define B_AX_UNIAID_HIT_P1 BIT(14)
+#define B_AX_IE_HIT_P1 BIT(13)
+#define B_AX_RPT_VALID_P1 BIT(12)
+#define B_AX_BCAID_P1_SH 0
+#define B_AX_BCAID_P1_MSK 0x7ff
+
+#define R_AX_BCN_PSR_RPT_P2 0xCE8C
+#define B_AX_DTIM_CNT_P2_SH 24
+#define B_AX_DTIM_CNT_P2_MSK 0xff
+#define B_AX_DTIM_PERIOD_P2_SH 16
+#define B_AX_DTIM_PERIOD_P2_MSK 0xff
+#define B_AX_BCAID_HIT_P2 BIT(15)
+#define B_AX_UNIAID_HIT_P2 BIT(14)
+#define B_AX_IE_HIT_P2 BIT(13)
+#define B_AX_RPT_VALID_P2 BIT(12)
+#define B_AX_BCAID_P2_SH 0
+#define B_AX_BCAID_P2_MSK 0x7ff
+
+#define R_AX_BCN_PSR_RPT_P3 0xCE90
+#define B_AX_DTIM_CNT_P3_SH 24
+#define B_AX_DTIM_CNT_P3_MSK 0xff
+#define B_AX_DTIM_PERIOD_P3_SH 16
+#define B_AX_DTIM_PERIOD_P3_MSK 0xff
+#define B_AX_BCAID_HIT_P3 BIT(15)
+#define B_AX_UNIAID_HIT_P3 BIT(14)
+#define B_AX_IE_HIT_P3 BIT(13)
+#define B_AX_RPT_VALID_P3 BIT(12)
+#define B_AX_BCAID_P3_SH 0
+#define B_AX_BCAID_P3_MSK 0x7ff
+
+#define R_AX_BCN_PSR_RPT_P4 0xCE94
+#define B_AX_DTIM_CNT_P4_SH 24
+#define B_AX_DTIM_CNT_P4_MSK 0xff
+#define B_AX_DTIM_PERIOD_P4_SH 16
+#define B_AX_DTIM_PERIOD_P4_MSK 0xff
+#define B_AX_BCAID_HIT_P4 BIT(15)
+#define B_AX_UNIAID_HIT_P4 BIT(14)
+#define B_AX_IE_HIT_P4 BIT(13)
+#define B_AX_RPT_VALID_P4 BIT(12)
+#define B_AX_BCAID_P4_SH 0
+#define B_AX_BCAID_P4_MSK 0x7ff
+
+#define R_AX_C0_WMMPS_UAPSD_TID 0xCEA0
+#define B_AX_C0_WMMPS_UAPSD_TID7 BIT(7)
+#define B_AX_C0_WMMPS_UAPSD_TID6 BIT(6)
+#define B_AX_C0_WMMPS_UAPSD_TID5 BIT(5)
+#define B_AX_C0_WMMPS_UAPSD_TID4 BIT(4)
+#define B_AX_C0_WMMPS_UAPSD_TID3 BIT(3)
+#define B_AX_C0_WMMPS_UAPSD_TID2 BIT(2)
+#define B_AX_C0_WMMPS_UAPSD_TID1 BIT(1)
+#define B_AX_C0_WMMPS_UAPSD_TID0 BIT(0)
+
+#define R_AX_C0_MD_CTRL 0xCEA4
+#define B_AX_C0_BC_MD_EN BIT(1)
+#define B_AX_C0_UC_MD_EN BIT(0)
+
+#define R_AX_C0_PS_RXINFO 0xCEA8
+#define B_AX_C0P4_RXCTRL BIT(14)
+#define B_AX_C0P4_RXMGT BIT(13)
+#define B_AX_C0P4_RXDATA BIT(12)
+#define B_AX_C0P3_RXCTRL BIT(11)
+#define B_AX_C0P3_RXMGT BIT(10)
+#define B_AX_C0P3_RXDATA BIT(9)
+#define B_AX_C0P2_RXCTRL BIT(8)
+#define B_AX_C0P2_RXMGT BIT(7)
+#define B_AX_C0P2_RXDATA BIT(6)
+#define B_AX_C0P1_RXCTRL BIT(5)
+#define B_AX_C0P1_RXMGT BIT(4)
+#define B_AX_C0P1_RXDATA BIT(3)
+#define B_AX_C0P0_RXCTRL BIT(2)
+#define B_AX_C0P0_RXMGT BIT(1)
+#define B_AX_C0P0_RXDATA BIT(0)
+
+#define R_AX_RX_DBG_CNT_SEL 0xCEE0
+#define B_AX_RXERR_RPT_RST BIT(8)
+#define B_AX_RX_CNT_IDX_SH 0
+#define B_AX_RX_CNT_IDX_MSK 0x3f
+
+#define R_AX_RX_DBG_CNT_UD 0xCEE4
+#define B_AX_UD_W1S BIT(31)
+#define B_AX_UD_MSK_RUTONE BIT(30)
+#define B_AX_UD_MSK_RATE BIT(29)
+#define B_AX_UD_MSK_BSSID BIT(28)
+#define B_AX_UD_MSK_FC BIT(27)
+#define B_AX_UD_RUTONE_SH 24
+#define B_AX_UD_RUTONE_MSK 0x7
+#define B_AX_UD_GI_TYPE_SH 20
+#define B_AX_UD_GI_TYPE_MSK 0x7
+#define B_AX_UD_RATE_SH 11
+#define B_AX_UD_RATE_MSK 0x1ff
+#define B_AX_UD_SELECT_BSSID_SH 8
+#define B_AX_UD_SELECT_BSSID_MSK 0x7
+#define B_AX_UD_SUB_TYPE_SH 2
+#define B_AX_UD_SUB_TYPE_MSK 0xf
+#define B_AX_UD_TYPE_SH 0
+#define B_AX_UD_TYPE_MSK 0x3
+
+#define R_AX_RX_DBG_CNT 0xCEE8
+#define B_AX_RX_DBG_CNT_SH 0
+#define B_AX_RX_DBG_CNT_MSK 0xffff
+
+//
+// Power_Module
+//
+
+//
+// BTCOEX
+//
+
+//
+// WL_AX_Reg_HIOE.xls
+//
+
+//
+// IDDMA_Reg_Spec
+//
+
+#define R_PL_HIOE_CTRL 0x0000
+#define B_PL_HIOE_RESTORE_REQ BIT(31)
+#define B_PL_HIOE_RETAIN_REQ BIT(30)
+#define B_PL_HIOE_DDMA_CH1_REQ BIT(29)
+#define B_PL_HIOE_DDMA_CH1_CHKSUM_STATUS BIT(28)
+#define B_PL_HIOE_DDMA_CH2_REQ BIT(27)
+#define B_PL_HIOE_DDMA_CH2_CHKSUM_STATUS BIT(26)
+#define B_PL_HIOE_INST_FORMAT_ERR BIT(25)
+#define B_PL_HIOE_OP_TIMEOUT_ERR BIT(24)
+#define B_PL_HIOE_OP_TIMEOUT_SH 16
+#define B_PL_HIOE_OP_TIMEOUT_MSK 0xff
+#define B_PL_HIOE_ADDR_CHECKSUM_SH 0
+#define B_PL_HIOE_ADDR_CHECKSUM_MSK 0xffff
+
+#define R_PL_HIOE_CFG_FILE_END 0x0004
+#define B_PL_INST_END_ADDR_SH 0
+#define B_PL_INST_END_ADDR_MSK 0xffffffffL
+
+#define R_PL_HIOE_CFG_FILE_START 0x0008
+#define B_PL_INST_STR_ADDR_SH 0
+#define B_PL_INST_STR_ADDR_MSK 0xffffffffL
+
+//
+// WL_AX_Reg_IDDMA.xls
+//
+
+//
+// IDDMA_Reg_Spec
+//
+
+#define R_PL_IDDMA_CH0_SA 0x0000
+#define B_PL_IDDMA_CH0_SA_SH 0
+#define B_PL_IDDMA_CH0_SA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH0_DA 0x0004
+#define B_PL_IDDMA_CH0_DA_SH 0
+#define B_PL_IDDMA_CH0_DA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH0_CTRL 0x0008
+#define B_PL_IDDMA_CH0_OWN BIT(31)
+#define B_PL_IDDMA_CH0_CHKSUM_EN BIT(29)
+#define B_PL_IDDMA_CH0_DA_W_DISABLE BIT(28)
+#define B_PL_IDDMA_CH0_CHKSUM_STATUS BIT(27)
+#define B_PL_IDDMA_CH0_CHKSUM_CONT BIT(24)
+#define B_PL_IDDMA_CH0_DLEN_SH 0
+#define B_PL_IDDMA_CH0_DLEN_MSK 0x3ffff
+
+#define R_PL_IDDMA_CH1_SA 0x0010
+#define B_PL_IDDMA_CH1_SA_SH 0
+#define B_PL_IDDMA_CH1_SA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH1_DA 0x0014
+#define B_PL_IDDMA_CH1_DA_SH 0
+#define B_PL_IDDMA_CH1_DA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH1_CTRL 0x0018
+#define B_PL_IDDMA_CH1_OWN BIT(31)
+#define B_PL_IDDMA_CH1_CHKSUM_EN BIT(29)
+#define B_PL_IDDMA_CH1_DA_W_DISABLE BIT(28)
+#define B_PL_IDDMA_CH1_CHKSUM_STATUS BIT(27)
+#define B_PL_IDDMA_CH1_DLEN_SH 0
+#define B_PL_IDDMA_CH1_DLEN_MSK 0x3ffff
+
+#define R_PL_IDDMA_CH2_SA 0x0020
+#define B_PL_IDDMA_CH2_SA_SH 0
+#define B_PL_IDDMA_CH2_SA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH2_DA 0x0024
+#define B_PL_IDDMA_CH2_DA_SH 0
+#define B_PL_IDDMA_CH2_DA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH2_CTRL 0x0028
+#define B_PL_IDDMA_CH2_OWN BIT(31)
+#define B_PL_IDDMA_CH2_CHKSUM_EN BIT(29)
+#define B_PL_IDDMA_CH2_DA_W_DISABLE BIT(28)
+#define B_PL_IDDMA_CH2_CHKSUM_STATUS BIT(27)
+#define B_PL_IDDMA_CH2_DLEN_SH 0
+#define B_PL_IDDMA_CH2_DLEN_MSK 0x3ffff
+
+#define R_PL_IDDMA_CH3_SA 0x0030
+#define B_PL_IDDMA_CH3_SA_SH 0
+#define B_PL_IDDMA_CH3_SA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH3_DA 0x0034
+#define B_PL_IDDMA_CH3_DA_SH 0
+#define B_PL_IDDMA_CH3_DA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH3_CTRL 0x0038
+#define B_PL_IDDMA_CH3_OWN BIT(31)
+#define B_PL_IDDMA_CH3_CHKSUM_EN BIT(29)
+#define B_PL_IDDMA_CH3_DA_W_DISABLE BIT(28)
+#define B_PL_IDDMA_CH3_CHKSUM_STATUS BIT(27)
+#define B_PL_IDDMA_CH3_DLEN_SH 0
+#define B_PL_IDDMA_CH3_DLEN_MSK 0x3ffff
+
+#define R_PL_IDDMA_CH4_SA 0x0040
+#define B_PL_IDDMA_CH4_SA_SH 0
+#define B_PL_IDDMA_CH4_SA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH4_DA 0x0044
+#define B_PL_IDDMA_CH4_DA_SH 0
+#define B_PL_IDDMA_CH4_DA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH4_CTRL 0x0048
+#define B_PL_IDDMA_CH4_OWN BIT(31)
+#define B_PL_IDDMA_CH4_CHKSUM_EN BIT(29)
+#define B_PL_IDDMA_CH4_DA_W_DISABLE BIT(28)
+#define B_PL_IDDMA_CH4_CHKSUM_STATUS BIT(27)
+#define B_PL_IDDMA_CH4_DLEN_SH 0
+#define B_PL_IDDMA_CH4_DLEN_MSK 0x3ffff
+
+#define R_PL_IDDMA_CH5_SA 0x0050
+#define B_PL_IDDMA_CH5_SA_SH 0
+#define B_PL_IDDMA_CH5_SA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH5_DA 0x0054
+#define B_PL_IDDMA_CH5_DA_SH 0
+#define B_PL_IDDMA_CH5_DA_MSK 0xffffffffL
+
+#define R_PL_IDDMA_CH5_CTRL 0x0058
+#define B_PL_IDDMA_CH5_OWN BIT(31)
+#define B_PL_IDDMA_CH5_CHKSUM_EN BIT(29)
+#define B_PL_IDDMA_CH5_DA_W_DISABLE BIT(28)
+#define B_PL_IDDMA_CH5_CHKSUM_STATUS BIT(27)
+#define B_PL_IDDMA_CH5_DLEN_SH 0
+#define B_PL_IDDMA_CH5_DLEN_MSK 0x3ffff
+
+#define R_PL_IDDMA_INT_MSK 0x00E0
+#define B_PL_IDDMA_CH5_INT_MSK BIT(5)
+#define B_PL_IDDMA_CH4_INT_MSK BIT(4)
+#define B_PL_IDDMA_CH3_INT_MSK BIT(3)
+#define B_PL_IDDMA_CH2_INT_MSK BIT(2)
+#define B_PL_IDDMA_CH1_INT_MSK BIT(1)
+#define B_PL_IDDMA_CH0_INT_MSK BIT(0)
+
+#define R_PL_IDDMA_CH_STATUS 0x00E8
+#define B_PL_IDDMA_CH5_BUSY BIT(5)
+#define B_PL_IDDMA_CH4_BUSY BIT(4)
+#define B_PL_IDDMA_CH3_BUSY BIT(3)
+#define B_PL_IDDMA_CH2_BUSY BIT(2)
+#define B_PL_IDDMA_CH1_BUSY BIT(1)
+#define B_PL_IDDMA_CH0_BUSY BIT(0)
+
+#define R_PL_IDDMA_CHKSUM_CONTROL 0x00EC
+#define B_PL_IDDMA_CHKSUM_RESET BIT(0)
+
+#define R_PL_IDDMA_CHKSUM 0x00F0
+#define B_PL_IDDMA_CHKSUM_RESULT_SH 0
+#define B_PL_IDDMA_CHKSUM_RESULT_MSK 0xffff
+
+#define R_PL_IDDMA_MONITOR 0x00FC
+#define B_PL_IDDMA_DATA_UNDERFLOW BIT(14)
+#define B_PL_IDDMA_FIFIO_UNDERFLOW BIT(13)
+#define B_PL_IDDMA_FIFO_OVERFLOW BIT(12)
+#define B_PL_IDDMA_CH5_ERROR BIT(5)
+#define B_PL_IDDMA_CH4_ERROR BIT(4)
+#define B_PL_IDDMA_CH3_ERROR BIT(3)
+#define B_PL_IDDMA_CH2_ERROR BIT(2)
+#define B_PL_IDDMA_CH1_ERROR BIT(1)
+#define B_PL_IDDMA_CH0_ERROR BIT(0)
+
+//
+// WL_AX_Reg_IPSec.xls
+//
+
+//
+// IPSec_Reg
+//
+
+#define R_PL_REG_SDSR 0x0000
+#define B_PL_SRC_RST BIT(31)
+#define B_PL_PK_UP BIT(30)
+#define B_PL_SRC_FAIL_STATUS_SH 25
+#define B_PL_SRC_FAIL_STATUS_MSK 0x3
+#define B_PL_SRC_FAIL BIT(24)
+#define B_PL_SRPTR_SH 16
+#define B_PL_SRPTR_MSK 0xff
+#define B_PL_SWPTR_SH 8
+#define B_PL_SWPTR_MSK 0xff
+#define B_PL_FIFO_EMPTY_CNT_SH 0
+#define B_PL_FIFO_EMPTY_CNT_MSK 0xff
+
+#define R_PL_REG_SDFWR 0x0004
+#define B_PL_SDFW_SH 0
+#define B_PL_SDFW_MSK 0xffffffffL
+
+#define R_PL_REG_SDSWR 0x0008
+#define B_PL_SDSW_SH 0
+#define B_PL_SDSW_MSK 0xffffffffL
+
+#define R_PL_REG_IPSCSR_RSTEACONFISR 0x0010
+#define B_PL_IPSEC_RST BIT(31)
+#define B_PL_CLEAR_OK_INT_NUM_SH 16
+#define B_PL_CLEAR_OK_INT_NUM_MSK 0xff
+#define B_PL_OK_INTR_CNT_SH 8
+#define B_PL_OK_INTR_CNT_MSK 0xff
+#define B_PL_INTR_MODE BIT(7)
+#define B_PL_CMD_OK BIT(4)
+#define B_PL_DMA_BUSY BIT(3)
+#define B_PL_SOFT_RST BIT(0)
+
+#define R_PL_REG_IPSCSR_INTM 0x0014
+#define B_PL_DES_ERR5_M BIT(18)
+#define B_PL_DES_ERR4_M BIT(17)
+#define B_PL_DES_ERR3_M BIT(16)
+#define B_PL_DES_ERR2_M BIT(15)
+#define B_PL_DES_ERR1_M BIT(14)
+#define B_PL_DES_ERR0_M BIT(13)
+#define B_PL_SRC_ERR9_M BIT(12)
+#define B_PL_SRC_ERR8_M BIT(11)
+#define B_PL_SRC_ERR7_M BIT(10)
+#define B_PL_SRC_ERR6_M BIT(9)
+#define B_PL_SRC_ERR5_M BIT(8)
+#define B_PL_SRC_ERR4_M BIT(7)
+#define B_PL_SRC_ERR3_M BIT(6)
+#define B_PL_SRC_ERR2_M BIT(5)
+#define B_PL_SRC_ERR1_M BIT(4)
+#define B_PL_SRC_ERR0_M BIT(3)
+#define B_PL_DES_FAIL_M BIT(2)
+#define B_PL_SRC_FAIL_M BIT(1)
+#define B_PL_CMD_OK_M BIT(0)
+
+#define R_PL_REG_IPSCSR_DBG 0x0018
+#define B_PL_DEBUG_WB BIT(31)
+#define B_PL_MST_BAD_SEL_SH 28
+#define B_PL_MST_BAD_SEL_MSK 0x3
+#define B_PL_ENGINE_CLK_EN BIT(24)
+#define B_PL_DEBUG_PORT_SEL_SH 20
+#define B_PL_DEBUG_PORT_SEL_MSK 0xf
+#define B_PL_ARBITER_MODE BIT(16)
+#define B_PL_DMA_WAIT_CYCLE_SH 0
+#define B_PL_DMA_WAIT_CYCLE_MSK 0xffff
+
+#define R_PL_REG_IPSCSR_ERR_INT 0x001C
+#define B_PL_DES_ERR5 BIT(15)
+#define B_PL_DES_ERR4 BIT(14)
+#define B_PL_DES_ERR3 BIT(13)
+#define B_PL_DES_ERR2 BIT(12)
+#define B_PL_DES_ERR1 BIT(11)
+#define B_PL_DES_ERR0 BIT(10)
+#define B_PL_SRC_ERR9 BIT(9)
+#define B_PL_SRC_ERR8 BIT(8)
+#define B_PL_SRC_ERR7 BIT(7)
+#define B_PL_SRC_ERR6 BIT(6)
+#define B_PL_SRC_ERR5 BIT(5)
+#define B_PL_SRC_ERR4 BIT(4)
+#define B_PL_SRC_ERR3 BIT(3)
+#define B_PL_SRC_ERR2 BIT(2)
+#define B_PL_SRC_ERR1 BIT(1)
+#define B_PL_SRC_ERR0 BIT(0)
+
+#define R_PL_REG_IPSCSR_SAADLR 0x0020
+#define B_PL_A2EO_SUM_SH 0
+#define B_PL_A2EO_SUM_MSK 0x7ff
+
+#define R_PL_REG_IPSCSR_SENLR 0x0024
+#define B_PL_ENL_SUM_SH 0
+#define B_PL_ENL_SUM_MSK 0xffffff
+
+#define R_PL_REG_IPSCSR_SAPLR 0x0028
+#define B_PL_APL_SUM_SH 0
+#define B_PL_APL_SUM_MSK 0xfff
+
+#define R_PL_REG_IPSCSR_SEPLR 0x002C
+#define B_PL_EPL_SUM_SH 0
+#define B_PL_EPL_SUM_MSK 0x3f
+
+#define R_PL_REG_IPSCSR_SWAPABURSTR 0x0030
+#define B_PL_MD5_INPUT_DATA_BYTE_SWAP BIT(25)
+#define B_PL_MD5_OUTPUT_DATA_BYTE_SWAP BIT(24)
+#define B_PL_DMA_BURST_LENGTH_SH 16
+#define B_PL_DMA_BURST_LENGTH_MSK 0x3f
+#define B_PL_AUTO_PADDING_SWAP BIT(13)
+#define B_PL_TX_WD_SWAP BIT(12)
+#define B_PL_RX_WD_SWAP BIT(11)
+#define B_PL_MAC_OUT_LITTLE_ENDIAN BIT(10)
+#define B_PL_DATA_OUT_LITTLE_ENDIAN BIT(9)
+#define B_PL_TX_BYTE_SWAP BIT(8)
+#define B_PL_DATA_IN_LITTLE_ENDIAN BIT(4)
+#define B_PL_HASH_INITIAL_VALUE_SWAP BIT(3)
+#define B_PL_KEY_PAD_SWAP BIT(2)
+#define B_PL_KEY_IV_SWAP BIT(1)
+#define B_PL_SET_SWAP BIT(0)
+
+#define R_PL_REG_DDSR 0x1000
+#define B_PL_DES_RST BIT(31)
+#define B_PL_DES_FAIL_STATUS_SH 25
+#define B_PL_DES_FAIL_STATUS_MSK 0x3
+#define B_PL_DES_FAIL BIT(24)
+#define B_PL_DRPTR_SH 16
+#define B_PL_DRPTR_MSK 0xff
+#define B_PL_DWPTR_SH 8
+#define B_PL_DWPTR_MSK 0xff
+
+#define R_PL_REG_DDFWR 0x1004
+#define B_PL_DDFW_SH 0
+#define B_PL_DDFW_MSK 0xffffffffL
+
+#define R_PL_REG_DDSWR 0x1008
+#define B_PL_DDSW_SH 0
+#define B_PL_DDSW_MSK 0xffffffffL
+
+#define R_PL_REG_DES_PKTCONF 0x100C
+#define B_PL_DBG_DPTR_SH 8
+#define B_PL_DBG_DPTR_MSK 0xff
+#define B_PL_DBG_SPTR_SH 0
+#define B_PL_DBG_SPTR_MSK 0xff
+
+#define R_PL_REG_DBGSDR 0x1010
+#define B_PL_DBG_SD_SH 0
+#define B_PL_DBG_SD_MSK 0xffffffffL
+
+#define R_PL_REG_DBGDDR 0x1014
+#define B_PL_DBG_DD_SH 0
+#define B_PL_DBG_DD_MSK 0xffffffffL
+
+//
+// WL_AX_Reg_PCIE.xls
+//
+
+//
+// PCIE
+//
+
+#define R_AX_PCIE_INIT_CFG1 0x1000
+#define B_AX_PCIE_RST_TRXDMA_INTF BIT(19)
+#define B_AX_RXBD_MODE BIT(18)
+#define B_AX_PCIE_MAX_RXDMA_SH 14
+#define B_AX_PCIE_MAX_RXDMA_MSK 0x7
+#define B_AX_RXHCI_EN BIT(13)
+#define B_AX_LATENCY_CONTROL BIT(12)
+#define B_AX_TXHCI_EN BIT(11)
+#define B_AX_PCIE_MAX_TXDMA_SH 8
+#define B_AX_PCIE_MAX_TXDMA_MSK 0x7
+#define B_AX_EN_ALIGN_MTU BIT(6)
+#define B_AX_TX_TRUNC_MODE BIT(5)
+#define B_AX_RX_TRUNC_MODE BIT(4)
+#define B_AX_DIS_TXDMA_PRE BIT(3)
+#define B_AX_DIS_RXDMA_PRE BIT(2)
+#define B_AX_EN_RXDMA_ALIGN BIT(1)
+#define B_AX_EN_TXDMA_ALIGN BIT(0)
+
+#define R_AX_PCIE_INIT_CFG2 0x1004
+#define B_AX_WD_ITVL_ACT_SH 24
+#define B_AX_WD_ITVL_ACT_MSK 0xff
+#define B_AX_WD_ITVL_IDLE_SH 16
+#define B_AX_WD_ITVL_IDLE_MSK 0xff
+#define B_AX_PCIE_RX_APPLEN_SH 0
+#define B_AX_PCIE_RX_APPLEN_MSK 0x3fff
+
+#define R_AX_PCIE_PS_CTRL 0x1008
+#define B_AX_WD_NO_EMP_EXIT_L1_EN BIT(6)
+#define B_AX_L1OFF_PWR_OFF_EN BIT(5)
+#define B_AX_PCIE_FORCE_L0 BIT(4)
+#define B_AX_TXFLAG_EXIT_L1_EN BIT(3)
+#define B_AX_EN_HWENTR_L1 BIT(2)
+#define B_AX_PCIE_EN_SWENT_L23 BIT(1)
+#define B_AX_PCIE_EN_HWEXT_L1 BIT(0)
+
+#define R_AX_PCIE_MIX_CFG 0x100C
+#define B_AX_HOTRST_EN BIT(19)
+#define B_AX_MDIO_MODE BIT(18)
+#define B_AX_PWR_SCALE_START_PS BIT(17)
+#define B_AX_CHANGE_PCIE_SPEED BIT(16)
+#define B_AX_GEN1_GEN2_SH 14
+#define B_AX_GEN1_GEN2_MSK 0x3
+#define B_AX_HPS_CLKR_PCIE_SH 12
+#define B_AX_HPS_CLKR_PCIE_MSK 0x3
+#define B_AX_PCIE_INT BIT(11)
+#define B_AX_PCIEIO_PERSTB_SEL BIT(10)
+#define B_AX_RESET_APHY BIT(9)
+#define B_AX_EPHY_RX50_EN BIT(8)
+#define B_AX_MSI_TIMEOUT_ID_V1_SH 5
+#define B_AX_MSI_TIMEOUT_ID_V1_MSK 0x7
+#define B_AX_RADDR_RD BIT(4)
+#define B_AX_ECRC_EN BIT(3)
+#define B_AX_EN_SLOW_MAC_TX BIT(2)
+#define B_AX_EN_SLOW_MAC_RX BIT(1)
+#define B_AX_EN_SLOW_MAC_HW BIT(0)
+
+#define R_AX_PCIE_DMA_STOP1 0x1010
+#define B_AX_STOP_WPDMA BIT(19)
+#define B_AX_STOP_CH12 BIT(18)
+#define B_AX_STOP_CH9 BIT(17)
+#define B_AX_STOP_CH8 BIT(16)
+#define B_AX_STOP_ACH7 BIT(15)
+#define B_AX_STOP_ACH6 BIT(14)
+#define B_AX_STOP_ACH5 BIT(13)
+#define B_AX_STOP_ACH4 BIT(12)
+#define B_AX_STOP_ACH3 BIT(11)
+#define B_AX_STOP_ACH2 BIT(10)
+#define B_AX_STOP_ACH1 BIT(9)
+#define B_AX_STOP_ACH0 BIT(8)
+#define B_AX_STOP_RPQ BIT(1)
+#define B_AX_STOP_RX BIT(0)
+
+#define R_AX_TXBD_RWPTR_CLR1 0x1014
+#define B_AX_CLR_CH12_IDX BIT(10)
+#define B_AX_CLR_CH9_IDX BIT(9)
+#define B_AX_CLR_CH8_IDX BIT(8)
+#define B_AX_CLR_ACH7_IDX BIT(7)
+#define B_AX_CLR_ACH6_IDX BIT(6)
+#define B_AX_CLR_ACH5_IDX BIT(5)
+#define B_AX_CLR_ACH4_IDX BIT(4)
+#define B_AX_CLR_ACH3_IDX BIT(3)
+#define B_AX_CLR_ACH2_IDX BIT(2)
+#define B_AX_CLR_ACH1_IDX BIT(1)
+#define B_AX_CLR_ACH0_IDX BIT(0)
+
+#define R_AX_RXBD_RWPTR_CLR 0x1018
+#define B_AX_CLR_RPQ_IDX BIT(1)
+#define B_AX_CLR_RXQ_IDX BIT(0)
+
+#define R_AX_PCIE_DMA_BUSY1 0x101C
+#define B_AX_WPDMA_BUSY BIT(19)
+#define B_AX_CH12_BUSY BIT(18)
+#define B_AX_CH9_BUSY BIT(17)
+#define B_AX_CH8_BUSY BIT(16)
+#define B_AX_ACH7_BUSY BIT(15)
+#define B_AX_ACH6_BUSY BIT(14)
+#define B_AX_ACH5_BUSY BIT(13)
+#define B_AX_ACH4_BUSY BIT(12)
+#define B_AX_ACH3_BUSY BIT(11)
+#define B_AX_ACH2_BUSY BIT(10)
+#define B_AX_ACH1_BUSY BIT(9)
+#define B_AX_ACH0_BUSY BIT(8)
+#define B_AX_RPQ_BUSY BIT(1)
+#define B_AX_RXQ_BUSY BIT(0)
+
+#define R_AX_RXQ_RXBD_NUM 0x1020
+#define B_AX_RXQ_DESC_NUM_SH 0
+#define B_AX_RXQ_DESC_NUM_MSK 0xfff
+
+#define R_AX_RPQ_RXBD_NUM 0x1022
+#define B_AX_RPQ_DESC_NUM_SH 0
+#define B_AX_RPQ_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH0_TXBD_NUM 0x1024
+#define B_AX_PCIE_ACH0_FLAG BIT(14)
+#define B_AX_ACH0_DESC_NUM_SH 0
+#define B_AX_ACH0_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH1_TXBD_NUM 0x1026
+#define B_AX_PCIE_ACH1_FLAG BIT(14)
+#define B_AX_ACH1_DESC_NUM_SH 0
+#define B_AX_ACH1_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH2_TXBD_NUM 0x1028
+#define B_AX_PCIE_ACH2_FLAG BIT(14)
+#define B_AX_ACH2_DESC_NUM_SH 0
+#define B_AX_ACH2_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH3_TXBD_NUM 0x102A
+#define B_AX_PCIE_ACH3_FLAG BIT(14)
+#define B_AX_ACH3_DESC_NUM_SH 0
+#define B_AX_ACH3_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH4_TXBD_NUM 0x102C
+#define B_AX_PCIE_ACH4_FLAG BIT(14)
+#define B_AX_ACH4_DESC_NUM_SH 0
+#define B_AX_ACH4_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH5_TXBD_NUM 0x102E
+#define B_AX_PCIE_ACH5_FLAG BIT(14)
+#define B_AX_ACH5_DESC_NUM_SH 0
+#define B_AX_ACH5_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH6_TXBD_NUM 0x1030
+#define B_AX_PCIE_ACH6_FLAG BIT(14)
+#define B_AX_ACH6_DESC_NUM_SH 0
+#define B_AX_ACH6_DESC_NUM_MSK 0xfff
+
+#define R_AX_ACH7_TXBD_NUM 0x1032
+#define B_AX_PCIE_ACH7_FLAG BIT(14)
+#define B_AX_ACH7_DESC_NUM_SH 0
+#define B_AX_ACH7_DESC_NUM_MSK 0xfff
+
+#define R_AX_CH8_TXBD_NUM 0x1034
+#define B_AX_PCIE_CH8_FLAG BIT(14)
+#define B_AX_CH8_DESC_NUM_SH 0
+#define B_AX_CH8_DESC_NUM_MSK 0xfff
+
+#define R_AX_CH9_TXBD_NUM 0x1036
+#define B_AX_PCIE_CH9_FLAG BIT(14)
+#define B_AX_CH9_DESC_NUM_SH 0
+#define B_AX_CH9_DESC_NUM_MSK 0xfff
+
+#define R_AX_CH12_TXBD_NUM 0x1038
+#define B_AX_PCIE_CH12_FLAG BIT(14)
+#define B_AX_CH12_DESC_NUM_SH 0
+#define B_AX_CH12_DESC_NUM_MSK 0xfff
+
+#define R_AX_RXQ_RXBD_IDX 0x1050
+#define B_AX_RXQ_HW_IDX_SH 16
+#define B_AX_RXQ_HW_IDX_MSK 0xfff
+#define B_AX_RXQ_HOST_IDX_SH 0
+#define B_AX_RXQ_HOST_IDX_MSK 0xfff
+
+#define R_AX_RPQ_RXBD_IDX 0x1054
+#define B_AX_RPQ_HW_IDX_SH 16
+#define B_AX_RPQ_HW_IDX_MSK 0xfff
+#define B_AX_RPQ_HOST_IDX_SH 0
+#define B_AX_RPQ_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH0_TXBD_IDX 0x1058
+#define B_AX_ACH0_HW_IDX_SH 16
+#define B_AX_ACH0_HW_IDX_MSK 0xfff
+#define B_AX_ACH0_HOST_IDX_SH 0
+#define B_AX_ACH0_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH1_TXBD_IDX 0x105C
+#define B_AX_ACH1_HW_IDX_SH 16
+#define B_AX_ACH1_HW_IDX_MSK 0xfff
+#define B_AX_ACH1_HOST_IDX_SH 0
+#define B_AX_ACH1_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH2_TXBD_IDX 0x1060
+#define B_AX_ACH2_HW_IDX_SH 16
+#define B_AX_ACH2_HW_IDX_MSK 0xfff
+#define B_AX_ACH2_HOST_IDX_SH 0
+#define B_AX_ACH2_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH3_TXBD_IDX 0x1064
+#define B_AX_ACH3_HW_IDX_SH 16
+#define B_AX_ACH3_HW_IDX_MSK 0xfff
+#define B_AX_ACH3_HOST_IDX_SH 0
+#define B_AX_ACH3_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH4_TXBD_IDX 0x1068
+#define B_AX_ACH4_HW_IDX_SH 16
+#define B_AX_ACH4_HW_IDX_MSK 0xfff
+#define B_AX_ACH4_HOST_IDX_SH 0
+#define B_AX_ACH4_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH5_TXBD_IDX 0x106C
+#define B_AX_ACH5_HW_IDX_SH 16
+#define B_AX_ACH5_HW_IDX_MSK 0xfff
+#define B_AX_ACH5_HOST_IDX_SH 0
+#define B_AX_ACH5_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH6_TXBD_IDX 0x1070
+#define B_AX_ACH6_HW_IDX_SH 16
+#define B_AX_ACH6_HW_IDX_MSK 0xfff
+#define B_AX_ACH6_HOST_IDX_SH 0
+#define B_AX_ACH6_HOST_IDX_MSK 0xfff
+
+#define R_AX_ACH7_TXBD_IDX 0x1074
+#define B_AX_ACH7_HW_IDX_SH 16
+#define B_AX_ACH7_HW_IDX_MSK 0xfff
+#define B_AX_ACH7_HOST_IDX_SH 0
+#define B_AX_ACH7_HOST_IDX_MSK 0xfff
+
+#define R_AX_CH8_TXBD_IDX 0x1078
+#define B_AX_CH8_HW_IDX_SH 16
+#define B_AX_CH8_HW_IDX_MSK 0xfff
+#define B_AX_CH8_HOST_IDX_SH 0
+#define B_AX_CH8_HOST_IDX_MSK 0xfff
+
+#define R_AX_CH9_TXBD_IDX 0x107C
+#define B_AX_CH9_HW_IDX_SH 16
+#define B_AX_CH9_HW_IDX_MSK 0xfff
+#define B_AX_CH9_HOST_IDX_SH 0
+#define B_AX_CH9_HOST_IDX_MSK 0xfff
+
+#define R_AX_CH12_TXBD_IDX 0x1080
+#define B_AX_CH12_HW_IDX_SH 16
+#define B_AX_CH12_HW_IDX_MSK 0xfff
+#define B_AX_CH12_HOST_IDX_SH 0
+#define B_AX_CH12_HOST_IDX_MSK 0xfff
+
+#define R_AX_DBI_FLAG 0x1090
+#define B_AX_DBI_RFLAG BIT(17)
+#define B_AX_DBI_WFLAG BIT(16)
+#define B_AX_DBI_WREN_SH 12
+#define B_AX_DBI_WREN_MSK 0xf
+#define B_AX_DBI_ADDR_SH 0
+#define B_AX_DBI_ADDR_MSK 0xfff
+
+#define R_AX_DBI_WDATA  0x1094
+#define B_AX_DBI_WDATA_SH 0
+#define B_AX_DBI_WDATA_MSK 0xffffffffL
+
+#define R_AX_DBI_RDATA 0x1098
+#define B_AX_DBI_RDATA_SH 0
+#define B_AX_DBI_RDATA_MSK 0xffffffffL
+
+#define R_AX_MDIO_CFG 0x10A0
+#define B_AX_MDIO_PHY_ADDR_SH 12
+#define B_AX_MDIO_PHY_ADDR_MSK 0x3
+#define B_AX_MDIO_RFLAG BIT(9)
+#define B_AX_MDIO_WFLAG BIT(8)
+#define B_AX_MDIO_ADDR_SH 0
+#define B_AX_MDIO_ADDR_MSK 0x1f
+
+#define R_AX_MDIO_WDATA 0x10A4
+#define B_AX_MDIO_WDATA_SH 0
+#define B_AX_MDIO_WDATA_MSK 0xffff
+
+#define R_AX_MDIO_RDATA 0x10A6
+#define B_AX_MDIO_RDATA_SH 16
+#define B_AX_MDIO_RDATA_MSK 0xffff
+
+#define R_AX_PCIE_HIMR00 0x10B0
+#define B_AX_HC00ISR_IND_INT_EN BIT(27)
+#define B_AX_HD1ISR_IND_INT_EN BIT(26)
+#define B_AX_HD0ISR_IND_INT_EN BIT(25)
+#define B_AX_HS0ISR_IND_INT_EN BIT(24)
+#define B_AX_RPQBD_FULL_INT_EN BIT(20)
+#define B_AX_RDU_INT_EN BIT(19)
+#define B_AX_RXDMA_STUCK_INT_EN BIT(18)
+#define B_AX_TXDMA_STUCK_INT_EN BIT(17)
+#define B_AX_PCIE_HOTRST_INT_EN BIT(16)
+#define B_AX_PCIE_FLR_INT_EN BIT(15)
+#define B_AX_PCIE_PERST_INT_EN BIT(14)
+#define B_AX_TXDMA_CH12_INT_EN BIT(13)
+#define B_AX_TXDMA_CH9_INT_EN BIT(12)
+#define B_AX_TXDMA_CH8_INT_EN BIT(11)
+#define B_AX_TXDMA_ACH7_INT_EN BIT(10)
+#define B_AX_TXDMA_ACH6_INT_EN BIT(9)
+#define B_AX_TXDMA_ACH5_INT_EN BIT(8)
+#define B_AX_TXDMA_ACH4_INT_EN BIT(7)
+#define B_AX_TXDMA_ACH3_INT_EN BIT(6)
+#define B_AX_TXDMA_ACH2_INT_EN BIT(5)
+#define B_AX_TXDMA_ACH1_INT_EN BIT(4)
+#define B_AX_TXDMA_ACH0_INT_EN BIT(3)
+#define B_AX_RPQDMA_INT_EN BIT(2)
+#define B_AX_RXP1DMA_INT_EN BIT(1)
+#define B_AX_RXDMA_INT_EN BIT(0)
+
+#define R_AX_PCIE_HISR00 0x10B4
+#define B_AX_HC00ISR_IND_INT BIT(27)
+#define B_AX_HD1ISR_IND_INT BIT(26)
+#define B_AX_HD0ISR_IND_INT BIT(25)
+#define B_AX_HS0ISR_IND_INT BIT(24)
+#define B_AX_RPQBD_FULL_INT BIT(20)
+#define B_AX_RDU_INT BIT(19)
+#define B_AX_RXDMA_STUCK_INT BIT(18)
+#define B_AX_TXDMA_STUCK_INT BIT(17)
+#define B_AX_PCIE_HOTRST_INT BIT(16)
+#define B_AX_PCIE_FLR_INT BIT(15)
+#define B_AX_PCIE_PERST_INT BIT(14)
+#define B_AX_TXDMA_CH12_INT BIT(13)
+#define B_AX_TXDMA_CH9_INT BIT(12)
+#define B_AX_TXDMA_CH8_INT BIT(11)
+#define B_AX_TXDMA_ACH7_INT BIT(10)
+#define B_AX_TXDMA_ACH6_INT BIT(9)
+#define B_AX_TXDMA_ACH5_INT BIT(8)
+#define B_AX_TXDMA_ACH4_INT BIT(7)
+#define B_AX_TXDMA_ACH3_INT BIT(6)
+#define B_AX_TXDMA_ACH2_INT BIT(5)
+#define B_AX_TXDMA_ACH1_INT BIT(4)
+#define B_AX_TXDMA_ACH0_INT BIT(3)
+#define B_AX_RPQDMA_INT BIT(2)
+#define B_AX_RXP1DMA_INT BIT(1)
+#define B_AX_RXDMA_INT BIT(0)
+
+#define R_AX_PCIE_HRPWM 0x10C0
+#define B_AX_PCIE_HRPWM_SH 0
+#define B_AX_PCIE_HRPWM_MSK 0xffff
+
+#define R_AX_PCIE_HCPWM 0x10C2
+#define B_AX_PCIE_HCPWM_SH 0
+#define B_AX_PCIE_HCPWM_MSK 0xffff
+
+#define R_AX_INT_MIT_TX 0x10D0
+#define B_AX_TXMIT_CH12_SEL BIT(31)
+#define B_AX_TXMIT_CH11_SEL BIT(30)
+#define B_AX_TXMIT_CH10_SEL BIT(29)
+#define B_AX_TXMIT_CH9_SEL BIT(28)
+#define B_AX_TXMIT_CH8_SEL BIT(27)
+#define B_AX_TXMIT_ACH7_SEL BIT(26)
+#define B_AX_TXMIT_ACH6_SEL BIT(25)
+#define B_AX_TXMIT_ACH5_SEL BIT(24)
+#define B_AX_TXMIT_ACH4_SEL BIT(23)
+#define B_AX_TXMIT_ACH3_SEL BIT(22)
+#define B_AX_TXMIT_ACH2_SEL BIT(21)
+#define B_AX_TXMIT_ACH1_SEL BIT(20)
+#define B_AX_TXMIT_ACH0_SEL BIT(19)
+#define B_AX_TXTIMER_UNIT_SH 16
+#define B_AX_TXTIMER_UNIT_MSK 0x3
+#define B_AX_TXCOUNTER_MATCH_SH 8
+#define B_AX_TXCOUNTER_MATCH_MSK 0xff
+#define B_AX_TXTIMER_MATCH_SH 0
+#define B_AX_TXTIMER_MATCH_MSK 0xff
+
+#define R_AX_INT_MIT_RX 0x10D4
+#define B_AX_RXTIMER_UNIT_SH 16
+#define B_AX_RXTIMER_UNIT_MSK 0x3
+#define B_AX_RXCOUNTER_MATCH_SH 8
+#define B_AX_RXCOUNTER_MATCH_MSK 0xff
+#define B_AX_RXTIMER_MATCH_SH 0
+#define B_AX_RXTIMER_MATCH_MSK 0xff
+
+#define R_AX_TXDMA_ADDR_H 0x10F0
+#define B_AX_TXDMA_ADDR_H_SH 0
+#define B_AX_TXDMA_ADDR_H_MSK 0xffffffffL
+
+#define R_AX_RXDMA_ADDR_H 0x10F4
+#define B_AX_RXDMA_ADDR_H_SH 0
+#define B_AX_RXDMA_ADDR_H_MSK 0xffffffffL
+
+#define R_AX_PCIE_INFO 0x10F8
+#define B_AX_EPHY_CAL_DONE BIT(5)
+#define B_AX_HOST_GEN2_SUPPORT BIT(4)
+#define B_AX_L0S_LINK_OFF BIT(3)
+#define B_AX_ACT_LINK_OFF BIT(2)
+#define B_AX_PCIERX_IDLE BIT(1)
+#define B_AX_PCIETX_IDLE BIT(0)
+
+#define R_AX_TSFTIMER_HCI 0x10FC
+#define B_AX_TSFT2_HCI_SH 16
+#define B_AX_TSFT2_HCI_MSK 0xffff
+#define B_AX_TSFT1_HCI_SH 0
+#define B_AX_TSFT1_HCI_MSK 0xffff
+
+#define R_AX_RXQ_RXBD_DESA_L 0x1100
+#define B_AX_RXQ_RXBD_DESA_L_SH 0
+#define B_AX_RXQ_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_RXQ_RXBD_DESA_H 0x1104
+#define B_AX_RXQ_RXBD_DESA_H_SH 0
+#define B_AX_RXQ_RXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_RPQ_RXBD_DESA_L 0x1108
+#define B_AX_RPQ_RXBD_DESA_L_SH 0
+#define B_AX_RPQ_RXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_RPQ_RXBD_DESA_H 0x110C
+#define B_AX_RPQ_RXBD_DESA_H_SH 0
+#define B_AX_RPQ_RXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH0_TXBD_DESA_L 0x1110
+#define B_AX_ACH0_TXBD_DESA_L_SH 0
+#define B_AX_ACH0_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH0_TXBD_DESA_H 0x1114
+#define B_AX_ACH0_TXBD_DESA_H_SH 0
+#define B_AX_ACH0_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH1_TXBD_DESA_L 0x1118
+#define B_AX_ACH1_TXBD_DESA_L_SH 0
+#define B_AX_ACH1_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH1_TXBD_DESA_H 0x111C
+#define B_AX_ACH1_TXBD_DESA_H_SH 0
+#define B_AX_ACH1_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH2_TXBD_DESA_L 0x1120
+#define B_AX_ACH2_TXBD_DESA_L_SH 0
+#define B_AX_ACH2_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH2_TXBD_DESA_H 0x1124
+#define B_AX_ACH2_TXBD_DESA_H_SH 0
+#define B_AX_ACH2_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH3_TXBD_DESA_L 0x1128
+#define B_AX_ACH3_TXBD_DESA_L_SH 0
+#define B_AX_ACH3_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH3_TXBD_DESA_H 0x112C
+#define B_AX_ACH3_TXBD_DESA_H_SH 0
+#define B_AX_ACH3_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH4_TXBD_DESA_L 0x1130
+#define B_AX_ACH4_TXBD_DESA_L_SH 0
+#define B_AX_ACH4_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH4_TXBD_DESA_H 0x1134
+#define B_AX_ACH4_TXBD_DESA_H_SH 0
+#define B_AX_ACH4_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH5_TXBD_DESA_L 0x1138
+#define B_AX_ACH5_TXBD_DESA_L_SH 0
+#define B_AX_ACH5_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH5_TXBD_DESA_H 0x113C
+#define B_AX_ACH5_TXBD_DESA_H_SH 0
+#define B_AX_ACH5_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH6_TXBD_DESA_L 0x1140
+#define B_AX_ACH6_TXBD_DESA_L_SH 0
+#define B_AX_ACH6_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH6_TXBD_DESA_H 0x1144
+#define B_AX_ACH6_TXBD_DESA_H_SH 0
+#define B_AX_ACH6_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_ACH7_TXBD_DESA_L 0x1148
+#define B_AX_ACH7_TXBD_DESA_L_SH 0
+#define B_AX_ACH7_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_ACH7_TXBD_DESA_H 0x114C
+#define B_AX_ACH7_TXBD_DESA_H_SH 0
+#define B_AX_ACH7_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_CH8_TXBD_DESA_L 0x1150
+#define B_AX_CH8_TXBD_DESA_L_SH 0
+#define B_AX_CH8_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_CH8_TXBD_DESA_H 0x1154
+#define B_AX_CH8_TXBD_DESA_H_SH 0
+#define B_AX_CH8_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_CH9_TXBD_DESA_L 0x1158
+#define B_AX_CH9_TXBD_DESA_L_SH 0
+#define B_AX_CH9_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_CH9_TXBD_DESA_H 0x115C
+#define B_AX_CH9_TXBD_DESA_H_SH 0
+#define B_AX_CH9_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_CH12_TXBD_DESA_L 0x1160
+#define B_AX_CH12_TXBD_DESA_L_SH 0
+#define B_AX_CH12_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_CH12_TXBD_DESA_H 0x1164
+#define B_AX_CH12_TXBD_DESA_H_SH 0
+#define B_AX_CH12_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_DBG_CTRL 0x11C0
+#define B_AX_DBG_SEL_SH 16
+#define B_AX_DBG_SEL_MSK 0xff
+#define B_AX_LOOPBACK_DBG_SEL_SH 13
+#define B_AX_LOOPBACK_DBG_SEL_MSK 0x7
+#define B_AX_MRD_TIMEOUT_EN BIT(10)
+#define B_AX_TXDMA_ERROR_PS BIT(9)
+#define B_AX_EN_TXDMA_STUCK_ERR_HANDLE BIT(8)
+#define B_AX_EN_TXDMA_RTN_ERR_HANDLE BIT(7)
+#define B_AX_RXDMA_ERROR_PS BIT(6)
+#define B_AX_EN_RXDMA_STUCK_ERR_HANDLE BIT(5)
+#define B_AX_EN_RXDMA_RTN_ERR_HANDLE BIT(4)
+#define B_AX_OLD_DEHANG BIT(3)
+#define B_AX_R_AX_TXDMA_FAIL_PS BIT(1)
+#define B_AX_EN_STUCK_DBG BIT(0)
+
+#define R_AX_DBG_ERR_FLAG 0x11C4
+#define B_AX_PCIE_RPQ_FULL BIT(29)
+#define B_AX_PCIE_RXQ_FULL BIT(28)
+#define B_AX_CPL_STATUS_SH 25
+#define B_AX_CPL_STATUS_MSK 0x7
+#define B_AX_RXDMA_ERR_HANDLE_REQ BIT(24)
+#define B_AX_TXDMA_ERR_HANDLE_REQ BIT(23)
+#define B_AX_RX_STUCK BIT(22)
+#define B_AX_TX_STUCK BIT(21)
+#define B_AX_PCIEDBG_TXERR4 BIT(20)
+#define B_AX_PCIEDBG_TXERR3 BIT(19)
+#define B_AX_PCIEDBG_TXERR2 BIT(18)
+#define B_AX_PCIEDBG_TXERR1 BIT(17)
+#define B_AX_PCIEDBG_TXERR0 BIT(16)
+#define B_AX_RXDMA_ERR_CNT_SH 8
+#define B_AX_RXDMA_ERR_CNT_MSK 0xff
+#define B_AX_PCIE_RXP1_ERR0 BIT(4)
+#define B_AX_PCIE_TXBD_4KBOUD_LENERR BIT(0)
+
+#define R_AX_STC_INT_CS 0x11D0
+#define B_AX_STC_INT_EN BIT(31)
+#define B_AX_STC_INT_FLAG_SH 16
+#define B_AX_STC_INT_FLAG_MSK 0xff
+#define B_AX_STC_INT_IDX_SH 8
+#define B_AX_STC_INT_IDX_MSK 0x7
+#define B_AX_STC_INT_REALTIME_CS_SH 0
+#define B_AX_STC_INT_REALTIME_CS_MSK 0x3f
+
+#define R_AX_ST_INT_CFG 0x11D4
+#define B_AX_STC_INT_GRP_EN BIT(31)
+#define B_AX_STC_INT_EXPECT_LS_SH 8
+#define B_AX_STC_INT_EXPECT_LS_MSK 0x3f
+#define B_AX_STC_INT_EXPECT_CS_SH 0
+#define B_AX_STC_INT_EXPECT_CS_MSK 0x3f
+
+#define R_AX_LBC_WATCHDOG 0x11D8
+#define B_AX_LBC_ADDR_SH 16
+#define B_AX_LBC_ADDR_MSK 0x3fff
+#define B_AX_LBC_TIMER_SH 4
+#define B_AX_LBC_TIMER_MSK 0xf
+#define B_AX_LBC_FLAG BIT(1)
+#define B_AX_LBC_EN BIT(0)
+
+#define R_AX_DEBUG_STATE1 0x11E0
+#define B_AX_DEBUG_STATE1_SH 0
+#define B_AX_DEBUG_STATE1_MSK 0xffffffffL
+
+#define R_AX_DEBUG_STATE2 0x11E4
+#define B_AX_DEBUG_STATE2_SH 0
+#define B_AX_DEBUG_STATE2_MSK 0xffffffffL
+
+#define R_AX_DEBUG_STATE3 0x11E8
+#define B_AX_DEBUG_STATE3_SH 0
+#define B_AX_DEBUG_STATE3_MSK 0xffffffffL
+
+#define R_AX_ACH0_BDRAM_CTRL 0x1200
+#define B_AX_ACH0_BDRAM_MIN_SH 16
+#define B_AX_ACH0_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH0_BDRAM_MAX_SH 8
+#define B_AX_ACH0_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH0_BDRAM_SIDX_SH 0
+#define B_AX_ACH0_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH1_BDRAM_CTRL 0x1204
+#define B_AX_ACH1_BDRAM_MIN_SH 16
+#define B_AX_ACH1_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH1_BDRAM_MAX_SH 8
+#define B_AX_ACH1_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH1_BDRAM_SIDX_SH 0
+#define B_AX_ACH1_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH2_BDRAM_CTRL 0x1208
+#define B_AX_ACH2_BDRAM_MIN_SH 16
+#define B_AX_ACH2_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH2_BDRAM_MAX_SH 8
+#define B_AX_ACH2_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH2_BDRAM_SIDX_SH 0
+#define B_AX_ACH2_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH3_BDRAM_CTRL 0x120C
+#define B_AX_ACH3_BDRAM_MIN_SH 16
+#define B_AX_ACH3_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH3_BDRAM_MAX_SH 8
+#define B_AX_ACH3_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH3_BDRAM_SIDX_SH 0
+#define B_AX_ACH3_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH4_BDRAM_CTRL 0x1210
+#define B_AX_ACH4_BDRAM_MIN_SH 16
+#define B_AX_ACH4_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH4_BDRAM_MAX_SH 8
+#define B_AX_ACH4_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH4_BDRAM_SIDX_SH 0
+#define B_AX_ACH4_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH5_BDRAM_CTRL 0x1214
+#define B_AX_ACH5_BDRAM_MIN_SH 16
+#define B_AX_ACH5_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH5_BDRAM_MAX_SH 8
+#define B_AX_ACH5_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH5_BDRAM_SIDX_SH 0
+#define B_AX_ACH5_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH6_BDRAM_CTRL 0x1218
+#define B_AX_ACH6_BDRAM_MIN_SH 16
+#define B_AX_ACH6_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH6_BDRAM_MAX_SH 8
+#define B_AX_ACH6_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH6_BDRAM_SIDX_SH 0
+#define B_AX_ACH6_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH7_BDRAM_CTRL 0x121C
+#define B_AX_ACH7_BDRAM_MIN_SH 16
+#define B_AX_ACH7_BDRAM_MIN_MSK 0xff
+#define B_AX_ACH7_BDRAM_MAX_SH 8
+#define B_AX_ACH7_BDRAM_MAX_MSK 0xff
+#define B_AX_ACH7_BDRAM_SIDX_SH 0
+#define B_AX_ACH7_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_CH8_BDRAM_CTRL 0x1220
+#define B_AX_CH8_BDRAM_MIN_SH 16
+#define B_AX_CH8_BDRAM_MIN_MSK 0xff
+#define B_AX_CH8_BDRAM_MAX_SH 8
+#define B_AX_CH8_BDRAM_MAX_MSK 0xff
+#define B_AX_CH8_BDRAM_SIDX_SH 0
+#define B_AX_CH8_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_CH9_BDRAM_CTRL 0x1224
+#define B_AX_CH9_BDRAM_MIN_SH 16
+#define B_AX_CH9_BDRAM_MIN_MSK 0xff
+#define B_AX_CH9_BDRAM_MAX_SH 8
+#define B_AX_CH9_BDRAM_MAX_MSK 0xff
+#define B_AX_CH9_BDRAM_SIDX_SH 0
+#define B_AX_CH9_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_CH12_BDRAM_CTRL 0x1228
+#define B_AX_CH12_BDRAM_MIN_SH 16
+#define B_AX_CH12_BDRAM_MIN_MSK 0xff
+#define B_AX_CH12_BDRAM_MAX_SH 8
+#define B_AX_CH12_BDRAM_MAX_MSK 0xff
+#define B_AX_CH12_BDRAM_SIDX_SH 0
+#define B_AX_CH12_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_ACH0_BDRAM_RWPTR 0x1230
+#define B_AX_ACH0_BDRAM_WPTR_SH 8
+#define B_AX_ACH0_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH0_BDRAM_RPTR_SH 0
+#define B_AX_ACH0_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH1_BDRAM_RWPTR 0x1232
+#define B_AX_ACH1_BDRAM_WPTR_SH 8
+#define B_AX_ACH1_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH1_BDRAM_RPTR_SH 0
+#define B_AX_ACH1_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH2_BDRAM_RWPTR 0x1234
+#define B_AX_ACH2_BDRAM_WPTR_SH 8
+#define B_AX_ACH2_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH2_BDRAM_RPTR_SH 0
+#define B_AX_ACH2_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH3_BDRAM_RWPTR 0x1236
+#define B_AX_ACH3_BDRAM_WPTR_SH 8
+#define B_AX_ACH3_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH3_BDRAM_RPTR_SH 0
+#define B_AX_ACH3_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH4_BDRAM_RWPTR 0x1238
+#define B_AX_ACH4_BDRAM_WPTR_SH 8
+#define B_AX_ACH4_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH4_BDRAM_RPTR_SH 0
+#define B_AX_ACH4_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH5_BDRAM_RWPTR 0x123A
+#define B_AX_ACH5_BDRAM_WPTR_SH 8
+#define B_AX_ACH5_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH5_BDRAM_RPTR_SH 0
+#define B_AX_ACH5_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH6_BDRAM_RWPTR 0x123C
+#define B_AX_ACH6_BDRAM_WPTR_SH 8
+#define B_AX_ACH6_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH6_BDRAM_RPTR_SH 0
+#define B_AX_ACH6_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_ACH7_BDRAM_RWPTR 0x123E
+#define B_AX_ACH7_BDRAM_WPTR_SH 8
+#define B_AX_ACH7_BDRAM_WPTR_MSK 0xff
+#define B_AX_ACH7_BDRAM_RPTR_SH 0
+#define B_AX_ACH7_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_CH8_BDRAM_RWPTR 0x1240
+#define B_AX_CH8_BDRAM_WPTR_SH 8
+#define B_AX_CH8_BDRAM_WPTR_MSK 0xff
+#define B_AX_CH8_BDRAM_RPTR_SH 0
+#define B_AX_CH8_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_CH9_BDRAM_RWPTR 0x1242
+#define B_AX_CH9_BDRAM_WPTR_SH 8
+#define B_AX_CH9_BDRAM_WPTR_MSK 0xff
+#define B_AX_CH9_BDRAM_RPTR_SH 0
+#define B_AX_CH9_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_CH12_BDRAM_RWPTR 0x1244
+#define B_AX_CH12_BDRAM_WPTR_SH 8
+#define B_AX_CH12_BDRAM_WPTR_MSK 0xff
+#define B_AX_CH12_BDRAM_RPTR_SH 0
+#define B_AX_CH12_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_PCIE_DMA_STOP2 0x1310
+#define B_AX_STOP_CH11 BIT(1)
+#define B_AX_STOP_CH10 BIT(0)
+
+#define R_AX_TXBD_RWPTR_CLR2 0x1314
+#define B_AX_CLR_CH11_IDX BIT(1)
+#define B_AX_CLR_CH10_IDX BIT(0)
+
+#define R_AX_PCIE_DMA_BUSY2 0x131C
+#define B_AX_CH11_BUSY BIT(1)
+#define B_AX_CH10_BUSY BIT(0)
+
+#define R_AX_CH10_BDRAM_CTRL 0x1320
+#define B_AX_CH10_BDRAM_MIN_SH 16
+#define B_AX_CH10_BDRAM_MIN_MSK 0xff
+#define B_AX_CH10_BDRAM_MAX_SH 8
+#define B_AX_CH10_BDRAM_MAX_MSK 0xff
+#define B_AX_CH10_BDRAM_SIDX_SH 0
+#define B_AX_CH10_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_CH11_BDRAM_CTRL 0x1324
+#define B_AX_CH11_BDRAM_MIN_SH 16
+#define B_AX_CH11_BDRAM_MIN_MSK 0xff
+#define B_AX_CH11_BDRAM_MAX_SH 8
+#define B_AX_CH11_BDRAM_MAX_MSK 0xff
+#define B_AX_CH11_BDRAM_SIDX_SH 0
+#define B_AX_CH11_BDRAM_SIDX_MSK 0xff
+
+#define R_AX_CH10_BDRAM_RWPTR 0x1340
+#define B_AX_CH10_BDRAM_WPTR_SH 8
+#define B_AX_CH10_BDRAM_WPTR_MSK 0xff
+#define B_AX_CH10_BDRAM_RPTR_SH 0
+#define B_AX_CH10_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_CH11_BDRAM_RWPTR 0x1342
+#define B_AX_CH11_BDRAM_WPTR_SH 8
+#define B_AX_CH11_BDRAM_WPTR_MSK 0xff
+#define B_AX_CH11_BDRAM_RPTR_SH 0
+#define B_AX_CH11_BDRAM_RPTR_MSK 0xff
+
+#define R_AX_CH10_TXBD_NUM 0x1338
+#define B_AX_PCIE_CH10_FLAG BIT(14)
+#define B_AX_CH10_DESC_NUM_SH 0
+#define B_AX_CH10_DESC_NUM_MSK 0xfff
+
+#define R_AX_CH11_TXBD_NUM 0x133A
+#define B_AX_PCIE_CH11_FLAG BIT(14)
+#define B_AX_CH11_DESC_NUM_SH 0
+#define B_AX_CH11_DESC_NUM_MSK 0xfff
+
+#define R_AX_CH10_TXBD_DESA_L 0x1358
+#define B_AX_CH10_TXBD_DESA_L_SH 0
+#define B_AX_CH10_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_CH10_TXBD_DESA_H 0x135C
+#define B_AX_CH10_TXBD_DESA_H_SH 0
+#define B_AX_CH10_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_CH11_TXBD_DESA_L 0x1360
+#define B_AX_CH11_TXBD_DESA_L_SH 0
+#define B_AX_CH11_TXBD_DESA_L_MSK 0xffffffffL
+
+#define R_AX_CH11_TXBD_DESA_H 0x1364
+#define B_AX_CH11_TXBD_DESA_H_SH 0
+#define B_AX_CH11_TXBD_DESA_H_MSK 0xffffffffL
+
+#define R_AX_CH10_TXBD_IDX 0x137C
+#define B_AX_CH10_HW_IDX_SH 16
+#define B_AX_CH10_HW_IDX_MSK 0xfff
+#define B_AX_CH10_HOST_IDX_SH 0
+#define B_AX_CH10_HOST_IDX_MSK 0xfff
+
+#define R_AX_CH11_TXBD_IDX 0x1380
+#define B_AX_CH11_HW_IDX_SH 16
+#define B_AX_CH11_HW_IDX_MSK 0xfff
+#define B_AX_CH11_HOST_IDX_SH 0
+#define B_AX_CH11_HOST_IDX_MSK 0xfff
+
+#define R_AX_PCIE_HIMR10 0x13B0
+#define B_AX_HC10ISR_IND_INT_EN BIT(28)
+#define B_AX_TXDMA_CH11_INT_EN BIT(12)
+#define B_AX_TXDMA_CH10_INT_EN BIT(11)
+
+#define R_AX_PCIE_HISR10 0x13B4
+#define B_AX_HC10ISR_IND_INT BIT(28)
+#define B_AX_TXDMA_CH11_INT BIT(12)
+#define B_AX_TXDMA_CH10_INT BIT(11)
+
+//
+// WL_AX_Reg_Page_SDIO.xls
+//
+
+//
+// SDIO_Local_Reg_Spec
+//
+
+#define R_AX_SDIO_TX_CTRL 0x80000000
+#define B_AX_SDIO_INT_TIMEOUT_SH 16
+#define B_AX_SDIO_INT_TIMEOUT_MSK 0xffff
+#define B_AX_IO_ERR_STATUS BIT(15)
+#define B_AX_CMD53_W_MIX BIT(14)
+#define B_AX_CMD53_TX_FORMAT BIT(13)
+#define B_AX_CMD53_R_TIMEOUT_MASK BIT(12)
+#define B_AX_CMD53_R_TIMEOUT_UNIT_SH 10
+#define B_AX_CMD53_R_TIMEOUT_UNIT_MSK 0x3
+#define B_AX_REPLY_ERRCRC_IN_DATA BIT(9)
+#define B_AX_EN_CMD53_OVERLAP BIT(8)
+#define B_AX_REPLY_ERR_IN_R5 BIT(7)
+#define B_AX_R18A_EN BIT(6)
+#define B_AX_SDIO_CMD_FORCE_VLD BIT(5)
+#define B_AX_INIT_CMD_EN BIT(4)
+#define B_AX_RXINT_READ_MASK_DIS BIT(3)
+#define B_AX_EN_RXDMA_MASK_INT BIT(2)
+#define B_AX_EN_MASK_TIMER BIT(1)
+#define B_AX_CMD_ERR_STOP_INT_EN BIT(0)
+
+#define R_AX_SDIO_CTRL 0x80000004
+#define B_AX_SDIO_DRV_TYPE_D_SH 28
+#define B_AX_SDIO_DRV_TYPE_D_MSK 0xf
+#define B_AX_SDIO_DRV_TYPE_C_SH 24
+#define B_AX_SDIO_DRV_TYPE_C_MSK 0xf
+#define B_AX_SDIO_DRV_TYPE_B_SH 20
+#define B_AX_SDIO_DRV_TYPE_B_MSK 0xf
+#define B_AX_SDIO_DRV_TYPE_A_SH 16
+#define B_AX_SDIO_DRV_TYPE_A_MSK 0xf
+#define B_AX_SIG_OUT_PH BIT(8)
+#define B_AX_CMD11_SEQ_END_DELAY_SH 4
+#define B_AX_CMD11_SEQ_END_DELAY_MSK 0xf
+#define B_AX_CMD11_SEQ_SAMPLE_INTERVAL_SH 1
+#define B_AX_CMD11_SEQ_SAMPLE_INTERVAL_MSK 0x7
+#define B_AX_CMD11_SEQ_EN BIT(0)
+
+#define R_AX_SDIO_MONITOR 0x80000008
+#define B_AX_SDIO_INT_START_SH 0
+#define B_AX_SDIO_INT_START_MSK 0xffffffffL
+
+#define R_AX_SDIO_MONITOR_2 0x8000000C
+#define B_AX_CMD53_WT_EN BIT(23)
+#define B_AX_SDIO_CLK_MONITOR_SH 21
+#define B_AX_SDIO_CLK_MONITOR_MSK 0x3
+#define B_AX_SDIO_CLK_CNT_SH 0
+#define B_AX_SDIO_CLK_CNT_MSK 0x1fffff
+
+#define R_AX_SDIO_CTRL_2 0x80000010
+#define B_AX_SDIO_CLK_SMT BIT(1)
+#define B_AX_SDIO_DATA_SMT BIT(0)
+
+#define R_AX_SDIO_HTSFR_INFO 0x80000030
+#define B_AX_HTSFR1_SH 16
+#define B_AX_HTSFR1_MSK 0xffff
+#define B_AX_HTSFR0_SH 0
+#define B_AX_HTSFR0_MSK 0xffff
+
+#define R_AX_SDIO_INDIRECT_ADDR 0x80000040
+#define B_AX_INDIRECT_RDY BIT(31)
+#define B_AX_INDIRECT_ADDR_SH 0
+#define B_AX_INDIRECT_ADDR_MSK 0x7fffffffL
+
+#define R_AX_SDIO_INDIRECT_DATA 0x80000044
+#define B_AX_INDIRECT_DATA_SH 0
+#define B_AX_INDIRECT_DATA_MSK 0xffffffffL
+
+#define R_AX_SDIO_INDIRECT_CTRL 0x80000048
+#define B_AX_INDIRECT_REG_R BIT(3)
+#define B_AX_INDIRECT_REG_W BIT(2)
+#define B_AX_INDIRECT_REG_SIZE_SH 0
+#define B_AX_INDIRECT_REG_SIZE_MSK 0x3
+
+#define R_AX_SDIO_HRPWM1 0x80000080
+#define B_AX_HRPWM_SH 16
+#define B_AX_HRPWM_MSK 0xffff
+
+#define R_AX_SDIO_BUS_CTRL 0x80000084
+#define B_AX_SPI_PHASE BIT(21)
+#define B_AX_INTR_CTRL BIT(20)
+#define B_AX_SDIO_VOLTAGE BIT(19)
+#define B_AX_BYPASS_INIT BIT(18)
+#define B_AX_HCI_RESUME_RDY BIT(17)
+#define B_AX_HCI_SUS_REQ BIT(16)
+#define B_AX_CMD53_RDATA_EARLY BIT(14)
+#define B_AX_INT_MASK_DIS BIT(12)
+#define B_AX_PAD_CLK_XHGE_EN BIT(11)
+#define B_AX_INTER_CLK_EN BIT(10)
+#define B_AX_EN_RPT_TXCRC BIT(9)
+#define B_AX_DIS_RXDMA_STS BIT(8)
+
+#define R_AX_SDIO_RESPONSE_TIMER 0x80000088
+#define B_AX_SDIO_CMD_CRC_SH 16
+#define B_AX_SDIO_CMD_CRC_MSK 0xff
+#define B_AX_CMDIN_2RESP_TIMER_SH 0
+#define B_AX_CMDIN_2RESP_TIMER_MSK 0xffff
+
+#define R_AX_SDIO_HSISR 0x80000090
+#define B_AX_HISR_MASK BIT(8)
+#define B_AX_DRV_WLAN_INT_CLR BIT(1)
+#define B_AX_DRV_WLAN_INT BIT(0)
+
+#define R_AX_SDIO_EXTEND_RBLOK_GAP 0x80000094
+#define B_AX_EXTEND_RBLOCK_GAP_SH 0
+#define B_AX_EXTEND_RBLOCK_GAP_MSK 0x3f
+
+#define R_AX_SDIO_DIOERR_RPT 0x800000C0
+#define B_AX_DATA_CRC_ERR_CNT_SH 24
+#define B_AX_DATA_CRC_ERR_CNT_MSK 0xff
+#define B_AX_CMD_CRC_ERR_CNT_SH 16
+#define B_AX_CMD_CRC_ERR_CNT_MSK 0xff
+#define B_AX_SDIO_PAGE_ERR BIT(0)
+
+#define R_AX_SDIO_CMD_ERR_CONTENT_L 0x800000C4
+#define B_AX_SDIO_CMD_ERR_CONTENT_L_SH 0
+#define B_AX_SDIO_CMD_ERR_CONTENT_L_MSK 0xffffffffL
+
+#define R_AX_SDIO_CMD_ERR_CONTENT 0x800000C8
+#define B_AX_SDIO_DATA_CRC_SH 16
+#define B_AX_SDIO_DATA_CRC_MSK 0xffff
+#define B_AX_D3_CRC_ERR BIT(12)
+#define B_AX_D2_CRC_ERR BIT(11)
+#define B_AX_D1_CRC_ERR BIT(10)
+#define B_AX_D0_CRC_ERR BIT(9)
+#define B_AX_CMD_CRC_ERR BIT(8)
+#define B_AX_SDIO_CMD_ERR_CONTENT_H_SH 0
+#define B_AX_SDIO_CMD_ERR_CONTENT_H_MSK 0xff
+
+#define R_AX_SDIO_TRANS_FIFO_STATUS 0x800000CC
+#define B_AX_TRANS_FIFO_UNDERFLOW BIT(1)
+#define B_AX_TRANS_FIFO_OVERFLOW BIT(0)
+
+#define R_AX_SDIO_HIMR 0x80000100
+#define B_AX_SDIO_HC10ISR_IND_EN BIT(20)
+#define B_AX_SDIO_HC00ISR_IND_EN BIT(19)
+#define B_AX_SDIO_HD1ISR_IND_EN BIT(18)
+#define B_AX_SDIO_HD0ISR_IND_EN BIT(17)
+#define B_AX_SDIO_HS0ISR_IND_EN BIT(16)
+#define B_AX_SDIO_BT_INT_EN BIT(8)
+#define B_AX_SDIO_AVAL_INT_EN BIT(1)
+#define B_AX_RX_REQUEST_INT_EN BIT(0)
+
+#define R_AX_SDIO_HISR 0x80000104
+#define B_AX_SDIO_HC10ISR_IND_INT BIT(20)
+#define B_AX_SDIO_HC00ISR_IND_INT BIT(19)
+#define B_AX_SDIO_HD1ISR_IND_INT BIT(18)
+#define B_AX_SDIO_HD0ISR_IND_INT BIT(17)
+#define B_AX_SDIO_HS0ISR_IND_INT BIT(16)
+#define B_AX_SDIO_BT_INT BIT(8)
+#define B_AX_SDIO_AVAL_INT BIT(1)
+#define B_AX_RX_REQUEST_INT BIT(0)
+
+#define R_AX_SDIO_RX_REQ_LEN 0x80000108
+#define B_AX_RX_REQ_LEN_SH 0
+#define B_AX_RX_REQ_LEN_MSK 0x3ffff
+
+#define R_AX_SDIO_TXPG_FWCMD 0x8000010C
+#define B_AX_ACH12_USE_PG_SH 0
+#define B_AX_ACH12_USE_PG_MSK 0xfff
+
+#define R_AX_SDIO_G0_TXPG 0x80000110
+#define B_AX_USE_WPPG_G0_SH 16
+#define B_AX_USE_WPPG_G0_MSK 0xfff
+#define B_AX_USE_PUBPG_G0_SH 0
+#define B_AX_USE_PUBPG_G0_MSK 0xfff
+
+#define R_AX_SDIO_G1_TXPG 0x80000114
+#define B_AX_USE_WPPG_G1_SH 16
+#define B_AX_USE_WPPG_G1_MSK 0xfff
+#define B_AX_USE_PUBPG_G1_SH 0
+#define B_AX_USE_PUBPG_G1_MSK 0xfff
+
+#define R_AX_SDIO_TXPG_0 0x80000118
+
+#define R_AX_SDIO_TXPG_1 0x8000011C
+
+#define R_AX_SDIO_TXPG_2 0x80000120
+
+#define R_AX_SDIO_TXPG_3 0x80000124
+
+#define R_AX_SDIO_TXPG_4 0x80000128
+#define B_AX_ACH9_USE_PG_SH 16
+#define B_AX_ACH9_USE_PG_MSK 0xfff
+#define B_AX_ACH8_USE_PG_SH 0
+#define B_AX_ACH8_USE_PG_MSK 0xfff
+
+#define R_AX_SDIO_TXPG_5 0x8000012C
+#define B_AX_ACH11_USE_PG_SH 16
+#define B_AX_ACH11_USE_PG_MSK 0xfff
+#define B_AX_ACH10_USE_PG_SH 0
+#define B_AX_ACH10_USE_PG_MSK 0xfff
+
+#define R_AX_SDIO_AVAL_INTRPT_STAT 0x80000130
+#define B_AX_ACH11_INTRPT_STAT BIT(11)
+#define B_AX_ACH10_INTRPT_STAT BIT(10)
+#define B_AX_ACH9_INTRPT_STAT BIT(9)
+#define B_AX_ACH8_INTRPT_STAT BIT(8)
+#define B_AX_ACH7_INTRPT_STAT BIT(7)
+#define B_AX_ACH6_INTRPT_STAT BIT(6)
+#define B_AX_ACH5_INTRPT_STAT BIT(5)
+#define B_AX_ACH4_INTRPT_STAT BIT(4)
+#define B_AX_ACH3_INTRPT_STAT BIT(3)
+#define B_AX_ACH2_INTRPT_STAT BIT(2)
+#define B_AX_ACH1_INTRPT_STAT BIT(1)
+#define B_AX_ACH0_INTRPT_STAT BIT(0)
+
+//
+// WL_AX_Reg_RXI300.xls
+//
+
+//
+// RXI300
+//
+
+#define R_AX_RXI300_NAME 0x0000
+#define B_AX_RXI300_NAME_SH 0
+#define B_AX_RXI300_NAME_MSK 0xffffffffL
+
+#define R_AX_RXI300_VER 0x0004
+#define B_AX_RXI300_VER_SH 0
+#define B_AX_RXI300_VER_MSK 0xffffffffL
+
+#define R_AX_RXI300_REV 0x0008
+#define B_AX_RXI300_REV_SH 0
+#define B_AX_RXI300_REV_MSK 0xffffffffL
+
+#define R_AX_RXI300_INST 0x000C
+#define B_AX_RXI300_INST_SH 0
+#define B_AX_RXI300_INST_MSK 0xffffffffL
+
+#define R_AX_RXI300_IMPL_Y 0x0010
+#define B_AX_RXI300_IMPL_Y_SH 0
+#define B_AX_RXI300_IMPL_Y_MSK 0xffffffffL
+
+#define R_AX_RXI300_IMPL_D 0x0014
+#define B_AX_RXI300_IMPL_D_SH 0
+#define B_AX_RXI300_IMPL_D_MSK 0xffffffffL
+
+#define R_AX_RXI300_DEV 0x0018
+#define B_AX_RXI300_DEV_SH 0
+#define B_AX_RXI300_DEV_MSK 0xffffffffL
+
+#define R_AX_RXI300_PRO_NUM 0x001C
+#define B_AX_RXI300_PRO_NUM_SH 0
+#define B_AX_RXI300_PRO_NUM_MSK 0xffffffffL
+
+#define R_AX_RXI300_ELR_0_PLD0 0x0200
+#define B_AX_ERR_BSTINDEX_SH 24
+#define B_AX_ERR_BSTINDEX_MSK 0xff
+#define B_AX_ERR_BSTLEN_SH 16
+#define B_AX_ERR_BSTLEN_MSK 0xff
+#define B_AX_ERR_BSTTYPE_SH 11
+#define B_AX_ERR_BSTTYPE_MSK 0x7
+#define B_AX_ERR_CMD_SH 8
+#define B_AX_ERR_CMD_MSK 0x7
+#define B_AX_ERR_SRC_SH 0
+#define B_AX_ERR_SRC_MSK 0xff
+
+#define R_AX_RXI300_ELR_0_PLD1 0x0204
+#define B_AX_ERR_MREQINFO_SH 23
+#define B_AX_ERR_MREQINFO_MSK 0x1ff
+#define B_AX_ERR_SIZE_SH 16
+#define B_AX_ERR_SIZE_MSK 0x7
+#define B_AX_ERR_BYTEEN_SH 0
+#define B_AX_ERR_BYTEEN_MSK 0xffff
+
+#define R_AX_RXI300_ELR_0_ID 0x0208
+#define B_AX_ERR_ID_SH 0
+#define B_AX_ERR_ID_MSK 0xffffffffL
+
+#define R_AX_RXI300_ELR_0_ADR0 0x020C
+#define B_AX_ERR_ADR0_SH 0
+#define B_AX_ERR_ADR0_MSK 0xffffffffL
+
+#define R_AX_RXI300_ELR_0_ADR1 0x0210
+#define B_AX_ERR_ADR1_SH 0
+#define B_AX_ERR_ADR1_MSK 0xffffffffL
+
+#define R_AX_RXI300_ELR_0_CODE 0x0230
+#define B_AX_ELR_CODE_SH 0
+#define B_AX_ELR_CODE_MSK 0xff
+
+#define R_AX_RXI300_ELR_0_INTR_CLR 0x023C
+#define B_AX_ELR_INTR_CLR BIT(0)
+
+#define R_AX_RXI300_ICG_CTRL0 0x0300
+#define B_AX_RXI300_ICG_CTRL0_SH 0
+#define B_AX_RXI300_ICG_CTRL0_MSK 0xffffffffL
+
+#define R_AX_RXI300_ICG_CTRL1 0x0304
+#define B_AX_RXI300_ICG_CTRL1_SH 0
+#define B_AX_RXI300_ICG_CTRL1_MSK 0xffffffffL
+
+#define R_AX_RXI300_TIME_MON 0x0308
+#define B_AX_RXI300_TIME_MON_SH 0
+#define B_AX_RXI300_TIME_MON_MSK 0xffffffffL
+
+#define R_AX_RXI300_ICG_STAT0 0x0320
+#define B_AX_RXI300_ICG_STAT0_SH 0
+#define B_AX_RXI300_ICG_STAT0_MSK 0xffffffffL
+
+#define R_AX_RXI300_ICG_STAT1 0x0324
+#define B_AX_RXI300_ICG_STAT1_SH 0
+#define B_AX_RXI300_ICG_STAT1_MSK 0xffffffffL
+
+//
+// WL_AX_Reg_SPIC.xls
+//
+
+//
+// SPIC
+//
+
+#define R_AX_SPIC_CTRLR0 0x0000
+#define B_AX_PRM_2ND_PHASE BIT(31)
+#define B_AX_DDR_EN_SH 28
+#define B_AX_DDR_EN_MSK 0x7
+#define B_AX_CK_MTIMES_SH 23
+#define B_AX_CK_MTIMES_MSK 0x1f
+#define B_AX_FAST_RD BIT(22)
+#define B_AX_CMD_CH_SH 20
+#define B_AX_CMD_CH_MSK 0x3
+#define B_AX_DATA_CH_SH 18
+#define B_AX_DATA_CH_MSK 0x3
+#define B_AX_ADDR_CH_SH 16
+#define B_AX_ADDR_CH_MSK 0x3
+#define B_AX_TMOD_SH 8
+#define B_AX_TMOD_MSK 0x3
+#define B_AX_SCPOL BIT(7)
+#define B_AX_SCPH BIT(6)
+
+#define R_AX_SPIC_CTRLR1 0x0004
+#define B_AX_NDF_SH 0
+#define B_AX_NDF_MSK 0xffff
+
+#define R_AX_SPIC_SSIENR 0x0008
+#define B_AX_PGM_RST_TEST_EN BIT(4)
+#define B_AX_ATCK_CMD BIT(1)
+
+#define R_AX_SPIC_SER 0x0010
+#define B_AX_SER_SH 0
+#define B_AX_SER_MSK 0xffffffffL
+
+#define R_AX_SPIC_BAUDR 0x0014
+#define B_AX_SCKDV_SH 0
+#define B_AX_SCKDV_MSK 0xfff
+
+#define R_AX_SPIC_TXFTLR 0x0018
+#define B_AX_TFT_SH 0
+#define B_AX_TFT_MSK 0xffffffffL
+
+#define R_AX_SPIC_RXFTLR 0x001C
+#define B_AX_RFT_SH 0
+#define B_AX_RFT_MSK 0xffffffffL
+
+#define R_AX_SPIC_TXFLR 0x0020
+#define B_AX_TXFLR_SH 0
+#define B_AX_TXFLR_MSK 0xffffffffL
+
+#define R_AX_SPIC_RXFLR 0x0024
+#define B_AX_RXFLR_SH 0
+#define B_AX_RXFLR_MSK 0xffffffffL
+
+#define R_AX_SPIC_SR 0x0028
+#define B_AX_BOOT_FIN BIT(7)
+#define B_AX_DCOL BIT(6)
+#define B_AX_TXE BIT(5)
+#define B_AX_RFF BIT(4)
+#define B_AX_RFNE BIT(3)
+#define B_AX_TFE BIT(2)
+#define B_AX_TFNF BIT(1)
+#define B_AX_BUSY BIT(0)
+
+#define R_AX_SPIC_IMR 0x002C
+#define B_AX_ACSIM BIT(11)
+#define B_AX_RXSIM BIT(10)
+#define B_AX_TXSIM BIT(9)
+#define B_AX_ACEIM BIT(8)
+#define B_AX_BYEIM BIT(7)
+#define B_AX_WBEIM BIT(6)
+#define B_AX_FSEIM BIT(5)
+#define B_AX_RXFIM BIT(4)
+#define B_AX_RXOIM BIT(3)
+#define B_AX_RXUIM BIT(2)
+#define B_AX_TXOIM BIT(1)
+#define B_AX_TXEIM BIT(0)
+
+#define R_AX_SPIC_ISR 0x0030
+#define B_AX_ACSIS BIT(11)
+#define B_AX_RXSIS BIT(10)
+#define B_AX_TXSIS BIT(9)
+#define B_AX_ACEIS BIT(8)
+#define B_AX_BYEIS BIT(7)
+#define B_AX_WBEIS BIT(6)
+#define B_AX_FSEIS BIT(5)
+#define B_AX_RXFIS BIT(4)
+#define B_AX_RXOIS BIT(3)
+#define B_AX_RXUIS BIT(2)
+#define B_AX_TXOIS BIT(1)
+#define B_AX_TXEIS BIT(0)
+
+#define R_AX_SPIC_RISR 0x0034
+#define B_AX_ACSIR BIT(11)
+#define B_AX_RXSIR BIT(10)
+#define B_AX_TXSIR BIT(9)
+#define B_AX_ACEIR BIT(8)
+#define B_AX_BYEIR BIT(7)
+#define B_AX_WBEIR BIT(6)
+#define B_AX_FSEIR BIT(5)
+#define B_AX_RXFIR BIT(4)
+#define B_AX_RXOIR BIT(3)
+#define B_AX_RXUIR BIT(2)
+#define B_AX_TXOIR BIT(1)
+#define B_AX_TXEIR BIT(0)
+
+#define R_AX_SPIC_TXOICR 0x0038
+#define B_AX_TXOICR BIT(0)
+
+#define R_AX_SPIC_RXOICR 0x003C
+#define B_AX_RXOICR BIT(0)
+
+#define R_AX_SPIC_RXUICR 0x0040
+#define B_AX_RXUICR BIT(0)
+
+#define R_AX_SPIC_MSTICR 0x0044
+#define B_AX_MSTICR BIT(0)
+
+#define R_AX_SPIC_ICR 0x0048
+#define B_AX_ICR BIT(0)
+
+#define R_AX_SPIC_DMACR 0x004C
+#define B_AX_TX_DMAC_EN BIT(1)
+#define B_AX_RX_DMAC_EN BIT(0)
+
+#define R_AX_SPIC_DMATDLR 0x0050
+#define B_AX_DMATDL_SH 0
+#define B_AX_DMATDL_MSK 0xffffffffL
+
+#define R_AX_SPIC_DMARDLR 0x0054
+#define B_AX_DMARDL_SH 0
+#define B_AX_DMARDL_MSK 0xffffffffL
+
+#define R_AX_SPIC_IDR 0x0058
+#define B_AX_IDCODE_SH 0
+#define B_AX_IDCODE_MSK 0xffffffffL
+
+#define R_AX_SPIC_VERSION 0x005C
+#define B_AX_SPIC_VERSION_SH 0
+#define B_AX_SPIC_VERSION_MSK 0xffffffffL
+
+#define R_AX_SPIC_DR_WORD 0x0060
+#define B_AX_DR_WORD_SH 0
+#define B_AX_DR_WORD_MSK 0xffffffffL
+
+#define R_AX_SPIC_DR_HALF_WORD 0x0060
+#define B_AX_DR_HALF_WORD_SH 0
+#define B_AX_DR_HALF_WORD_MSK 0xffff
+
+#define R_AX_SPIC_DR_BYTE 0x0060
+#define B_AX_DR_BYTE_SH 0
+#define B_AX_DR_BYTE_MSK 0xff
+
+#define R_AX_SPIC_READ_FAST_SINGLE 0x00E0
+#define B_AX_FRD_CMD_SH 0
+#define B_AX_FRD_CMD_MSK 0xffff
+
+#define R_AX_SPIC_READ_DUAL_DATA 0x00E4
+#define B_AX_RD_DUAL_O_CMD_SH 0
+#define B_AX_RD_DUAL_O_CMD_MSK 0xff
+
+#define R_AX_SPIC_READ_DUAL_ADDR_DATA 0x00E8
+#define B_AX_RD_DUAL_IO_CMD_SH 0
+#define B_AX_RD_DUAL_IO_CMD_MSK 0xff
+
+#define R_AX_SPIC_READ_QUAD_DATA 0x00EC
+#define B_AX_RD_QUAD_O_CMD_SH 0
+#define B_AX_RD_QUAD_O_CMD_MSK 0xff
+
+#define R_AX_SPIC_READ_QUAD_ADDR_DATA 0x00F0
+#define B_AX_SPIC_PRM_VALUE_SH 16
+#define B_AX_SPIC_PRM_VALUE_MSK 0xff
+#define B_AX_RD_QUAD_IO_CMD_SH 0
+#define B_AX_RD_QUAD_IO_CMD_MSK 0xff
+
+#define R_AX_SPIC_WRITE_SINGLE 0x00F4
+#define B_AX_WR_CMD_SH 0
+#define B_AX_WR_CMD_MSK 0xffff
+
+#define R_AX_SPIC_WRITE_DUAL_DATA 0x00F8
+#define B_AX_WR_DUAL_I_CMD_SH 0
+#define B_AX_WR_DUAL_I_CMD_MSK 0xff
+
+#define R_AX_SPIC_WRITE_DUAL_ADDR_DATA 0x00FC
+#define B_AX_SPIC_WR_DUAL_II_CMD_SH 0
+#define B_AX_SPIC_WR_DUAL_II_CMD_MSK 0xff
+
+#define R_AX_SPIC_WRITE_QUAD_DATA 0x0100
+#define B_AX_WR_QUAD_I_CMD_SH 0
+#define B_AX_WR_QUAD_I_CMD_MSK 0xff
+
+#define R_AX_SPIC_WRITE_QUAD_ADDR_DATA 0x0104
+#define B_AX_WR_QUAD_II_CMD_SH 0
+#define B_AX_WR_QUAD_II_CMD_MSK 0xff
+
+#define R_AX_SPIC_WRITE_ENABLE 0x0108
+#define B_AX_WR_EN_CMD_SH 0
+#define B_AX_WR_EN_CMD_MSK 0xffff
+
+#define R_AX_SPIC_READ_STATUS 0x010C
+#define B_AX_ADDR_EN BIT(31)
+#define B_AX_ADDR_LEN_SH 29
+#define B_AX_ADDR_LEN_MSK 0x3
+#define B_AX_ADDR_SEL BIT(28)
+#define B_AX_INTERVAL_EN BIT(27)
+#define B_AX_RD_ST_CMD_SH 0
+#define B_AX_RD_ST_CMD_MSK 0xffff
+
+#define R_AX_SPIC_CTRLR2 0x0110
+#define B_AX_CS_ACTIVE_HOLD_SH 12
+#define B_AX_CS_ACTIVE_HOLD_MSK 0x3
+#define B_AX_RX_FIFO_ENTRY_SH 8
+#define B_AX_RX_FIFO_ENTRY_MSK 0xf
+#define B_AX_FIFO_ENTRY_SH 4
+#define B_AX_FIFO_ENTRY_MSK 0xf
+#define B_AX_SEQ_EN BIT(3)
+#define B_AX_WPN_DNUM BIT(2)
+#define B_AX_WPN_SET BIT(1)
+#define B_AX_SO_DNUM BIT(0)
+
+#define R_AX_SPIC_FBAUDR 0x0114
+#define B_AX_FSCKDV_SH 0
+#define B_AX_FSCKDV_MSK 0xfff
+
+#define R_AX_SPIC_ADDR_LENGTH 0x0118
+#define B_AX_ADDR_PHASE_LENGTH_SH 0
+#define B_AX_ADDR_PHASE_LENGTH_MSK 0x7
+
+#define R_AX_SPIC_AUTO_LENGTH 0x011C
+#define B_AX_ADDR_CS_H_WR_DUM_LEN_SH 28
+#define B_AX_ADDR_CS_H_WR_DUM_LEN_MSK 0xf
+#define B_AX_ADDR_CS_H_RD_DUM_LEN_SH 26
+#define B_AX_ADDR_CS_H_RD_DUM_LEN_MSK 0x3
+#define B_AX_ADDR_AUTO_DUM_LEN_SH 18
+#define B_AX_ADDR_AUTO_DUM_LEN_MSK 0xff
+#define B_AX_ADDR_AUTO_ADDR_LENGTH_SH 16
+#define B_AX_ADDR_AUTO_ADDR_LENGTH_MSK 0x3
+#define B_AX_ADDR_IN_PHYSICAL_CYC_SH 12
+#define B_AX_ADDR_IN_PHYSICAL_CYC_MSK 0xf
+
+#define R_AX_SPIC_VALID_CMD 0x0120
+#define B_AX_ADDR_SEQ_TRANS_EN BIT(14)
+#define B_AX_ADDR_CTRLR0_CH BIT(12)
+#define B_AX_ADDR_PRM_EN BIT(11)
+#define B_AX_ADDR_WR_BLOCKING BIT(9)
+#define B_AX_ADDR_WR_QUAD_II BIT(8)
+#define B_AX_ADDR_WR_QUAD_I BIT(7)
+#define B_AX_ADDR_WR_DUAL_II BIT(6)
+#define B_AX_ADDR_WR_DUAL_I BIT(5)
+#define B_AX_ADDR_RD_QUAD_IO BIT(4)
+#define B_AX_ADDR_RD_QUAD_O BIT(3)
+#define B_AX_ADDR_RD_DUAL_IO BIT(2)
+#define B_AX_ADDR_RD_DUAL_I BIT(1)
+#define B_AX_ADDR_FRD_SINGEL BIT(0)
+
+#define R_AX_SPIC_FLASH_SIZE 0x0124
+#define B_AX_FLASH_SIZE_SH 0
+#define B_AX_FLASH_SIZE_MSK 0xfff
+
+#define R_AX_SPIC_FLUSH_FIFO 0x0128
+#define B_AX_FLUSH_PGM_RST_FIFO BIT(1)
+#define B_AX_FLUSH_FIFO BIT(0)
+
+#define R_AX_SPIC_PGM_RST_FIFO 0x0140
+#define B_AX_PGM_RST_FIFO_SH 0
+#define B_AX_PGM_RST_FIFO_MSK 0xffff
+
+//
+// WL_AX_Reg_TMAC.xls
+//
+
+//
+// TMAC
+//
+
+//
+// WL_AX_Reg_UART.xls
+//
+
+//
+// UART
+//
+
+#define R_AX_UART_RBR 0x0000
+#define B_AX_RBR_SH 0
+#define B_AX_RBR_MSK 0xff
+
+#define R_AX_UART_THR 0x0000
+#define B_AX_THR_SH 0
+#define B_AX_THR_MSK 0xff
+
+#define R_AX_UART_DLH 0x0004
+#define B_AX_DLH_SH 0
+#define B_AX_DLH_MSK 0xff
+
+#define R_AX_UART_DLL 0x0000
+#define B_AX_DLL_SH 0
+#define B_AX_DLL_MSK 0xff
+
+#define R_AX_UART_IER 0x0004
+#define B_AX_IER_PTIME BIT(7)
+#define B_AX_IER_EDSSI BIT(3)
+#define B_AX_IER_ELSI BIT(2)
+#define B_AX_IER_ETBEI BIT(1)
+#define B_AX_IER_ERBFI BIT(0)
+
+#define R_AX_UART_IIR 0x0008
+#define B_AX_FIFOSE_SH 6
+#define B_AX_FIFOSE_MSK 0x3
+#define B_AX_IID_SH 0
+#define B_AX_IID_MSK 0xf
+
+#define R_AX_UART_FCR 0x0008
+#define B_AX_RT_SH 6
+#define B_AX_RT_MSK 0x3
+#define B_AX_TET_SH 4
+#define B_AX_TET_MSK 0x3
+#define B_AX_DMAM BIT(3)
+#define B_AX_XFIFOR BIT(2)
+#define B_AX_RFIFOR BIT(1)
+#define B_AX_FIFOE BIT(0)
+
+#define R_AX_UART_LCR 0x000C
+#define B_AX_DLAB BIT(7)
+#define B_AX_BC BIT(6)
+#define B_AX_EPS BIT(4)
+#define B_AX_PEN BIT(3)
+#define B_AX_STOP BIT(2)
+#define B_AX_DLS_SH 0
+#define B_AX_DLS_MSK 0x3
+
+#define R_AX_UART_MCR 0x0010
+#define B_AX_SIRE BIT(6)
+#define B_AX_AFCE BIT(5)
+#define B_AX_LB BIT(4)
+#define B_AX_OUT2 BIT(3)
+#define B_AX_OUT1 BIT(2)
+#define B_AX_RTS BIT(1)
+#define B_AX_DTR BIT(0)
+
+#define R_AX_UART_LSR 0x0014
+#define B_AX_RFE BIT(7)
+#define B_AX_TEMT BIT(6)
+#define B_AX_THRE BIT(5)
+#define B_AX_BI BIT(4)
+#define B_AX_FE BIT(3)
+#define B_AX_PE BIT(2)
+#define B_AX_OE BIT(1)
+#define B_AX_DR BIT(0)
+
+#define R_AX_UART_MSR 0x0018
+#define B_AX_DCD BIT(7)
+#define B_AX_RI BIT(6)
+#define B_AX_DSR BIT(5)
+#define B_AX_CTS BIT(4)
+#define B_AX_DDCD BIT(3)
+#define B_AX_TERI BIT(2)
+#define B_AX_DDSR BIT(1)
+#define B_AX_DCTS BIT(0)
+
+#define R_AX_UART_SCR 0x001C
+#define B_AX_SCR_SH 0
+#define B_AX_SCR_MSK 0xff
+
+#define R_AX_UART_LPDLL 0x001C
+#define B_AX_LPDLL_SH 0
+#define B_AX_LPDLL_MSK 0xff
+
+#define R_AX_UART_LPDLH 0x001C
+#define B_AX_LPDLH_SH 0
+#define B_AX_LPDLH_MSK 0xff
+
+#define R_AX_UART_FAR 0x0070
+#define B_AX_FAR BIT(0)
+
+#define R_AX_UART_TFR 0x0074
+#define B_AX_TFR_SH 0
+#define B_AX_TFR_MSK 0xff
+
+#define R_AX_UART_RFW 0x0078
+#define B_AX_RFFE BIT(9)
+#define B_AX_RFPE BIT(8)
+#define B_AX_RFWD_SH 0
+#define B_AX_RFWD_MSK 0xff
+
+#define R_AX_UART_USR 0x007C
+#define B_AX_RFF BIT(4)
+#define B_AX_RFNE BIT(3)
+#define B_AX_TFE BIT(2)
+#define B_AX_TFNF BIT(1)
+#define B_AX_BUSY BIT(0)
+
+#define R_AX_UART_TFL 0x0080
+#define B_AX_TFL_SH 0
+#define B_AX_TFL_MSK 0xffffffffL
+
+#define R_AX_UART_RFL 0x0084
+#define B_AX_RFL_SH 0
+#define B_AX_RFL_MSK 0xffffffffL
+
+#define R_AX_UART_SRR 0x0088
+#define B_AX_XFR BIT(2)
+#define B_AX_RFR BIT(1)
+#define B_AX_UR BIT(0)
+
+#define R_AX_UART_HTX 0x00A4
+#define B_AX_HTX BIT(0)
+
+#define R_AX_UART_DMASA 0x00A8
+#define B_AX_DMASA BIT(0)
+
+#define R_AX_UART_CPR 0x00F4
+#define B_AX_FIFO_MODE_SH 16
+#define B_AX_FIFO_MODE_MSK 0xff
+#define B_AX_DMA_EXTRA BIT(13)
+#define B_AX_UART_ADD_ENCODED_PARAMS BIT(12)
+#define B_AX_SHADOW BIT(11)
+#define B_AX_FIFO_STAT BIT(10)
+#define B_AX_FIFO_ACCESS BIT(9)
+#define B_AX_ADDITIONAL_FEAT BIT(8)
+#define B_AX_SIR_LP_MODE BIT(7)
+#define B_AX_SIR_MODE BIT(6)
+#define B_AX_THRE_MODE BIT(5)
+#define B_AX_AFCE_MODE BIT(4)
+#define B_AX_APB_DATA_WIDTH_SH 0
+#define B_AX_APB_DATA_WIDTH_MSK 0x3
+
+#define R_AX_UART_UCV 0x00F8
+#define B_AX_UCV_SH 0
+#define B_AX_UCV_MSK 0xffffffffL
+
+#define R_AX_UART_CTR 0x00FC
+#define B_AX_PID_SH 0
+#define B_AX_PID_MSK 0xffffffffL
+
+//
+// WL_AX_Reg_WLCPU_Local.xls
+//
+
+//
+// WLCPU_Local_Reg
+//
+
+#define R_AX_MAILBOX_WIFI2BT_DATA_L 0x18000300
+#define B_AX_MAILBOX_WIFI2BT_DATA_L_SH 0
+#define B_AX_MAILBOX_WIFI2BT_DATA_L_MSK 0xffffffffL
+
+#define R_AX_MAILBOX_WIFI2BT_DATA_H 0x18000304
+#define B_AX_MAILBOX_WIFI2BT_DATA_H_SH 0
+#define B_AX_MAILBOX_WIFI2BT_DATA_H_MSK 0xffffffffL
+
+#define R_AX_MAILBOX_WIFI2BT_READY 0x18000308
+#define B_AX_MBOX_OUT_ABORT BIT(7)
+#define B_AX_MBOX_ACK_WIFI2BT BIT(0)
+
+#define R_AX_MAILBOX_BT2WIFI_DATA_L 0x18000310
+#define B_AX_MAILBOX_BT2WIFI_DATA_L_SH 0
+#define B_AX_MAILBOX_BT2WIFI_DATA_L_MSK 0xffffffffL
+
+#define R_AX_MAILBOX_BT2WIFI_DATA_H 0x18000314
+#define B_AX_MAILBOX_BT2WIFI_DATA_H_SH 0
+#define B_AX_MAILBOX_BT2WIFI_DATA_H_MSK 0xffffffffL
+
+#define R_AX_EXC_JUMP_ADDR 0x18000320
+#define B_AX_WLCPU_EXC_JUMP_ADDR_SH 0
+#define B_AX_WLCPU_EXC_JUMP_ADDR_MSK 0xffffffffL
+
+#define R_AX_CPU_BOOT_ADDR 0x18000324
+#define B_AX_WLCPU_BOOT_ADDR_SH 0
+#define B_AX_WLCPU_BOOT_ADDR_MSK 0xffffffffL
+
+#define R_AX_WCPU_ADDR_HOLE_ADDR 0x18000328
+#define B_AX_ADDR_HOLE_ADDR_SH 0
+#define B_AX_ADDR_HOLE_ADDR_MSK 0xffffffffL
+
+#define R_AX_WCPU_INT_CTRL 0x1800032C
+#define B_AX_FS_ADDRHOLE_INT BIT(16)
+#define B_AX_FS_ADDRHOLE_INT_EN BIT(0)
+
+#define R_AX_CPU_IDMEM_TO_CNT 0x18000330
+#define B_AX_CPU_DMEM_TO_CNT_TH_SH 16
+#define B_AX_CPU_DMEM_TO_CNT_TH_MSK 0xffff
+#define B_AX_CPU_IMEM_TO_CNT_TH_SH 0
+#define B_AX_CPU_IMEM_TO_CNT_TH_MSK 0xffff
+
+#define R_AX_AON_IOWRAPPER 0x18000334
+#define B_AX_AON_IOWRAPPER_RST BIT(0)
+
+#define R_AX_WDT_CTRL 0x18000340
+#define B_AX_WDT_EN BIT(31)
+#define B_AX_WDT_OPT_RESET_PLATFORM_EN BIT(29)
+#define B_AX_WDT_CLR BIT(16)
+#define B_AX_WDT_COUNT_SH 0
+#define B_AX_WDT_COUNT_MSK 0xffff
+
+#define R_AX_WDT_STATUS 0x18000344
+#define B_AX_FS_WDT_INT BIT(8)
+#define B_AX_FS_WDT_INT_MSK BIT(0)
+
+#define R_AX_WDT_CDC 0x18000348
+#define B_AX_WDT_CDC_SH 0
+#define B_AX_WDT_CDC_MSK 0xffff
+
+#define R_AX_INT1_CTRL_IND 0x18000350
+#define B_AX_FWC_INT_IND_SH 0
+#define B_AX_FWC_INT_IND_MSK 0xfffff
+
+#define R_AX_INT2_CTRL_IND 0x18000354
+#define B_AX_FWD_INT_IND_SH 0
+#define B_AX_FWD_INT_IND_MSK 0x7
+
+#define R_AX_INT3_CTRL_IND 0x18000358
+#define B_AX_FWS_INT_IND BIT(0)
+
+#define R_AX_INT4_CTRL_IND 0x1800035C
+#define B_AX_FWDA_INT_IND_SH 0
+#define B_AX_FWDA_INT_IND_MSK 0x7
+
+#define R_AX_INT5_CTRL_IND 0x18000360
+#define B_AX_FWP_INT_IND_SH 0
+#define B_AX_FWP_INT_IND_MSK 0x1f
+
+#define R_AX_SUB_SYS_ERR_IND 0x18000364
+#define B_AX_SUB_SYS_ERR_IND_SH 0
+#define B_AX_SUB_SYS_ERR_IND_MSK 0x7
+
+#define R_AX_USB_CTRL 0x18000380
+#define B_AX_USB2_SUSB BIT(7)
+#define B_AX_USB3_SUSB BIT(6)
+#define B_AX_ALLOW_WAKE_HOST BIT(5)
+#define B_AX_WLCPU_WAKE_USB BIT(4)
+
+#endif

@@ -1,0 +1,104 @@
+//ppstod configuration
+//dump configuration
+//software define tod frame
+ppstod dump frame
+
+//ppstod configuration
+//get configuration
+//baudrate
+ppstod get baud-rate
+
+//ppstod configuration
+//get configuration
+//tod delay
+ppstod get delay
+
+//ppstod configuration
+//get configuration
+//software define tod frame
+//data configuration
+//offset configuration
+//frame offset
+ppstod get frame data offset <UINT:offset>
+
+//ppstod configuration
+//get configuration
+//software define tod frame
+//frame length
+ppstod get frame len
+
+//ppstod configuration
+//get configuration
+//mode configuration
+ppstod get mode
+
+//ppstod configuration
+//get configuration
+//pulse width
+ppstod get pulse-width
+
+//ppstod configuration
+//get configuration
+//software aid reference gps week
+ppstod get sarp-gps-week
+
+//ppstod configuration
+//get configuration
+//software aid reference utc second
+ppstod get sarp-utc-sec
+
+//ppstod configuration
+//init configuration
+ppstod init
+
+//ppstod configuration
+//set configuration
+//baudrate
+//115200 bps
+//19200 bps
+//9600 bps
+//4800 bps
+//2400 bps
+ppstod set baud-rate ( 115200 | 19200 | 9600 | 4800 | 2400 )
+
+//ppstod configuration
+//set configuration
+//tod delay
+//delay (unit ms), <0~63>
+ppstod set delay <UINT:delay>
+
+//ppstod configuration
+//set configuration
+//software define tod frame
+//data configuration
+//offset configuration
+//offset, <0~31>
+//value configuration
+//value, <0x00~0xFF>
+ppstod set frame data offset <UINT:offset> value <UINT:value>
+
+//ppstod configuration
+//set configuration
+//software define tod frame
+//frame length
+//len, <0~32> 
+ppstod set frame len <UINT:len>
+
+//ppstod configuration
+//set configuration
+//mode configuration
+//hardware defined tod frame
+//software defined tod frame
+ppstod set mode ( hardware | software )
+
+//ppstod configuration
+//set configuration
+//pulse width
+//width (unit 10ms), <0~63>
+ppstod set pulse-width <UINT:width>
+
+//ppstod configuration
+//set configuration
+//software aid reference gps week
+//week, <0~65535>
+ppstod set sarp-gps-week <UINT:week>

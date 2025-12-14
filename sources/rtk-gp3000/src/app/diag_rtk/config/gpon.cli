@@ -1,0 +1,729 @@
+//
+// Copyright (C) 2009 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) debug commands.
+//
+
+//GPON configuration
+//set configuration
+//serial number configuration
+//4 ASCII and 8 hex
+gpon set serialnumber <STRING:sn>
+
+//GPON configuration
+//get configuration
+//serial number configuration
+gpon get serialnumber
+
+//GPON configuration
+//set configuration
+//serial number configuration
+//vendor ID, string, 4 bytes
+//serail number, hex number, 4 bytes
+gpon set serial-number <STRING:vendor_id> <UINT:serial_number>
+
+
+//GPON configuration
+//get configuration
+//serial number configuration
+gpon get serial-number
+
+//GPON configuration
+//set configuration
+//serial number configuration
+//vendor ID, hex string , 8 char
+//serail number, hex string, 8 char
+gpon set serial-number-hex <STRING:vendor_id> <STRING:serial_number>
+
+
+//GPON configuration
+//get configuration
+//serial number configuration
+gpon get serial-number-hex
+
+
+//GPON configuration
+//set configuration
+//password configuration
+//password, string, 10/36 bytes accordingly
+gpon set password <STRING:password>
+
+//GPON configuration
+//get configuration
+//password configuration
+gpon get password
+
+//GPON configuration
+//set configuration
+//password configuration
+//password, string, 10/36 bytes accordingly
+gpon set password-hex <STRING:password>
+
+//GPON configuration
+//get configuration
+//password configuration
+gpon get password-hex
+
+//GPON configuration
+//set configuration
+//activation timer configuration
+//specify to to1 configuration
+//to1, milliseconds
+//specify to to2 configuration
+//to2, milliseconds
+gpon set active-timer to1 <UINT:to1_timer> to2 <UINT:to2_timer>
+
+//GPON configuration
+//get configuration
+//activation timer configuration
+gpon get active-timer
+
+//GPON configuration
+//set configuration
+//downstream laser configuration
+//optical LOS configuration
+//CDR LOS configuration
+//state configuration
+//specify to enable
+//specify to disable
+//polarity configuration
+//specify to high polarity
+//specify to low polarity
+gpon set ds-laser ( opt-los | cdr-los ) state ( enable | disable ) polarity ( high | low )
+
+//GPON configuration
+//set configuration
+//downstream laser configuration
+//LOS holdover configuration
+//specify to enable
+//specify to disable
+gpon set ds-laser los-holdover ( enable | disable )
+
+//GPON configuration
+//set configuration
+//downstream physical configuration
+//descramble configuration
+//specify to enable
+//specify to disable
+gpon set ds-phy descramble ( enable | disable )
+
+//GPON configuration
+//set configuration
+//downstream physical configuration
+//FEC state configuration
+//specify to enable
+//specify to disable
+//FEC threshold configuration
+//FEC threshold, 1~7
+gpon set ds-phy fec-state ( enable | disable ) fec-threshold <UINT:threshold>
+
+//GPON configuration
+//set configuration
+//downstream PLOAM configuration
+//drop CRC error configuration
+//filter ONU ID configuration
+//accept broadcast ONU ID configuration
+//specify to enable
+//specify to disable
+gpon set ds-ploam ( drop-crc-error | filter-onuid | accept-broadcast ) ( enable | disable )
+
+//GPON configuration
+//set configuration
+//downstream BW_map configuration
+//drop CRC error configuration
+//filter ONU ID configuration
+//strict PLEN mode configuration
+//specify to enable
+//specify to disable
+gpon set ds-bwmap ( drop-crc-error | filter-onuid | strict-plen ) ( enable | disable )
+
+//GPON configuration
+//set configuration
+//downstream GEM configuration
+//packet assembly threshold configuration
+//thresold, 0~31
+gpon set ds-gem assembly-threshold <UINT:threshold>
+
+//GPON configuration
+//set configuration
+//downstream ethernet configuration
+//drop CRC error configuration
+//specify to enable
+//specify to disable
+gpon set ds-eth drop-crc-error ( enable | disable )
+
+//GPON configuration
+//set configuration
+//downstream ethernet configuration
+//PTI pettern configuration
+//PTI pettern, 3 bits, 0x0~0x7
+//PTI mask configuration
+//PTI mask, 3 bits, 0x0~0x7
+gpon set ds-eth pti-pettern <UINT:pettern> pti-mask <UINT:mask>
+
+//GPON configuration
+//set configuration
+//downstream OMCI configuration
+//PTI pettern configuration
+//PTI pettern, 3 bits, 0x0~0x7
+//PTI mask configuration
+//PTI mask, 3 bits, 0x0~0x7
+gpon set ds-omci pti-pettern <UINT:pettern> pti-mask <UINT:mask>
+
+//GPON configuration
+//get configuration
+//downstream laser configuration
+//downstream PHY configuration
+//downstream PLOAM configuration
+//downstream BWMAP configuration
+//downstream GEM configuration
+//downstream ethernet configuration
+//downstream OMCI configuration
+gpon get ( ds-laser | ds-phy | ds-ploam | ds-bwmap | ds-gem | ds-eth | ds-omci )
+
+//GPON configuration
+//set configuration
+//upstream laser configuration
+//laser on offset configuration
+//laser on offset, 0~55
+//laser off offset configuration
+//laser off offset, 0~55
+gpon set us-laser on-offset <UINT:on_offset> off-offset <UINT:off_offset>
+
+//GPON configuration
+//set configuration
+//upstream physical configuration
+//scramble configuration
+//specify to enable
+//specify to disable
+gpon set us-phy scramble ( enable | disable )
+
+//GPON configuration
+//set configuration
+//upstream physical configuration
+//burst enable polarity configuration
+//specify to enable
+//specify to disable
+gpon set us-phy burst-polarity ( high | low )
+
+//GPON configuration
+//set configuration
+//upstream physical configuration
+//process Small START(< BOH LEN) automatically
+//specify to enable
+//specify to disable
+gpon set us-phy auto-sstart ( enable | disable )
+
+//GPON configuration
+//set configuration
+//upstream physical configuration
+//suppress laser when not in state O3, O4, O5
+//specify to enable
+//specify to disable
+gpon set us-phy suppress-laser ( enable | disable )
+
+//GPON configuration
+//set configuration
+//upstream PLOAM configuration
+//capability of sending PLOAM other than NOMSG
+//specify to enable
+//specify to disable
+gpon set us-ploam state ( enable | disable )
+
+//GPON configuration
+//set configuration
+//upstream DBR configuration
+//capability of sending DBRu other than all 0
+//specify to enable
+//specify to disable
+gpon set us-dbr state ( enable | disable )
+
+//GPON configuration
+//get configuration
+//upstream laser configuration
+//upstream PHY configuration
+//upstream PLOAM configuration
+//upstream DBR configuration
+gpon get ( us-laser | us-phy | us-ploam | us-dbr )
+
+//GPON configuration
+//activation configuration
+//initial state when ONU activation
+//specify to O1
+//specify to O7
+gpon activate init-state ( o1 | o7 )
+
+//GPON configuration
+//de-activation configuration
+gpon deactivate
+
+//GPON configuration
+//get configuration
+//ONU state, O1-O7
+gpon get onu-state
+
+//GPON configuration
+//add configuration
+//TCONT configuration
+//Alloc-ID configuration
+//Alloc-ID, 0~4095
+gpon add tcont alloc-id <UINT:id>
+
+//GPON configuration
+//delete configuration
+//TCONT configuration
+//Alloc-ID configuration
+//Alloc-ID, 0~4095
+gpon del tcont alloc-id <UINT:id>
+
+//GPON configuration
+//get configuration
+//TCONT configuration
+//Alloc-ID configuration
+//Alloc-ID, 0~4095
+gpon get tcont alloc-id <UINT:id>
+
+//GPON configuration
+//add configuration
+//downstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+//GEM port configuration
+//GEM port, 0~4095
+//ethernet service type
+//multicast service type
+//AES encryption service type
+gpon add ds-flow flow-id <UINT:id> gem-port <UINT:gem> ether { multicast } { aes }
+
+//GPON configuration
+//add configuration
+//downstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+//GEM port configuration
+//GEM port, 0~4095
+//OMCI service type
+//AES encryption service type
+gpon add ds-flow flow-id <UINT:id> gem-port <UINT:gem> omci { aes }
+
+//GPON configuration
+//delete configuration
+//downstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+gpon del ds-flow flow-id <UINT:id>
+
+//GPON configuration
+//get configuration
+//downstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+gpon get ds-flow flow-id <UINT:id>
+
+//GPON configuration
+//add configuration
+//upstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+//GEM port configuration
+//GEM port, 0~4095
+//ethernet service type
+//OMCI service type
+gpon add us-flow flow-id <UINT:id> gem-port <UINT:gem> ( ether | omci )
+
+//GPON configuration
+//delete configuration
+//upstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+gpon del us-flow flow-id <UINT:id>
+
+//GPON configuration
+//get configuration
+//upstream flow configuration
+//flow ID configuration
+//flow ID, 0~127
+gpon get us-flow flow-id <UINT:id>
+
+//GPON configuration
+//set configuration
+//multicast filter configuration
+//broadcast pass configuration
+//non-multicast pass configuration
+//specify to enable
+//specify to disable
+gpon set multicast-filter ( broadcast-pass | non-multicast-pass ) ( enable | disable )
+
+//GPON configuration
+//set configuration
+//multicast filter configuration
+//IPv4 multicast prefix
+//IPv6 multicast prefix
+//prefix value, IPv4 3 bytes, IPv6 2 bytes
+gpon set multicast-filter ( prefix-ip | prefix-ip6 ) <UINT:prefix>
+
+//GPON configuration
+//set configuration
+//multicast filter configuration
+//IPv4 force mode configuration
+//IPv6 force mode configuration
+//force to pass
+//force to drop
+//normal operation, no force mode
+gpon set multicast-filter ( force-ip | force-ip6 ) ( pass | drop | normal )
+
+//GPON configuration
+//set configuration
+//multicast filter configuration
+//filter mode configuration
+//specify to include mode
+//specify to exclude mode
+gpon set multicast-filter filter-mode ( include | exclude )
+
+//GPON configuration
+//tet configuration
+//multicast filter configuration
+gpon get multicast-filter
+
+//GPON configuration
+//add configuration
+//multicast filter entry configuration
+//multicast MAC address configuration
+//MAC address
+gpon add multicast-filter-entry mac-address <MACADDR:mac>
+
+//GPON configuration
+//delete configuration
+//multicast filter entry configuration
+//multicast MAC address configuration
+//MAC address
+gpon del multicast-filter-entry mac-address <MACADDR:mac>
+
+//GPON configuration
+//get configuration
+//multicast filter entry configuration
+//entry index configuration
+//index, 0~255
+gpon get multicast-filter-entry index <UINT:index>
+
+//GPON configuration
+//set configuration
+//RDI configuration
+//specify to enable
+//specify to disable
+gpon set rdi ( enable | disable )
+
+//GPON configuration
+//get configuration
+//RDI configuration
+gpon get rdi
+
+//GPON configuration
+//get configuration
+//current alarm status
+gpon get alarm-status
+
+//GPON configuration
+//set configuration
+//transmit laser mode
+//force on
+//force off
+//normal operation
+gpon set tx-laser ( force-on | force-off | normal )
+
+//GPON configuration
+//set configuration
+//force transmit IDLE
+//specify to enable
+//specify to disable
+gpon set tx-force-idle ( enable | disable )
+
+//GPON configuration
+//set configuration
+//force transmit PRBS
+//force off
+//force on prbs31
+//force on prbs23
+//force on prbs15
+//force on prbs7
+gpon set force-prbs ( off | prbs31 | prbs23 | prbs15 | prbs7 )
+
+//GPON configuration
+//get configuration
+//transmit configuration
+gpon get tx
+
+//GPON configuration
+//show configuration
+//GTC configuration
+//TCONT configuration
+//downstream flow configuration
+//upstream flow configuration
+//multicast filter configuration
+gpon show ( gtc | tcont | ds-flow | us-flow | multicast-filter-entry )
+
+//GPON configuration
+//show configuration
+//counter informaiton
+//global counter informaiton
+//activation counter
+//downstream PHY counter
+//downstream PLOAM counter
+//downstream BWMAP counter
+//downstream GEM counter
+//downstream ether counter
+//downstream OMCI counter
+//upstream PHY counter
+//upstream DBR counter
+//upstream PLOAM counter
+//upstream GEM counter
+//upstream ether counter
+//upstream OMCI counter
+gpon show counter global ( active | ds-phy | ds-plm | ds-bw | ds-gem | ds-eth | ds-omci | us-phy | us-dbr | us-plm | us-gem | us-eth | us-omci )
+
+//GPON configuration
+//show configuration
+//counter informaiton
+//TCONT counter informaiton
+//TCONT ID, 0~31
+gpon show counter tcont <UINT:tcont_id>
+
+//GPON configuration
+//show configuration
+//counter informaiton
+//flow counter informaiton
+//flow ID, 0~127
+gpon show counter flow <UINT:flow_id>
+
+//GPON configuration
+//intial configuration
+gpon init
+
+//GPON configuration
+//de-intial configuration
+gpon deinit
+
+//GPON configuration
+//set configuration
+//debug state
+//set to enable
+//set to disable
+gpon set debug ( enable | disable )
+
+//GPON configuration
+//set configuration
+//debug state
+//set to enable
+//set to disable
+//all
+//error
+//warning
+//normal
+//info
+//ploam
+//omci
+//debug
+gpon set debug ( enable | disable ) ( all | error | warning | normal | info | ploam | omci | debug )
+
+//GPON configuration
+//register get configuration
+//page
+//page value
+//offset
+//offset value
+gpon reg-get page <UINT:page> offset <UINT:offset>
+
+//GPON configuration
+//register set configuration
+//page
+//page value
+//offset
+//offset value
+//value
+//value
+gpon reg-set page <UINT:page> offset <UINT:offset> value <UINT:value>
+
+//GPON configuration
+//unit test configuration
+//test item id, 28001~28007
+gpon unit-test <UINT:id>
+
+//GPON configuration
+//packet generate buf  function
+//item configuration
+//item number, 0~2
+//DA configuration
+//DA MAC
+//SA configuration
+//SA MAC
+//VID configuration
+//VID
+//pattern configuration
+//pattern contain
+//buf length configuration
+//buf lenngth, item 0 and 1 max_len=64, item 2 max_len=2048
+gpon pkt-gen-buf item <UINT:item> da <MACADDR:dmac> sa <MACADDR:smac> vid <UINT:vid> pattern <UINT:pattern> length <UINT:length>
+
+//GPON configuration
+//packet generate config function
+//item configuration
+//item number, 0~2
+//TCONT configuration
+//TCONT ID
+//GEM configuration
+//GEM ID
+//transmit length configuration
+//lenngth
+//omci indicator
+gpon pkt-gen-cfg item <UINT:item> tcont <UINT:tcont> gem <UINT:gem> tx-length <UINT:length> { omci }
+
+//GPON configuration
+//transmit OMCI function
+//data1, byte 0-3
+//data2, byte 4-7
+//data3, byte 8-11
+//data4, byte 12-15
+//data5, byte 16-19
+//data6, byte 20-23
+//data7, byte 24-27
+//data8, byte 28-31
+//data9, byte 32-35
+//data10, byte 36-39
+//data11, byte 40-43
+//data12, byte 44-47
+gpon omci-tx <UINT:data1> <UINT:data2> <UINT:data3> <UINT:data4> <UINT:data5> <UINT:data6> <UINT:data7> <UINT:data8> <UINT:data9> <UINT:data10> <UINT:data11> <UINT:data12>
+
+//GPON configuration
+//set configuration
+//auto add or delete tcont configuration
+//specify to enable
+//specify to disable
+gpon set auto-tcont ( enable | disable )
+
+//GPON configuration
+//get configuration
+//auto add or delete tcont configuration
+gpon get auto-tcont
+
+//GPON configuration
+//set configuration
+//auto update BOH configuration
+//specify to enable
+//specify to disable
+gpon set auto-boh ( enable | disable )
+
+//GPON configuration
+//get configuration
+//auto update BOH configuration
+gpon get auto-boh
+
+//GPON configuration
+//set configuration
+//EQD offset configuration
+//specify to plus offset
+//specify to minus offset
+//offset value
+gpon set eqd-offset ( plus | minus ) <UINT:offset>
+
+//GPON configuration
+//get configuration
+//EQD offset configuration
+gpon get eqd-offset
+
+
+//GPON configuration
+//set configuration
+//AES frame counter
+//frame counter
+gpon set aes-framecnt <UINT:framecnt>
+
+//GPON configuration
+//set configuration
+//AES frame counter
+gpon get aes-framecnt
+
+//GPON configuration
+//set configuration
+//AES key configuration
+//AES Key byte0
+//AES Key byte1
+//AES Key byte2
+//AES Key byte3
+//AES Key byte4
+//AES Key byte5
+//AES Key byte6
+//AES Key byte7
+//AES Key byte8
+//AES Key byte9
+//AES Key byte10
+//AES Key byte11
+//AES Key byte12
+//AES Key byte13
+//AES Key byte14
+//AES Key byte15
+gpon set aes-key <UINT:byte0> <UINT:byte1> <UINT:byte2> <UINT:byte3> <UINT:byte4> <UINT:byte5> <UINT:byte6> <UINT:byte7> <UINT:byte8> <UINT:byte9> <UINT:byte10> <UINT:byte11> <UINT:byte12> <UINT:byte13> <UINT:byte14> <UINT:byte15>
+
+
+//GPON configuration
+//get configuration
+//bwmap
+//capture counts
+//capture times
+gpon get bwmap <UINT:count> <UINT:time>
+
+//GPON configuration
+//get configuration
+//dbru block size
+gpon get dbru-block-size
+
+//GPON configuration
+//set configuration
+//dbru block size
+//size
+gpon set dbru-block-size <UINT:size>
+
+//gpon configuration
+//set configuration
+//rogue-ont configuration
+//state configuration
+//enable
+//disable
+gpon set rogue-ont state ( enable | disable )
+
+//gpon configuration
+//set configuration
+//ber-timer configuration
+//state configuration
+//enable
+//disable
+gpon set ber-timer state ( enable | disable )
+
+//gpon configuration
+//get configuration
+//rogue ont SD cnt information
+gpon get rogue-sd-cnt
+
+//gpon configuration
+//get configuration
+//PPS cnt information
+gpon get pps-cnt
+
+//gpon configuration
+//check configuration
+//omci-crc information
+gpon check omci-crc
+

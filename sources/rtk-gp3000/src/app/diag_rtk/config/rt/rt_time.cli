@@ -1,0 +1,130 @@
+//
+// Copyright (C) 2023 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for PTP.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) PTP commands.
+
+//rt_time configuration
+//init time
+rt_time init
+
+//rt_time configuration
+//get configuration
+//current time
+rt_time get cur-time
+
+//time configuration
+//set configuration
+//offset time
+//adjust (increase time)
+//adjust (decrease time)
+//secound
+//nanosecond
+rt_time set offset-time ( increase | decrease ) <UINT64:second> <UINT:nanosecond>
+
+//rt_time configuration
+//get configuration
+//system frequency
+rt_time get frequency
+
+//rt_time configuration
+//set configuration
+//system frequency
+//frequency value <UINT>
+rt_time set frequency <UINT:frequency>
+
+//rt_time configuration
+//set configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//state configuration
+//enable function
+//disable function
+rt_time set ptp port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//rt_time configuration
+//get configuration
+//precision time protocol
+//port configuration
+//port list
+//all ports
+//state configuration
+rt_time get ptp port ( <PORT_LIST:ports> | all ) state
+
+//rt_time configuration
+//set configuration
+//ptp configuration
+//ingress configuration
+//etype 0x88f7
+//udp port 319 or 320
+//action
+//no operation
+//trap PTP packets to CPU
+rt_time set ptp ingress ( l2 | udp ) action ( nop | trap-to-cpu )
+
+//rt_time configuration
+//get configuration
+//ptp configuration
+//ingress configuration
+//etype 0x88f7
+//udp port 319 or 320
+//action
+rt_time get ptp ingress ( l2 | udp ) action
+
+//rt_time configuration
+//set configuration
+//ptp configuration
+//egress configuration
+//action
+//no operation
+//attach timestamp
+//mirror timestamp
+rt_time set ptp egress action ( nop | one-step | two-step )
+
+//rt_time configuration
+//get configuration
+//ptp configuration
+//egress configuration
+//action
+rt_time get ptp egress action
+
+//rt_time configuration
+//set configuration
+//pontod configuration
+//xgpon mode
+//gpon mode
+//epon mode
+//startpoint configuration
+//counter
+//pon tod time
+//secound
+//nanosecond
+rt_time set pontod ( xgpon | gpon | epon ) startpoint <UINT64:cnt> time <UINT64:second> <UINT:nanosecond>
+
+//rt_time configuration
+//set configuration
+//pontod configuration
+//state configuration
+//enable function
+//disable function
+rt_time set pontod state ( enable | disable )
+
+//rt_time configuration
+//set configuration
+//pontod configuration
+rt_time get pontod

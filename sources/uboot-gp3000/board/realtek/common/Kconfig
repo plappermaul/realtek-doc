@@ -1,0 +1,5 @@
+if OTTO
+config CMD_DRAM_TEST
+    bool "DRAM memoty test"
+    default n
+endif

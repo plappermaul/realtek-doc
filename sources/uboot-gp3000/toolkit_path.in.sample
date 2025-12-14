@@ -1,0 +1,21 @@
+# This file defines necessary parameters for building U-Boot. Setup steps:
+#    1. Set following parameters properly
+#    2. Save this file as toolkit_path.in
+#
+# $(CROSS_COMPILE):
+#     prefix of your own toolkit, so that $(CROSS_COMPILE)gcc points to your compiler.
+#
+# $(OTTO_TOP):
+#     path to Otto root dir, so that $(OTTO_TOP)/release points to Otto release dir.
+#
+
+#CROSS_COMPILE?=/share/rlx/rsdk-1.5.6-5281-EB-2.6.30-0.9.30.3-110915/bin/rsdk-linux-
+#CROSS_COMPILE?=/share/rlx/rsdk-4.4.7-5281-EB-2.6.30-0.9.33-m32utb-140424/bin/rsdk-linux-
+#CROSS_COMPILE?=/share/rlx/rsdk-4.8.5-5281-EB-2.6.30-u0.9.33-m32utb-150924/bin/rsdk-linux-
+#CROSS_COMPILE?=/share/rlx/msdk-4.3.6-mips-EB-2.6.32-0.9.30.3-m32-120424/bin/mips-linux-
+#CROSS_COMPILE?=/share/rlx/msdk-4.4.7-mips-EB-2.6.19-u0.9.33-m32t-150429/bin/msdk-linux-
+CROSS_COMPILE?=/share/rlx/msdk-4.8.5-1004k-EB-3.18-u0.9.33-m32t-150818/bin/msdk-linux-
+#CROSS_COMPILE?=/share/rlx/mips-linux-uclibc/bin/mips-linux-
+#CROSS_COMPILE?=/share/rlx/rsdk-4.8.5-5281-EB-3.18-u0.9.33-m32ut-150818p01_151020/bin/rsdk-linux-
+
+OTTO_TOP ?= $(CURDIR)/..

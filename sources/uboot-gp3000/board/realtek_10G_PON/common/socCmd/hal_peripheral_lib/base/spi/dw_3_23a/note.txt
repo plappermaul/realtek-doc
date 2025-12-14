@@ -1,0 +1,8 @@
+/* 
+ * yiruei note in 20181101
+ */
+ 
+This version of SPI code is a new one created by yirueuchen for 97G in 20181101.
+This version is based on previous code (which is kept as dw_spi_base_test_original.c) maintained by Carl before 8197G.
+This version only supports configuration and R/W SPI DR only since the verification of 97G board must be connected with 98FH ASIC.
+Note that 8197G has no DMA so that this verison also has no DMA realted codes.

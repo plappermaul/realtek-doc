@@ -1,0 +1,119 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) trunk commands.
+//
+
+//trunk configuration
+//init trunk
+trunk init
+
+//trunk configuration
+//dump configuration
+trunk dump
+
+//trunk configuration
+//get configuration
+//distribute algorithm
+trunk get distribute-algorithm
+
+//trunk configuration
+//set configuration
+//distribute algorithm
+//destination ip
+//destination layer4 port
+//destination mac
+//source ip
+//source layer4 port
+//source mac
+//source port
+trunk set distribute-algorithm { dst-ip } { dst-l4-port } { dst-mac } { src-ip } { src-l4-port } { src-mac } { src-port }
+
+//trunk configuration
+//get configuration
+//egress queue empty port mask
+trunk get queue-empty
+
+//trunk configuration
+//get configuration
+//trunking flow-control function
+//state configuration
+trunk get flow-control state
+
+//trunk configuration
+//set configuration
+//trunking flow-control function
+//state configuration
+//disable function
+//enable function
+trunk set flow-control state ( disable | enable )
+
+//trunk configuration
+//get configuration
+//hash mapping
+//hash value configuration
+//all
+trunk get hash-mapping hash-value all
+
+//trunk configuration
+//set configuration
+//hash mapping
+//hash value configuration
+//hash value, <0~15>
+//egress port configuration
+//port number, <0~3>
+trunk set hash-mapping hash-value <UINT:value> port <UINT:port>
+
+//trunk configuration
+//set configuration
+//member port
+//port list, <0-6>
+//none member
+trunk set member-port ( <PORT_LIST:ports> | none )
+
+//trunk configuration
+//get configuration
+//member port
+trunk get member-port
+
+//trunk configuration
+//set configuration
+//trunk mode
+//dumb mode
+//normal mode
+trunk set mode ( dumb | normal )
+
+//trunk configuration
+//get configuration
+//trunk mode
+trunk get mode
+
+//trunk configuration
+//get configuration
+//traffic separation configuration
+//flooding configuration
+//state configuration
+trunk get traffic-separation flooding state
+
+//trunk configuration
+//set configuration
+//traffic separation configuration
+//flooding configuration
+//state configuration
+//disable
+//enable
+trunk set traffic-separation flooding state ( disable | enable )

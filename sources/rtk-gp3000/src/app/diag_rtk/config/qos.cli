@@ -1,0 +1,473 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Purpose : Define diag shell commands for QoS.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) QoS commands.
+//
+ 
+
+//qos configuration
+//initialization
+qos init 
+
+//qos configuration
+//get configuration
+//priority selector configuration
+//group configuration
+//index
+qos get priority-selector group-id <UINT:index>
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of port based priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> port <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of dot1q based priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> dot1q <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of dscp based priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> dscp <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of acl based priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> acl <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of lut forward priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> lookup-table <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of smac forward priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> smac <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of svlan forward priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> svlan <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of vlan forward priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> vlan <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//group configuration
+//index
+//weight of l4 priority 
+//weight, <0~15>
+qos set priority-selector group-id <UINT:index> l4 <UINT:weight> 
+
+//qos configuration
+//set configuration
+//priority selector 
+//port configuration
+//port list, <0~6>
+//all ports
+//group configuration
+//index
+qos set priority-selector port ( <PORT_LIST:ports> | all ) group-id <UINT:index>
+
+//qos configuration
+//get configuration
+//priority selector 
+//port configuration
+//port list, <0~6>
+//all ports
+//group configuration
+qos get priority-selector port ( <PORT_LIST:ports> | all ) group-id 
+
+//qos configuration
+//get configuration
+//priority to queue configuration
+//port configuration
+//port list, <0~6>
+//all ports
+qos get priority-to-queue port ( <PORT_LIST:ports> | all )
+
+//qos configuration
+//set configuration
+//priority to queue configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//table configuration
+//index, <0~3>
+qos set priority-to-queue port ( <PORT_LIST:ports> | all ) table <UINT:index>
+
+
+//qos configuration
+//get configuration
+//priority to queue configuration
+qos get priority-to-queue 
+
+//qos configuration
+//get configuration
+//priority to queue configuration
+//table configuration
+//index, <0~3>
+qos get priority-to-queue table <UINT:index>
+
+//qos configuration
+//set configuration
+//priority to queue configuration
+//table configuration
+//index, <0~3>
+//priority setting
+//priority, <0-7> 
+//queue id configuration
+//queue id, <0~7>
+qos set priority-to-queue table <UINT:index> priority <MASK_LIST:priority> queue-id <UINT:qid>
+
+
+//qos configuration
+//get configuration
+//remarking configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//dscp remarking configuration
+//remarking source configuration
+qos get remarking port ( <PORT_LIST:ports> | all ) dscp source
+
+
+//qos configuration
+//set configuration
+//remarking configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//dscp remarking configuration
+//remarking source configuration
+//dscp remarking source from internal priority
+//dscp remarking source from user priority
+//dscp remarking source from original dscp
+qos set remarking port ( <PORT_LIST:ports> | all ) dscp source ( internal-priority | user-priority | dscp )
+
+//qos configuration
+//get configuration
+//remarking configuration
+//dscp remarking configuration
+//dscp remarking source from switch internal priority
+//dscp remarking source from original dscp
+qos get remarking dscp ( inter-priority | original-dscp )
+
+//qos configuration
+//set configuration
+//remarking
+//dscp remarking
+//internal priority configuration
+//internal priority <0~7>
+//remarking dscp configuration
+//dscp priority, <0~63>
+qos set remarking dscp inter-priority <UINT:priority> remarking-dscp <UINT:dscp>
+
+//qos configuration
+//set configuration
+//remarking
+//dscp remarking
+//packet original dscp configuration
+//dscp priority, <0-63>
+//remarking dscp configuration
+//dscp priority, <0~63>
+qos set remarking dscp original-dscp <MASK_LIST:original_dscp> remarking-dscp <UINT:remarking_dscp>
+
+
+//qos configuration
+//get configuration
+//priority remapping configuration
+//802.1p remapping configuration
+qos get remapping dot1p
+
+//qos configuration
+//set configuration
+//priority remapping
+//802.1p remapping
+//802.1p priority configuration
+//802.1p priority, <0~7>
+//internal priority confiquration
+//internal priority, <0~7>
+qos set remapping dot1p dot1p-priority <UINT:dot1p_priority> internal-priority <UINT:internal_priority>
+
+//qos configuration
+//get configuration
+//priority remapping configuration
+//dscp remapping configuration
+qos get remapping dscp
+
+//qos configuration
+//set configuration
+//priority remapping
+//dscp remapping
+//dscp value configuration
+//dscp value, <0-63>
+//internal priority confiquration
+//internal priority, <0~7>
+qos set remapping dscp dscp <MASK_LIST:dscp> internal-priority <UINT:priority>
+
+//qos configuration
+//get configuration
+//av bridge configuration
+//priority remapping
+qos get avb remapping
+
+//qos configuration
+//get configuration
+//av bridge configuration
+//priority remapping
+//internal priority configuration
+//internal priority, <0~7>
+qos get avb remapping internal-priority <UINT:priority>
+
+//qos configuration
+//set configuration
+//av bridge configuration
+//priority remapping
+//internal priority configuration
+//internal priority, <0~7>
+//remapping user priority setting
+//user priority, <0~7>
+qos set avb remapping internal-priority <UINT:priority> user-priority <UINT:user_priority>
+
+//qos configuration
+//get configuration
+//av bridge configuration
+//priority remapping
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+qos get avb remapping port ( <PORT_LIST:ports> | all ) state
+
+//qos configuration
+//set configuration
+//av bridge configuration
+//priority remapping
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//enable
+//disable
+qos set avb remapping port ( <PORT_LIST:ports> | all ) state ( enable | disable )
+
+//qos configuration
+//get configuration
+//priority remapping
+//forward to cpu port remapping configuration
+qos get remapping forward-to-cpu
+
+//qos configuration
+//get configuration
+//priority remapping
+//forward to cpu port remapping configuration
+//internal priority remapping configuration
+//internal priority, <0~7>
+qos get remapping forward-to-cpu internal-priority <UINT:priority>
+
+//qos configuration
+//set configuration
+//priority remapping
+//forward to cpu port remapping configuration
+//internal priority configuration
+//internal priority, <0~7>
+//forward to cpu port remapping priority
+//remapping priority, <0~7>
+qos set remapping forward-to-cpu internal-priority <UINT:priority> remapping-priority <UINT:remapping_priority>
+
+//qos configuration
+//get configuration
+//priority remapping configuration
+//priority remapping configuration of port
+//port list, <0-6>
+//all ports
+qos get remapping port ( <PORT_LIST:ports> | all )
+
+//qos configuration
+//set configuration
+//priority remapping
+//port based priority configuration
+//port list, <0-6>
+//all ports
+//internal priority confiquration
+//internal priority, <0~7>
+qos set remapping port ( <PORT_LIST:ports> | all ) internal-priority <UINT:priority>
+
+
+//qos configuration
+//get configuration
+//remarking configuration
+//802.1p
+//dscp
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+qos get remarking ( dot1p | dscp ) port ( <PORT_LIST:ports> | all ) state
+
+//qos configuration
+//set configuration
+//remarking
+//802.1p
+//dscp
+//port configuration
+//port list
+//all ports
+//state configuration
+//disable
+//enable
+qos set remarking ( dot1p | dscp ) port ( <PORT_LIST:ports> | all ) state ( disable | enable ) 
+
+//qos configuration
+//get configuration
+//remarking configuration
+//802.1p priority remarking
+qos get remarking dot1p 
+
+//qos configuration
+//set configuration
+//remarking
+//802.1p priority remarking
+//user priority confiquration
+//user priority, <0~7>
+//802.1p priority confiquration
+//802.1p priority, <0~7>
+qos set remarking dot1p user-priority <UINT:priority> dot1p-priority <UINT:dot1p_priority>
+
+//qos configuration
+//get configuration
+//queue scheduling
+//scheduling algorithm
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//qid, <0~7>
+qos get scheduling algorithm port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid>
+
+//qos configuration
+//set configuration
+//queue scheduling
+//scheduling algorithm
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//qid, <0~7>
+//strict
+//wfq
+qos set scheduling algorithm port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> ( strict | wfq )
+
+//qos configuration
+//get configuration
+//queue scheduling
+//queue weight
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//queue id, <0~7>
+qos get scheduling queue-weight port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid>
+
+//qos configuration
+//set configuration
+//queue scheduling
+//queue weight
+//port configuration
+//port list
+//all ports
+//queue id configuration
+//queue id, <0~7>
+//queue weight configuration
+//queue weight
+qos set scheduling queue-weight port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> weight <UINT:weight>
+
+
+//qos configuration
+//set configuration
+//queue scheduling
+//scheduling algorithm
+//wrr
+//wfq
+qos set scheduling type ( wrr | wfq ) 
+
+//qos configuration
+//get configuration
+//queue scheduling
+//scheduling algorithm
+qos get scheduling type 
+
+
+
+//qos configuration
+//get configuration
+//remarking configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//dot1p remarking configuration
+//remarking source configuration
+qos get remarking port ( <PORT_LIST:ports> | all ) dot1p source
+
+
+//qos configuration
+//set configuration
+//remarking configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//dot1p remarking configuration
+//remarking source configuration
+//from original ctag priority
+//from user priority
+qos set remarking port ( <PORT_LIST:ports> | all ) dot1p source ( original-ctag-priority | user-priority )

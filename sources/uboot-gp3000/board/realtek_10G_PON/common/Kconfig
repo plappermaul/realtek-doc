@@ -1,0 +1,284 @@
+config SYS_VENDOR
+	default "realtek_10G_PON"
+
+config NR_DRAM_BANKS
+	default 3
+
+config DISPLAY_BOARDINFO
+	default n
+
+config CMD_LOADB
+	default y
+
+config CMD_SAVEENV
+	default y
+
+config BOOTDELAY
+	default 3
+
+config CMDLINE_EDITING
+	default y
+
+config CORTINA_UART
+	bool
+	default y
+
+config MTD_CORTINA_SERIAL_NOR
+	tristate "Serial NOR Flash device mapped on Cortina SoC Platforms"
+	help
+		Map driver for CORTINA reference board.
+
+config CORTINA_SERIAL_NAND
+	tristate "Serial NAND Flash device mapped on Cortina SoC Platforms"
+	help
+		Map driver for CORTINA reference board.
+
+config CORTINA_SPINAND_BBT
+	bool "MTD: SPINAND Bad Block Table(For linux-4.4)"
+	depends on CORTINA_SERIAL_NAND
+	default y if !TARGET_RTK_ELNATH
+	help
+		MTD NAND Bad Block Table
+
+config CORTINA_PNAND
+	tristate "NAND Flash device on Cortina-Access board"
+	help
+		This enables the driver for the Cortina board to access the nand device.
+
+config CORTINA_PNAND_ECC_LEVEL
+	int "Cortina-Access Nand driver HW ecc level"
+	default 3
+	range 0 5
+	depends on CORTINA_PNAND
+	help
+		NAND Flash ECC algorithm. Value range is from 0 to 5. The default value is 3.
+
+		0: Hamming algorithm. Correct 3 bad bits in 256 btyes.
+		1: Hamming algorithm. Correct 3 bad bits in 512 btyes.
+		2: BCH algorithm. Correct 8 bad bits in 512 btyes.
+		3: BCH algorithm. Correct 16 bad bits in 512 btyes.
+		4: BCH algorithm. Correct 24 bad bits in 512 btyes.
+		5: BCH algorithm. Correct 40 bad bits in 512 btyes.
+
+config CORTINA_PNAND_ECC_HW_BCH
+     bool
+     default y
+     depends on CORTINA_PNAND_ECC_LEVEL=2 \
+             || CORTINA_PNAND_ECC_LEVEL=3 \
+             || CORTINA_PNAND_ECC_LEVEL=4 \
+             || CORTINA_PNAND_ECC_LEVEL=5
+
+config NAND_HIDE_BAD
+    bool "Hide NAND flash factory bad block"
+    help
+        Bad block are hidden and flash space is remapped as a continue good space.
+
+config CONS_INDEX_0
+	default y
+
+config UART_CLOCK
+	int
+
+config NI_PHY_ADDR_GMAC0
+	int
+	default 1
+
+config NI_PHY_ADDR_GMAC1
+	int
+	default 2
+
+config NI_PHY_ADDR_GMAC2
+	int
+	default 3
+
+
+config G3_NAND_ECC_HW_BCH_LEVEL
+	int
+
+config G3_NAND_HWECC
+	bool
+
+config NAND_G3
+	bool
+
+menuconfig REALTEK_10G_PON
+	bool "RealTek Luna support"
+
+if REALTEK_10G_PON
+config RTK_V7_FPGA_PLATFORM
+	bool "Venus/Taurus/Elnath V7 FPGA BOARD"
+	default n
+	 help
+	 For Venus/Trurus/Elnath V7 FPGA Development.
+
+config RTK_V8_FPGA_PLATFORM
+	bool "Elnath V8 FPGA BOARD"
+	default n
+	help
+	For Elnath V8 FPGA Development.
+
+config RTK_ZEBU_SIM
+	bool "Elnath ZEBU simulation"
+	default n
+	help
+        For Elnath ZEBU simulation use
+
+config RTK_USE_ONE_UBI_DEVICE
+	bool "RTK use single UBI device"
+	depends on CMD_UBI
+	help
+		Use single UBI device for config/DTB/kernel/rootfs/...
+
+config LUNA_MULTI_BOOT
+	bool "LUNA MULTI BOOT"
+	default n
+	help
+		Luna multi-boot
+config RTK_LED_STYLE_GPIO
+	bool "RTK LED System Use GPIO"
+	default n
+	help
+	RTK Demo Board use GPIO to control LED.
+
+config ENV_CALLBACK_LIST_STATIC
+	string
+	default "pwr_led_flash:pwr_led_flash,pwr_led_gpio:pwr_led_gpio"
+	depends on RTK_LED_STYLE_GPIO
+	help
+	Env variable "pwr_led_flash" can influence PWR LED behavior
+	pwr_led_flash : 1 , Always on
+	pwr_led_flash : 300 . Every 300ms , switch once.
+
+config RTK_PWR_BOOT_ON
+	bool "RTK LED System: PWR_LED ON on booting "
+	depends on  RTK_LED_STYLE_GPIO
+	help
+	PWR_LED always on when uboot bring up.
+
+config EARLY_PWR_LED_INIT
+	bool "RTK LED System: Initialize power led before env setup"
+	default n
+	depends on  RTK_LED_STYLE_GPIO
+	help
+	Enable EARLY_PWR_LED_INIT to use default LED_PWR_G_GPIO defined in rtk_gpio_led.c,
+	and blink the LED before env setup.
+
+	Say Y here only if LED_PWR_G_GPIO has been modified to meet the board design since
+	it's unable to get the gpio saved in env.
+
+config MULTICAST_UPGRADE
+	bool "RTK Luna MULTICAST_UPGRADE"
+	select LUNA_MULTI_BOOT
+	help
+		Multicast upgrade firmware.
+
+config CMD_OTP
+    bool "Secure OTP access command"
+    default n
+    help
+        OTP content access through SMC call.
+
+config CMD_CRYPTO
+    bool "Secure Encryption/Decryption command"
+    default n
+    help
+        Secure Encryption/Decryption command.
+        
+config CMD_SPI_NAND_TEST_FUNC
+    bool "Enable SPI NAND flash test function"
+    default n
+    help
+        Enable the SPI NAND relative test command for in-house verification. 
+
+config CMD_SPI_NOR_TEST_FUNC
+    bool "Enable SPI NOR flash test function"
+    default n
+    help
+        Enable the SPI NOR relative test command for in-house verification.       
+
+config TARGET_RTK_VENUS_FT
+        bool "RTK VENUS FT BOARD"
+        default n
+        help
+                For RTK VENUS FT Development.
+
+config BL_IMAGE_INC_OPTEED
+        bool "RTK BL image contains OPTEE(Bl32) Image"
+        default n
+        help
+                Bootloader image contains OPTEE(Bl32) image for TEE
+
+config CMD_SOC_TEST
+        bool "support CN2/3 SOC cmd test"
+        default n
+        help
+          utilities and options you want.
+
+config CMD_RTK_LDMA_TEST
+        bool "support RTK LDMA cmd test"
+        depends on CMD_SOC_TEST
+        help
+          realtek LDMA test cmd
+
+config CMD_RTK_XRAM_TEST
+        bool "support RTK XRAM cmd test"
+        depends on CMD_SOC_TEST
+        help
+          realtek XRAM test cmd
+
+config CMD_RTK_I2S
+        bool "support RTK I2S cmd test"
+        depends on CMD_SOC_TEST
+        help
+          realtek i2s test cmd
+
+config CMD_RTK_SPI
+        bool "support DW SSI test"
+        depends on CMD_SOC_TEST
+        help
+          BJ4
+
+config CMD_RTK_GDMA
+        bool "support DW GDMA test"
+        depends on CMD_SOC_TEST
+        help
+          BJ4
+
+config CMD_CA_RTC
+        bool "support CA RTC(Real Time Clock)"
+        depends on CMD_SOC_TEST
+        help
+          BJ4
+
+config CMD_RTK_CRYPTO
+        bool "support RTK CRYPTO cmd test"
+        depends on CMD_SOC_TEST
+        help
+          realtek crypto test cmd
+
+config CMD_RTK_UART
+        bool "support RTK UART_DMA cmd test"
+        depends on CMD_SOC_TEST
+        help
+          realtek UART_DMA test cmd
+
+config CMD_RTK_SD30
+        bool "support RTK SD30 cmd test"
+        depends on CMD_SOC_TEST
+        help
+          BJ4
+
+config CMD_RTK_EMMC
+        bool "support RTK EMMC cmd test"
+        depends on CMD_SOC_TEST
+        help
+          BJ4
+
+config CMD_RTK_PER_TMR_TEST
+        bool "support RTK PER_TMR/PER_SYS_TMR cmd test"
+        depends on CMD_SOC_TEST
+        help
+          realtek PER_TMR/PER_SYS_TMR test cmd
+
+
+endif

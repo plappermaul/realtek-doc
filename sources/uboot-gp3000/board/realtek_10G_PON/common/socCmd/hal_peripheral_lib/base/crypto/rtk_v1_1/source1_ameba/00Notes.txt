@@ -1,0 +1,27 @@
+author : 
+
+RT R4492 周治平 3192 通訊網路事業群 neo_jou@realtek.com  
+RT R2897 郭朕逢 3678 通訊網路事業群 chriskuo68@realtek.com  
+
+source
+http://gerrit.realtek.com.tw/cn3sd1/#/admin/projects/ameba/wifi_soc
+ssh://jwsyu@gerrit.realtek.com.tw:20006/ameba/wifi_soc
+
+
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim.c
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim_aes.c
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim_des.c
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim.h
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim_md5.c
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim_md5.h
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim_sha.c
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/cryptoSim_sha.h
+./targets/hal/TARGET_RTK/TARGET_8195A/test/crypto/rtl8195a_crypto_test.c
+
+./targets/hal/TARGET_RTK/TARGET_8195A/ram_lib/crypto/src/hal_crypto.c
+./targets/hal/TARGET_RTK/TARGET_8195A/hal_crypto.h
+./targets/hal/TARGET_RTK/TARGET_8195A/ram_lib/crypto/hal_crypto_ram.h
+
+
+./targets/hal/TARGET_RTK/TARGET_8195A/rom_lib/rtl8195a_crypto_rom.h
+./targets/hal/TARGET_RTK/TARGET_8195A/rom_lib/rtl8195a_crypto_rom.c

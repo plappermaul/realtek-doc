@@ -1,0 +1,372 @@
+#
+# Copyright (C) 2011 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Diag Shell Source
+#
+
+APOLLO_SDK_PATH = $(SDKDIR)
+
+include $(APOLLODIR)/Compiler_Flag
+
+EXTRA_CFLAGS+=$(PON_CFLAGS)
+LIB = $(RTK_LIB)
+ifeq ($(CONFIG_SDK_DRIVER_UNITTEST),y)
+LIB += -lut
+endif
+
+
+#ASIC mode
+ifeq ($(CONFIG_RTK_DEV_AP),y)
+CFLAGS += -DRTK_X86_CLE -DRTK_X86_ASICDRV -DCONFIG_APOLLO_CMD -DCONFIG_SMIDA1011 -DDISABLE_VLAN_SHADOW -DCONFIG_LINUX_USER_SHELL
+else
+CFLAGS := -DRTK_X86_CLE -DRTK_X86_ASICDRV -DCONFIG_APOLLO_CMD -DCONFIG_SMIDA1011 -DDISABLE_VLAN_SHADOW -DCONFIG_LINUX_USER_SHELL
+endif
+
+
+SDK_ROOT_DIR = $(APOLLO_SDK_PATH)
+SDK_INCLUDE   = $(SDK_ROOT_DIR)/include
+SYS_DIR = $(SDK_ROOT_DIR)/system/linux
+SYS_INCLUDE = $(SDK_ROOT_DIR)/system/include
+RTUSR_INC = $(SYS_DIR)/rtk/rtusr/include
+COMMON_DIR = $(SDK_ROOT_DIR)/src/common
+UT_INCLUDE   = $(SDK_ROOT_DIR)/unittest
+ifeq ($(CONFIG_RTK_L34_ENABLE),y)
+RG_INCLUDE   = $(SDK_ROOT_DIR)/../romeDriver
+#for userspace which include some data structure defined in apollo-liteRomeDriver
+endif
+ifeq ($(CONFIG_XDSL_RG_DIAGSHELL),y)
+RG_INCLUDE   = $(SDK_ROOT_DIR)/../romeDriver
+endif
+
+ifeq ($(CONFIG_KERNEL_2_6_30),y)
+EXTRA_CFLAGS += -include $(KDIR)/include/linux/autoconf.h
+else
+EXTRA_CFLAGS += -include $(KDIR)/include/generated/autoconf.h
+endif
+
+
+ifeq ($(CONFIG_DIAGSHELL_MODE),CONFIG_DIAGSHELL_RTK)
+DIAGSHELL_DIR := $(SDKDIR)/src/app/diag_rtk
+endif
+
+ifeq ($(CONFIG_DIAGSHELL_MODE),CONFIG_DIAGSHELL_RAW)
+DIAGSHELL_DIR := ../../../sdk/src/app/diag
+endif
+
+DIAG_INCLUDE  = $(DIAGSHELL_DIR)/include
+DIAGSHELL_SRC_DIR := $(DIAGSHELL_DIR)/src
+DIAG_CFG = $(DIAGSHELL_DIR)/config
+
+
+INCLUDE += -I$(DIAG_INCLUDE) \
+           -I$(SDK_INCLUDE) \
+           -I$(SYS_INCLUDE) \
+           -I$(SDK_INCLUDE)/hal/chipdef/apollo \
+           -I$(UT_INCLUDE) \
+           -I.. \
+
+ifeq ($(CONFIG_RTK_L34_ENABLE),y) 
+INCLUDE += -I$(RG_INCLUDE) -I$(RG_INCLUDE)/asicDriver
+ifeq ($(CONFIG_HWNAT_FLEETCONNTRACK_EDP),y)
+INCLUDE +=  -I$(RG_INCLUDE)/../FleetConntrackDriver/include -I$(RG_INCLUDE)/../FleetConntrackDriver/core
+endif
+endif
+
+ifeq ($(CONFIG_XDSL_RG_DIAGSHELL),y)
+INCLUDE += -I$(RG_INCLUDE)
+INCLUDE += -I$(KDIR)/include
+ifeq ($(CONFIG_DEFAULTS_KERNEL_3_18),y)
+INCLUDE += -I$(KDIR)/drivers/net/ethernet/realtek/rtl819x
+else
+INCLUDE += -I$(KDIR)/drivers/net/rtl819x
+endif
+endif
+
+ifeq ($(CONFIG_OPENWRT_DIAG),y)
+INCLUDE += -I$(KDIR)/drivers/net/ethernet/realtek/rtl819x
+endif
+
+ifeq ($(CONFIG_EUROPA_I2C_PORT_0),y)
+EXTRA_CFLAGS += -DEUROPA_I2C_PORT=0
+else
+EXTRA_CFLAGS += -DEUROPA_I2C_PORT=1
+endif
+
+CFLAGS += -DCONFIG_RTL865X \
+          -DCONFIG_RTL865XC \
+          -DRTL865X_MODEL_USER \
+
+CFLAGS += -Wcomment \
+          -Winit-self \
+          -Wmissing-braces \
+          -Wparentheses \
+          -Wreturn-type \
+          -Wunused-value \
+          -Wunused-label \
+          -Werror
+
+include $(CHECKSEC_CONFIG)
+CFLAGS += $(SECLDFLAGS)
+
+EXEC = diag
+BIN = bin
+TARGET := obj
+#SRC = $(CMDS)
+#OBJ += $(shell for i in $(SRC); do n=`basename $$i`; echo -n $(TARGET)/$${n%%.*}.o ""; done)
+BASE_OBJ :=\
+        $(DIAGSHELL_SRC_DIR)/diag_main.o \
+	    $(DIAGSHELL_SRC_DIR)/diag_util.o \
+        $(DIAGSHELL_SRC_DIR)/diag_str.o \
+	    $(DIAGSHELL_SRC_DIR)/diag_om.o \
+		$(DIAGSHELL_SRC_DIR)/diag_cmd.o
+
+PARSER_OBJ =\
+        $(DIAGSHELL_SRC_DIR)/parser/cparser.o \
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_fsm.o \
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_io_unix.o \
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_line.o \
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_token.o \
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_token_tbl.o
+
+TREE_OBJ =\
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_tree.o
+
+RT_TREE_OBJ =\
+        $(DIAGSHELL_SRC_DIR)/parser/cparser_rt_tree.o
+
+OBJ = $(BASE_OBJ) $(PARSER_OBJ) $(TREE_OBJ)
+
+ifeq ($(CONFIG_DIAGSHELL_MODE),CONFIG_DIAGSHELL_RAW)
+ifeq ($(CONFIG_SDK_APOLLO),y)
+OBJ += \
+        $(DIAGSHELL_SRC_DIR)/diag_debug.o \
+        $(DIAGSHELL_SRC_DIR)/diag_sdk.o \
+        $(DIAGSHELL_SRC_DIR)/diag_reg.o \
+        $(DIAGSHELL_SRC_DIR)/diag_l2.o \
+        $(DIAGSHELL_SRC_DIR)/diag_vlan.o \
+        $(DIAGSHELL_SRC_DIR)/diag_svlan.o \
+        $(DIAGSHELL_SRC_DIR)/diag_mirror.o \
+        $(DIAGSHELL_SRC_DIR)/diag_port.o \
+        $(DIAGSHELL_SRC_DIR)/diag_qos.o \
+        $(DIAGSHELL_SRC_DIR)/diag_dot1x.o \
+        $(DIAGSHELL_SRC_DIR)/diag_trunk.o \
+        $(DIAGSHELL_SRC_DIR)/diag_rate.o \
+        $(DIAGSHELL_SRC_DIR)/diag_oam.o \
+        $(DIAGSHELL_SRC_DIR)/diag_trap.o \
+        $(DIAGSHELL_SRC_DIR)/diag_counter.o \
+        $(DIAGSHELL_SRC_DIR)/diag_acl.o \
+        $(DIAGSHELL_SRC_DIR)/diag_ext.o \
+        $(DIAGSHELL_SRC_DIR)/diag_gpon.o \
+        $(DIAGSHELL_SRC_DIR)/diag_classf.o \
+        $(DIAGSHELL_SRC_DIR)/diag_l34.o \
+        $(DIAGSHELL_SRC_DIR)/diag_sec.o \
+        $(DIAGSHELL_SRC_DIR)/diag_stp.o \
+        $(DIAGSHELL_SRC_DIR)/diag_switch.o \
+        $(DIAGSHELL_SRC_DIR)/diag_flowctrl.o \
+        $(DIAGSHELL_SRC_DIR)/diag_auto_fallback.o \
+        $(DIAGSHELL_SRC_DIR)/diag_eee.o \
+        $(DIAGSHELL_SRC_DIR)/diag_cpu.o \
+        $(DIAGSHELL_SRC_DIR)/diag_intr.o \
+        $(DIAGSHELL_SRC_DIR)/diag_rldp.o \
+        $(DIAGSHELL_SRC_DIR)/diag_ponmac.o
+endif
+endif
+
+
+ifeq ($(CONFIG_DIAGSHELL_MODE),CONFIG_DIAGSHELL_RTK)
+OBJ += \
+    	$(DIAGSHELL_SRC_DIR)/diag_reg.o \
+        $(DIAGSHELL_SRC_DIR)/diag_acl.o \
+        $(DIAGSHELL_SRC_DIR)/diag_vlan.o \
+        $(DIAGSHELL_SRC_DIR)/diag_l2.o \
+        $(DIAGSHELL_SRC_DIR)/diag_igmp.o \
+        $(DIAGSHELL_SRC_DIR)/diag_port.o \
+        $(DIAGSHELL_SRC_DIR)/diag_classf.o \
+        $(DIAGSHELL_SRC_DIR)/diag_qos.o \
+        $(DIAGSHELL_SRC_DIR)/diag_bandwidth.o \
+        $(DIAGSHELL_SRC_DIR)/diag_meter.o \
+        $(DIAGSHELL_SRC_DIR)/diag_switch.o \
+        $(DIAGSHELL_SRC_DIR)/diag_storm_control.o \
+        $(DIAGSHELL_SRC_DIR)/diag_stp.o \
+        $(DIAGSHELL_SRC_DIR)/diag_counter.o \
+        $(DIAGSHELL_SRC_DIR)/diag_trap.o \
+        $(DIAGSHELL_SRC_DIR)/diag_rma.o \
+        $(DIAGSHELL_SRC_DIR)/diag_oam.o \
+        $(DIAGSHELL_SRC_DIR)/diag_cpu.o \
+    	$(DIAGSHELL_SRC_DIR)/diag_iol.o \
+    	$(DIAGSHELL_SRC_DIR)/diag_svlan.o \
+    	$(DIAGSHELL_SRC_DIR)/diag_debug.o \
+        $(DIAGSHELL_SRC_DIR)/diag_flowctrl.o \
+    	$(DIAGSHELL_SRC_DIR)/diag_ponmac.o \
+    	$(DIAGSHELL_SRC_DIR)/diag_intr.o \
+        $(DIAGSHELL_SRC_DIR)/diag_i2c.o \
+        $(DIAGSHELL_SRC_DIR)/diag_led.o \
+        $(DIAGSHELL_SRC_DIR)/diag_pbo.o \
+        $(DIAGSHELL_SRC_DIR)/diag_ppstod.o
+
+ifneq ($(CONFIG_REDUCED_DIAG),y)
+OBJ+= \
+        $(DIAGSHELL_SRC_DIR)/diag_time.o \
+    	$(DIAGSHELL_SRC_DIR)/diag_rldp.o \
+        $(DIAGSHELL_SRC_DIR)/diag_trunk.o \
+        $(DIAGSHELL_SRC_DIR)/diag_dot1x.o \
+        $(DIAGSHELL_SRC_DIR)/diag_mirror.o \
+        $(DIAGSHELL_SRC_DIR)/diag_sec.o 
+
+ifeq ($(CONFIG_L34_TABLE_BASE_DIAG),y)
+OBJ+= \
+        $(DIAGSHELL_SRC_DIR)/diag_l34.o  
+endif
+endif 
+
+
+
+ifeq ($(CONFIG_SDK_DRIVER_UNITTEST),y)
+OBJ += \
+        $(DIAGSHELL_SRC_DIR)/diag_sdk.o
+endif
+
+ifeq ($(CONFIG_GPON_FEATURE),y) 
+OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/diag_gpon.o
+endif 
+
+ifeq ($(CONFIG_EPON_FEATURE),y) 
+OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/diag_epon.o
+endif 
+
+ifeq ($(CONFIG_RTK_L34_ENABLE),y)
+OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/diag_rg.o \
+	$(DIAGSHELL_SRC_DIR)/diag_rg_acl.o 
+endif 
+ifeq ($(CONFIG_XDSL_RG_DIAGSHELL),y)
+OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/diag_rg.o \
+	$(DIAGSHELL_SRC_DIR)/diag_rg_acl.o 
+endif 
+endif
+
+ifeq ($(CONFIG_COMMON_RT_API),y)
+RT_OBJ+= \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_switch.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_counter.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_i2c.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_trap.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_igmp.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_oam.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_sec.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_port.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_intr.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_qos.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_rate.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_cls.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_l2.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_mirror.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_mdio.o \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_time.o
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+RT_OBJ+= \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_gpon.o
+endif
+
+ifeq ($(CONFIG_EPON_FEATURE),y)
+RT_OBJ+= \
+    $(DIAGSHELL_SRC_DIR)/rt/diag_rt_epon.o
+endif
+
+ifeq ($(CONFIG_RTK_L34_FLEETCONNTRACK_ENABLE),y)
+RT_OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_rate_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_igmp_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_flow_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_counter_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_acl_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_qos_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_pe_ext.o \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_misc_ext.o
+endif
+
+
+ifeq ($(CONFIG_RTK_IGMP_MLD_SNOOPING_MODULE),m)
+RT_OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_igmpHook_ext.o
+endif
+
+ifeq ($(CONFIG_COMMON_RT_PONMISC),y)
+RT_OBJ+= \
+	$(DIAGSHELL_SRC_DIR)/rt/diag_rt_ponmisc.o
+endif
+
+OBJ+= $(RT_OBJ)
+
+endif
+
+#RM_EXE:
+#	rm -f $(BIN)/$(EXEC)
+
+#Remove the obj file to force rebuild
+RM_OBJ:
+	rm -f $(DIAGSHELL_SRC_DIR)/diag_debug.o
+
+
+$(EXEC): $(OBJ)
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) $(EXTRA_SEC_EXE_LDFLAGS) $(INCLUDE) $(OBJ) $(LIB) -o $(BIN)/$@
+	$(STRIP) $(BIN)/$@
+
+RT_EXEC = rt_diag
+
+$(RT_EXEC): $(BASE_OBJ) $(PARSER_OBJ) $(RT_TREE_OBJ) $(RT_OBJ)
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) $(EXTRA_SEC_EXE_LDFLAGS) $(INCLUDE) $(BASE_OBJ) $(PARSER_OBJ) $(RT_TREE_OBJ) $(RT_OBJ) $(LIB) -o $(BIN)/$@
+	$(STRIP) $(BIN)/$@
+
+ifeq ($(CONFIG_OPENWRT_DIAG),y)
+$(TARGET)/%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS) $(EXTRA_CFLAGS) -c -fPIC -o $@ $<
+
+%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS) $(EXTRA_CFLAGS) -c -fPIC -o $@ $<
+else
+$(TARGET)/%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS) $(EXTRA_CFLAGS) -c -o $@ $<
+
+%.o: %.c
+	$(CC) $(INCLUDE) $(CFLAGS) $(EXTRA_CFLAGS) -c -o $@ $<
+endif
+
+
+#all: RM_EXE $(EXEC)
+
+ifeq ($(CONFIG_RT_DIAGSHELL_ONLY),y)
+all: RM_OBJ $(RT_EXEC)
+else
+all: RM_OBJ $(EXEC)
+endif
+
+install: all
+	cp -af $(APOLLODIR)/object/src/app/lib/librtk.so $(ROMFSDIR)/lib/
+ifeq ($(CONFIG_SDK_DRIVER_UNITTEST),y)
+	cp -af $(APOLLODIR)/object/src/app/lib/libut.so $(ROMFSDIR)/lib/
+endif
+ifeq ($(CONFIG_RT_DIAGSHELL_ONLY),y)
+	cp $(BIN)/$(RT_EXEC) $(BINDIR)
+else
+	cp $(BIN)/$(EXEC) $(BINDIR)
+endif
+
+clean:
+ifeq ($(CONFIG_RT_DIAGSHELL_ONLY),y)
+	rm -f $(BASE_OBJ) $(PARSER_OBJ) $(RT_TREE_OBJ) $(RT_OBJ) $(BIN)/$(RT_EXEC) *.gdb *.elf *.elf2flt
+	rm -f $(DIAGSHELL_SRC_DIR)/parser/cparser_rt_tree.c
+	rm -f $(DIAG_INCLUDE)/parser/cparser_rt_tree.h
+else
+	rm -f $(OBJ) $(BIN)/$(EXEC) *.gdb *.elf *.elf2flt
+	rm -f $(DIAGSHELL_SRC_DIR)/parser/cparser_tree.c
+	rm -f $(DIAG_INCLUDE)/parser/cparser_tree.h
+endif
+
+tgz: clean
+	cd ..; cd ..; tar zcvf $(EXEC).tgz $(EXEC)
+

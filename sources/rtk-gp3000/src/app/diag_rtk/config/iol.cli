@@ -1,0 +1,60 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) iol commands.
+//
+
+
+//iol configuration
+//set configuration
+//max length 1518 or 1522
+//state configuration
+//disable function
+//enable function
+iol set max-length state ( disable | enable )
+
+//iol configuration
+//get configuration
+//max length 1518 or 1522
+iol get max-length
+
+//iol configuration
+//set configuration
+//error length checking
+//state configuration
+//disable function
+//enable function
+iol set error-length state ( disable | enable )
+
+//iol configuration
+//get configuration
+//error length checking
+iol get error-length
+
+//iol configuration
+//set configuration
+//drop atfer 16 collision
+//state configuration
+//disable function
+//enable function
+iol set 16-collision state ( disable | enable )
+
+//iol configuration
+//get configuration
+//drop atfer 16 collision
+iol get 16-collision
+

@@ -1,0 +1,49 @@
+include $(APOLLODIR)/Compiler_Flag
+
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+
+ccflags-y := -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             -I$(SDKDIR)/src/module/pkt_redirect \
+             -I$(SDKDIR)/src/module/ca_rtk_epon_drv-$(CA_TARGET) \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET) \
+             -I$(ROOTDIR)/ca_packages/ca-pon-mac/1.0-r0/ca-pon-mac-1.0-$(CA_TARGET) \
+             -I$(ROOTDIR)/ca_packages/ca-scfg/1.0-r0/ca-scfg-1.0-$(CA_TARGET) \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/$(CA_TARGET)/module/ca-ne/ \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/$(CA_TARGET)/module/ca-plat/ \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+
+ifeq ($(CA_TARGET),venus)
+ccflags-y += -DONE_IMAGE_VENUS \
+			 -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET)/ni-drv-gen2 \
+			 -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET)/aal-gen2/include
+else ifeq ($(CA_TARGET), 77c)
+ccflags-y += -DONE_IMAGE_77C \
+			 -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET)/ni-drv-$(CA_TARGET) \
+			 -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET)/aal-$(CA_TARGET)/include
+else ifeq ($(CA_TARGET), 07f)
+ccflags-y += -DONE_IMAGE_07F \
+			 -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET)/ni-drv-$(CA_TARGET) \
+			 -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0-$(CA_TARGET)/aal-$(CA_TARGET)/include
+else
+error "***** Not support *****"
+endif
+
+obj-m += ca-rtk-epon-$(CA_TARGET)-drv.o
+ca-rtk-epon-$(CA_TARGET)-drv-objs := ca_rtk_epon_drv_main.o
+
+else
+ccflags-y := -I$(SDKDIR)/include \
+             -I$(SDKDIR)/system/include \
+             -I$(SDKDIR)/src/module/pkt_redirect \
+             -I$(SDKDIR)/src/module/ca_rtk_epon_drv \
+             -I$(ROOTDIR)/ca_packages/ca-network-engine/1.0-r0/ca-network-engine-1.0 \
+             -I$(ROOTDIR)/ca_packages/ca-pon-mac/1.0-r0/ca-pon-mac-1.0 \
+             -I$(ROOTDIR)/ca_packages/ca-scfg/1.0-r0/ca-scfg-1.0 \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/module/ca-ne/ \
+             -I$(ROOTDIR)/sysroot-destdir/usr/include/module/ca-plat/ \
+             $(PON_CFLAGS) -DCONFIG_SDK_KERNEL_LINUX
+
+obj-m += ca-rtk-epon-drv.o
+ca-rtk-epon-drv-objs := ca_rtk_epon_drv_main.o
+endif

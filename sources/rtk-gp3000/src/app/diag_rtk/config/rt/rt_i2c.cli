@@ -1,0 +1,122 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 87677 $
+// $Date: 2018-05-04 15:38:37 +0800 (Fri, 04 May 2018) $
+//
+// Purpose : Define diag shell commands for trunk.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) I2C commands.
+//
+
+//I2C configuration
+//initialization
+//I2C port specify
+//port number
+rt_i2c init port <UINT:port>
+
+//I2C configuration
+//set configuration
+//state configuration
+//I2C port specify
+//port number
+//disable
+//enable
+rt_i2c set state port <UINT:port> ( enable | disable )
+
+//I2C configuration
+//get configuration
+//state configuration
+//I2C port specify
+//port number
+rt_i2c get state port <UINT:port>
+
+//I2C configuration
+//set configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//specify data
+//data
+rt_i2c set port <UINT:port> dev <UINT:dev_id> reg <UINT:register> data <UINT:data>
+
+//I2C configuration
+//get configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+rt_i2c get port <UINT:port> dev <UINT:dev_id> reg <UINT:register>
+
+//I2C configuration
+//set configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//data from write-buffer
+//write count
+//count
+rt_i2c set port <UINT:port> dev <UINT:dev_id> reg <UINT:register> write-buffer count <UINT:count>
+
+//I2C configuration
+//set configuration
+//write-buffer operation
+//buffer position
+//position
+//specifiy data
+//data
+rt_i2c set write-buffer pos <UINT:pos> data <STRING:data>
+
+//I2C configuration
+//clear operation
+//write-buffer operation
+rt_i2c clear write-buffer
+
+//I2C configuration
+//show operation
+//write-buffer operation
+rt_i2c show write-buffer
+
+//I2C configuration
+//get configuration
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//repeat count
+//count
+rt_i2c get port <UINT:port> dev <UINT:dev_id> reg <UINT:register> count <UINT:count>
+
+//I2C configuration
+//set configuration
+//clock specify
+//I2C port specify
+//port number
+//clock KHz
+rt_i2c set clock port <UINT:port> <UINT:khz>
+
+//I2C configuration
+//get configuration
+//clock specify
+//I2C port specify
+//port number
+rt_i2c get clock port <UINT:port>

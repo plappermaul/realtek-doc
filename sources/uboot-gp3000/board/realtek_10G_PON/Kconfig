@@ -1,0 +1,13 @@
+source "board/realtek_10G_PON/common/Kconfig"
+if TARGET_VENUS
+source "board/realtek_10G_PON/venus/Kconfig"
+endif
+
+if TARGET_RTK_TAURUS
+source "board/realtek_10G_PON/taurus/Kconfig"
+endif
+
+if TARGET_RTK_ELNATH
+source "board/realtek_10G_PON/elnath/Kconfig"
+endif
+

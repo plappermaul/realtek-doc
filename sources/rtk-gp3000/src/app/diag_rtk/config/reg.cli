@@ -1,0 +1,38 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) reg commands.
+//
+
+//register configuration
+//set register
+//register address
+//register value
+register set <UINT:address> <UINT:value>
+
+//register configuration
+//get register
+//register address
+//number of words
+register get <UINT:address> { <UINT:words> }
+
+//register configuration
+//get register
+//register address
+//number of times
+//times
+register get <UINT:address> times <UINT:words>
+
+//register configuration
+//get register
+//all register
+register get all

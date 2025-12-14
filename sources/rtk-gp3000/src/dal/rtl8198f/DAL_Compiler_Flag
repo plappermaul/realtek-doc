@@ -1,0 +1,17 @@
+DAL_OBJ:= dal_rtl8198f_switch.o \
+          dal_rtl8198f_l2.o \
+          dal_rtl8198f_vlan.o \
+          dal_rtl8198f_port.o \
+          dal_rtl8198f_qos.o \
+          dal_rtl8198f_stat.o \
+          dal_rtl8198f_rate.o \
+          dal_rtl8198f_sec.o \
+          dal_rtl8198f_intr.o \
+          dal_rtl8198f_trap.o \
+          dal_rtl8198f_rtl83xx_api.o \
+          dal_rtl8198f_mirror.o \
+          dal_rtl8198f_ca_rtk.o
+
+ifeq ($(CONFIG_RTL_8226_SUPPORT), y)
+DAL_OBJ += dal_rtl8226_status.o
+endif

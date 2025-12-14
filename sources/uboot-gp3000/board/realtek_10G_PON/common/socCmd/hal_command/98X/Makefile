@@ -1,0 +1,20 @@
+
+obj-$(CONFIG_CMD_SOC_TEST) += cmd_monitor.o
+obj-$(CONFIG_CMD_SOC_TEST) += cmd_common.o
+#obj-$(CONFIG_CMD_RTK_I2C) += cmd_i2c.o
+obj-$(CONFIG_CMD_RTK_UART) += cmd_uart.o
+obj-$(CONFIG_CMD_RTK_SPI) += cmd_spi.o
+obj-$(CONFIG_CMD_RTK_GDMA) += cmd_gdma.o
+#obj-$(CONFIG_CMD_RTK_PCIE) += cmd_pcie.o
+obj-$(CONFIG_CMD_RTK_PLATFORM_IO) += cmd_platform_io.o
+obj-$(CONFIG_CMD_SOC_TEST) += cmd_platform_io.o
+obj-$(CONFIG_CMD_RTK_I2S) += cmd_i2s.o
+#obj-$(CONFIG_CMD_RTK_PCM) += cmd_pcm.o
+#obj-$(CONFIG_CMD_RTK_WLAN) += cmd_wlan.o
+#obj-$(CONFIG_CMD_RTK_TIMER) += cmd_timer.o
+#obj-$(CONFIG_CMD_RTK_PWM) += cmd_pwm.o
+obj-$(CONFIG_CMD_RTK_SD30) += cmd_sd30.o
+obj-$(CONFIG_CMD_RTK_EMMC) += cmd_emmc.o
+obj-$(CONFIG_CMD_RTK_CRYPTO) += cmd_crypto.o
+#obj-$(CONFIG_CMD_RTK_PARALLEL_NAND) += cmd_para_nand.o
+obj-$(CONFIG_CMD_CA_RTC) += cmd_rtc.o

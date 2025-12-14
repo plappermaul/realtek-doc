@@ -1,0 +1,136 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for rate.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) share meter
+//
+
+//shared meter configuration
+//initialization
+meter init
+
+
+//shared meter configuration
+//get configuration
+//meter entry configuration
+//index, <0-47>
+meter get entry <MASK_LIST:index>
+
+//shared meter configuration
+//get configuration
+//meter entry configuration
+//index, <0-47>
+//burst size
+meter get entry <MASK_LIST:index> burst-size
+
+//shared meter configuration
+//set configuration
+//meter entry configuration
+//index, <0-47>
+//burst size
+//bucket size(unit byte), <0~65535>
+meter set entry <MASK_LIST:index> burst-size <UINT:size>
+
+//shared meter configuration
+//get configuration
+//meter entry configuration
+//index, <0-47>
+//interframe gap state
+meter get entry <MASK_LIST:index> ifg
+
+//shared meter configuration
+//set configuration
+//meter entry configuration
+//index, <0-47>
+//interframe gap
+//exclude
+//include
+meter set entry <MASK_LIST:index> ifg ( exclude | include )
+
+//shared meter configuration
+//get configuration
+//meter entry configuration
+//index, <0-47>
+//meter exceed state
+meter get entry <MASK_LIST:index> meter-exceed
+
+//shared meter configuration
+//reset configuration
+//meter entry configuration
+//index, <0-47>
+//meter exceed state
+meter reset entry <MASK_LIST:index> meter-exceed
+
+//shared meter configuration
+//get configuration
+//bt_ctr tick time of the leaky bucket
+meter get tick-token
+
+//shared meter configuration
+//set configuration
+//tick token configuration
+//tick period
+//period, <0~255>
+//token  configuration
+//token, <0~255>
+meter set tick-token tick-period <UINT:period> token <UINT:token>
+
+//shared meter configuration
+//get configuration
+//bt_ctr tick time of the leaky bucket
+meter get pon-tick-token
+
+//shared meter configuration
+//set configuration
+//pon_bt_ctr configuration
+//tick period
+//period, <0~255>
+//token configuration
+//token, <0~255>
+meter set pon-tick-token tick-period <UINT:period> token <UINT:token>
+
+//shared meter configuration
+//get configuration
+//meter entry configuration
+//index, <0-47>
+//rate configuration
+meter get entry <MASK_LIST:index> rate
+
+//shared meter configuration
+//set configuration
+//meter entry configuration
+//index, <0-47>
+//rate configuration
+//rate (unit 8Kbps), <8~1048568>
+meter set entry <MASK_LIST:index> rate <UINT:rate>
+
+//shared meter configuration
+//get configuration
+//meter entry configuration
+//index, <0-47>
+//meter mode
+meter get entry <MASK_LIST:index> meter-mode
+
+//shared meter configuration
+//set configuration
+//meter entry configuration
+//index, <0-47>
+//meter mode
+//meter using real bit rate
+//meter using packet rate
+meter set entry <MASK_LIST:index> meter-mode ( bit-rate | packet-rate )
+
+

@@ -1,0 +1,289 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for rate.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) egress bandwidth commands.
+//           2) ingress bandwidth commands.
+//           3) storm control commands.
+//           4) share meter
+//
+
+
+//bandwidth configuration
+//initialization
+bandwidth init 
+
+//bandwidth configuration
+//get configuration
+//egress configuration
+//ifg
+bandwidth get egress ifg
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//ifg
+//exclude
+//include
+bandwidth set egress ifg ( exclude | include )
+
+//bandwidth configuration
+//get configuration
+//egress configuration
+//ifg
+//port configuration
+//port list, <0-6>
+//all ports
+bandwidth get egress ifg port ( <PORT_LIST:ports> | all ) 
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//ifg
+//port configuration
+//port list, <0-6>
+//all ports
+//exclude
+//include
+bandwidth set egress ifg port ( <PORT_LIST:ports> | all ) ( exclude | include )
+
+//bandwidth configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+bandwidth get egress port ( <PORT_LIST:ports> | all )
+
+//bandwidth configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id
+//queue list, <0-7>
+//all queues
+bandwidth get egress port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all )
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//queue id, <0~7>
+//average peak rate configuration
+//apr index for RTL9607 index <0~7> , other using physical meter index <0~31>
+bandwidth set egress port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> apr-index <UINT:index>
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//queue id, <0~7>
+//share meter configuration
+//state configuration
+//disable
+//enable
+bandwidth set egress port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> share-bandwidth state ( disable | enable )
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//queue id configuration
+//queue id, <0~7>
+//rate
+//rate vlaue (unit 1Kbps)
+bandwidth set egress port ( <PORT_LIST:ports> | all ) queue-id <UINT:qid> rate <UINT:rate>
+
+//bandwidth configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+//rate vlaue (unit 1Kbps), <8~1048568>
+bandwidth set egress port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//rma-8899-igmp packets bypass
+//state configuration
+bandwidth get ingress bypass-packet state
+
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//rma-8899-igmp packets bypass
+//state configuration
+//disable
+//enable
+bandwidth set ingress bypass-packet state ( disable | enable )
+
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//flow-control
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+bandwidth get ingress flow-control port ( <PORT_LIST:ports> | all ) state
+
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//flow-control
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable
+//enable
+bandwidth set ingress flow-control port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//ifg
+//port configuration
+//port list, <0-6>
+//all ports
+bandwidth get ingress ifg port ( <PORT_LIST:ports> | all )
+
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//ifg
+//port configuration
+//port list, <0-6>
+//all ports
+//exclude
+//include
+bandwidth set ingress ifg port ( <PORT_LIST:ports> | all ) ( exclude | include )
+
+//bandwidth configuration
+//get configuration
+//ingress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+bandwidth get ingress port ( <PORT_LIST:ports> | all ) rate
+
+//bandwidth configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list, <0-6>
+//all ports
+//rate
+//rate value (unit 1Kbps), <8~1048568>
+bandwidth set ingress port ( <PORT_LIST:ports> | all ) rate <UINT:rate>
+
+
+//bandwidth configuration
+//get configuration
+//host configuration
+//host entry
+//index
+//ingress control configuration
+//egress control configuration
+//state configuration
+bandwidth get host entry <UINT:index> ( ingress | egress ) state
+
+//bandwidth configuration
+//set configuration
+//host configuration
+//host entry
+//index
+//ingress control configuration
+//egress control configuration
+//state configuration
+//disable function
+//enable function
+bandwidth set host entry <UINT:index> ( ingress | egress ) state ( disable | enable ) 
+
+//bandwidth configuration
+//get configuration
+//host configuration
+//host entry
+//index
+//mac addresss configuration
+bandwidth get host entry <UINT:index> mac-address
+
+//bandwidth configuration
+//set configuration
+//host configuration
+//host entry
+//index
+//mac addresss configuration
+//unicast MAC address, A:B:C:D:E:F
+bandwidth set host entry <UINT:index> mac-address <MACADDR:mac>
+
+//bandwidth configuration
+//get configuration
+//host configuration
+//host entry
+//index
+//meter index
+bandwidth get host entry <UINT:index> meter-index
+
+//bandwidth configuration
+//set configuration
+//host configuration
+//host entry
+//index
+//meter configuration
+//meter index
+bandwidth set host entry <UINT:index> meter-index <UINT:meter_index>
+
+//bandwidth configuration
+//get configuration
+//host configuration
+//host entry
+//index
+//ingress control configuration
+//egress control configuration
+//meter index
+bandwidth get host entry <UINT:index> ( ingress | egress ) meter-index
+
+//bandwidth configuration
+//set configuration
+//host configuration
+//host entry
+//index
+//ingress control configuration
+//egress control configuration
+//meter configuration
+//meter index
+bandwidth set host entry <UINT:index> ( ingress | egress ) meter-index <UINT:meter_index>
+
+
+
+
+
+

@@ -1,0 +1,2388 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for debug.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) debug commands.
+//
+
+
+//debug configuration
+//batch execution
+//cmd a
+//loop count
+debug batch a <UINT:loop>
+
+//debug configuration
+//batch execution
+//cmd A
+//loop count
+debug batch A <UINT:loop>
+
+//debug configuration
+//batch execution
+//cmd w
+//register number
+//msb
+//lsb
+//write data
+debug batch w <UINT:reg> <UINT:msb> <UINT:lsb> <HEX:data>
+
+//debug configuration
+//batch execution
+//cmd W
+//register number
+//msb
+//lsb
+//write data
+debug batch W <UINT:reg> <UINT:msb> <UINT:lsb> <HEX:data>
+
+//debug configuration
+//batch execution
+//cmd r
+//register number
+//msb
+//lsb
+debug batch r <UINT:reg> <UINT:msb> <UINT:lsb>
+
+//debug configuration
+//batch execution
+//cmd R
+//register number
+//msb
+//lsb
+debug batch R <UINT:reg> <UINT:msb> <UINT:lsb>
+
+//debug configuration
+//batch execution
+//set phy id
+//phy id
+debug batch phy <UINT:phyid>
+
+//debug configuration
+//batch execution
+//list current cmds
+debug batch list
+
+//debug configuration
+//batch execution
+//execute cmd
+//enable debug print
+debug batch execute { debug }
+
+//debug configuration
+//dump configuration
+//header stamp after information
+//header stamp before information
+//snapshot a.k.a first pass
+debug dump ( hsa | hsb ) snapshot
+
+
+//debug configuration
+//dump configuration
+//fb debug information
+//header stamp after information
+//header stamp before information
+//hsa debug information
+debug dump ( fb | hsa | hsb | hsd )
+
+//debug configuration
+//dump configuration
+//hsd debug information
+//port configuration
+//port, <0-6>
+debug dump hsd port <UINT:port>
+
+//debug configuration
+//dump configuration
+//hsa debug information
+//latest tx hsa debug information
+debug dump hsd latest
+
+//debug configuration
+//get configuration
+//log information
+debug get log
+
+//debug configuration
+//set configuration
+//log information
+//state configuration
+//disable function
+//enable function
+debug set log state ( disable | enable )
+
+//debug configuration
+//set configuration
+//log information
+//level of log
+//level <0-8>
+debug set log level <UINT:value>
+
+//debug configuration
+//set configuration
+//log information
+//mask of log
+//bit mask
+debug set log level-mask <UINT:bitmask>
+
+//debug configuration
+//set configuration
+//log information
+//configure type of level
+//configure by level
+//configure by level mask
+debug set log level-type ( level | level-mask )
+
+//debug configuration
+//set configuration
+//log information
+//log format
+//normal display
+//detail display
+debug set log format ( normal | detail )
+
+//debug configuration
+//set configuration
+//log information
+//component module
+//module mask HEX
+debug set log module <UINT64:bitmask>
+
+//debug configuration
+//set configuration
+//memory configuration
+//register address
+//register value
+debug set memory <UINT:address> <UINT:value>
+
+//debug configuration
+//get configuration
+//memory register
+//register address
+//number of words
+debug get memory <UINT:address> { <UINT:words> }
+
+//debug configuration
+//set configuration
+//soc memory configuration
+//soc memory
+//memory value
+debug set soc-memory <UINT:address> <UINT:value>
+
+//debug configuration
+//get configuration
+//soc memory
+//memory address
+//number of words
+debug get soc-memory <UINT:address> { <UINT:words> }
+
+//debug configuration
+//set configuration
+//pon-nic memory configuration
+//pon-nic memory
+//memory value
+debug set pon-nic <UINT:address> <UINT:value>
+
+//debug configuration
+//get configuration
+//pon-nic memory
+//memory address
+//number of words
+debug get pon-nic <UINT:address> { <UINT:words> }
+
+//debug configuration
+//set configuration
+//table configuration
+//table index
+//entry address
+debug get table <UINT:table_idx> <UINT:address>
+
+//debug configuration
+//Initial rtk API
+debug rtk-init
+
+//debug configuration
+//Initial fpga test relative asic setting
+debug fpga-init
+
+
+//debug configuration
+//set configuration
+//phy configuration
+//phy id
+//register address
+//register value
+debug set phy <UINT:phy_id> <UINT:reg_address> <UINT:value>
+
+//debug configuration
+//get configuration
+//phy configuration
+//phy id
+//register address
+debug get phy <UINT:phy_id> <UINT:reg_address>
+
+//debug configuration
+//set configuration
+//asic register configuration
+//debug dump configuration
+//enable dump mode
+//disable dump mode
+debug set register dump ( enable | disable )
+
+//debug configuration
+//get configuration
+//version information
+//detail information
+debug get version { detail }
+
+
+
+//debug configuration
+//register read write test
+//register
+//register address
+//test pattern
+//test pattern value
+//test loop count
+//count
+debug register-rw-test register <UINT:address> data <UINT:value> count <UINT:count>
+
+#ifndef CONFIG_REDUCED_DIAG
+
+//debug configuration
+//set configuration
+//dbgo_wrap_gphy
+//dbgo_sys_gen
+//dbgo_ctrlckt
+//dbgo_misc
+//dbg_rrcp_o
+//dbg_rldp_o
+debug set ( dbgo_wrap_gphy | dbgo_sys_gen | dbgo_ctrlckt | dbgo_misc | dbg_rrcp_o | dbg_rldp_o )
+
+//debug configuration
+//set configuration
+//dbg_led_o
+//dbg_rtct_o
+//dbg_mib_o
+//dbg_phy_sts_o
+//dbg_intrpt_o
+//dbg_afbk_o
+//dbg_diag_o
+//dbgo_hwpkt
+//dbgo_efuse
+debug set ( dbg_led_o | dbg_rtct_o | dbg_mib_o | dbg_phy_sts_o | dbg_intrpt_o | dbg_afbk_o | dbg_diag_o | dbgo_hwpkt | dbgo_efuse )
+
+//debug configuration
+//set configuration
+//dbgo_wrap_sds
+//dbgo_chip_clk_gen_0
+//dbgo_chip_clk_gen_1
+//dbgo_chip_clk_gen_2
+//dbgo_chip_rst_gen
+debug set ( dbgo_wrap_sds | dbgo_chip_clk_gen_0 | dbgo_chip_clk_gen_1 | dbgo_chip_clk_gen_2 | dbgo_chip_rst_gen )
+
+//debug configuration
+//set configuration
+//dbgo_chip_misc
+//dbgo_cfgif
+//dbgo_soc
+//dbgo_ssc
+//dbgo_pll_root
+//dbgo_ponctrl
+//dbgo_clkctrl
+debug set ( dbgo_chip_misc | dbgo_cfgif | dbgo_soc | dbgo_ssc | dbgo_pll_root | dbgo_ponctrl | dbgo_clkctrl )
+
+//debug configuration
+//set configuration
+//dbgo_rstgen
+//dbgo_clkgen
+//dbgo_sw_lxslv
+//PLLTOUT
+debug set ( dbgo_rstgen | dbgo_clkgen | dbgo_sw_lxslv | PLLTOUT )
+
+//debug configuration
+//set configuration
+//dbgo_regctrl
+debug set dbgo_regctrl
+
+//debug configuration
+//set configuration
+//dbgo_regctrl
+//dbgo_swarb
+//dbgo_gphyarb
+//dbgo_smimst
+//dbgo_iicmst
+//dbgo_iicmst_1
+//bits[3:0]
+//data
+debug set dbgo_regctrl ( dbgo_swarb | dbgo_gphyarb | dbgo_smimst | dbgo_iicmst | dbgo_iicmst_1 ) bits-3-0 <UINT:bits_3_0>
+
+//debug configuration
+//set configuration
+//dbgo_fctrl
+debug set dbgo_fctrl
+
+//debug configuration
+//set configuration
+//dbgo_fctrl
+//dbgo_ingress
+//dbgo_egress
+//bits[3:0]
+//data
+debug set dbgo_fctrl ( dbgo_ingress | dbgo_egress ) bits-3-0 <UINT:bits_3_0>
+
+//debug configuration
+//set configuration
+//dbgo_swcore_cen
+debug set dbgo_swcore_cen
+
+//debug configuration
+//set configuration
+//dbgo_swcore_cen
+//dbgo_sel_sch
+//dbgo_sel_outq
+//dbgo_sel_mtr
+//dbgo_sel_hsactrl
+//dbgo_sel_inq
+//dbgo_sel_out_drp
+//bits[7:0]
+//data
+debug set dbgo_swcore_cen ( dbgo_sel_sch | dbgo_sel_outq | dbgo_sel_mtr | dbgo_sel_hsactrl | dbgo_sel_inq | dbgo_sel_out_drp ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_swcore_cen
+//dbgo_sel_sch_pon
+//dbg_dpm_o
+//dbg_l2_o
+//dbg_acl_o
+//dbg_misc_o
+//bits[7:0]
+//data
+debug set dbgo_swcore_cen ( dbgo_sel_sch_pon | dbg_dpm_o | dbg_l2_o | dbg_acl_o | dbg_misc_o ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+debug set dbgo_mac
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p0_dbgo_tx
+//p0_dbgo_rx
+//p0_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p0_dbgo_tx | p0_dbgo_rx | p0_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p1_dbgo_tx
+//p1_dbgo_rx
+//p1_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p1_dbgo_tx | p1_dbgo_rx | p1_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p2_dbgo_tx
+//p2_dbgo_rx
+//p2_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p2_dbgo_tx | p2_dbgo_rx | p2_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p3_dbgo_tx
+//p3_dbgo_rx
+//p3_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p3_dbgo_tx | p3_dbgo_rx | p3_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p4_dbgo_tx
+//p4_dbgo_rx
+//p4_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p4_dbgo_tx | p4_dbgo_rx | p4_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p5_dbgo_tx
+//p5_dbgo_rx
+//p5_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p5_dbgo_tx | p5_dbgo_rx | p5_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_mac
+//p6_dbgo_tx
+//p6_dbgo_rx
+//p6_dbgo_eee
+//bits[7:0]
+//data
+debug set dbgo_mac ( p6_dbgo_tx | p6_dbgo_rx | p6_dbgo_eee ) bits-7-0 <UINT:bits_7_0>
+
+//debug configuration
+//set configuration
+//dbgo_m1_0
+//dbgo_m1_1
+//dbgo_m1_2
+//dbgo_m1_3
+//dbgo_m1_4
+debug set ( dbgo_m1_0 | dbgo_m1_1 | dbgo_m1_2 | dbgo_m1_3 | dbgo_m1_4 )
+
+#endif
+
+
+//debug configuration
+//set configuration
+//hsb
+//latch mode configuration
+//all
+//none
+//first-drop
+//first-pass
+//first-trap
+//drop
+//trap
+//acl
+//reason
+debug set hsb latch-mode ( all | none | first-drop | first-pass | first-trap | drop | trap | acl | reason )
+
+//debug configuration
+//set configuration
+//hsb
+//source
+//user data
+//rx mac parser
+debug set hsb source ( user-data | mac-parser )
+
+//debug configuration
+//get configuration
+//hsb
+//valid
+debug get hsb valid
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//ready send to ale
+debug set hsb user-data send-to-ale
+
+//debug configuration
+//show configuration
+//hsb
+//user data
+debug show hsb user-data
+
+//debug configuration
+//clear configuration
+//hsb
+//user data
+debug clear hsb user-data
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//spa
+//user field valid
+//ip4 tos dscp
+//ip type
+//ether type
+//packet length
+//l4 type
+//data
+debug set hsb user-data ( spa | user-valid | tos | ip-type | ether-type | pkt-len | l4-type ) <UINT:data>
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//stag
+//ctag
+//pon index
+//lenght of next header
+//ip protocol or next header
+//ip6 traffic class
+//data
+debug set hsb user-data ( stag | ctag | pon-idx | len-of-nhs | ip-pro-nh | tc ) <UINT:data>
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//stag if
+//ctag if
+//igmp if
+//udp if
+//tcp if
+//llc if
+//pppoe if
+debug set hsb user-data ( stag-if | ctag-if | igmp | udp | tcp | llc | pppoe )
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//snap if
+//oam if
+//ip reserved mc address if
+//cpu tag
+//ip6 next header with routing
+//l3 check sum ok
+//ttl > 5
+//rlpp if
+//ip6 if
+debug set hsb user-data ( snap | oam | ip-rsv-mc-addr | cpu-tag | nh-rg | l3-chk-ok | ttl-gt5 | rlpp | ip6 )
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//l4 check sum ok
+//ttl > 1
+//rldp if
+//ptp if
+//ip4 if
+debug set hsb user-data ( l4-chk-ok | ttl-gt1 | rldp | ptp | ip4 )
+
+//debug configuration
+//set configuration
+//hsb
+//cpu tag
+//tx port mask
+//priority
+//send back
+//extention source port
+//pppoe action
+//pppoe index
+//pon port sid
+//efid
+//data
+debug set hsb cpu-tag ( txportmask | priority | sb | extspa | pppoeact | pppoeidx | pon-sid | efid ) <UINT:data>
+
+//debug configuration
+//set configuration
+//hsb
+//cpu tag
+//pon sid select
+//disable learn
+//priority select
+//keep
+//l3 checksum
+//l4 checksum
+//l2 bridge
+//l34 keep
+//vsel
+//efid enable
+debug set hsb cpu-tag ( psel | dislrn | prisel | keep | l3c | l4c | l2br | l34keep | vsel | efiden )
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//user field
+//index
+//data
+debug set hsb user-data user-field <UINT:index> <UINT:data>
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//dmac configuration
+//smac configuration
+//mac address data, A:B:C:D:E:F
+debug set hsb user-data ( dmac | smac ) <MACADDR:mac>
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//sip configuration
+//dip configuration
+//ip data
+debug set hsb user-data ( sip | dip ) <IPV4ADDR:ip>
+
+//debug configuration
+//set configuration
+//register configuration
+debug set config
+
+//debug configuration
+//get configuration
+//register configuration
+debug get config
+
+#ifndef CONFIG_REDUCED_DIAG
+//debug configuration
+//set configuration
+//hsb
+//user data
+//pppoe session
+//stag tpid index
+//data
+debug set hsb user-data ( pppoe-session | tpid ) <UINT:data>
+
+//debug configuration
+//set configuration
+//hsb
+//user data
+//sip6 configuration
+//dip6 configuration
+//ip data, 1234::ABCD
+debug set hsb user-data ( sip6 | dip6 ) <IPV6ADDR:ip6>
+
+//debug configuration
+//set configuration
+//hsb
+//egress
+//port configuration
+//port list
+//all
+debug set hsb egress port ( <PORT_LIST:ports> | all )
+
+//debug configuration
+//set configuration
+//hsb
+//ingress
+//port configuration
+//port list
+//all
+debug set hsb ingress port ( <PORT_LIST:ports> | all )
+
+//debug configuration
+//set configuration
+//hsb
+//ingress
+//port configuration
+//pbo
+//exclude
+//include
+debug set hsb ingress port pbo ( exclude | include )
+
+
+
+//debug configuration
+//set configuration
+//hsb
+//reason
+//reason code
+debug set hsb reason <UINT:reason>
+
+//debug configuration
+//set configuration
+//fb
+//egress
+//port configuration
+//port list
+//all
+debug set fb egress port ( <PORT_LIST:ports> | all )
+
+//debug configuration
+//set configuration
+//fb
+//ingress
+//port configuration
+//port list
+//all
+debug set fb ingress port ( <PORT_LIST:ports> | all )
+
+//debug configuration
+//set configuration
+//fb
+//reason
+//reason code
+debug set fb reason <UINT:reason>
+
+//debug configuration
+//set configuration
+//fb
+//latch mode configuration
+//all
+//none
+//first-drop
+//first-pass
+//first-trap
+//reason
+debug set fb latch-mode ( all | none | first-drop | first-pass | first-trap | reason )
+
+//debug configuration
+//set configuration
+//hsd
+//latch mode configuration
+//all
+//none
+//first-pass
+//reason
+debug set hsd latch-mode ( all | none | first-pass | reason )
+
+//debug configuration
+//set configuration
+//hsd
+//egress
+//port configuration
+//port id
+debug set hsd egress port <UINT:port>
+
+//debug configuration
+//set configuration
+//hsd
+//ingress
+//port configuration
+//port id
+debug set hsd ingress port <UINT:port>
+
+//debug configuration
+//set configuration
+//hsd
+//reason
+//reason code
+debug set hsd reason <UINT:reason>
+
+//debug configuration
+//get configuration
+//hsd
+//valid
+debug get hsd valid
+
+//debug configuration
+//set configuration
+//hsb
+//invalid ip type
+//foward
+//trap to CPU
+debug set hsb invalid-ip-type ( forward | trap-to-cpu )
+
+
+//debug configuration
+//get configuration
+//hsb
+//invalid ip type 
+debug get hsb invalid-ip-type
+
+//debug configuration
+//set configuration
+//hsb
+//l2tp udp source port
+//port
+debug set hsb l2tp-udp-sport <UINT:sport>
+
+
+//debug configuration
+//get configuration
+//hsb
+//l2tp udp source port
+debug get hsb l2tp-udp-sport
+
+#endif
+
+#ifdef CONFIG_SDK_DRIVER_UNITTEST
+//debug configuration
+//test configuration
+//index
+debug test <UINT:index>
+#endif
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//dump last packet and descriptor
+//maximum dump size
+debug packet rx dump { <UINT:byte> }
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//dump last packet of specified start and length
+//start byte to be dump
+//length to be dump(default is 1)
+debug packet rx dump-length <UINT:start> { <UINT:length> }
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//dump all valid fifo packets' first 64 bytes
+//index
+debug packet rx dump-fifo { <UINT:index> }
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//dump last packet and descriptor
+//6266 chip parsing
+//6266 fpga parsing
+debug packet rx mode ( chip | fpga )
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//clear last packet and descriptor
+debug packet rx clear
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//enable rx packet copy
+//disable rx packet copy
+debug packet rx ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet rx operations
+//select gmac num
+//gmac num
+debug packet rx gmac { <UINT:num> }
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//packet data
+//position to start setting
+//hex values of packet
+debug packet tx set pkt <UINT:pos> <STRING:data>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//mac address operation
+//destination mac address
+//source mac address
+debug packet tx set addr <MACADDR:da> <MACADDR:sa>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//l2 payload of packet
+//position to start setting
+//hex values of packet payload right after source address
+debug packet tx set l2payload <UINT:pos> <STRING:payload>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//repeat padding operation
+//start repeat position
+//end repeat position(or zero)
+//total packet length after padding repeated data
+debug packet tx set padding <UINT:start> <UINT:end> <UINT:pkt_len>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//get operation
+//dump the current packet content to be sent
+//maximum length to be dump
+debug packet tx get preview { <UINT:length> }
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//clear packet buffer
+debug packet tx clear
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//send the packet in the buffer
+//number of packets send repeatly
+debug packet tx send { <UINT:count> }
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//send the packet in the buffer continuously
+//enable
+//disable
+//number of packets send every milli-second
+debug packet tx send-continuously ( enable | disable ) { <UINT:count> }
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//l3 check sum
+//enable
+//disable
+debug packet tx set cputag l3cs ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//l4 check sum
+//enable
+//disable
+debug packet tx set cputag l4cs ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//keep format
+//enable
+//disable
+debug packet tx set cputag keep ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//learning
+//enable
+//disable
+debug packet tx set cputag learning ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//l2 bridge
+//enable
+//disable
+debug packet tx set cputag l2br ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//sendback
+//enable
+//disable
+debug packet tx set cputag sendback ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//l34 keep
+//enable
+//disable
+debug packet tx set cputag l34keep ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//efid
+//enable
+//disable
+//efid value
+debug packet tx set cputag efid ( enable | disable ) <UINT:efid>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//priority selection
+//enable
+//disable
+//priority value
+debug packet tx set cputag prisel ( enable | disable ) <UINT:priority>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//vlan selection
+//enable
+//disable
+debug packet tx set cputag vsel ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//tx port mask or vlan selection index
+//value of tx port mask or vlan selection index
+debug packet tx set cputag txmask_vidx <UINT:value>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//force pon forward
+//enable
+//disable
+//pon stream id
+debug packet tx set cputag psel ( enable | disable ) <UINT:streamid>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//pppoe action
+//intact 0b00
+//add pppoe header 0b01
+//remove pppoe header 0b10
+//remarking pppoe switch tx mac action 0b11
+//pppoe index for add and remarking
+debug packet tx set cputag pppoeact ( intact | addhdr | removehdr | remarking ) <UINT:index>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//extension source port
+//extension source port
+debug packet tx set cputag extspa <UINT:port>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//select gmac num
+//gmac num
+debug packet tx set cputag gmac <UINT:num>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//cpu tag configuration
+//clear all cpu tag field
+debug packet tx set cputag clear
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//get operation
+//dump cpu tag configuration
+debug packet tx get cputag
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//tx command desc configuration
+//l3 checksum
+//enable
+//disable
+debug packet tx set tx-cmd ipcs ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//tx command desc configuration
+//l4 checksum
+//enable
+//disable
+debug packet tx set tx-cmd l4cs ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//tx command desc configuration
+//vlan configuration
+//vlan id
+//vlan priority
+//vlan cfi
+debug packet tx set tx-cmd vlan <UINT:vid> <UINT:priority> <UINT:cfi>
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//set operation
+//tx command desc configuration
+//clear all tx desc fields
+debug packet tx set tx-cmd clear
+
+//debug configuration
+//packet operation for mac
+//packet tx operations
+//get operation
+//dump tx command desc fields
+debug packet tx get tx-cmd
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//lenfix_en
+//enable
+//disable
+debug packet tx set lso-param lenfix-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//bpass_en
+//enable
+//disable
+debug packet tx set lso-param bypass-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//udp_en
+//enable
+//disable
+debug packet tx set lso-param udp-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//tcp_en
+//enable
+//disable
+debug packet tx set lso-param tcp-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//ipv6_en
+//enable
+//disable
+debug packet tx set lso-param ipv6-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//ipv4_en
+//enable
+//disable
+debug packet tx set lso-param ipv4-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//segment_en
+//enable
+//disable
+debug packet tx set lso-param segment-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//unknow_tag_en
+//enable
+//disable
+debug packet tx set lso-param unknow-tag-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//segment_size
+//segment_size
+debug packet tx set lso-param segment-size <UINT:segment_size>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//lso param configuration
+//packet_size
+//packet_size
+debug packet tx set lso-param packet_size <UINT:packet_size>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//clear operation
+//lso param configuration
+debug packet tx clear lso-param
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//get operation
+//lso param configuration
+debug packet tx get lso-param
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//cmd_asel
+//cmd_asel
+debug packet tx set header-a cmd-asel <UINT:cmd_asel>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//cmd_op
+//cmd_op
+debug packet tx set header-a cmd-op <UINT:cmd_op>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//cmd_mode
+//cmd_mode
+debug packet tx set header-a cmd-mode <UINT:cmd_mode>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//ptp_type
+//ptp_type
+debug packet tx set header-a ptp-type <UINT:ptp_type>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//cmd_offset
+//cmd_offset
+debug packet tx set header-a cmd-offset <UINT:cmd_offset>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//udp_cksum_offset
+//udp_cksum_offset
+debug packet tx set header-a udp_cksum_offset <UINT:udp_cksum_offset>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//header cpu valid
+//valid
+debug packet tx set header-a cpu-flag <UINT:cpu_flag>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//deep_q
+//deep_q
+debug packet tx set header-a deep-q <UINT:deep_q>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//pol_grp_id
+//pol_grp_id
+debug packet tx set header-a pol-grp-id <UINT:pol_grp_id>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//pol_id
+//pol_id
+debug packet tx set header-a pol-id <UINT:pol_id>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//pol_en
+//enable
+//disable
+debug packet tx set header-a pol-en ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//mark
+//mark
+debug packet tx set header-a mark <UINT:mark>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//mirror
+//mirror
+debug packet tx set header-a mirror <UINT:mirror>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//no_drop
+//enable
+//disable
+debug packet tx set header-a no-drop ( enable | disable )
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//rx_pkt_type
+//rx_pkt_type
+debug packet tx set header-a rx-pkt-type <UINT:rx_pkt_type>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//drop_code
+//drop_code
+debug packet tx set header-a drop-code <UINT:drop_code>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//mcgid
+//mcgid
+debug packet tx set header-a mcgid <UINT:mcgid>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//hdr_type
+//hdr_type
+debug packet tx set header-a hdr-type <UINT:hdr_type>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//fe_bypass
+//fe_bypass
+debug packet tx set header-a fe-bypass <UINT:fe_bypass>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//pkt_size
+//pkt_size
+debug packet tx set header-a pkt_size <UINT:pkt_size>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//ldpid
+//ldpid
+debug packet tx set header-a ldpid <UINT:ldpid>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//lspid
+//lspid
+debug packet tx set header-a lspid <UINT:lspid>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//set operation
+//header a configuration
+//cos
+//cos
+debug packet tx set header-a cos <UINT:cos>
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//clear operation
+//header a configuration
+debug packet tx clear header-a
+
+//debug configuration
+//packet operation for mac
+//packet tx operation
+//get operation
+//header a configuration
+debug packet tx get header-a
+
+//debug configuration
+//classf operation
+//get operation
+//show hit entry index
+debug classf get hit-entry
+
+
+//debug configuration
+//gpio function
+//init operation
+debug gpio init
+
+
+//debug configuration
+//gpio function
+//set operation
+//gpio pin
+//gpioId [0-95]
+//state gpio state
+//enable operation
+//disable operation
+debug gpio set pin <UINT:gpioId> state ( enable | disable )
+
+
+//debug configuration
+//gpio function
+//get operation
+//gpio pin
+//gpioId [0-95]
+//gpio state
+debug gpio get pin <UINT:gpioId> state
+
+
+//debug configuration
+//gpio function
+//set operation
+//gpio pin
+//gpioId [0-95]
+//gpio mode
+//input mode
+//output mode
+debug gpio set pin <UINT:gpioId> mode ( input | output )
+
+//debug configuration
+//gpio function
+//get operation
+//gpio pin
+//gpioId [0-95]
+//gpio mode
+debug gpio get pin <UINT:gpioId> mode
+
+//debug configuration
+//gpio function
+//set operation
+//gpio pin
+//gpioId [0-95]
+//gpo write databit
+//output value
+debug gpio set pin <UINT:gpioId> databit <UINT:value>
+
+//debug configuration
+//gpio function
+//get operation
+//pin
+//gpioId
+//gpi read databit
+debug gpio get pin <UINT:gpioId> databit
+
+
+//debug configuration
+//reboot configuration
+//soc
+debug reboot soc
+
+
+//debug configuration
+//gpio function
+//set operation
+//interrupt operation
+//gpio id 0~95
+//mode
+//enable interrupt trigger on falling edge mode
+//enable interrupt trigger on rising edge mode
+//enable interrupt trigger on falling and rising edge mode
+//disable
+debug gpio set intr <UINT:gpioId> mode ( falling_edge | rising_edge | both_edge | disable )
+
+//debug configuration
+//gpio function
+//get operation
+//interrupt operation
+//gpio id 0~95
+//mode
+debug gpio get intr <UINT:gpioId> mode
+
+
+//debug configuration
+//gpio function
+//get operation
+//interrupt operation
+//gpio id 0~95
+//state
+debug gpio get intr <UINT:gpioId> state
+
+
+//debug configuration
+//gpio function
+//clear operation
+//interrupt operation
+//gpio id 0~95
+//state
+debug gpio clear intr <UINT:gpioId> state
+
+//debug configuration
+//set configuration
+//indirect phy configuration
+//phy id
+//register address
+//register value
+debug set ind-phy <UINT:phy_id> <UINT:reg_address> <UINT:value>
+
+//debug configuration
+//get configuration
+//indirect phy configuration
+//phy id
+//register address
+debug get ind-phy <UINT:phy_id> <UINT:reg_address>
+
+//debug configuration
+//set configuration
+//indirect serdes configuration
+//serdes index
+//page
+//register address
+//register value
+debug set ind-serdes <UINT:idx> <UINT:page> <UINT:reg_addr> <UINT:value>
+
+//debug configuration
+//get configuration
+//indirect serdes configuration
+//serdes index
+//page
+//register address
+debug get ind-serdes <UINT:idx> <UINT:page> <UINT:reg_addr>
+
+
+//debug configuration
+//io function
+//dump register setting for all IO
+debug io dump
+
+//debug configuration
+//io function
+//check gpio
+//gpio pin id
+debug io gpio-check <UINT:gpioId>
+
+//debug configuration
+//io function
+//check uart
+debug io uart-check
+
+//debug configuration
+//io function
+//check mii
+debug io mii-check
+
+//debug configuration
+//io function
+//check led
+//check serial led function
+debug io led-check serial
+
+//debug configuration
+//io function
+//check led
+//parallel led function
+//led index
+debug io led-check parallel <UINT:index>
+
+//debug configuration
+//io function
+//check voip
+debug io voip-check
+
+//debug configuration
+//pon function
+//mode function
+//set
+//gpon
+//epon
+//force fiber 1g
+//force fiber 100m
+//fiber auto detect
+//fiber force 1g
+//fiber force 100m
+debug pon mode set ( gpon | epon | fiber-1g | fiber-100m | fiber-auto | fiber-force-1g | fiber-force-100m )
+
+//debug configuration
+//pon function
+//mode function
+//get
+debug pon mode get
+
+//debug configuration
+//pkt-parser-dump function
+//count
+//latch-mode
+//all
+//none
+//first-drop
+//first-pass
+//first-trap
+//drop
+//trap
+//acl
+//reason
+//filename
+debug pkt-parser-dump <UINT:count> latch-mode ( all | none | first-drop | first-pass | first-trap | drop | trap | acl | reason ) <STRING:filename>
+
+//debug configuration
+//set configuration
+//smart card configuration
+//address
+//value
+debug set smart-card <UINT:address> <UINT:value>
+
+//debug configuration
+//get configuration
+//smart card configuration
+//address
+debug get smart-card <UINT:address>
+
+//debug configuration
+//pkt-parser-dump function
+//clear
+debug pkt-parser-dump clear
+
+//debug configuration
+//pkt-parser-dump function
+//show
+debug pkt-parser-dump show
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//time duration seconds configuration
+//time
+debug pkt-parser-dump set  time <UINT:time>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//source-port
+//port list, <0-6>
+debug pkt-parser-dump set source-port <PORT_LIST:ports>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//da configuration
+//destinaiton MAC
+debug pkt-parser-dump set da <MACADDR:da>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//sa configuration
+//Source MAC
+debug pkt-parser-dump set sa <MACADDR:sa>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//ethertype configuration
+//ethertype value
+debug pkt-parser-dump set ethertype <UINT:ethertype>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//length configuration
+//capture packet minimum length
+//capture packet maximum length
+debug pkt-parser-dump set length <UINT:start> <UINT:end>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//vid configuration
+//vid, <0~4095>
+debug pkt-parser-dump set vid <UINT:vid>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//svid configuration
+//svid, <0~4095>
+debug pkt-parser-dump set svid <UINT:svid>
+
+//debug configuration
+//pkt-parser-dump function
+//set
+//protocol
+//all
+//igmp
+//udp
+//tcp
+//oam
+//llc
+//snap
+//pppoe
+debug pkt-parser-dump set protocol ( all | igmp | udp | tcp | oam | llc | snap | pppoe )
+
+//debug configuration
+//pkt-parser-dump function
+//set configuration
+//ip
+//sip configuration
+//dip configuration
+//ip data
+debug pkt-parser-dump set ip ( sip | dip ) <IPV4ADDR:ip>
+
+//debug configuration
+//reset wsds
+//sds analog
+//gpon mac
+//gpon mac
+//reset all wrap_sds
+debug reset-wsds ( analog | gpon | epon | warp-all-sds )
+
+#ifdef CONFIG_EUROPA_8290
+//debug configuration
+//europa function
+//init operation
+//DOL mode
+//DCL mode
+//SCL for bias mode
+//SCL for MOD mode
+debug europa init ( dol | dcl | scl-bias | scl-mod )
+
+//debug configuration
+//europa function
+//FT test
+//test case index
+debug europa ft-test <UINT:index>
+
+//debug configuration
+//europa function
+//get configuration
+//TX power
+//measure methods
+//loop counter
+debug europa get tx-power ( original | statistic ) <UINT:loop_count>
+
+//debug configuration
+//europa function
+//get configuration
+//RX power
+//measure methods
+//loop counter
+debug europa get rx-power ( original | statistic | window ) <UINT:loop_count>
+
+//debug configuration
+//europa function
+//get configuration
+//RSSI V0
+//V0 index
+//loop counter
+debug europa get rssi-v0 <UINT:Index> <UINT:loop_count>
+
+//debug configuration
+//europa function
+//reset operation
+//chip reset
+//digital reset
+//8051 reset
+//analog reset
+debug europa reset ( chip | digital | 8051 | analog )
+
+//debug configuration
+//europa function
+//get configuration
+//RSSI Voltage
+//loop counter
+debug europa get rssi-voltage <UINT:loop_count>
+
+//debug configuration
+//europa function
+//dump register operation
+//all registers
+//ddmi A0
+//ddmi A2
+//A4
+//A5
+//DDMI status
+debug europa dump ( all | a0 | a2 | a4 | a5 | ddmi )
+
+//debug configuration
+//europa function
+//set operation
+//loop mode
+//DOL mode
+//DCL mode
+//SCL for bias mode
+//SCL for MOD mode
+debug europa set mode ( dol | dcl | scl-bias | scl-mod )
+
+//debug configuration
+//europa function
+//get operation
+//loop mode
+debug europa get mode
+
+//debug configuration
+//europa function
+//get operation
+//MPD0
+//loop counter
+debug europa get mpd0 <UINT:loop_count>
+
+//debug configuration
+//europa function
+//get operation
+//break down voltage
+//initial value
+//maximum value
+//loop counter for RSSI calculation
+//RSSI current threshold, unit is nA
+debug europa get vbr <UINT:init> <UINT:max> <UINT:loop_count> <UINT:threshold>
+
+//debug configuration
+//europa function
+//get operation
+//external vdd
+debug europa get vdd
+
+//debug configuration
+//europa function
+//set operation
+//DDMI value
+//Temperature
+//Vcc
+//SCL for bias mode
+//SCL for MOD mode
+debug europa set ddmi ( temperature | vcc | tx-power | rx-power | bias | mod )
+
+//debug configuration
+//europa function
+//get operation
+//TX Bias Current
+debug europa get tx-bias
+
+//debug configuration
+//europa function
+//get operation
+//TX Modulation Current
+debug europa get tx-mod
+
+//debug configuration
+//europa function
+//get operation
+//Temperature
+debug europa get temperature
+
+//debug configuration
+//europa function
+//set operation
+//RX power parameter
+//parameter a
+//parameter b
+//parameter c
+//value
+debug europa set rx-param ( a | b | c ) <INT:value>
+
+//debug configuration
+//europa function
+//get operation
+//RX power parameter
+debug europa get rx-param
+
+//debug configuration
+//europa function
+//set operation
+//TX power parameter
+//parameter a
+//parameter b
+//parameter c
+//value
+debug europa set tx-param ( a | b | c ) <INT:value>
+
+//debug configuration
+//europa function
+//get operation
+//TX power parameter
+debug europa get tx-param
+
+//debug configuration
+//europa function
+//set operation
+//flash data
+//address
+//length
+//data
+debug europa set flash <UINT:addr> <UINT:len> <UINT:data>
+
+//debug configuration
+//europa function
+//get operation
+//flash data
+//address
+//length
+debug europa get flash <UINT:addr> <UINT:len>
+
+//debug configuration
+//europa function
+//set operation
+//APD lookup table
+//Vbr use factor to get Vapd
+//Vbr use offset to get Vapd
+//Rfb1, unit is K ohm
+//Rfb2, unit is K ohm
+//breakdown voltage, unit is mV
+//temperature, unit is C
+//factor x 1000, or offset in mV
+//c1 for -40 ~25, unit is mv/deg
+//c2 for 25~85, unit is mv/deg
+debug europa set apdlut ( factor | offset ) <UINT:rfb1> <UINT:rfb2> <UINT:vbr> <UINT:temp> <UINT:value> <UINT:c1> <UINT:c2>
+
+//debug configuration
+//europa function
+//get operation
+//APD lookup table
+debug europa get apdlut
+
+//debug configuration
+//europa function
+//set operation
+//bias
+//bias current in mA
+debug europa set bias <FLOAT:current>
+
+//debug configuration
+//europa function
+//set operation
+//modulation
+//modulation current in mA
+debug europa set mod <FLOAT:current>
+
+//debug configuration
+//europa function
+//save operation
+//all
+debug europa save all
+
+//debug configuration
+//europa function
+//calibration operation
+//initialize for calibration
+//load calibrated settings 
+//save calibrated settings permenately 
+//refresh calibrated settings for taking effect
+debug europa cal ( init | load | save | refresh )
+
+//debug configuration
+//europa function
+//calibration operation
+//target MPD level for 0
+//target MPD level for 1
+//target MPD level for avg
+//full DAC scale
+debug europa cal ( p0 | p1 | pavg | dacfull ) { <UINT:value> }
+
+//debug configuration
+//europa function
+//calibration operation
+//crossing point finetune
+//move up cross point
+//move down cross point
+//disable cross finetune
+//show current cross finetune setting
+//level = 1~16
+debug europa cal cross  ( up | down | disable | show ) { <UINT:level> }
+
+//debug configuration
+//europa function
+//calibration operation
+//temperature offset
+//measured actual temperature (C)
+//assign offset
+debug europa cal toffset <INT:temp> { <INT:offset> }
+
+
+//debug configuration
+//europa function
+//calibration operation
+//temperature granulity for compensation
+//1~7 deg
+debug europa cal tscale <UINT:scale>
+
+//debug configuration
+//europa function
+//set function
+//calibration function
+//state configuration
+//disable
+//enable
+debug europa set calibration state ( disable | enable )
+
+//debug configuration
+//europa function
+//calibration operation
+//Quad-regression test
+//x1, uint is nA
+//y1, uint is nW
+//x2, uint is nA
+//y2, uint is nW
+//x3, uint is nA
+//y3, uint is nW
+debug europa cal qreg <UINT:x1> <UINT:y1> <UINT:x2> <UINT:y2> <UINT:x3> <UINT:y3>
+
+//debug configuration
+//europa function
+//set operation
+//booster parameter
+//output voltage in mV
+//Rfb1 in K ohms, default=200
+//Rfb2 in K ohms, defuatl=10
+debug europa set booster <UINT:Vout> <UINT:Rfb1> <UINT:Rfb2> 
+
+//debug configuration
+//europa function
+//get operation
+//booster parameter
+//Rfb1 in K ohms, default=200
+//Rfb2 in K ohms, defuatl=10
+debug europa get booster <UINT:Rfb1> <UINT:Rfb2> 
+
+//debug configuration
+//europa function
+//calibration operation
+//RX Power DDMI coefficients
+//reset data
+//1st data
+//2nd data
+//3rd data
+//calculation final result
+//known Rx power in nW (eg. 316/1000/199952 nW for -35/-30/-17dBm)
+debug europa cal rx-ddmi ( 0 | 1 | 2 | 3 | calc ) { <UINT:value> }
+
+//debug configuration
+//europa function
+//calibration operation
+//TX Power DDMI coefficients
+//reset data
+//1st data
+//2nd data
+//calculation final result
+//measured Tx power in nW (eg. 1995000/1000000 nW for 3/0dBm)
+debug europa cal tx-ddmi ( 0 | 1 | 2 | calc ) { <UINT:value> }
+
+//debug configuration
+//europa function
+//calibration operation
+//LOS calibration
+//assert threshold
+//de-asserit threshold
+//assign threshold value directly without calibration.
+debug europa cal los ( assert | deassert | show ) { <UINT:value> }
+
+//debug configuration
+//europa function
+//calibration operation
+//Vbr calibration
+//Rfb1 in K ohms, default=200
+//Rfb2 in K ohms, defuatl=10
+//Start voltage in V, default=35
+//End voltage in V, default=50
+debug europa cal vbr <UINT:Rfb1> <UINT:Rfb2> <UINT:Vstart> <UINT:Vend> 
+
+//debug configuration
+//europa function
+//get operation
+//driver version
+debug europa get driver-version
+
+//debug configuration
+//europa function
+//set operation
+//Laser lookup table
+debug europa set laserlut 
+
+//debug configuration
+//europa function
+//generate operation
+//Laser lookup table
+//Bias Current (mA)
+//Modulation Current (mA)
+//Temperature (C)
+//Bias Slope0 (eg. 0.06)
+//Bias Slope1 (eg. 0.12)
+//Mod Slope0  (eg. 0.03)
+//Mod Slope1  (eg. 0.10)
+debug europa generate laserlut <UINT:IB0> <UINT:IM0> <UINT:T0> <FLOAT:SB0> <FLOAT:SB1> <FLOAT:SM0> <FLOAT:SM1>
+
+//debug configuration
+//europa function
+//get operation
+//Laser lookup table
+debug europa get laserlut
+
+//debug configuration
+//europa function
+//dump operation
+//Laser lookup table
+debug europa dump laserlut
+
+//debug configuration
+//europa function
+//get operation
+//FINE range
+debug europa get fine { <UINT:count> }
+
+//debug configuration
+//europa function
+//get operation
+//laser info
+debug europa get laserinfo { <UINT:extra> }
+
+
+//debug configuration
+//europa function
+//generate operation
+//Laser lookup table 2
+//data entry
+//index (1~20), 0 to clear all entry
+//Temperature (C)
+//Bias Current (mA)
+//Modulation Current (mA)
+debug europa generate laserlut2 data <UINT:index> <INT:temp> <FLOAT:bias> <FLOAT:mod>
+
+//debug configuration
+//europa function
+//generate operation
+//Laser lookup table 2
+//clear data entries
+debug europa generate laserlut2 clear
+
+//debug configuration
+//europa function
+//generate operation
+//Laser lookup table 2
+//calculation
+//chop current at temperature higher than Tchop.
+debug europa generate laserlut2 calc { <UINT:Tchop> }
+
+//debug configuration
+//europa function
+//calibration operation
+//Laser lookup table 2
+//data entry
+//index (1~20), 0 to clear all entry
+debug europa cal laserlut data <UINT:index>
+
+//debug configuration
+//europa function
+//calibration operation
+//Laser lookup table 2
+//clear data entries
+debug europa cal laserlut clear
+
+//debug configuration
+//europa function
+//calibration operation
+//Laser lookup table 2
+//calculation
+//chop current at temperature higher than Tchop.
+debug europa cal laserlut calc { <UINT:Tchop> }
+
+#endif
+
+//debug configuration
+//ext-mdio
+//clause 22
+//init
+//set
+//port
+//phyid
+debug ext-mdio c22 init <UINT:set> <UINT:port> <UINT:phyid>
+
+//debug configuration
+//ext-mdio
+//clause 22
+//set
+//reg
+//value
+debug ext-mdio c22 set <UINT:reg> <UINT:value>
+
+//debug configuration
+//ext-mdio
+//clause 22
+//get
+//reg
+debug ext-mdio c22 get <UINT:reg>
+
+//debug configuration
+//ext mdio access 67c
+//set
+//reg
+//value
+debug ext-67c set <UINT:reg> <UINT:value>
+
+//debug configuration
+//ext mdio access 67c
+//get
+//reg
+debug ext-67c get <UINT:reg>
+
+//debug configuration
+//ext-mdio
+//clause 45
+//init
+//set
+//port
+//phyid
+debug ext-mdio c45 init <UINT:set> <UINT:port> <UINT:phyid>
+
+//debug configuration
+//ext-phy
+//clause 45
+//set
+//dev
+//reg address
+//value
+debug ext-mdio c45 set <UINT:dev> <UINT:reg> <UINT:value>
+
+//debug configuration
+//ext-mdio
+//clause 45
+//get
+//dev
+//reg address
+debug ext-mdio c45 get <UINT:dev> <UINT:reg>
+
+//debug configuration
+//I2C configuration
+//Read test
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//expected data
+//data
+//repeat count
+//count
+debug i2c read-test port <UINT:port> dev <UINT:dev_id> reg <UINT:register> data <UINT:data> count <UINT:count>
+
+//debug configuration
+//I2C configuration
+//Read-write test
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//write data
+//data
+//repeat count
+//count
+debug i2c read-write-test port <UINT:port> dev <UINT:dev_id> reg <UINT:register> data <UINT:data> count <UINT:count>
+
+//debug configuration
+//I2C configuration
+//Read-write test
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//write data
+//data
+//write length
+//length
+//repeat count
+//count
+debug i2c read-write-test port <UINT:port> dev <UINT:dev_id> reg <UINT:register> data <UINT:data> len <UINT:len> count <UINT:count>
+
+//debug configuration
+//I2C configuration
+//current read-write test
+//I2C port specify
+//port number
+//specify device ID
+//device ID
+//specify register
+//register
+//write data
+//data
+//write length
+//length
+//repeat count
+//count
+debug i2c curr-read-write-test port <UINT:port> dev <UINT:dev_id> reg <UINT:register> data <UINT:data> len <UINT:len> count <UINT:count>

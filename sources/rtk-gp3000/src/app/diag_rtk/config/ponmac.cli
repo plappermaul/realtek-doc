@@ -1,0 +1,448 @@
+//
+// Copyright (C) 2011 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for pon mac.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) PON MAC commands.
+//
+
+
+//pon configuration
+//initialization
+pon init
+
+//pon configuration
+//clear t-cont,llid queue configuration
+pon clear
+
+//pon configuration
+//set configuration
+//drain out control
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0~31>
+pon set drain-out t-cont <UINT:tcont> queue-id <MASK_LIST:qid>
+
+//pon configuration
+//set configuration
+//drain out control
+//t-cont configuration
+//t-cont, <0-31>
+pon set drain-out t-cont <UINT:tcont>
+
+//pon configuration
+//get configuration
+//drain out control
+//status
+pon get drain-out status
+
+//pon configuration
+//get configuration
+//stream id configuration
+//stream id, <0-127>
+pon get stream <MASK_LIST:sid>
+
+//pon configuration
+//set configuration
+//stream id configuration
+//stream id, <0-127>
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+pon set stream <MASK_LIST:sid> t-cont <UINT:tcont> queue-id <UINT:qid>
+
+//pon configuration
+//set configuration
+//stream id configuration
+//stream id, <0-127>
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+pon set stream <MASK_LIST:sid> llid <UINT:llid> queue-id <UINT:qid>
+
+//pon configuration
+//set configuration
+//stream id configuration
+//stream id, <0-127>
+//state configuration
+//enable function
+//disable function
+pon set stream <MASK_LIST:sid> state ( enable | disable )
+
+//pon configuration
+//get configuration
+//t-cont configuration
+//t-cont, <0~31>
+pon get t-cont <UINT:tcont>
+
+
+//pon configuration
+//get configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+pon get t-cont <UINT:tcont> queue-id <UINT:qid>
+
+//pon configuration
+//add configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+pon add t-cont <UINT:tcont> queue-id <UINT:qid>
+
+//pon configuration
+//del configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+pon del t-cont <UINT:tcont> queue-id <UINT:qid>
+
+
+
+//pon configuration
+//set configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+//pir configuration
+//rate configuration
+//rate, unit 8Kbps
+pon set t-cont <UINT:tcont> queue-id <UINT:qid> pir rate <UINT:rate>
+
+//pon configuration
+//set configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+//cir configuration
+//rate configuration
+//rate, unit 8Kbps
+pon set t-cont <UINT:tcont> queue-id <UINT:qid> cir rate <UINT:rate>
+
+//pon configuration
+//set configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+//scheduling confoguration
+//type configuration
+//strict
+//wfq
+//car
+pon set t-cont <UINT:tcont> queue-id <UINT:qid> scheduling type ( strict | wfq | car )
+
+//pon configuration
+//set configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+//scheduling confoguration
+//weight configuration
+//weight, <0-127>
+pon set t-cont <UINT:tcont> queue-id <UINT:qid> scheduling weight <UINT:weight>
+
+//pon configuration
+//set configuration
+//t-cont configuration
+//t-cont, <0-31>
+//queue id configuration
+//queue id, <0-31>
+//egress-drop
+//state configuration
+//enable function
+//disable function
+pon set t-cont <UINT:tcont> queue-id <UINT:qid> egress-drop state ( enable | disable )
+
+
+//pon configuration
+//get configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+pon get llid <UINT:llid> queue-id <UINT:qid>
+
+//pon configuration
+//add configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+pon add llid <UINT:llid> queue-id <UINT:qid>
+
+//pon configuration
+//del configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+pon del llid <UINT:llid> queue-id <UINT:qid>
+
+//pon configuration
+//set configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+//pir configuration
+//rate configuration
+//rate, unit 8Kbps
+pon set llid <UINT:llid> queue-id <UINT:qid> pir rate <UINT:rate>
+
+//pon configuration
+//set configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+//cir configuration
+//rate configuration
+//rate, unit 8Kbps
+pon set llid <UINT:llid> queue-id <UINT:qid> cir rate <UINT:rate>
+
+//pon configuration
+//set configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+//scheduling confoguration
+//type configuration
+//strict
+//wfq
+pon set llid <UINT:llid> queue-id <UINT:qid> scheduling type ( strict | wfq )
+
+//pon configuration
+//set configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+//scheduling confoguration
+//weight configuration
+//weight, <0-127>
+pon set llid <UINT:llid> queue-id <UINT:qid> scheduling weight <UINT:weight>
+
+//pon configuration
+//set configuration
+//llid configuration
+//llid, <0-7>
+//queue id configuration
+//queue id, <0-31>
+//egress-drop
+//state configuration
+//enable function
+//disable function
+pon set llid <UINT:llid> queue-id <UINT:qid> egress-drop state ( enable | disable )
+
+
+//pon configuration
+//get configuration
+//t-cont configuration
+//t-cont, <0-31>
+//schedule queue list
+pon get t-cont <UINT:tcont> queue-list
+
+//pon configuration
+//get configuration
+//t-cont configuration
+//llid, <0-7>
+//schedule queue list
+pon get llid <UINT:llid> queue-list
+
+//pon configuration
+//reset configuration
+pon reset
+
+//pon configuration
+//get configuration
+//transceiver configuration
+//vendor-name
+//sn
+//part-number
+//temperature
+//voltage
+//bias-current
+//tx-power
+//rx-power
+pon get transceiver ( vendor-name | sn | part-number | temperature | voltage | bias-current | tx-power | rx-power )
+
+//pon configuration
+//set configuration
+//transceiver configuration
+//tx-power configuration
+//scale, configuration
+//scale, uint 0.1uW
+pon set transceiver tx-power scale <UINT:scale>
+
+//pon configuration
+//set configuration
+//schedule type
+//schedule type wfq
+//schedule type wfq
+pon set scheduling-type ( wfq | wrr )
+
+//pon configuration
+//get configuration
+//schedule type
+pon get scheduling-type
+
+
+//pon configuration
+//set configuration
+//scheduler id configuration
+//schedule-id, <0-31>
+//rate configuration
+//rate, unit 8Kbps
+pon set schedule-id <UINT:id> rate <UINT:rate>
+
+//pon configuration
+//get configuration
+//scheduler id configuration
+//schedule-id, <0-31>
+//rate configuration
+pon get schedule-id <UINT:id> rate
+
+//pon configuration
+//set configuration
+//egress
+//rate configuration
+//rate, unit 8Kbps
+pon set egress rate <UINT:rate>
+
+//pon configuration
+//get configuration
+//egress
+//rate configuration
+pon get egress rate
+
+//pon configuration
+//set configuration
+//tx_dis power saving configuration
+//state configuration
+//enable function
+//disable function
+pon set power_saving_tx_dis state ( enable | disable )
+
+//pon configuration
+//dump configuration
+//tx_dis power saving configuration
+pon dump power_saving_tx_dis 
+
+//pon configuration
+//set configuration
+//tx_dis power saving configuration
+//ahead configuration
+//behind configuration
+//cycles config
+pon set power_saving_tx_dis ( ahead | behind ) <UINT:cycle>
+
+//pon configuration
+//set configuration
+//synce configuration
+//state configuration
+//enable function
+//disable function
+pon set synce state ( enable | disable )
+
+//pon configuration
+//get configuration
+//synce configuration
+//state configuration
+pon get synce state
+
+//pon configuration
+//set configuration
+//egress configuration
+//ifg configuration
+//exclude 
+//include
+pon set egress ifg ( exclude | include )
+
+//pon configuration
+//get configuration
+//egress configuration
+//ifg configuration
+pon get egress ifg
+
+//pon configuration
+//set configuration
+//scheduler id configuration
+//ifg configuration
+//exclude 
+//include
+pon set schedule-id ifg ( exclude | include )
+
+//pon configuration
+//get configuration
+//scheduler id configuration
+//ifg configuration
+pon get schedule-id ifg
+
+//pon configuration
+//set configuration
+//aggregate tcont configuration
+//id configuration
+//tcont 0-3 
+//tcont 4-7
+//tcont 8-11
+//tcont 12-15
+//state configuration
+//enable
+//disable
+pon set agg_tcont_state id ( 0_3 | 4_7 | 8_11 | 12_15 ) state ( enable | disable )
+
+//pon configuration
+//get configuration
+//aggregate tcont configuration
+pon get agg_tcont_state
+
+//pon configuration
+//get configuration
+//tx disable configuration
+//state configuration
+pon get tx-disable state 
+
+//pon configuration
+//set configuration
+//tx disable configuration
+//state configuration
+//enable
+//disable
+pon set tx-disable state ( enable | disable )
+
+//pon configuration
+//get configuration
+//tx power disable configuration
+//state configuration
+pon get tx-power-disable state 
+
+//pon configuration
+//set configuration
+//tx power disable configuration
+//state configuration
+//enable
+//disable
+pon set tx-power-disable state ( enable | disable )

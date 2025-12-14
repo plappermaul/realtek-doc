@@ -1,0 +1,942 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for flow control.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) flow control commands.
+//
+
+//flowctrl configuration
+//dump flow control configuration
+//threshold configuration
+//switch threshold
+//pon threshold
+//swpbo threshold
+flowctrl dump threshold ( switch | pon | swpbo )
+
+//flowctrl configuration
+//dump flow control configuration
+//used page count configuration
+//switch used page count
+//pon used page count
+flowctrl dump used-page ( switch | pon )
+
+//flowctrl configuration
+//dump flow control configuration
+//used page count configuration
+flowctrl dump used-page
+
+//flowctrl configuration
+//set configuration
+//flow control type
+//ingress flow control
+//egress flow control
+flowctrl set type ( ingress | egress )
+
+//flowctrl configuration
+//get configuration
+//flow control type
+flowctrl get type 
+
+
+//flowctrl configuration
+//set configuration
+//drop all threshold
+//threshold
+//value 
+flowctrl set drop-all threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//drop all threshold
+//threshold
+flowctrl get drop-all threshold
+
+//flowctrl configuration
+//set configuration
+//pause all threshold
+//threshold
+//value 
+flowctrl set pause-all threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//pause all threshold
+//threshold
+flowctrl get pause-all threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//system configuration
+//flowctrl threshold
+//drop threshold
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set ingress system ( flowctrl-threshold | drop-threshold ) ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//system configuration
+//flowctrl threshold
+//drop threshold
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get ingress system (  flowctrl-threshold | drop-threshold ) ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//port configuration
+//flowctrl threshold
+//drop threshold
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set ingress port ( flowctrl-threshold | drop-threshold ) ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//port configuration
+//flowctrl threshold
+//drop threshold
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get ingress port ( flowctrl-threshold | drop-threshold ) ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//egress drop threshold
+//port configuration
+//port list , <0-6>
+//all ports
+//threshold
+//value
+flowctrl set ingress egress-drop port ( <PORT_LIST:ports> | all ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//egress drop threshold
+//port configuration
+//port list , <0-6>
+//all ports
+//threshold 
+flowctrl get ingress egress-drop port ( <PORT_LIST:ports> | all ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//egress drop threshold
+//queue configuration
+//queue list , <0-7>
+//all queues
+//threshold
+//value
+flowctrl set ingress egress-drop queue-id ( <MASK_LIST:qid> | all ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//egress drop threshold
+//queue configuration
+//queue list , <0-7>
+//all queues
+//threshold 
+flowctrl get ingress egress-drop queue-id ( <MASK_LIST:qid> | all ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//egress drop threshold
+//port gap
+//queue gap
+//threshold
+//value
+flowctrl set ingress egress-drop ( port-gap | queue-gap ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//egress drop threshold
+//port gap
+//queue gap
+//threshold 
+flowctrl get ingress egress-drop ( port-gap | queue-gap ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//egress drop threshold
+//port
+//port list , <0-6>
+//all ports
+//queue
+//queue list , <0-7>
+//all queues
+//egress drop enable
+//enable
+//disable
+flowctrl set ingress egress-drop port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) drop ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//egress drop threshold
+//port
+//port list , <0-6>
+//all ports
+//queue
+//queue list , <0-7>
+//all queues
+//egress drop enable
+flowctrl get ingress egress-drop port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) drop
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//system configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//drop high off threshold
+//drop high on threshold
+//drop low off threshold
+//drop low on threshold
+//threshold
+//value
+flowctrl set ingress pon system ( high-off | high-on | low-off | low-on | drop-high-off | drop-high-on | drop-low-off | drop-low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//pon interface
+//system configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//drop high off threshold
+//drop high on threshold
+//drop low off threshold
+//drop low on threshold
+//threshold
+flowctrl get ingress pon system ( high-off | high-on | low-off | low-on | drop-high-off | drop-high-on | drop-low-off | drop-low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//port configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//drop high off threshold
+//drop high on threshold
+//drop low off threshold
+//drop low on threshold
+//threshold
+//value
+flowctrl set ingress pon port ( high-off | high-on | low-off | low-on | drop-high-off | drop-high-on | drop-low-off | drop-low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//port configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//drop high off threshold
+//drop high on threshold
+//drop low off threshold
+//drop low on threshold
+//threshold
+flowctrl get ingress pon port ( high-off | high-on | low-off | low-on | drop-high-off | drop-high-on | drop-low-off | drop-low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//sid configuration
+//value
+//state configuration
+//enable 
+//disable
+flowctrl set ingress pon sid <UINT:sid> state ( enable | disable )
+
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//pon interface
+//sid configuration
+//value
+//state configuration
+flowctrl get ingress pon sid <UINT:sid> state
+
+//flowctrl configuration
+//set configuration
+//maximum page clear
+flowctrl set max-page-clear 
+
+//flowctrl configuration
+//set configuration
+//maximum page clear
+//all maximum counters in switch
+flowctrl set max-page-clear switch
+
+//flowctrl configuration
+//set configuration
+//maximum page clear
+//egress port
+//port list
+//all ports
+flowctrl set max-page-clear egress-port ( <PORT_LIST:ports> | all )
+
+//flowctrl configuration
+//set configuration
+//total packet count clear
+flowctrl set total-pktcnt-clear
+
+//flowctrl configuration
+//set configuration
+//maximum page clear
+//used page
+flowctrl set max-page-clear used-page
+
+//flowctrl configuration
+//set configuration
+//maximum page clear
+//egress queue
+//port configuration
+//port list
+//all ports
+//queue configuration
+//queue list
+//all queues
+flowctrl set max-page-clear egress-queue port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) 
+
+//flowctrl configuration
+//get configuration
+//used page count
+//ingress page count
+//egress page count
+//port configuration
+//port list
+//all ports
+//switch pbo
+flowctrl get used-page-cnt ( ingress | egress ) port ( <PORT_LIST:ports> | all | swpbo )
+
+//flowctrl configuration
+//get configuration
+//used page count
+//egress queue
+//port configuration 0-3:UTP, 4:EXT MAC, 5:CPU MAC
+//port list <0-5>
+//all ports
+//swpbo
+//queue id
+//queue list
+//all ports
+flowctrl get used-page-cnt egress-queue port ( <PORT_LIST:ports> | all | swpbo ) queue-id ( <MASK_LIST:qid> | all ) 
+
+//flowctrl configuration
+//get configuration
+//total page count
+flowctrl get total-page-cnt
+
+//flowctrl configuration
+//get configuration
+//used page count
+//total used page count
+//public used page count
+//public flow control off used page count
+//public jumbo frame used page count
+flowctrl get used-page-cnt ( total | public | public-off | public-jumbo )
+
+//flowctrl configuration
+//get configuration
+//used page count
+//used page count of this receiving packet
+//port list <0-6>
+//all ports
+flowctrl get used-page-cnt packet ( <PORT_LIST:ports> | all )
+
+//flowctrl configuration
+//get configuration
+//used page count
+//pon interface
+//queue <0-127>
+//queue list <0-127>
+//all queues
+flowctrl get used-page-cnt pon queue-id ( <MASK_LIST:qid> | all )
+
+//flowctrl configuration
+//set configuration
+//used page count
+//pon interface
+//queue
+//queue id, <0~127>
+flowctrl set max-page-clear pon queue-id <UINT:qid>
+
+//flowctrl configuration
+//set configuration
+//prefetch
+//threshold
+//value
+flowctrl set prefetch threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//prefetch
+//threshold
+flowctrl get prefetch threshold
+
+
+#ifndef CONFIG_REDUCED_DIAG
+//flowctrl configuration
+//set configuration
+//flow control for jumbo frame
+//jumbo state
+//enable jumbo mode
+//disable jumbo mode
+flowctrl set jumbo state ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//flow control for jumbo frame
+//jumbo state
+flowctrl get jumbo state 
+
+//flowctrl configuration
+//set configuration
+//flow control for jumbo frame
+//jumbo frame size
+//3K bytes
+//4K bytes
+//6K bytes
+//maximum (>8960 bytes)
+flowctrl set jumbo size ( 3k | 4k | 6k | max )
+
+//flowctrl configuration
+//get configuration
+//flow control for jumbo frame
+//jumbo frame size
+flowctrl get jumbo size
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//global configuration for jumbo frame
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set ingress jumbo-global ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//global configuration for jumbo frame
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get ingress jumbo-global ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//port configuration for jumbo frame
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set ingress jumbo-port ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//port configuration for jumbo frame
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get ingress jumbo-port ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//low queue threshold for EEE usage
+//threshold
+//value
+flowctrl set low-queue threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//low queue threshold for EEE usage
+//threshold
+flowctrl get low-queue threshold
+
+//flowctrl configuration
+//set configuration
+//egress configuration
+//system configuration
+//flowctrl threshold
+//drop threshold
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set egress system ( flowctrl-threshold | drop-threshold ) ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//egress configuration
+//system configuration
+//flowctrl threshold
+//drop threshold
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get egress system ( flowctrl-threshold | drop-threshold ) ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//egress configuration
+//queue configuration
+//queue list , <0-7>
+//all queues
+//threshold
+//value
+flowctrl set egress queue-id ( <MASK_LIST:qid> | all ) threshold <UINT:threshold> 
+
+//flowctrl configuration
+//get configuration
+//egress configuration
+//queue configuration
+//queue list , <0-7>
+//all queues
+//threshold
+flowctrl get egress queue-id ( <MASK_LIST:qid> | all ) threshold
+
+//flowctrl configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//threshold
+//value
+flowctrl set egress port ( <PORT_LIST:ports> | all ) threshold <UINT:threshold> 
+
+//flowctrl configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//threshold
+flowctrl get egress port ( <PORT_LIST:ports> | all ) threshold
+
+//flowctrl configuration
+//set configuration
+//egress configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//queue configuration
+//queue list , <0-6>
+//all queues
+//queue drop
+//state
+//enable
+//disable
+flowctrl set egress port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) queue-drop state ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//egress configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//queue configuration
+//queue list , <0-6>
+//all queues
+//queue drop
+//state
+flowctrl get egress port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) queue-drop state
+
+//flowctrl configuration
+//set configuration
+//egress configuration
+//port gap configuration
+//threshold
+flowctrl set egress port-gap-threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//egress configuration
+//port gap configuration
+flowctrl get egress port-gap-threshold
+
+//flowctrl configuration
+//set configuration
+//egress configuration
+//queue gap configuration
+//threshold
+flowctrl set egress queue-gap-threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//egress configuration
+//queue gap configuration
+flowctrl get egress queue-gap-threshold
+
+//flowctrl configuration
+//set configuration
+//high queue mask
+//port configuration
+//port list , <0-6>
+//all ports
+//queue mask configuration
+//queue list , <0-7>
+//all queues
+flowctrl set high-queue port ( <PORT_LIST:port> | all ) queue-mask ( <PORT_LIST:queue> | all )
+
+//flowctrl configuration
+//get configuration
+//high queue mask
+//port configuration
+//port list , <0-6>
+//all ports
+flowctrl get high-queue port ( <PORT_LIST:port> | all )
+
+//flowctrl configuration
+//set configuration
+//patch parameters
+//3.5Mb for GPON mode
+//3.5Mb for Fiber mode
+//2.0Mb mode
+flowctrl set patch ( gpon-35m | fiber-35m | 20m )
+
+//flowctrl configuration
+//set configuration
+//PON interface
+//maximum page count
+//latch
+//enable latch
+//disable latch
+flowctrl set pon max-page-cnt latch ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//PON interface
+//maximum page count
+//latch
+flowctrl get pon max-page-cnt latch
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//queue configuration
+//queue list , <0-127>
+//all queues
+//drop threshold index
+//index, <0~7>
+flowctrl set ingress pon egress-drop queue-id ( <MASK_LIST:qid> | all ) threshold-index <UINT:index> 
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//queue configuration
+//queue list , <0-127>
+//all queues
+//drop threshold index
+flowctrl get ingress pon egress-drop queue-id ( <MASK_LIST:qid> | all ) threshold-index
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//queue threshold index
+//index list , <0-7>
+//all index
+//threshold
+//value
+flowctrl set ingress pon egress-drop queue-threshold-index ( <MASK_LIST:index> | all ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//queue threshold index
+//index list , <0-7>
+//all index
+//threshold
+flowctrl get ingress pon egress-drop queue-threshold-index ( <MASK_LIST:idx> | all ) threshold
+
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//queue gap
+//threshold
+//value
+flowctrl set ingress pon egress-drop queue-gap threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//queue gap
+//threshold
+flowctrl get ingress pon egress-drop queue-gap threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//port
+//port list , <0-6>
+//all ports
+//queue
+//queue list , <0-7>
+//all queues
+//egress drop enable
+//enable
+//disable
+flowctrl set ingress pon egress-drop port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) drop ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//pon interface
+//egress drop threshold
+//port
+//port list , <0-6>
+//all ports
+//queue
+//queue list , <0-7>
+//all queues
+//egress drop enable
+flowctrl get ingress pon egress-drop port ( <PORT_LIST:ports> | all ) queue-id ( <MASK_LIST:qid> | all ) drop
+#endif
+
+//flowctrl configuration
+//set configuration
+//egress drop configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//state
+//enable 
+//disable
+flowctrl set egress-drop port ( <PORT_LIST:port> | all ) state ( enable | disable )
+
+//flowctrl configuration
+//set configuration
+//egress drop configuration
+//broadcast
+//multicast
+//unknown unicast
+//select 
+//not
+flowctrl set egress-drop ( broadcast | multicast | unknown-unicast ) ( select | not )
+
+//flowctrl configuration
+//dump configuration
+//egress drop configuration
+flowctrl dump egress-drop
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//back pressure configuration
+//state
+//enable 
+//disable
+flowctrl set ingress port ( <PORT_LIST:port> | all ) back-pressure state ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//port configuration
+//port list , <0-6>
+//all ports
+//back pressure configuration
+//state
+flowctrl get ingress port ( <PORT_LIST:port> | all ) back-pressure state
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//extra-reserve threshold
+//threshold
+//value 
+flowctrl set ingress extra-reserve threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//extra-reserve threshold
+//threshold
+flowctrl get ingress extra-reserve threshold
+
+//flowctrl configuration
+//set configuration
+//change duplex ctrl configuration
+//state configuration
+//enable
+//disable
+flowctrl set change-duplex-ctrl state ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//change duplex ctrl configuration
+//state configuration
+flowctrl get change-duplex-ctrl state
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//swpbo interface
+//system configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set ingress swpbo system ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//swpbo interface
+//system configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get ingress swpbo system ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//swpbo interface
+//port configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+//value
+flowctrl set ingress swpbo port ( high-off | high-on | low-off | low-on ) threshold <UINT:threshold>
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//swpbo interface
+//port configuration
+//high off threshold
+//high on threshold
+//low off threshold
+//low on threshold
+//threshold
+flowctrl get ingress swpbo port ( high-off | high-on | low-off | low-on ) threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//egress drop threshold
+//swpbo interface
+//threshold
+//value
+flowctrl set ingress egress-drop swpbo threshold <UINT:threshold>
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//egress drop threshold
+//swpbo interface
+//threshold 
+flowctrl get ingress egress-drop swpbo threshold
+
+//flowctrl configuration
+//set configuration
+//ingress configuration
+//port configuration
+//port list , <0-10>
+//all ports
+//fc drop ctrl configuration
+//state
+//enable 
+//disable
+flowctrl set ingress port ( <PORT_LIST:port> | all ) fc-drop-ctrl state ( enable | disable )
+
+//flowctrl configuration
+//get configuration
+//ingress configuration
+//port configuration
+//port list , <0-10>
+//all ports
+//fc drop ctrl configuration
+//state
+flowctrl get ingress port ( <PORT_LIST:port> | all ) fc-drop-ctrl state

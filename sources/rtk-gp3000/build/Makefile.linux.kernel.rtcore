@@ -1,0 +1,110 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtcore Kernel Module
+#
+
+include $(APOLLODIR)/Compiler_Flag
+
+ifeq ($(SDK_CONFIG), $(wildcard $(SDK_CONFIG)))
+include $(SDK_CONFIG)
+endif
+
+SDK_SYS_DIR = ../..
+
+EXTRA_CFLAGS += $(PON_CFLAGS)
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)
+
+ifneq ($(CONFIG_SDK_DRIVER_TEST),)
+EXTRA_CFLAGS += -I$(UT_INCLUDE)
+endif
+
+#ifeq ($(CONFIG_SDK_DRIVER_RTCORE),m)
+#CFLAGS += -mlong-calls -fno-pic -mno-abicalls
+#endif
+
+RTCORE_OBJ := \
+	rtcore_drv.o
+
+#ifneq ($(CONFIG_MODULE_BUILD_IN),m)
+RTCORE_OBJ += \
+	rtcore_export.o
+#endif
+
+SYS_DIR := $(SDK_SYS_DIR)/linux
+SYS_OBJ := \
+	$(SYS_DIR)/dev_config.o
+
+COMMON_DIR := $(SDK_SYS_DIR)/common
+COMMON_OBJ := \
+	$(COMMON_DIR)/debug/rt_log.o \
+	$(COMMON_DIR)/debug/mem.o \
+	$(COMMON_DIR)/rtcore/init.o
+
+OSAL_DIR := $(SDK_SYS_DIR)/osal/linux
+OSAL_OBJ := \
+	$(OSAL_DIR)/cache.o \
+	$(OSAL_DIR)/isr.o \
+	$(OSAL_DIR)/lib.o \
+	$(OSAL_DIR)/memory.o \
+	$(OSAL_DIR)/sem.o \
+	$(OSAL_DIR)/thread.o \
+	$(OSAL_DIR)/time.o \
+	$(OSAL_DIR)/spl.o
+
+IOAL_DIR := $(SDK_SYS_DIR)/ioal
+IOAL_OBJ := \
+	$(IOAL_DIR)/mem32.o
+ifeq ($( CONFIG_SDK_MODEL_MODE),y)
+IOAL_OBJ += \
+	$(IOAL_DIR)/model/ioal_init.o
+else
+IOAL_OBJ += \
+	$(IOAL_DIR)/ioal_init.o
+endif
+
+IOAL_OBJ += \
+	$(IOAL_DIR)/linux/kernel/io_mii.o
+
+IOAL_OBJ += \
+	$(IOAL_DIR)/linux/kernel/io_spi.o
+
+ifneq ($(CONFIG_OPENWRT_RG),y)
+IOAL_OBJ += \
+	$(IOAL_DIR)/linux/kernel/mac_debug.o
+
+ifeq ($(CONFIG_LUNA_G3_SERIES),y)
+CFLAGS_mac_debug.o += -I$(APOLLODIR)/ca-ne/
+endif
+ifdef CONFIG_DEFAULTS_KERNEL_3_18
+CFLAGS_mac_debug.o += -I$(KERNEL_DIR)/drivers/net/ethernet/realtek/
+else
+CFLAGS_mac_debug.o += -I$(KERNEL_DIR)/drivers/net/
+endif
+endif
+
+TARGET := rtcore
+
+ALL_OBJ := $(RTCORE_OBJ) $(SYS_OBJ) $(DRV_OBJ) $(COMMON_OBJ) $(OSAL_OBJ) $(IOAL_OBJ) $(NIC_OBJ)
+
+
+ifneq ($(CONFIG_MODULE_BUILD_IN),y)
+obj-m := $(TARGET).o
+else
+obj-y += $(TARGET).o
+endif
+
+$(TARGET)-objs := $(ALL_OBJ)
+
+
+ifneq ($(CONFIG_MODULE_BUILD_IN),y)
+all:
+	$(MAKE) -C $(KERNEL_DIR) M=$(SRC_DIR) ARCH=rlx CROSS_COMPILE=$(CROSS_COMPILE)
+
+endif
+
+clean:
+	@$(RM) $(ALL_OBJ)
+	@find $(SDK_SYS_DIR) \( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' \
+		-o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' \) \
+		-type f -print | xargs rm -f

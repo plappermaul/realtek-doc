@@ -1,0 +1,593 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 39101 $
+// $Date: 2013-05-03 17:35:27 +0800 (星期五, 03 五月 2013) $
+// 
+// Purpose : Define diag shell commands for pbo
+//
+// Feature : The file have include the following module and sub-modules
+//           1) pbo commands.
+//
+
+//pbo configuration
+//initialization
+pbo init
+
+//pbo configuration
+//initialization
+//configure pbo for gpon
+pbo init gpon 
+
+//pbo configuration
+//initialization
+//configure pbo for epon
+pbo init epon
+
+//pbo configuration
+//initialization
+//configure pbo for gpon
+//upstream page size
+//128
+//256
+//512
+//downstream page size
+//128
+//256
+//512
+pbo init gpon us-page-size ( 128 | 256 | 512 ) ds-page-size ( 128 | 256 | 512 )
+
+//pbo configuration
+//initialization
+//configure pbo for epon
+//upstream page size
+//128
+//256
+//512
+//downstream page size
+//128
+//256
+//512
+pbo init epon us-page-size ( 128 | 256 | 512 ) ds-page-size ( 128 | 256 | 512 )
+
+//pbo configuration
+//set configuration
+//stop all threshold
+//threshold
+//value 
+pbo set stop-all threshold <UINT:threshold>
+
+//pbo configuration
+//get configuration
+//stop all threshold
+//threshold
+pbo get stop-all threshold
+
+//pbo configuration
+//set configuration
+//stop all threshold
+//state
+//enable
+//disable
+pbo set stop-all state ( enable | disable )
+
+//pbo configuration
+//get configuration
+//stop all threshold
+//state
+pbo get stop-all state
+
+//pbo configuration
+//set configuration
+//descriptor runout threshold
+//dram threshold
+//value 
+//sram threshold
+//value 
+pbo set dsc-runout dram <UINT:dram_th> sram <UINT:sram_th>
+
+//pbo configuration
+//set configuration
+//upstream pbo
+//downstream pbo
+//descriptor runout threshold
+//dram threshold
+//value 
+//sram threshold
+//value 
+pbo set ( upstream | downstream ) dsc-runout dram <UINT:dram_th> sram <UINT:sram_th>
+
+//pbo configuration
+//get configuration
+//descriptor runout threshold
+pbo get dsc-runout
+
+//pbo configuration
+//set configuration
+//system configuration
+//flowctrl threshold
+//off threshold
+//on threshold
+//threshold
+//value
+pbo set system flowctrl-threshold ( off | on ) threshold <UINT:threshold>
+
+//pbo configuration
+//get configuration
+//system configuration
+//flowctrl threshold
+//off threshold
+//on threshold
+//threshold
+pbo get system flowctrl-threshold ( off | on ) threshold
+
+//pbo configuration
+//set configuration
+//sid configuration
+//value
+//flowctrl threshold
+//off threshold
+//on threshold
+//threshold
+//value
+pbo set sid <UINT:sid> flowctrl-threshold ( off | on ) threshold <UINT:threshold>
+
+//pbo configuration
+//get configuration
+//sid configuration
+//value
+//flowctrl threshold
+//off threshold
+//on threshold
+//threshold
+pbo get sid <UINT:sid> flowctrl-threshold ( off | on ) threshold
+
+//pbo configuration
+//set configuration
+//state configuration
+//enable pbo module
+//disable pbo module
+pbo set state ( enable | disable )
+
+//pbo configuration
+//set configuration
+//upstream pbo
+//downstream pbo
+//state configuration
+//enable pbo module
+//disable pbo module
+pbo set ( upstream | downstream ) state ( enable | disable )
+
+//pbo configuration
+//get configuration
+//state configuration
+pbo get state
+
+//pbo configuration
+//get configuration
+//pbo ready status
+pbo get status
+
+//pbo configuration
+//get configuration
+//current usaged page
+pbo get used-page
+
+//pbo configuration
+//get configuration
+//flowcontrol
+//current status
+pbo get flowcontrol current
+
+//pbo configuration
+//get configuration
+//flowcontrol
+//latched status
+pbo get flowcontrol latch
+
+//pbo configuration
+//clear configuration
+//current usaged page
+pbo clear used-page
+
+//pbo configuration
+//clear configuration
+//upstream pbo
+//downstream pbo
+//current usaged page
+pbo clear ( upstream | downstream ) used-page
+
+//pbo configuration
+//clear configuration
+//flowcontrol
+//latched status
+pbo clear flowcontrol latch
+
+//pbo configuration
+//clear operation
+//counters
+//group configuration
+//group id
+//all
+pbo clear counter group ( <MASK_LIST:group> | all )
+
+//pbo configuration
+//clear operation
+//upstream pbo
+//downstream pbo
+//counters
+//group configuration
+//group id
+//all
+pbo clear ( upstream | downstream ) counter group ( <MASK_LIST:group> | all )
+
+//pbo configuration
+//clear operation
+//counters
+//pbo counter
+pbo clear counter pbo
+
+//pbo configuration
+//clear operation
+//upstream pbo
+//downstream pbo
+//counters
+//pbo counter
+pbo clear ( upstream | downstream ) counter pbo
+
+//pbo configuration
+//clear operation
+//counters
+//ponnic counter
+pbo clear counter ponnic
+
+//pbo configuration
+//clear operation
+//upstream pbo
+//downstream pbo
+//counters
+//ponnic counter
+pbo clear ( upstream | downstream ) counter ponnic
+
+//pbo configuration
+//set operation
+//upstream pbo
+//downstream pbo
+//counters
+//group configuration
+//group id
+//sid
+//sid list
+//all
+pbo set ( upstream | downstream ) counter group <UINT:grp> sid ( <MASK_LIST:sid> | all )
+
+//pbo configuration
+//get operation
+//counters
+//group configuration
+//group id
+pbo get counter group <UINT:grp>
+
+//pbo configuration
+//dump operation
+//counters
+//pbo counters
+pbo dump counter pbo
+
+//pbo configuration
+//dump operation
+//counters
+//ponnic counters
+pbo dump counter ponnic
+
+//pbo configuration
+//dump operation
+//counters
+//group configuration
+//group id
+//all
+pbo dump counter group ( <MASK_LIST:group> | all )
+
+//pbo configuration
+//dump operation
+//configuration
+//memory config
+pbo dump config memory
+
+//pbo configuration
+//set operation
+//downstream pbo
+//sid to queue
+//sid
+//sid
+//all
+//queue
+//normal0 queue
+//normal1 queue
+//high queue
+pbo set downstream sid2q sid ( <MASK_LIST:sid> | all ) queue ( normal0 | normal1 | high )
+
+//pbo configuration
+//get operation
+//downstream pbo
+//sid to queue
+//sid
+//sid
+//all
+pbo get downstream sid2q sid ( <MASK_LIST:sid> | all )
+
+//pbo configuration
+//set operation
+//downstream pbo
+//queue-scheduling
+//round-robin
+//strict priority
+pbo set downstream queue-scheduling ( round-robin | strict-priority )
+
+//pbo configuration
+//get operation
+//downstream pbo
+//queue-scheduling
+pbo get downstream queue-scheduling
+
+//pbo configuration
+//set operation
+//downstream pbo
+//flow control ignore
+//start ignore switch fc
+//stop ignore switch fc
+//threshold
+//threshold
+pbo set downstream fc-ignore ( start | stop ) threshold <UINT:threshold>
+
+//pbo configuration
+//get operation
+//downstream pbo
+//flow control ignore
+//start ignore switch fc
+//stop ignore switch fc
+//threshold
+pbo get downstream fc-ignore ( start | stop ) threshold
+
+//pbo configuration
+//reset operation
+//upstream pbo
+//downstream pbo
+//pbo
+pbo reset ( upstream | downstream ) pbo
+
+//switch pbo configuration
+//initialization
+swpbo init
+
+//switch pbo configuration
+//initialization
+//page size
+//128
+//256
+//512
+//1024
+//page count
+//512
+//1024
+//2048
+//4096
+swpbo init page-size ( 128 | 256 | 512 | 1024 ) page-count ( 512 | 1024 | 2048 | 4096 )
+
+//switch pbo configuration
+//get operation
+//port operation
+//port list
+//operational state
+swpbo get port <PORT_LIST:ports> state
+
+//switch pbo configuration
+//set operation
+//port operation
+//port list
+//operational state
+//enable
+//disable
+swpbo set port <PORT_LIST:ports> state ( enable | disable )
+
+//switch pbo configuration
+//get operation
+//port operation
+//port list
+//auto configuration in isr state
+swpbo get port <PORT_LIST:ports> auto-conf
+
+//switch pbo configuration
+//set operation
+//port operation
+//port list
+//auto configuration in isr state
+//enable
+//disable
+swpbo set port <PORT_LIST:ports> auto-conf ( enable | disable )
+
+//swpbo configuration
+//set configuration
+//port operation
+//port list
+//descriptor runout threshold
+//sram threshold
+//value 
+//dram threshold
+//value
+swpbo set port <PORT_LIST:ports> dsc-runout sram <UINT:sram_th> dram <UINT:dram_th>
+
+//swpbo configuration
+//get configuration
+//port operation
+//port list
+//descriptor runout threshold
+swpbo get port <PORT_LIST:ports> dsc-runout
+
+//swpbo configuration
+//set configuration
+//port operation
+//port list
+//port threshold
+//value
+swpbo set port <PORT_LIST:ports> threshold <UINT:port_th>
+
+//swpbo configuration
+//get configuration
+//port operation
+//port list
+//port threshold
+swpbo get port <PORT_LIST:ports> threshold
+
+//swpbo configuration
+//get configuration
+//port operation
+//port list
+//port used page
+swpbo get port <PORT_LIST:ports> used-page
+
+//swpbo configuration
+//clear configuration
+//port operation
+//port list
+//port used page
+swpbo clear port <PORT_LIST:ports> used-page
+
+//swpbo configuration
+//set configuration
+//port operation
+//port list
+//queue operation
+//queue list
+//all
+//queue threshold
+//value
+swpbo set port <PORT_LIST:ports> queue ( <MASK_LIST:qid> | all ) threshold <UINT:queue_th>
+
+//swpbo configuration
+//get configuration
+//port operation
+//port list
+//queue operation
+//queue list
+//all
+//queue threshold
+swpbo get port <PORT_LIST:ports> queue ( <MASK_LIST:qid> | all ) threshold
+
+//swpbo configuration
+//get configuration
+//port operation
+//port list
+//queue operation
+//queue list
+//all
+//queue used-page
+swpbo get port <PORT_LIST:ports> queue ( <MASK_LIST:qid> | all ) used-page
+
+//swpbo configuration
+//clear configuration
+//port operation
+//port list
+//queue operation
+//queue list
+//all
+//queue used-page
+swpbo clear port <PORT_LIST:ports> queue ( <MASK_LIST:qid> | all ) used-page
+
+//switch pbo configuration
+//set operation
+//link state
+//link down
+//link up
+swpbo set link-state ( link-down | link-up )
+
+//switch pbo configuration
+//get operation
+//link state
+swpbo get link-state
+
+//swpbo configuration
+//get configuration
+//port operation
+//port list
+//port dscriptor usage
+swpbo get port <PORT_LIST:ports> dsc
+
+//swpbo configuration
+//clear configuration
+//port operation
+//port list
+//port dscriptor usage
+swpbo clear port <PORT_LIST:ports> dsc
+
+//swpbo configuration
+//set operation
+//sram operation
+//bist
+//drf-bist
+swpbo set sram ( bist | drf-bist )
+
+//swpbo configuration
+//dump operation
+//counters
+//ponnic counters
+swpbo dump counter ponnic
+
+//swpbo configuration
+//clear operation
+//counters
+//group configuration
+//group id
+//all
+swpbo clear counter group ( <MASK_LIST:group> | all )
+
+//swpbo configuration
+//set operation
+//counters
+//group configuration
+//group id
+//qid
+//qid list
+//all
+swpbo set counter group <UINT:grp> qid ( <MASK_LIST:qid> | all )
+
+//swpbo configuration
+//get operation
+//counters
+//group configuration
+//group id
+swpbo get counter group <UINT:grp>
+
+//swpbo configuration
+//dump operation
+//counters
+//group configuration
+//group id
+//all
+swpbo dump counter group ( <MASK_LIST:group> | all )
+
+//swpbo configuration
+//dump operation
+//counters
+//swpbo counters
+swpbo dump counter swpbo
+
+//swpbo configuration
+//clear operation
+//counters
+//swpbo counter
+swpbo clear counter swpbo
+
+//swpbo configuration
+//dump operation
+//configuration
+//memory config
+swpbo dump config memory

@@ -1,0 +1,23 @@
+
+
+
+author
+RT R1467 鄭紹甫 3833 通訊網路事業群 shaofu@realtek.com  
+
+
+source
+http://cadinfo.realtek.com/svn/CN/jungle/trunk/ICTest/bootcode_rtl8881A/boot/monitor/crypto_engine
+
+[jwsyu@jason88 crypto_engine]14:22$ svn info
+Path: .
+Working Copy Root Path: /home/jwsyu/build/bootcode_rtl8881A
+URL: http://cadinfo.realtek.com/svn/CN/jungle/trunk/ICTest/bootcode_rtl8881A/boot/monitor/crypto_engine
+Relative URL: ^/trunk/ICTest/bootcode_rtl8881A/boot/monitor/crypto_engine
+Repository Root: http://cadinfo.realtek.com/svn/CN/jungle
+Repository UUID: fdc2a819-843d-4c83-959e-a509fb0dc083
+Revision: 29966
+Node Kind: directory
+Schedule: normal
+Last Changed Author: shaofu
+Last Changed Rev: 15511
+Last Changed Date: 2013-03-18 17:26:06 +0800 (一, 18  3月 2013)

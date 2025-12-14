@@ -1,0 +1,467 @@
+# Copyright (C) 2012 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Kernel Modules
+#
+
+include $(APOLLODIR)/Compiler_Flag
+
+SDK_INCLUDE   = $(SDKDIR)/include
+SYS_INCLUDE   = $(SDKDIR)/system/include
+DRV_INCLUDE   = $(SDKDIR)/system/linux
+
+ifeq ($(CONFIG_OPENWRT_SDK),y)
+include $(TOPDIR)/.config
+endif
+EXTRA_CFLAGS+= $(PON_CFLAGS)
+FLAGS+="-I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)"
+ifeq ($(CONFIG_OPENWRT_DIAG),y)
+RTK_LIB +="-L$(APOLLODIR)/object/src/app/lib -lrtk"
+else
+RTK_LIB +="-L$(APOLLODIR)/object/src/app/lib -lrtk -lpthread"
+endif
+
+APPS:= diag_rtk
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+APPS+= pkt_redirect
+else
+ifeq ($(CONFIG_EPON_FEATURE),y)
+APPS+= pkt_redirect
+else
+ifeq ($(CONFIG_SDK_LUNA_G3),y)
+APPS+= pkt_redirect
+endif
+endif
+endif
+
+#ifeq ($(CONFIG_RTK_IGMP),y)
+#APPS+= rtk_igmp
+#endif
+
+ifeq ($(CONFIG_RTK_OMCI_V1),y)
+ifeq ($(CONFIG_OPENWRT_SDK),y)
+ifeq ($(CONFIG_ARCH), "aarch64")
+	OMCI_DIR= omci_v1_arm_openwrt
+endif
+ifeq ($(CONFIG_ARCH), "mips")
+	OMCI_DIR= omci_v1_mips_openwrt
+endif
+endif
+ifeq ($(CONFIG_KERNEL_2_6_30),y)
+	ifeq ($(CONFIG_LUNA_DUAL_LINUX),y)
+		OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR_MASTER) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_2_6_30-"$$3"-"$$6}')
+	else
+		OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_2_6_30-"$$3"-"$$6}')
+	endif
+endif
+ifeq ($(CONFIG_KERNEL_3_18_x),y)
+	ifeq ($(CONFIG_LUNA_DUAL_LINUX),y)
+		ifeq ($(CONFIG_SMP),y)
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR_MASTER) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_3_18-"$$3"-"$$6}')
+		else
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR_MASTER) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_3_18-"$$3"-"$$6"-no-smp"}')
+		endif
+	else
+		ifeq ($(CONFIG_SMP),y)
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_3_18-"$$3"-"$$6}')
+		else
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_3_18-"$$3"-"$$6"-no-smp"}')
+		endif
+	endif
+endif
+ifeq ($(CONFIG_KERNEL_4_4_x),y)
+	ifeq ($(CONFIG_COMMON_RT_API),y)
+		ifeq ($(CONFIG_ARM),y)
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_4_4-"$$3"-"$$6"-rt-arm32"}')
+		else
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_4_4-"$$3"-"$$6"-rt"}')			
+		endif
+	else
+		OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_4_4-"$$3"-"$$6}')
+	endif
+endif
+ifeq ($(CONFIG_KERNEL_5_10_x),y)
+	ifeq ($(CONFIG_COMMON_RT_API),y)
+		ifeq ($(CONFIG_ARM),y)
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_5_10-"$$3"-"$$6"-rt-arm32"}')
+		else
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_5_10-"$$3"-"$$6"-rt"}')
+		endif		
+	else
+		ifeq ($(CONFIG_SMP),y)
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_5_10-"$$3"-"$$6}')
+		else
+			OMCI_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "omci_v1_5_10-"$$3"-"$$6"-no-smp"}')
+		endif
+	endif
+endif
+APPS+= omci_v1
+endif
+
+ifeq ($(CONFIG_RTK_IGMP),y)
+APPS+= rtk_igmp
+endif
+
+ifeq ($(CONFIG_RTK_OMCI_V2),y)
+APPS+= omci_v2
+endif
+
+ifeq ($(CONFIG_RTK_OAM_V1),y)
+ifneq ($(shell test -e oam_v1 || test -e oam_v1_fc && echo true),)
+ifeq ($(CONFIG_RTK_L34_FLEETCONNTRACK_ENABLE),y)
+	APPS+= oam_v1_fc
+else 
+	APPS+= oam_v1
+endif
+else
+	APPS+= epon_oam_v1
+endif
+endif
+
+APPS+= pon_detect
+
+ifeq ($(CONFIG_SFP_APPLICATION),y)
+APPS+= sfp_app
+endif
+
+ifeq ($(CONFIG_EUROPA),m)
+APPS+= europa
+ifeq ($(CONFIG_EUROPA_FEATURE),y)
+ifeq ($(CONFIG_KERNEL_2_6_30),y)
+  ifeq ($(CONFIG_KALLSYMS),y)
+    EUROPA_8290B_DRV_DIR= drv_8290b_2_6_30
+  else
+    EUROPA_8290B_DRV_DIR= drv_8290b_2_6_30_no_kallsyms
+  endif
+endif
+
+ifeq ($(CONFIG_KERNEL_3_18_x),y)
+    ifeq ($(CONFIG_SMP),y)
+        EUROPA_8290B_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290b_3_18-"$$3"-"$$6}')
+    else
+        EUROPA_8290B_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290b_3_18-"$$3"-"$$6"-no-smp"}')
+    endif
+endif
+
+ifeq ($(CONFIG_KERNEL_4_4_x),y)
+    ifeq ($(CONFIG_COMMON_RT_API),y)
+        EUROPA_8290B_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290b_4_4-"$$3"-"$$6"-rt"}')
+    else
+        EUROPA_8290B_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290b_4_4-"$$3"-"$$6}')
+    endif
+endif
+
+ifeq ($(CONFIG_KERNEL_5_10_x),y)
+    ifeq ($(CONFIG_COMMON_RT_API),y)
+        EUROPA_8290B_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290b_5_10-"$$3"-"$$6"-rt"}')
+    else
+        EUROPA_8290B_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290b_5_10-"$$3"-"$$6}')
+    endif
+endif
+endif
+ifeq ($(CONFIG_RTL8290C_FEATURE),y)
+ifeq ($(CONFIG_KERNEL_2_6_30),y)
+  ifeq ($(CONFIG_KALLSYMS),y)
+    EUROPA_8290C_DRV_DIR= drv_8290c_2_6_30
+  else
+    EUROPA_8290C_DRV_DIR= drv_8290c_2_6_30_no_kallsyms
+  endif
+endif
+
+ifeq ($(CONFIG_KERNEL_3_18_x),y)
+    ifeq ($(CONFIG_SMP),y)
+        EUROPA_8290C_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290c_3_18-"$$3"-"$$6}')
+    else
+        EUROPA_8290C_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290c_3_18-"$$3"-"$$6"-no-smp"}')
+    endif
+endif
+
+ifeq ($(CONFIG_KERNEL_4_4_x),y)
+    ifeq ($(CONFIG_COMMON_RT_API),y)
+        EUROPA_8290C_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290c_4_4-"$$3"-"$$6"-rt"}')
+    else
+        EUROPA_8290C_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290c_4_4-"$$3"-"$$6}')
+    endif
+endif
+
+ifeq ($(CONFIG_KERNEL_5_10_x),y)
+    ifeq ($(CONFIG_COMMON_RT_API),y)
+        EUROPA_8290C_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290c_5_10-"$$3"-"$$6"-rt"}')
+    else
+        EUROPA_8290C_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8290c_5_10-"$$3"-"$$6}')
+    endif
+endif
+endif
+ifeq ($(CONFIG_RTL8291_FEATURE),y)
+ifeq ($(CONFIG_KERNEL_2_6_30),y)
+  ifeq ($(CONFIG_KALLSYMS),y)
+    EUROPA_8291_DRV_DIR= drv_8291_2_6_30
+  else
+    EUROPA_8291_DRV_DIR= drv_8291_2_6_30_no_kallsyms
+  endif
+endif
+
+ifeq ($(CONFIG_KERNEL_3_18_x),y)
+    ifeq ($(CONFIG_SMP),y)
+        EUROPA_8291_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8291_3_18-"$$3"-"$$6}')
+    else
+        EUROPA_8291_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8291_3_18-"$$3"-"$$6"-no-smp"}')
+    endif
+endif
+
+ifeq ($(CONFIG_KERNEL_4_4_x),y)
+    ifeq ($(CONFIG_COMMON_RT_API),y)
+        EUROPA_8291_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8291_4_4-"$$3"-"$$6"-rt"}')
+    else
+        EUROPA_8291_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8291_4_4-"$$3"-"$$6}')
+    endif
+endif
+
+ifeq ($(CONFIG_KERNEL_5_10_x),y)
+    ifeq ($(CONFIG_COMMON_RT_API),y)
+        EUROPA_8291_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8291_5_10-"$$3"-"$$6"-rt"}')
+    else
+        EUROPA_8291_DRV_DIR= $(shell echo $(CONFIG_RSDK_DIR) | awk -F/ '{print $$NF}' | awk -F- '{print "drv_8291_5_10-"$$3"-"$$6}')
+    endif
+endif
+endif
+endif
+
+ifeq ($(CONFIG_RTK_PTP_MASTER),y)
+APPS+=ptp_master
+endif
+
+ifeq ($(CONFIG_RTK_PTP_SLAVE),y)
+APPS+=ptp_slave
+endif
+
+ifeq ($(CONFIG_RTK_TIME_SYNC),y)
+APPS+=time_sync
+endif
+
+ifeq ($(CONFIG_RTK_PON_TOD_TIME_FREQ),y)
+APPS+=pon_tod_cal_freq
+endif
+
+#CONFIG_CA8277B_SERIES=y
+#CONFIG_RTL8277C_SERIES=y
+#export CONFIG_CA8277B_SERIES
+#export CONFIG_RTL8277C_SERIES
+
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+#mkdir -p $(shell find ca-scfg-1.0 -type d | sed 's/ca-scfg-1.0/ca-scfg-1.0-77c/')
+dest-venus-dir = $(shell find $(SDKDIR)/src/module/ca_rtk_epon_drv -type d | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-venus/')
+dest-77c-dir = $(shell find $(SDKDIR)/src/module/ca_rtk_epon_drv -type d | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-77c/')
+dest-07f-dir = $(shell find $(SDKDIR)/src/module/ca_rtk_epon_drv -type d | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-07f/')
+src-file = $(shell find $(SDKDIR)/src/module/ca_rtk_epon_drv -type f ! -name *.mod.c \( -iname "*.c" -or -iname "*.h" -or -iname "Makefile" -or -iname "Kbuild" \))
+
+
+endif
+
+all:
+ifeq ($(CONFIG_RTK_OMCI_V1),y)
+	@if [ -L omci_v1 ] ; then \
+		ln -sfn $(OMCI_DIR) omci_v1; \
+	fi
+	@if [ ! -d omci_v1 ] ; then \
+		ln -sfn $(OMCI_DIR) omci_v1; \
+	fi
+endif
+ifeq ($(CONFIG_EUROPA),m)
+  ifeq ($(CONFIG_EUROPA_FEATURE),y)
+	@if [ ! -d europa/drv_8290b ] ; then \
+		ln -sfn $(EUROPA_8290B_DRV_DIR) europa/drv_8290b; \
+	fi
+  endif
+  ifeq ($(CONFIG_RTL8290C_FEATURE),y)
+	@if [ ! -d europa/drv_8290c ] ; then \
+		ln -sfn $(EUROPA_8290C_DRV_DIR) europa/drv_8290c; \
+	fi
+  endif
+  ifeq ($(CONFIG_RTL8291_FEATURE),y)
+	@if [ ! -d europa/drv_8291 ] ; then \
+		ln -sfn $(EUROPA_8291_DRV_DIR) europa/drv_8291; \
+	fi
+  endif  
+endif
+	for dir in $(APPS) ; do $(MAKE) -C $$dir FLAGS=$(FLAGS) PON_CFLAGS="$(PON_CFLAGS)" RTK_LIB=$(RTK_LIB) all || exit 1; done
+ifeq ($(CONFIG_SDK_LUNA_G3),y)
+ifeq ($(CONFIG_ARCH_RTL8198F),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8198f
+else
+	$(MAKE) -C $(SDKDIR)/src/dal/luna_g3
+endif
+endif
+ifeq ($(CONFIG_SDK_CA8279),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8279
+endif
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+ifeq ($(CONFIG_CA8277B_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8277b EXTRA_CFLAGS=" "
+	for i in $(dest-venus-dir); do \
+		echo "mkdir -p $$i"; \
+		mkdir -p $$i; \
+	done
+	for i in $(src-file); do \
+		echo "ln -sf $$i $$(echo $$i | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-venus/')"; \
+		ln -sf $$i $$(echo $$i | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-venus/'); \
+	done
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-venus CA_TARGET=venus EXTRA_CFLAGS=" "
+endif
+ifeq ($(CONFIG_RTL8277C_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8277c EXTRA_CFLAGS=" "
+	for i in $(dest-77c-dir); do \
+		echo "mkdir -p $$i"; \
+		mkdir -p $$i; \
+	done
+	for i in $(src-file); do \
+		echo "ln -sf $$i $$(echo $$i | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-77c/')"; \
+		ln -sf $$i $$(echo $$i | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-77c/'); \
+	done
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-77c CA_TARGET=77c EXTRA_CFLAGS=" "
+endif
+ifeq ($(CONFIG_RTL9607F_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl9607f EXTRA_CFLAGS=" "
+	for i in $(dest-07f-dir); do \
+		echo "mkdir -p $$i"; \
+		mkdir -p $$i; \
+	done
+	for i in $(src-file); do \
+		echo "ln -sf $$i $$(echo $$i | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-07f/')"; \
+		ln -sf $$i $$(echo $$i | sed 's/ca_rtk_epon_drv/ca_rtk_epon_drv-07f/'); \
+	done
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-07f CA_TARGET=07f EXTRA_CFLAGS=" "
+endif
+else
+ifeq ($(CONFIG_LUNA_G3_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv
+ifeq ($(CONFIG_CA_RTK_EPON_TEST_FEATURE),y)
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv/ca_rtk_epon_test
+endif
+endif
+endif
+
+install:
+	for dir in $(APPS) ; do $(MAKE) -C $$dir BINDIR="../bin" RTK_LIB=$(RTK_LIB) install || exit 1; done
+ifeq ($(CONFIG_COMMON_RT_API_NO_BOA),y)
+	cp -af $(SDKDIR)/common.etc/flash.sh $(ROMFSDIR)/etc/scripts/flash
+	cp -af $(SDKDIR)/common.etc/cfg.txt $(ROMFSDIR)/etc/
+endif
+	@if [ "$(CONFIG_RTK_OMCI_V1)" = "y" ] || [ "$(CONFIG_RTK_OAM_V1)" = "y" ] ; then \
+		cp -af $(SDKDIR)/rtk.etc/runoam.sh $(ROMFSDIR)/etc/ ; \
+		cp -af $(SDKDIR)/rtk.etc/runsdk.sh $(ROMFSDIR)/etc/ ; \
+		cp -af $(SDKDIR)/rtk.etc/run_customized_sdk.sh $(ROMFSDIR)/etc/ ; \
+	else \
+		if [ "$(CONFIG_FIBER_FEATURE)" = "y" ] ; then \
+			cp -af $(SDKDIR)/rtk.etc/runsdk.sh $(ROMFSDIR)/etc/ ; \
+		fi \
+	fi 
+ifeq ($(CONFIG_LAN_SDS_FEATURE),y)
+	cp -af $(SDKDIR)/rtk.etc/runlansds.sh $(ROMFSDIR)/etc/
+endif
+ifeq ($(CONFIG_LAN_SDS1_FEATURE),y)
+	cp -af $(SDKDIR)/rtk.etc/runlansds1.sh $(ROMFSDIR)/etc/
+endif
+ifeq ($(CONFIG_RTK_FT2_MODULE),y)
+	cp -af $(SDKDIR)/rtk.etc/eqc_test.sh $(ROMFSDIR)/etc/
+	cp -af $(SDKDIR)/rtk.etc/*.sh $(ROMFSDIR)/etc/
+endif
+ifeq ($(CONFIG_SDK_LUNA_G3),y)
+ifeq ($(CONFIG_ARCH_RTL8198F),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8198f modules_install
+else
+	$(MAKE) -C $(SDKDIR)/src/dal/luna_g3 modules_install
+endif
+endif
+ifeq ($(CONFIG_SDK_CA8279),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8279 modules_install
+endif
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+ifeq ($(CONFIG_CA8277B_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8277b modules_install
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-venus CA_TARGET=venus modules_install
+endif
+ifeq ($(CONFIG_RTL8277C_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8277c modules_install
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-77c CA_TARGET=77c modules_install
+endif
+ifeq ($(CONFIG_RTL9607F_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl9607f modules_install
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-07f CA_TARGET=07f modules_install
+endif
+else
+ifeq ($(CONFIG_SDK_CA8277B),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8277b modules_install
+endif
+ifeq ($(CONFIG_LUNA_G3_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv modules_install
+ifeq ($(CONFIG_CA_RTK_EPON_TEST_FEATURE),y)
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv/ca_rtk_epon_test modules_install
+endif
+endif
+endif
+
+clean:
+ifeq ($(CONFIG_RTK_OMCI_V1),y)
+	@if [ -L omci_v1 ] ; then \
+		unlink omci_v1 ; \
+	fi
+endif
+ifeq ($(CONFIG_EUROPA),m)
+  ifeq ($(CONFIG_EUROPA_FEATURE),y)
+	@if [ -L europa/drv_8290b ] ; then \
+		unlink europa/drv_8290b ; \
+	fi
+  endif
+  ifeq ($(CONFIG_RTL8290C_FEATURE),y)
+	@if [ -L europa/drv_8290c ] ; then \
+		unlink europa/drv_8290c ; \
+	fi
+  endif
+  ifeq ($(CONFIG_RTL8291_FEATURE),y)
+	@if [ -L europa/drv_8291 ] ; then \
+		unlink europa/drv_8291 ; \
+	fi
+  endif
+endif
+	for dir in $(APPS) ; do $(MAKE) -C $$dir clean; done
+ifeq ($(CONFIG_SDK_LUNA_G3),y)
+ifeq ($(CONFIG_ARCH_RTL8198F),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8198f clean
+else
+	$(MAKE) -C $(SDKDIR)/src/dal/luna_g3 clean
+endif
+endif
+ifeq ($(CONFIG_SDK_CA8279),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8279 clean
+endif
+ifeq ($(CONFIG_MULTICHIP_ONEIMAGE),y)
+ifeq ($(CONFIG_CA8277B_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8277b clean
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-venus CA_TARGET=venus clean
+endif
+ifeq ($(CONFIG_RTL8277C_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8277c clean
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-77c CA_TARGET=77c clean
+endif
+ifeq ($(CONFIG_RTL9607F_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl9607f clean
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv-07f CA_TARGET=07f clean
+endif
+else
+ifeq ($(CONFIG_SDK_CA8277B),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/ca8277b clean
+endif
+ifeq ($(CONFIG_SDK_RTL8277C),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl8277c clean
+endif
+ifeq ($(CONFIG_SDK_RTL9607F),y)
+	$(MAKE) -C $(SDKDIR)/src/dal/rtl9607f clean
+endif
+ifeq ($(CONFIG_LUNA_G3_SERIES),y)
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv clean
+ifeq ($(CONFIG_CA_RTK_EPON_TEST_FEATURE),y)
+	$(MAKE) -C $(SDKDIR)/src/module/ca_rtk_epon_drv/ca_rtk_epon_test clean
+endif
+endif
+endif

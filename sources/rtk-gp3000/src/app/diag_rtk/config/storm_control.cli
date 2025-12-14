@@ -1,0 +1,151 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for rate.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) storm control commands.
+//
+
+//storm-control configuration
+//get configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//alternated configuration
+storm-control get ( broadcast | multicast | unknown-multicast | unknown-unicast ) alternated
+
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//alternated configuration
+//disable
+//arp
+//dhcp
+//igmp-mld
+storm-control set ( broadcast | multicast | unknown-multicast | unknown-unicast ) alternated ( disabled | arp-storm | dhcp-storm | igmp-mld-storm )
+
+//storm-control configuration
+//get configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+storm-control get ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm )
+
+//storm-control configuration
+//get configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//state configuration
+//disable
+//enable
+storm-control set ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm ) state ( disable | enable )
+
+//storm-control configuration
+//get configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//port configuration
+//port list
+//all ports
+storm-control get ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm ) port ( <PORT_LIST:ports> | all )
+
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//port configuration
+//port list, <0-6>
+//all ports
+//state configuration
+//disable
+//enable
+storm-control set ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm ) port ( <PORT_LIST:ports> | all ) state ( disable | enable )
+
+//storm-control configuration
+//set configuration
+//broadcast
+//multicast
+//unknown multicast
+//unknown unicast
+//arp
+//dhcp
+//igmp-mld
+//port configuration
+//port list, <0-6>
+//all ports
+//meter configuration
+//meter index, <0~31>
+storm-control set ( broadcast | multicast | unknown-multicast | unknown-unicast | arp-storm | dhcp-storm | igmp-mld-storm ) port ( <PORT_LIST:ports> | all ) meter <UINT:index>
+
+//storm-control configuration
+//get configuration
+//bypass storm control configuration
+//igmp
+//cdp
+//csstp
+//state configuration
+storm-control get bypass-packet ( igmp | cdp | csstp ) state
+
+//storm-control configuration
+//set configuration
+//bypass storm control configuration
+//igmp
+//cdp
+//csstp
+//state configuration
+//disable
+//enable
+storm-control set bypass-packet ( igmp | cdp | csstp ) state ( disable | enable )
+
+//storm-control configuration
+//get configuration
+//bypass storm control configuration
+//rma configuration
+//tail of rma mac address, <0x00~0x2F>
+//state configuration
+storm-control get bypass-packet rma <UINT:rma_tail> state
+
+//storm-control configuration
+//set configuration
+//bypass storm control configuration
+//rma configuration
+//tail of rma mac address, <0x00~0x2F>
+//state configuration
+//disable
+//enable
+storm-control set bypass-packet rma <UINT:rma_tail> state  ( disable | enable )

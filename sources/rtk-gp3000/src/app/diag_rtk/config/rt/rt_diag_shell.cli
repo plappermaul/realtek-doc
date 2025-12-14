@@ -1,0 +1,63 @@
+//
+// Copyright (C) 2018 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision: 91599 $
+// $Date: 2018-08-20 18:01:12 +0800 (Mon, 20 Aug 2018) $
+//
+// Purpose : Define RT diag shell commands.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) All RT diag shell commands.
+//
+
+#include "./rt/rt_switch.cli"
+#include "./rt/rt_counter.cli"
+#include "./rt/rt_i2c.cli"
+#include "./rt/rt_trap.cli"
+#include "./rt/rt_igmp.cli"
+#include "./rt/rt_oam.cli"
+#include "./rt/rt_sec.cli"
+#include "./rt/rt_port.cli"
+#include "./rt/rt_intr.cli"
+#include "./rt/rt_qos.cli"
+#include "./rt/rt_rate.cli"
+#include "./rt/rt_cls.cli"
+#include "./rt/rt_l2.cli"
+#include "./rt/rt_mirror.cli"
+#include "./rt/rt_mdio.cli"
+#include "./rt/rt_time.cli"
+
+#ifdef CONFIG_RTK_L34_FLEETCONNTRACK_ENABLE
+#include "./rt/rt_rate_ext.cli"
+#include "./rt/rt_igmp_ext.cli"
+#include "./rt/rt_flow_ext.cli"
+#include "./rt/rt_counter_ext.cli"
+#include "./rt/rt_acl_ext.cli"
+#include "./rt/rt_misc_ext.cli"
+#include "./rt/rt_qos_ext.cli"
+#include "./rt/rt_pe_ext.cli"
+#endif
+
+#ifdef CONFIG_RTK_IGMP_MLD_SNOOPING_MODULE
+#include "./rt/rt_igmpHook_ext.cli"
+#endif
+
+#ifdef CONFIG_GPON_FEATURE
+#include "./rt/rt_gpon.cli"
+#endif
+
+#ifdef CONFIG_EPON_FEATURE
+#include "./rt/rt_epon.cli"
+#endif
+
+#ifdef CONFIG_COMMON_RT_PONMISC
+#include "./rt/rt_ponmisc.cli"
+#endif

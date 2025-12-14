@@ -1,0 +1,212 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for layer2.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) LED commands.
+//
+
+//led configuration
+//init LED
+led init
+
+//led configuration
+//set configuration
+//led operation mode
+//serial mode
+//parallel mode
+led set mode ( serial | parallel )
+
+//led configuration
+//get configuration
+//led operation mode
+led get mode
+
+//led configuration
+//set configuration
+//led group
+//group index
+//group led type
+//UTP port 
+//UTP port number
+led set group <UINT:index> type utp-port <UINT:port>
+
+//led configuration
+//set configuration
+//led group
+//group index
+//group led type
+//fiber port
+//PON port
+//USB 0
+//USB 1
+//SATA
+//fiber-0
+//fiber-1
+//none specific LED source
+led set group <UINT:index> type ( fiber | pon | usb0 | usb1 | sata | fiber-0 | fiber-1 | none )
+
+
+
+//led configuration
+//set configuration
+//led group
+//group index
+//group led source
+//collision
+//duplex
+//tx activity
+//rx activity
+//force mode
+//PON link
+//SoC link activity
+//PON alarm
+//PON warning
+//led source care status
+//enable function
+//disable function
+led set group <UINT:index> source ( collision | duplex | tx-act | rx-act | force | pon-link | soc-link-act | pon-alarm | pon-warning ) state ( enable | disable ) 
+
+
+//led configuration
+//set configuration
+//led group
+//group index
+//group led source
+//care speed
+//speed 10 
+//speed 100
+//speed 500
+//speed 1000
+//care mode
+//link status 
+//link speed
+//led source care status
+//enable function
+//disable function
+led set group <UINT:index> source speed ( 10M | 100M | 500M | 1000M ) mode ( link | act ) state ( enable | disable ) 
+
+//led configuration
+//get configuration
+//led group
+//group index
+//led configuration
+led get group <UINT:index> config
+
+//led configuration
+//set configuration
+//led group
+//group index
+//force status
+//force on
+//foce off
+//force blinking
+//force blinking for group 2
+led set group <UINT:index> force ( on | off | blinking | blinking-g2 ) 
+
+//led configuration
+//get configuration
+//led group
+//group index
+//force configuration
+led get group <UINT:index> force
+
+
+//led configuration
+//set configuration
+//led group
+//group index
+//parallel led mode status
+//enable function
+//disable function
+led set group <UINT:index> parallel-state ( enable | disable )
+
+//led configuration
+//get configuration
+//led group
+//group index
+//parallel led mode status
+led get group <UINT:index> parallel-state 
+
+//led configuration
+//get configuration
+//blinking setting
+led get blinking
+
+//led configuration
+//set configuration
+//blinking setting
+//port blinking setting
+//force mode blinking setting
+//usb blinking setting
+//sata blinking setting
+//force mode blinking group2 setting
+//blinking rate
+//blinking rate 32MS
+//blinking rate 48MS
+//blinking rate 64MS
+//blinking rate 96MS
+//blinking rate 128MS
+//blinking rate 256MS
+//blinking rate 512MS
+//blinking rate 1024MS
+led set blinking ( port | force | usb | sata | force-g2 ) rate ( blink-32 | blink-48 | blink-64 | blink-96 | blink-128 | blink-256 | blink-512 | blink-1024 ) 
+
+//led configuration
+//set configuration
+//serial mode setting
+//active-high 
+//active-low
+led set serial ( active-high | active-low )
+
+//led configuration
+//get configuration
+//serial mode setting
+led get serial
+
+
+//led configuration
+//set configuration
+//pon setting
+//alarm setting
+//warning setting
+//status
+//enable function
+//disable function
+led set pon ( alarm | warning ) state ( enable | disable ) 
+
+//led configuration
+//get configuration
+//pon setting
+//alarm setting
+//warning setting
+//status
+led get pon ( alarm | warning ) state
+
+//led configuration
+//set configuration
+//led group
+//group index
+//parallel mode setting
+//active high
+//active low
+led set group <UINT:index> parallel ( active-high | active-low )
+
+//led configuration
+//get configuration
+//led group
+//group index
+//parallel mode stting
+led get group <UINT:index> parallel

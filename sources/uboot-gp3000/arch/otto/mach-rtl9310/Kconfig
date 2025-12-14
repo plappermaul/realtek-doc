@@ -1,0 +1,66 @@
+if TARGET_RTL9310
+
+config SYS_BOARD
+	default "rtl9310_nor_nand_demo" if OTTO_SNOF && OTTO_SNAF
+	default "rtl9310_nor_demo" if OTTO_SNOF
+	default "rtl9310_nand_demo" if OTTO_SNAF
+
+config SYS_VENDOR
+	default "realtek"
+
+config SYS_CONFIG_NAME
+	default "rtl9310"
+
+config SYS_SOC
+	default "mach-rtl9310"
+
+config SYS_TEXT_BASE
+	default 0x83C00000
+
+config SYS_DCACHE_SIZE
+	default 32768
+
+config SYS_ICACHE_SIZE
+	default 32768
+
+config SYS_DCACHE_LINE_SIZE
+	default 32
+
+config SYS_ICACHE_LINE_SIZE
+	default 32
+
+config OTTO_SNAF_GEN
+	depends on OTTO_SNAF
+	default 2
+	int "SPI-NAND driver generation"
+
+config OTTO_ECC_GEN
+	depends on OTTO_SNAF
+	default 1
+	int "ECC driver generation"
+
+config SPI_NAND_FLASH_INIT_FIRST
+	depends on OTTO_SNOF && OTTO_SNAF
+	default y
+	select ECC_INIT
+	bool
+
+config SPI_NAND_FLASH_INIT_REST
+	depends on OTTO_SNAF
+	default y
+	bool
+
+config ECC_INIT
+	default y
+	bool
+
+config USE_EXT_TIMER
+	default n
+	bool "Use External Timer"
+
+config EXT_TIMER_ID
+	depends on USE_EXT_TIMER
+	default 1
+	int "External Timer ID"
+
+endif

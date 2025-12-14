@@ -1,0 +1,143 @@
+#
+# Copyright (C) 2009 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Unit Test User Library
+#
+
+TARGET := libut.so
+
+include $(APOLLODIR)/Compiler_Flag
+
+SDK_ROOT_DIR = ..
+SDK_INCLUDE   = $(SDK_ROOT_DIR)/include
+SYS_INCLUDE   = $(SDK_ROOT_DIR)/system/include
+UT_INCLUDE   = $(SDK_ROOT_DIR)/unittest
+
+COMMONUTIL_DIR := common
+SDKTEST_DIR := sdk
+HALTEST_DIR := hal
+DALTEST_DIR := dal
+OSALTEST_DIR := osal
+CFLAGS += -fPIC
+EXTRA_CFLAGS += $(PON_CFLAGS)
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(UT_INCLUDE)
+
+
+LIB = "-L$(APOLLODIR)/object/src/app/lib -lrtk -lpthread"
+
+SDKTEST_OBJ := \
+        $(SDKTEST_DIR)/sdk_test.o
+
+#SDK_SYS_DIR := ../system
+#OSAL_DIR := $(SDK_SYS_DIR)/osal/linux/user
+#OSAL_OBJ :=
+#ifneq ($(CONFIG_SDK_KERNEL_LINUX_USER_MODE),)
+#OSAL_OBJ += \
+#	$(OSAL_DIR)/time.o
+#endif
+
+COMMONUTIL_OBJ := \
+	$(COMMONUTIL_DIR)/unittest_util.o
+
+#OSALTEST_OBJ := \
+#	$(OSALTEST_DIR)/osal_test_memory_cache.o \
+#	$(OSALTEST_DIR)/osal_test_isr.o \
+#	$(OSALTEST_DIR)/osal_test_time.o \
+#	$(OSALTEST_DIR)/osal_test_thread.o \
+#	$(OSALTEST_DIR)/osal_test_mutex.o \
+#	$(OSALTEST_DIR)/osal_test_sem.o
+
+HALTEST_OBJ := \
+	$(HALTEST_DIR)/hal_api_test_case.o \
+        $(HALTEST_DIR)/hal_reg_test_case.o
+#	$(HALTEST_DIR)/hal_database_test_case.o \
+#	$(HALTEST_DIR)/hal_mechanism_test_case.o
+
+DALTEST_OBJ := \
+        $(DALTEST_DIR)/dal_svlan_test_case.o \
+        $(DALTEST_DIR)/dal_qos_test_case.o \
+        $(DALTEST_DIR)/dal_gpon_test_case.o \
+        $(DALTEST_DIR)/dal_l34_test_case.o \
+        $(DALTEST_DIR)/dal_acl_test_case.o \
+        $(DALTEST_DIR)/dal_ponmac_test_case.o \
+        $(DALTEST_DIR)/dal_oam_test_case.o \
+        $(DALTEST_DIR)/dal_classf_test_case.o \
+        $(DALTEST_DIR)/dal_led_test_case.o \
+        $(DALTEST_DIR)/dal_switch_test_case.o \
+        $(DALTEST_DIR)/dal_stp_test_case.o \
+        $(DALTEST_DIR)/dal_sec_test_case.o \
+        $(DALTEST_DIR)/dal_rate_test_case.o \
+        $(DALTEST_DIR)/dal_vlan_test_case.o \
+        $(DALTEST_DIR)/dal_cpu_test_case.o \
+        $(DALTEST_DIR)/dal_mirror_test_case.o \
+        $(DALTEST_DIR)/dal_trunk_test_case.o \
+        $(DALTEST_DIR)/dal_port_test_case.o \
+        $(DALTEST_DIR)/dal_stat_test_case.o \
+        $(DALTEST_DIR)/dal_rldp_test_case.o \
+        $(DALTEST_DIR)/dal_l2_test_case.o \
+        $(DALTEST_DIR)/dal_trap_test_case.o \
+        $(DALTEST_DIR)/dal_dot1x_test_case.o \
+        $(DALTEST_DIR)/dal_intr_test_case.o
+
+ifeq ($(CONFIG_SDK_APOLLO),y)
+DALTEST_OBJ += \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_acl_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_l34_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_cf_test_case.o  \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_lut_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_rate_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_qos_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_dot1x_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_vlan_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_svlan_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_cpu_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_meter_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_rma_test_case.o  \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_isolation_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_port_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_intr_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_port_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_flowctrl_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_trap_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_trunk_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_mirror_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_storm_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_autofallback_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_stat_test_case.o \
+        $(DALTEST_DIR)/raw/apollo/dal_raw_sec_test_case.o
+endif
+
+ifeq ($(filter y, $(CONFIG_LUNA_G3_SERIES)),y)
+ALL_OBJ := $(OSAL_OBJ) $(OSALTEST_OBJ) $(COMMONUTIL_OBJ)
+else
+ALL_OBJ := $(SDKTEST_OBJ) $(OSAL_OBJ) $(OSALTEST_OBJ) $(HALTEST_OBJ) $(DALTEST_OBJ) $(NICTEST_OBJ) $(COMMONUTIL_OBJ)
+endif
+
+.PHONY: $(TARGET)
+
+
+OBJDIR:=$(APOLLODIR)/object
+
+
+all: clean
+	$(MAKE) -C $(OBJDIR)/unittest $(TARGET);
+
+
+$(TARGET): $(ALL_OBJ)
+	$(CC) -shared -o $@ $(ALL_OBJ) $(LIB)
+	cp -af $@ $(APOLLODIR)/object/src/app/lib/
+
+ifeq ($(CONFIG_OPENWRT_DIAG),y)
+%.o: %.c
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c -fPIC -o $@ $<
+else
+%.o: %.c
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c -o $@ $<
+endif
+
+romfs:
+
+clean:
+	cd $(OBJDIR)/unittest; \
+	rm -rf $(TARGET) $(ALL_OBJ)
+

@@ -1,0 +1,6 @@
+#define UTS_VERSION "# 2014年04月21日 下午 08:29:29"
+#define RTL8195AFW_COMPILE_TIME "20:29:29"
+#define RTL8195AFW_COMPILE_BY "sychou"
+#define RTL8195AFW_COMPILE_HOST "moranie"
+#define RTL8195AFW_COMPILE_DOMAIN
+#define RTL195AFW_COMPILER "gcc version 4.4.7 (Realtek ASDK-4.4.7 Build 1198) "

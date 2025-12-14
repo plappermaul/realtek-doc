@@ -1,0 +1,311 @@
+menu "OTTO architecture"
+	depends on OTTO
+
+config SYS_ARCH
+	default "otto"
+
+config SYS_CPU
+	default "mips32" if CPU_MIPS32
+
+choice
+	prompt "Target select"
+	optional
+
+config TARGET_VD2
+	bool "Support VD2"
+	select MIPS_L1_CACHE_SHIFT_5
+	select SUPPORTS_BIG_ENDIAN
+	select SUPPORTS_CPU_MIPS32_R2
+
+config TARGET_RTL9310
+	bool "Support RTL9310"
+	select MIPS_L1_CACHE_SHIFT_5
+	select SUPPORTS_BIG_ENDIAN
+	select SUPPORTS_CPU_MIPS32_R2
+
+config TARGET_RTL9603CVD
+	bool "Support RTL9603CVD"
+	select MIPS_L1_CACHE_SHIFT_5
+	select SUPPORTS_BIG_ENDIAN
+	select SUPPORTS_CPU_MIPS32_R2
+
+config TARGET_PHOEBUS
+    bool "Support Phoebus"
+    select MIPS_L1_CACHE_SHIFT_5
+    select SUPPORTS_BIG_ENDIAN
+    select SUPPORTS_CPU_MIPS32_R2
+
+endchoice
+
+source "arch/otto/mach-vd2/Kconfig"
+source "arch/otto/mach-rtl9310/Kconfig"
+source "arch/otto/mach-rtl9603cvd/Kconfig"
+source "arch/otto/mach-Phoebus/Kconfig"
+source "board/realtek/common/Kconfig"
+
+if OTTO
+
+choice
+	prompt "CPU selection"
+	default OTTO_MIPS32_R2
+
+config OTTO_MIPS32_R2
+	bool "MIPS32 Release 2"
+	depends on SUPPORTS_CPU_MIPS32_R2
+	select 32BIT
+	help
+	  Choose this option to build an U-Boot for release 2 through 5 of the
+	  MIPS32 architecture.
+
+endchoice
+
+menu "General setup"
+
+config ROM_EXCEPTION_VECTORS
+	bool "Build U-Boot image with exception vectors"
+	help
+	  Enable this to include exception vectors in the U-Boot image. This is
+	  required if the U-Boot entry point is equal to the address of the
+	  CPU reset exception vector (e.g. U-Boot as ROM loader in Qemu,
+	  U-Boot booted from parallel NOR flash).
+	  Disable this, if the U-Boot image is booted from DRAM (e.g. by SPL).
+	  In that case the image size will be reduced by 0x500 bytes.
+
+config MIPS_CM_BASE
+	hex "MIPS CM GCR Base Address"
+	depends on MIPS_CM
+	default 0x16100000 if TARGET_BOSTON
+	default 0x1fbf8000
+	help
+	  The physical base address at which to map the MIPS Coherence Manager
+	  Global Configuration Registers (GCRs). This should be set such that
+	  the GCRs occupy a region of the physical address space which is
+	  otherwise unused, or at minimum that software doesn't need to access.
+
+config MIPS_CACHE_INDEX_BASE
+	hex "Index base address for cache initialisation"
+	default 0x80000000 if CPU_MIPS32
+	default 0xffffffff80000000 if CPU_MIPS64
+	help
+	  This is the base address for a memory block, which is used for
+	  initialising the cache lines. This is also the base address of a memory
+	  block which is used for loading and filling cache lines when
+	  SYS_MIPS_CACHE_INIT_RAM_LOAD is selected.
+	  Normally this is CKSEG0. If the MIPS system needs to move this block
+	  to some SRAM or ScratchPad RAM, adapt this option accordingly.
+
+config MIPS_RELOCATION_TABLE_SIZE
+	hex "Relocation table size"
+	range 0x100 0x10000
+	default "0x8000"
+	---help---
+	  A table of relocation data will be appended to the U-Boot binary
+	  and parsed in relocate_code() to fix up all offsets in the relocated
+	  U-Boot.
+
+	  This option allows the amount of space reserved for the table to be
+	  adjusted in a range from 256 up to 64k. The default is 32k and should
+	  be ok in most cases. Reduce this value to shrink the size of U-Boot
+	  binary.
+
+	  The build will fail and a valid size suggested if this is too small.
+
+	  If unsure, leave at the default value.
+
+endmenu
+
+menu "OS boot interface"
+
+config MIPS_BOOT_CMDLINE_LEGACY
+	bool "Hand over legacy command line to Linux kernel"
+	default y
+	help
+	  Enable this option if you want U-Boot to hand over the Yamon-style
+	  command line to the kernel. All bootargs will be prepared as argc/argv
+	  compatible list. The argument count (argc) is stored in register $a0.
+	  The address of the argument list (argv) is stored in register $a1.
+
+config MIPS_BOOT_ENV_LEGACY
+	bool "Hand over legacy environment to Linux kernel"
+	default y
+	help
+	  Enable this option if you want U-Boot to hand over the Yamon-style
+	  environment to the kernel. Information like memory size, initrd
+	  address and size will be prepared as zero-terminated key/value list.
+	  The address of the environment is stored in register $a2.
+
+config MIPS_BOOT_FDT
+	bool "Hand over a flattened device tree to Linux kernel"
+	default n
+	help
+	  Enable this option if you want U-Boot to hand over a flattened
+	  device tree to the kernel. According to UHI register $a0 will be set
+	  to -2 and the FDT address is stored in $a1.
+
+endmenu
+
+config SUPPORTS_BIG_ENDIAN
+	bool
+
+config SUPPORTS_LITTLE_ENDIAN
+	bool
+
+config SUPPORTS_CPU_MIPS32_R2
+	bool
+
+config CPU_MIPS32
+	bool
+	default y if OTTO_MIPS32_R2
+
+config MIPS_TUNE_4KC
+	bool
+
+config MIPS_TUNE_14KC
+	bool
+
+config MIPS_TUNE_24KC
+	bool
+
+config MIPS_TUNE_34KC
+	bool
+
+config MIPS_TUNE_74KC
+	bool
+
+config 32BIT
+	bool
+
+config SWAP_IO_SPACE
+	bool
+
+config SYS_MIPS_CACHE_INIT_RAM_LOAD
+	bool
+
+config MIPS_INIT_STACK_IN_SRAM
+	bool
+	default n
+	help
+	  Select this if the initial stack frame could be setup in SRAM.
+	  Normally the initial stack frame is set up in DRAM which is often
+	  only available after lowlevel_init. With this option the initial
+	  stack frame and the early C environment is set up before
+	  lowlevel_init. Thus lowlevel_init does not need to be implemented
+	  in assembler.
+
+config SYS_DCACHE_SIZE
+	int
+	default 0
+	help
+	  The total size of the L1 Dcache, if known at compile time.
+
+config SYS_DCACHE_LINE_SIZE
+	int
+	default 0
+	help
+	  The size of L1 Dcache lines, if known at compile time.
+
+config SYS_ICACHE_SIZE
+	int
+	default 0
+	help
+	  The total size of the L1 ICache, if known at compile time.
+
+config SYS_ICACHE_LINE_SIZE
+	int
+	default 0
+	help
+	  The size of L1 Icache lines, if known at compile time.
+
+config SYS_SCACHE_LINE_SIZE
+	int
+	default 0
+	help
+	  The size of L2 cache lines, if known at compile time.
+
+
+config SYS_CACHE_SIZE_AUTO
+	def_bool y if SYS_DCACHE_SIZE = 0 && SYS_ICACHE_SIZE = 0 && \
+		SYS_DCACHE_LINE_SIZE = 0 && SYS_ICACHE_LINE_SIZE = 0 && \
+		SYS_SCACHE_LINE_SIZE = 0
+	help
+	  Select this (or let it be auto-selected by not defining any cache
+	  sizes) in order to allow U-Boot to automatically detect the sizes
+	  of caches at runtime. This has a small cost in code size & runtime
+	  so if you know the cache configuration for your system at compile
+	  time it would be beneficial to configure it.
+
+config MIPS_L1_CACHE_SHIFT_4
+	bool
+
+config MIPS_L1_CACHE_SHIFT_5
+	bool
+
+config MIPS_L1_CACHE_SHIFT_6
+	bool
+
+config MIPS_L1_CACHE_SHIFT_7
+	bool
+
+config MIPS_L1_CACHE_SHIFT
+	int
+	default "7" if MIPS_L1_CACHE_SHIFT_7
+	default "6" if MIPS_L1_CACHE_SHIFT_6
+	default "5" if MIPS_L1_CACHE_SHIFT_5
+	default "4" if MIPS_L1_CACHE_SHIFT_4
+	default "5"
+
+config MIPS_L2_CACHE
+	bool
+	help
+	  Select this if your system includes an L2 cache and you want U-Boot
+	  to initialise & maintain it.
+
+config DYNAMIC_IO_PORT_BASE
+	bool
+
+config MIPS_CM
+	bool
+	help
+	  Select this if your system contains a MIPS Coherence Manager and you
+	  wish U-Boot to configure it or make use of it to retrieve system
+	  information such as cache configuration.
+
+config MIPS_INSERT_BOOT_CONFIG
+	bool
+	default n
+	help
+	  Enable this to insert some board-specific boot configuration in
+	  the U-Boot binary at offset 0x10.
+
+config MIPS_BOOT_CONFIG_WORD0
+	hex
+	depends on MIPS_INSERT_BOOT_CONFIG
+	default 0x420 if TARGET_MALTA
+	default 0x0
+	help
+	  Value which is inserted as boot config word 0.
+
+config MIPS_BOOT_CONFIG_WORD1
+	hex
+	depends on MIPS_INSERT_BOOT_CONFIG
+	default 0x0
+	help
+	  Value which is inserted as boot config word 1.
+
+config OTTO_SNOF
+        select CMD_SF
+        bool "Support OTTO SPI-NOR"
+
+config OTTO_SNAF
+        select CMD_NAND
+        select CMD_NAND_TRIMFFS
+        bool "Support OTTO SPI-NAND"
+
+config SNAF_MX35LF2G14AC_WORKAROUND
+        depends on OTTO_SNAF
+				default y if OTTO_SNAF
+				bool "Workaround of MX35LF2G14AC read oob failure"
+
+endif
+
+endmenu

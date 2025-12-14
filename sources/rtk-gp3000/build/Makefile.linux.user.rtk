@@ -1,0 +1,824 @@
+#
+# Copyright (C) 2011 Realtek Semiconductor Corp.
+#
+# Makefile for SDK Linux Rtk User Library
+#
+
+include $(APOLLODIR)/Compiler_Flag
+SDK_ROOT_DIR = ..
+SDK_INCLUDE   = $(SDK_ROOT_DIR)/include
+SYS_INCLUDE   = $(SDK_ROOT_DIR)/system/include
+SYS_LINUX_INCLUDE   = $(SDK_ROOT_DIR)/system/linux
+ifeq ($(CONFIG_RTK_L34_ENABLE),y)
+RG_INCLUDE	  = $(SDK_ROOT_DIR)/../romeDriver/diagshell
+endif
+
+ifeq ($(CONFIG_XDSL_RG_DIAGSHELL),y)
+ifeq ($(CONFIG_OPENWRT_RG),y)
+RG_INCLUDE	  = $(KDIR)/drivers/net/ethernet/realtek/rtl86900/romeDriver
+else
+RG_INCLUDE	  = $(KDIR)/drivers/net/rtl819x/romeDriver
+endif
+endif
+
+TARGET_A := librtk.a
+TARGET_SO := librtk.so
+
+EXTRA_CFLAGS += $(PON_CFLAGS)
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) \
+				-I$(SYS_INCLUDE) \
+				-I$(SDK_INCLUDE)/hal/chipdef/apollo \
+				-I$(SYS_LINUX_INCLUDE)
+ifeq ($(CONFIG_RTK_L34_ENABLE),y)
+EXTRA_CFLAGS += \
+		-I$(RG_INCLUDE)
+ifeq ($(CONFIG_HWNAT_FLEETCONNTRACK_EDP),y)
+EXTRA_CFLAGS +=  -I$(RG_INCLUDE)/../../FleetConntrackDriver/include -I$(RG_INCLUDE)/../../FleetConntrackDriver/core
+endif
+
+endif
+
+ifeq ($(CONFIG_OPENWRT_RG),y)
+EXTRA_CFLAGS += \
+		-I$(RG_INCLUDE) \
+		-I$(KDIR)/drivers/net/ethernet/realtek/rtl819x \
+		-I$(KDIR)/include
+else
+ifdef CONFIG_DEFAULTS_KERNEL_5_10
+EXTRA_CFLAGS += \
+		-I$(RG_INCLUDE) \
+		-I$(KDIR)/drivers/net/rtl819x 
+else
+EXTRA_CFLAGS += \
+		-I$(RG_INCLUDE) \
+		-I$(KDIR)/drivers/net/rtl819x \
+		-I$(KDIR)/include
+endif
+endif
+
+COMMON_DIR := common
+COMMON_UTIL_DIR := $(COMMON_DIR)/util
+COMMON_OBJ := \
+	$(COMMON_DIR)/rt_error.o \
+	$(COMMON_UTIL_DIR)/rt_bitop.o \
+	$(COMMON_UTIL_DIR)/rt_util.o
+
+HAL_DIR := hal
+HAL_CHIPDEF_DIR := $(HAL_DIR)/chipdef
+HAL_COMMON_DIR := $(HAL_DIR)/common
+HAL_MAC_DIR := $(HAL_DIR)/mac
+HAL_PHY_DIR := $(HAL_DIR)/phy
+HAL_OBJ := \
+	$(HAL_CHIPDEF_DIR)/chip.o \
+    $(HAL_CHIPDEF_DIR)/driver.o \
+	$(HAL_COMMON_DIR)/halctrl.o \
+    $(HAL_COMMON_DIR)/miim.o \
+	$(HAL_MAC_DIR)/mac_probe.o \
+	$(HAL_MAC_DIR)/mac_probe_tool.ulib \
+	$(HAL_MAC_DIR)/drv.o \
+	$(HAL_MAC_DIR)/mem.o \
+	$(HAL_MAC_DIR)/reg.o \
+	$(HAL_PHY_DIR)/identify.o \
+	$(HAL_PHY_DIR)/phy_probe.o \
+	$(HAL_PHY_DIR)/phy_8218b.o \
+	$(HAL_PHY_DIR)/phy_common.o
+
+ifeq ($(CONFIG_SDK_APOLLO),y)
+HAL_OBJ += \
+	$(HAL_CHIPDEF_DIR)/apollo/apollo_reg_list.o \
+	$(HAL_CHIPDEF_DIR)/apollo/apollo_regField_list.o \
+	$(HAL_CHIPDEF_DIR)/apollo/apollo_table_list.o \
+	$(HAL_CHIPDEF_DIR)/apollo/apollo_tableField_list.o \
+	$(HAL_CHIPDEF_DIR)/apollo/chip_apollo.o \
+    $(HAL_CHIPDEF_DIR)/apollo/apollo_SW_def.o
+endif
+
+
+ifeq ($(CONFIG_SDK_APOLLOMP),y)
+HAL_OBJ += \
+	$(HAL_CHIPDEF_DIR)/apollomp/rtk_apollomp_reg_list.o \
+	$(HAL_CHIPDEF_DIR)/apollomp/rtk_apollomp_regField_list.o \
+	$(HAL_CHIPDEF_DIR)/apollomp/rtk_apollomp_table_list.o \
+	$(HAL_CHIPDEF_DIR)/apollomp/rtk_apollomp_tableField_list.o \
+	$(HAL_CHIPDEF_DIR)/apollomp/chip_apollomp.o \
+	$(HAL_CHIPDEF_DIR)/apollomp/rtk_apollomp_SW_def.o
+endif
+
+
+
+ifeq ($(CONFIG_SDK_RTL9601B),y)
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE)/hal/chipdef/rtl9601b \
+
+HAL_OBJ += \
+        $(HAL_CHIPDEF_DIR)/rtl9601b/rtk_rtl9601b_reg_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9601b/rtk_rtl9601b_regField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9601b/rtk_rtl9601b_table_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9601b/rtk_rtl9601b_tableField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9601b/chip_rtl9601b.o
+endif
+
+
+ifeq ($(CONFIG_SDK_RTL9602C),y)
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE)/hal/chipdef/rtl9602c \
+
+HAL_OBJ += \
+        $(HAL_CHIPDEF_DIR)/rtl9602c/rtk_rtl9602c_reg_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9602c/rtk_rtl9602c_regField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9602c/rtk_rtl9602c_table_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9602c/rtk_rtl9602c_tableField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9602c/chip_rtl9602c.o
+endif
+
+
+ifeq ($(CONFIG_SDK_RTL9607C),y)
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE)/hal/chipdef/rtl9607c \
+
+HAL_OBJ += \
+        $(HAL_CHIPDEF_DIR)/rtl9607c/rtk_rtl9607c_reg_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9607c/rtk_rtl9607c_regField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9607c/rtk_rtl9607c_table_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9607c/rtk_rtl9607c_tableField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9607c/chip_rtl9607c.o
+endif
+
+ifeq ($(CONFIG_SDK_RTL9603CVD),y)
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE)/hal/chipdef/rtl9603cvd \
+
+HAL_OBJ += \
+        $(HAL_CHIPDEF_DIR)/rtl9603cvd/rtk_rtl9603cvd_reg_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9603cvd/rtk_rtl9603cvd_regField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9603cvd/rtk_rtl9603cvd_table_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9603cvd/rtk_rtl9603cvd_tableField_list.o \
+        $(HAL_CHIPDEF_DIR)/rtl9603cvd/chip_rtl9603cvd.o
+endif
+
+DAL_DIR := dal
+DAL_APOLLO_DIR := $(DAL_DIR)/apollo
+DAL_OBJ := \
+	$(DAL_DIR)/dal_mgmt.o \
+	$(DAL_DIR)/dal_common.o
+
+ifeq ($(CONFIG_SDK_APOLLO),y)
+DAL_OBJ += \
+	$(DAL_APOLLO_DIR)/raw/apollo_raw_dot1x.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_vlan.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_l2.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_acl.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_epon.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_gpon.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_switch.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_port.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_trap.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_sec.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_stat.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_l34.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_svlan.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_flowctrl.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_hwmisc.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_cf.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_congest.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_trunk.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_storm.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_meter.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_mirror.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_oam.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_qos.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_autofallback.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_cpu.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_intr.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_rldp.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_ponmac.o \
+        $(DAL_APOLLO_DIR)/raw/apollo_raw_eee.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_mapper.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_l2.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_port.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_stp.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_vlan.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_qos.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_l34.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_switch.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_ponmac.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_trap.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_led.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_gpon.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_svlan.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_acl.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_classify.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_stat.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_rate.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_sec.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_mirror.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_trunk.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_dot1x.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_oam.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_cpu.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_rldp.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_intr.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_gpio.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_i2c.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_debug.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_res.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_alm.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_fsm.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_int.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_ploam.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_omci.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_pm.o \
+        $(DAL_APOLLO_DIR)/dal_apollo_time.o
+endif
+
+ifeq ($(CONFIG_SDK_APOLLOMP),y)
+DAL_APOLLOMP_DIR := $(DAL_DIR)/apollomp
+DAL_OBJ += \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_vlan.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_switch.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_qos.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_acl.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_trap.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_l34.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_epon.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_ponmac.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_hwmisc.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_cf.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_flowctrl.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_trunk.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_port.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_l2.o \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_mirror.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_mapper.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_svlan.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_switch.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_qos.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_stp.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_rate.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_sec.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_l34.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_acl.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_port.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_ponmac.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_oam.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_classify.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_stat.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_trunk.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_vlan.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_trap.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_l2.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_mirror.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_rldp.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_intr.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_cpu.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_dot1x.o\
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_gpio.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_i2c.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_epon.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_led.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_time.o \
+        $(DAL_APOLLOMP_DIR)/dal_apollomp_tool.ulib \
+
+ifeq ($(CONFIG_GPON_VERSION),1)
+DAL_OBJ+= $(DAL_APOLLOMP_DIR)/dal_apollomp_gpon.o
+else
+DAL_OBJ+= $(DAL_APOLLOMP_DIR)/dal_apollomp_gponv2.o
+endif
+
+endif
+
+
+
+
+ifeq ($(CONFIG_SDK_RTL9601B),y)
+DAL_RTL9601B_DIR := $(DAL_DIR)/rtl9601b
+DAL_OBJ += \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_mapper.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_switch.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_oam.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_classify.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_gpon.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_vlan.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_stp.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_ponmac.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_gpio.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_intr.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_l2.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_port.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_rate.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_flowctrl.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_stat.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_qos.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_i2c.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_svlan.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_trap.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_epon.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_acl.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_cpu.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_hwmisc.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_led.o \
+    $(DAL_RTL9601B_DIR)/dal_rtl9601b_pbo.o 
+endif
+
+
+
+ifeq ($(CONFIG_SDK_RTL9602C),y)
+DAL_RTL9602C_DIR := $(DAL_DIR)/rtl9602c
+DAL_OBJ += \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_mapper.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_switch.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_port.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_oam.o \
+	$(DAL_RTL9602C_DIR)/dal_rtl9602c_stat.o \
+	$(DAL_RTL9602C_DIR)/dal_rtl9602c_flowctrl.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_trap.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_vlan.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_svlan.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_mirror.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_stp.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_rate.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_time.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_acl.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_dot1x.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_l2.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_cpu.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_qos.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_l34.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_ponmac.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_gpon.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_classify.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_intr.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_gpio.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_hwmisc.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_sec.o  \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_epon.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_pbo.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_rldp.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_led.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_i2c.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_ppstod.o \
+    $(DAL_RTL9602C_DIR)/dal_rtl9602c_tool.ulib
+endif
+
+
+ifeq ($(CONFIG_SDK_RTL9607C),y)
+DAL_RTL9607C_DIR := $(DAL_DIR)/rtl9607c
+DAL_OBJ += \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_mapper.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_sec.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_l2.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_intr.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_ponmac.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_acl.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_vlan.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_svlan.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_stat.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_classify.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_switch.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_gpio.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_trap.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_time.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_cpu.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_flowctrl.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_pbo.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_mirror.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_port.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_epon.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_gpon.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_rate.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_oam.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_stp.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_hwmisc.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_qos.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_i2c.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_led.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_rldp.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_ppstod.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_mdio.o \
+    $(DAL_RTL9607C_DIR)/dal_rtl9607c_tool.ulib
+endif
+
+ifeq ($(CONFIG_SDK_RTL9603CVD),y)
+DAL_RTL9603CVD_DIR := $(DAL_DIR)/rtl9603cvd
+DAL_OBJ += \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_mapper.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_switch.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_l2.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_acl.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_ponmac.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_epon.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_mirror.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_stp.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_stat.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_vlan.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_trap.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_intr.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_hwmisc.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_port.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_flowctrl.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_pbo.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_gpon.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_sec.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_rate.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_qos.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_svlan.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_i2c.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_led.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_gpio.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_oam.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_cpu.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_time.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_ppstod.o \
+    $(DAL_RTL9603CVD_DIR)/dal_rtl9603cvd_tool.ulib
+endif
+
+ifeq ($(CONFIG_SDK_LUNA_G3),y)
+HAL_OBJ := \
+    $(HAL_CHIPDEF_DIR)/chip.o \
+    $(HAL_COMMON_DIR)/halctrl.o \
+    $(HAL_MAC_DIR)/mac_probe.o
+
+ifeq ($(CONFIG_ARCH_RTL8198F),y)
+DAL_LUNA_G3_DIR := $(DAL_DIR)/rtl8198f
+DAL_OBJ += \
+    $(DAL_LUNA_G3_DIR)/dal_rtl8198f_mapper.o
+#If you want build DAL Object please put DAL object to dal/rtl8198f/DAL_Compiler_Flag
+else
+DAL_LUNA_G3_DIR := $(DAL_DIR)/luna_g3
+DAL_OBJ += \
+    $(DAL_LUNA_G3_DIR)/dal_luna_g3_mapper.o
+#If you want build DAL Object please put DAL object to dal/luna_g3/DAL_Compiler_Flag
+endif
+endif
+
+ifeq ($(CONFIG_SDK_CA8279),y)
+HAL_OBJ := \
+    $(HAL_CHIPDEF_DIR)/chip.o \
+    $(HAL_COMMON_DIR)/halctrl.o \
+    $(HAL_MAC_DIR)/mac_probe.o
+
+DAL_CA8279_DIR := $(DAL_DIR)/ca8279
+DAL_OBJ += \
+    $(DAL_CA8279_DIR)/dal_ca8279_mapper.o
+#If you want build DAL Object please put DAL object to dal/ca8279/DAL_Compiler_Flag
+endif
+
+ifeq ($(CONFIG_SDK_CA8277B),y)
+HAL_OBJ := \
+    $(HAL_CHIPDEF_DIR)/chip.o \
+    $(HAL_COMMON_DIR)/halctrl.o \
+    $(HAL_MAC_DIR)/mac_probe.o
+
+DAL_CA8277B_DIR := $(DAL_DIR)/ca8277b
+DAL_OBJ += \
+    $(DAL_CA8277B_DIR)/dal_ca8277b_mapper.o
+#If you want build DAL Object please put DAL object to dal/ca8277b/DAL_Compiler_Flag
+endif
+
+ifeq ($(CONFIG_SDK_RTL8277C),y)
+HAL_OBJ := \
+    $(HAL_CHIPDEF_DIR)/chip.o \
+    $(HAL_COMMON_DIR)/halctrl.o \
+    $(HAL_MAC_DIR)/mac_probe.o
+
+DAL_RTL8277C_DIR := $(DAL_DIR)/rtl8277c
+DAL_OBJ += \
+    $(DAL_RTL8277C_DIR)/dal_rtl8277c_mapper.o
+#If you want build DAL Object please put DAL object to dal/rtl8277c/DAL_Compiler_Flag
+endif
+
+ifeq ($(CONFIG_SDK_RTL9607F),y)
+HAL_OBJ := \
+    $(HAL_CHIPDEF_DIR)/chip.o \
+    $(HAL_COMMON_DIR)/halctrl.o \
+    $(HAL_MAC_DIR)/mac_probe.o
+
+DAL_RTL9607F_DIR := $(DAL_DIR)/rtl9607f
+DAL_OBJ += \
+    $(DAL_RTL9607F_DIR)/dal_rtl9607f_mapper.o
+#If you want build DAL Object please put DAL object to dal/rtl9607f/DAL_Compiler_Flag
+endif
+
+ifeq ($(CONFIG_SDK_APOLLO),n)
+ifeq ($(CONFIG_SDK_APOLLOMP),y)
+ifeq ($(CONFIG_GPON_VERSION),1)
+DAL_OBJ += \
+        $(DAL_APOLLOMP_DIR)/raw/apollomp_raw_gpon.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_debug.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_res.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_alm.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_fsm.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_int.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_ploam.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_omci.o \
+        $(DAL_APOLLO_DIR)/gpon/gpon_pm.o
+endif
+endif
+endif
+
+ifeq ($(CONFIG_RTK_USER_MODE),y)
+
+RTK_DIR := rtk
+
+
+RTK_OBJ+= \
+	$(RTK_DIR)/init.o
+
+SYSTEM_DIR := ../system
+ifeq ($(CONFIG_OPENWRT_DIAG),y)
+SYSTEM_OBJ := \
+	$(SYSTEM_DIR)/osal/linux/user/memory.o \
+	$(SYSTEM_DIR)/osal/linux/user/time.o \
+    $(SYSTEM_DIR)/ioal/ioal_init.o \
+    $(SYSTEM_DIR)/ioal/mem32.o \
+    $(SYSTEM_DIR)/ioal/io_rsp.o \
+	$(SYSTEM_DIR)/ioal/linux/user/io_mii.o
+else
+SYSTEM_OBJ := \
+	$(SYSTEM_DIR)/osal/linux/user/memory.o \
+	$(SYSTEM_DIR)/osal/linux/user/sem.o \
+	$(SYSTEM_DIR)/osal/linux/user/time.o \
+	$(SYSTEM_DIR)/osal/linux/user/thread.o \
+    $(SYSTEM_DIR)/ioal/ioal_init.o \
+    $(SYSTEM_DIR)/ioal/mem32.o \
+    $(SYSTEM_DIR)/ioal/io_rsp.o \
+	$(SYSTEM_DIR)/ioal/linux/user/io_mii.o
+endif
+
+NETDRV_OBJ := \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_reg.o  \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_gpon.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rate.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_vlan.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_acl.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_debug.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_pkt.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_gpio.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_i2c.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_intr.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_ponmac.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_stp.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_switch.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_led.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_qos.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rldp.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_svlan.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_classify.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_l2.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_l34.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_port.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_trunk.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_mirror.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_dot1x.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_cpu.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_epon.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_oam.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_stat.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_sec.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_time.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_trap.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_pon_led.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_ppstod.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_pbo.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_mdio.o 
+
+
+#ifeq ($(CONFIG_EUROPA_FEATURE),y)
+#NETDRV_OBJ += \
+#        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_ldd.o
+#endif
+
+ifeq ($(CONFIG_EUROPA),m) 
+NETDRV_OBJ += \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_ldd.o
+endif
+
+ifeq ($(CONFIG_RTK_L34_ENABLE),y)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rg.o
+endif
+
+ifeq ($(CONFIG_XDSL_RG_DIAGSHELL),y)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rg.o
+endif
+
+ifeq ($(CONFIG_COMMON_RT_API),y)
+RTK_OBJ+= \
+    $(RTK_DIR)/rt/rt_init.o \
+
+NETDRV_OBJ += \
+    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_switch.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_stat.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_rate.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_qos.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_intr.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_sec.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_trap.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_i2c.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_port.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_cls.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_l2.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_mirror.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_mdio.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_time.o
+
+ifeq ($(CONFIG_GPON_FEATURE),y)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_gpon.o
+endif
+
+ifeq ($(CONFIG_EPON_FEATURE),y)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_epon.o
+endif
+
+ifeq ($(CONFIG_RTK_L34_FLEETCONNTRACK_ENABLE),y)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_rate_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_igmp_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_flow_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_stat_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_acl_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_qos_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_pe_ext.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_misc_ext.o
+endif
+
+ifeq ($(CONFIG_RTK_IGMP_MLD_SNOOPING_MODULE),m)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_igmpHook_ext.o
+endif
+
+ifeq ($(CONFIG_COMMON_RT_PONMISC),y)
+NETDRV_OBJ += \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rt/rtusr_rt_ponmisc.o
+endif
+endif
+
+# rgAsic +++
+# ifeq ($(CONFIG_SDK_RTL9607B),y)
+# NETDRV_OBJ += \
+#	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rg.o
+# endif
+# rgAsic ---
+
+else
+
+
+RTK_DIR := rtk
+
+ifeq ($(CONFIG_GPON_VERSION),1)
+RTK_OBJ := \
+        $(RTK_DIR)/gpon.o
+endif
+
+RTK_OBJ+= \
+	$(RTK_DIR)/init.o \
+        $(RTK_DIR)/l2.o \
+    	$(RTK_DIR)/port.o  \
+	$(RTK_DIR)/l34.o \
+	$(RTK_DIR)/stp.o \
+	$(RTK_DIR)/vlan.o \
+    	$(RTK_DIR)/trap.o \
+	$(RTK_DIR)/qos.o \
+	$(RTK_DIR)/ponmac.o \
+	$(RTK_DIR)/switch.o \
+	$(RTK_DIR)/svlan.o \
+	$(RTK_DIR)/acl.o \
+	$(RTK_DIR)/stat.o \
+	$(RTK_DIR)/sec.o \
+	$(RTK_DIR)/rate.o \
+    	$(RTK_DIR)/mirror.o \
+    	$(RTK_DIR)/led.o \
+    	$(RTK_DIR)/trunk.o \
+    	$(RTK_DIR)/dot1x.o \
+    	$(RTK_DIR)/oam.o \
+    	$(RTK_DIR)/time.o \
+    	$(RTK_DIR)/cpu.o \
+    	$(RTK_DIR)/epon.o \
+    	$(RTK_DIR)/ppstod.o 
+
+
+SYSTEM_DIR := ../system
+SYSTEM_OBJ := \
+	$(SYSTEM_DIR)/osal/linux/user/memory.o \
+	$(SYSTEM_DIR)/osal/linux/user/sem.o \
+	$(SYSTEM_DIR)/osal/linux/user/time.o \
+	$(SYSTEM_DIR)/osal/linux/user/thread.o \
+    $(SYSTEM_DIR)/ioal/ioal_init.o \
+    $(SYSTEM_DIR)/ioal/mem32.o \
+    $(SYSTEM_DIR)/ioal/io_rsp.o \
+	$(SYSTEM_DIR)/ioal/linux/user/io_mii.o \
+    $(SYSTEM_DIR)/common/debug/rt_log.o
+
+NETDRV_OBJ := \
+	    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_reg.o  \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_gpon.o \
+	$(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_pkt.o \
+	    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_gpio.o \
+	    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_i2c.o \
+	    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_intr.o \
+	    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rldp.o \
+        $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_classify.o \
+
+endif
+
+
+#ifeq ($(CONFIG_OPENWRT_RG),y)
+#NETDRV_OBJ := \
+#	    $(SYSTEM_DIR)/linux/rtk/rtusr/src/rtusr_rg.o  \
+
+#ALL_OBJ := $(NETDRV_OBJ)
+#else
+ALL_OBJ := $(SYSTEM_OBJ) $(COMMON_OBJ) $(HAL_OBJ) $(DAL_OBJ) $(RTK_OBJ) $(NETDRV_OBJ)
+#endif
+
+EXTRA_CFLAGS += -I$(SDK_INCLUDE) -I$(SYS_INCLUDE) -I$(DRV_INCLUDE)
+
+
+CFLAGS +=     -Wcomment \
+              -Winit-self \
+              -Wmissing-braces \
+              -Wparentheses \
+              -Wreturn-type \
+              -Wunused-parameter \
+              -Wunused-variable \
+              -Wunused-value \
+              -Wdeclaration-after-statement \
+              -Wmissing-prototypes \
+              -Wimplicit \
+               -g -O2 -fPIC
+
+
+#CFLAGS += -DRTK_X86_ASICDRV -DDISABLE_VLAN_SHADOW -DLINUX_KERNEL_MDIO_IO -DCONFIG_LINUX_USER_SHELL
+CFLAGS += -DRTK_X86_ASICDRV -DDISABLE_VLAN_SHADOW -DCONFIG_LINUX_USER_SHELL
+
+include $(CHECKSEC_LIB_CONFIG)
+
+.PHONY: $(TARGET_A) $(TARGET_SO) clone
+
+# workaround: there will be some problem in union-fs if no twice 'find'
+ifneq ($(origin BUILD_IN_UNIONFS), undefined)
+_PREFIND_FOR_UNIONFS:= $(shell cd $(SDKDIR) && ls -l `find . -name \*` > /dev/null)
+endif
+
+OBJDIR:=$(APOLLODIR)/object
+_ORIGIN_SUB:= $(shell cd $(SDKDIR) && find -path "*/.svn" -prune -o -type d ! -name "." ! -name "build" ! -print | grep -v autogen)
+_ORIGIN_FILE:=$(shell cd $(SDKDIR) && find -path "*/.svn" -prune -o ! -type d ! -name "*.o" ! -name "*.cmd" ! -name "*.ko" -print | grep -v build | grep -v autogen)
+
+OBJDIR:=$(APOLLODIR)/object
+_ORIGIN_SUB:= $(shell cd $(SDKDIR) && find -path "*/.svn" -prune -o -type d ! -name "." ! -name "build" ! -print | grep -v autogen)
+_ORIGIN_FILE:=$(shell cd $(SDKDIR) && find -path "*/.svn" -prune -o ! -type d ! -name "*.o" ! -name "*.cmd" ! -name "*.ko" ! -name "libpr.so"  -print | grep -v build | grep -v autogen)
+
+DOCLONE:=( \
+	if [ "`pwd`" = "$(SDKDIR)" ] ; then exit ; fi && \
+        echo Cloning directories... && \
+        for dir in $(_ORIGIN_SUB) ; do \
+        mkdir -p  "$$dir"; done && \
+        echo Cloning files... && \
+	for file in $(_ORIGIN_FILE) ; do\
+	ln -sf $(SDKDIR)/$$file $$file ;\
+	done \
+        )
+
+all:
+	@if [ ! -d $(OBJDIR) ] ; then \
+		mkdir -p $(OBJDIR); \
+		cd $(SDKDIR); \
+		find . -path "*/.svn" -prune -o -type d ! -name "." ! -name "build" ! -exec mkdir $(OBJDIR)/{} -p \; ;\
+		find . -path "*/.svn" -prune -o ! -type d ! -name "*.o" ! -name "*.cmd" ! -name "*.ko" ! -name "libpr.so" -exec ln -sf $(SDKDIR)/{} $(OBJDIR)/{} \; ;\
+		cd $(OBJDIR); \
+	fi
+	$(MAKE) -C $(OBJDIR)/src $(TARGET_A);
+	$(MAKE) -C $(OBJDIR)/src $(TARGET_SO);
+
+$(TARGET_A): $(ALL_OBJ)
+	$(AR) rcs $@ $(ALL_OBJ)
+	cp -af $@ $(OBJDIR)/src/app/lib/
+
+$(TARGET_SO): $(ALL_OBJ)
+	$(CC) $(LDFLAGS) $(EXTRA_SEC_SO_LDFLAGS) -shared -o $@ $(ALL_OBJ)
+	cp -af $@ $(OBJDIR)/src/app/lib/
+
+fpic =
+ifeq ($(CONFIG_OPENWRT_RG),y)
+fpic = 1
+endif
+ifeq ($(CONFIG_OPENWRT_DIAG),y)
+fpic = 1
+endif
+
+ifdef fpic
+%.o: %.c
+	$(CC) -c $(EXTRA_CFLAGS) $(CFLAGS) -g -O2 -fPIC -o $@ $<
+else
+%.o: %.c
+	$(CC) -c $(EXTRA_CFLAGS) $(CFLAGS) -o $@ $<
+endif
+
+romfs:
+
+clean:
+	rm -rf $(OBJDIR);
+

@@ -1,0 +1,214 @@
+//
+// Copyright (C) 2012 Realtek Semiconductor Corp.
+// All Rights Reserved.
+//
+// This program is the proprietary software of Realtek Semiconductor
+// Corporation and/or its licensors, and only be used, duplicated,
+// modified or distributed under the authorized license from Realtek.
+//
+// ANY USE OF THE SOFTWARE OTHER THAN AS AUTHORIZED UNDER
+// THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+//
+// $Revision$
+// $Date$
+//
+// Purpose : Define diag shell commands for rldp.
+//
+// Feature : The file have include the following module and sub-modules
+//           1) rldp commands.
+//
+
+//rldp configuration
+//init rldp
+rldp init
+
+//rldp configuration
+//set configuration
+//state configuration
+//disable
+//enable
+rldp set state ( disable | enable )
+
+//rldp configuration
+//get configuration
+//state configuration
+rldp get state
+
+//rldp configuration
+//set configuration
+//bypass flow control configuration
+//state configuration
+//disable
+//enable
+rldp set bypass-flow-control state ( disable | enable )
+
+//rldp configuration
+//get configuration
+//bypass flow control configuration
+//state configuration
+rldp get bypass-flow-control state
+
+//rldp configuration
+//set configuration
+//trigger mode configuration
+//sa moving trigger
+//periodic mode
+rldp set mode ( sa-moving | periodic )
+
+//rldp configuration
+//get configuration
+//trigger mode configuration
+rldp get mode
+
+//rldp configuration
+//set configuration
+//magic number configuration
+//mac address
+rldp set magic <MACADDR:mac>
+
+//rldp configuration
+//get configuration
+//magic number configuration
+rldp get magic
+
+//rldp configuration
+//get configuration
+//identifier number configuration
+rldp get identifier
+
+//rldp configuration
+//set configuration
+//compare type configuration
+//magic number + identifier
+//magic number
+rldp set compare-type ( magic-and-identifier | magic-only )
+
+//rldp configuration
+//get configuration
+//compare type configuration
+rldp get compare-type
+
+//rldp configuration
+//set configuration
+//protocol handle type configuration
+//hardware
+//software
+rldp set handle ( hardware | software )
+
+//rldp configuration
+//get configuration
+//protocol handle type configuration
+rldp get handle
+
+//rldp configuration
+//set configuration
+//re-generate identifier
+rldp set re-generate-identifier
+
+//rldp configuration
+//set configuration
+//check state
+//looped state
+//interval between 2 re-tries
+//time (unit: ms)
+rldp set ( check | loop ) period <UINT:time>
+
+//rldp configuration
+//get configuration
+//check state
+//looped state
+//interval between 2 re-tries
+rldp get ( check | loop ) period
+
+//rldp configuration
+//set configuration
+//check state
+//looped state
+//re-tries number
+//count
+rldp set ( check | loop ) number <UINT:count>
+
+//rldp configuration
+//get configuration
+//check state
+//looped state
+//re-tries number
+rldp get ( check | loop ) number
+
+//rldp configuration
+//set configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//state configuration
+//disable
+//enable
+rldp set port ( <PORT_LIST:port> | all ) state ( disable | enable )
+
+//rldp configuration
+//get configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//state configuration
+rldp get port ( <PORT_LIST:port> | all ) state
+
+//rldp configuration
+//clear configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//status
+//loop status entering
+//loop status leaving
+//all
+rldp clear port ( <PORT_LIST:port> | all ) status ( entering | leaving | all )
+
+//rldp configuration
+//get configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//loop status for port (enter, leave, looping)
+rldp get port ( <PORT_LIST:port> | all ) status
+
+//rldp configuration
+//set configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//loop state by CPU control
+//none-looping 
+//looping
+rldp set port ( <PORT_LIST:port> | all ) control-state ( none-looping | looping )
+
+//rldp configuration
+//get configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//loop state by CPU control
+rldp get port ( <PORT_LIST:port> | all ) control-state
+
+//rldp configuration
+//get configuration
+//port configuration
+//port list , <0-4> 
+//all ports
+//looped port id
+rldp get port ( <PORT_LIST:port> | all ) looped-port-id
+
+//RLPP configuration
+//set configuration
+//trap to CPU configuration
+//state configuration
+//disable
+//enable
+rlpp set trap state ( disable | enable )
+
+//RLPP configuration
+//get configuration
+//trap configuration
+//state configuration
+rlpp get trap state
+

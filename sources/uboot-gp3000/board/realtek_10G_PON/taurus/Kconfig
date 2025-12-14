@@ -1,0 +1,41 @@
+if TARGET_RTK_TAURUS
+
+config SYS_SOC
+	default "taurus"
+
+config CA8277B
+	bool
+	default y
+
+config SYS_BOARD
+	default "taurus"
+
+config SYS_CONFIG_NAME
+	default "taurus"
+
+config SYS_TEXT_BASE
+	default "0x04000000"
+
+config IDENT_STRING
+	default "Taurus-SoC" if ARM64
+	default "Taurus-SoC(OPTEE)" if (ARM64 && BL_IMAGE_INC_OPTEED)
+	default "Taurus-SoC-AARCH32" if !ARM64
+
+config BOOTP_VCI_STRING
+	default "U-boot.armv8.taurus"
+	default "U-boot.armv7.taurus" if !ARM64
+
+config SYS_PROMPT
+	default "TAURUS# "
+
+config SYS_BOOTM_LEN
+	hex "bootm size"
+	default 0x1800000
+
+config RTK_TAURUS_HW_TEST
+    bool "Enable RTK TAURUS hardware test function"
+    default n
+    help
+        For RTK TAURUS in-house test only
+
+endif
