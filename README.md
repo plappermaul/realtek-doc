@@ -40,7 +40,8 @@ The PDFs we have
 - Switch controller RTL9301 datasheet
 - Switch controller RTL9303 datasheet
 - Switch controller RTL930x developer guide 
-- Switch controller RTL9311 datasheet 
+- Switch controller RTL9311 datasheet
+- Switch controller RTL9311BM design guide 
 - Switch controller RTL9313 datasheet
 - POE controller RTL8238B datasheet
 - POE controller RTL8238B host command guide
