@@ -1,0 +1,25 @@
+/*
+ * SPDX-License-Identifier: GPL-2.0-only
+ *
+ * Copyright (c) 2023 Realtek Semiconductor Corp. All rights reserved.
+ */
+
+the driver is based on linux 5.10.146
+
+1. Copy the folder "drivers/net/phy/rtk" to your linux in the same path
+
+2. Modify Kconfig: linux/drivers/net/phy/Kconfig for add menuconfig
+
+    if PHYLIB
+    ......
+    source "drivers/net/phy/rtk/Kconfig"
+    endif # PHYLIB
+
+3. Modify Makefile: linux/drivers/net/phy/Makefile for build code
+
+    obj-$(CONFIG_RTK_MSSDK_PHY)		+= rtk/
+
+4. enable kernel config:
+    CONFIG_RTK_MSSDK_PHY=y
+
+
