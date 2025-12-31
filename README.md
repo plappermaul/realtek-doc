@@ -14,7 +14,7 @@ What RTK (development kit) we have
 PHY Direct Links
 
 PHY | BE550 | DMS-1250 | GP-3000 | XGS-1210
---- | --- | --- | --- 
+--- | --- | --- | --- | ---
 RTL8214FC | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
 RTL8218B | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
 RTL8218D | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
