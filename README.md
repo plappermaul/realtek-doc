@@ -13,17 +13,17 @@ What RTK (development kit) we have
 
 PHY Direct Links
 
-PHY | BE550 | DMS-1250 | XGS-1210
+PHY | BE550 | DMS-1250 | GP-3000 | XGS-1210
 --- | --- | --- | --- 
-RTL8214FC | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | [RTK](/sources/rtk-xgs1210/src/hal/phy)
-RTL8218B | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | [RTK](/sources/rtk-xgs1210/src/hal/phy)
-RTL8218D | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | [RTK](/sources/rtk-xgs1210/src/hal/phy)
-RTL8218E | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | -
-RTL8224 | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | -
-RTL8226x/RTL8221B | [U-Boot](/sources/uboot-be550/drivers/net/rtl8221b) | [RTK](/sources/rtk-dms1250/src/hal/phy) [U-Boot](/sources/uboot-xgs1210/board/Realtek/switch/sdk/src/hal/phy) | [RTK](/sources/rtk-xgs1210/src/hal/phy) [U-Boot](/sources/uboot-xgs1210/board/Realtek/switch/sdk/src/hal/phy)
-RTL8251B | [U-Boot](/sources/uboot-be550/drivers/net/rtl8251b) | - | -
-RTL8261x/RTL8264x | [U-Boot](/sources/uboot-be550/drivers/net/ipq_common) [RTK](/sources/rtk-be550/src/hal/phy) | [RTK](/sources/rtk-dms1250/src/hal/phy) | 
-RTL8295 | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | [RTK](/sources/rtk-xgs1210/src/hal/phy)
+RTL8214FC | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
+RTL8218B | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
+RTL8218D | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
+RTL8218E | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | -
+RTL8224 | - | [RTK](/sources/rtk-dms1250/src/hal/phy)  | - | -
+RTL8226x/RTL8221B | [U-Boot](/sources/uboot-be550/drivers/net/rtl8221b) | [RTK](/sources/rtk-dms1250/src/hal/phy) [U-Boot](/sources/uboot-xgs1210/board/Realtek/switch/sdk/src/hal/phy) | - | [RTK](/sources/rtk-xgs1210/src/hal/phy) [U-Boot](/sources/uboot-xgs1210/board/Realtek/switch/sdk/src/hal/phy)
+RTL8251B | [U-Boot](/sources/uboot-be550/drivers/net/rtl8251b) | - | - | -
+RTL8261x/RTL8264x | [U-Boot](/sources/uboot-be550/drivers/net/ipq_common) [RTK](/sources/rtk-be550/src/hal/phy) | [RTK](/sources/rtk-dms1250/src/hal/phy) | - | -
+RTL8295 | - | [RTK](/sources/rtk-dms1250/src/hal/phy) | - | [RTK](/sources/rtk-xgs1210/src/hal/phy)
 
 The PDFs we have
 
