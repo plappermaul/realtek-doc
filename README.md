@@ -50,6 +50,7 @@ The PDFs we have
 - Transceiver RTL8214FC
 - Transceiver RTL8218B, RTL8218D, RTL8218E
 - Transceiver RTL8221B-VB-CG (3rd generation 2.5Gbps)
+- Transceiver RTL8221B application note (AI generated)
 - Transceiver RTL8251C
 - Transceiver RTL8261N
 
